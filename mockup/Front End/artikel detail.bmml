@@ -1,0 +1,105 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1105" measuredH="927" mockupW="1024" mockupH="927">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="81" y="0" w="1024" h="927" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>A%20Web%20Page%0Ahttp%3A//jualanbisnis.com</text>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::MenuBar" x="329" y="181" w="736" h="29" measuredW="446" measuredH="29" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>3</selectedIndex>
+        <text>Beranda%2C%20Cari%20Bisnis%20/%20Franchise%2C%20Layanan%20Kami%2C%20Artikel%2C%20Kontak%2C%20FAQ</text>
+      </controlProperties>
+    </control>
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::Image" x="145" y="91" w="115" h="123" measuredW="77" measuredH="79" zOrder="2" locked="false" isInGroup="-1"/>
+    <control controlID="11" controlTypeID="com.balsamiq.mockups::Label" x="145" y="337" w="472" h="21" measuredW="460" measuredH="26" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>18</size>
+        <text>PUPUK%20ORGANIK%3A%20Jabar%20Masih%20Butuh%20Industri%20Pengolahan</text>
+      </controlProperties>
+    </control>
+    <control controlID="31" controlTypeID="com.balsamiq.mockups::Paragraph" x="145" y="379" w="907" h="373" measuredW="200" measuredH="80" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>BANDUNG%20%28bisnis-jabar.com%29%u2014Himpunan%20Kerukunan%20Tani%20Indonesia%20%28HKTI%29%20Jawa%20Barat%20mendesak%20pemerintah%20menggenjot%20pendirian%20industri%20pupuk%20organik.%0A%20%0AKetua%20HKTI%20Jabar%20Entang%20Sastraatmadja%20mengemukakan%20saat%20ini%20kebutuhan%20pupuk%20organik%20yang%20dipasok%20dari%20industri%20di%20Jabar%20masih%20di%20kisaran%2080%25%2C%20sisanya%20dari%20luar%20Jabar.%0A%20%0A%u201CSekarang%20Industri%20pupuk%20tidak%20terpaku%20terhadap%20pupuk%20anorganik%20atau%20kimia.%20Akan%20tetapi%20pupuk%20organik%20pun%20menjadi%20salah%20satu%20pilihan%20utama%20petani%2C%u201D%20katanya%20kepada%20Bisnis%2C%20Senin%20%2829/4/2013%29.%0A%20%0APeningkatan%20industri%20pupuk%20organik%2C%20katanya%2C%20dapat%20menutupi%20kebutuhan%20sektor%20pertanian%20yang%20masih%20kekurangan.%20Dengan%20begitu%2C%20pemenuhan%20pupuk%20organik%20bagi%20petani%20diharapkan%20mampu%20terpenuhi%20yang%20berimbas%20pada%20peningkatan%20produktivitas%20pertanian.%0A%20%0AMenurutnya%2C%20pendirian%20industri%20pupuk%20organik%20membuka%20peluang%20sektor%20usaha%20mikro%20untuk%20berkembang%20karena%20investasi%20tidak%20membutuhkan%20modal%20besar.%0A%20%0A%u201CKalau%20pendirian%20industri%20pupuk%20anorganik%20memang%20membutuhkan%20biaya%20yang%20besar.%20Akan%20tetapi%2C%20untuk%20organik%20masih%20bisa%20diakses%20oleh%20sektor%20mikro%2C%u201D%20ujar%20Entang.%0A%20%0AOleh%20karena%20itu%2C%20HKTI%20Jabar%20meminta%20pemerintah%20memberikan%20alternatif%20bagi%20pendirian%20industri%20pupuk%20organik%20bagi%20sektor%20mikro%20agar%20produktivitas%20pertanian%20di%20Jabar%20semakin%20meningkat.%0A%20%0ASelain%20itu%2C%20katanya%2C%20imbas%20dari%20industri%20pupuk%20organik%20dapat%20membantu%20menciptakan%20lahan%20terbuka%20hijau%20yang%20ramah%20lingkungan.%0A%20%0APada%20perkembangan%20lain%2C%20pengunaan%20pupuk%20organik%20pada%20tanaman%20hortikultura%20di%20Kabupaten%20Bandung%20mencapai%2070%25%20sehingga%20produksi%20bisa%20maksimal.%28k32/k29/yri%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="32" controlTypeID="com.balsamiq.mockups::Label" x="145" y="274" w="169" h="18" measuredW="77" measuredH="21" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>13</size>
+        <text>Oleh%20%3A%20Admin</text>
+      </controlProperties>
+    </control>
+    <control controlID="33" controlTypeID="com.balsamiq.mockups::Label" x="147" y="297" w="169" h="18" measuredW="134" measuredH="18" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>11</size>
+        <text>29%20April%202013%20%7C%2013%3A33%20WIB</text>
+      </controlProperties>
+    </control>
+    <control controlID="35" controlTypeID="com.balsamiq.mockups::HRule" x="138" y="320" w="927" h="-1" measuredW="100" measuredH="10" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0.25</backgroundAlpha>
+      </controlProperties>
+    </control>
+    <control controlID="36" controlTypeID="com.balsamiq.mockups::Link" x="567" y="106" w="-1" h="-1" measuredW="92" measuredH="21" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>member%20baru%3F</text>
+      </controlProperties>
+    </control>
+    <control controlID="37" controlTypeID="com.balsamiq.mockups::Link" x="669" y="106" w="-1" h="-1" measuredW="92" measuredH="21" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Lupa%20Password</text>
+      </controlProperties>
+    </control>
+    <control controlID="38" controlTypeID="com.balsamiq.mockups::Label" x="659" y="106" w="-1" h="-1" measuredW="10" measuredH="21" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%7C</text>
+      </controlProperties>
+    </control>
+    <control controlID="39" controlTypeID="com.balsamiq.mockups::Label" x="764" y="80" w="-1" h="-1" measuredW="39" measuredH="21" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Nama</text>
+      </controlProperties>
+    </control>
+    <control controlID="40" controlTypeID="com.balsamiq.mockups::Label" x="896" y="82" w="-1" h="-1" measuredW="68" measuredH="21" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Kata%20Sandi</text>
+      </controlProperties>
+    </control>
+    <control controlID="41" controlTypeID="com.balsamiq.mockups::TextInput" x="766" y="104" w="119" h="-1" measuredW="79" measuredH="27" zOrder="13" locked="false" isInGroup="-1"/>
+    <control controlID="42" controlTypeID="com.balsamiq.mockups::TextInput" x="896" y="105" w="99" h="-1" measuredW="79" measuredH="27" zOrder="14" locked="false" isInGroup="-1"/>
+    <control controlID="43" controlTypeID="com.balsamiq.mockups::Button" x="1002" y="105" w="-1" h="-1" measuredW="61" measuredH="27" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Masuk</text>
+      </controlProperties>
+    </control>
+    <control controlID="44" controlTypeID="com.balsamiq.mockups::CheckBox" x="896" y="135" w="106" h="17" measuredW="104" measuredH="18" zOrder="16" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>10</size>
+        <text>Simpan%20kata%20sandi</text>
+      </controlProperties>
+    </control>
+    <control controlID="46" controlTypeID="com.balsamiq.mockups::Label" x="908" y="296" w="-1" h="-1" measuredW="49" measuredH="21" zOrder="17" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Bagikan</text>
+      </controlProperties>
+    </control>
+    <control controlID="47" controlTypeID="com.balsamiq.mockups::Button" x="966" y="291" w="29" h="30" measuredW="48" measuredH="30" zOrder="18" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>FacebookIcon%7Csmall</icon>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="48" controlTypeID="com.balsamiq.mockups::Button" x="1001" y="291" w="29" h="30" measuredW="48" measuredH="30" zOrder="19" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>TwitterIcon%7Csmall</icon>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="49" controlTypeID="com.balsamiq.mockups::Button" x="1036" y="291" w="29" h="30" measuredW="48" measuredH="30" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>LinkedInIcon%7Csmall</icon>
+        <text/>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
