@@ -3374,3 +3374,297 @@ Stack trace:
 REQUEST_URI=/ecommerceJB/index.php/jbAdmin/bisnisfranchise/toggle/id/8/attribute/status_rekomendasi
 HTTP_REFERER=http://localhost/ecommerceJB/index.php/jbAdmin/bisnisfranchise/
 ---
+2013/07/19 05:36:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "<".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('<')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/%3C?php%20echo%20Yii::app()-%3Erequest-%3EbaseUrl;%20?%3E/images/clientPhoto.png
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/home
+---
+2013/07/19 05:39:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "echo Yii::app()->request->baseUrl/images/clientPhoto.png".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('echo Yii::app()...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/echo%20Yii::app()-%3Erequest-%3EbaseUrl/images/clientPhoto.png
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/home
+---
+2013/07/19 06:13:02 [error] [php] Undefined variable: image (C:\xampp\htdocs\ecommercejb\protected\views\home\index.php:102)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): HomeController->renderFile()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): HomeController->renderPartial()
+#2 C:\xampp\htdocs\ecommercejb\protected\controllers\HomeController.php(63): HomeController->render()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): HomeController->actionIndex()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(286): HomeController->runAction()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): HomeController->runActionWithFilters()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): HomeController->run()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/home
+in C:\xampp\htdocs\ecommercejb\protected\views\home\index.php (102)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\HomeController.php (63)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/19 06:15:22 [error] [php] Undefined offset: 0 (C:\xampp\htdocs\ecommercejb\protected\views\home\index.php:104)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): HomeController->renderFile()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): HomeController->renderPartial()
+#2 C:\xampp\htdocs\ecommercejb\protected\controllers\HomeController.php(65): HomeController->render()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): HomeController->actionIndex()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(286): HomeController->runAction()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): HomeController->runActionWithFilters()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): HomeController->run()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/home
+in C:\xampp\htdocs\ecommercejb\protected\views\home\index.php (104)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\HomeController.php (65)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/19 06:19:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "$imageSource".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('$imageSource')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/$imageSource
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/home
+---
+2013/07/19 06:35:12 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (302)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/19 06:35:12 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (302)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/19 06:35:12 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (302)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/19 06:35:27 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (302)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/19 06:35:27 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (302)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/19 06:35:27 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (302)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/19 06:35:47 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (302)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/19 06:35:47 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (302)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/19 06:35:47 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (302)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/19 06:37:52 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (302)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/19 06:37:52 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (302)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/19 06:37:52 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (302)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/19 06:38:06 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (302)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/19 06:38:06 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (302)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/19 06:38:06 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (302)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/19 06:39:17 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (302)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/19 06:39:17 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (302)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/19 06:39:17 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (302)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/19 06:41:02 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (302)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/19 06:41:02 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (302)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/19 06:41:02 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (302)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/19 06:41:33 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (302)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/19 06:41:33 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (302)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/19 06:41:33 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (302)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/19 06:42:20 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (302)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/19 06:42:20 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (302)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/19 06:42:20 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (302)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/19 06:44:44 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (302)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/19 06:44:44 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (302)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/19 06:44:44 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (302)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/19 06:45:37 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (302)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/19 06:45:37 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (302)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/19 06:45:37 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (302)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/19 07:40:00 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (302)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/19 07:40:00 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (302)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/19 07:40:00 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (302)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/19 07:47:52 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (302)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/19 07:47:52 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (302)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/19 07:47:52 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (302)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/19 08:04:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "detailFranchise".' in C:\xampp\htdocs\ecommercejb\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(270): CController->missingAction('detailFranchise')
+#1 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('detailFranchise')
+#2 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('cariBisnisFranc...')
+#3 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ecommerceJB/index.php/cariBisnisFranchise/detailFranchise/7
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/home
+---
+2013/07/19 08:11:31 [error] [php] Use of undefined constant category - assumed 'category' (C:\xampp\htdocs\ecommercejb\protected\controllers\CariBisnisFranchiseController.php:241)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CariBisnisFranchiseController->runAction()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CariBisnisFranchiseController->filterAccessControl()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CariBisnisFranchiseController->runActionWithFilters()
+#9 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CariBisnisFranchiseController->run()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/cariBisnisFranchise/detail/7
+in C:\xampp\htdocs\ecommercejb\protected\controllers\CariBisnisFranchiseController.php (241)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/19 08:43:32 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\ecommercejb\protected\controllers\HomeController.php:75)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(286): HomeController->runAction()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): HomeController->runActionWithFilters()
+#2 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): HomeController->run()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/home
+in C:\xampp\htdocs\ecommercejb\protected\controllers\HomeController.php (75)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/19 08:46:27 [error] [php] Undefined variable: list_array_business_terbaru (C:\xampp\htdocs\ecommercejb\protected\controllers\HomeController.php:80)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(286): HomeController->runAction()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): HomeController->runActionWithFilters()
+#2 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): HomeController->run()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/home
+in C:\xampp\htdocs\ecommercejb\protected\controllers\HomeController.php (80)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/19 08:47:00 [error] [php] Attempt to modify property of non-object (C:\xampp\htdocs\ecommercejb\protected\controllers\HomeController.php:78)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(286): HomeController->runAction()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): HomeController->runActionWithFilters()
+#2 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): HomeController->run()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/home
+in C:\xampp\htdocs\ecommercejb\protected\controllers\HomeController.php (78)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/19 09:07:22 [error] [php] Undefined variable: contenFranchiseRekomendasi (C:\xampp\htdocs\ecommercejb\protected\views\home\index.php:281)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): HomeController->renderFile()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): HomeController->renderPartial()
+#2 C:\xampp\htdocs\ecommercejb\protected\controllers\HomeController.php(103): HomeController->render()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): HomeController->actionIndex()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(286): HomeController->runAction()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): HomeController->runActionWithFilters()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): HomeController->run()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/home
+in C:\xampp\htdocs\ecommercejb\protected\views\home\index.php (281)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\HomeController.php (103)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/19 09:11:42 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (302)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/19 09:11:42 [error] [php] Undefined index: alasan_jual_lainnya (C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php:304)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): AccountController->runAction()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): AccountController->filterAccessControl()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): AccountController->runActionWithFilters()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): AccountController->run()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/account/create
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (304)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/19 09:14:11 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (302)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/19 09:15:27 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (302)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/19 09:16:30 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (302)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/19 09:21:39 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (302)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/19 09:21:39 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (302)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/19 09:21:39 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (302)
+in C:\xampp\htdocs\ecommercejb\index.php (13)

@@ -238,11 +238,11 @@ class CariBisnisFranchiseController extends Controller
                 $watchlist_check=0;
             }
             $list_bisnis_terkait = Business::model()->findAllByAttributes(array('id_industri'=>$model->id_industri,'id_category'=>$model->id_category),$criteria_bisnis_terkait);
-            if($model->id_category == 1)
+            if(strtolower($model->idCategory->category) == 'bisnis')
             {
                  $this->render('detail',array('model'=>$model,'bisnis_terkait'=>$list_bisnis_terkait,'watchlist'=>$watchlist_check));
             }
-            else
+            else if(strtolower($model->idCategory->category) == 'franchise')
             {
                 $this->render('detailFranchise',array('model'=>$model,'bisnis_terkait'=>$list_bisnis_terkait,'watchlist'=>$watchlist_check));
             }

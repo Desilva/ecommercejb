@@ -165,11 +165,13 @@ class AccountController extends Controller
                 $selectedSortValue = $_POST['sort'];
                 $criteria = new CDbCriteria();
                 $criteria->condition = "id_category=$selectedSortValue";
+                $criteria->order = 'id desc';
             }
             else
             {
                 $criteria = new CDbCriteria();
                 $criteria->condition = "id_category=1";
+                $criteria->order = 'id desc';
             }
             
 //             $emailCriteria = new CDbCriteria();
@@ -179,7 +181,7 @@ class AccountController extends Controller
             
             $dataProvider = new CActiveDataProvider('Business', array(
                 'pagination' => array(
-                    'pageSize' => 2,
+                    'pageSize' => 10,
                 ),
                 'criteria'=>$criteria
             ));
@@ -301,7 +303,10 @@ class AccountController extends Controller
 //                    die;
                     $model->attributes = $_POST['Business'];
                     $model->status_approval = $status_approval;
-                    $model->alasan_jual_lainnya = $_POST['Business']['alasan_jual_lainnya'];
+                    if(isset($_POST['Business']['alasan_jual_lainnya']))
+                    {
+                         $model->alasan_jual_lainnya = $_POST['Business']['alasan_jual_lainnya'];
+                    }
                     $model->tampilkanKontak = $_POST['Business']['tampilkanKontak'];
                     if(isset($_POST['Business']['dropDownAlasanJual']))
                     {
@@ -327,17 +332,19 @@ class AccountController extends Controller
                                 chmod($path, 0777);
                             }
                             $imgName="";
+                            $i = 0;
                                 foreach($userImages as $image)
                                 {
+                                    $i++;
                                     if(is_file($image["path"]))
                                     {
                                         $date = date('ymdhis');
                                         $temp= array_filter(explode('.',$image["name"]));
                                         $extension = end($temp);
-                                        if(rename($image["path"], $path .'bf'.'_'. Yii::app()->user->id .'_'.$date.'.'.$extension))
+                                        if(rename($image["path"], $path .'bf'.'_'. Yii::app()->user->id .'_'.$date.'_'.$i.'.'.$extension))
                                         {
-                                            chmod( $path .'bf'.'_'. Yii::app()->user->id .'_'.$date.'.'.$extension, 0777);
-                                            $imgName .= 'bf'.'_'.Yii::app()->user->id .'_'.$date.'.'.$extension.',';
+                                            chmod( $path .'bf'.'_'. Yii::app()->user->id .'_'.$date.'_'.$i.'.'.$extension, 0777);
+                                            $imgName .= 'bf'.'_'. Yii::app()->user->id .'_'.$date.'_'.$i.'.'.$extension.',';
     //                                        $img = new Image( );
     //                                        $img->size = $image["size"];
     //                                        $img->mime = $image["mime"];
@@ -366,8 +373,8 @@ class AccountController extends Controller
 
                         }
                     }
-                    if($model->save()) echo "Saved";
-//                        $this->redirect(array('view', 'id' => $model->id));
+                    if($model->save()) 
+                        $this->redirect('index');
                 }
         Yii::app()->user->setState('images', null);
         $this->render('create',array(
@@ -448,7 +455,10 @@ class AccountController extends Controller
 //                    die;
                     $model->attributes = $_POST['Business'];
 //                    $model->status_approval = $status_approval;
-                    $model->alasan_jual_lainnya = $_POST['Business']['alasan_jual_lainnya'];
+                    if(isset($_POST['Business']['alasan_jual_lainnya']))
+                    {
+                         $model->alasan_jual_lainnya = $_POST['Business']['alasan_jual_lainnya'];
+                    }
                     $model->tampilkanKontak = $_POST['Business']['tampilkanKontak'];
                     if(isset($_POST['Business']['dropDownAlasanJual']))
                     {
@@ -474,17 +484,19 @@ class AccountController extends Controller
                                 chmod($path, 0777);
                             }
                             $imgName="";
+                            $i = 0;
                                 foreach($userImages as $image)
                                 {
+                                    $i++;
                                     if(is_file($image["path"]))
                                     {
                                         $date = date('ymdhis');
                                         $temp= array_filter(explode('.',$image["name"]));
                                         $extension = end($temp);
-                                        if(rename($image["path"], $path .'bf'.'_'. Yii::app()->user->id .'_'.$date.'.'.$extension))
+                                        if(rename($image["path"], $path .'bf'.'_'. Yii::app()->user->id .'_'.$date.'_'.$i.'.'.$extension))
                                         {
-                                            chmod( $path .'bf'.'_'. Yii::app()->user->id .'_'.$date.'.'.$extension, 0777);
-                                            $imgName .= 'bf'.'_'.Yii::app()->user->id .'_'.$date.'.'.$extension.',';
+                                            chmod( $path .'bf'.'_'. Yii::app()->user->id .'_'.$date.'_'.$i.'.'.$extension, 0777);
+                                            $imgName .= 'bf'.'_'. Yii::app()->user->id .'_'.$date.'_'.$i.'.'.$extension.',';
     //                                        $img = new Image( );
     //                                        $img->size = $image["size"];
     //                                        $img->mime = $image["mime"];
@@ -513,8 +525,8 @@ class AccountController extends Controller
 
                         }
                     }
-                    if($model->save()) echo "Saved";
-//                        $this->redirect(array('view', 'id' => $model->id));
+                    if($model->save())
+                        $this->redirect('index');
                 }
         Yii::app()->user->setState('images', null);
         $this->render('update',array(
@@ -618,7 +630,7 @@ class AccountController extends Controller
             echo CHtml::tag('option', array('value' => ''), 'Pilih Sub Industri', true);
             foreach($data as $value => $sub_industri)
             {
-                if($value = $selected_sub_industri)
+                if($value == $selected_sub_industri)
                 {
                     echo CHtml::tag('option', array('value' => $value,'selected'=>'selected'), CHtml::encode($sub_industri), true);
                 }

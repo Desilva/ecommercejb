@@ -48,12 +48,59 @@ class HomeController extends Controller
                 '3' => '>10 jt'
             );
         $list_slideshow = Slideshow::model()->findAll();
+        
+        $criteria_business_terbaru = new CDbCriteria();
+        $criteria_business_terbaru->limit = 5;
+        $criteria_business_terbaru->with = 'idCategory';
+        $criteria_business_terbaru->order = 'tanggal_approval desc';
+        $criteria_business_terbaru->addCondition("status_approval = 'diterima'");
+        $criteria_business_terbaru->addCondition("idCategory.category = 'Bisnis'");
+        $list_business_terbaru = Business::model()->findAll($criteria_business_terbaru);
+        
+        $criteria_franchise_terbaru = new CDbCriteria();
+        $criteria_franchise_terbaru->limit = 5;
+        $criteria_franchise_terbaru->with = 'idCategory';
+        $criteria_franchise_terbaru->order = 'tanggal_approval desc';
+        $criteria_franchise_terbaru->addCondition("status_approval = 'diterima'");
+        $criteria_franchise_terbaru->addCondition("idCategory.category = 'Franchise'");
+        $list_franchise_terbaru = Business::model()->findAll($criteria_franchise_terbaru);
+        
+        $criteria_business_rekomendasi = new CDbCriteria();
+        $criteria_business_rekomendasi->with = 'idCategory';
+        $criteria_business_rekomendasi->addCondition("status_approval = 'diterima'");
+        $criteria_business_rekomendasi->addCondition("idCategory.category = 'Bisnis'");
+        $criteria_business_rekomendasi->addCondition("status_rekomendasi = 1");
+        $list_business_rekomendasi = Business::model()->findAll($criteria_business_rekomendasi);
+        $list_array_business_rekomendasi = array();
+        foreach($list_business_rekomendasi as $list)
+        {
+           array_push($list_array_business_rekomendasi,$list->attributes);
+        }
+        $shuffled_business_rekomendasi = $this->shuffle_assoc($list_array_business_rekomendasi);
+        
+        $criteria_franchise_rekomendasi = new CDbCriteria();
+        $criteria_franchise_rekomendasi->with = 'idCategory';
+        $criteria_franchise_rekomendasi->addCondition("status_approval = 'diterima'");
+        $criteria_franchise_rekomendasi->addCondition("idCategory.category = 'Franchise'");
+        $criteria_franchise_rekomendasi->addCondition("status_rekomendasi = 1");
+        $list_franchise_rekomendasi = Business::model()->findAll($criteria_franchise_rekomendasi);
+        $list_array_franchise_rekomendasi = array();
+        foreach($list_franchise_rekomendasi as $list)
+        {
+           array_push($list_array_franchise_rekomendasi,$list->attributes);
+        }
+        $shuffled_franchise_rekomendasi = $this->shuffle_assoc($list_array_franchise_rekomendasi);
+        
         $this->render('index',array(
             'slideshow'=>$list_slideshow,
             'kategori'=>$list_kategori,
             'kota'=>$list_kota,
             'rangeharga'=>$list_rangeharga,
-            'provinsi'=>$list_provinsi));
+            'provinsi'=>$list_provinsi,
+            'business_terbaru'=>$list_business_terbaru,
+            'franchise_terbaru'=>$list_franchise_terbaru,
+            'business_rekomendasi'=>$shuffled_business_rekomendasi,
+            'franchise_rekomendasi'=>$shuffled_franchise_rekomendasi));
     }
     
     public function actionSlideshowDetail($id)
@@ -95,6 +142,21 @@ class HomeController extends Controller
     {
         Yii::app()->user->logout();
         $this->redirect(Yii::app()->homeUrl);
+    }
+    
+    private function shuffle_assoc($list)
+    {
+        if(!is_array($list))
+            return $list;
+
+        $keys = array_keys($list);
+        shuffle($keys);
+        $random = array();
+        foreach($keys as $key)
+        {
+            $random[] = $list[$key];
+        }
+        return $random;
     }
 
 }

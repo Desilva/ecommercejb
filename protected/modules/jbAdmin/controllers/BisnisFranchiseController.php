@@ -138,11 +138,13 @@ class BisnisFranchiseController extends Controller
                 $selectedSortValue = $_POST['sort'];
                 $criteria = new CDbCriteria();
                 $criteria->condition = "id_category=$selectedSortValue";
+                $criteria->order = 'id desc';
             }
             else
             {
                 $criteria = new CDbCriteria();
                 $criteria->condition = "id_category=1";
+                $criteria->order = 'id desc';
             }
             
 //             $emailCriteria = new CDbCriteria();

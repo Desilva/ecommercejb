@@ -37,7 +37,7 @@
     
 </div>
 <div id="gadgetsDiv">
-	<div id="gadgetsLeftDiv">
+	<div id="gadgetsLeftDiv" style="height:500px">
 	<div class="titleGadgets">
 		<span style="">Bisnis</span>
 	</div>
@@ -77,8 +77,8 @@
 		</div>
     </form>
     <hr width="340px"/>
-		<div id="gadgetLeft">
-			<div id="titleGadgetLeft">
+		<div id="gadgetLeft" style="height:250px">
+<!--			<div id="titleGadgetLeft">
 				<div id="gadgetLeftSubtitleDiv" class="subTitleGadgets">
 					<span id="gadgetLeftSubtitleSpan">Rekomendasi Kami</span>
 				</div>
@@ -93,10 +93,77 @@
                	<img class="imageGadgetClient" src="<?php echo Yii::app()->request->baseUrl; ?>/images/clientPhoto.png" />
                 <img class="imageGadgetClient" src="<?php echo Yii::app()->request->baseUrl; ?>/images/clientPhoto.png" />
 				<img id="imageNavGadgetRight" src="<?php echo Yii::app()->request->baseUrl; ?>/images/navGadgetRight.png"/>
-			</div>
+			</div>-->
+        <?php 
+            $contentBusinessTerbaru ='';
+            foreach($business_terbaru as $businessDetail)
+            {
+                $imageList = array_filter(explode(',',$businessDetail->image));
+                if(!empty($imageList))
+                {
+                    $imageSource = Yii::app()->baseUrl.'/uploads/'.$imageList[0];
+                }
+                else
+                {
+                    $imageSource = Yii::app()->request->baseUrl.'/images/no-image.gif';
+                }
+                
+                if(!Yii::app()->user->isGuest)
+                {
+                    $detailUrl = Yii::app()->createUrl("//cariBisnisFranchise/detail/$businessDetail->id");
+                }
+                else
+                {
+                    $detailUrl = '#'; //redirect to login
+                }
+                
+                $contentBusinessTerbaru .= "<a href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" /></a>";
+            }
+            
+            
+            $contentBusinessRekomendasi ='';
+            $i=0;
+            foreach($business_rekomendasi as $businessDetail)
+            {
+                $i++;
+                $imageList = array_filter(explode(',',$businessDetail['image']));
+                if(!empty($imageList))
+                {
+                    $imageSource = Yii::app()->baseUrl.'/uploads/'.$imageList[0];
+                }
+                else
+                {
+                    $imageSource = Yii::app()->request->baseUrl.'/images/no-image.gif';
+                }
+                
+                if(!Yii::app()->user->isGuest)
+                {
+                    $detailUrl = Yii::app()->createUrl("//cariBisnisFranchise/detail/".$businessDetail['id']);
+                }
+                else
+                {
+                    $detailUrl = '#'; //redirect to login
+                }
+                
+                $contentBusinessRekomendasi .= "<a href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" /></a>";
+                
+                if($i== 5)
+                {
+                    break;
+                }
+            }
+            $this->widget('bootstrap.widgets.TbTabs', array(
+                'type'=>'tabs', // 'tabs' or 'pills'
+                'tabs'=>array(
+                        array('label'=>'Terbaru', 'content'=>"$contentBusinessTerbaru", 'active'=>true),
+                        array('label'=>'Rekomendasi', 'content'=>"$contentBusinessRekomendasi"),
+                ),
+        )); 
+
+        ?>
 		</div>
     </div>                
-    <div id="gadgetsRightDiv">
+    <div id="gadgetsRightDiv" style="height:500px">
 		<div class="titleGadgets">
 			<span style="">Franchise</span>
 		</div>
@@ -133,8 +200,9 @@
 			</div>
         </form>
         <hr width="340px"/>
-       <div id="gadgetLeft">
-			<div  id="titleGadgetLeft">
+       <div id="gadgetLeft" style="height:250px">
+           
+<!--			<div  id="titleGadgetLeft">
 				<div id="gadgetLeftSubtitleDiv" class="subTitleGadgets">
 					<span id="gadgetLeftSubtitleSpan">Rekomendasi Kami</span>
 				</div>
@@ -149,7 +217,73 @@
                	<img class="imageGadgetClient" src="<?php echo Yii::app()->request->baseUrl; ?>/images/clientPhoto.png" />
                 <img class="imageGadgetClient" src="<?php echo Yii::app()->request->baseUrl; ?>/images/clientPhoto.png" />
 				<img id="imageNavGadgetRight" src="<?php echo Yii::app()->request->baseUrl; ?>/images/navGadgetRight.png"/>
-			</div>
+			</div>-->
+<?php 
+            $contentFranchiseTerbaru ='';
+            foreach($franchise_terbaru as $businessDetail)
+            {
+                $imageList = array_filter(explode(',',$businessDetail->image));
+                if(!empty($imageList))
+                {
+                    $imageSource = Yii::app()->baseUrl.'/uploads/'.$imageList[0];
+                }
+                else
+                {
+                    $imageSource = Yii::app()->request->baseUrl.'/images/no-image.gif';
+                }
+                
+                if(!Yii::app()->user->isGuest)
+                {
+                    $detailUrl = Yii::app()->createUrl("//cariBisnisFranchise/detail/$businessDetail->id");
+                }
+                else
+                {
+                    $detailUrl = '#'; //redirect to login
+                }
+                    $contentFranchiseTerbaru .= "<a href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" /></a>";
+            }
+            
+            $contentFranchiseRekomendasi ='';
+            $i=0;
+            foreach($franchise_rekomendasi as $businessDetail)
+            {
+                $i++;
+                $imageList = array_filter(explode(',',$businessDetail['image']));
+                if(!empty($imageList))
+                {
+                    $imageSource = Yii::app()->baseUrl.'/uploads/'.$imageList[0];
+                }
+                else
+                {
+                    $imageSource = Yii::app()->request->baseUrl.'/images/no-image.gif';
+                }
+                
+                if(!Yii::app()->user->isGuest)
+                {
+                    $detailUrl = Yii::app()->createUrl("//cariBisnisFranchise/detail/".$businessDetail['id']);
+                }
+                else
+                {
+                    $detailUrl = '#'; //redirect to login
+                }
+                
+                $contentFranchiseRekomendasi .= "<a href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" /></a>";
+                
+                if($i== 5)
+                {
+                    break;
+                }
+            }
+            $this->widget('bootstrap.widgets.TbTabs', array(
+                'type'=>'tabs', // 'tabs' or 'pills'
+                'tabs'=>array(
+                        array('label'=>'Terbaru', 'content'=>"$contentFranchiseTerbaru", 'active'=>true),
+                        array('label'=>'Rekomendasi', 'content'=>"$contentFranchiseRekomendasi"),
+                ),
+        )); 
+
+        ?>
+
 		</div>
 	</div>
 <!--	<div style="background:url(<?php echo Yii::app()->request->baseUrl; ?>/images/footer.png); width:1350px; height:75px; margin-left:-390px; clear:both"></div>-->
