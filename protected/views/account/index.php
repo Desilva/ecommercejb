@@ -62,37 +62,41 @@ a.delete img{
 //                ),
 //            ),
 //        ));
-        $this->widget('zii.widgets.grid.CGridView', array(
-            'id'=>'businessGrid',
-            'dataProvider' => $model,
-            'itemsCssClass' => 'table table-striped',
-            'summaryText' => '',
-            'ajaxUpdate'=>'emailGrid',
-            'columns' => array(
-                'nama',
-                'deskripsi',
-                'jumlah_click',
-                'status_approval',
-                array(
-                    'class' => 'CButtonColumn',
-                    'htmlOptions' => array('style' => 'width: 85px'),
-                    'header' => 'Tindakan',
-                    'template' => '{update}{delete}{viewEmail}',
-                    'deleteButtonImageUrl' => Yii::app()->request->baseUrl . '/images/icon/trash.png',
-                    'updateButtonImageUrl' => Yii::app()->request->baseUrl . '/images/icon/write.png',
-                    'buttons' => array(
-                        'viewEmail' => array(
-                            'label' => 'Lihat Email',
-                            'imageUrl' => Yii::app()->request->baseUrl . '/images/icon/-.png',
-                            'options' => array('class' => 'viewEmail'),
-                            'url' => '$data->id',
-                            'click'=>"function(e){ e.preventDefault(); getEmail($(this).attr('href'))}"
-                           
-                        )
+            $this->widget('zii.widgets.grid.CGridView', array(
+                'id' => 'businessGrid',
+                'dataProvider' => $model,
+                'itemsCssClass' => 'table table-striped',
+                'summaryText' => '',
+                'ajaxUpdate' => 'emailGrid',
+                'columns' => array(
+                    'nama',
+                    'deskripsi',
+                    'jumlah_click',
+                    array(
+                        'name' => 'status_approval',
+                        'type' => 'raw', //because of using html-code <br/>
+                        //call the controller method gridProduct for each row
+                        'value' => array($this, 'gridStatusApproval'),
+                    ),
+                    array(
+                        'class' => 'CButtonColumn',
+                        'htmlOptions' => array('style' => 'width: 85px'),
+                        'header' => 'Tindakan',
+                        'template' => '{update}{delete}{viewEmail}',
+                        'deleteButtonImageUrl' => Yii::app()->request->baseUrl . '/images/icon/trash.png',
+                        'updateButtonImageUrl' => Yii::app()->request->baseUrl . '/images/icon/write.png',
+                        'buttons' => array(
+                            'viewEmail' => array(
+                                'label' => 'Lihat Email',
+                                'imageUrl' => Yii::app()->request->baseUrl . '/images/icon/-.png',
+                                'options' => array('class' => 'viewEmail'),
+                                'url' => '$data->id',
+                                'click' => "function(e){ e.preventDefault(); getEmail($(this).attr('href'))}"
+                            )
+                        ),
                     ),
                 ),
-            ),
-        ));
+            ));
         ?>
         <hr/>
         <script>

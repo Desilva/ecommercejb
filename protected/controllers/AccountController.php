@@ -209,6 +209,12 @@ class AccountController extends Controller
             ));
 		$this->render('index',array('model'=>$dataProvider,'sortType'=>$sortType,'selectedSortValue'=>$selectedSortValue,'email'=>$emailDataProvider));
 	}
+        
+        protected function gridStatusApproval($data, $row)
+        {
+            $model = Business::model()->findByPk($data->id);
+            return $this->renderPartial('_columnStatusApproval',array('model'=>$model),true);
+        }
 
 	/**
 	 * @return array action filters

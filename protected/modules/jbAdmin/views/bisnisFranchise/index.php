@@ -53,7 +53,6 @@ a.delete img{
                 ),
                 array(
                     'class' => 'CButtonColumn',
-                    'htmlOptions' => array('style' => 'width: 85px'),
                     'header' => 'Tindakan',
                     'template' => '{update}{delete}',
                     'deleteButtonImageUrl' => Yii::app()->request->baseUrl . '/images/icon/trash.png',
