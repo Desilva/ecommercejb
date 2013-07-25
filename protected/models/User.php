@@ -1,5 +1,4 @@
 <?php
-
 /**
  * This is the model class for table "user".
  *
@@ -28,13 +27,17 @@
  * @property integer $id_buyer_price
  * @property string $references
  * @property integer $newsletter_status
+ * @property integer $access_level
+ *
  * The followings are the available model relations:
  * @property Business[] $businesses
- * @property MBuyerCategory $idBuyerCategory
+ * @property Email[] $emails
  * @property MCountry $idNationality
  * @property MJob $idJob
  * @property MCity $idBuyerLocation
  * @property MRangePrice $idBuyerPrice
+ * @property MBuyerCategory $idBuyerCategory
+ * @property Watchlist[] $watchlists
  */
 class User extends CActiveRecord
 {
@@ -80,7 +83,7 @@ class User extends CActiveRecord
                         array('agree_terms', 'compare', 'compareValue' => true,'message' => 'Terms Condition harus di check' ),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, id_nationality, id_job, password, email, first_name, last_name, gender, address, phone, handphone, birth_place, date_of_birth, instansi, income, office_address, office_phone, religion, marital_status, id_buyer_category, id_buyer_location, id_buyer_price, references, newsletter_status', 'safe'),
+			array('id, id_nationality, id_job, password, email, first_name, last_name, gender, address, phone, handphone, birth_place, date_of_birth, instansi, income, office_address, office_phone, religion, marital_status, id_buyer_category, id_buyer_location, id_buyer_price, references, newsletter_status, access_level', 'safe'),
 		);
 	}
 
@@ -92,12 +95,15 @@ class User extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-                    	'businesses' => array(self::HAS_MANY, 'Business', 'id_kepemilikan'),
+                    	'businesses' => array(self::HAS_MANY, 'Business', 'id_user'),
+                        'emails' => array(self::HAS_MANY, 'Email', 'id_user'),
 			'idBuyerCategory' => array(self::BELONGS_TO, 'MBuyerCategory', 'id_buyer_category'),
 			'idNationality' => array(self::BELONGS_TO, 'MCountry', 'id_nationality'),
 			'idJob' => array(self::BELONGS_TO, 'MJob', 'id_job'),
 			'idBuyerLocation' => array(self::BELONGS_TO, 'MCity', 'id_buyer_location'),
 			'idBuyerPrice' => array(self::BELONGS_TO, 'MRangePrice', 'id_buyer_price'),
+                    	'idBuyerCategory' => array(self::BELONGS_TO, 'MBuyerCategory', 'id_buyer_category'),
+			'watchlists' => array(self::HAS_MANY, 'Watchlist', 'id_user'),
 		);
 	}
 

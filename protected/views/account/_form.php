@@ -5,7 +5,6 @@
             'htmlOptions' => array('enctype' => 'multipart/form-data'),
     )); ?>
         <p style="clear:both"><?php echo $form->errorSummary($model); ?></p>
-	
 		<br style="clear:both"/>
                 <?php echo $form->hiddenField($model,'id_user',array('value'=>Yii::app()->user->id)) ?>
 		<table>

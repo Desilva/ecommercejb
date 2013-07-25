@@ -60,8 +60,12 @@
             <?php
 			if(!Yii::app()->user->isGuest){
 			?>
-				<a href="#"><span class="spanMenuLogin">Jual Bisnis/Franchise</span></a>
-				<a href="<?php echo Yii::app()->createUrl('//account/index') ?>"><span class="spanMenuLogin">Akun Saya</span></a>
+				<!--<a href="#"><span class="spanMenuLogin">Jual Bisnis/Franchise</span></a>-->
+                                <?php if(Yii::app()->user->checkAccess("member")){ ?>
+                                    <a href="<?php echo Yii::app()->createUrl('//account/index') ?>"><span class="spanMenuLogin">Akun Saya</span></a>
+                                <?php } else if(Yii::app()->user->checkAccess("admin")){ ?>
+                                    <a href="<?php echo Yii::app()->createUrl('//jbAdmin/') ?>"><span class="spanMenuLogin">Setting Admin</span></a>
+                                <?php } ?>
             <?php
 			}else{
 			?>

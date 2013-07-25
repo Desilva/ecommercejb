@@ -5043,3 +5043,87 @@ Stack trace:
 REQUEST_URI=/ecommerceJB/index.php/cariBisnisFranchise/watchlist/29?kategori=1&return=beli
 in C:\xampp\htdocs\ecommercejb\protected\controllers\CariBisnisFranchiseController.php (94)
 in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/25 04:39:18 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (664)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (325)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/25 04:39:18 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (664)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (325)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/25 04:39:18 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (664)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (325)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/25 04:39:52 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (664)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (325)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/25 04:39:52 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (664)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (325)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/25 04:39:52 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (664)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (325)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/25 05:50:30 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\ecommercejb\protected\views\home\_sidebar.php:9)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): HomeController->renderFile()
+#1 C:\xampp\htdocs\ecommercejb\protected\controllers\HomeController.php(19): HomeController->renderPartial()
+#2 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(281): HomeController->init()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/home
+in C:\xampp\htdocs\ecommercejb\protected\views\home\_sidebar.php (9)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\HomeController.php (19)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/25 06:36:40 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\ecommercejb\framework\web\auth\CAccessControlFilter.php:179
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\auth\CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('')
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('account')
+#9 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/ecommerceJB/index.php/account/
+---
+2013/07/25 06:45:07 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\ecommercejb\framework\web\auth\CAccessControlFilter.php:179
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\auth\CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('')
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('registrasi')
+#9 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/ecommerceJB/index.php/registrasi
+---
+2013/07/25 06:45:16 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\ecommercejb\framework\web\auth\CAccessControlFilter.php:179
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\auth\CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('')
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('jbAdmin')
+#9 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/ecommerceJB/index.php/jbAdmin/
+---

@@ -11,7 +11,10 @@ class HomeController extends Controller
     public function init()
     {
 //        Yii::app()->getModule('jbAdmin');
-        $artikelTerbaru = Article::model()->find(array('order' => 'id desc'));
+        $criteria = new CDbCriteria();
+        $criteria->limit = 5;
+        $criteria->order = 'id desc';
+        $artikelTerbaru = Article::model()->findAll($criteria);
         $this->beginClip('sidebar');
             $this->renderPartial('_sidebar',array('artikelTerbaru'=>$artikelTerbaru));
         $this->endClip();

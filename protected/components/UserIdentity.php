@@ -31,7 +31,8 @@ class UserIdentity extends CUserIdentity
 			$this->_id=$user->id;
 			$this->username=$user->email;
 			$this->errorCode=self::ERROR_NONE;
-                        $this->setState('first_name', $user->first_name);     
+                        $this->setState('first_name', $user->first_name);
+                        $this->setState('roles', $user->access_level);  
 		}
 			return $this->errorCode==self::ERROR_NONE;
 	}
