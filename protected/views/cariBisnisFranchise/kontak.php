@@ -12,6 +12,7 @@
        
             <?php echo $form->hiddenField($model,'id_business',array('value'=> $business->id));
                   echo $form->hiddenField($model,'tanggal',array('value'=> date('y-m-d')));
+                  echo $form->hiddenField($model,'id_user',array('value'=> Yii::app()->user->id));
                   $harga_min = (int)$business->harga_min;
                   $harga_max = (int)$business->harga_max;
                   $average = (int)($harga_min + $harga_max)/2;

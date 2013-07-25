@@ -1,0 +1,1 @@
+<a href="javascript:void(0)" data-trigger='hover' title='Isi Email' data-placement='top' data-content='<?php echo $model->deskripsi ?>' rel='popover'><strong><?php echo $model->nama_pengirim ?></strong></a>

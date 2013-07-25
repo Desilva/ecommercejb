@@ -61,7 +61,7 @@ class Article extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'idArticleCategory' => array(self::BELONGS_TO, 'MArticleCategory', 'id_article_category'),
+			'idArticleCategory' => array(self::BELONGS_TO, 'ArticleCategory', 'id_article_category'),
 		);
 	}
 
@@ -75,7 +75,7 @@ class Article extends CActiveRecord
 			'id_article_category' => 'Kategori',
 			'created_by' => 'Dibuat Oleh',
 			'post_date' => 'Tanggal',
-			'post' => 'Konten',
+			'post' => 'Deskripsi',
 			'title' => 'Judul',
 			'resume' => 'Resume',
 		);

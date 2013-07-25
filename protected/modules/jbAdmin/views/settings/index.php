@@ -9,43 +9,42 @@
                                                 ));
             echo $form->errorSummary(array($slideshow1,$slideshow2,$slideshow3,$slideshow4,$slideshow5));
     ?>
-	<div id="tabsholder">
-		<ul class="tabs">
-			<li id="tab1">Slideshow 1</li>
-			<li id="tab2">Slideshow 2</li>
-			<li id="tab3">Slideshow 3</li>
-			<li id="tab4">Slideshow 4</li>
-			<li id="tab5">Slideshow 5</li>
-		</ul>
-		<div class="contents marginbot">
-                    <?php
-                        for($i=1; $i<=5; $i++)
-                        {
-                       
-                    ?>
-			<div id="content<?php echo $i ?>" class="tabscontent">
-				<table>
-					<tr>
-                                                <td><?php echo $form->labelEx(${'slideshow'.$i},'title') ?></td>
-						<td><?php echo $form->textField(${'slideshow'.$i},"[$i]title") ?></td>
-					</tr>
-					<tr>
-						<td><?php echo $form->labelEx(${'slideshow'.$i},'image') ?></td>
-                                                <td><img src="<?php echo Yii::app()->request->baseUrl."/uploads/slideshow/".${'slideshow'.$i}->attributes["image"] ?>" width="60" height="60"/><br/><?php echo $form->fileField(${'slideshow'.$i},"[$i]image") ?></td>
-					</tr>
-					<tr>
-						<td><?php echo $form->labelEx(${'slideshow'.$i},'deskripsi') ?></td>
-						<td><?php echo $form->textArea(${'slideshow'.$i},"[$i]deskripsi") ?></td>
-                                                <script type="text/javascript">
-                                                    CKEDITOR.config.width = 715;
-                                                    CKEDITOR.replace( 'Slideshow_<?php echo $i ?>_deskripsi' );
-                                                </script>
-					</tr>
-				</table>
-			</div>
-                        <?php }?>
-		</div>
-    </div>
+    <div>
+    <?php 
+                for($i=1; $i<=5; $i++)
+                {
+                    ${'content'.$i} = "<div>
+                        <table><tr>
+                                                    <td>".$form->labelEx(${'slideshow'.$i},'title')."</td>
+                                                    <td>".$form->textField(${'slideshow'.$i},"[$i]title")."</td>
+                                            </tr>
+                                            <tr>
+                                                    <td>".$form->labelEx(${'slideshow'.$i},'image')."</td>
+                                                    <td><img src=".Yii::app()->request->baseUrl."/uploads/slideshow/".${'slideshow'.$i}->attributes["image"]." width=\"60\" height=\"60\"/><br/>".$form->fileField(${'slideshow'.$i},"[$i]image")."</td>
+                                            </tr>
+                                            <tr>
+                                                    <td>".$form->labelEx(${'slideshow'.$i},'deskripsi')."</td>
+                                                    <td>".$form->textArea(${'slideshow'.$i},"[$i]deskripsi")."</td>
+                                                    <script type=\"text/javascript\">
+                                                        CKEDITOR.config.width = 715;
+                                                        CKEDITOR.replace( 'Slideshow_".$i."_deskripsi' );
+                                                    </script>
+                                            </tr>
+                                    </table></div>";
+                }
+                $this->widget('bootstrap.widgets.TbTabs', array(
+                'type'=>'tabs', // 'tabs' or 'pills'
+                'tabs'=>array(
+                        array('label'=>'Slideshow 1', 'content'=>"$content1", 'active'=>true),
+                        array('label'=>'Slideshow 2', 'content'=>"$content2"),
+                        array('label'=>'Slideshow 3', 'content'=>"$content3"),
+                        array('label'=>'Slideshow 4', 'content'=>"$content4"),
+                        array('label'=>'Slideshow 5', 'content'=>"$content5"),
+                ),
+        )); 
+    ?>
+
+</div>
 	<hr/>
 	<table>
 		<tr>

@@ -13,14 +13,37 @@
 		<header style="font-size:50px; font-family:Calibri;"><?php echo $model->nama ?></header>
 		<br style="clear:both"/>
                     <?php
-                    if($watchlist == '0')
+                    if($return_location != '' && $return_kategori != '')
                     {
-                        echo CHtml::button('Watchlist', array('submit' => array("cariBisnisFranchise/watchlist/$model->id"), 'class'=>'buttonKontak')); 
+                        if($return_location == "beli")
+                        {
+                             echo CHtml::button('Kembali', array('submit' => array("account/beli?kategori=$return_kategori"), 'class'=>'buttonKontak'));
+                        }
+                        else if($return_location == "watchlist")
+                        {
+                            echo CHtml::button('Kembali', array('submit' => array("account/watchlist?kategori=$return_kategori"), 'class'=>'buttonKontak'));
+                        }
+                        if($watchlist == '0')
+                        {
+                            echo CHtml::button('Watchlist', array('submit' => array("cariBisnisFranchise/watchlist/$model->id?kategori=$return_kategori&return=$return_location"),'class'=>'buttonKontak')); 
+                        }
+                        else
+                        {
+                            echo CHtml::button('Unwatch', array('submit' => array("cariBisnisFranchise/watchlist/$model->id?kategori=$return_kategori&return=$return_location"), 'class'=>'buttonKontak')); 
+                        }
                     }
                     else
                     {
-                        echo CHtml::button('Unwatch', array('submit' => array("cariBisnisFranchise/watchlist/$model->id"), 'class'=>'buttonKontak')); 
+                        if($watchlist == '0')
+                        {
+                            echo CHtml::button('Watchlist', array('submit' => array("cariBisnisFranchise/watchlist/$model->id"), 'class'=>'buttonKontak')); 
+                        }
+                        else
+                        {
+                            echo CHtml::button('Unwatch', array('submit' => array("cariBisnisFranchise/watchlist/$model->id"), 'class'=>'buttonKontak')); 
+                        }
                     }
+                    
                         
                     ?>
 		<HR/>
@@ -29,7 +52,12 @@
             <img style="float:left" src="<?php echo Yii::app()->request->baseUrl ?>/images/no-image.gif" width="300" height="300"/>
         <?php echo $model->deskripsi ?>
 	<p>
-            <?php echo CHtml::button('Kontak', array('submit' => array("cariBisnisFranchise/kontakBisnis/$model->id"), 'class'=>'buttonKontak')); ?>
+            <?php
+                if($model->id_user != Yii::app()->user->id)
+                {
+                    echo CHtml::button('Kontak', array('submit' => array("cariBisnisFranchise/kontakBisnis/$model->id"), 'class'=>'buttonKontak'));
+                }
+            ?>
 	</p>
     </div>
     <br/>

@@ -26,8 +26,8 @@ a.delete img{
 </style>
 <div>
         <header style="font-size:30px; font-family:Calibri;">List Bisnis/ Franchise Terkirim</header>
-        <form method="post">
-            <?php echo CHtml::dropDownList('sort',$selectedSortValue,CHtml::listData($sortType,'id','category'),array('class'=>'styleSelect3','style'=>'float:left','id'=>'shortBisnisFranchise','submit'=> Yii::app()->createUrl("//account/index/")));  ?>
+        <form method="get">
+            <?php echo CHtml::dropDownList('kategori',$selectedSortValue,CHtml::listData($sortType,'id','category'),array('class'=>'styleSelect3','style'=>'float:left','id'=>'shortBisnisFranchise','submit'=> Yii::app()->createUrl("//account/index/")));  ?>
         </form>
         <br style="clear:both"/>
         <?php echo CHtml::button('Tambah Bisnis', array('submit' => array('account/create'), 'class'=>'buttonGrid')); ?>
@@ -69,8 +69,13 @@ a.delete img{
                 'summaryText' => '',
                 'ajaxUpdate' => 'emailGrid',
                 'columns' => array(
-                    'nama',
-                    'deskripsi',
+                    'nama' => array('header' => 'Nama Bisnis/Franchise', 'name' => 'nama'),
+                    array(
+                        'name' => 'deskripsi',
+                        'type' => 'raw', //because of using html-code <br/>
+                        //call the controller method gridProduct for each row
+                        'value' => array($this, 'gridDeskripsi'),
+                    ),
                     'jumlah_click',
                     array(
                         'name' => 'status_approval',
@@ -180,7 +185,7 @@ a.delete img{
         </script>
         <div id='emailList'>
             <?php
-                $this->widget('bootstrap.widgets.TbExtendedGridView', array(
+                $this->widget('zii.widgets.grid.CGridView', array(
                     'id'=>'emailGrid',
                     'itemsCssClass' => 'table table-striped',
                     'dataProvider' => $email,
@@ -193,9 +198,9 @@ a.delete img{
                             'value'=> 'Yii::app()->dateFormatter->format("y-MM-dd", strtotime($data->tanggal))'
                         ),
                         array(
-                            'class' => 'bootstrap.widgets.TbRelationalColumn',
                             'name' => 'nama_pengirim',
-                            'url' => $this->createUrl('account/getEmailDesc'),
+                            'type' => 'raw',
+                            'value'=> array($this,'gridEmailDeskripsi')
                         ),
                         'no_telp',
                         'alamat_email'

@@ -43,7 +43,12 @@ class AccountController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','delete','GenerateSubIndustri','GenerateKota','upload','uploadDoc','preview','GetEmailDesc','GetEmail','dataDiri','watchlist'),
+				'actions'=>array(
+                                    'create','update','delete',
+                                    'GenerateSubIndustri','GenerateKota',
+                                    'upload','uploadDoc','preview',
+                                    'GetEmailDesc','GetEmail','dataDiri',
+                                    'watchlist','beli'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -56,13 +61,41 @@ class AccountController extends Controller
                         'deniedCallback' => function() { Yii::app()->controller->redirect(array('/home/index')); }
 		);
 	}
-
+        
+        public function actionBeli()
+        {
+            $selectedSortValue = '1';
+            if(isset($_GET['kategori']))
+            {
+                $selectedSortValue = $_GET['kategori'];
+            }
+            $sortType = BusinessCategory::model()->findAll();
+            $criteria = new CDbCriteria();
+            $criteria->with= 'idBusiness';
+            $criteria->addCondition("t.id_user =".Yii::app()->user->id);
+            $criteria->addCondition("idBusiness.id_category=$selectedSortValue");
+            $criteria->order = 't.tanggal desc';
+            $criteria->order = 't.id desc';
+            $model = new CActiveDataProvider('Email',
+                    array(
+                        'criteria'=>$criteria,
+                        'pagination'=>array(
+                            'pageSize'=>10,
+                        )
+                    )
+                    );
+            $this->render('beli',array(
+                'model'=>$model,
+                'sortType'=>$sortType,
+                'selectedSortValue'=>$selectedSortValue
+                ));
+        }
         public function actionWatchlist()
         {
             $selectedSortValue = '1';
-            if(isset($_POST['sort']))
+            if(isset($_GET['kategori']))
             {
-                $selectedSortValue = $_POST['sort'];
+                $selectedSortValue = $_GET['kategori'];
             }
 
             $sortType = BusinessCategory::model()->findAll();
@@ -72,6 +105,7 @@ class AccountController extends Controller
             $criteria->addCondition('t.id_user ='.Yii::app()->user->id );
             $criteria->addCondition('idBusiness.id_category ='.$selectedSortValue );
             $criteria->addCondition("idBusiness.status_approval = 'diterima'" );
+            $criteria->order = 't.id desc';
            //$model = Watchlist::model()->with('idUser,idBusiness')->findAllByAttributes(array('id_user'=>Yii::app()->user->id,'idBusiness.id_category'=>"$selected_business_category"));
             $model = new CActiveDataProvider('Watchlist',array(
                 'pagination' => array(
@@ -156,29 +190,29 @@ class AccountController extends Controller
                 ));
         }
         
+        /* action for jual */
 	public function actionIndex()
 	{
 //            var_dump($_GET);
             $selectedSortValue = '1';
-            if(isset($_POST['sort']))
+            /*list business or franchise */
+            if(isset($_GET['kategori']))
             {
-                $selectedSortValue = $_POST['sort'];
+                $selectedSortValue = $_GET['kategori'];
                 $criteria = new CDbCriteria();
                 $criteria->condition = "id_category=$selectedSortValue";
                 $criteria->order = 'id desc';
+                $criteria->addCondition("id_user = ".Yii::app()->user->id);
             }
             else
             {
                 $criteria = new CDbCriteria();
                 $criteria->condition = "id_category=1";
                 $criteria->order = 'id desc';
+                $criteria->addCondition("id_user = ".Yii::app()->user->id);
             }
             
-//             $emailCriteria = new CDbCriteria();
-//             $emailCriteria->addCondition('status= 1');
             $sortType = BusinessCategory::model()->findAll();
-            //$sortType = BusinessCategory::model()->findAll();
-            
             $dataProvider = new CActiveDataProvider('Business', array(
                 'pagination' => array(
                     'pageSize' => 10,
@@ -186,7 +220,7 @@ class AccountController extends Controller
                 'criteria'=>$criteria
             ));
             
-            
+            /* list email associated with business or franchise */
             if(isset($_GET['id_business']))
             {
                 $id_business = $_GET['id_business'];
@@ -210,11 +244,7 @@ class AccountController extends Controller
 		$this->render('index',array('model'=>$dataProvider,'sortType'=>$sortType,'selectedSortValue'=>$selectedSortValue,'email'=>$emailDataProvider));
 	}
         
-        protected function gridStatusApproval($data, $row)
-        {
-            $model = Business::model()->findByPk($data->id);
-            return $this->renderPartial('_columnStatusApproval',array('model'=>$model),true);
-        }
+       
 
 	/**
 	 * @return array action filters
@@ -330,12 +360,18 @@ class AccountController extends Controller
                         {
                             $userImages = Yii::app()->user->getState('images');
                             //Resolve the final path for our images
-                            $path = Yii::app()->getBasePath() . "/../uploads/";
+                            $path = Yii::app()->getBasePath() . "/../uploads/images/".Yii::app()->user->id.'/';
+                            $pathThumbnail = Yii::app()->getBasePath() . "/../uploads/images/".Yii::app()->user->id.'/thumbs/';
                             //Create the folder and give permissions if it doesnt exists
                             if(!is_dir($path))
                             {
                                 mkdir($path);
                                 chmod($path, 0777);
+                            }
+                            if(!is_dir($pathThumbnail))
+                            {
+                                mkdir($pathThumbnail);
+                                chmod($pathThumbnail, 0777);
                             }
                             $imgName="";
                             $i = 0;
@@ -372,11 +408,28 @@ class AccountController extends Controller
                                         //You can also throw an execption here to rollback the transaction
                                         Yii::log($image["path"] . " is not a file", CLogger::LEVEL_WARNING);
                                     }
+                                    
+                                    
+                                    
+                                    if(is_file($image["thumb"]))
+                                    {
+                                        $date = date('ymdhis');
+                                        $temp= array_filter(explode('.',$image["name"]));
+                                        $extension = end($temp);
+                                        if(rename($image["thumb"], $pathThumbnail .'bf'.'_'. Yii::app()->user->id .'_'.$date.'_'.$i.'.'.$extension))
+                                        {
+                                            chmod( $pathThumbnail .'bf'.'_'. Yii::app()->user->id .'_'.$date.'_'.$i.'.'.$extension, 0777);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //You can also throw an execption here to rollback the transaction
+                                        Yii::log($image["thumb"] . " is not a file", CLogger::LEVEL_WARNING);
+                                    }
                                 }
                                 $model->image = $imgName;
                                 //Clear the user's session
                                 Yii::app()->user->setState('images', null);
-
                         }
                     }
                     if($model->save()) 
@@ -405,7 +458,10 @@ class AccountController extends Controller
 	public function actionUpdate($id)
 	{
             $model=$this->loadModel($id);
-            var_dump($_POST);
+            if($model->id_user != Yii::app()->user->id)
+            {
+                $this->redirect('index');
+            }
             Yii::import("ext.xupload.models.XUploadForm");
             $img_upload = new XUploadForm;
             $doc_upload = new XUploadForm;
@@ -697,8 +753,10 @@ class AccountController extends Controller
 //            move_uploaded_file($data, $target);
             Yii::import("ext.xupload.models.XUploadForm");
             //Here we define the paths where the files will be stored temporarily
-            $path = realpath(Yii::app()->getBasePath() . "/../uploads/tmp/") . "/";
-            $publicPath = Yii::app()->getBaseUrl() . "/uploads/tmp/";
+            $path = realpath(Yii::app()->getBasePath() . "/../uploads/tmp/") . "/".Yii::app()->user->id.'/';
+            $pathThumbnail = realpath(Yii::app()->getBasePath() . "/../uploads/tmp/") . "/".Yii::app()->user->id.'/thumbs/';
+            $publicPath = Yii::app()->getBaseUrl() . "/uploads/tmp/".Yii::app()->user->id.'/';
+            $publicPathThumbnail = Yii::app()->getBaseUrl() . "/uploads/tmp/".Yii::app()->user->id.'/thumbs/';
 
             //This is for IE which doens't handle 'Content-type: application/json' correctly
             header('Vary: Accept');
@@ -743,11 +801,26 @@ class AccountController extends Controller
                     $filename .= "." . $model->file->getExtensionName();
                     if($model->validate())
                     {
+                        if(!is_dir($path))
+                        {
+                            mkdir($path);
+                            chmod($path, 0777);
+                        }
+                        if(!is_dir($pathThumbnail))
+                        {
+                            mkdir($pathThumbnail);
+                            chmod($pathThumbnail, 0777);
+                        }
                         //Move our file to our temporary dir
                         $model->file->saveAs($path . $filename);
                         chmod($path . $filename, 0777);
-                        //here you can also generate the image versions you need 
+                        
+                        //here you can also generate the image versions you need
                         //using something like PHPThumb
+                        $thumb=Yii::app()->phpThumb->create($path.$filename);
+                        $thumb->resize(100,100);
+                        $thumb->save($pathThumbnail.$filename);
+                        chmod($pathThumbnail . $filename, 0777);
                         //Now we need to save this path to the user's session
                         if(Yii::app()->user->hasState('images'))
                         {
@@ -773,7 +846,7 @@ class AccountController extends Controller
                         $userImages[] = array(
                             "path" => $path . $filename,
                             //the same file or a thumb version that you generated
-                            "thumb" => $path . $filename,
+                            "thumb" => $pathThumbnail.$filename,
                             "filename" => $filename,
                             'size' => $model->size,
                             'mime' => $model->mime_type,
@@ -789,7 +862,7 @@ class AccountController extends Controller
                                 "type" => $model->mime_type,
                                 "size" => $model->size,
                                 "url" => $publicPath . $filename,
-                                "thumbnail_url" => $publicPath . "/$filename",
+                                "thumbnail_url" => $publicPathThumbnail . "/$filename",
                                 "delete_url" => $this->createUrl("upload", array(
                                     "_method" => "delete",
                                     "file" => $filename
@@ -967,5 +1040,31 @@ class AccountController extends Controller
                 'criteria'=>$emailCriteria
             ));
             $this->renderPartial('_emailList',array('email'=>$emailDataProvider));
+        }
+        
+        
+        protected function gridStatusApproval($data, $row)
+        {
+            $model = Business::model()->findByPk($data->id);
+            return $this->renderPartial('_columnStatusApproval',array('model'=>$model),true);
+        }
+        
+        protected function gridEmailDeskripsi($data, $row)
+        {
+            $model = Email::model()->findByPk($data->id);
+            return $this->renderPartial('_columnEmailDeskripsi',array('model'=>$model),true);
+        }
+        
+        protected function gridDeskripsi($data, $row)
+        {
+            $model = Business::model()->findByPk($data->id);
+            return $this->renderPartial('_columnDeskripsi',array('model'=>$model),true);
+        }
+        
+        /*grid deskripsi for beli */
+        protected function gridDeskripsiBeli($data, $row)
+        {
+            $model = Email::model()->with('idBusiness')->findByPk($data->id);
+            return $this->renderPartial('_columnDeskripsiBeli',array('model'=>$model),true);
         }
 }

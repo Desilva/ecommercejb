@@ -38,7 +38,12 @@ a.delete img{
             'ajaxUpdate' => true,
             'columns' => array(
                 'nama' => array('header' => 'Nama Bisnis/Franchise', 'name' => 'nama'),
-                'deskripsi',
+                 array(
+                        'name' => 'deskripsi',
+                        'type' => 'raw', //because of using html-code <br/>
+                        //call the controller method gridProduct for each row
+                        'value' => array($this, 'gridDeskripsi'),
+                    ),
                 'penjualan' => array('header' => 'Revenue', 'name' => 'penjualan'),
                 array(
                     'name' => 'tanggal_approval',

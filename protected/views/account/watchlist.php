@@ -1,5 +1,5 @@
 <style>
-    a.viewBusiness img{
+    a.view img{
     width: 25px;
     height: 25px;
 
@@ -7,15 +7,9 @@
 </style>	
 <div>
 		<header class="headerBisnis">List Bisnis/ Franchise Yang Dipilih</header>
-		<form method="post">
-                        <?php
-                            echo CHtml::dropDownList('sort',$selectedSortValue,  CHtml::listData($sortType,'id','category'),array('class'=>'styleSelect3','style'=>'float:left','id'=>'shortBisnisFranchiseWatchlist','submit'=> Yii::app()->createUrl("//account/watchlist")));
-                        ?>
-<!--			<select class="styleSelect2" id="shortBisnisFranchiseWatchlist" style="float:left">
-				<option>Kategori</option>
-				<option>Kategori</option>
-			</select>-->
-		</form>
+            <form method="get">
+                <?php echo CHtml::dropDownList('kategori',$selectedSortValue,CHtml::listData($sortType,'id','category'),array('class'=>'styleSelect3','style'=>'float:left','id'=>'shortBisnisFranchiseWatchlist','submit'=> Yii::app()->createUrl("//account/watchlist")));  ?>
+            </form>
 		<br style="clear:both"/>
 		<HR/>
         <?php
@@ -33,15 +27,9 @@
                 array(
                     'class' => 'CButtonColumn',
                     'header' => 'Tindakan',
-                    'template' => '{viewBusiness}',
-                    'buttons' => array(
-                        'viewBusiness' => array(
-                            'label' => 'Lihat Business/Franchise',
-                            'imageUrl' => Yii::app()->request->baseUrl . '/images/icon/write.png',
-                            'options' => array('class' => 'viewBusiness'),
-                            'url' => 'Yii::app()->createUrl("cariBisnisFranchise/detail/", array("id"=>$data->id_business))', 
-                        )
-                    ),
+                    'template' => '{view}',
+                     'viewButtonImageUrl' => Yii::app()->request->baseUrl . '/images/icon/-.png',
+                     'viewButtonUrl'=> 'Yii::app()->createUrl("cariBisnisFranchise/detail/", array("id"=>$data->id_business, "kategori"=>$data->idBusiness->id_category, "return"=>"watchlist"))',
                 ),
             ),
         ));

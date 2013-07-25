@@ -101,7 +101,7 @@
                 $imageList = array_filter(explode(',',$businessDetail->image));
                 if(!empty($imageList))
                 {
-                    $imageSource = Yii::app()->baseUrl.'/uploads/'.$imageList[0];
+                    $imageSource = Yii::app()->baseUrl.'/uploads/images/'.$businessDetail->id_user.'/thumbs/'.$imageList[0];
                 }
                 else
                 {
@@ -129,7 +129,7 @@
                 $imageList = array_filter(explode(',',$businessDetail['image']));
                 if(!empty($imageList))
                 {
-                    $imageSource = Yii::app()->baseUrl.'/uploads/'.$imageList[0];
+                    $imageSource = Yii::app()->baseUrl.'/uploads/images/'.$businessDetail['id_user'].'/thumbs/'.$imageList[0];
                 }
                 else
                 {
@@ -225,7 +225,7 @@
                 $imageList = array_filter(explode(',',$businessDetail->image));
                 if(!empty($imageList))
                 {
-                    $imageSource = Yii::app()->baseUrl.'/uploads/'.$imageList[0];
+                    $imageSource = Yii::app()->baseUrl.'/uploads/images/'.$businessDetail->id_user.'/thumbs/'.$imageList[0];
                 }
                 else
                 {
@@ -251,7 +251,7 @@
                 $imageList = array_filter(explode(',',$businessDetail['image']));
                 if(!empty($imageList))
                 {
-                    $imageSource = Yii::app()->baseUrl.'/uploads/'.$imageList[0];
+                     $imageSource = Yii::app()->baseUrl.'/uploads/images/'.$businessDetail['id_user'].'/thumbs/'.$imageList[0];
                 }
                 else
                 {

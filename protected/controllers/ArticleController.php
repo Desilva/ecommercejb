@@ -20,18 +20,32 @@ class ArticleController extends Controller
             $category = $_POST['ArticleCategory']['id'];
         }
         
-        $articleCategoryList = ArticleCategory::model()->FindAll();
         if($category =="")
         {
-            $articleCategory = new ArticleCategory();
-            $article = Article::model()->FindAll();
-            $this->render('index',array('model' => $article,'model_category'=>$articleCategory,'category' => $articleCategoryList));
+            $article= new CActiveDataProvider('article',array(
+                'sort'=>array(
+                        'defaultOrder'=>'post_date DESC'),
+                'pagination'=>array(
+                    'pageSize'=>10,
+                ),
+                ));
+
+            $this->render('index',array('model' => $article));
         }
         else 
         {
-            $articleCategory = ArticleCategory::model()->findByPk($category);
-            $article = Article::model()->findAllByAttributes(array('id_article_category'=>$category));
-            $this->render('index',array('model' => $article,'model_category'=>$articleCategory,'category' => $articleCategoryList));
+            $criteria = new CDbCriteria();
+            $criteria->condition = "id_article_category = $category";
+            $article = new CActiveDataProvider('article', array(
+                'criteria' => $criteria,
+                'sort' => array(
+                    'defaultOrder' => 'post_date DESC'),
+                'pagination' => array(
+                    'pageSize' => 10,
+                ),
+            ));
+
+            $this->render('index', array('model' => $article));
         }
     }
     

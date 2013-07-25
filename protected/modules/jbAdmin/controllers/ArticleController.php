@@ -129,10 +129,17 @@ class ArticleController extends Controller
 	 */
 	public function actionIndex()
 	{
-                $model=new Article('search');
+                $criteria = new CDbCriteria();
+                $criteria->with = 'idArticleCategory';
+                $criteria->order = 't.id desc';
+                $model=new CActiveDataProvider('Article',array(
+                    'criteria'=> $criteria,
+                    'pagination' => array(
+                    'pageSize' => 10,
+                ),
+                ));
 		$dataProvider=new CActiveDataProvider('Article');
 		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
                         'model'=>$model,
 		));
 	}
@@ -177,4 +184,10 @@ class ArticleController extends Controller
 			Yii::app()->end();
 		}
 	}
+        
+        protected function gridDeskripsi($data, $row)
+        {
+            $model = Article::model()->findByPk($data->id);
+            return $this->renderPartial('_columnDeskripsi',array('model'=>$model),true);
+        }
 }

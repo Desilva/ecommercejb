@@ -16,9 +16,18 @@
     ?>
     <div>
     	<div id="C1">
-            <?php if(!empty($image)){ ?>
-                    <img src="<?php echo Yii::app()->baseUrl ?>/uploads/<?php echo $image[0] ?>" width="128" height="128"/>
-            <?php }
+            <?php if(!empty($image)){ 
+                    if(file_exists(Yii::app()->basePath.'/../uploads/images/'.$data->id_user.'/'.$image[0]))
+                    {
+           ?>
+                        <img src="<?php echo Yii::app()->baseUrl ?>/uploads/images/<?php echo $data->id_user?>/<?php echo $image[0] ?>" width="128" height="128"/>
+           <?php    }
+                    else
+                    {
+          ?>
+                        <img src="<?php echo Yii::app()->baseUrl ?>/images/no-image.gif" width="128" height="128"/>
+          <?php     }
+                    }
                   else
                   {
             ?>
@@ -32,7 +41,24 @@
 			<br/>
                         <!--    LOCALE: there is two function for setting locale, the first one using 'indonesian' is for windows, and the 2nd one the id_ID is for linux-->
 			<strong><?php echo $data->idKota->city ?>, <?php setlocale(LC_TIME, 'indonesian'); setlocale(LC_TIME, 'id_ID'); echo strftime('%d %B %Y',  strtotime($data->tanggal_approval)) ?></strong><br/>
-                                <?php echo substr($data->deskripsi,0,250).'...' ?>
+                        <?php
+                            if($data->deskripsi != '' || $data->deskripsi != null)
+                            {
+                                if(strlen($data->deskripsi) <= 200)
+                                {
+                                    echo strip_tags(html_entity_decode($data->deskripsi));
+                                }
+                                else
+                                {
+                                    echo substr(strip_tags(html_entity_decode($data->deskripsi)), 0, 200) . "...";
+                                }
+                            }
+                            else
+                            {
+                                echo "Tidak ada deskripsi";
+                            }
+                        ?>
+
         </div>
         <div id="C3">
         	<strong>
@@ -63,5 +89,3 @@
         <br style="clear:both"/>
         <hr/>
     </div>
-</div>
- 

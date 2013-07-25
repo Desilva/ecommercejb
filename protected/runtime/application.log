@@ -3668,3 +3668,1378 @@ in C:\xampp\htdocs\ecommercejb\index.php (13)
 2013/07/19 09:21:39 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
 in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (302)
 in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 06:27:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/nxp-lpc4300-family-member-table.jpg".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/nxp-lpc4...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommercejb/index.php/images/nxp-lpc4300-family-member-table.jpg
+HTTP_REFERER=http://localhost/ecommercejb/index.php/jbAdmin/article
+---
+2013/07/22 06:28:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/nxp-lpc4300-family-member-table.jpg".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/nxp-lpc4...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommercejb/index.php/images/nxp-lpc4300-family-member-table.jpg
+HTTP_REFERER=http://localhost/ecommercejb/index.php/jbAdmin/article
+---
+2013/07/22 06:34:21 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'id' in order clause is ambiguous. The SQL statement executed was: SELECT `t`.`id` AS `t0_c0`, `t`.`id_article_category` AS `t0_c1`, `t`.`created_by` AS `t0_c2`, `t`.`post_date` AS `t0_c3`, `t`.`post` AS `t0_c4`, `t`.`title` AS `t0_c5`, `t`.`resume` AS `t0_c6`, `idArticleCategory`.`id` AS `t1_c0`, `idArticleCategory`.`category` AS `t1_c1` FROM `article` `t`  LEFT OUTER JOIN `m_article_category` `idArticleCategory` ON (`t`.`id_article_category`=`idArticleCategory`.`id`)  ORDER BY id desc LIMIT 10.
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\views\article\index.php (37)
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\ArticleController.php (144)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 06:34:21 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'id' in order clause is ambiguous. The SQL statement executed was: SELECT `t`.`id` AS `t0_c0`, `t`.`id_article_category` AS `t0_c1`, `t`.`created_by` AS `t0_c2`, `t`.`post_date` AS `t0_c3`, `t`.`post` AS `t0_c4`, `t`.`title` AS `t0_c5`, `t`.`resume` AS `t0_c6`, `idArticleCategory`.`id` AS `t1_c0`, `idArticleCategory`.`category` AS `t1_c1` FROM `article` `t`  LEFT OUTER JOIN `m_article_category` `idArticleCategory` ON (`t`.`id_article_category`=`idArticleCategory`.`id`)  ORDER BY id desc LIMIT 10' in C:\xampp\htdocs\ecommercejb\framework\db\CDbCommand.php:541
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\db\CDbCommand.php(395): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\ecommercejb\framework\db\ar\CActiveFinder.php(761): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\ecommercejb\framework\db\ar\CActiveFinder.php(422): CJoinElement->runQuery(Object(CJoinQuery))
+#3 C:\xampp\htdocs\ecommercejb\framework\db\ar\CActiveFinder.php(68): CJoinElement->find(Object(CDbCriteria))
+#4 C:\xampp\htdocs\ecommercejb\framework\db\ar\CActiveRecord.php(1302): CActiveFinder->query(Object(CDbCriteria), true)
+#5 C:\xampp\htdocs\ecommercejb\framework\db\ar\CActiveRecord.php(1416): CActiveRecord->query(Object(CDbCriteria), true)
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CActiveDataProvider.php(150): CActiveRecord->findAll(Object(CDbCriteria))
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#8 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(107): CDataProvider->getData()
+#9 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(314): CBaseListView->init()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(147): CGridView->init()
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#12 C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\views\article\index.php(37): CBaseController->widget('zii.widgets.gri...', Array)
+#13 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#14 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#15 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#16 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#17 C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\ArticleController.php(144): CController->render('index', Array)
+#18 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): ArticleController->actionIndex()
+#19 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#20 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#21 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#22 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#23 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#24 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#25 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#26 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#27 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('')
+#28 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('jbAdmin/article')
+#29 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#30 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#31 {main}
+REQUEST_URI=/ecommercejb/index.php/jbAdmin/article
+HTTP_REFERER=http://localhost/ecommercejb/index.php/jbAdmin
+---
+2013/07/22 08:32:14 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '::app()->user->id )' at line 1. The SQL statement executed was: SELECT COUNT(*) FROM `business` `t` WHERE (id_category=1) AND (id_user = Yii::app()->user->id ).
+in C:\xampp\htdocs\ecommercejb\protected\views\account\index.php (99)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (210)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 08:32:14 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '::app()->user->id )' at line 1. The SQL statement executed was: SELECT COUNT(*) FROM `business` `t` WHERE (id_category=1) AND (id_user = Yii::app()->user->id )' in C:\xampp\htdocs\ecommercejb\framework\db\CDbCommand.php:541
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\db\CDbCommand.php(432): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 C:\xampp\htdocs\ecommercejb\framework\db\ar\CActiveRecord.php(1546): CDbCommand->queryScalar()
+#2 C:\xampp\htdocs\ecommercejb\framework\web\CActiveDataProvider.php(179): CActiveRecord->count(Object(CDbCriteria))
+#3 C:\xampp\htdocs\ecommercejb\framework\web\CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\CActiveDataProvider.php(129): CDataProvider->getTotalItemCount()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#6 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(107): CDataProvider->getData()
+#7 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(314): CBaseListView->init()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(147): CGridView->init()
+#9 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#10 C:\xampp\htdocs\ecommercejb\protected\views\account\index.php(99): CBaseController->widget('zii.widgets.gri...', Array)
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#12 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#13 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#14 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#15 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(210): CController->render('index', Array)
+#16 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): AccountController->actionIndex()
+#17 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#18 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#20 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#24 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('index')
+#26 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('account/index')
+#27 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#28 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#29 {main}
+REQUEST_URI=/ecommerceJB/index.php/account/index
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/account/create
+---
+2013/07/22 09:03:32 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (310)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:03:32 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (310)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:03:32 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (310)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:03:32 [error] [exception.CException] exception 'CException' with message 'Image file not found: C:\xampp\htdocs\ecommercejb\protected/../uploads/images/5/bf_5_130722090332_1.jpg,' in C:\xampp\htdocs\ecommercejb\protected\extensions\EPhpThumb\EPhpThumb.php:59
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\protected\extensions\EPhpThumb\EPhpThumb.php(44): EPhpThumb::thumbFactory('C:\xampp\htdocs...')
+#1 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(354): EPhpThumb->create('C:\xampp\htdocs...')
+#2 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): AccountController->actionCreate()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('create')
+#12 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('account/create')
+#13 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/ecommerceJB/index.php/account/create
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/account/create
+---
+2013/07/22 09:04:27 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (310)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:04:27 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (310)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:04:27 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (310)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:04:27 [warning] [application] C:\xampp\htdocs\ecommercejb\uploads\tmp/04d67e4b193b67866cb038f462f5f394.jpg is not a file
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (376)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:04:27 [error] [exception.CException] exception 'CException' with message 'Image file not found: /ecommerceJBbf_5_130722090427_2.jpg,' in C:\xampp\htdocs\ecommercejb\protected\extensions\EPhpThumb\EPhpThumb.php:59
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\protected\extensions\EPhpThumb\EPhpThumb.php(44): EPhpThumb::thumbFactory('/ecommerceJBbf_...')
+#1 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(354): EPhpThumb->create('/ecommerceJBbf_...')
+#2 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): AccountController->actionCreate()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('create')
+#12 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('account/create')
+#13 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/ecommerceJB/index.php/account/create
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/account/create
+---
+2013/07/22 09:04:44 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (310)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:04:44 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (310)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:04:44 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (310)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:04:44 [warning] [application] C:\xampp\htdocs\ecommercejb\uploads\tmp/04d67e4b193b67866cb038f462f5f394.jpg is not a file
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (376)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:04:44 [warning] [application] C:\xampp\htdocs\ecommercejb\uploads\tmp/75580cceafc919a7c26c86dd16b719d3.jpg is not a file
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (376)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:04:44 [error] [exception.CException] exception 'CException' with message 'Image file not found: /ecommerceJB/bf_5_130722090444_3.jpg,' in C:\xampp\htdocs\ecommercejb\protected\extensions\EPhpThumb\EPhpThumb.php:59
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\protected\extensions\EPhpThumb\EPhpThumb.php(44): EPhpThumb::thumbFactory('/ecommerceJB/bf...')
+#1 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(354): EPhpThumb->create('/ecommerceJB/bf...')
+#2 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): AccountController->actionCreate()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('create')
+#12 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('account/create')
+#13 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/ecommerceJB/index.php/account/create
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/account/create
+---
+2013/07/22 09:09:19 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (310)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:09:19 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (310)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:09:19 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (310)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:09:19 [warning] [application] C:\xampp\htdocs\ecommercejb\uploads\tmp/04d67e4b193b67866cb038f462f5f394.jpg is not a file
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (381)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:09:19 [warning] [application] C:\xampp\htdocs\ecommercejb\uploads\tmp/75580cceafc919a7c26c86dd16b719d3.jpg is not a file
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (381)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:09:19 [warning] [application] C:\xampp\htdocs\ecommercejb\uploads\tmp/4b68cd578664c07acc261e9b7c60344d.jpg is not a file
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (381)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:13:40 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (310)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:13:40 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (310)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:13:40 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (310)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:13:40 [error] [exception.CException] exception 'CException' with message 'Image file not found: C:\xampp\htdocs\ecommercejb\protected/../uploads/images/5/bf_5_130722091340_1.jpg,' in C:\xampp\htdocs\ecommercejb\protected\extensions\EPhpThumb\EPhpThumb.php:59
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\protected\extensions\EPhpThumb\EPhpThumb.php(44): EPhpThumb::thumbFactory('C:\xampp\htdocs...')
+#1 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(360): EPhpThumb->create('C:\xampp\htdocs...')
+#2 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): AccountController->actionCreate()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('create')
+#12 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('account/create')
+#13 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/ecommerceJB/index.php/account/create
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/account/create
+---
+2013/07/22 09:14:48 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (310)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:14:48 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (310)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:14:48 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (310)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:14:48 [error] [php] mkdir(): File exists (C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php:343)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): AccountController->runAction()
+#2 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): AccountController->filterAccessControl()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): AccountController->runActionWithFilters()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): AccountController->run()
+#9 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/account/create
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (343)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:15:13 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (310)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:15:13 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (310)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:15:13 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (310)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:15:13 [error] [php] mkdir(): File exists (C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php:343)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): AccountController->runAction()
+#2 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): AccountController->filterAccessControl()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): AccountController->runActionWithFilters()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): AccountController->run()
+#9 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/account/create
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (343)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:15:28 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (310)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:15:28 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (310)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:15:28 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (310)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:15:28 [warning] [application] C:\xampp\htdocs\ecommercejb\uploads\tmp/c71f9ffcad659e567af03c0e923d71a5.jpg is not a file
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (382)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:19:58 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (310)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:19:58 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (310)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:19:58 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (310)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:19:58 [error] [exception.CException] exception 'CException' with message 'Image file not found: /ecommerceJB/5/bf_5_130722091958_1.jpg,' in C:\xampp\htdocs\ecommercejb\protected\extensions\EPhpThumb\EPhpThumb.php:59
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\protected\extensions\EPhpThumb\EPhpThumb.php(44): EPhpThumb::thumbFactory('/ecommerceJB/5/...')
+#1 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(360): EPhpThumb->create('/ecommerceJB/5/...')
+#2 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): AccountController->actionCreate()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('create')
+#12 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('account/create')
+#13 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/ecommerceJB/index.php/account/create
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/account/create
+---
+2013/07/22 09:20:14 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (310)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:20:14 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (310)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:20:14 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (310)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:20:14 [warning] [application] C:\xampp\htdocs\ecommercejb\uploads\tmp/3a378ad5d92d85acaebf0e793cdc10be.jpg is not a file
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (382)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:29:06 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (310)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:29:06 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (310)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:29:06 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (310)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:29:21 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (310)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:29:21 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (310)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:29:21 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (310)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:29:21 [error] [php] Undefined variable: imageList (C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php:360)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): AccountController->runAction()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): AccountController->filterAccessControl()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): AccountController->runActionWithFilters()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): AccountController->run()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/account/create
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (360)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:29:40 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (310)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:29:40 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (310)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:29:40 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (310)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:29:40 [warning] [application] C:\xampp\htdocs\ecommercejb\uploads\tmp/4d1024c618f15705f5f74319083f8a02.jpg is not a file
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (382)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:33:51 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (310)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:33:51 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (310)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:33:51 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (310)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:33:51 [error] [exception.CException] exception 'CException' with message 'Image file not found: /ecommerceJB/5/bf_5_130722093351_1.jpg' in C:\xampp\htdocs\ecommercejb\protected\extensions\EPhpThumb\EPhpThumb.php:59
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\protected\extensions\EPhpThumb\EPhpThumb.php(44): EPhpThumb::thumbFactory('/ecommerceJB/5/...')
+#1 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(360): EPhpThumb->create('/ecommerceJB/5/...')
+#2 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): AccountController->actionCreate()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('create')
+#12 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('account/create')
+#13 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/ecommerceJB/index.php/account/create
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/account/create
+---
+2013/07/22 09:34:01 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (310)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:34:01 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (310)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:34:01 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (310)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:34:01 [warning] [application] C:\xampp\htdocs\ecommercejb\uploads\tmp/23c618d78ddd60c08cf495a31799d9ab.jpg is not a file
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (382)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:45:53 [error] [php] Undefined variable: date (C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php:764)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): AccountController->runAction()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): AccountController->filterAccessControl()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): AccountController->runActionWithFilters()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): AccountController->run()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/account/upload
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (764)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 09:47:43 [error] [exception.CException] exception 'CException' with message 'Image file not found: /ecommerceJB/uploads/tmp/5/5a9ae131d0f9f298f9a3d0f27036fdc0.jpg' in C:\xampp\htdocs\ecommercejb\protected\extensions\EPhpThumb\EPhpThumb.php:59
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\protected\extensions\EPhpThumb\EPhpThumb.php(44): EPhpThumb::thumbFactory('/ecommerceJB/up...')
+#1 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(764): EPhpThumb->create('/ecommerceJB/up...')
+#2 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): AccountController->actionUpload()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('upload')
+#12 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('account/upload')
+#13 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/ecommerceJB/index.php/account/upload
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/account/create
+---
+2013/07/22 09:48:22 [error] [exception.RuntimeException] exception 'RuntimeException' with message 'File not writeable: ../uploads/test.jpg' in C:\xampp\htdocs\ecommercejb\protected\extensions\EPhpThumb\lib\phpThumb\src\GdThumb.inc.php:949
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\protected\extensions\EPhpThumb\EThumbnail.php(103): GdThumb->save('../uploads/test...', NULL)
+#1 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(766): EThumbnail->save('../uploads/test...')
+#2 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): AccountController->actionUpload()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('upload')
+#12 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('account/upload')
+#13 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/ecommerceJB/index.php/account/upload
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/account/create
+---
+2013/07/22 09:51:04 [error] [exception.RuntimeException] exception 'RuntimeException' with message 'File not writeable: C:\xampp\htdocs\ecommercejb\uploads\tmp/5/thumbs/94873bd8079b8b932be999c41d956025.jpg' in C:\xampp\htdocs\ecommercejb\protected\extensions\EPhpThumb\lib\phpThumb\src\GdThumb.inc.php:949
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\protected\extensions\EPhpThumb\EThumbnail.php(103): GdThumb->save('C:\xampp\htdocs...', NULL)
+#1 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(767): EThumbnail->save('C:\xampp\htdocs...')
+#2 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): AccountController->actionUpload()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('upload')
+#12 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('account/upload')
+#13 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/ecommerceJB/index.php/account/upload
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/account/create
+---
+2013/07/22 09:52:26 [error] [php] chmod(): No such file or directory (C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php:763)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): AccountController->runAction()
+#2 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): AccountController->filterAccessControl()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): AccountController->runActionWithFilters()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): AccountController->run()
+#9 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/account/upload
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (763)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 10:04:54 [error] [php] Undefined variable: contentFranchiseTerbaru (C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\views\settings\index.php:16)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): SettingsController->renderFile()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): SettingsController->renderPartial()
+#2 C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\SettingsController.php(53): SettingsController->render()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): SettingsController->actionIndex()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(286): SettingsController->runAction()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): SettingsController->runActionWithFilters()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): SettingsController->run()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/jbAdmin/settings
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\views\settings\index.php (16)
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\SettingsController.php (53)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 10:14:59 [error] [php] Undefined variable: x (C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\views\settings\index.php:14)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): SettingsController->renderFile()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): SettingsController->renderPartial()
+#2 C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\SettingsController.php(53): SettingsController->render()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): SettingsController->actionIndex()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(286): SettingsController->runAction()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): SettingsController->runActionWithFilters()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): SettingsController->run()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/jbAdmin/settings
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\views\settings\index.php (14)
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\SettingsController.php (53)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 10:15:13 [error] [php] Undefined variable: slideshow0 (C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\views\settings\index.php:16)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): SettingsController->renderFile()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): SettingsController->renderPartial()
+#2 C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\SettingsController.php(53): SettingsController->render()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): SettingsController->actionIndex()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(286): SettingsController->runAction()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): SettingsController->runActionWithFilters()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): SettingsController->run()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/jbAdmin/settings
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\views\settings\index.php (16)
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\SettingsController.php (53)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/22 10:15:46 [error] [php] Undefined variable: slideshow0 (C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\views\settings\index.php:16)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): SettingsController->renderFile()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): SettingsController->renderPartial()
+#2 C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\SettingsController.php(53): SettingsController->render()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): SettingsController->actionIndex()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(286): SettingsController->runAction()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): SettingsController->runActionWithFilters()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): SettingsController->run()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/jbAdmin/settings
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\views\settings\index.php (16)
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\SettingsController.php (53)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/23 06:13:58 [error] [php] Undefined variable: data (C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\views\article\_columnDeskripsi.php:2)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): ArticleController->renderFile()
+#1 C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\ArticleController.php(191): ArticleController->renderPartial()
+#2 unknown(0): ArticleController->gridDeskripsi()
+#3 C:\xampp\htdocs\ecommercejb\framework\base\CComponent.php(611): call_user_func_array()
+#4 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CDataColumn.php(131): CDataColumn->evaluateExpression()
+#5 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridColumn.php(144): CDataColumn->renderDataCellContent()
+#6 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(589): CDataColumn->renderDataCell()
+#7 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(545): CGridView->renderTableRow()
+#8 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(455): CGridView->renderTableBody()
+#9 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(160): CGridView->renderItems()
+#10 unknown(0): CGridView->renderSection()
+#11 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(143): preg_replace_callback()
+#12 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(128): CGridView->renderContent()
+#13 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(173): CGridView->run()
+#14 C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\views\article\index.php(58): ArticleController->widget()
+#15 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(126): require()
+#16 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(95): ArticleController->renderInternal()
+#17 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): ArticleController->renderFile()
+#18 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): ArticleController->renderPartial()
+#19 C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\ArticleController.php(144): ArticleController->render()
+#20 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): ArticleController->actionIndex()
+#21 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#22 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): ArticleController->runAction()
+#23 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#24 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#25 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): ArticleController->filterAccessControl()
+#26 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#27 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#28 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): ArticleController->runActionWithFilters()
+#29 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): ArticleController->run()
+#30 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#31 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#32 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/jbAdmin/article
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\views\article\_columnDeskripsi.php (2)
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\ArticleController.php (191)
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\views\article\index.php (58)
+2013/07/23 06:14:33 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\views\article\_columnDeskripsi.php:2)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): ArticleController->renderFile()
+#1 C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\ArticleController.php(191): ArticleController->renderPartial()
+#2 unknown(0): ArticleController->gridDeskripsi()
+#3 C:\xampp\htdocs\ecommercejb\framework\base\CComponent.php(611): call_user_func_array()
+#4 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CDataColumn.php(131): CDataColumn->evaluateExpression()
+#5 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridColumn.php(144): CDataColumn->renderDataCellContent()
+#6 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(589): CDataColumn->renderDataCell()
+#7 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(545): CGridView->renderTableRow()
+#8 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(455): CGridView->renderTableBody()
+#9 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(160): CGridView->renderItems()
+#10 unknown(0): CGridView->renderSection()
+#11 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(143): preg_replace_callback()
+#12 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(128): CGridView->renderContent()
+#13 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(173): CGridView->run()
+#14 C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\views\article\index.php(58): ArticleController->widget()
+#15 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(126): require()
+#16 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(95): ArticleController->renderInternal()
+#17 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): ArticleController->renderFile()
+#18 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): ArticleController->renderPartial()
+#19 C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\ArticleController.php(144): ArticleController->render()
+#20 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): ArticleController->actionIndex()
+#21 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#22 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): ArticleController->runAction()
+#23 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#24 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#25 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): ArticleController->filterAccessControl()
+#26 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#27 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#28 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): ArticleController->runActionWithFilters()
+#29 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): ArticleController->run()
+#30 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#31 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#32 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/jbAdmin/article
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\views\article\_columnDeskripsi.php (2)
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\ArticleController.php (191)
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\views\article\index.php (58)
+2013/07/23 06:21:10 [error] [php] Use of undefined constant category - assumed 'category' (C:\xampp\htdocs\ecommercejb\framework\base\CComponent.php(606) : eval()'d code:1)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridColumn.php(144): CDataColumn->renderDataCellContent()
+#1 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(589): CDataColumn->renderDataCell()
+#2 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(545): CGridView->renderTableRow()
+#3 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(455): CGridView->renderTableBody()
+#4 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(160): CGridView->renderItems()
+#5 unknown(0): CGridView->renderSection()
+#6 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(143): preg_replace_callback()
+#7 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(128): CGridView->renderContent()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(173): CGridView->run()
+#9 C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\views\article\index.php(61): ArticleController->widget()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(126): require()
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(95): ArticleController->renderInternal()
+#12 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): ArticleController->renderFile()
+#13 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): ArticleController->renderPartial()
+#14 C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\ArticleController.php(144): ArticleController->render()
+#15 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): ArticleController->actionIndex()
+#16 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#17 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): ArticleController->runAction()
+#18 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#20 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): ArticleController->filterAccessControl()
+#21 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#22 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): ArticleController->runActionWithFilters()
+#24 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): ArticleController->run()
+#25 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#26 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#27 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/jbAdmin/article
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\views\article\index.php (61)
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\ArticleController.php (144)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/23 06:39:11 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\ecommercejb\protected\views\article\_list.php:4)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CListView.php(281): ArticleController->renderFile()
+#1 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(160): CListView->renderItems()
+#2 unknown(0): CListView->renderSection()
+#3 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(143): preg_replace_callback()
+#4 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(128): CListView->renderContent()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(173): CListView->run()
+#6 C:\xampp\htdocs\ecommercejb\protected\views\article\index.php(14): ArticleController->widget()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(126): require()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(95): ArticleController->renderInternal()
+#9 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): ArticleController->renderFile()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): ArticleController->renderPartial()
+#11 C:\xampp\htdocs\ecommercejb\protected\controllers\ArticleController.php(38): ArticleController->render()
+#12 unknown(0): ArticleController->actionIndex()
+#13 C:\xampp\htdocs\ecommercejb\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#14 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#15 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#16 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(286): ArticleController->runAction()
+#17 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): ArticleController->runActionWithFilters()
+#18 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): ArticleController->run()
+#19 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#20 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/article
+in C:\xampp\htdocs\ecommercejb\protected\views\article\_list.php (4)
+in C:\xampp\htdocs\ecommercejb\protected\views\article\index.php (14)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\ArticleController.php (38)
+2013/07/23 06:39:12 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\ecommercejb\protected\views\article\_list.php:4)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CListView.php(281): ArticleController->renderFile()
+#1 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(160): CListView->renderItems()
+#2 unknown(0): CListView->renderSection()
+#3 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(143): preg_replace_callback()
+#4 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(128): CListView->renderContent()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(173): CListView->run()
+#6 C:\xampp\htdocs\ecommercejb\protected\views\article\index.php(14): ArticleController->widget()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(126): require()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(95): ArticleController->renderInternal()
+#9 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): ArticleController->renderFile()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): ArticleController->renderPartial()
+#11 C:\xampp\htdocs\ecommercejb\protected\controllers\ArticleController.php(38): ArticleController->render()
+#12 unknown(0): ArticleController->actionIndex()
+#13 C:\xampp\htdocs\ecommercejb\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#14 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#15 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#16 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(286): ArticleController->runAction()
+#17 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): ArticleController->runActionWithFilters()
+#18 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): ArticleController->run()
+#19 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#20 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/article
+in C:\xampp\htdocs\ecommercejb\protected\views\article\_list.php (4)
+in C:\xampp\htdocs\ecommercejb\protected\views\article\index.php (14)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\ArticleController.php (38)
+2013/07/23 06:41:30 [error] [php] Undefined variable: artikel (C:\xampp\htdocs\ecommercejb\protected\views\article\_list.php:66)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CListView.php(281): ArticleController->renderFile()
+#1 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(160): CListView->renderItems()
+#2 unknown(0): CListView->renderSection()
+#3 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(143): preg_replace_callback()
+#4 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(128): CListView->renderContent()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(173): CListView->run()
+#6 C:\xampp\htdocs\ecommercejb\protected\views\article\index.php(14): ArticleController->widget()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(126): require()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(95): ArticleController->renderInternal()
+#9 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): ArticleController->renderFile()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): ArticleController->renderPartial()
+#11 C:\xampp\htdocs\ecommercejb\protected\controllers\ArticleController.php(38): ArticleController->render()
+#12 unknown(0): ArticleController->actionIndex()
+#13 C:\xampp\htdocs\ecommercejb\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#14 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#15 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#16 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(286): ArticleController->runAction()
+#17 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): ArticleController->runActionWithFilters()
+#18 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): ArticleController->run()
+#19 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#20 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/article
+in C:\xampp\htdocs\ecommercejb\protected\views\article\_list.php (66)
+in C:\xampp\htdocs\ecommercejb\protected\views\article\index.php (14)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\ArticleController.php (38)
+2013/07/23 06:45:28 [error] [php] Undefined variable: criteria (C:\xampp\htdocs\ecommercejb\protected\controllers\ArticleController.php:26)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(286): ArticleController->runAction()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): ArticleController->runActionWithFilters()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): ArticleController->run()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/article
+in C:\xampp\htdocs\ecommercejb\protected\controllers\ArticleController.php (26)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/23 08:50:47 [error] [php] Undefined variable: slideshow0 (C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\views\settings\index.php:16)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): SettingsController->renderFile()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): SettingsController->renderPartial()
+#2 C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\SettingsController.php(53): SettingsController->render()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): SettingsController->actionIndex()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(286): SettingsController->runAction()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): SettingsController->runActionWithFilters()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): SettingsController->run()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/jbAdmin/settings
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\views\settings\index.php (16)
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\SettingsController.php (53)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/23 09:28:03 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\ecommercejb\protected\views\home\index.php:132)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): HomeController->renderFile()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): HomeController->renderPartial()
+#2 C:\xampp\htdocs\ecommercejb\protected\controllers\HomeController.php(103): HomeController->render()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): HomeController->actionIndex()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(286): HomeController->runAction()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): HomeController->runActionWithFilters()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): HomeController->run()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php
+in C:\xampp\htdocs\ecommercejb\protected\views\home\index.php (132)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\HomeController.php (103)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/23 09:29:55 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\ecommercejb\protected\views\home\index.php:132)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): HomeController->renderFile()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): HomeController->renderPartial()
+#2 C:\xampp\htdocs\ecommercejb\protected\controllers\HomeController.php(103): HomeController->render()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): HomeController->actionIndex()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(286): HomeController->runAction()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): HomeController->runActionWithFilters()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): HomeController->run()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php
+in C:\xampp\htdocs\ecommercejb\protected\views\home\index.php (132)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\HomeController.php (103)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/23 09:31:42 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\ecommercejb\protected\views\home\index.php:132)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): HomeController->renderFile()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): HomeController->renderPartial()
+#2 C:\xampp\htdocs\ecommercejb\protected\controllers\HomeController.php(103): HomeController->render()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): HomeController->actionIndex()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(286): HomeController->runAction()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): HomeController->runActionWithFilters()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): HomeController->run()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php
+in C:\xampp\htdocs\ecommercejb\protected\views\home\index.php (132)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\HomeController.php (103)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/23 09:41:35 [error] [php] chmod(): No such file or directory (C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php:759)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): AccountController->runAction()
+#2 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): AccountController->filterAccessControl()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): AccountController->runActionWithFilters()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): AccountController->run()
+#9 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/account/upload
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (759)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/23 09:42:26 [error] [php] chmod(): No such file or directory (C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php:759)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): AccountController->runAction()
+#2 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): AccountController->filterAccessControl()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): AccountController->runActionWithFilters()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): AccountController->run()
+#9 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/account/upload
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (759)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/23 10:03:54 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (306)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/23 10:23:50 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (305)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/23 10:23:50 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (305)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/23 10:23:50 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (305)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/23 10:24:32 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (305)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/23 10:24:32 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (305)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/23 10:24:32 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (305)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/23 10:25:19 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (305)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/23 10:25:19 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (305)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/23 10:25:19 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (305)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/23 10:25:57 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (305)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/23 10:25:57 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (305)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/23 10:25:57 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (305)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/23 10:26:41 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (305)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/23 10:26:41 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (305)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/23 10:26:41 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (305)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/23 10:29:42 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (305)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/23 10:30:16 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (305)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/23 10:30:38 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (305)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/23 10:30:38 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (305)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/23 10:30:38 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (305)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/23 10:30:52 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (305)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/23 10:30:52 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (305)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/23 10:30:52 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (305)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/23 10:31:31 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (305)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/24 06:26:04 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\ecommercejb\framework\web\auth\CAccessControlFilter.php:179
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\auth\CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('beli')
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('account/beli')
+#9 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/ecommerceJB/index.php/account/beli
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/account/watchlist?kategori=1
+---
+2013/07/24 06:27:05 [error] [exception.CDbException] exception 'CDbException' with message 'Relation "idBusiness" is not defined in active record class "Business".' in C:\xampp\htdocs\ecommercejb\framework\db\ar\CActiveFinder.php:211
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\db\ar\CActiveFinder.php(48): CActiveFinder->buildJoinTree(Object(CJoinElement), 'idBusiness')
+#1 C:\xampp\htdocs\ecommercejb\framework\db\ar\CActiveRecord.php(1549): CActiveFinder->__construct(Object(Business), 'idBusiness')
+#2 C:\xampp\htdocs\ecommercejb\framework\web\CActiveDataProvider.php(179): CActiveRecord->count(Object(CDbCriteria))
+#3 C:\xampp\htdocs\ecommercejb\framework\web\CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\CActiveDataProvider.php(129): CDataProvider->getTotalItemCount()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#6 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(107): CDataProvider->getData()
+#7 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(314): CBaseListView->init()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(147): CGridView->init()
+#9 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#10 C:\xampp\htdocs\ecommercejb\protected\views\account\beli.php(69): CBaseController->widget('zii.widgets.gri...', Array)
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#12 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#13 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#14 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): CController->renderPartial('beli', Array, true)
+#15 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(89): CController->render('beli', Array)
+#16 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): AccountController->actionBeli()
+#17 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#18 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#20 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#24 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('beli')
+#26 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('account/beli')
+#27 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#28 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#29 {main}
+REQUEST_URI=/ecommerceJB/index.php/account/beli
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/account/watchlist?kategori=1
+---
+2013/07/24 06:27:22 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '::app()->user->id) AND (idBusiness.id_category=1))' at line 1. The SQL statement executed was: SELECT COUNT(DISTINCT `t`.`id`) FROM `email` `t`  LEFT OUTER JOIN `business` `idBusiness` ON (`t`.`id_business`=`idBusiness`.`id`)  WHERE ((idBusiness.id_user = Yii::app()->user->id) AND (idBusiness.id_category=1)).
+in C:\xampp\htdocs\ecommercejb\protected\views\account\beli.php (69)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (89)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/24 06:27:22 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '::app()->user->id) AND (idBusiness.id_category=1))' at line 1. The SQL statement executed was: SELECT COUNT(DISTINCT `t`.`id`) FROM `email` `t`  LEFT OUTER JOIN `business` `idBusiness` ON (`t`.`id_business`=`idBusiness`.`id`)  WHERE ((idBusiness.id_user = Yii::app()->user->id) AND (idBusiness.id_category=1))' in C:\xampp\htdocs\ecommercejb\framework\db\CDbCommand.php:541
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\db\CDbCommand.php(432): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 C:\xampp\htdocs\ecommercejb\framework\db\ar\CActiveFinder.php(718): CDbCommand->queryScalar()
+#2 C:\xampp\htdocs\ecommercejb\framework\db\ar\CActiveFinder.php(151): CJoinElement->count(Object(CDbCriteria))
+#3 C:\xampp\htdocs\ecommercejb\framework\db\ar\CActiveRecord.php(1550): CActiveFinder->count(Object(CDbCriteria))
+#4 C:\xampp\htdocs\ecommercejb\framework\web\CActiveDataProvider.php(179): CActiveRecord->count(Object(CDbCriteria))
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CActiveDataProvider.php(129): CDataProvider->getTotalItemCount()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#8 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(107): CDataProvider->getData()
+#9 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(314): CBaseListView->init()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(147): CGridView->init()
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#12 C:\xampp\htdocs\ecommercejb\protected\views\account\beli.php(69): CBaseController->widget('zii.widgets.gri...', Array)
+#13 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#14 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#15 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#16 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): CController->renderPartial('beli', Array, true)
+#17 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(89): CController->render('beli', Array)
+#18 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): AccountController->actionBeli()
+#19 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#20 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#21 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#22 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#23 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#24 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#25 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#26 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#27 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('beli')
+#28 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('account/beli')
+#29 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#30 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#31 {main}
+REQUEST_URI=/ecommerceJB/index.php/account/beli
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/account/watchlist?kategori=1
+---
+2013/07/24 06:54:06 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\ecommercejb\protected\views\account\_columnDeskripsi.php:2)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): AccountController->renderFile()
+#1 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(1059): AccountController->renderPartial()
+#2 unknown(0): AccountController->gridDeskripsi()
+#3 C:\xampp\htdocs\ecommercejb\framework\base\CComponent.php(611): call_user_func_array()
+#4 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CDataColumn.php(131): CDataColumn->evaluateExpression()
+#5 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridColumn.php(144): CDataColumn->renderDataCellContent()
+#6 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(589): CDataColumn->renderDataCell()
+#7 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(545): CGridView->renderTableRow()
+#8 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(455): CGridView->renderTableBody()
+#9 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(160): CGridView->renderItems()
+#10 unknown(0): CGridView->renderSection()
+#11 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(143): preg_replace_callback()
+#12 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(128): CGridView->renderContent()
+#13 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(173): CGridView->run()
+#14 C:\xampp\htdocs\ecommercejb\protected\views\account\beli.php(50): AccountController->widget()
+#15 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(126): require()
+#16 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(95): AccountController->renderInternal()
+#17 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): AccountController->renderFile()
+#18 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): AccountController->renderPartial()
+#19 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(90): AccountController->render()
+#20 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): AccountController->actionBeli()
+#21 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#22 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): AccountController->runAction()
+#23 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#24 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#25 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): AccountController->filterAccessControl()
+#26 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#27 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#28 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): AccountController->runActionWithFilters()
+#29 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): AccountController->run()
+#30 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#31 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#32 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/account/beli
+in C:\xampp\htdocs\ecommercejb\protected\views\account\_columnDeskripsi.php (2)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (1059)
+in C:\xampp\htdocs\ecommercejb\protected\views\account\beli.php (50)
+2013/07/24 07:05:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php:650
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(258): AccountController->loadModel('4')
+#1 [internal function]: AccountController->actionView('4')
+#2 C:\xampp\htdocs\ecommercejb\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(AccountController), Array)
+#3 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(AccountController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('view')
+#13 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('account/view')
+#14 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/ecommerceJB/index.php/account/4
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/account/beli?kategori=1
+---
+2013/07/24 07:21:49 [error] [exception.CException] exception 'CException' with message 'Property "CGridView.sortableAttributes" is not defined.' in C:\xampp\htdocs\ecommercejb\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWidgetFactory.php(161): CComponent->__set('sortableAttribu...', '')
+#1 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(AccountController), 'zii.widgets.gri...', Array)
+#2 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#3 C:\xampp\htdocs\ecommercejb\protected\views\account\beli.php(51): CBaseController->widget('zii.widgets.gri...', Array)
+#4 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): CController->renderPartial('beli', Array, true)
+#8 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(90): CController->render('beli', Array)
+#9 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): AccountController->actionBeli()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('beli')
+#19 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('account/beli')
+#20 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/ecommerceJB/index.php/account/beli?kategori=1
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/account/beli?kategori=2
+---
+2013/07/24 07:31:39 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\ecommercejb\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('detail')
+#9 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('cariBisnisFranc...')
+#10 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/ecommerceJB/index.php/cariBisnisFranchise/detail/29
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/cariBisnisFranchise
+---
+2013/07/24 07:31:46 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\ecommercejb\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('detail')
+#9 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('cariBisnisFranc...')
+#10 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/ecommerceJB/index.php/cariBisnisFranchise/detail/29/5
+---
+2013/07/24 07:48:22 [error] [exception.CException] exception 'CException' with message 'Property "Email.id_category" is not defined.' in C:\xampp\htdocs\ecommercejb\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\db\ar\CActiveRecord.php(143): CComponent->__get('id_category')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CComponent.php(606) : eval()'d code(1): CActiveRecord->__get('id_category')
+#2 C:\xampp\htdocs\ecommercejb\framework\base\CComponent.php(606): eval()
+#3 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CButtonColumn.php(316): CComponent->evaluateExpression('Yii::app()->cre...', Array)
+#4 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CButtonColumn.php(295): CButtonColumn->renderButton('view', Array, 0, Object(Email))
+#5 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridColumn.php(144): CButtonColumn->renderDataCellContent(0, Object(Email))
+#6 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(589): CGridColumn->renderDataCell(0)
+#7 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(545): CGridView->renderTableRow(0)
+#8 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(455): CGridView->renderTableBody()
+#9 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(160): CGridView->renderItems()
+#10 [internal function]: CBaseListView->renderSection(Array)
+#11 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(143): preg_replace_callback('/{(\w+)}/', Array, '{summary}?{item...')
+#12 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(128): CBaseListView->renderContent()
+#13 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(173): CBaseListView->run()
+#14 C:\xampp\htdocs\ecommercejb\protected\views\account\beli.php(51): CBaseController->widget('zii.widgets.gri...', Array)
+#15 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#16 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#17 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#18 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): CController->renderPartial('beli', Array, true)
+#19 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(91): CController->render('beli', Array)
+#20 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): AccountController->actionBeli()
+#21 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#22 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#23 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#24 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#25 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#26 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#27 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#28 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#29 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('beli')
+#30 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('account/beli')
+#31 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#32 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#33 {main}
+REQUEST_URI=/ecommerceJB/index.php/account/beli
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/account/index
+---
+2013/07/24 07:48:40 [error] [php] Use of undefined constant id_category - assumed 'id_category' (C:\xampp\htdocs\ecommercejb\framework\base\CComponent.php(606) : eval()'d code:1)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CButtonColumn.php(295): CButtonColumn->renderButton()
+#1 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridColumn.php(144): CButtonColumn->renderDataCellContent()
+#2 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(589): CButtonColumn->renderDataCell()
+#3 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(545): CGridView->renderTableRow()
+#4 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(455): CGridView->renderTableBody()
+#5 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(160): CGridView->renderItems()
+#6 unknown(0): CGridView->renderSection()
+#7 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(143): preg_replace_callback()
+#8 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(128): CGridView->renderContent()
+#9 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(173): CGridView->run()
+#10 C:\xampp\htdocs\ecommercejb\protected\views\account\beli.php(51): AccountController->widget()
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(126): require()
+#12 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(95): AccountController->renderInternal()
+#13 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): AccountController->renderFile()
+#14 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): AccountController->renderPartial()
+#15 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(91): AccountController->render()
+#16 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): AccountController->actionBeli()
+#17 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#18 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): AccountController->runAction()
+#19 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#20 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#21 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): AccountController->filterAccessControl()
+#22 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#23 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#24 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): AccountController->runActionWithFilters()
+#25 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): AccountController->run()
+#26 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#27 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#28 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/account/beli
+in C:\xampp\htdocs\ecommercejb\protected\views\account\beli.php (51)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (91)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/24 07:50:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "ecommerceJB/index.php/account/beli".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('ecommerceJB/ind...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/ecommerceJB/index.php/account/beli?kategori=1
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/cariBisnisFranchise/detail/29?kategori=1
+---
+2013/07/24 07:53:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "ecommerceJB/index.php/cariBisnisFranchise/watchlist/29".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('ecommerceJB/ind...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/ecommerceJB/index.php/cariBisnisFranchise/watchlist/29
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/cariBisnisFranchise/detail/29?kategori=1
+---
+2013/07/24 07:59:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "ecommerceJB/index.php/cariBisnisFranchise/watchlist/29".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('ecommerceJB/ind...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/ecommerceJB/index.php/cariBisnisFranchise/watchlist/29?kategori=1
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/cariBisnisFranchise/detail/29?kategori=1
+---
+2013/07/24 08:04:08 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\ecommercejb\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('watchlist')
+#9 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('cariBisnisFranc...')
+#10 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/ecommerceJB/index.php/cariBisnisFranchise/watchlist/29/1
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/cariBisnisFranchise/detail/29?kategori=1
+---
+2013/07/24 09:37:47 [error] [php] Undefined variable: return_location (C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php:116)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): AccountController->runAction()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): AccountController->filterAccessControl()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): AccountController->runActionWithFilters()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): AccountController->run()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/account/watchlist
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (116)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/24 09:52:28 [error] [php] Undefined variable: return_kategori (C:\xampp\htdocs\ecommercejb\protected\controllers\CariBisnisFranchiseController.php:274)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CariBisnisFranchiseController->runAction()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CariBisnisFranchiseController->filterAccessControl()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CariBisnisFranchiseController->runActionWithFilters()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CariBisnisFranchiseController->run()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/cariBisnisFranchise/detail/29
+in C:\xampp\htdocs\ecommercejb\protected\controllers\CariBisnisFranchiseController.php (274)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/24 09:53:38 [error] [php] Undefined variable: kategori_return (C:\xampp\htdocs\ecommercejb\protected\controllers\CariBisnisFranchiseController.php:94)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CariBisnisFranchiseController->runAction()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CariBisnisFranchiseController->filterAccessControl()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CariBisnisFranchiseController->runActionWithFilters()
+#9 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CariBisnisFranchiseController->run()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/cariBisnisFranchise/watchlist/29?kategori=1&return=beli
+in C:\xampp\htdocs\ecommercejb\protected\controllers\CariBisnisFranchiseController.php (94)
+in C:\xampp\htdocs\ecommercejb\index.php (13)

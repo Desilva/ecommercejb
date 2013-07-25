@@ -48,6 +48,10 @@ return array(
                     'class' => 'ext.bootstrap.components.Bootstrap',
                     'responsiveCss' => true,
                 ),
+                'phpThumb'=>array(
+                    'class'=>'ext.EPhpThumb.EPhpThumb',
+                    'options'=>array()
+                ),
 		// uncomment the following to enable URLs in path-format
 		
 		'urlManager'=>array(

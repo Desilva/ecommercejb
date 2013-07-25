@@ -64,11 +64,26 @@ class CariBisnisFranchiseController extends Controller
         
         public function actionWatchlist($id)
         {
+            $id = $_GET['id'];
+            $return_location = "";
+            $return_kategori = "";
+            if(isset($_GET['return']) && isset($_GET['kategori']))
+            {
+                $return_location = $_GET['return'];
+                $return_kategori = $_GET['kategori'];
+            }
             $existing_watchlist = Watchlist::model()->findByAttributes(array('id_user'=>Yii::app()->user->id,'id_business'=>$id));
             if($existing_watchlist != '' || $existing_watchlist != null)
             {
                 $existing_watchlist->delete();
-                $this->redirect(Yii::app()->createUrl("cariBisnisFranchise/detail/$id"));
+                if($return_location != "" && $return_kategori != "")
+                {
+                    $this->redirect(Yii::app()->createUrl("cariBisnisFranchise/detail/$id?kategori=$return_kategori&return=$return_location"));
+                }
+                else
+                {
+                    $this->redirect(Yii::app()->createUrl("cariBisnisFranchise/detail/$id"));
+                }
             }
             else
             {
@@ -76,13 +91,18 @@ class CariBisnisFranchiseController extends Controller
                 $watchlist->id_user = Yii::app()->user->id;
                 $watchlist->id_business = $id;
                 $watchlist->save();
-                $this->redirect(Yii::app()->createUrl("cariBisnisFranchise/detail/$id"));
+                if($return_location != "" && $return_kategori != "")
+                {
+                    $this->redirect(Yii::app()->createUrl("cariBisnisFranchise/detail/$id?kategori=$return_kategori&return=$return_location"));
+                }
+                else
+                {
+                    $this->redirect(Yii::app()->createUrl("cariBisnisFranchise/detail/$id"));
+                }
             }
         }
         public function actionCari()
         {
-            var_dump($_GET);
-            die;
             $selectedSortValue = '5';
             if(isset($_POST['sort']))
             {
@@ -216,8 +236,19 @@ class CariBisnisFranchiseController extends Controller
             
         }
         
-        public function actionDetail($id)
+        /*
+         * Params: $returnId
+         */
+        public function actionDetail()
         {
+            $id = $_GET['id'];
+            $return_location = "";
+            $return_kategori = "";
+            if(isset($_GET['return']) && isset($_GET['kategori']))
+            {
+                $return_location = $_GET['return'];
+                $return_kategori = $_GET['kategori'];
+            }
             $model = Business::model()->with(array('idIndustri','idKota'))->findByPk($id);
             $jumlah_click = $model->jumlah_click;
             $jumlah_click += 1;
@@ -240,11 +271,11 @@ class CariBisnisFranchiseController extends Controller
             $list_bisnis_terkait = Business::model()->findAllByAttributes(array('id_industri'=>$model->id_industri,'id_category'=>$model->id_category),$criteria_bisnis_terkait);
             if(strtolower($model->idCategory->category) == 'bisnis')
             {
-                 $this->render('detail',array('model'=>$model,'bisnis_terkait'=>$list_bisnis_terkait,'watchlist'=>$watchlist_check));
+                 $this->render('detail',array('model'=>$model,'bisnis_terkait'=>$list_bisnis_terkait,'watchlist'=>$watchlist_check,'return_location'=>$return_location,'return_kategori'=>$return_kategori));
             }
             else if(strtolower($model->idCategory->category) == 'franchise')
             {
-                $this->render('detailFranchise',array('model'=>$model,'bisnis_terkait'=>$list_bisnis_terkait,'watchlist'=>$watchlist_check));
+                $this->render('detailFranchise',array('model'=>$model,'bisnis_terkait'=>$list_bisnis_terkait,'watchlist'=>$watchlist_check,'return_location'=>$return_location, 'return_kategori'=>$return_kategori));
             }
            
         }
@@ -252,10 +283,12 @@ class CariBisnisFranchiseController extends Controller
         
         public function actionKontakBisnis($id)
         {
-//            var_dump($_POST);
-//            die;
             $model = new Email();
             $business = Business::model()->findByPk($id);
+            if($business->id_user == Yii::app()->user->id)
+            {
+                $this->redirect(Yii::app()->createUrl("//cariBisnisFranchise/detail/$id"));
+            }
             $businessOwner = User::model()->findByPk($business->id_user);
             if(isset($_POST['Email']))
             {

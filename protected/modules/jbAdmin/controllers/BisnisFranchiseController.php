@@ -204,4 +204,10 @@ class BisnisFranchiseController extends Controller
 			Yii::app()->end();
 		}
 	}
+        
+        protected function gridDeskripsi($data, $row)
+        {
+            $model = Business::model()->findByPk($data->id);
+            return $this->renderPartial('_columnDeskripsi',array('model'=>$model),true);
+        }
 }

@@ -183,6 +183,7 @@
                                         'url' => Yii::app()->createUrl("account/upload"),
                                         'model' => $img_upload,
                                         'htmlOptions' => array('id'=>'business-form'),
+                                        'id'=>'upload1',
                                         'attribute' => 'file',
                                         'multiple' => true,
                                         'showForm'=> true,
@@ -220,27 +221,28 @@
 				<td><span><?php echo $form->labelEx($model,'dokumen'); ?></span></td>
 				<td>
                                 <?php
-//                                 $this->widget('ext.xupload.XUpload', array(
-//                                        'url' => Yii::app()->createUrl("account/uploadDoc"),
-//                                        'model' => $doc_upload,
-//                                        'htmlOptions' => array('id'=>'business-form'),
-//                                        'attribute' => 'docs',
-//                                        'multiple' => true,
-//                                        'showForm'=> true,
-//                                        'options'=>array(
-//                                            'acceptFileTypes'=> "js:/(\.|\/)(gif|jpe?g|png|pdf|doc|docx|xls|xlsx)$/i",
-//                                            'maxFileSize'=> 5000000,
-//                                        ),
-//                                        'formView' => 'application.views.account._xupload_1',
-//                                    ));
-                                    
-                                
-//                                $this->widget('CMultiFileUpload', array(
-//                                'model'=>$model,
-//                                'attribute'=>'dokumen',
-//                                'accept'=>'jpg|gif|png|pdf|doc|docx|xls|xlsx|txt',
-//                                )
-//                             ); 
+
+////                                 $this->widget('ext.xupload.XUpload', array(
+////                                        'url' => Yii::app()->createUrl("account/uploadDoc"),
+////                                        'model' => $doc_upload,
+////                                        'htmlOptions' => array('id'=>'business-form'),
+////                                        'attribute' => 'docs',
+////                                        'multiple' => true,
+////                                        'showForm'=> true,
+////                                        'options'=>array(
+////                                            'acceptFileTypes'=> "js:/(\.|\/)(gif|jpe?g|png|pdf|doc|docx|xls|xlsx)$/i",
+////                                            'maxFileSize'=> 5000000,
+////                                        ),
+////                                        'formView' => 'application.views.account._xupload_1',
+////                                    ));
+//                                    
+//                                
+////                                $this->widget('CMultiFileUpload', array(
+////                                'model'=>$model,
+////                                'attribute'=>'dokumen',
+////                                'accept'=>'jpg|gif|png|pdf|doc|docx|xls|xlsx|txt',
+////                                )
+////                            ); 
                                 ?></td>
 			</tr>
 		</table>

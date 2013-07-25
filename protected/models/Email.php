@@ -5,6 +5,7 @@
  *
  * The followings are the available columns in table 'email':
  * @property integer $id
+ * @property integer $id_user
  * @property integer $id_business
  * @property string $tanggal
  * @property string $alamat_email
@@ -14,6 +15,7 @@
  * @property string $status
  *
  * The followings are the available model relations:
+ * @property User $idUser
  * @property Business $idBusiness
  */
 class Email extends CActiveRecord
@@ -44,15 +46,15 @@ class Email extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_business, tanggal, no_telp, nama_pengirim', 'required'),
-			array('id_business', 'numerical', 'integerOnly'=>true),
+			array('id_user, id_business, tanggal, no_telp, nama_pengirim', 'required'),
+			array('id_user, id_business', 'numerical', 'integerOnly'=>true),
 			array('alamat_email, no_telp, nama_pengirim', 'length', 'max'=>100),
 			array('deskripsi', 'length', 'max'=>500),
 			array('status', 'length', 'max'=>50),
                         array('alamat_email','email'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, id_business, tanggal, alamat_email, no_telp, nama_pengirim, deskripsi, status', 'safe', 'on'=>'search'),
+			array('id, id_user, id_business, tanggal, alamat_email, no_telp, nama_pengirim, deskripsi, status', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -64,6 +66,7 @@ class Email extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'idUser' => array(self::BELONGS_TO, 'User', 'id_user'),
 			'idBusiness' => array(self::BELONGS_TO, 'Business', 'id_business'),
 		);
 	}
@@ -75,6 +78,7 @@ class Email extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
+			'id_user' => 'Id User',
 			'id_business' => 'Id Business',
 			'tanggal' => 'Tanggal',
 			'alamat_email' => 'Alamat Email',
@@ -97,6 +101,7 @@ class Email extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
+		$criteria->compare('id_user',$this->id_user);
 		$criteria->compare('id_business',$this->id_business);
 		$criteria->compare('tanggal',$this->tanggal,true);
 		$criteria->compare('alamat_email',$this->alamat_email,true);

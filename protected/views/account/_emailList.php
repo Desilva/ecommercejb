@@ -1,5 +1,6 @@
  <?php
-                $this->widget('bootstrap.widgets.TbExtendedGridView', array(
+                
+                $this->widget('zii.widgets.grid.CGridView', array(
                     'id'=>'emailGrid',
                     'itemsCssClass' => 'table table-striped',
                     'dataProvider' => $email,
@@ -9,15 +10,15 @@
                     'columns' => array(
                         array(
                             'name'=> 'tanggal',
-                            'value'=> 'Yii::app()->dateFormatter->format("y-MM-d", strtotime($data->tanggal))'
+                            'value'=> 'Yii::app()->dateFormatter->format("y-MM-dd", strtotime($data->tanggal))'
                         ),
                         array(
-                            'class' => 'bootstrap.widgets.TbRelationalColumn',
                             'name' => 'nama_pengirim',
-                            'url' => $this->createUrl('account/getEmailDesc'),
+                            'type' => 'raw',
+                            'value'=> array($this,'gridEmailDeskripsi')
                         ),
                         'no_telp',
                         'alamat_email'
                     ),
                 ));
-            ?>
+?>
