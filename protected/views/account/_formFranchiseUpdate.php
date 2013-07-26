@@ -132,20 +132,20 @@
                                          }
                                          else
                                          {
-                                             $this->widget('ext.xupload.XUpload', array(
-                                                'url' => Yii::app()->createUrl("account/upload"),
-                                                'model' => $img_upload,
-                                                'htmlOptions' => array('id'=>'business-form'),
-                                                'attribute' => 'file',
-                                                'multiple' => true,
-                                                'showForm'=> true,
-                                                'options'=>array(
-                                                    'maxNumberOfFiles'=> 5,
-                                                    'acceptFileTypes'=> "js:/(\.|\/)(gif|jpe?g|png)$/i",
-                                                    'maxFileSize'=> 2000000,
-                                                ),
-                                                'formView' => 'application.views.account._xupload',
-                                            ));
+//                                             $this->widget('ext.xupload.XUpload', array(
+//                                                'url' => Yii::app()->createUrl("account/upload"),
+//                                                'model' => $img_upload,
+//                                                'htmlOptions' => array('id'=>'business-form'),
+//                                                'attribute' => 'file',
+//                                                'multiple' => true,
+//                                                'showForm'=> true,
+//                                                'options'=>array(
+//                                                    'maxNumberOfFiles'=> 5,
+//                                                    'acceptFileTypes'=> "js:/(\.|\/)(gif|jpe?g|png)$/i",
+//                                                    'maxFileSize'=> 2000000,
+//                                                ),
+//                                                'formView' => 'application.views.account._xupload',
+//                                            ));
                                          }
                                     
 //                                        $this->widget('ext.dropzone.EDropzone', array(
@@ -161,11 +161,11 @@
 			<tr>
 				<td></td>
 				<td>
+<!--					<img src="#" width="70" height="70"/>
 					<img src="#" width="70" height="70"/>
 					<img src="#" width="70" height="70"/>
 					<img src="#" width="70" height="70"/>
-					<img src="#" width="70" height="70"/>
-					<img src="#" width="70" height="70"/>
+					<img src="#" width="70" height="70"/>-->
 				</td>
 			</tr>
 			<tr>
@@ -184,7 +184,7 @@
                         echo CHtml::button('Batal', array('submit' => array("account/index/"), 'class'=>'styleSubmit2'));
                         //echo CHtml::button('Simpan Draft', array('submit' => array("account/update/"), 'class'=>'styleSubmit2')); 
                         echo CHtml::button('Lihat', array('submit' => array("account/preview"), 'class'=>'styleSubmit2')); 
-                        echo CHtml::button('Kirim', array('submit' => array("account/update/"), 'class'=>'styleSubmit2')); 
+                        echo CHtml::button('Kirim', array('submit' => array("account/update/$model->id"), 'class'=>'styleSubmit2')); 
                     }
                 ?>
 </div>

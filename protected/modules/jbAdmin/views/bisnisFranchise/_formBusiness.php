@@ -7,20 +7,7 @@
         
         <p style="clear:both"><?php echo $form->errorSummary($model); ?></p>
 	
-		<span style="float:right">
-                        <?php
-                          if(strtolower($model->status_approval) == 'terjual' || strtolower($model->status_approval)== 'tidak aktif')
-                          {
-                                echo '<strong>Status</strong>:'.$model->status_approval;
-                          }
-                          else
-                          {
-                                 echo $form->radioButtonList($model,'status_approval',array('Terjual' =>'Terjual', 'Tidak Aktif'=>'Non Aktifkan'),array('separator'=>'&nbsp;'));
-                          }
-                        ?>
-		</span>
 		<br style="clear:both"/>
-                <?php echo $form->hiddenField($model,'id_user',array('value'=>Yii::app()->user->id)) ?>
 		<table>
 			<tr>
 				<td><span><?php echo $form->labelEx($model,'id_category'); ?></span></td>
@@ -226,7 +213,7 @@
 //                                                ),
 //                                                'formView' => 'application.views.account._xupload',
 //                                            ));
-//                                         }
+                                         }
                                         
                                     
 //                                        $this->widget('ext.dropzone.EDropzone', array(
@@ -237,7 +224,7 @@
 //                                            'onSuccess' => 'someJsFunction();',
 //                                            'options' => array('autoProcessQueue'=>false),
 //                                        ));
-                                         } ?>
+//                                    ?>
                                     
                                 </td>
 			</tr>
@@ -281,20 +268,10 @@
 		</table>
 		<hr/>
                 <?php
-                    if(strtolower($model->status_approval) == 'terjual' || strtolower($model->status_approval)== 'tidak aktif')
-                    {
-                        echo CHtml::button('Kembali', array('submit' => array("account/index/"), 'class'=>'styleSubmit2'));
-                    }
-                    else
-                    {
-                        echo CHtml::button('Batal', array('submit' => array("account/index/"), 'class'=>'styleSubmit2'));
-                        //echo CHtml::button('Simpan Draft', array('submit' => array("account/update"), 'class'=>'styleSubmit2')); 
-                        echo CHtml::button('Lihat', array('submit' => array("account/preview"), 'class'=>'styleSubmit2')); 
-                        echo CHtml::button('Kirim', array('submit' => array("account/update/$model->id"), 'class'=>'styleSubmit2')); 
-                    }
+                        echo CHtml::button('Batal', array('submit' => array("bisnisFranchise/index/"), 'class'=>'styleSubmit2'));
+                        echo CHtml::button('Simpan', array('submit' => array("bisnisFranchise/update/id/$model->id"), 'class'=>'styleSubmit2')); 
+                        echo CHtml::button('Tolak', array('submit' => array("bisnisFranchise/tolak/id/$model->id"), 'class'=>'styleSubmit2')); 
+                        echo CHtml::button('Terima', array('submit' => array("bisnisFranchise/update/id/$model->id/stat/Diterima"), 'class'=>'styleSubmit2')); 
                 ?>
-                
-                
-                
 </div>
 <?php $this->endWidget(); ?>

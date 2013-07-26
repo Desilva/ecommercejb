@@ -1,7 +1,12 @@
 <div>
         <?php $form=$this->beginWidget('CActiveForm', array(
             'id'=>'business-form',
-            'enableAjaxValidation'=>false,
+            'enableAjaxValidation'=>true,
+            'clientOptions' => array(
+                    'validateOnSubmit'=>true,
+                    'validateOnChange'=>true,
+                    'validateOnType'=>false,
+            ),
             'htmlOptions' => array('enctype' => 'multipart/form-data'),
     )); ?>
         <p style="clear:both"><?php echo $form->errorSummary($model); ?></p>
@@ -178,6 +183,7 @@
                                     <div id="files" class="files"></div>
                                     <br>-->
                                     <?php 
+
                                         $this->widget('ext.xupload.XUpload', array(
                                         'url' => Yii::app()->createUrl("account/upload"),
                                         'model' => $img_upload,
@@ -202,7 +208,7 @@
 //                                            'onSuccess' => 'someJsFunction();',
 //                                            'options' => array('autoProcessQueue'=>false),
 //                                        ));
-//                                    ?>
+                                    ?>
                                     
                                 </td>
 			</tr>
@@ -220,36 +226,79 @@
 				<td><span><?php echo $form->labelEx($model,'dokumen'); ?></span></td>
 				<td>
                                 <?php
+//                                                    $this->widget('bootstrap.widgets.TbTabs', array(
+//                                    'type' => 'tabs', // 'tabs' or 'pills'
+//                                    'tabs' => array(
+//                                        array('label' => 'Docs', 'content' => $this->renderPartial('_docUpload', array('doc_upload' => $doc_upload),true), 'active' => true),
+//                                        array('label' => 'Image', 'content' => $this->renderPartial('_imgUpload', array('img_upload' => $img_upload),true)),
+//                                    ),
+//                                )); 
+//                                 $this->widget('ext.xupload.XUpload', array(
+//                                        'url' => Yii::app()->createUrl("account/uploadDoc"),
+//                                        'model' => $doc_upload,
+//                                        'htmlOptions' => array('id'=>'business-form'),
+//                                        'attribute' => 'docs',
+//                                        'multiple' => true,
+//                                        'showForm'=> true,
+//                                        'options'=>array(
+//                                            'acceptFileTypes'=> "js:/(\.|\/)(gif|jpe?g|png|pdf|doc|docx|xls|xlsx)$/i",
+//                                            'maxFileSize'=> 5000000,
+//                                        ),
+//                                        'formView' => 'application.views.account._xupload',
+//                                    ));
+                                                    
+//                                                    $this->widget('CMultiFileUpload', array(
+//                                'model'=>$model,
+//                                'attribute'=>'dokumen',
+//                                'accept'=>'jpg|gif|png|pdf|doc|docx|xls|xlsx|txt',
+//                                )
+//                            );
 
-////                                 $this->widget('ext.xupload.XUpload', array(
-////                                        'url' => Yii::app()->createUrl("account/uploadDoc"),
-////                                        'model' => $doc_upload,
-////                                        'htmlOptions' => array('id'=>'business-form'),
-////                                        'attribute' => 'docs',
-////                                        'multiple' => true,
-////                                        'showForm'=> true,
-////                                        'options'=>array(
-////                                            'acceptFileTypes'=> "js:/(\.|\/)(gif|jpe?g|png|pdf|doc|docx|xls|xlsx)$/i",
-////                                            'maxFileSize'=> 5000000,
-////                                        ),
-////                                        'formView' => 'application.views.account._xupload_1',
-////                                    ));
-//                                    
-//                                
-////                                $this->widget('CMultiFileUpload', array(
-////                                'model'=>$model,
-////                                'attribute'=>'dokumen',
-////                                'accept'=>'jpg|gif|png|pdf|doc|docx|xls|xlsx|txt',
-////                                )
-////                            ); 
+                                
+                               
                                 ?></td>
 			</tr>
 		</table>
 		<hr/>
                 <?php echo CHtml::button('Batal', array('submit' => array("account/index/"), 'class'=>'styleSubmit2')); ?>
-                <?php echo CHtml::button('Simpan Draft', array('submit' => array("account/create?stat=Draft"), 'class'=>'styleSubmit2')); ?>
+                <?php //echo CHtml::button('Simpan Draft', array('submit' => array("account/create?stat=Draft"), 'class'=>'styleSubmit2')); ?>
+                <?php echo CHtml::ajaxSubmitButton('Simpan Draft',CHtml::normalizeUrl(array('account/create','render'=>true)),
+                 array(
+                     'dataType'=>'json',
+                     'type'=>'post',
+                     'success'=>'function(data) {  
+                        if(data.status=="success"){
+                            draft();
+                        }
+                         else{
+                            formErrors(data,form="#business-form");
+                            document.location.href="#business-form_es_";
+                        }       
+                    }',                    
+                     'beforeSend'=>'function(){                        
+                           $("#AjaxLoader").show();
+                      }'
+                     ),array('class'=>'styleSubmit2')); ?>
 		<?php echo CHtml::button('Lihat', array('class'=>'styleSubmit2','onclick'=>"preview(this.form,'_blank')")); ?>
-		<?php echo CHtml::button('Kirim', array('submit' => array("account/create"), 'class'=>'styleSubmit2')); ?>
+		<?php // echo CHtml::button('Kirim', array('submit' => array("account/create"), 'class'=>'styleSubmit2')); ?>
+                <?php echo CHtml::ajaxSubmitButton('Kirim',CHtml::normalizeUrl(array('account/create','render'=>true)),
+                 array(
+                     'dataType'=>'json',
+                     'type'=>'post',
+                     'success'=>'function(data) {  
+                        if(data.status=="success"){
+                         $("#business-form").submit();
+                        }
+                         else{
+                            formErrors(data,form="#business-form");
+                            document.location.href="#business-form_es_";
+                        }       
+                    }',                    
+                     'beforeSend'=>'function(){                        
+                           $("#AjaxLoader").show();
+                      }'
+                     ),array('class'=>'styleSubmit2')); ?>
+
 </div>
 <div>
     
@@ -264,4 +313,33 @@
         f.submit();
         document.getElementById('business-form').target= '_self';
     }
+    
+    function draft()
+    {
+        $("#business-form").attr("action",'<?php echo Yii::app()->createUrl("//account/create",array("stat"=>"Draft")); ?>');
+        $("#business-form").submit();
+    }
+    
+    function formErrors(data,form){
+        var summary = '';
+        summary="<p>Please fix the following errors:</p><ul>";
+
+        $.each(data, function(key, val) {
+        summary = summary + "<li>" + val.toString() + "</li>";
+        });
+        summary += "</ul>";
+        $(form+"_es_").html(summary.toString());
+        $(form+"_es_").show();
+
+        $("[id^='update-button']").show();
+        $('#ajax-status').hide();//css({display:'none'});
+        $('#ajax-status').text('');
+}
+
+function hideFormErrors(form){
+        //alert (form+"_es_");
+        $(form+"_es_").html('');
+        $(form+"_es_").hide();
+        $("[id$='_em_']").html('');
+}
 </script>

@@ -14,18 +14,19 @@
     	<!--<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/jquery-1.5.1.min.js"></script>-->
 	<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/style.css" media="screen">
         <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/bootstrap.css" rel="stylesheet">
-        <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap-transition.js"></script>
+<!--        <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap-transition.js"></script>
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap-alert.js"></script>
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap-modal.js"></script>
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap-dropdown.js"></script>
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap-scrollspy.js"></script>
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap-tab.js"></script>
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap-tooltip.js"></script>
-        <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap-popover.js"></script>
+        
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap-button.js"></script>
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap-collapse.js"></script>
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap-carousel.js"></script>
-        <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap-typeahead.js"></script>
+        <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap-typeahead.js"></script>-->
+        <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap-popover.js"></script>
 </head>
     
 <body>
@@ -34,7 +35,7 @@
 	<div style="width:165px; height:165px; margin-left:135px; margin-bottom:23px;">
         	<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" width="150" height="150">
         </div>
-		<div id="sideBarDiv">
+				<div id="sideBarDiv">
                        
         <div class="menuMember">
                 <ul>
@@ -66,8 +67,12 @@
             <?php
 			if(!Yii::app()->user->isGuest){
 			?>
-				<a href="#"><span class="spanMenuLogin">Jual Bisnis/Franchise</span></a>
-				<a href="<?php echo Yii::app()->createUrl('//account/index') ?>"><span class="spanMenuLogin">Akun Saya</span></a>
+                                <?php if(Yii::app()->user->checkAccess("member")){ ?>
+                                    <a href="<?php echo Yii::app()->createUrl('//account/index') ?>"><span class="spanMenuLogin">Jual Bisnis/Franchise</span></a>
+                                    <a href="<?php echo Yii::app()->createUrl('//account/beli') ?>"><span class="spanMenuLogin">Akun Saya</span></a>
+                                <?php } else if(Yii::app()->user->checkAccess("admin")){ ?>
+                                    <a href="<?php echo Yii::app()->createUrl('//jbAdmin/') ?>"><span class="spanMenuLogin">Setting Admin</span></a>
+                                <?php } ?>
             <?php
 			}else{
 			?>
@@ -90,4 +95,5 @@
 
 </body>
 </html>
+       
        

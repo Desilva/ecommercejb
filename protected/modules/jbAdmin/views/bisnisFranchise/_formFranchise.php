@@ -1,22 +1,31 @@
 <div>
         <?php $form=$this->beginWidget('CActiveForm', array(
             'id'=>'business-form',
-            'enableAjaxValidation'=>true,
-            'clientOptions' => array(
-                    'validateOnSubmit'=>true,
-                    'validateOnChange'=>true,
-                    'validateOnType'=>false,
-            ),
+            'enableAjaxValidation'=>false,
             'htmlOptions' => array('enctype' => 'multipart/form-data'),
     )); ?>
-		<p style="clear:both"><?php echo $form->errorSummary($model); ?></p>
-                <?php echo $form->hiddenField($model,'id_user',array('value'=>Yii::app()->user->id)) ?>
-                <?php echo $form->hiddenField($model,'kepemilikan',array('value'=>'0')) ?>
+        <?php echo $form->errorSummary($model); ?>
+	
+		<br style="clear:both"/>
 		<table>
 			<tr>
 				<td><span><?php echo $form->labelEx($model,'id_category'); ?></span></td>
 				<td>
-					<?php echo $form->radioButtonList($model,'id_category',$kategori,array('onchange'=>'changeCategory(1)')) ?>
+					<?php echo $form->hiddenField($model,'id_category'); ?>
+					<?php 
+                                            if($model->id_category == 1)
+                                            {
+                                                echo "Bisnis";
+                                            }
+                                            else if($model->id_category == 2)
+                                            {
+                                                echo "Franchise";
+                                            }
+                                            else
+                                            {
+                                                echo "Error";
+                                            }
+                                        ?>
 				</td>
 			</tr>
 			<tr>
@@ -35,7 +44,7 @@
 				</td>
 			</tr>
 			<tr>
-                                 <?php echo Chtml::hiddenField('sub_industri_temp', $model->id_sub_industri) ?>
+                             <?php echo Chtml::hiddenField('sub_industri_temp', $model->id_sub_industri) ?>
 				<td><span><?php echo $form->labelEx($model,'id_sub_industri'); ?></span></td>
 				<td>
                                     <?php echo $form->dropDownList($model,'id_sub_industri',array(),array('prompt'=>'Pilih Sub Industri','class'=>'styleSelect2')); ?>
@@ -104,20 +113,27 @@
 			<tr>
 				<td><span><?php echo $form->labelEx($model,'image'); ?></span></td>
 				<td><?php 
-                                        $this->widget('ext.xupload.XUpload', array(
-                                        'url' => Yii::app()->createUrl("account/upload"),
-                                        'model' => $img_upload,
-                                        'htmlOptions' => array('id'=>'business-form'),
-                                        'attribute' => 'file',
-                                        'multiple' => true,
-                                        'showForm'=> true,
-                                        'options'=>array(
-                                            'maxNumberOfFiles'=> 5,
-                                            'acceptFileTypes'=> "js:/(\.|\/)(gif|jpe?g|png)$/i",
-                                            'maxFileSize'=> 2000000,
-                                        ),
-                                        'formView' => 'application.views.account._xupload',
-                                    ));
+                                       if(strtolower($model->status_approval) == 'terjual' || strtolower($model->status_approval)== 'tidak aktif')
+                                         {
+                                             //list image
+                                         }
+                                         else
+                                         {
+//                                             $this->widget('ext.xupload.XUpload', array(
+//                                                'url' => Yii::app()->createUrl("account/upload"),
+//                                                'model' => $img_upload,
+//                                                'htmlOptions' => array('id'=>'business-form'),
+//                                                'attribute' => 'file',
+//                                                'multiple' => true,
+//                                                'showForm'=> true,
+//                                                'options'=>array(
+//                                                    'maxNumberOfFiles'=> 5,
+//                                                    'acceptFileTypes'=> "js:/(\.|\/)(gif|jpe?g|png)$/i",
+//                                                    'maxFileSize'=> 2000000,
+//                                                ),
+//                                                'formView' => 'application.views.account._xupload',
+//                                            ));
+                                         }
                                     
 //                                        $this->widget('ext.dropzone.EDropzone', array(
 //                                            'model' => $model,
@@ -132,11 +148,11 @@
 			<tr>
 				<td></td>
 				<td>
+<!--					<img src="#" width="70" height="70"/>
 					<img src="#" width="70" height="70"/>
 					<img src="#" width="70" height="70"/>
 					<img src="#" width="70" height="70"/>
-					<img src="#" width="70" height="70"/>
-					<img src="#" width="70" height="70"/>
+					<img src="#" width="70" height="70"/>-->
 				</td>
 			</tr>
 			<tr>
@@ -145,80 +161,11 @@
 			</tr>
 		</table>
 		<hr/>
-                <?php echo CHtml::button('Batal', array('submit' => array("account/index/"), 'class'=>'styleSubmit2')); ?>
-                <?php //echo CHtml::button('Simpan Draft', array('submit' => array("account/create?stat=Draft"), 'class'=>'styleSubmit2')); ?>
-		<?php echo CHtml::ajaxSubmitButton('Simpan Draft',CHtml::normalizeUrl(array('account/create','render'=>true)),
-                 array(
-                     'dataType'=>'json',
-                     'type'=>'post',
-                     'success'=>'function(data) {  
-                        if(data.status=="success"){
-                            draft();
-                        }
-                         else{
-                            formErrors(data,form="#business-form");
-                            document.location.href="#business-form_es_";
-                        }       
-                    }',                    
-                     'beforeSend'=>'function(){                        
-                           $("#AjaxLoader").show();
-                      }'
-                     ),array('class'=>'styleSubmit2')); ?>
-                <?php echo CHtml::button('Lihat', array('class'=>'styleSubmit2','onclick'=>"preview(this.form,'_blank')")); ?>
-		<?php //echo CHtml::button('Kirim', array('submit' => array("account/create"), 'class'=>'styleSubmit2')); ?>
-                 <?php echo CHtml::ajaxSubmitButton('Kirim',CHtml::normalizeUrl(array('account/create','render'=>true)),
-                 array(
-                     'dataType'=>'json',
-                     'type'=>'post',
-                     'success'=>'function(data) {  
-                        if(data.status=="success"){
-                         $("#business-form").submit();
-                        }
-                         else{
-                            formErrors(data,form="#business-form");
-                            document.location.href="#business-form_es_";
-                        }       
-                    }',                    
-                     'beforeSend'=>'function(){                        
-                           $("#AjaxLoader").show();
-                      }'
-                     ),array('class'=>'styleSubmit2')); ?>
+                <?php
+                        echo CHtml::button('Batal', array('submit' => array("bisnisFranchise/index/"), 'class'=>'styleSubmit2'));
+                        echo CHtml::button('Simpan', array('submit' => array("bisnisFranchise/update/id/$model->id"), 'class'=>'styleSubmit2')); 
+                        echo CHtml::button('Tolak', array('submit' => array("bisnisFranchise/preview"), 'class'=>'styleSubmit2')); 
+                        echo CHtml::button('Terima', array('submit' => array("bisnisFranchise/update/id/$model->id/stat/Diterima"), 'class'=>'styleSubmit2')); 
+                ?>
 </div>
 <?php $this->endWidget(); ?>
-<script>
-    function preview(f,newtarget)
-    {
-        document.getElementById('business-form').target= newtarget;
-        document.getElementById('business-form').action= '<?php echo Yii::app()->createUrl('//account/preview') ?>' 
-        f.submit();
-        document.getElementById('business-form').target= '_self';
-    }
-        function draft()
-    {
-        $("#business-form").attr("action",'<?php echo Yii::app()->createUrl("//account/create",array("stat"=>"Draft")); ?>');
-        $("#business-form").submit();
-    }
-    
-    function formErrors(data,form){
-        var summary = '';
-        summary="<p>Please fix the following errors:</p><ul>";
-
-        $.each(data, function(key, val) {
-        summary = summary + "<li>" + val.toString() + "</li>";
-        });
-        summary += "</ul>";
-        $(form+"_es_").html(summary.toString());
-        $(form+"_es_").show();
-
-        $("[id^='update-button']").show();
-        $('#ajax-status').hide();//css({display:'none'});
-        $('#ajax-status').text('');
-}
-
-function hideFormErrors(form){
-        //alert (form+"_es_");
-        $(form+"_es_").html('');
-        $(form+"_es_").hide();
-        $("[id$='_em_']").html('');
-}
-</script>

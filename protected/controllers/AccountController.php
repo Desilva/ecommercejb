@@ -276,8 +276,8 @@ class AccountController extends Controller
 //            var_dump($_FILES);
 //            var_dump(Yii::app()->user->getState('images'));
             Yii::import("ext.xupload.models.XUploadForm");
-            $img_upload = new XUploadForm;
-            $doc_upload = new XUploadForm;
+            $img_upload = new XUploadForm();
+            $doc_upload = new XUploadForm();
 		$model=new Business;
                 $list_alasan_jual_bisnis = array(
                     "Alasan 1"=>"Alasan 1",
@@ -318,6 +318,26 @@ class AccountController extends Controller
 
 		if(isset($_POST['Business']))
                 {
+                    if(Yii::app()->request->isAjaxRequest)
+                    {
+                        $model->attributes=$_POST['Business'];
+                        $valid=$model->validate();            
+                        if($valid){
+                                          
+                           //do anything here
+                             echo CJSON::encode(array(
+                                  'status'=>'success'
+                             ));
+                            Yii::app()->end();
+                            }
+                            else{
+                                $error = CActiveForm::validate($model);
+                                if($error!='[]')
+                                    echo $error;
+                                Yii::app()->end();
+                            }
+                    }
+                    
                     if(isset($_GET['stat']))
                     {
                         $status_approval = $_GET['stat'];
@@ -426,7 +446,7 @@ class AccountController extends Controller
                     }
                     if($model->save()) 
                         $this->redirect('index');
-                }
+               }
         Yii::app()->user->setState('images', null);
         $this->render('create',array(
                         'jenis'=>$jenis,
@@ -508,7 +528,7 @@ class AccountController extends Controller
 //                    var_dump($dokumen);
 //                    die;
                     $model->attributes = $_POST['Business'];
-//                    $model->status_approval = $status_approval;
+                    $model->status_approval = $status_approval;
                     if(isset($_POST['Business']['alasan_jual_lainnya']))
                     {
                          $model->alasan_jual_lainnya = $_POST['Business']['alasan_jual_lainnya'];
@@ -551,20 +571,6 @@ class AccountController extends Controller
                                         {
                                             chmod( $path .'bf'.'_'. Yii::app()->user->id .'_'.$date.'_'.$i.'.'.$extension, 0777);
                                             $imgName .= 'bf'.'_'. Yii::app()->user->id .'_'.$date.'_'.$i.'.'.$extension.',';
-    //                                        $img = new Image( );
-    //                                        $img->size = $image["size"];
-    //                                        $img->mime = $image["mime"];
-    //                                        $img->name = $image["name"];
-    //                                        $img->source = "/images/uploads/{$this->id}/" . $image["filename"];
-    //                                        $img->somemodel_id = $this->id;
-    //                                        if(!$img->save())
-    //                                        {
-    //                                            //Its always good to log something
-    //                                            Yii::log("Could not save Image:\n" . CVarDumper::dumpAsString(
-    //                                                            $img->getErrors()), CLogger::LEVEL_ERROR);
-    //                                            //this exception will rollback the transaction
-    //                                            throw new Exception('Could not save Image');
-    //                                        }
                                         }
                                     }
                                     else
