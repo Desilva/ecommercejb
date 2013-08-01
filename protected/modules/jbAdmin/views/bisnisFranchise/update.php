@@ -1,30 +1,27 @@
-<?php
-$this->breadcrumbs=array(
-	'Businesses'=>array('index'),
-	$model->id=>array('view','id'=>$model->id),
-	'Update',
-);
+<div class="row-fluid">
+	<div class="span2">
+    	 <?php if(!empty($this->clips['sidebar'])) echo
+                            $this->clips['sidebar']?>
+    </div>
+    <div class="span10">
+    	<h4 class="Font-Color-DarkBlue">Update <?php echo $model->nama ?></h4>
+            <?php
+                if($model->idCategory->category == "Bisnis")
+                {
+                    echo $this->renderPartial('_formBusiness', array('model'=>$model,'kategori'=>$kategori,'kepemilikan'=>$kepemilikan,'tahun'=>$tahun,'industri'=>$industri,'provinsi'=>$provinsi,'alasan_jual_bisnis'=>$alasan_jual_bisnis,'img_upload'=>$img_upload,'doc_upload'=>$doc_upload)); 
+                }
+                else if($model->idCategory->category == "Franchise")
+                {
+                    echo $this->renderPartial('_formFranchise', array('model'=>$model,'kategori'=>$kategori,'industri'=>$industri,'provinsi'=>$provinsi,'img_upload'=>$img_upload,'doc_upload'=>$doc_upload)); 
+                }
+                else
+                {
+                    echo "Error";
 
-$this->menu=array(
-	array('label'=>'List Business', 'url'=>array('index')),
-	array('label'=>'Create Business', 'url'=>array('create')),
-	array('label'=>'View Business', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Business', 'url'=>array('admin')),
-);
-?>
-
-<header style="float:left; font-size:30px; font-family:Calibri;">Update/View Bisnis</header>
-
-<?php
-    if($jenis== 1) //bisnis
-    {
-        echo $this->renderPartial('_formBusiness', array('model'=>$model,'kategori'=>$kategori,'kepemilikan'=>$kepemilikan,'tahun'=>$tahun,'industri'=>$industri,'provinsi'=>$provinsi,'alasan_jual_bisnis'=>$alasan_jual_bisnis,'img_upload'=>$img_upload,'doc_upload'=>$doc_upload)); 
-    }
-    else //franchise
-    {
-        echo $this->renderPartial('_formFranchise', array('model'=>$model,'kategori'=>$kategori,'industri'=>$industri,'provinsi'=>$provinsi,'img_upload'=>$img_upload,'doc_upload'=>$doc_upload)); 
-    }
-?>
+                }
+            ?>
+    </div>
+</div>
 
 <script>
     $(document).ready(function(){
@@ -67,7 +64,7 @@ $this->menu=array(
         {
             var industri_id = document.getElementById('Business_id_industri').value;
             var selected_sub_industri = document.getElementById('sub_industri_temp').value
-            $('#Business_id_sub_industri').load('<?php echo Yii::app()->createUrl('//jbAdmin/bisnisFranchise/generateSubIndustri') ?>',{'industri':industri_id, 'selected_sub_industri':selected_sub_industri});
+            $('#Business_id_sub_industri').load('<?php echo Yii::app()->createUrl('//account/generateSubIndustri') ?>',{'industri':industri_id, 'selected_sub_industri':selected_sub_industri});
 
         }
        
@@ -77,7 +74,7 @@ $this->menu=array(
         {
             var provinsi_id = document.getElementById('Business_id_provinsi').value;
             var selected_kota = document.getElementById('kota_temp').value
-            $('#Business_id_kota').load('<?php echo Yii::app()->createUrl('//jbAdmin/bisnisFranchise/generateKota') ?>',{'provinsi':provinsi_id, 'selected_kota':selected_kota});
+            $('#Business_id_kota').load('<?php echo Yii::app()->createUrl('//account/generateKota') ?>',{'provinsi':provinsi_id, 'selected_kota':selected_kota});
 
         }
     }

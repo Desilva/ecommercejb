@@ -1,16 +1,13 @@
-<div style="height:600px;">
-	<div style=""><header style="font-size:40px; font-family:Calibri;">Kontak <?php echo $business->nama ?></header></div>
-    <div style="height:500px;">
-    	<div id="kontakDiv">
-        <?php
+<div class="row-fluid">
+	<div class="span12">
+            <?php
             $form = $this->beginWidget('CActiveForm', array(
                 'id' => 'business-contact-form',
                 'enableAjaxValidation' => false,
             ));
         ?>
-        <?php echo $form->errorSummary($model); ?>
-       
-            <?php echo $form->hiddenField($model,'id_business',array('value'=> $business->id));
+            <p><?php echo $form->errorSummary($model); ?></p>
+             <?php echo $form->hiddenField($model,'id_business',array('value'=> $business->id));
                   echo $form->hiddenField($model,'tanggal',array('value'=> date('y-m-d')));
                   echo $form->hiddenField($model,'id_user',array('value'=> Yii::app()->user->id));
                   $harga_min = (int)$business->harga_min;
@@ -30,38 +27,44 @@
                       echo $form->hiddenField($model,'status',array('value'=> '0'));
                   }
             ?>
-            	<table id="tableDiv">
-            		<tr>
-                        <td style="color:#0f75bd"><?php echo $form->labelEx($model,'nama_pengirim'); ?></td>
-                    	<td><?php echo $form->textField($model,'nama_pengirim',array('class'=>'longText')); ?></td>
-                	</tr>
-                    <tr>
-                    	<td style="color:#0f75bd"><?php echo $form->labelEx($model,'no_telp'); ?></td>
-                        <td><?php echo $form->textField($model,'no_telp',array('class'=>'longText')); ?></td>
-                    </tr>
-                    <tr>
-                    	<td style="color:#0f75bd"><?php echo $form->labelEx($model,'alamat_email'); ?></td>
-                        <td><?php echo $form->textField($model,'alamat_email',array('class'=>'longText')); ?></td>
-                    </tr>
-                    <tr>
-                    	<td style="color:#0f75bd"><?php echo $form->labelEx($model,'deskripsi'); ?></td>
-                        <td><?php echo $form->textArea($model,'deskripsi',array('class'=>'styleTextarea1')); ?></td>
-                    </tr>
-            	</table>
-            <input type="submit" value="Kirim" class='styleSubmit2'/>
+        <div class="span10">
+        	<div class="span6 separator-Vertical">
+        	<h4 class="Font-Color-DarkBlue">Kontak <?php echo $business->nama ?></h4>
+        	<table>
+            	<tr>
+                	<th class="Text-Align-Left Font-Color-LightBlue"><?php echo $form->labelEx($model,'nama_pengirim'); ?></th>
+                    <td><?php echo $form->textField($model,'nama_pengirim'); ?></td>
+                </tr>
+                <tr>
+                	<th class="Text-Align-Left Font-Color-LightBlue"><?php echo $form->labelEx($model,'no_telp'); ?></th>
+                    <td><?php echo $form->textField($model,'no_telp'); ?></td>
+                </tr>
+                <tr>
+                	<th class="Text-Align-Left Font-Color-LightBlue"><?php echo $form->labelEx($model,'alamat_email'); ?></th>
+                    <td><?php echo $form->textField($model,'alamat_email'); ?></td>
+                </tr>
+                <tr>
+                	<th class="Text-Align-Left Font-Color-LightBlue"><?php echo $form->labelEx($model,'deskripsi'); ?></th>
+                    <td><?php echo $form->textArea($model,'deskripsi'); ?></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button type="submit" class="btn Gradient-Style1">Kirim</button></td>
+                </tr>
+            </table>
         </div>
         <?php $this->endWidget() ?>
         <?php if($business->tampilkanKontak == 1){ ?>
-            <div id="kontakDivMap">
-                    <h3 style="color:#0f75bd">Kontak</h3>
-                Untuk informasi lebih lanjut, harap hubungi kami di:<br/><p></p>
+            <div class="span6 Text-Align-Right">
+                    <h4 class="Font-Color-DarkBlue">Kontak</h4>
+                Untuk informasi lebih lanjut, harap hubungi kami di:<br/>
                 <?php echo $business_owner->first_name ?><br/>
                 <?php echo $business_owner->office_phone ?><br/>
                 <?php echo $business->nama ?><br/>
                 <?php echo $business->alamat ?><br/>
-                            <p></p>
-                            <p></p>
             </div>
         <?php }?>
+        </div>
     </div>
 </div>
+

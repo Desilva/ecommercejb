@@ -1,181 +1,98 @@
-<?php
-session_start();
-//session_destroy();
-if(isset($_SESSION['member'])){
-	$classMenu="spanMenuLogin";
-}else{
-	$classMenu="spanMenu";
-}
-?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
-	<link rel="stylesheet" href="css/style.css" media="screen">
-	<link href="css/assets/css/bootstrap.css" rel="stylesheet">
-	<link rel="stylesheet" href="orbit-1.2.3.css">
-		<script type="text/javascript" src="jquery-1.5.1.min.js"></script>
-		<script type="text/javascript" src="jquery.orbit-1.2.3.js"></script>	
-		
-			
-			     <style type="text/css">
-			         .timer { display: none !important; }
-			         div.caption { background:transparent; filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000,endColorstr=#99000000);zoom: 1; }
-			    </style>
-			
-		
-		
-		<script type="text/javascript">
-			$(window).load(function() {
-				$('#featured').orbit({
-					"bullets" : true,
-					"animation" :"horizontal-push"
-					});
-			});
-		</script>
-		<script type="text/javascript">
-			$(window).load(function() {
-				$('#featured2').orbit({
-					
-					"animation" :"horizontal-push"
-					});
-			});
-		</script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<link rel="stylesheet" href="library/Bootstrap/assets/css/bootstrap.css" />
+<link rel="stylesheet" href="library/Bootstrap/assets/css/bootstrap-responsive.css" />
+<link rel="stylesheet" href="style/style.css" />
+<script type="text/javascript">
+	$('#myTab a').click(function (e) {
+ 		e.preventDefault();
+  		$(this).tab('show');
+	})
+</script>
+<!--Start Slideshow---------------------------------------------------------------------------------------------------------->
+<link rel="stylesheet" href="library/Slideshow/css/bjqs.css" />
+<script type="text/javascript" src="library/Slideshow/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="library/Slideshow/js/bjqs-1.3.min.js"></script>
+<script>
+        jQuery(document).ready(function($) {
+          
+          $('#banner-slide').bjqs({
+            animtype      : 'slide',
+            height        : 320,
+            width         : 868,
+            responsive    : true,
+            randomstart   : true
+          });
+          
+        });
+      </script>
+<!--End Slideshow------------------------------------------------------------------------------------------------------------>
 </head>
-<body>
-	
-<div id="primaryDiv">
-	<div id="leftPrimaryDiv">
-		<div style="width:165px; height:165px; margin-left:135px; margin-bottom:23px;">
-        	<img src="images/logo.png" width="150" height="150">
-        </div>
-		<div id="sideBarDiv">
-			<?php
-				if($_GET['Sb']==1){
-					include "sidebar".$_GET['page'].".php";
-				}elseif($_GET['Sb']=="0"){
-					echo " ";
-				}else{
-			?>
-        	<table id="homeSidebar">
-            	<tr >
-            		<th id="titleSideBar"><h3 align="left">LATEST NEWS</h3></th>
-            	</tr>
-                <tr>
-                	<td><strong>ARTIKEL</strong></td>
-                </tr>
-                <tr>
-                	<td style="font-size:14px">Kemarin,Hari Ini dan Masa Depan<hr/></td>
-                </tr>
-                <tr>
-                	<Td ><strong>TIPS</strong></Td>
-                </tr>
-                <tr>
-                	<td style="font-size:14px;">Bermain Saham Sebagai Investasi<hr/></td>
-                </tr>
-                <tr>
-                	<td><strong>TUTORIAL</strong></td>
-                </tr>
-                <tr>
-                	<td style="font-size:14px;">Bagaimana Untuk Memulai?<hr/></td>
-                </tr>
-                <tr>
-                	<td><strong>PETUNJUK TERBARU</strong></td>
-                </tr>
-                <tr>
-                	<td style="font-size:14px;">Cara Registrasi Email Anda<hr/></td>
-                </tr>
-            </table>
-			<?php
-				}
-			?>
-        </div>
-	</div>
-	<div id="rightPrimaryDiv">
-    	<div id="loginDiv">
-        	<form method="post" action="login.php">
-        		<table width="579" id="loginTable">
-                	<tr>
-                    	<td width="89"><a href="?page=register">Member Baru</a></td>
-                        <td width="9">|</td>
-                        <td width="107">Lupa Password</td>
-                        <td width="122"><input id="textLoginNama" type="text" placeholder="Nama"/></td>
-                        <td width="122"><input id="textLoginPassword" type="text" placeholder="Kata Sandi"/></td>
-                        <td width="102"><input class="styleSubmit1" type="submit" value="Masuk"/></td>
-                    </tr>
-                    <tr>
-                    	<td></td>
-                        <td></td>
-                        <td></td>
-                       
-                    	<td colspan="2" align="right" style="padding-right:29px">
-                        	<div>
-                           		<input type="checkbox" id="checkbox5" class="css-checkbox" checked="checked"/>
-								<label  for="checkbox5" name="checkbox2_lbl" class="css-label lite-blue-check">Simpan Kata Sandi</label>
-                            </div>
-                        </td>
-                    	<td></td>
-                    </tr>
-                </table>
-        	</form>
-        </div>
-        <div id="menuDiv">
-        	<a href="index.php"><span id="leftSpanMenu"><img src="images/iconHome.png"/></span></a>
-			<?php
-			if(isset($_SESSION['member'])){
-			?>
-				<a href="?page=jualBisnisFranchise&&Sb=1"><span class="spanMenuLogin">Jual Bisnis/Franchise</span></a>
-				<a href="?page=jualBisnisFranchise&&Sb=1&&subPage=beli"><span class="spanMenuLogin">Akun Saya</span></a>
-            <?php
-			}else{
-			?>
-            	<a href="#"><span class="spanMenu">Jual Bisnis/Franchise</span></a>
-            <?php
-			}
-			?>
-			<a href="?page=cariBisnisFranchise&&Sb=1">
-				<span class="<?php echo $classMenu?>">Cari Bisnis/Franchise</span>
-			</a>
-            <a href="?page=layananKami&&Sb=0">
-				<span class="<?php echo $classMenu?>"><label class="labelSpanMenu">Layanan Kami</label></span>
-			</a>
-            <a href="?page=artikel&&Sb=1">
-				<span class="<?php echo $classMenu?>"><label class="labelSpanMenu">Artikel</label></span>
-			</a>
-            <a href="?page=kontak&&Sb=0">
-				<span class="<?php echo $classMenu?>"><label class="labelSpanMenu">Kontak</label></span>
-			</a>
-            <a href="?page=faq&&Sb=0"><span id="rightSpanMenu" class="spanMenu"><label class="labelSpanMenu">FAQ</label></span></a>
-        </div>
-        <div id="content">
-			<?php
-				if(isset($_GET['page'])){
-					include $_GET['page'].".php";
-				}else{
-					include "home.php";
-				}
-			?>
-		<?php
-			if(isset($_GET['page'])){
-		?>
-				<div style="background:url(images/footer.png); width:1350px; height:75px; margin-left:-390px;"></div>
-    	<?php
-			}
-		?>
-		</div>
-    
-    </div>
 
-</div>
-<script src="assets/js/jquery.js"></script>
-    <script src="css/assets/js/bootstrap-transition.js"></script>
-    <script src="css/assets/js/bootstrap-alert.js"></script>
-    <script src="css/assets/js/bootstrap-modal.js"></script>
-    <script src="css/assets/js/bootstrap-dropdown.js"></script>
-    <script src="css/assets/js/bootstrap-scrollspy.js"></script>
-    <script src="css/assets/js/bootstrap-tab.js"></script>
-    <script src="css/assets/js/bootstrap-tooltip.js"></script>
-    <script src="css/assets/js/bootstrap-popover.js"></script>
-    <script src="css/assets/js/bootstrap-button.js"></script>
-    <script src="css/assets/js/bootstrap-collapse.js"></script>
-    <script src="css/assets/js/bootstrap-carousel.js"></script>
-    <script src="css/assets/js/bootstrap-typeahead.js"></script>
+<body>
+	<div id="primary" class="container">
+    	<div class="row-fluid header">
+        	<div class="span2">
+            	<img src="images/asset/logo.png" width="200" height="200" />
+            </div>
+            <div class="span10" id="rightHeader">
+            	<div class="row-fluid">
+                	<div class="span12" id="loginDiv">
+                    	<form class="form-inline form-Right">
+                        	<div class="control-label">
+                            	<a href="?page=registrasi">Member Baru</a> | Lupa Password
+                            	<input type="text" class="input-medium" placeholder="Username" />
+                            	<input type="text" class="input-medium" placeholder="Password" />
+                            	<button type="submit" class="btn Gradient-Style2" />Masuk</button>
+                            </div>      	
+                            <div class="control-group">
+                            	<div class="span8"></div>
+                            	<label class="checkbox">
+                                	<input type="checkbox" />Remember Me ?
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="row-fluid separator"></div>
+                
+            	<div class="row-fluid">
+                	<div class="span12" id="menuDiv">
+                    	<div class="navbar">
+                        	<div class="navbar-inner Gradient-Style1">
+                            	<ul class="nav">
+                                	<li class="separator-Vertical"><a style="padding-right:30px" class="Font-Color-White" href="index.php"><img src="images/asset/iconHome.png" width="25" /></a></li>
+                                    <li class="separator-Vertical"><a class="Font-Color-White" href="?page=cariBisnisFranchise">Cari Bisnis Franchise</a></li>
+                                    <li class="separator-Vertical"><a class="Font-Color-White" href="?page=akunSayaBeli">Akun Saya</a></li>
+                                    <li class="separator-Vertical"><a class="Font-Color-White" href="#">Jual Bisnis Franchise</a></li>
+                                    <li class="separator-Vertical"><a class="Font-Color-White" href="?page=layananKami">Layanan Kami</a></li>
+                                    <li class="separator-Vertical"><a class="Font-Color-White" href="?page=artikel">Artikel</a></li>
+                                    <li class="separator-Vertical"><a class="Font-Color-White" href="?page=kontak">Kontak</a></li>
+                                    <li class="separator-Vertical"><a class="Font-Color-White" href="?page=faq">Faq</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>              
+            </div>
+        </div>
+        <!--Content-->
+       	<div class="container content">
+        	<?php
+				if(isset($_GET['page'])){
+					include "content/" . $_GET['page'] . ".php";
+				}else{
+					include "content/home.php";
+				}	
+			?>
+        </div>
+       <!--End Content -->
+    </div>
 </body>
+
+
+</html>

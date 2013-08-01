@@ -13,7 +13,8 @@
 //);
 ?>
 
+<div class="span10">
 <h2><?php echo $industri->industri ?></h2>
 <h2>Tambah Sub Kategori</h2>
-
+</div>
 <?php echo $this->renderPartial('_formSubIndustri', array('model'=>$model,'industri'=>$industri)); ?>

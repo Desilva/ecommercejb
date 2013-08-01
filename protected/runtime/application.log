@@ -7358,3 +7358,2114 @@ in C:\xampp\htdocs\ecommercejb\index.php (13)
 2013/07/26 07:04:10 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
 in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (334)
 in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/26 09:27:07 [error] [php] Undefined variable: classMenu (C:\xampp\htdocs\ecommercejb\protected\views\layouts\main.php:95)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(784): HomeController->renderFile()
+#1 C:\xampp\htdocs\ecommercejb\protected\controllers\HomeController.php(106): HomeController->render()
+#2 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): HomeController->actionIndex()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(286): HomeController->runAction()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): HomeController->runActionWithFilters()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): HomeController->run()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/
+in C:\xampp\htdocs\ecommercejb\protected\views\layouts\main.php (95)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\HomeController.php (106)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/26 09:42:20 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "C:\xampp\htdocs\ecommercejb\assets" is invalid. Please make sure the directory exists and is writable by the Web server process.' in C:\xampp\htdocs\ecommercejb\framework\web\CAssetManager.php:138
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CAssetManager.php(123): CAssetManager->setBasePath('C:\xampp\htdocs...')
+#1 C:\xampp\htdocs\ecommercejb\framework\web\CAssetManager.php(217): CAssetManager->getBasePath()
+#2 C:\xampp\htdocs\ecommercejb\protected\extensions\bootstrap\components\Bootstrap.php(641): CAssetManager->publish('C:\xampp\htdocs...', false, -1, false)
+#3 C:\xampp\htdocs\ecommercejb\protected\extensions\bootstrap\components\packages.php(12): Bootstrap->getAssetsUrl()
+#4 C:\xampp\htdocs\ecommercejb\protected\extensions\bootstrap\components\Bootstrap.php(156): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\ecommercejb\framework\base\CModule.php(387): Bootstrap->init()
+#6 C:\xampp\htdocs\ecommercejb\framework\base\CModule.php(523): CModule->getComponent('bootstrap')
+#7 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(152): CModule->preloadComponents()
+#8 C:\xampp\htdocs\ecommercejb\framework\YiiBase.php(125): CApplication->__construct('C:\xampp\htdocs...')
+#9 C:\xampp\htdocs\ecommercejb\framework\YiiBase.php(98): YiiBase::createApplication('CWebApplication', 'C:\xampp\htdocs...')
+#10 C:\xampp\htdocs\ecommercejb\index.php(13): YiiBase::createWebApplication('C:\xampp\htdocs...')
+#11 {main}
+REQUEST_URI=/ecommerceJB/
+---
+2013/07/26 12:00:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/navGadgetLeft.png".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/na...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/navGadgetLeft.png
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/
+---
+2013/07/26 12:00:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/navGadgetRight.png".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/na...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/navGadgetRight.png
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/
+---
+2013/07/29 07:49:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/navGadgetLeft.png".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/na...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/navGadgetLeft.png
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/home
+---
+2013/07/29 07:49:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/navGadgetRight.png".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/na...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/navGadgetRight.png
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/home
+---
+2013/07/29 07:49:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/navGadgetLeft.png".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/na...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/navGadgetLeft.png
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/home
+---
+2013/07/29 07:49:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/navGadgetRight.png".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/na...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/navGadgetRight.png
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/home
+---
+2013/07/29 08:15:38 [error] [php] Undefined variable: selectedCategory (C:\xampp\htdocs\ecommercejb\protected\views\article\index.php:11)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): ArticleController->renderFile()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): ArticleController->renderPartial()
+#2 C:\xampp\htdocs\ecommercejb\protected\controllers\ArticleController.php(37): ArticleController->render()
+#3 unknown(0): ArticleController->actionIndex()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(286): ArticleController->runAction()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): ArticleController->runActionWithFilters()
+#9 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): ArticleController->run()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/article
+in C:\xampp\htdocs\ecommercejb\protected\views\article\index.php (11)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\ArticleController.php (37)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/29 08:15:57 [error] [php] Undefined variable: selectedArticleCategory (C:\xampp\htdocs\ecommercejb\protected\views\article\index.php:11)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): ArticleController->renderFile()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): ArticleController->renderPartial()
+#2 C:\xampp\htdocs\ecommercejb\protected\controllers\ArticleController.php(37): ArticleController->render()
+#3 unknown(0): ArticleController->actionIndex()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(286): ArticleController->runAction()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): ArticleController->runActionWithFilters()
+#9 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): ArticleController->run()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/article
+in C:\xampp\htdocs\ecommercejb\protected\views\article\index.php (11)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\ArticleController.php (37)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/29 08:17:01 [error] [php] Undefined variable: selectedArticleCategory (C:\xampp\htdocs\ecommercejb\protected\views\article\index.php:11)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): ArticleController->renderFile()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): ArticleController->renderPartial()
+#2 C:\xampp\htdocs\ecommercejb\protected\controllers\ArticleController.php(37): ArticleController->render()
+#3 unknown(0): ArticleController->actionIndex()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(286): ArticleController->runAction()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): ArticleController->runActionWithFilters()
+#9 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): ArticleController->run()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/article
+in C:\xampp\htdocs\ecommercejb\protected\views\article\index.php (11)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\ArticleController.php (37)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/29 08:22:57 [error] [php] get_class() expects parameter 1 to be object, array given (C:\xampp\htdocs\ecommercejb\framework\web\helpers\CHtml.php:2220)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\helpers\CHtml.php(1564): resolveNameID()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\widgets\CActiveForm.php(763): activeDropDownList()
+#2 C:\xampp\htdocs\ecommercejb\protected\views\article\index.php(17): CActiveForm->dropDownList()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(126): require()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(95): ArticleController->renderInternal()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): ArticleController->renderFile()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): ArticleController->renderPartial()
+#7 C:\xampp\htdocs\ecommercejb\protected\controllers\ArticleController.php(37): ArticleController->render()
+#8 unknown(0): ArticleController->actionIndex()
+#9 C:\xampp\htdocs\ecommercejb\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#12 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(286): ArticleController->runAction()
+#13 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): ArticleController->runActionWithFilters()
+#14 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): ArticleController->run()
+#15 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#16 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/article
+in C:\xampp\htdocs\ecommercejb\protected\views\article\index.php (17)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\ArticleController.php (37)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/29 08:47:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/navGadgetLeft.png".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/na...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/navGadgetLeft.png
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/home
+---
+2013/07/29 08:47:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/navGadgetRight.png".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/na...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/navGadgetRight.png
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/home
+---
+2013/07/29 08:47:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/navGadgetLeft.png".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/na...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/navGadgetLeft.png
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/home
+---
+2013/07/29 08:47:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/navGadgetRight.png".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/na...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/navGadgetRight.png
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/home
+---
+2013/07/29 08:48:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/navGadgetLeft.png".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/na...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/navGadgetLeft.png
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/home
+---
+2013/07/29 08:48:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/navGadgetRight.png".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/na...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/navGadgetRight.png
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/home
+---
+2013/07/29 08:50:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/navGadgetLeft.png".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/na...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/navGadgetLeft.png
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/home
+---
+2013/07/29 08:50:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/navGadgetRight.png".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/na...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/navGadgetRight.png
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/home
+---
+2013/07/29 08:52:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/navGadgetLeft.png".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/na...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/navGadgetLeft.png
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/home
+---
+2013/07/29 08:52:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/navGadgetRight.png".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/na...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/navGadgetRight.png
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/home
+---
+2013/07/29 08:55:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "<".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('<')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/%3C?php%20echo%20Yii::app()-%3Erequest-%3EbaseUrl%20?%3E/images/asset/navGadgetRight.png
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/home
+---
+2013/07/29 08:55:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "<".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('<')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/%3C?php
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/home
+---
+2013/07/29 09:04:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:05:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:05:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:06:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:06:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:07:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:08:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:08:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:13:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:14:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:14:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:15:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:15:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:16:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:17:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:19:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:19:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:20:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:20:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:20:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:20:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:20:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:21:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:21:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:22:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:22:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:23:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:25:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:26:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:27:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:28:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:28:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:32:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:35:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:36:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:38:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:38:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:38:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:38:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:40:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:40:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:41:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:42:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:42:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:42:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:43:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:44:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:45:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:46:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:47:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:47:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:49:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:50:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:53:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 09:55:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 10:00:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/chaptca.gif".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/ch...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/chaptca.gif
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/registrasi
+---
+2013/07/29 12:06:10 [error] [php] htmlspecialchars() expects parameter 1 to be string, array given (C:\xampp\htdocs\ecommercejb\framework\web\helpers\CHtml.php:98)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\helpers\CHtml.php(153): renderAttributes()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\helpers\CHtml.php(1175): tag()
+#2 C:\xampp\htdocs\ecommercejb\framework\web\helpers\CHtml.php(693): inputField()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\helpers\CHtml.php(1000): radioButton()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\helpers\CHtml.php(1733): radioButtonList()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\widgets\CActiveForm.php(811): activeRadioButtonList()
+#6 C:\xampp\htdocs\ecommercejb\protected\views\registrasi\index.php(60): CActiveForm->radioButtonList()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(126): require()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(95): RegistrasiController->renderInternal()
+#9 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): RegistrasiController->renderFile()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): RegistrasiController->renderPartial()
+#11 C:\xampp\htdocs\ecommercejb\protected\controllers\RegistrasiController.php(143): RegistrasiController->render()
+#12 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): RegistrasiController->actionIndex()
+#13 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#14 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): RegistrasiController->runAction()
+#15 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#16 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#17 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): RegistrasiController->filterAccessControl()
+#18 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#19 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#20 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): RegistrasiController->runActionWithFilters()
+#21 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): RegistrasiController->run()
+#22 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#23 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#24 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/registrasi
+in C:\xampp\htdocs\ecommercejb\protected\views\registrasi\index.php (60)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\RegistrasiController.php (143)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/29 13:26:23 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'on))' at line 1. The SQL statement executed was: SELECT COUNT(DISTINCT `t`.`id`) FROM `business` `t`  LEFT OUTER JOIN `m_city` `idKota` ON (`t`.`id_kota`=`idKota`.`id`)  WHERE ((status_approval="diterima") AND (t.id_category=on)).
+in C:\xampp\htdocs\ecommercejb\protected\views\cariBisnisFranchise\index.php (86)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\CariBisnisFranchiseController.php (235)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/29 13:26:23 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'on))' at line 1. The SQL statement executed was: SELECT COUNT(DISTINCT `t`.`id`) FROM `business` `t`  LEFT OUTER JOIN `m_city` `idKota` ON (`t`.`id_kota`=`idKota`.`id`)  WHERE ((status_approval="diterima") AND (t.id_category=on))' in C:\xampp\htdocs\ecommercejb\framework\db\CDbCommand.php:541
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\db\CDbCommand.php(432): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 C:\xampp\htdocs\ecommercejb\framework\db\ar\CActiveFinder.php(718): CDbCommand->queryScalar()
+#2 C:\xampp\htdocs\ecommercejb\framework\db\ar\CActiveFinder.php(151): CJoinElement->count(Object(CDbCriteria))
+#3 C:\xampp\htdocs\ecommercejb\framework\db\ar\CActiveRecord.php(1550): CActiveFinder->count(Object(CDbCriteria))
+#4 C:\xampp\htdocs\ecommercejb\framework\web\CActiveDataProvider.php(179): CActiveRecord->count(Object(CDbCriteria))
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CActiveDataProvider.php(129): CDataProvider->getTotalItemCount()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#8 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(107): CDataProvider->getData()
+#9 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CListView.php(203): CBaseListView->init()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(147): CListView->init()
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(172): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#12 C:\xampp\htdocs\ecommercejb\protected\views\cariBisnisFranchise\index.php(86): CBaseController->widget('zii.widgets.CLi...', Array)
+#13 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#14 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#15 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#16 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#17 C:\xampp\htdocs\ecommercejb\protected\controllers\CariBisnisFranchiseController.php(235): CController->render('index', Array)
+#18 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): CariBisnisFranchiseController->actionCari()
+#19 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#20 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#21 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#22 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#23 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#24 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#25 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#26 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#27 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('cari')
+#28 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('cariBisnisFranc...')
+#29 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#30 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#31 {main}
+REQUEST_URI=/ecommerceJB/index.php/cariBisnisFranchise/cari?jenis=on&provinsi=&kota=&kategori=&keyword=&subkategori=&rangeharga=&omzet=
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/cariBisnisFranchise
+---
+2013/07/29 13:27:51 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'on))' at line 1. The SQL statement executed was: SELECT COUNT(DISTINCT `t`.`id`) FROM `business` `t`  LEFT OUTER JOIN `m_city` `idKota` ON (`t`.`id_kota`=`idKota`.`id`)  WHERE ((status_approval="diterima") AND (t.id_category=on)).
+in C:\xampp\htdocs\ecommercejb\protected\views\cariBisnisFranchise\index.php (86)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\CariBisnisFranchiseController.php (235)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/29 13:27:51 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'on))' at line 1. The SQL statement executed was: SELECT COUNT(DISTINCT `t`.`id`) FROM `business` `t`  LEFT OUTER JOIN `m_city` `idKota` ON (`t`.`id_kota`=`idKota`.`id`)  WHERE ((status_approval="diterima") AND (t.id_category=on))' in C:\xampp\htdocs\ecommercejb\framework\db\CDbCommand.php:541
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\db\CDbCommand.php(432): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 C:\xampp\htdocs\ecommercejb\framework\db\ar\CActiveFinder.php(718): CDbCommand->queryScalar()
+#2 C:\xampp\htdocs\ecommercejb\framework\db\ar\CActiveFinder.php(151): CJoinElement->count(Object(CDbCriteria))
+#3 C:\xampp\htdocs\ecommercejb\framework\db\ar\CActiveRecord.php(1550): CActiveFinder->count(Object(CDbCriteria))
+#4 C:\xampp\htdocs\ecommercejb\framework\web\CActiveDataProvider.php(179): CActiveRecord->count(Object(CDbCriteria))
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CActiveDataProvider.php(129): CDataProvider->getTotalItemCount()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#8 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(107): CDataProvider->getData()
+#9 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CListView.php(203): CBaseListView->init()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(147): CListView->init()
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(172): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#12 C:\xampp\htdocs\ecommercejb\protected\views\cariBisnisFranchise\index.php(86): CBaseController->widget('zii.widgets.CLi...', Array)
+#13 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#14 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#15 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#16 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#17 C:\xampp\htdocs\ecommercejb\protected\controllers\CariBisnisFranchiseController.php(235): CController->render('index', Array)
+#18 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): CariBisnisFranchiseController->actionCari()
+#19 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#20 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#21 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#22 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#23 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#24 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#25 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#26 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#27 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('cari')
+#28 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('cariBisnisFranc...')
+#29 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#30 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#31 {main}
+REQUEST_URI=/ecommerceJB/index.php/cariBisnisFranchise/cari?jenis=on&provinsi=&kota=&kategori=&keyword=&subkategori=&rangeharga=&omzet=
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/cariBisnisFranchise
+---
+2013/07/30 06:00:15 [error] [php] Undefined variable: data (C:\xampp\htdocs\ecommercejb\protected\views\cariBisnisFranchise\detail.php:7)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): CariBisnisFranchiseController->renderFile()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): CariBisnisFranchiseController->renderPartial()
+#2 C:\xampp\htdocs\ecommercejb\protected\controllers\CariBisnisFranchiseController.php(274): CariBisnisFranchiseController->render()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): CariBisnisFranchiseController->actionDetail()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CariBisnisFranchiseController->runAction()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CariBisnisFranchiseController->filterAccessControl()
+#9 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CariBisnisFranchiseController->runActionWithFilters()
+#12 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CariBisnisFranchiseController->run()
+#13 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/cariBisnisFranchise/detail/35
+in C:\xampp\htdocs\ecommercejb\protected\views\cariBisnisFranchise\detail.php (7)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\CariBisnisFranchiseController.php (274)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/30 06:10:33 [error] [php] Undefined index: id (C:\xampp\htdocs\ecommercejb\protected\controllers\CariBisnisFranchiseController.php:244)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CariBisnisFranchiseController->runAction()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CariBisnisFranchiseController->filterAccessControl()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CariBisnisFranchiseController->runActionWithFilters()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CariBisnisFranchiseController->run()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/cariBisnisFranchise/detail/images/asset/clientPhoto.png
+in C:\xampp\htdocs\ecommercejb\protected\controllers\CariBisnisFranchiseController.php (244)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/30 06:19:14 [error] [php] Undefined index: id (C:\xampp\htdocs\ecommercejb\protected\controllers\CariBisnisFranchiseController.php:244)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CariBisnisFranchiseController->runAction()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CariBisnisFranchiseController->filterAccessControl()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CariBisnisFranchiseController->runActionWithFilters()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CariBisnisFranchiseController->run()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/cariBisnisFranchise/detail/images/asset/clientPhoto.png
+in C:\xampp\htdocs\ecommercejb\protected\controllers\CariBisnisFranchiseController.php (244)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/30 06:19:29 [error] [php] Undefined index: id (C:\xampp\htdocs\ecommercejb\protected\controllers\CariBisnisFranchiseController.php:244)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CariBisnisFranchiseController->runAction()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CariBisnisFranchiseController->filterAccessControl()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CariBisnisFranchiseController->runActionWithFilters()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CariBisnisFranchiseController->run()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/cariBisnisFranchise/detail/images/asset/clientPhoto.png
+in C:\xampp\htdocs\ecommercejb\protected\controllers\CariBisnisFranchiseController.php (244)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/30 06:20:03 [error] [php] Undefined index: id (C:\xampp\htdocs\ecommercejb\protected\controllers\CariBisnisFranchiseController.php:244)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CariBisnisFranchiseController->runAction()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CariBisnisFranchiseController->filterAccessControl()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CariBisnisFranchiseController->runActionWithFilters()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CariBisnisFranchiseController->run()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/cariBisnisFranchise/detail/images/asset/clientPhoto.png
+in C:\xampp\htdocs\ecommercejb\protected\controllers\CariBisnisFranchiseController.php (244)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/30 06:28:47 [error] [php] Undefined variable: bisnisTerkait (C:\xampp\htdocs\ecommercejb\protected\views\cariBisnisFranchise\detail.php:166)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): CariBisnisFranchiseController->renderFile()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): CariBisnisFranchiseController->renderPartial()
+#2 C:\xampp\htdocs\ecommercejb\protected\controllers\CariBisnisFranchiseController.php(274): CariBisnisFranchiseController->render()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): CariBisnisFranchiseController->actionDetail()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CariBisnisFranchiseController->runAction()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CariBisnisFranchiseController->filterAccessControl()
+#9 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CariBisnisFranchiseController->runActionWithFilters()
+#12 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CariBisnisFranchiseController->run()
+#13 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/cariBisnisFranchise/detail/35
+in C:\xampp\htdocs\ecommercejb\protected\views\cariBisnisFranchise\detail.php (166)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\CariBisnisFranchiseController.php (274)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/30 10:31:54 [error] [exception.CException] exception 'CException' with message 'AccountController contains improperly nested widget tags in its view "C:\xampp\htdocs\ecommercejb\protected\views\account\_form.php". A CActiveForm widget does not have an endWidget() call.' in C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php:101
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#1 C:\xampp\htdocs\ecommercejb\protected\views\account\create.php(11): CController->renderPartial('_form', Array)
+#2 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#6 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(462): CController->render('create', Array)
+#7 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): AccountController->actionCreate()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('create')
+#17 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('account/create')
+#18 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/ecommerceJB/index.php/account/create
+---
+2013/07/30 10:32:42 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (259)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/30 10:32:42 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (259)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/30 10:32:42 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (259)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/31 05:48:08 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (259)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/31 05:48:29 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (259)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/31 05:48:29 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (259)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/31 05:48:29 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (259)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/31 05:48:43 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (259)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/31 05:52:03 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (259)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/31 05:52:10 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (259)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/31 05:52:21 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (259)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/31 05:52:21 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (259)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/31 05:52:21 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (259)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/31 05:52:21 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\ecommercejb\protected\views\account\preview.php:33)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): AccountController->renderFile()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): AccountController->renderPartial()
+#2 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(262): AccountController->render()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): AccountController->actionPreview()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): AccountController->runAction()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): AccountController->filterAccessControl()
+#9 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): AccountController->runActionWithFilters()
+#12 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): AccountController->run()
+#13 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/account/preview
+in C:\xampp\htdocs\ecommercejb\protected\views\account\preview.php (33)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (262)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/31 05:56:31 [error] [php] Illegal offset type in isset or empty (C:\xampp\htdocs\ecommercejb\framework\validators\CValidator.php:247)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\base\CModel.php(467): Business->getSafeAttributeNames()
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CComponent.php(152): Business->setAttributes()
+#2 C:\xampp\htdocs\ecommercejb\framework\db\ar\CActiveRecord.php(159): Business->__set()
+#3 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(262): Business->__set()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): AccountController->actionPreview()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): AccountController->runAction()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#9 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): AccountController->filterAccessControl()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#12 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): AccountController->runActionWithFilters()
+#13 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): AccountController->run()
+#14 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#15 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/account/preview
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (262)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/31 05:57:54 [error] [php] Illegal offset type in isset or empty (C:\xampp\htdocs\ecommercejb\framework\validators\CValidator.php:247)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\base\CModel.php(467): Business->getSafeAttributeNames()
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CComponent.php(152): Business->setAttributes()
+#2 C:\xampp\htdocs\ecommercejb\framework\db\ar\CActiveRecord.php(159): Business->__set()
+#3 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(262): Business->__set()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): AccountController->actionPreview()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): AccountController->runAction()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#9 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): AccountController->filterAccessControl()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#12 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): AccountController->runActionWithFilters()
+#13 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): AccountController->run()
+#14 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#15 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/account/preview
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (262)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/31 05:59:59 [error] [php] Illegal offset type in isset or empty (C:\xampp\htdocs\ecommercejb\framework\validators\CValidator.php:247)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\base\CModel.php(467): Business->getSafeAttributeNames()
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CComponent.php(152): Business->setAttributes()
+#2 C:\xampp\htdocs\ecommercejb\framework\db\ar\CActiveRecord.php(159): Business->__set()
+#3 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(262): Business->__set()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): AccountController->actionPreview()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): AccountController->runAction()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#9 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): AccountController->filterAccessControl()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#12 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): AccountController->runActionWithFilters()
+#13 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): AccountController->run()
+#14 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#15 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/account/preview
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (262)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/31 06:01:04 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (260)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/31 06:01:04 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (260)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/31 06:01:04 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (260)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/31 06:01:19 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (260)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/31 06:01:19 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (260)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/31 06:01:19 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (260)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/31 06:01:44 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (260)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/31 06:01:44 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (260)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/31 06:01:44 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (260)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/31 06:52:58 [error] [php] Undefined variable: jenis (C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php:475)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): AccountController->runAction()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): AccountController->filterAccessControl()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): AccountController->runActionWithFilters()
+#9 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): AccountController->run()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/account/update/34
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (475)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/31 07:01:13 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\ecommercejb\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('update')
+#9 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('account/update/...')
+#10 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/ecommerceJB/index.php/account/update/34/render/1
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/account/update/34
+---
+2013/07/31 07:01:23 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\ecommercejb\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('update')
+#9 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('account/update/...')
+#10 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/ecommerceJB/index.php/account/update/34/render/1
+---
+2013/07/31 07:01:44 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\ecommercejb\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('update')
+#9 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('account/update/...')
+#10 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/ecommerceJB/index.php/account/update/34/render/1
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/account/update/34
+---
+2013/07/31 07:05:32 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\ecommercejb\protected\views\account\create.php:9)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): AccountController->renderFile()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): AccountController->renderPartial()
+#2 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(446): AccountController->render()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): AccountController->actionCreate()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): AccountController->runAction()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): AccountController->filterAccessControl()
+#9 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): AccountController->runActionWithFilters()
+#12 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): AccountController->run()
+#13 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/account/create
+in C:\xampp\htdocs\ecommercejb\protected\views\account\create.php (9)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (446)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/31 07:07:07 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (324)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/31 07:07:07 [warning] [application] Failed to set unsafe attribute "tampilkanKontak" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (335)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/31 07:16:08 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\ecommercejb\framework\web\auth\CAccessControlFilter.php:179
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\auth\CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('generateKota')
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('account/generat...')
+#9 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/ecommerceJB/index.php/account/generateKota
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/jbAdmin/bisnisFranchise/update/id/41
+---
+2013/07/31 07:16:09 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\ecommercejb\framework\web\auth\CAccessControlFilter.php:179
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\auth\CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('generateSubIndu...')
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('account/generat...')
+#9 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/ecommerceJB/index.php/account/generateSubIndustri
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/jbAdmin/bisnisFranchise/update/id/41
+---
+2013/07/31 07:21:02 [error] [exception.CException] exception 'CException' with message 'Property "CActiveDataProvider.attributes" is not defined.' in C:\xampp\htdocs\ecommercejb\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\protected\views\account\_emailList.php(2): CComponent->__get('attributes')
+#1 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#2 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#3 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(1044): CController->renderPartial('_emailList', Array)
+#5 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): AccountController->actionGetEmail()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#11 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#13 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('getEmail')
+#15 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('account/getEmai...')
+#16 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/ecommerceJB/index.php/account/getEmail?id=41&_=1375248060176
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/account/index
+---
+2013/07/31 07:21:13 [error] [exception.CException] exception 'CException' with message 'Property "CActiveDataProvider.attributes" is not defined.' in C:\xampp\htdocs\ecommercejb\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\protected\views\account\_emailList.php(2): CComponent->__get('attributes')
+#1 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#2 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#3 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(1044): CController->renderPartial('_emailList', Array)
+#5 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): AccountController->actionGetEmail()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#11 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#13 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('getEmail')
+#15 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('account/getEmai...')
+#16 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/ecommerceJB/index.php/account/getEmail?id=41&_=1375248071642
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/account/index
+---
+2013/07/31 07:21:43 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\ecommercejb\protected\views\account\_emailList.php:2)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): AccountController->renderFile()
+#1 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(1044): AccountController->renderPartial()
+#2 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): AccountController->actionGetEmail()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): AccountController->runAction()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): AccountController->filterAccessControl()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#9 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): AccountController->runActionWithFilters()
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): AccountController->run()
+#12 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/account/getEmail?id=40&_=1375248101408
+in C:\xampp\htdocs\ecommercejb\protected\views\account\_emailList.php (2)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (1044)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/31 07:55:42 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\ecommercejb\framework\web\auth\CAccessControlFilter.php:179
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\auth\CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('update')
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('jbAdmin/bisnisF...')
+#9 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/ecommerceJB/index.php/jbAdmin/bisnisFranchise/update/id/41
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/jbAdmin/bisnisFranchise
+---
+2013/07/31 07:56:24 [error] [exception.CException] exception 'CException' with message 'Property "Business.dropDownAlasanJual" is not defined.' in C:\xampp\htdocs\ecommercejb\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\db\ar\CActiveRecord.php(143): CComponent->__get('dropDownAlasanJ...')
+#1 C:\xampp\htdocs\ecommercejb\framework\web\helpers\CHtml.php(2255): CActiveRecord->__get('dropDownAlasanJ...')
+#2 C:\xampp\htdocs\ecommercejb\framework\web\helpers\CHtml.php(1565): CHtml::resolveValue(Object(Business), 'dropDownAlasanJ...')
+#3 C:\xampp\htdocs\ecommercejb\framework\web\widgets\CActiveForm.php(763): CHtml::activeDropDownList(Object(Business), 'dropDownAlasanJ...', Array, Array)
+#4 C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\views\bisnisFranchise\_formBusiness.php(175): CActiveForm->dropDownList(Object(Business), 'dropDownAlasanJ...', Array, Array)
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#8 C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\views\bisnisFranchise\update.php(11): CController->renderPartial('_formBusiness', Array)
+#9 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#10 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#12 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): CController->renderPartial('update', Array, true)
+#13 C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php(225): CController->render('update', Array)
+#14 [internal function]: BisnisFranchiseController->actionUpdate('41')
+#15 C:\xampp\htdocs\ecommercejb\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(BisnisFranchiseController), Array)
+#16 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(BisnisFranchiseController), Object(ReflectionMethod), Array)
+#17 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#18 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#20 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#24 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('update')
+#26 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('jbAdmin/bisnisF...')
+#27 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#28 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#29 {main}
+REQUEST_URI=/ecommerceJB/index.php/jbAdmin/bisnisFranchise/update/id/41
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/jbAdmin/bisnisFranchise
+---
+2013/07/31 07:57:20 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\ecommercejb\framework\web\auth\CAccessControlFilter.php:179
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\auth\CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('generateKota')
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('account/generat...')
+#9 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/ecommerceJB/index.php/account/generateKota
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/jbAdmin/bisnisFranchise/update/id/41
+---
+2013/07/31 07:57:21 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\ecommercejb\framework\web\auth\CAccessControlFilter.php:179
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\auth\CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('generateSubIndu...')
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('account/generat...')
+#9 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/ecommerceJB/index.php/account/generateSubIndustri
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/jbAdmin/bisnisFranchise/update/id/41
+---
+2013/07/31 09:04:32 [error] [php] Undefined index: alasan_tambahan (C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php:58)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): BisnisFranchiseController->runAction()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): BisnisFranchiseController->filterAccessControl()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): BisnisFranchiseController->runActionWithFilters()
+#9 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): BisnisFranchiseController->run()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/jbAdmin/bisnisFranchise/tolak/id/41
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (58)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/31 09:17:23 [error] [exception.CException] exception 'CException' with message 'Property "Business.alasan_penolakan" is not defined.' in C:\xampp\htdocs\ecommercejb\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\db\ar\CActiveRecord.php(159): CComponent->__set('alasan_penolaka...', NULL)
+#1 C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php(81): CActiveRecord->__set('alasan_penolaka...', NULL)
+#2 [internal function]: BisnisFranchiseController->actionTolak('41')
+#3 C:\xampp\htdocs\ecommercejb\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(BisnisFranchiseController), Array)
+#4 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(BisnisFranchiseController), Object(ReflectionMethod), Array)
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#12 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('tolak')
+#14 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('jbAdmin/bisnisF...')
+#15 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/ecommerceJB/index.php/jbAdmin/bisnisFranchise/tolak/id/41
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/jbAdmin/bisnisFranchise/tolak/id/41
+---
+2013/07/31 09:18:33 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\ecommercejb\framework\web\auth\CAccessControlFilter.php:179
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\auth\CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('generateKota')
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('account/generat...')
+#9 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/ecommerceJB/index.php/account/generateKota
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/jbAdmin/bisnisFranchise/update/id/41
+---
+2013/07/31 09:18:34 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\ecommercejb\framework\web\auth\CAccessControlFilter.php:179
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\auth\CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('generateSubIndu...')
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('account/generat...')
+#9 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/ecommerceJB/index.php/account/generateSubIndustri
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/jbAdmin/bisnisFranchise/update/id/41
+---
+2013/07/31 09:23:57 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\ecommercejb\framework\web\auth\CAccessControlFilter.php:179
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\auth\CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('generateKota')
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('account/generat...')
+#9 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/ecommerceJB/index.php/account/generateKota
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/jbAdmin/bisnisFranchise/update/id/41
+---
+2013/07/31 09:23:58 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\ecommercejb\framework\web\auth\CAccessControlFilter.php:179
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\auth\CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('generateSubIndu...')
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('account/generat...')
+#9 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/ecommerceJB/index.php/account/generateSubIndustri
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/jbAdmin/bisnisFranchise/update/id/41
+---
+2013/07/31 09:24:32 [error] [exception.CException] exception 'CException' with message 'Property "Business.alasan_penolakan" is not defined.' in C:\xampp\htdocs\ecommercejb\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\db\ar\CActiveRecord.php(143): CComponent->__get('alasan_penolaka...')
+#1 C:\xampp\htdocs\ecommercejb\protected\views\account\_columnStatusApproval.php(5): CActiveRecord->__get('alasan_penolaka...')
+#2 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(1054): CController->renderPartial('_columnStatusAp...', Array, true)
+#6 [internal function]: AccountController->gridStatusApproval(Object(Business), 0, Object(CDataColumn))
+#7 C:\xampp\htdocs\ecommercejb\framework\base\CComponent.php(611): call_user_func_array(Array, Array)
+#8 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CDataColumn.php(131): CComponent->evaluateExpression(Array, Array)
+#9 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridColumn.php(144): CDataColumn->renderDataCellContent(0, Object(Business))
+#10 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(589): CGridColumn->renderDataCell(0)
+#11 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(545): CGridView->renderTableRow(0)
+#12 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(455): CGridView->renderTableBody()
+#13 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(160): CGridView->renderItems()
+#14 [internal function]: CBaseListView->renderSection(Array)
+#15 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(143): preg_replace_callback('/{(\w+)}/', Array, '{summary}?{item...')
+#16 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(128): CBaseListView->renderContent()
+#17 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(173): CBaseListView->run()
+#18 C:\xampp\htdocs\ecommercejb\protected\views\account\index.php(167): CBaseController->widget('zii.widgets.gri...', Array)
+#19 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#20 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#21 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#22 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#23 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(236): CController->render('index', Array)
+#24 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): AccountController->actionIndex()
+#25 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#26 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#27 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#28 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#29 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#30 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#31 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#32 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#33 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('index')
+#34 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('account/index')
+#35 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#36 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#37 {main}
+REQUEST_URI=/ecommerceJB/index.php/account/index
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/account/beli
+---
+2013/07/31 09:25:58 [error] [exception.CException] exception 'CException' with message 'Property "Business.alasan_penolakan" is not defined.' in C:\xampp\htdocs\ecommercejb\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\db\ar\CActiveRecord.php(143): CComponent->__get('alasan_penolaka...')
+#1 C:\xampp\htdocs\ecommercejb\protected\views\account\_columnStatusApproval.php(5): CActiveRecord->__get('alasan_penolaka...')
+#2 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(1054): CController->renderPartial('_columnStatusAp...', Array, true)
+#6 [internal function]: AccountController->gridStatusApproval(Object(Business), 0, Object(CDataColumn))
+#7 C:\xampp\htdocs\ecommercejb\framework\base\CComponent.php(611): call_user_func_array(Array, Array)
+#8 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CDataColumn.php(131): CComponent->evaluateExpression(Array, Array)
+#9 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridColumn.php(144): CDataColumn->renderDataCellContent(0, Object(Business))
+#10 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(589): CGridColumn->renderDataCell(0)
+#11 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(545): CGridView->renderTableRow(0)
+#12 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(455): CGridView->renderTableBody()
+#13 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(160): CGridView->renderItems()
+#14 [internal function]: CBaseListView->renderSection(Array)
+#15 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(143): preg_replace_callback('/{(\w+)}/', Array, '{summary}?{item...')
+#16 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(128): CBaseListView->renderContent()
+#17 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(173): CBaseListView->run()
+#18 C:\xampp\htdocs\ecommercejb\protected\views\account\index.php(167): CBaseController->widget('zii.widgets.gri...', Array)
+#19 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#20 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#21 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#22 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#23 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(236): CController->render('index', Array)
+#24 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): AccountController->actionIndex()
+#25 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#26 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#27 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#28 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#29 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#30 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#31 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#32 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#33 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('index')
+#34 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('account/index')
+#35 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#36 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#37 {main}
+REQUEST_URI=/ecommerceJB/index.php/account/index
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/account/beli
+---
+2013/07/31 09:26:03 [error] [exception.CException] exception 'CException' with message 'Property "Business.alasan_penolakan" is not defined.' in C:\xampp\htdocs\ecommercejb\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\db\ar\CActiveRecord.php(143): CComponent->__get('alasan_penolaka...')
+#1 C:\xampp\htdocs\ecommercejb\protected\views\account\_columnStatusApproval.php(5): CActiveRecord->__get('alasan_penolaka...')
+#2 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(1054): CController->renderPartial('_columnStatusAp...', Array, true)
+#6 [internal function]: AccountController->gridStatusApproval(Object(Business), 0, Object(CDataColumn))
+#7 C:\xampp\htdocs\ecommercejb\framework\base\CComponent.php(611): call_user_func_array(Array, Array)
+#8 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CDataColumn.php(131): CComponent->evaluateExpression(Array, Array)
+#9 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridColumn.php(144): CDataColumn->renderDataCellContent(0, Object(Business))
+#10 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(589): CGridColumn->renderDataCell(0)
+#11 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(545): CGridView->renderTableRow(0)
+#12 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(455): CGridView->renderTableBody()
+#13 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(160): CGridView->renderItems()
+#14 [internal function]: CBaseListView->renderSection(Array)
+#15 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(143): preg_replace_callback('/{(\w+)}/', Array, '{summary}?{item...')
+#16 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(128): CBaseListView->renderContent()
+#17 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(173): CBaseListView->run()
+#18 C:\xampp\htdocs\ecommercejb\protected\views\account\index.php(167): CBaseController->widget('zii.widgets.gri...', Array)
+#19 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#20 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#21 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#22 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#23 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(236): CController->render('index', Array)
+#24 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): AccountController->actionIndex()
+#25 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#26 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#27 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#28 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#29 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#30 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#31 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#32 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#33 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('index')
+#34 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('account/index')
+#35 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#36 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#37 {main}
+REQUEST_URI=/ecommerceJB/index.php/account/index
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/account/beli
+---
+2013/07/31 09:26:54 [error] [exception.CException] exception 'CException' with message 'Property "Business.alasan_penolakan" is not defined.' in C:\xampp\htdocs\ecommercejb\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\db\ar\CActiveRecord.php(143): CComponent->__get('alasan_penolaka...')
+#1 C:\xampp\htdocs\ecommercejb\protected\views\account\_columnStatusApproval.php(5): CActiveRecord->__get('alasan_penolaka...')
+#2 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(1054): CController->renderPartial('_columnStatusAp...', Array, true)
+#6 [internal function]: AccountController->gridStatusApproval(Object(Business), 0, Object(CDataColumn))
+#7 C:\xampp\htdocs\ecommercejb\framework\base\CComponent.php(611): call_user_func_array(Array, Array)
+#8 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CDataColumn.php(131): CComponent->evaluateExpression(Array, Array)
+#9 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridColumn.php(144): CDataColumn->renderDataCellContent(0, Object(Business))
+#10 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(589): CGridColumn->renderDataCell(0)
+#11 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(545): CGridView->renderTableRow(0)
+#12 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(455): CGridView->renderTableBody()
+#13 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(160): CGridView->renderItems()
+#14 [internal function]: CBaseListView->renderSection(Array)
+#15 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(143): preg_replace_callback('/{(\w+)}/', Array, '{summary}?{item...')
+#16 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(128): CBaseListView->renderContent()
+#17 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(173): CBaseListView->run()
+#18 C:\xampp\htdocs\ecommercejb\protected\views\account\index.php(167): CBaseController->widget('zii.widgets.gri...', Array)
+#19 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#20 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#21 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#22 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#23 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(236): CController->render('index', Array)
+#24 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): AccountController->actionIndex()
+#25 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#26 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#27 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#28 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#29 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#30 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#31 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#32 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#33 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('index')
+#34 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('account/index')
+#35 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#36 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#37 {main}
+REQUEST_URI=/ecommerceJB/index.php/account/index
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/account/beli
+---
+2013/07/31 09:27:24 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\ecommercejb\protected\views\account\_columnStatusApproval.php:5)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): AccountController->renderFile()
+#1 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(1054): AccountController->renderPartial()
+#2 unknown(0): AccountController->gridStatusApproval()
+#3 C:\xampp\htdocs\ecommercejb\framework\base\CComponent.php(611): call_user_func_array()
+#4 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CDataColumn.php(131): CDataColumn->evaluateExpression()
+#5 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridColumn.php(144): CDataColumn->renderDataCellContent()
+#6 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(589): CDataColumn->renderDataCell()
+#7 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(545): CGridView->renderTableRow()
+#8 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(455): CGridView->renderTableBody()
+#9 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(160): CGridView->renderItems()
+#10 unknown(0): CGridView->renderSection()
+#11 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(143): preg_replace_callback()
+#12 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(128): CGridView->renderContent()
+#13 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(173): CGridView->run()
+#14 C:\xampp\htdocs\ecommercejb\protected\views\account\index.php(167): AccountController->widget()
+#15 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(126): require()
+#16 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(95): AccountController->renderInternal()
+#17 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): AccountController->renderFile()
+#18 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): AccountController->renderPartial()
+#19 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(236): AccountController->render()
+#20 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): AccountController->actionIndex()
+#21 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#22 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): AccountController->runAction()
+#23 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#24 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#25 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): AccountController->filterAccessControl()
+#26 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#27 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#28 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): AccountController->runActionWithFilters()
+#29 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): AccountController->run()
+#30 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#31 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#32 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/account/index
+in C:\xampp\htdocs\ecommercejb\protected\views\account\_columnStatusApproval.php (5)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (1054)
+in C:\xampp\htdocs\ecommercejb\protected\views\account\index.php (167)
+2013/07/31 09:29:06 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\ecommercejb\protected\views\account\_columnStatusApproval.php:5)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): AccountController->renderFile()
+#1 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(1054): AccountController->renderPartial()
+#2 unknown(0): AccountController->gridStatusApproval()
+#3 C:\xampp\htdocs\ecommercejb\framework\base\CComponent.php(611): call_user_func_array()
+#4 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CDataColumn.php(131): CDataColumn->evaluateExpression()
+#5 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridColumn.php(144): CDataColumn->renderDataCellContent()
+#6 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(589): CDataColumn->renderDataCell()
+#7 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(545): CGridView->renderTableRow()
+#8 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(455): CGridView->renderTableBody()
+#9 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(160): CGridView->renderItems()
+#10 unknown(0): CGridView->renderSection()
+#11 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(143): preg_replace_callback()
+#12 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(128): CGridView->renderContent()
+#13 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(173): CGridView->run()
+#14 C:\xampp\htdocs\ecommercejb\protected\views\account\index.php(167): AccountController->widget()
+#15 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(126): require()
+#16 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(95): AccountController->renderInternal()
+#17 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): AccountController->renderFile()
+#18 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): AccountController->renderPartial()
+#19 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(236): AccountController->render()
+#20 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): AccountController->actionIndex()
+#21 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#22 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): AccountController->runAction()
+#23 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#24 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#25 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): AccountController->filterAccessControl()
+#26 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#27 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#28 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): AccountController->runActionWithFilters()
+#29 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): AccountController->run()
+#30 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#31 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#32 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/account/index
+in C:\xampp\htdocs\ecommercejb\protected\views\account\_columnStatusApproval.php (5)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (1054)
+in C:\xampp\htdocs\ecommercejb\protected\views\account\index.php (167)
+2013/07/31 09:29:32 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\ecommercejb\protected\views\account\_columnStatusApproval.php:5)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): AccountController->renderFile()
+#1 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(1054): AccountController->renderPartial()
+#2 unknown(0): AccountController->gridStatusApproval()
+#3 C:\xampp\htdocs\ecommercejb\framework\base\CComponent.php(611): call_user_func_array()
+#4 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CDataColumn.php(131): CDataColumn->evaluateExpression()
+#5 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridColumn.php(144): CDataColumn->renderDataCellContent()
+#6 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(589): CDataColumn->renderDataCell()
+#7 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(545): CGridView->renderTableRow()
+#8 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(455): CGridView->renderTableBody()
+#9 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(160): CGridView->renderItems()
+#10 unknown(0): CGridView->renderSection()
+#11 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(143): preg_replace_callback()
+#12 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(128): CGridView->renderContent()
+#13 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(173): CGridView->run()
+#14 C:\xampp\htdocs\ecommercejb\protected\views\account\index.php(167): AccountController->widget()
+#15 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(126): require()
+#16 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(95): AccountController->renderInternal()
+#17 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): AccountController->renderFile()
+#18 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): AccountController->renderPartial()
+#19 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(236): AccountController->render()
+#20 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): AccountController->actionIndex()
+#21 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#22 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): AccountController->runAction()
+#23 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#24 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#25 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): AccountController->filterAccessControl()
+#26 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#27 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#28 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): AccountController->runActionWithFilters()
+#29 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): AccountController->run()
+#30 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#31 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#32 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/account/index
+in C:\xampp\htdocs\ecommercejb\protected\views\account\_columnStatusApproval.php (5)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (1054)
+in C:\xampp\htdocs\ecommercejb\protected\views\account\index.php (167)
+2013/07/31 09:31:19 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\ecommercejb\protected\views\account\_columnStatusApproval.php:5)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): AccountController->renderFile()
+#1 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(1054): AccountController->renderPartial()
+#2 unknown(0): AccountController->gridStatusApproval()
+#3 C:\xampp\htdocs\ecommercejb\framework\base\CComponent.php(611): call_user_func_array()
+#4 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CDataColumn.php(131): CDataColumn->evaluateExpression()
+#5 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridColumn.php(144): CDataColumn->renderDataCellContent()
+#6 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(589): CDataColumn->renderDataCell()
+#7 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(545): CGridView->renderTableRow()
+#8 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(455): CGridView->renderTableBody()
+#9 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(160): CGridView->renderItems()
+#10 unknown(0): CGridView->renderSection()
+#11 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(143): preg_replace_callback()
+#12 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(128): CGridView->renderContent()
+#13 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(173): CGridView->run()
+#14 C:\xampp\htdocs\ecommercejb\protected\views\account\index.php(167): AccountController->widget()
+#15 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(126): require()
+#16 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(95): AccountController->renderInternal()
+#17 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): AccountController->renderFile()
+#18 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): AccountController->renderPartial()
+#19 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(236): AccountController->render()
+#20 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): AccountController->actionIndex()
+#21 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#22 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): AccountController->runAction()
+#23 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#24 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#25 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): AccountController->filterAccessControl()
+#26 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#27 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#28 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): AccountController->runActionWithFilters()
+#29 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): AccountController->run()
+#30 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#31 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#32 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/account/index
+in C:\xampp\htdocs\ecommercejb\protected\views\account\_columnStatusApproval.php (5)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (1054)
+in C:\xampp\htdocs\ecommercejb\protected\views\account\index.php (167)
+2013/07/31 09:35:07 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\ecommercejb\protected\views\account\_columnStatusApproval.php:6)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): AccountController->renderFile()
+#1 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(1054): AccountController->renderPartial()
+#2 unknown(0): AccountController->gridStatusApproval()
+#3 C:\xampp\htdocs\ecommercejb\framework\base\CComponent.php(611): call_user_func_array()
+#4 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CDataColumn.php(131): CDataColumn->evaluateExpression()
+#5 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridColumn.php(144): CDataColumn->renderDataCellContent()
+#6 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(589): CDataColumn->renderDataCell()
+#7 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(545): CGridView->renderTableRow()
+#8 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(455): CGridView->renderTableBody()
+#9 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(160): CGridView->renderItems()
+#10 unknown(0): CGridView->renderSection()
+#11 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(143): preg_replace_callback()
+#12 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(128): CGridView->renderContent()
+#13 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(173): CGridView->run()
+#14 C:\xampp\htdocs\ecommercejb\protected\views\account\index.php(167): AccountController->widget()
+#15 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(126): require()
+#16 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(95): AccountController->renderInternal()
+#17 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): AccountController->renderFile()
+#18 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): AccountController->renderPartial()
+#19 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(236): AccountController->render()
+#20 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): AccountController->actionIndex()
+#21 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#22 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): AccountController->runAction()
+#23 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#24 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#25 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): AccountController->filterAccessControl()
+#26 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#27 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#28 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): AccountController->runActionWithFilters()
+#29 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): AccountController->run()
+#30 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#31 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#32 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/account/index
+in C:\xampp\htdocs\ecommercejb\protected\views\account\_columnStatusApproval.php (6)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (1054)
+in C:\xampp\htdocs\ecommercejb\protected\views\account\index.php (167)
+2013/07/31 09:42:22 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\ecommercejb\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('update')
+#9 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('account/update/...')
+#10 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/ecommerceJB/index.php/account/update/40/render/1
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/account/update/40
+---
+2013/07/31 09:43:12 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (476)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/31 09:43:12 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (476)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/31 09:43:12 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (487)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/31 09:43:12 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (487)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/31 09:43:42 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (476)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/31 09:43:42 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (476)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/31 09:43:44 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (534)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/31 09:43:44 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (534)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/31 09:43:45 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\ecommercejb\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('update')
+#9 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('account/update/...')
+#10 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/ecommerceJB/index.php/account/update/index
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/account/update/40
+---
+2013/07/31 09:46:24 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (476)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/31 09:46:24 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (476)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/31 09:46:24 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (487)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/31 09:46:24 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (487)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/31 09:46:38 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (476)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/31 09:46:38 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (476)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/31 09:46:40 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (534)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/31 09:46:40 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (534)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/31 09:46:42 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\ecommercejb\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('update')
+#9 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('account/update/...')
+#10 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/ecommerceJB/index.php/account/update/index
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/account/update/40
+---
+2013/07/31 09:47:26 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\ecommercejb\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('update')
+#9 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('account/update/...')
+#10 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/ecommerceJB/index.php/account/update/index
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/account/update/40
+---
+2013/07/31 09:47:30 [error] [php] Undefined index: Business (C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php:520)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): AccountController->runAction()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): AccountController->filterAccessControl()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): AccountController->runActionWithFilters()
+#9 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): AccountController->run()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/account/update/40
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (520)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/31 09:49:05 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (476)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/31 09:49:05 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (476)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/31 09:49:07 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (534)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/07/31 09:49:07 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (534)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/08/01 04:24:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/navGadgetRight.png".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/na...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/navGadgetRight.png
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/home
+---
+2013/08/01 04:24:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/asset/navGadgetRight.png".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('images/asset/na...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/images/asset/navGadgetRight.png
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/home
+---

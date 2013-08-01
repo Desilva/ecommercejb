@@ -51,38 +51,51 @@ class BisnisFranchiseController extends Controller
         {
             $model = Business::model()->findByPk($id);
             $error="";
+            $alasan = "";
+            $alasan_tambahan="";
             if(isset($_POST['alasan']) || isset($_POST['alasan_tambahan']))
             {
-                $alasan = $_POST['alasan'];
-                $alasan_tambahan = $_POST['alasan_tambahan'];
-                if($alasan == '' && $alasan_tambahan == '')
+                if(isset($_POST['alasan']))
                 {
-                    $error="Pilih atau Isi Alasan Penolakan";
+                    $alasan = $_POST['alasan'];
+                }
+                
+                if(isset($_POST['alasan_tambahan']))
+                {
+                    $alasan_tambahan = $_POST['alasan_tambahan'];
+                }
+                
+                if($alasan == "" && $alasan_tambahan == "")
+                {
+                    $error="*Pilih atau Isi Alasan Penolakan";
+                }
+                else if($alasan_tambahan != "")
+                {
+                    $check_alasan = AlasanPenolakan::model()->findByAttributes(array("alasan"=>$alasan_tambahan));
+                    if($check_alasan == '' || $check_alasan == null)
+                    {
+                        $alasan_baru = new AlasanPenolakan();
+                        $alasan_baru->alasan = $alasan_tambahan;
+                        $alasan_baru->save();
+                        $model->id_alasan_penolakan = $alasan_baru->id;
+                    }
+                    else
+                    {
+                        $model->id_alasan_penolakan = $check_alasan->id;
+                    }
+                    $model->status_approval = "Ditolak";
+                    $model->save();
+                    $this->redirect(Yii::app()->createUrl('//jbAdmin/bisnisFranchise/index'));
                 }
                 else
                 {
                     $model->status_approval = "Ditolak";
-                    if($alasan != "" && $alasan_tambahan !="")
-                    {
-                        $model->alasan_penolakan = $alasan.'<br/>'.$alasan_tambahan;
-                    }
-                    else if($alasan == "" && $alasan_tambahan !="")
-                    {
-                        $model->alasan_penolakan = $alasan_tambahan;
-                    }
-                    else if($alasan != "" && $alasan_tambahan =="")
-                    {
-                        $model->alasan_penolakan = $alasan;
-                    }
+                    $model->id_alasan_penolakan = $alasan;
                     $model->save();
                     $this->redirect(Yii::app()->createUrl('//jbAdmin/bisnisFranchise/index'));
                 }
             }
-            $alasan_penolakan = array(
-                "Alasan 1"=>"Alasan 1",
-                "Alasan 2"=>"Alasan 2",
-                "Alasan 3"=>"Alasan 3",
-            );
+            $alasan_penolakan = AlasanPenolakan::model()->findAll();
             $this->render('tolak',array('model'=>$model,'alasan_penolakan'=>$alasan_penolakan,'error'=>$error));
         }
 	/**

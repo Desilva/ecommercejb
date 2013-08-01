@@ -1,13 +1,11 @@
-<div class="form">
-
+<div class="span10" style="padding-left: 35px">
+    <div class="row-fluid">
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'sub-industri-form',
 	'enableAjaxValidation'=>false,
 )); ?>
-
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
-
-	<?php echo $form->errorSummary($model); ?>
+        
+	<p><?php echo $form->errorSummary($model); ?></p>
         <?php 
               if(isset($industri))
               {
@@ -29,9 +27,9 @@
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save', array('class'=>'btn Gradient-Style1')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
-
-</div><!-- form -->
+        </div>
+</div>

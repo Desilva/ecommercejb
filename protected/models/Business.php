@@ -1,9 +1,9 @@
 <?php
 
 /**
- * This is the model class for table "Business".
+ * This is the model class for table "business".
  *
- * The followings are the available columns in table 'Business':
+ * The followings are the available columns in table 'business':
  * @property integer $id
  * @property integer $id_category
  * @property integer $id_user
@@ -37,26 +37,30 @@
  * @property string $image
  * @property string $status_approval
  * @property string $tanggal_approval
- * @property string $alasan_penolakan
+ * @property integer $id_alasan_penolakan
  * @property integer $jumlah_click
  * @property integer $tampilkanKontak
  * @property integer $status_rekomendasi
  *
  * The followings are the available model relations:
+ * @property MAlasanPenolakan $idAlasanPenolakan
  * @property MBusinessCategory $idCategory
  * @property MIndustri $idIndustri
  * @property MSubIndustri $idSubIndustri
  * @property MProvinsi $idProvinsi
  * @property MCity $idKota
+ * @property User $idUser
  * @property Email[] $emails
+ * @property Watchlist[] $watchlists
  */
 class Business extends CActiveRecord
 {
-        public $alasan_jual_lainnya;
+            public $alasan_jual_lainnya;
         public $dropDownAlasanJual;
         public $textAreaAlasanJual;
 	/**
 	 * Returns the static model of the specified AR class.
+	 * @param string $className active record class name.
 	 * @return Business the static model class
 	 */
 	public static function model($className=__CLASS__)
@@ -81,13 +85,14 @@ class Business extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('id_category, id_user, id_industri, id_sub_industri, id_provinsi, id_kota, nama, kepemilikan, harga_min, harga_max', 'required'),
-			array('id_category, id_user, id_industri, id_sub_industri, id_provinsi, id_kota, kepemilikan, tahun_didirikan, jumlah_karyawan, penjualan, hpp, laba_bersih_tahun, total_aset, marjin_laba_bersih, laba_bersih_aset, harga_penawaran_penjualan, harga_penawaran_laba_bersih, harga_penawaran_aset, harga_min, harga_max, jumlah_click', 'numerical', 'integerOnly'=>true),
+			array('id_category, id_user, id_industri, id_sub_industri, id_provinsi, id_kota, kepemilikan, tahun_didirikan, jumlah_karyawan, penjualan, hpp, laba_bersih_tahun, total_aset, marjin_laba_bersih, laba_bersih_aset, harga_penawaran_penjualan, harga_penawaran_laba_bersih, harga_penawaran_aset, harga_min, harga_max, id_alasan_penolakan, jumlah_click, tampilkanKontak, status_rekomendasi', 'numerical', 'integerOnly'=>true),
 			array('nama, deskripsi, alamat, alasan_jual_bisnis, franchise_alasan_kerjasama, franchise_persyaratan, franchise_menu, franchise_dukungan_franchisor, dokumen, image', 'length', 'max'=>500),
-			array('status_approval', 'length', 'max'=>50),
-                        array('harga_max','compare','compareAttribute'=>'harga_min','operator'=>'>'),
+			array('harga_max','compare','compareAttribute'=>'harga_min','operator'=>'>'),
+                        array('status_approval', 'length', 'max'=>50),
+			array('tanggal_approval', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, id_category, id_user, id_industri, id_sub_industri, id_provinsi, id_kota, nama, deskripsi, kepemilikan, tahun_didirikan, alamat, jumlah_karyawan, penjualan, hpp, laba_bersih_tahun, total_aset, marjin_laba_bersih, laba_bersih_aset, harga_penawaran_penjualan, harga_penawaran_laba_bersih, harga_penawaran_aset, harga_min, harga_max, alasan_jual_bisnis, franchise_alasan_kerjasama, franchise_persyaratan, franchise_menu, franchise_dukungan_franchisor, dokumen, image, status_approval, jumlah_click', 'safe', 'on'=>'search'),
+			array('id, id_category, id_user, id_industri, id_sub_industri, id_provinsi, id_kota, nama, deskripsi, kepemilikan, tahun_didirikan, alamat, jumlah_karyawan, penjualan, hpp, laba_bersih_tahun, total_aset, marjin_laba_bersih, laba_bersih_aset, harga_penawaran_penjualan, harga_penawaran_laba_bersih, harga_penawaran_aset, harga_min, harga_max, alasan_jual_bisnis, franchise_alasan_kerjasama, franchise_persyaratan, franchise_menu, franchise_dukungan_franchisor, dokumen, image, status_approval, tanggal_approval, id_alasan_penolakan, jumlah_click, tampilkanKontak, status_rekomendasi', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -99,12 +104,15 @@ class Business extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'idAlasanPenolakan' => array(self::BELONGS_TO, 'AlasanPenolakan', 'id_alasan_penolakan'),
 			'idCategory' => array(self::BELONGS_TO, 'BusinessCategory', 'id_category'),
 			'idIndustri' => array(self::BELONGS_TO, 'Industri', 'id_industri'),
 			'idSubIndustri' => array(self::BELONGS_TO, 'SubIndustri', 'id_sub_industri'),
 			'idProvinsi' => array(self::BELONGS_TO, 'Provinsi', 'id_provinsi'),
 			'idKota' => array(self::BELONGS_TO, 'City', 'id_kota'),
+			'idUser' => array(self::BELONGS_TO, 'User', 'id_user'),
 			'emails' => array(self::HAS_MANY, 'Email', 'id_business'),
+			'watchlists' => array(self::HAS_MANY, 'Watchlist', 'id_business'),
 		);
 	}
 
@@ -147,7 +155,7 @@ class Business extends CActiveRecord
 			'image' => 'Image',
 			'status_approval' => 'Status Approval',
                         'tanggal_approval' => 'Tanggal Approval',
-                        'alasan_penolakan' => 'Alasan Penolakan',
+                        'id_alasan_penolakan' => 'Alasan Penolakan',
 			'jumlah_click' => 'Jumlah Click',
                         'alasan_jual_lainnya'=> 'Lainnya',
                         'tampilkanKontak'=>'Kontak Ditampilkan',
@@ -197,7 +205,11 @@ class Business extends CActiveRecord
 		$criteria->compare('dokumen',$this->dokumen,true);
 		$criteria->compare('image',$this->image,true);
 		$criteria->compare('status_approval',$this->status_approval,true);
+		$criteria->compare('tanggal_approval',$this->tanggal_approval,true);
+		$criteria->compare('id_alasan_penolakan',$this->id_alasan_penolakan);
 		$criteria->compare('jumlah_click',$this->jumlah_click);
+		$criteria->compare('tampilkanKontak',$this->tampilkanKontak);
+		$criteria->compare('status_rekomendasi',$this->status_rekomendasi);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

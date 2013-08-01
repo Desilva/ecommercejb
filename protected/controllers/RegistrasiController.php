@@ -58,14 +58,18 @@ class RegistrasiController extends Controller
             "Keluarga"=>"Keluarga",
             "Event"=>"Event"
         );
+//        $list_references = array(
+//            "Website"=>"Website",
+//            "Koran"=>"Koran",
+//            "Majalah"=>"Majalah",
+//            "Radio"=>"Radio",
+//            "Televisi"=>"Televisi",
+//            "Teman"=>"Teman",
+//            "Keluarga"=>"Keluarga",
+//            "Event"=>"Event"
+//        );
         $list_tempat_lahir = CHtml::listData(City::model()->findAll(), "city", "city");
         $list_tempat_lahir += array('Lainnya'=>'Lainnya');
-        $list_penghasilan = array(
-            "<2jt" => "<2jt",
-            "<5jt" => "<5jt",
-            "<10jt" => "<10jt",
-            ">10jt" => ">10jt",
-        );
         $list_agama = array(
             "Kristen" => "Kristen",
             "Katolik" => "Katolik",
@@ -132,10 +136,10 @@ class RegistrasiController extends Controller
             'kategori' => $list_kategori_buyer,
             'lokasi' => $list_kota,
             'range_harga' => $list_range_harga,
-            'penghasilan' => $list_penghasilan,
             'tempat_lahir' => $list_tempat_lahir,
             'references1' => $list_references1,
             'references2' => $list_references2,
+//            'references'=> $list_references,
             ));
     }
 }

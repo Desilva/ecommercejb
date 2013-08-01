@@ -29,21 +29,6 @@
 	</div>
 	<div style="margin-top:-18px;">
     <hr/>-->
-   <?php $this->widget('zii.widgets.CListView', array(
-    'dataProvider'=>$model,
-    'itemView'=>'_list',
-    'summaryText'=>'',
-    'ajaxUpdate' => false,
-    'sorterHeader' => 'Urutkan Berdasarkan:',
-    'sortableAttributes'=>array(
-        'tanggal_approval'=>'Tanggal',
-        'harga_max'=>'Harga',
-        'nama'=>'Nama',
-        'penjualan'=>'Revenue'
-    ),
-    'template' => '<div><header style="font-size:30px; font-family:Calibri;">Hasil Pencarian</header>{sorter}<br style="clear:both"/></div><div style="margin-top:-18px;"><hr/>{items}</div>{pager}'
-    ));
-   ?>
 <!--</div>-->
 <script>
 
@@ -52,3 +37,56 @@
       
     }
 </script>
+
+<div class="row-fluid">
+	<div class="span3" >
+    	       <?php if(!empty($this->clips['sidebar'])) echo
+                            $this->clips['sidebar']?>
+    </div>
+    <div class="span9">
+<!--    	<div class="row-fluid">
+        	<div class="span12">
+            	<div class="span3">
+                	<b>Hasil Pencarian</b>
+                </div>
+                <div class="span9">
+                	<b>Urutkan</b>
+                    &nbsp;                	
+        			<select class="Input-Size-VerySmall">
+        				<option>1</option>
+            			<option>2</option>
+            			<option>3</option>
+        			</select>
+                </div>
+            </div>
+        </div>-->
+        <div class="row-fluid">
+        	<div class="span12">
+           <table class="table">
+        	<tr>
+            	<th>Gambar</td>
+                <th>Deskripsi</td>
+                <th>Lokasi</td>
+                <th>Harga</td>
+                <th>Revenue</td>
+            </tr>
+    <?php $this->widget('zii.widgets.CListView', array(
+            'dataProvider'=>$model,
+            'itemView'=>'_list',
+            'summaryText'=>'',
+            'ajaxUpdate' => false,
+            'sorterHeader' => 'Urutkan Berdasarkan:',
+            'sortableAttributes'=>array(
+                'tanggal_approval'=>'Tanggal',
+                'harga_max'=>'Harga',
+                'nama'=>'Nama',
+                'penjualan'=>'Revenue'
+            ),
+            'template' => '<div><header style="font-size:30px; font-family:Calibri;">Hasil Pencarian</header>{sorter}<br style="clear:both"/></div><div style="margin-top:-18px;"><hr/>{items}</div>{pager}'
+            ));
+   ?>
+           </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -7,20 +7,22 @@ class ArticleController extends Controller
     public function init()
     {
 //        Yii::app()->getModule('jbAdmin');
-        $articleCategory = ArticleCategory::model()->findAll();
-        $this->beginClip('sidebar');
-            $this->renderPartial('_sidebar',array('articleCategory'=>$articleCategory));
-        $this->endClip();
+//        $articleCategory = ArticleCategory::model()->findAll();
+//        $this->beginClip('sidebar');
+//            $this->renderPartial('_sidebar',array('articleCategory'=>$articleCategory));
+//        $this->endClip();
     }
    
-    public function actionIndex($category="")
+    public function actionIndex()
     {
-        if(isset($_POST['ArticleCategory']['id']))
+        $selectedArticleCategory = "";
+        $articleCategory = ArticleCategory::model()->findAll();
+        if(isset($_GET['ArticleCategory']))
         {
-            $category = $_POST['ArticleCategory']['id'];
+            $selectedArticleCategory = $_GET['ArticleCategory'];
         }
         
-        if($category =="")
+        if($selectedArticleCategory =="")
         {
             $article= new CActiveDataProvider('article',array(
                 'sort'=>array(
@@ -30,12 +32,12 @@ class ArticleController extends Controller
                 ),
                 ));
 
-            $this->render('index',array('model' => $article));
+            $this->render('index',array('model' => $article,'articleCategory'=>$articleCategory,'selectedArticleCategory'=>$selectedArticleCategory));
         }
         else 
         {
             $criteria = new CDbCriteria();
-            $criteria->condition = "id_article_category = $category";
+            $criteria->condition = "id_article_category = $selectedArticleCategory";
             $article = new CActiveDataProvider('article', array(
                 'criteria' => $criteria,
                 'sort' => array(
@@ -45,7 +47,7 @@ class ArticleController extends Controller
                 ),
             ));
 
-            $this->render('index', array('model' => $article));
+            $this->render('index', array('model' => $article,'articleCategory'=>$articleCategory,'selectedArticleCategory'=>$selectedArticleCategory));
         }
     }
     

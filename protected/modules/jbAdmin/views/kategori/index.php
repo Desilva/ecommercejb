@@ -1,14 +1,4 @@
 <style>
-    input[type="button"].buttonGrid {
-    background: -moz-linear-gradient(center top , #1568AE, #1568AE) repeat scroll 0 0 transparent;
-    border: 1px solid #FFFFFF;
-    border-radius: 2px 2px 2px 2px;
-    color: #FEF4E9;
-    height: 30px;
-    width: 135px;
-}
-
-
 a.viewSubKategori img{
     width: 25px;
     height: 25px;
@@ -25,42 +15,6 @@ a.delete img{
     margin-left: 2px;
 }
 </style>
-<div>
-    <?php echo CHtml::button('Tambah Kategori', array('submit' => array('kategori/create'), 'class'=>'buttonGrid')); ?>
-    <?php
-      $this->widget('zii.widgets.grid.CGridView', array(
-                'id'=>'industriGrid',
-                'dataProvider' => $model,
-                'itemsCssClass' => 'table table-striped',
-                'summaryText' => '',
-                'ajaxUpdate'=>'subIndustriGrid',
-                'columns' => array(
-                    'industri',
-                    'keterangan',
-                    array(
-                        'class' => 'CButtonColumn',
-                        'id'=>'industriGridColumn',
-                        'htmlOptions' => array('style' => 'width: 85px'),
-                        'header' => 'Tindakan',
-                        'template' => '{update}{delete}{viewSubKategori}',
-                        'deleteButtonImageUrl' => Yii::app()->request->baseUrl . '/images/icon/trash.png',
-                        'updateButtonImageUrl' => Yii::app()->request->baseUrl . '/images/icon/write.png',
-                        'buttons' => array(
-                            'viewSubKategori' => array(
-                                'label' => 'Lihat Sub-Kategori',
-                                'imageUrl' => Yii::app()->request->baseUrl . '/images/icon/-.png',
-                                'options' => array('class' => 'viewSubKategori'),
-                                'url' => '$data->id', 
-                                'click'=> "function(e){ e.preventDefault(); getSubIndustri($(this).attr('href'))}"
-
-                            )
-                        ),
-                    ),
-                ),
-            ));
-
-    ?>
-    <hr />
      <script>
             function getSubIndustri(id)
             {
@@ -140,28 +94,80 @@ a.delete img{
             }
             
         </script>
-    <div id="subIndustriList">
-    <?php
-      $this->widget('zii.widgets.grid.CGridView', array(
-                'id'=>'subIndustriGrid',
-                'dataProvider' => $subkategori,
-                'itemsCssClass' => 'table table-striped',
-                'summaryText' => '',
-                'ajaxUpdate'=>'subIndustriGrid',
-                'columns' => array(
-                    'sub_industri',
-                    'keterangan',
-                    array(
-                        'class' => 'CButtonColumn',
-                        'id'=>'subIndustriGridColumn',
-                        'header' => 'Tindakan',
-                        'template' => '{update}{delete}',
-                        'deleteButtonImageUrl' => Yii::app()->request->baseUrl . '/images/icon/trash.png',
-                        'updateButtonImageUrl' => Yii::app()->request->baseUrl . '/images/icon/write.png',
-                    ),
-                ),
-            ));
+<div class="span10">    	
+        <div class="row-fluid">
+        	<div class="span12">
+            	<h4 class="Font-Color-DarkBlue">Mengatur Kategori</h4>
+            	<form>
+                    <?php echo CHtml::button('Tambah Kategori', array('submit' => array('kategori/create'), 'class'=>'btn Gradient-Style1')); ?>
+            	</form>
+            </div>
+        </div>
+        <div class="row-fluid">
+        	<div class="span12">
+                        <?php
+                          $this->widget('zii.widgets.grid.CGridView', array(
+                                    'id'=>'industriGrid',
+                                    'dataProvider' => $model,
+                                    'itemsCssClass' => 'table table-striped',
+                                    'summaryText' => '',
+                                    'ajaxUpdate'=>'subIndustriGrid',
+                                    'columns' => array(
+                                        'industri',
+                                        'keterangan',
+                                        array(
+                                            'class' => 'CButtonColumn',
+                                            'id'=>'industriGridColumn',
+                                            'htmlOptions' => array('style' => 'width: 85px'),
+                                            'header' => 'Tindakan',
+                                            'template' => '{update}{delete}{viewSubKategori}',
+                                            'deleteButtonImageUrl' => Yii::app()->request->baseUrl . '/images/asset/trash.png',
+                                            'updateButtonImageUrl' => Yii::app()->request->baseUrl . '/images/asset/write.png',
+                                            'buttons' => array(
+                                                'viewSubKategori' => array(
+                                                    'label' => 'Lihat Sub-Kategori',
+                                                    'imageUrl' => Yii::app()->request->baseUrl . '/images/asset/folder.png',
+                                                    'options' => array('class' => 'viewSubKategori'),
+                                                    'url' => '$data->id', 
+                                                    'click'=> "function(e){ e.preventDefault(); getSubIndustri($(this).attr('href'))}"
 
-    ?>
-   </div>
-</div>
+                                                )
+                                            ),
+                                        ),
+                                    ),
+                                ));
+
+                        ?>
+            </div>
+        </div>
+        <div class="row-fluid">
+        	<div class="span12">
+            	<div class="row-fluid">
+                	<div class="span12" id="subIndustriList">
+                                <?php
+                                  $this->widget('zii.widgets.grid.CGridView', array(
+                                            'id'=>'subIndustriGrid',
+                                            'dataProvider' => $subkategori,
+                                            'itemsCssClass' => 'table table-striped',
+                                            'summaryText' => '',
+                                            'ajaxUpdate'=>'subIndustriGrid',
+                                            'columns' => array(
+                                                'sub_industri',
+                                                'keterangan',
+                                                array(
+                                                    'class' => 'CButtonColumn',
+                                                    'id'=>'subIndustriGridColumn',
+                                                    'header' => 'Tindakan',
+                                                    'template' => '{update}{delete}',
+                                                    'deleteButtonImageUrl' => Yii::app()->request->baseUrl . '/images/asset/trash.png',
+                                                    'updateButtonImageUrl' => Yii::app()->request->baseUrl . '/images/asset/write.png',
+                                                ),
+                                            ),
+                                        ));
+
+                                ?>
+                    </div>
+                    </div>
+               </div>             	
+            </div>
+        </div>

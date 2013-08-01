@@ -14,34 +14,31 @@
     <?php
         $image = array_filter(explode(',',$data->image));
     ?>
-    <div>
-    	<div id="C1">
-            <?php if(!empty($image)){ 
+            <tr>
+            	<td>
+          <?php if(!empty($image)){ 
                     if(file_exists(Yii::app()->basePath.'/../uploads/images/'.$data->id_user.'/'.$image[0]))
                     {
-           ?>
-                        <img src="<?php echo Yii::app()->baseUrl ?>/uploads/images/<?php echo $data->id_user?>/<?php echo $image[0] ?>" width="128" height="128"/>
-           <?php    }
+          ?>
+                        <img src="<?php echo Yii::app()->baseUrl ?>/uploads/images/<?php echo $data->id_user?>/<?php echo $image[0] ?>" width="120" height="120"/>
+          <?php    }
                     else
                     {
           ?>
-                        <img src="<?php echo Yii::app()->baseUrl ?>/images/no-image.gif" width="128" height="128"/>
+                        <img src="<?php echo Yii::app()->baseUrl ?>/images/no-image.gif" width="120" height="120"/>
           <?php     }
                     }
                   else
                   {
-            ?>
-                    <img src="<?php echo Yii::app()->baseUrl ?>/images/no-image.gif" width="128" height="128"/>
-            <?php 
+         ?>
+                    <img src="<?php echo Yii::app()->baseUrl ?>/images/no-image.gif" width="120" height="120"/>
+         <?php 
                   }
-            ?>
-         </div>
-        <div id="C2">
-        	<font id="titleCariBisnis"><?php echo $data->nama ?></font>
-			<br/>
-                        <!--    LOCALE: there is two function for setting locale, the first one using 'indonesian' is for windows, and the 2nd one the id_ID is for linux-->
-			<strong><?php echo $data->idKota->city ?>, <?php setlocale(LC_TIME, 'indonesian'); setlocale(LC_TIME, 'id_ID'); echo strftime('%d %B %Y',  strtotime($data->tanggal_approval)) ?></strong><br/>
-                        <?php
+         ?>
+                </td>
+                <td width="39%" style="text-align:justify">
+                	<h5><?php echo $data->nama ?></h5>
+                    <?php
                             if($data->deskripsi != '' || $data->deskripsi != null)
                             {
                                 if(strlen($data->deskripsi) <= 200)
@@ -58,34 +55,26 @@
                                 echo "Tidak ada deskripsi";
                             }
                         ?>
-
-        </div>
-        <div id="C3">
-        	<strong>
-            	Harga
-            </strong><br/>
-            	<font>Rp.<?php echo $data->harga_min ?> -</font><br/>
-                <font>Rp.<?php echo $data->harga_max ?></font>
-            <p>
-            </p>
-            <strong>
-            	Revenue
-            </strong><br/>
-            	<font>Rp.<?php echo $data->penjualan ?></font><br/>
-            <p>
-            </p>
-			<?php
+                </td>
+                <td width="15%">
+                	<?php echo $data->idKota->city ?>
+                </td>
+                <td>
+                	Rp. <?php echo $data->harga_min ?> -<br>
+                    Rp. <?php echo $data->harga_max ?>
+                </td>
+                <td>
+                	<?php echo $data->penjualan ?>
+                        <?php
 				if(!Yii::app()->user->isGuest){
 			?>
-					<?php echo CHtml::button('Lihat Detail', array('submit' => array("/cariBisnisFranchise/detail/$data->id"),'class' => 'styleSubmit2')); ?>
+					<?php echo CHtml::button('Lihat Detail', array('submit' => array("/cariBisnisFranchise/detail/$data->id"),'class' => 'btn Gradient-Style1')); ?>
 			<?php
 				}
                                 else
                                 {
 			?>
-                                        <a href="#">Login untuk melihat detail</a>
+                                        <a href="#LoginForm_email">Login untuk melihat detail</a>
                         <?php   } ?>
-        </div>
-        <br style="clear:both"/>
-        <hr/>
-    </div>
+                </td>
+            </tr>

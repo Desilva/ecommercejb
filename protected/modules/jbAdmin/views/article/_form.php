@@ -1,14 +1,13 @@
 <script src="<?php echo Yii::app()->baseUrl.'/ckeditor/ckeditor.js'; ?>"></script>
-<div class="form">
 
+<div class="span10">
+    <div class="row-fluid">
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'article-form',
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p class="note">Harus diisi <span class="required">*</span></p>
-
-	<?php echo $form->errorSummary($model); ?>
+	<p><?php echo $form->errorSummary($model); ?></p>
 
         <table>
             <tr>
@@ -57,9 +56,9 @@
             CKEDITOR.replace( 'ckeditorTextArea' );
         </script>
 	<div>
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Tambah' : 'Simpan'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Tambah' : 'Simpan', array('class'=>'btn Gradient-Style1')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
-
-</div><!-- form -->
+</div>
+    </div>

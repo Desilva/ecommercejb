@@ -10,6 +10,7 @@
 //);
 ?>
 
+<div class="span10">
 <h1>Tambah Artikel</h1>
-
+</div>
 <?php echo $this->renderPartial('_form', array('model'=>$model,'category'=>$category)); ?>

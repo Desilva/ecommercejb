@@ -13,6 +13,7 @@ $this->menu=array(
 );
 ?>
 
+<div class="span10">
 <h1>Ubah Artikel <?php echo $model->title; ?></h1>
-
+</div>
 <?php echo $this->renderPartial('_form', array('model'=>$model,'category'=>$category)); ?>

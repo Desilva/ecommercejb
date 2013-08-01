@@ -255,6 +255,7 @@ class AccountController extends Controller
         
         public function actionPreview()
         {
+            
             $model = new Business();
             $model->attributes = $_POST['Business'];
             if($_POST['Business']['id_category'] == '1')
@@ -470,9 +471,28 @@ class AccountController extends Controller
 	public function actionUpdate($id)
 	{
             $model=$this->loadModel($id);
+            if(Yii::app()->request->isAjaxRequest)
+            {
+                $model->attributes=$_POST['Business'];
+                $valid=$model->validate();            
+                if($valid){
+
+                   //do anything here
+                     echo CJSON::encode(array(
+                          'status'=>'success'
+                     ));
+                    Yii::app()->end();
+                    }
+                    else{
+                        $error = CActiveForm::validate($model);
+                        if($error!='[]')
+                            echo $error;
+                        Yii::app()->end();
+                    }
+            }
             if($model->id_user != Yii::app()->user->id)
             {
-                $this->redirect('index');
+                $this->redirect(Yii::app()->createUrl('//account/index'));
             }
             Yii::import("ext.xupload.models.XUploadForm");
             $img_upload = new XUploadForm;
@@ -494,26 +514,10 @@ class AccountController extends Controller
                 {
                     $list_tahun[$i] = $i;
                 }
-                if(isset($_GET['jenis']))
-                {
-                    $jenis = $_GET['jenis'];
-                }
-                else
-                {
-                    $jenis = 1;
-                }
-                if($jenis == 1)
-                { 
-                    $model->id_category = 1;
-                }
-                else
-                {
-                     $model->id_category = 2;
-                }
                 $kategori = CHtml::listData(BusinessCategory::model()->findAll(),'id','category');
 		// Uncomment the following line if AJAX validation is needed
 		//$this->performAjaxValidation($model);
-
+                
 		if(isset($_POST['Business']))
                 {
                     if(isset($_GET['stat']))
@@ -586,11 +590,10 @@ class AccountController extends Controller
                         }
                     }
                     if($model->save())
-                        $this->redirect('index');
+                        $this->redirect(Yii::app()->createUrl('//account/index'));
                 }
         Yii::app()->user->setState('images', null);
         $this->render('update',array(
-                        'jenis'=>$jenis,
 			'model'=>$model,
                         'kategori'=>$kategori,
                         'kepemilikan'=>$list_kepemilikan,
@@ -1020,12 +1023,14 @@ class AccountController extends Controller
             if(isset($_GET['id']))
             {
                 $id_business = $_GET['id'];
+                $model = Business::model()->findByPk($id_business);
                 $emailCriteria = new CDbCriteria();
                 $emailCriteria->addCondition('status= 1');
                 $emailCriteria->addCondition("id_business=$id_business");
             }
             else
             {
+                $model ='';
                 $emailCriteria = new CDbCriteria();
                 $emailCriteria->addCondition('id=0'); // tidak menampilkan apa-apa
             }
@@ -1037,13 +1042,14 @@ class AccountController extends Controller
                 ),
                 'criteria'=>$emailCriteria
             ));
-            $this->renderPartial('_emailList',array('email'=>$emailDataProvider));
+            
+            $this->renderPartial('_emailList',array('email'=>$emailDataProvider,'model'=>$model));
         }
         
         
         protected function gridStatusApproval($data, $row)
         {
-            $model = Business::model()->findByPk($data->id);
+            $model = Business::model()->with('idAlasanPenolakan')->findByPk($data->id);
             return $this->renderPartial('_columnStatusApproval',array('model'=>$model),true);
         }
         

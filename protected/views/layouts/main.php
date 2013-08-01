@@ -1,91 +1,73 @@
-<?php if(!Yii::app()->user->isGuest){
-	$classMenu="spanMenuLogin";
-}else{
-	$classMenu="spanMenu";
-}
-?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Jualan Bisnis</title>
-<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
-    <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>-->
-        <?php Yii::app()->clientScript->registerCoreScript('jquery'); ?>
-    	<!--<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/scripts/jquery-1.5.1.min.js"></script>-->
-	<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/style.css" media="screen">
-        <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/bootstrap.css" rel="stylesheet">
-<!--        <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap-transition.js"></script>
-        <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap-alert.js"></script>
-        <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap-modal.js"></script>
-        <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap-dropdown.js"></script>
-        <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap-scrollspy.js"></script>
-        <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap-tab.js"></script>
-        <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap-tooltip.js"></script>
-        
-        <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap-button.js"></script>
-        <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap-collapse.js"></script>
-        <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap-carousel.js"></script>
-        <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap-typeahead.js"></script>-->
-        <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap-popover.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Jualan Bisnis</title>
+<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl ?>/library/Bootstrap/assets/css/bootstrap.css" />
+<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl ?>/library/Bootstrap/assets/css/bootstrap-responsive.css" />
+<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl ?>/css/style.css" />
 </head>
-    
-<body>
-<div id="primaryDiv">
-	<div id="leftPrimaryDiv">
-	<div style="width:165px; height:165px; margin-left:135px; margin-bottom:23px;">
-        	<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" width="150" height="150">
-        </div>
-		<div id="sideBarDiv">
-                      <?php if(!empty($this->clips['sidebar'])) echo
-                            $this->clips['sidebar']?>
-        </div>
-	</div>
-	<div id="rightPrimaryDiv">
-    	<div id="loginDiv">
-            <?php
-            if(Yii::app()->user->isGuest)
-            {
-                $this->widget('LoginFormPortlet');
-            }
-            else
-            {
-            ?> 
-                <h3> Selamat Datang, <?php echo Yii::app()->user->first_name?> (<a href="<?php echo Yii::app()->createUrl('//authentication/logout') ?>">logout</a>)</h3>
-            <?php }
-            ?>
-        </div>
-        <div id="menuDiv">
-                
-        	<a href="<?php echo Yii::app()->createUrl('//home') ?>"><span id="leftSpanMenu"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/iconHome.png"/></span></a>	
-            <?php
-			if(!Yii::app()->user->isGuest){
-			?>
-                                <?php if(Yii::app()->user->checkAccess("member")){ ?>
-                                    <a href="<?php echo Yii::app()->createUrl('//account/index') ?>"><span class="spanMenuLogin">Jual Bisnis/Franchise</span></a>
-                                    <a href="<?php echo Yii::app()->createUrl('//account/beli') ?>"><span class="spanMenuLogin">Akun Saya</span></a>
-                                <?php } else if(Yii::app()->user->checkAccess("admin")){ ?>
-                                    <a href="<?php echo Yii::app()->createUrl('//jbAdmin/') ?>"><span class="spanMenuLogin">Setting Admin</span></a>
-                                <?php } ?>
-            <?php
-			}else{
-			?>
-            	<a href="#"><span class="spanMenu">Jual Bisnis/Franchise</span></a>
-            <?php
-			}
-			?>
-                <a href="<?php echo Yii::app()->createUrl('//cariBisnisFranchise') ?>"><span class="<?php echo $classMenu?>">Cari Bisnis/Franchise</span></a>
-                <a href="#"><span class="<?php echo $classMenu?>"><label class="labelSpanMenu">Layanan Kami</label></span></a>
-                <a href="<?php echo Yii::app()->createUrl('//article') ?>"><span class="<?php echo $classMenu?>"><label class="labelSpanMenu">Artikel</label></span></a>
-                <a href="#"><span class="<?php echo $classMenu?>"><label class="labelSpanMenu">Kontak</label></span></a>
-                <a href="#"><span id="rightSpanMenu" class="spanMenu"><label class="labelSpanMenu">FAQ</label></span></a>
-        </div>
-        <div id="content">
-			<?php echo $content; ?>
-    	</div>
-    <!--<div style="background:url(<?php echo Yii::app()->request->baseUrl ?>/images/footer.png); width:1350px; height:75px; margin-left:-390px; clear:both"></div>-->
-    </div>
-</div>
 
+<body>
+	<div id="primary" class="container">
+    	<div class="row-fluid header">
+        	<div class="span2">
+            	<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/logo.png" width="200" height="200" />
+            </div>
+            <div class="span10" id="rightHeader">
+            	<div class="row-fluid">
+                    <?php
+                        if(Yii::app()->user->isGuest)
+                        {
+                            $this->widget('LoginFormPortlet');
+                        }
+                        else
+                        {
+                            ?> 
+                            <h4> Selamat Datang, <?php echo Yii::app()->user->first_name ?> (<a href="<?php echo Yii::app()->createUrl('//authentication/logout') ?>">logout</a>)</h4>
+                    <?php }
+                    ?>
+                </div>
+                
+                <div class="row-fluid separator"></div>
+                
+            	<div class="row-fluid">
+                	<div class="span12" id="menuDiv">
+                    	<div class="navbar">
+                        	<div class="navbar-inner Gradient-Style1">
+                            	<ul class="nav">
+                                    <li class="separator-Vertical"><a style="padding-right:30px" class="Font-Color-White" href="<?php echo Yii::app()->createUrl('//home') ?>"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/asset/iconHome.png" width="25" /></a></li>
+                                    <li class="separator-Vertical"><a class="Font-Color-White" href="<?php echo Yii::app()->createUrl('//cariBisnisFranchise') ?>">Cari Bisnis Franchise</a></li>
+                                     <?php
+                                        if(!Yii::app()->user->isGuest){
+                                     ?>
+                                    <?php if(Yii::app()->user->checkAccess("member")){ ?>
+                                        <li class="separator-Vertical"><a class="Font-Color-White" href="<?php echo Yii::app()->createUrl('//account/index') ?>">Jual Bisnis Franchise</a></li>
+                                        <li class="separator-Vertical"><a class="Font-Color-White" href="<?php echo Yii::app()->createUrl('//account/beli') ?>">Akun Saya</a></li>
+                                    <?php } else if(Yii::app()->user->checkAccess("admin")){ ?>
+                                        <li class="separator-Vertical"><a class="Font-Color-White" href="<?php echo Yii::app()->createUrl('//jbAdmin/') ?>">Setting Admin</a></li>
+                                    <?php } ?>
+                                    <?php
+                                        }else{
+                                    ?>
+                                        <li class="separator-Vertical"><a class="Font-Color-White" href="#LoginForm_email">Jual Bisnis Franchise</a></li>
+                                    <?php } ?>
+                                    <li class="separator-Vertical"><a class="Font-Color-White" href="<?php echo Yii::app()->createUrl('//layananKami') ?>">Layanan Kami</a></li>
+                                    <li class="separator-Vertical"><a class="Font-Color-White" href="<?php echo Yii::app()->createUrl('//article') ?>">Artikel</a></li>
+                                    <li class="separator-Vertical"><a class="Font-Color-White" href="<?php echo Yii::app()->createUrl('//kontak') ?>">Kontak</a></li>
+                                    <li class="separator-Vertical"><a class="Font-Color-White" href="<?php echo Yii::app()->createUrl('//faq') ?>">Faq</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>              
+            </div>
+        </div>
+        <!--Content-->
+       	<div class="container content">
+        	<?php echo $content; ?>
+        </div>
+       <!--End Content -->
+    </div>
 </body>
 </html>
-       

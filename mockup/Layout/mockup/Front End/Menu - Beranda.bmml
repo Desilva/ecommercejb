@@ -1,0 +1,271 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1291" measuredH="1007" mockupW="1219" mockupH="1007">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="72" y="0" w="1024" h="1007" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>A%20Web%20Page%0Ahttp%3A//jualanbisnis.com</text>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::MenuBar" x="329" y="181" w="736" h="29" measuredW="660" measuredH="29" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>0</selectedIndex>
+        <text>Beranda%2C%20Cari%20Bisnis%20/%20Franchise%2C%20Jual%20Bisnis%20/%20Franchise%2C%20Layanan%20Kami%2C%20Artikel%2C%20Kontak%2C%20FAQ</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::Link" x="567" y="106" w="-1" h="-1" measuredW="92" measuredH="21" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>member%20baru%3F</text>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::Link" x="669" y="106" w="-1" h="-1" measuredW="92" measuredH="21" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Lupa%20Password</text>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::Label" x="659" y="106" w="-1" h="-1" measuredW="10" measuredH="21" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%7C</text>
+      </controlProperties>
+    </control>
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::Label" x="764" y="80" w="-1" h="-1" measuredW="39" measuredH="21" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Nama</text>
+      </controlProperties>
+    </control>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::Label" x="896" y="82" w="-1" h="-1" measuredW="68" measuredH="21" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Kata%20Sandi</text>
+      </controlProperties>
+    </control>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::TextInput" x="766" y="104" w="119" h="-1" measuredW="79" measuredH="27" zOrder="7" locked="false" isInGroup="-1"/>
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::TextInput" x="896" y="105" w="99" h="-1" measuredW="79" measuredH="27" zOrder="8" locked="false" isInGroup="-1"/>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::Button" x="1002" y="105" w="-1" h="-1" measuredW="61" measuredH="27" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Masuk</text>
+      </controlProperties>
+    </control>
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::Image" x="145" y="91" w="115" h="123" measuredW="77" measuredH="79" zOrder="10" locked="false" isInGroup="-1"/>
+    <control controlID="31" controlTypeID="com.balsamiq.mockups::Image" x="145" y="244" w="622" h="269" measuredW="77" measuredH="79" zOrder="11" locked="false" isInGroup="-1"/>
+    <control controlID="32" controlTypeID="com.balsamiq.mockups::CheckBox" x="896" y="135" w="106" h="17" measuredW="104" measuredH="18" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>10</size>
+        <text>Simpan%20kata%20sandi</text>
+      </controlProperties>
+    </control>
+    <control controlID="35" controlTypeID="com.balsamiq.mockups::HRule" x="797" y="243" w="262" h="-1" measuredW="100" measuredH="10" zOrder="13" locked="false" isInGroup="-1"/>
+    <control controlID="36" controlTypeID="com.balsamiq.mockups::HRule" x="797" y="279" w="262" h="-1" measuredW="100" measuredH="10" zOrder="14" locked="false" isInGroup="-1"/>
+    <control controlID="38" controlTypeID="com.balsamiq.mockups::Label" x="807" y="254" w="-1" h="-1" measuredW="152" measuredH="24" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>16</size>
+        <text>ARTIKEL%20TERBARU</text>
+      </controlProperties>
+    </control>
+    <control controlID="39" controlTypeID="com.balsamiq.mockups::Label" x="861" y="284" w="-1" h="-1" measuredW="67" measuredH="18" zOrder="16" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>11</size>
+        <text>25%20Juli%202013</text>
+      </controlProperties>
+    </control>
+    <control controlID="40" controlTypeID="com.balsamiq.mockups::Label" x="865" y="302" w="193" h="21" measuredW="150" measuredH="21" zOrder="17" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>PT%20Daya%20Perkasa%20Terjual</text>
+      </controlProperties>
+    </control>
+    <control controlID="41" controlTypeID="com.balsamiq.mockups::HRule" x="799" y="325" w="262" h="-1" measuredW="100" measuredH="10" zOrder="18" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0.25</backgroundAlpha>
+      </controlProperties>
+    </control>
+    <control controlID="42" controlTypeID="com.balsamiq.mockups::Label" x="862" y="329" w="-1" h="-1" measuredW="67" measuredH="18" zOrder="19" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>11</size>
+        <text>25%20Juli%202013</text>
+      </controlProperties>
+    </control>
+    <control controlID="43" controlTypeID="com.balsamiq.mockups::Label" x="866" y="347" w="193" h="21" measuredW="150" measuredH="21" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>PT%20Daya%20Perkasa%20Terjual</text>
+      </controlProperties>
+    </control>
+    <control controlID="44" controlTypeID="com.balsamiq.mockups::HRule" x="800" y="370" w="262" h="-1" measuredW="100" measuredH="10" zOrder="21" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0.25</backgroundAlpha>
+      </controlProperties>
+    </control>
+    <control controlID="45" controlTypeID="com.balsamiq.mockups::Label" x="861" y="374" w="-1" h="-1" measuredW="67" measuredH="18" zOrder="22" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>11</size>
+        <text>25%20Juli%202013</text>
+      </controlProperties>
+    </control>
+    <control controlID="46" controlTypeID="com.balsamiq.mockups::Label" x="865" y="392" w="193" h="21" measuredW="150" measuredH="21" zOrder="23" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>PT%20Daya%20Perkasa%20Terjual</text>
+      </controlProperties>
+    </control>
+    <control controlID="47" controlTypeID="com.balsamiq.mockups::HRule" x="799" y="415" w="262" h="-1" measuredW="100" measuredH="10" zOrder="24" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0.25</backgroundAlpha>
+      </controlProperties>
+    </control>
+    <control controlID="48" controlTypeID="com.balsamiq.mockups::Label" x="861" y="418" w="-1" h="-1" measuredW="67" measuredH="18" zOrder="25" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>11</size>
+        <text>25%20Juli%202013</text>
+      </controlProperties>
+    </control>
+    <control controlID="49" controlTypeID="com.balsamiq.mockups::Label" x="865" y="436" w="193" h="21" measuredW="150" measuredH="21" zOrder="26" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>PT%20Daya%20Perkasa%20Terjual</text>
+      </controlProperties>
+    </control>
+    <control controlID="50" controlTypeID="com.balsamiq.mockups::HRule" x="799" y="459" w="262" h="-1" measuredW="100" measuredH="10" zOrder="27" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0.25</backgroundAlpha>
+      </controlProperties>
+    </control>
+    <control controlID="51" controlTypeID="com.balsamiq.mockups::HRule" x="157" y="538" w="415" h="-1" measuredW="100" measuredH="10" zOrder="28" locked="false" isInGroup="-1"/>
+    <control controlID="52" controlTypeID="com.balsamiq.mockups::HRule" x="630" y="538" w="415" h="-1" measuredW="100" measuredH="10" zOrder="29" locked="false" isInGroup="-1"/>
+    <control controlID="53" controlTypeID="com.balsamiq.mockups::HRule" x="157" y="582" w="415" h="-1" measuredW="100" measuredH="10" zOrder="30" locked="false" isInGroup="-1"/>
+    <control controlID="54" controlTypeID="com.balsamiq.mockups::HRule" x="631" y="582" w="415" h="-1" measuredW="100" measuredH="10" zOrder="31" locked="false" isInGroup="-1"/>
+    <control controlID="55" controlTypeID="com.balsamiq.mockups::ComboBox" x="191" y="611" w="337" h="-1" measuredW="116" measuredH="23" zOrder="32" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Kategori%20Bisnis</text>
+      </controlProperties>
+    </control>
+    <control controlID="56" controlTypeID="com.balsamiq.mockups::ComboBox" x="192" y="653" w="337" h="-1" measuredW="68" measuredH="23" zOrder="33" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Lokasi</text>
+      </controlProperties>
+    </control>
+    <control controlID="57" controlTypeID="com.balsamiq.mockups::ComboBox" x="667" y="611" w="337" h="-1" measuredW="116" measuredH="23" zOrder="34" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Kategori%20Bisnis</text>
+      </controlProperties>
+    </control>
+    <control controlID="58" controlTypeID="com.balsamiq.mockups::ComboBox" x="668" y="655" w="337" h="-1" measuredW="68" measuredH="23" zOrder="35" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Lokasi</text>
+      </controlProperties>
+    </control>
+    <control controlID="62" controlTypeID="com.balsamiq.mockups::Button" x="480" y="693" w="-1" h="-1" measuredW="48" measuredH="27" zOrder="36" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Cari</text>
+      </controlProperties>
+    </control>
+    <control controlID="63" controlTypeID="com.balsamiq.mockups::Button" x="956" y="693" w="-1" h="-1" measuredW="48" measuredH="27" zOrder="37" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Cari</text>
+      </controlProperties>
+    </control>
+    <control controlID="65" controlTypeID="com.balsamiq.mockups::HRule" x="185" y="736" w="350" h="-1" measuredW="100" measuredH="10" zOrder="38" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0.25</backgroundAlpha>
+      </controlProperties>
+    </control>
+    <control controlID="66" controlTypeID="com.balsamiq.mockups::HRule" x="664" y="734" w="350" h="-1" measuredW="100" measuredH="10" zOrder="39" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0.25</backgroundAlpha>
+      </controlProperties>
+    </control>
+    <control controlID="67" controlTypeID="com.balsamiq.mockups::TabBar" x="157" y="756" w="414" h="100" measuredW="261" measuredH="100" zOrder="40" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Rekomendasi%20Kami%2C%20Terbaru</text>
+      </controlProperties>
+    </control>
+    <control controlID="70" controlTypeID="com.balsamiq.mockups::Image" x="170" y="784" w="64" h="64" measuredW="77" measuredH="79" zOrder="41" locked="false" isInGroup="-1"/>
+    <control controlID="71" controlTypeID="com.balsamiq.mockups::Image" x="250" y="784" w="64" h="64" measuredW="77" measuredH="79" zOrder="42" locked="false" isInGroup="-1"/>
+    <control controlID="72" controlTypeID="com.balsamiq.mockups::Image" x="332" y="784" w="64" h="64" measuredW="77" measuredH="79" zOrder="43" locked="false" isInGroup="-1"/>
+    <control controlID="73" controlTypeID="com.balsamiq.mockups::Image" x="414" y="784" w="64" h="64" measuredW="77" measuredH="79" zOrder="44" locked="false" isInGroup="-1"/>
+    <control controlID="74" controlTypeID="com.balsamiq.mockups::Image" x="492" y="784" w="64" h="64" measuredW="77" measuredH="79" zOrder="45" locked="false" isInGroup="-1"/>
+    <control controlID="80" controlTypeID="com.balsamiq.mockups::TabBar" x="630" y="758" w="414" h="100" measuredW="261" measuredH="100" zOrder="46" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Rekomendasi%20Kami%2C%20Terbaru</text>
+      </controlProperties>
+    </control>
+    <control controlID="81" controlTypeID="com.balsamiq.mockups::Image" x="643" y="786" w="64" h="64" measuredW="77" measuredH="79" zOrder="47" locked="false" isInGroup="-1"/>
+    <control controlID="82" controlTypeID="com.balsamiq.mockups::Image" x="723" y="786" w="64" h="64" measuredW="77" measuredH="79" zOrder="48" locked="false" isInGroup="-1"/>
+    <control controlID="83" controlTypeID="com.balsamiq.mockups::Image" x="805" y="786" w="64" h="64" measuredW="77" measuredH="79" zOrder="49" locked="false" isInGroup="-1"/>
+    <control controlID="84" controlTypeID="com.balsamiq.mockups::Image" x="887" y="786" w="64" h="64" measuredW="77" measuredH="79" zOrder="50" locked="false" isInGroup="-1"/>
+    <control controlID="85" controlTypeID="com.balsamiq.mockups::Image" x="965" y="786" w="64" h="64" measuredW="77" measuredH="79" zOrder="51" locked="false" isInGroup="-1"/>
+    <control controlID="86" controlTypeID="com.balsamiq.mockups::Label" x="343" y="550" w="-1" h="-1" measuredW="71" measuredH="28" zOrder="52" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>20</size>
+        <text>BISNIS</text>
+      </controlProperties>
+    </control>
+    <control controlID="87" controlTypeID="com.balsamiq.mockups::Label" x="775" y="550" w="-1" h="-1" measuredW="116" measuredH="28" zOrder="53" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>20</size>
+        <text>FRANCHISE</text>
+      </controlProperties>
+    </control>
+    <control controlID="88" controlTypeID="com.balsamiq.mockups::Label" x="861" y="462" w="-1" h="-1" measuredW="67" measuredH="18" zOrder="54" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>11</size>
+        <text>25%20Juli%202013</text>
+      </controlProperties>
+    </control>
+    <control controlID="89" controlTypeID="com.balsamiq.mockups::Label" x="865" y="480" w="193" h="21" measuredW="150" measuredH="21" zOrder="55" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>PT%20Daya%20Perkasa%20Terjual</text>
+      </controlProperties>
+    </control>
+    <control controlID="90" controlTypeID="com.balsamiq.mockups::HRule" x="799" y="503" w="262" h="-1" measuredW="100" measuredH="10" zOrder="56" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0.25</backgroundAlpha>
+      </controlProperties>
+    </control>
+    <control controlID="91" controlTypeID="com.balsamiq.mockups::HRule" x="105" y="886" w="955" h="-1" measuredW="100" measuredH="10" zOrder="57" locked="false" isInGroup="-1"/>
+    <control controlID="92" controlTypeID="com.balsamiq.mockups::Link" x="315" y="911" w="-1" h="-1" measuredW="107" measuredH="21" zOrder="58" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>privacy%20and%20policy</text>
+      </controlProperties>
+    </control>
+    <control controlID="93" controlTypeID="com.balsamiq.mockups::Link" x="438" y="911" w="-1" h="-1" measuredW="110" measuredH="21" zOrder="59" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>term%20and%20condition</text>
+      </controlProperties>
+    </control>
+    <control controlID="94" controlTypeID="com.balsamiq.mockups::StickyNote" x="842" y="886" w="238" h="91" measuredW="109" measuredH="123" zOrder="60" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Untuk%20semua%20halaman%20terdapat%20footer%20seperti%20dibawah%20ini</text>
+      </controlProperties>
+    </control>
+    <control controlID="95" controlTypeID="com.balsamiq.mockups::Label" x="153" y="911" w="-1" h="-1" measuredW="153" measuredH="21" zOrder="61" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%A9%2020013%20JualBisnis.com%20%20%7C</text>
+      </controlProperties>
+    </control>
+    <control controlID="96" controlTypeID="com.balsamiq.mockups::Label" x="423" y="911" w="-1" h="-1" measuredW="10" measuredH="21" zOrder="62" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%7C</text>
+      </controlProperties>
+    </control>
+    <control controlID="97" controlTypeID="com.balsamiq.mockups::Image" x="811" y="285" w="37" h="40" measuredW="77" measuredH="79" zOrder="63" locked="false" isInGroup="-1"/>
+    <control controlID="98" controlTypeID="com.balsamiq.mockups::Image" x="811" y="331" w="37" h="40" measuredW="77" measuredH="79" zOrder="64" locked="false" isInGroup="-1"/>
+    <control controlID="99" controlTypeID="com.balsamiq.mockups::Image" x="811" y="376" w="37" h="40" measuredW="77" measuredH="79" zOrder="65" locked="false" isInGroup="-1"/>
+    <control controlID="100" controlTypeID="com.balsamiq.mockups::Image" x="811" y="421" w="37" h="40" measuredW="77" measuredH="79" zOrder="66" locked="false" isInGroup="-1"/>
+    <control controlID="101" controlTypeID="com.balsamiq.mockups::Image" x="811" y="465" w="37" h="40" measuredW="77" measuredH="79" zOrder="67" locked="false" isInGroup="-1"/>
+    <control controlID="102" controlTypeID="com.balsamiq.mockups::ComboBox" x="191" y="695" w="279" h="-1" measuredW="90" measuredH="94" zOrder="68" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%3C%20100%20juta%0A100%20juta%20-%20500%20juta%0A500%20juta%20-%201%20M%0A1%20M%20-%2010%20M%0A%3E%2010%20M</text>
+      </controlProperties>
+    </control>
+    <control controlID="104" controlTypeID="com.balsamiq.mockups::ComboBox" x="669" y="694" w="279" h="-1" measuredW="90" measuredH="23" zOrder="69" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%3C%20100%20juta</text>
+      </controlProperties>
+    </control>
+    <control controlID="105" controlTypeID="com.balsamiq.mockups::StickyNote" x="1117" y="70" w="174" h="123" measuredW="109" measuredH="123" zOrder="70" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Ada%20menu%20jual%20bisnis%20masuk%20ke%20halam%20login%20setelah%20login%20masuk%20ke%20form%20penjualan%20bisnis%20menu%20akun%20saya</text>
+      </controlProperties>
+    </control>
+    <control controlID="106" controlTypeID="com.balsamiq.mockups::Arrow" x="630" y="120" w="487" h="73" measuredW="150" measuredH="100" zOrder="71" locked="false" isInGroup="-1">
+      <controlProperties>
+        <direction>bottom</direction>
+        <text/>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

@@ -1,139 +1,147 @@
-<div>
-        <?php $form=$this->beginWidget('CActiveForm', array(
+<style>
+        th label{
+        font-weight: bold;
+    }
+        input[type="radio"]{
+        margin-top: -3px;
+    }
+        input[type="checkbox"]{
+        margin-top: -3px;
+    }
+</style>
+       <?php $form=$this->beginWidget('CActiveForm', array(
             'id'=>'business-form',
-            'enableAjaxValidation'=>false,
+            'enableAjaxValidation'=>true,
+            'clientOptions' => array(
+                    'validateOnSubmit'=>true,
+                    'validateOnChange'=>true,
+                    'validateOnType'=>false,
+            ),
             'htmlOptions' => array('enctype' => 'multipart/form-data'),
     )); ?>
-        <?php echo $form->errorSummary($model); ?>
-	
-		<br style="clear:both"/>
-		<table>
-			<tr>
-				<td><span><?php echo $form->labelEx($model,'id_category'); ?></span></td>
-				<td>
-					<?php echo $form->hiddenField($model,'id_category'); ?>
-					<?php 
-                                            if($model->id_category == 1)
-                                            {
-                                                echo "Bisnis";
-                                            }
-                                            else if($model->id_category == 2)
-                                            {
-                                                echo "Franchise";
-                                            }
-                                            else
-                                            {
-                                                echo "Error";
-                                            }
-                                        ?>
-				</td>
-			</tr>
-			<tr>
-				<td><span><?php echo $form->labelEx($model,'id_industri'); ?></span></td>
-				<td>
-                                    <?php
-                                    echo $form->dropDownList($model, 'id_industri', CHtml::listData($industri, 'id', 'industri'), array(
-                                        'prompt' => 'Pilih Industri',
-                                        'class' => 'styleSelect2',
-                                        'ajax' => array(
-                                            'type' => 'POST',
-                                            'url' => Yii::app()->createUrl('//account/generatesubindustri'),
-                                            'update' => '#' . CHtml::activeId($model, 'id_sub_industri'),
-                                    )));
-                                    ?>
-				</td>
-			</tr>
-			<tr>
-                             <?php echo Chtml::hiddenField('sub_industri_temp', $model->id_sub_industri) ?>
-				<td><span><?php echo $form->labelEx($model,'id_sub_industri'); ?></span></td>
-				<td>
-                                    <?php echo $form->dropDownList($model,'id_sub_industri',array(),array('prompt'=>'Pilih Sub Industri','class'=>'styleSelect2')); ?>
-				</td>
-			</tr>
-			<tr>
-				<td><span><?php echo $form->labelEx($model,'nama'); ?></span></td>
-				<td><?php echo $form->textField($model,'nama',array('class'=>'styleText1')); ?></td>
-			</tr>
-			<tr>
-				<td><span><?php echo $form->labelEx($model,'alamat'); ?></span></td>
-				<td><?php echo $form->textField($model,'alamat',array('class'=>'styleText1')); ?></td>
-			</tr>
-			<tr>
-				<td><span><?php echo $form->labelEx($model,'id_provinsi'); ?></span></td>
-				<td>
-                                    <?php echo $form->dropDownList($model,'id_provinsi',CHtml::listData($provinsi,'id','provinsi'),array(
-                                        'prompt'=>'Pilih Provinsi',
-                                        'class'=>'styleSelect2',
-                                        'ajax' => array(
-                                            'type' => 'POST',
-                                            'url' => Yii::app()->createUrl('//account/generatekota'),
-                                            'update' => '#'.CHtml::activeId($model,'id_kota'),
-                                    ))); ?>
-				</td>
-			</tr>
-                        <tr>
-                                <?php echo Chtml::hiddenField('kota_temp', $model->id_kota) ?>
-				<td><span><?php echo $form->labelEx($model,'id_kota'); ?></span></td>
-				<td>
-					<?php echo $form->dropDownList($model,'id_kota',array(),array('prompt'=>'Pilih Kota','class'=>'styleSelect2')); ?>
-				</td>
-			</tr>
-			<tr>
-				<td><span><?php echo $form->labelEx($model,'harga_min'); ?></span></td>
-				<td><?php echo $form->textField($model,'harga_min',array('class'=>'styleText1','onkeyup'=>'calcValueFranchise()')); ?>  <?php echo $form->checkBox($model,'tampilkanKontak',array('disabled'=>'disabled', 'class'=>'tampilkanKontak')) ?><?php echo $form->labelEx($model,'tampilkanKontak') ?></td>
-			</tr>
-                        <tr>
-				<td><span><?php echo $form->labelEx($model,'harga_max'); ?></span></td>
-				<td><?php echo $form->textField($model,'harga_max',array('class'=>'styleText1','onkeyup'=>'calcValueFranchise()')); ?></td>
-			</tr>
-			<tr>
-				<td><span><?php echo $form->labelEx($model,'franchise_menu'); ?></span></td>
-				<td>
-					<?php echo $form->textArea($model,'franchise_menu',array('class'=>'styleTextarea1')); ?>
-				</td>
-			</tr>
-                        <tr>
-				<td><span><?php echo $form->labelEx($model,'franchise_alasan_kerjasama'); ?></span></td>
-				<td>
-					<?php echo $form->textArea($model,'franchise_alasan_kerjasama',array('class'=>'styleTextarea1')); ?>
-				</td>
-			</tr>
-                        <tr>
-				<td><span><?php echo $form->labelEx($model,'franchise_persyaratan'); ?></span></td>
-				<td>
-					<?php echo $form->textArea($model,'franchise_persyaratan',array('class'=>'styleTextarea1')); ?>
-				</td>
-			</tr>
-                        <tr>
-				<td><span><?php echo $form->labelEx($model,'franchise_dukungan_franchisor'); ?></span></td>
-				<td>
-					<?php echo $form->textArea($model,'franchise_dukungan_franchisor',array('class'=>'styleTextarea1')); ?>
-				</td>
-			</tr>
-			<tr>
-				<td><span><?php echo $form->labelEx($model,'image'); ?></span></td>
-				<td><?php 
-                                       if(strtolower($model->status_approval) == 'terjual' || strtolower($model->status_approval)== 'tidak aktif')
-                                         {
-                                             //list image
-                                         }
-                                         else
-                                         {
-//                                             $this->widget('ext.xupload.XUpload', array(
-//                                                'url' => Yii::app()->createUrl("account/upload"),
-//                                                'model' => $img_upload,
-//                                                'htmlOptions' => array('id'=>'business-form'),
-//                                                'attribute' => 'file',
-//                                                'multiple' => true,
-//                                                'showForm'=> true,
-//                                                'options'=>array(
-//                                                    'maxNumberOfFiles'=> 5,
-//                                                    'acceptFileTypes'=> "js:/(\.|\/)(gif|jpe?g|png)$/i",
-//                                                    'maxFileSize'=> 2000000,
-//                                                ),
-//                                                'formView' => 'application.views.account._xupload',
-//                                            ));
-                                         }
+ <p><?php echo $form->errorSummary($model); ?></p>
+<div class="row-fluid">
+        	<div class="span12">
+                <div class="row-fluid">
+                	<div class="span12">
+                            <?php echo $form->hiddenField($model,'id_user',array('value'=>$model->id_user)) ?>
+                            <?php echo $form->hiddenField($model,'kepemilikan',array('value'=>'0')) ?>
+                    	<table>
+                                        <tr>
+            					<th width="20%" class="Text-Align-Left"><?php echo $form->labelEx($model,'id_category'); ?></th>
+                				<td>
+                                                       <?php echo $form->hiddenField($model,'id_category'); ?>
+                                                        <?php 
+                                                            echo $model->idCategory->category;
+                                                        ?>
+                				</td>
+            				</tr>
+            				<tr>
+            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'id_industri'); ?></th>
+                				<td>
+                                                        <?php echo $form->dropDownList($model,'id_industri',CHtml::listData($industri,'id','industri'),array(
+                                                                                                'prompt'=>'Pilih Industri',
+                                                                                                'ajax' => array(
+                                                                                                    'type' => 'POST',
+                                                                                                    'url' => Yii::app()->createUrl('//account/generatesubindustri'),
+                                                                                                    'update' => '#'.CHtml::activeId($model,'id_sub_industri'),
+                                                                                            ))); ?>
+                				</td>	
+            				</tr>
+            				<tr>
+                                                 <?php echo Chtml::hiddenField('sub_industri_temp', $model->id_sub_industri) ?>
+            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'id_sub_industri'); ?></th>
+                				<td>
+                                                        <?php echo $form->dropDownList($model,'id_sub_industri',array(),array('prompt'=>'Pilih Sub Industri')); ?>
+                				</td>	
+            				</tr>
+            				<tr>
+            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'nama'); ?></th>
+                				<td>
+                					<?php echo $form->textField($model,'nama'); ?>
+                				</td>	
+            				</tr>
+             				<tr>
+            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'alamat'); ?></th>
+                				<td>
+                					<?php echo $form->textField($model,'alamat'); ?>
+                				</td>	
+            				</tr>
+             				<tr>
+            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'id_provinsi'); ?></th>
+                				<td>
+                					<?php echo $form->dropDownList($model,'id_provinsi',CHtml::listData($provinsi,'id','provinsi'),array(
+                                                            'prompt'=>'Pilih Provinsi',
+                                                            'ajax' => array(
+                                                                'type' => 'POST',
+                                                                'url' => Yii::app()->createUrl('//account/generatekota'),
+                                                                'update' => '#'.CHtml::activeId($model,'id_kota'),
+                                                        ))); ?>
+                				</td>	
+            				</tr>
+                                        <tr>
+                                                <?php echo Chtml::hiddenField('kota_temp', $model->id_kota) ?>
+            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'id_kota'); ?></th>
+                				<td>
+                					<?php echo $form->dropDownList($model,'id_kota',array(),array('prompt'=>'Pilih Kota')); ?>
+                				</td>	
+            				</tr>
+             				<tr>
+            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'harga_min'); ?></th>
+                				<td>
+                					<?php echo $form->textField($model,'harga_min',array('onkeyup'=>'calcValue()')); ?> &nbsp; <?php echo $form->checkBox($model,'tampilkanKontak',array('disabled'=>'disabled', 'class'=>'tampilkanKontak')) ?><?php echo $form->labelEx($model,'tampilkanKontak', array('style'=>'display:inline; margin-left:3px;')) ?>
+                                                </td>	
+            				</tr>
+                                        <tr>
+            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'harga_max'); ?></th>
+                				<td>
+                					<?php echo $form->textField($model,'harga_max',array('class'=>'styleText1','onkeyup'=>'calcValue()')); ?>
+                				</td>	
+            				</tr>
+             				<tr>
+            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'franchise_menu'); ?></th>
+                				<td>
+                					<?php echo $form->textArea($model,'franchise_menu'); ?>
+                				</td>	
+            				</tr>
+             				<tr>
+            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'franchise_alasan_kerjasama'); ?></th>
+                				<td>
+                					<?php echo $form->textArea($model,'franchise_alasan_kerjasama'); ?>
+                				</td>	
+            				</tr>
+             				<tr>
+            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'franchise_persyaratan'); ?></th>
+                				<td>
+                					<?php echo $form->textArea($model,'franchise_persyaratan'); ?>
+                				</td>	
+            				</tr>
+             				<tr>
+            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'franchise_dukungan_franchisor'); ?></th>
+                				<td>
+                					<?php echo $form->textArea($model,'franchise_dukungan_franchisor'); ?>
+                				</td>	
+            				</tr>
+             				<tr>
+            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'image'); ?></th>
+                			<td>
+                                    <?php 
+
+//                                        $this->widget('ext.xupload.XUpload', array(
+//                                        'url' => Yii::app()->createUrl("account/upload"),
+//                                        'model' => $img_upload,
+//                                        'htmlOptions' => array('id'=>'business-form'),
+//                                        'id'=>'upload1',
+//                                        'attribute' => 'file',
+//                                        'multiple' => true,
+//                                        'showForm'=> true,
+//                                        'options'=>array(
+//                                            'maxNumberOfFiles'=> 5,
+//                                            'acceptFileTypes'=> "js:/(\.|\/)(gif|jpe?g|png)$/i",
+//                                            'maxFileSize'=> 2000000,
+//                                        ),
+//                                        'formView' => 'application.views.account._xupload',
+//                                    ));
                                     
 //                                        $this->widget('ext.dropzone.EDropzone', array(
 //                                            'model' => $model,
@@ -143,29 +151,92 @@
 //                                            'onSuccess' => 'someJsFunction();',
 //                                            'options' => array('autoProcessQueue'=>false),
 //                                        ));
-//                                    ?></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td>
-<!--					<img src="#" width="70" height="70"/>
-					<img src="#" width="70" height="70"/>
-					<img src="#" width="70" height="70"/>
-					<img src="#" width="70" height="70"/>
-					<img src="#" width="70" height="70"/>-->
-				</td>
-			</tr>
-			<tr>
-				<td><span><?php echo $form->labelEx($model,'dokumen'); ?></span></td>
-				<td></td>
-			</tr>
-		</table>
-		<hr/>
-                <?php
-                        echo CHtml::button('Batal', array('submit' => array("bisnisFranchise/index/"), 'class'=>'styleSubmit2'));
-                        echo CHtml::button('Simpan', array('submit' => array("bisnisFranchise/update/id/$model->id"), 'class'=>'styleSubmit2')); 
-                        echo CHtml::button('Tolak', array('submit' => array("bisnisFranchise/preview"), 'class'=>'styleSubmit2')); 
-                        echo CHtml::button('Terima', array('submit' => array("bisnisFranchise/update/id/$model->id/stat/Diterima"), 'class'=>'styleSubmit2')); 
+                                    ?>
+                			</td>	
+           		 		</tr>
+            			<tr>
+            				<td></td>
+                			<td>
+                			</td>
+            			</tr>
+            			<tr>
+            				<th class="Text-Align-Left">Dokumen</th>
+                			<td>
+                                            <?php 
+                                                        //                                 $this->widget('ext.xupload.XUpload', array(
+            //                                        'url' => Yii::app()->createUrl("account/uploadDoc"),
+            //                                        'model' => $doc_upload,
+            //                                        'htmlOptions' => array('id'=>'business-form'),
+            //                                        'attribute' => 'docs',
+            //                                        'multiple' => true,
+            //                                        'showForm'=> true,
+            //                                        'options'=>array(
+            //                                            'acceptFileTypes'=> "js:/(\.|\/)(gif|jpe?g|png|pdf|doc|docx|xls|xlsx)$/i",
+            //                                            'maxFileSize'=> 5000000,
+            //                                        ),
+            //                                        'formView' => 'application.views.account._xupload',
+            //                                    ));
+
+            //                                                    $this->widget('CMultiFileUpload', array(
+            //                                'model'=>$model,
+            //                                'attribute'=>'dokumen',
+            //                                'accept'=>'jpg|gif|png|pdf|doc|docx|xls|xlsx|txt',
+            //                                )
+            //                            );
+            //                            ?>
+                                        </td>
+            			</tr>
+            			<tr>
+            				<th colspan="2">
+               <?php
+                        echo CHtml::button('Batal', array('submit' => array("bisnisFranchise/index/"), 'class'=>'btn Gradient-Style1'));
+                        echo CHtml::button('Simpan', array('submit' => array("bisnisFranchise/update/id/$model->id"), 'class'=>'btn Gradient-Style1')); 
+                        echo CHtml::button('Tolak', array('submit' => array("bisnisFranchise/tolak/id/$model->id"), 'class'=>'btn Gradient-Style1')); 
+                        echo CHtml::button('Terima', array('submit' => array("bisnisFranchise/update/id/$model->id/stat/Diterima"), 'class'=>'btn Gradient-Style1')); 
                 ?>
-</div>
+               				</th>
+            			</tr>
+        			</table>                        
+                    </div>
+                </div>
+            </div>
+        </div>
 <?php $this->endWidget(); ?>
+<script>
+    function preview(f,newtarget)
+    {
+        document.getElementById('business-form').target= newtarget;
+        document.getElementById('business-form').action= '<?php echo Yii::app()->createUrl('//account/preview') ?>' 
+        f.submit();
+        document.getElementById('business-form').target= '_self';
+    }
+    
+    function draft()
+    {
+        $("#business-form").attr("action",'<?php echo Yii::app()->createUrl("//account/update",array("stat"=>"Draft")); ?>');
+        $("#business-form").submit();
+    }
+    
+    function formErrors(data,form){
+        var summary = '';
+        summary="<p>Please fix the following errors:</p><ul>";
+
+        $.each(data, function(key, val) {
+        summary = summary + "<li>" + val.toString() + "</li>";
+        });
+        summary += "</ul>";
+        $(form+"_es_").html(summary.toString());
+        $(form+"_es_").show();
+
+        $("[id^='update-button']").show();
+        $('#ajax-status').hide();//css({display:'none'});
+        $('#ajax-status').text('');
+}
+
+function hideFormErrors(form){
+        //alert (form+"_es_");
+        $(form+"_es_").html('');
+        $(form+"_es_").hide();
+        $("[id$='_em_']").html('');
+}
+</script>

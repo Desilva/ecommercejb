@@ -1,30 +1,27 @@
-<?php
-$this->breadcrumbs=array(
-	'Businesses'=>array('index'),
-	$model->id=>array('view','id'=>$model->id),
-	'Update',
-);
+<div class="row-fluid">
+	<div class="span2">
+    	 <?php if(!empty($this->clips['sidebar'])) echo
+                            $this->clips['sidebar']?>
+    </div>
+    <div class="span10">
+    	<h4 class="Font-Color-DarkBlue">Update <?php echo $model->nama ?></h4>
+            <?php
+                if($model->idCategory->category == "Bisnis")
+                {
+                    echo $this->renderPartial('_formUpdate', array('model'=>$model,'kategori'=>$kategori,'kepemilikan'=>$kepemilikan,'tahun'=>$tahun,'industri'=>$industri,'provinsi'=>$provinsi,'alasan_jual_bisnis'=>$alasan_jual_bisnis,'img_upload'=>$img_upload,'doc_upload'=>$doc_upload)); 
+                }
+                else if($model->idCategory->category == "Franchise")
+                {
+                    echo $this->renderPartial('_formFranchiseUpdate', array('model'=>$model,'kategori'=>$kategori,'industri'=>$industri,'provinsi'=>$provinsi,'img_upload'=>$img_upload,'doc_upload'=>$doc_upload)); 
+                }
+                else
+                {
+                    echo "Error";
 
-$this->menu=array(
-	array('label'=>'List Business', 'url'=>array('index')),
-	array('label'=>'Create Business', 'url'=>array('create')),
-	array('label'=>'View Business', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Business', 'url'=>array('admin')),
-);
-?>
-
-<header style="float:left; font-size:30px; font-family:Calibri;">Update/View Bisnis</header>
-
-<?php
-    if($jenis== 1) //bisnis
-    {
-        echo $this->renderPartial('_formUpdate', array('model'=>$model,'kategori'=>$kategori,'kepemilikan'=>$kepemilikan,'tahun'=>$tahun,'industri'=>$industri,'provinsi'=>$provinsi,'alasan_jual_bisnis'=>$alasan_jual_bisnis,'img_upload'=>$img_upload,'doc_upload'=>$doc_upload)); 
-    }
-    else //franchise
-    {
-        echo $this->renderPartial('_formFranchiseUpdate', array('model'=>$model,'kategori'=>$kategori,'industri'=>$industri,'provinsi'=>$provinsi,'img_upload'=>$img_upload,'doc_upload'=>$doc_upload)); 
-    }
-?>
+                }
+            ?>
+    </div>
+</div>
 
 <script>
     $(document).ready(function(){

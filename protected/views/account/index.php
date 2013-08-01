@@ -24,86 +24,7 @@ a.delete img{
     margin-left: 2px;
 }
 </style>
-<div>
-        <header style="font-size:30px; font-family:Calibri;">List Bisnis/ Franchise Terkirim</header>
-        <form method="get">
-            <?php echo CHtml::dropDownList('kategori',$selectedSortValue,CHtml::listData($sortType,'id','category'),array('class'=>'styleSelect3','style'=>'float:left','id'=>'shortBisnisFranchise','submit'=> Yii::app()->createUrl("//account/index/")));  ?>
-        </form>
-        <br style="clear:both"/>
-        <?php echo CHtml::button('Tambah Bisnis', array('submit' => array('account/create'), 'class'=>'buttonGrid')); ?>
-        <HR/>
-        <?php
-//        $this->widget('zii.widgets.grid.CGridView', array(
-//            'dataProvider' => $model,
-//            'itemsCssClass' => 'table table-striped',
-//            'summaryText' => '',
-//            'ajaxUpdate'=>false,
-//            'columns' => array(
-//                'nama',
-//                'deskripsi',
-//                'jumlah_click',
-//                'status_approval',
-//                array(
-//                    'class' => 'CButtonColumn',
-//                    'htmlOptions' => array('style' => 'width: 85px'),
-//                    'header' => 'Tindakan',
-//                    'template' => '{update}{delete}{viewEmail}',
-//                    'deleteButtonImageUrl' => Yii::app()->request->baseUrl . '/images/icon/trash.png',
-//                    'updateButtonImageUrl' => Yii::app()->request->baseUrl . '/images/icon/write.png',
-//                    'buttons' => array(
-//                        'viewEmail' => array(
-//                            'label' => 'Lihat Email',
-//                            'imageUrl' => Yii::app()->request->baseUrl . '/images/icon/-.png',
-//                            'options' => array('class' => 'viewEmail'),
-//                            'url' => 'Yii::app()->createUrl("account/index", array("id_business"=>$data->id))', 
-//                           
-//                        )
-//                    ),
-//                ),
-//            ),
-//        ));
-            $this->widget('zii.widgets.grid.CGridView', array(
-                'id' => 'businessGrid',
-                'dataProvider' => $model,
-                'itemsCssClass' => 'table table-striped',
-                'summaryText' => '',
-                'ajaxUpdate' => 'emailGrid',
-                'columns' => array(
-                    'nama' => array('header' => 'Nama Bisnis/Franchise', 'name' => 'nama'),
-                    array(
-                        'name' => 'deskripsi',
-                        'type' => 'raw', //because of using html-code <br/>
-                        //call the controller method gridProduct for each row
-                        'value' => array($this, 'gridDeskripsi'),
-                    ),
-                    'jumlah_click',
-                    array(
-                        'name' => 'status_approval',
-                        'type' => 'raw', //because of using html-code <br/>
-                        //call the controller method gridProduct for each row
-                        'value' => array($this, 'gridStatusApproval'),
-                    ),
-                    array(
-                        'class' => 'CButtonColumn',
-                        'htmlOptions' => array('style' => 'width: 85px'),
-                        'header' => 'Tindakan',
-                        'template' => '{update}{delete}{viewEmail}',
-                        'deleteButtonImageUrl' => Yii::app()->request->baseUrl . '/images/icon/trash.png',
-                        'updateButtonImageUrl' => Yii::app()->request->baseUrl . '/images/icon/write.png',
-                        'buttons' => array(
-                            'viewEmail' => array(
-                                'label' => 'Lihat Email',
-                                'imageUrl' => Yii::app()->request->baseUrl . '/images/icon/-.png',
-                                'options' => array('class' => 'viewEmail'),
-                                'url' => '$data->id',
-                                'click' => "function(e){ e.preventDefault(); getEmail($(this).attr('href'))}"
-                            )
-                        ),
-                    ),
-                ),
-            ));
-        ?>
-        <hr/>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/library/Bootstrap/assets/js/bootstrap-popover.js"></script>
         <script>
             function getEmail(id)
             {
@@ -183,30 +104,105 @@ a.delete img{
             }
             
         </script>
-        <div id='emailList'>
-            <?php
-                $this->widget('zii.widgets.grid.CGridView', array(
-                    'id'=>'emailGrid',
-                    'itemsCssClass' => 'table table-striped',
-                    'dataProvider' => $email,
-                    'summaryText' => '',
-                    'enableSorting' => true,
-                    'ajaxUpdate'=>'emailGrid',
-                    'columns' => array(
-                        array(
-                            'name'=> 'tanggal',
-                            'value'=> 'Yii::app()->dateFormatter->format("y-MM-dd", strtotime($data->tanggal))'
-                        ),
-                        array(
-                            'name' => 'nama_pengirim',
-                            'type' => 'raw',
-                            'value'=> array($this,'gridEmailDeskripsi')
-                        ),
-                        'no_telp',
-                        'alamat_email'
-                    ),
-                ));
-            ?>
+
+<div class="row-fluid">
+	<div class="span2">
+    	 <?php if(!empty($this->clips['sidebar'])) echo
+                            $this->clips['sidebar']?>
+    </div>
+    <div class="span10">
+    	<h4 class="Font-Color-DarkBlue">List Bisnis / Franchise terkirim</h4>
+        <div class="row-fluid">
+        	<div class="span12">
+            		
+                <form method="get">
+                        <span>Kategori: </span><?php echo CHtml::dropDownList('kategori',$selectedSortValue,CHtml::listData($sortType,'id','category'),array('class'=>'Input-Size-VerySmall','submit'=> Yii::app()->createUrl("//account/index/")));  ?>
+                </form>   	
+              		<br>
+                	<?php echo CHtml::button('Tambah Bisnis', array('submit' => array('account/create'), 'class'=>'btn Gradient-Style1')); ?>
+                </div>
         </div>
-        
+        <div class="row-fluid">
+        	<div class="span12">
+                            <?php
+            $this->widget('zii.widgets.grid.CGridView', array(
+                'id' => 'businessGrid',
+                'dataProvider' => $model,
+                'itemsCssClass' => 'table table-striped',
+                'summaryText' => '',
+                'ajaxUpdate' => 'emailGrid',
+                'columns' => array(
+                    'nama' => array('header' => 'Nama Bisnis/Franchise', 'name' => 'nama'),
+                    array(
+                        'name' => 'deskripsi',
+                        'type' => 'raw', //because of using html-code <br/>
+                        //call the controller method gridProduct for each row
+                        'value' => array($this, 'gridDeskripsi'),
+                    ),
+                    'jumlah_click',
+                    array(
+                        'name' => 'status_approval',
+                        'type' => 'raw', //because of using html-code <br/>
+                        //call the controller method gridProduct for each row
+                        'value' => array($this, 'gridStatusApproval'),
+                    ),
+                    array(
+                        'class' => 'CButtonColumn',
+                        'htmlOptions' => array('style' => 'width: 85px'),
+                        'header' => 'Tindakan',
+                        'template' => '{update}{delete}{viewEmail}',
+                        'deleteButtonImageUrl' => Yii::app()->request->baseUrl . '/images/asset/trash.png',
+                        'updateButtonImageUrl' => Yii::app()->request->baseUrl . '/images/asset/write.png',
+                        'buttons' => array(
+                            'viewEmail' => array(
+                                'label' => 'Lihat Email',
+                                'imageUrl' => Yii::app()->request->baseUrl . '/images/asset/-.png',
+                                'options' => array('class' => 'viewEmail'),
+                                'url' => '$data->id',
+                                'click' => "function(e){ e.preventDefault(); getEmail($(this).attr('href'))}"
+                            )
+                        ),
+                    ),
+                ),
+            ));
+        ?>
+            </div>
+        </div>
+        <div class="row-fluid" id="emailList">
+        	<div class="span12">
+            	<div class="row-fluid">
+                	<div class="span12">
+                    	<h4 class="Font-Color-DarkBlue"></h4>
+                    </div>
+                </div>
+                <div class="row-fluid">
+                	<div class="span12" id="emailList">
+                    	<?php
+                            $this->widget('zii.widgets.grid.CGridView', array(
+                                'id'=>'emailGrid',
+                                'itemsCssClass' => 'table table-striped',
+                                'dataProvider' => $email,
+                                'summaryText' => '',
+                                'enableSorting' => true,
+                                'ajaxUpdate'=>'emailGrid',
+                                'columns' => array(
+                                    array(
+                                        'name'=> 'tanggal',
+                                        'value'=> 'Yii::app()->dateFormatter->format("y-MM-dd", strtotime($data->tanggal))'
+                                    ),
+                                    array(
+                                        'name' => 'nama_pengirim',
+                                        'type' => 'raw',
+                                        'value'=> array($this,'gridEmailDeskripsi')
+                                    ),
+                                    'no_telp',
+                                    'alamat_email'
+                                ),
+                            ));
+                        ?>
+                    </div>
+                </div>            	
+            </div>
+        </div>
+    </div>
 </div>

@@ -2,7 +2,7 @@
 <?php if ($this->showForm) echo CHtml::beginForm($this -> url, 'post', $this -> htmlOptions);?>
 <div class="row fileupload-buttonbar">
     <?php // var_dump($this->attribute);?>
-	<div class="span7">
+	<div class="span10">
 		<!-- The fileinput-button span is used to style the file input field as button -->
 		<span class="btn btn-success fileinput-button">
             <i class="icon-plus icon-white"></i>

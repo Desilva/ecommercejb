@@ -1,87 +1,87 @@
-<style>
-    input[type="button"].buttonKontak {
-    background: -moz-linear-gradient(center top , #1568AE, #1568AE) repeat scroll 0 0 transparent;
-    border: 1px solid #FFFFFF;
-    border-radius: 2px 2px 2px 2px;
-    color: #FEF4E9;
-    height: 30px;
-    width: 100px;
-}
-</style>
-<div>
-	<div>
-		<header style="font-size:50px; font-family:Calibri;"><?php echo $model->nama ?></header>
-		<br style="clear:both"/>
-		<HR/>
-	</div>
-	<div style="text-align:justify">
-            <img style="float:left" src="<?php echo Yii::app()->request->baseUrl ?>/images/no-image.gif" width="300" height="300"/>
+<div class="row-fluid">
+	<div class="span4">
+    	<h4><?php echo $model->nama ?></h4>
+    </div>
+</div>
+
+<div class="row-fluid">
+	<div class="span12 Text-Align-Justify">
+    	<img src="<?php echo Yii::app()->request->baseUrl ?>/images/no-image.gif" width="300" style="float:left" />   
         <?php echo $model->deskripsi ?>
-	<p>
-            
-	</p>
-    
-    </div>
-    <div style="clear:both">
-    	<?php
-//			if(isset($_GET['gadget'])){
-//				include "kontak.php";	
-//			}
-		?>
-    <hr/>
-    </div>
-    <div>
-    	<h2>DETIL INFORMASI BISNIS</h2>
-        <table id="tableLatestNews">
-        	<tr>
-            	<td id="tableLatestNewsC1">Kategori</td>
-                <td id="tableLatestNewsC2">:Kepemilikan <?php if($model->kepemilikan ==1)echo '100%'; else if($model->kepemilikan ==2)echo '<100%'; ?></td>
-                <td id="tableLatestNewsC3">File Pendukung
-<!--                	<br/>
-                    &nbsp;SIUP.pdf<br/>
-                    &nbsp;Top.docx<br/>
-                    &nbsp;Laporan Keuangan<br/>
-                    &nbsp;Asset Perusahaan--></td>
-                <td id="tableLatestNewsC4"></td>
-            </tr>
-            <tr>
-            	<td>Industri</td>
-                <td>:<?php // echo $model->idIndustri->industri ?></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-            	<td>Lokasi</td>
-                <td>:<?php // echo $model->idKota->city ?></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-            	<td>Harga</td>
-                <td>:Rp.<?php echo $model->harga_min ?> - Rp.<?php echo $model->harga_max ?></td>
-                <td>
-                </td>
-                <td></td>
-            </tr>
-            <tr>
-            	<td>Alasan Franchise Mau Bekerjasama</td>
-                <td>:<?php echo $model->franchise_alasan_kerjasama ?></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-            	<td>Persyaratan Menjadi Franchise</td>
-                <td>:<?php echo $model->franchise_persyaratan ?></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-            	<td>Dukungan Franchise</td>
-                <td>:<?php echo $model->franchise_dukungan_franchisor ?></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </table>
-        <hr/>
+        </div>
+</div>
+<div class="row-fluid">
+	<div class="span12">
+    	<div class="row-fluid">
+        	<div class="span3">
+            	<font class="Font-Color-DarkBlue">DETIL INFORMASI FRANCHISE</font>
+            </div>
+            <div class="span9">
+            <?php
+                if($model->id_user != Yii::app()->user->id)
+                {
+                    echo CHtml::button('Kontak', array('submit' => array("cariBisnisFranchise/kontakBisnis/$model->id"), 'class'=>'btn Gradient-Style1'));
+                }
+            ?>
+            </div>
+        </div>
+        <div class="row-fluid">
+        	<table>
+            	<tr class="Tr-Size-Medium">
+                	<td width="30%">Industri</td>
+                    <td width="30%">:<?php if(isset($model->idIndustri->industri)) echo $model->idIndustri->industri ?></td>
+                   <td>File Pendukung</td>
+                   <td></td>
+                </tr>
+                <tr class="Tr-Size-Medium">
+                   <td>Lokasi</td>
+                   <td>:<?php if(isset($model->idKota->city)) echo $model->idKota->city ?></td>
+                   <td></td>
+                   <td></td>
+                </tr>
+                <tr class="Tr-Size-Medium">
+                   <td>Harga</td>
+                   <td>:Rp.<?php echo $model->harga_min ?> - Rp.<?php echo $model->harga_max ?></td>
+                   <td></td>
+                   <td></td>
+                </tr>
+                <tr class="Tr-Size-Medium">
+                  <td>Alasan Franchise Mau Bekerjasama:</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class="Tr-Size-Medium">
+                  <td><?php echo $model->franchise_alasan_kerjasama ?></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+               <tr class="Tr-Size-Medium">
+                  <td>Persyaratan Menjadi Franchise:</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class="Tr-Size-Medium">
+                  <td><?php echo $model->franchise_persyaratan ?></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class="Tr-Size-Medium">
+                  <td>Dukungan Franchise:</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class="Tr-Size-Medium">
+                  <td><?php echo $model->franchise_dukungan_franchisor ?></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+            </table>
+        </div>
     </div>
 </div>
