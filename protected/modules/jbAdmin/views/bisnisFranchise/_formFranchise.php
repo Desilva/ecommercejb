@@ -190,10 +190,46 @@
             				<th colspan="2">
                <?php
                         echo CHtml::button('Batal', array('submit' => array("bisnisFranchise/index/"), 'class'=>'btn Gradient-Style1'));
-                        echo CHtml::button('Simpan', array('submit' => array("bisnisFranchise/update/id/$model->id"), 'class'=>'btn Gradient-Style1')); 
-                        echo CHtml::button('Tolak', array('submit' => array("bisnisFranchise/tolak/id/$model->id"), 'class'=>'btn Gradient-Style1')); 
-                        echo CHtml::button('Terima', array('submit' => array("bisnisFranchise/update/id/$model->id/stat/Diterima"), 'class'=>'btn Gradient-Style1')); 
-                ?>
+//                        echo CHtml::button('Simpan', array('submit' => array("bisnisFranchise/update/id/$model->id"), 'class'=>'btn Gradient-Style1')); 
+//                        echo CHtml::button('Terima', array('submit' => array("bisnisFranchise/update/id/$model->id/stat/Diterima"), 'class'=>'btn Gradient-Style1')); 
+                 ?>      
+                <?php echo CHtml::ajaxSubmitButton('Simpan',CHtml::normalizeUrl(array("bisnisFranchise/update/id/$model->id")),
+                 array(
+                     'dataType'=>'json',
+                     'type'=>'post',
+                     'success'=>'function(data) {  
+                        if(data.status=="success"){
+                         $("#business-form").submit();
+                        }
+                         else{
+                            formErrors(data,form="#business-form");
+                            document.location.href="#business-form_es_";
+                        }       
+                    }',                    
+                     'beforeSend'=>'function(){                        
+                           $("#AjaxLoader").show();
+                      }'
+                     ),array('class'=>'btn Gradient-Style1')); ?>
+                        
+               
+                <?php echo CHtml::button('Tolak', array('submit' => array("bisnisFranchise/tolak/id/$model->id"), 'class'=>'btn Gradient-Style1')); ?>
+                <?php echo CHtml::ajaxSubmitButton('Terima',CHtml::normalizeUrl(array("bisnisFranchise/update/id/$model->id")),
+                                array(
+                                    'dataType'=>'json',
+                                    'type'=>'post',
+                                    'success'=>'function(data) {  
+                                       if(data.status=="success"){
+                                           terima();
+                                       }
+                                        else{
+                                           formErrors(data,form="#business-form");
+                                           document.location.href="#business-form_es_";
+                                       }       
+                                   }',                    
+                                    'beforeSend'=>'function(){                        
+                                          $("#AjaxLoader").show();
+                                     }'
+                                    ),array('class'=>'btn Gradient-Style1')); ?>
                				</th>
             			</tr>
         			</table>                        
@@ -203,17 +239,11 @@
         </div>
 <?php $this->endWidget(); ?>
 <script>
-    function preview(f,newtarget)
-    {
-        document.getElementById('business-form').target= newtarget;
-        document.getElementById('business-form').action= '<?php echo Yii::app()->createUrl('//account/preview') ?>' 
-        f.submit();
-        document.getElementById('business-form').target= '_self';
-    }
+
     
-    function draft()
+    function terima()
     {
-        $("#business-form").attr("action",'<?php echo Yii::app()->createUrl("//account/update",array("stat"=>"Draft")); ?>');
+        $("#business-form").attr("action",'<?php echo Yii::app()->createUrl("//jbAdmin/bisnisFranchise/update/id/$model->id?stat=Diterima"); ?>');
         $("#business-form").submit();
     }
     
