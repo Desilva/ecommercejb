@@ -148,6 +148,26 @@ class BisnisFranchiseController extends Controller
 
 		if(isset($_POST['Business']))
                 {
+                    if(Yii::app()->request->isAjaxRequest)
+                    {
+                        $model->attributes=$_POST['Business'];
+                        $valid=$model->validate();            
+                        if($valid){
+                                          
+                           //do anything here
+                             echo CJSON::encode(array(
+                                  'status'=>'success'
+                             ));
+                            Yii::app()->end();
+                            }
+                            else{
+                                $error = CActiveForm::validate($model);
+                                if($error!='[]')
+                                    echo $error;
+                                Yii::app()->end();
+                            }
+                    }
+                    
                     if(isset($_GET['stat']))
                     {
                         $status_approval = $_GET['stat'];

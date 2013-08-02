@@ -76,7 +76,7 @@
              				<tr>
             					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'alamat'); ?></th>
                 				<td>
-                					<?php echo $form->textField($model,'alamat'); ?>
+                					<?php echo $form->textArea($model,'alamat'); ?>
                 				</td>	
             				</tr>
              				<tr>

@@ -66,7 +66,7 @@
              				<tr>
             					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'alamat'); ?></th>
                 				<td>
-                					<?php echo $form->textField($model,'alamat'); ?>
+                					<?php echo $form->textArea($model,'alamat'); ?>
                 				</td>	
             				</tr>
              				<tr>
@@ -190,6 +190,34 @@
                 			<td>
                                     <?php 
 
+//                                        $this->widget('ext.xupload.XUpload', array(
+//                                        'url' => Yii::app()->createUrl("account/upload"),
+//                                        'model' => $img_upload,
+//                                        'htmlOptions' => array('id'=>'business-form'),
+//                                        'attribute' => 'file1',
+//                                        'multiple' => true,
+//                                        'formView' => 'application.views.account._xuploadForm',
+//                                        'uploadView' => 'application.views.account._xuploadUpload',
+//                                        'downloadView' => 'application.views.account._xuploadDownload',
+//                                        'uploadTemplate' => '#template-upload1',
+//                                        'downloadTemplate' => '#template-download1',
+//                                        'options'=>array(
+//                                            'maxNumberOfFiles'=> 5,
+//                                            'acceptFileTypes'=> "js:/(\.|\/)(gif|jpe?g|png)$/i",
+//                                            'maxFileSize'=> 2000000,
+//                                            'uploadTemplateId' => 'template-upload1', 
+//                                            'downloadTemplateId' => 'template-download1', 
+//                                            'filesContainer' => '.files1', 
+//                                            'prependFiles' => true, 
+//                                            'submit' => "js:function (e, data) {
+//                                                                    var inputs = data.context.find(':input');
+//                                                                    data.formData = inputs.serializeArray();
+//                                                                    return true;
+//                                                                }"
+//                                        ),
+//                                       
+//                                    ));
+                                        
                                         $this->widget('ext.xupload.XUpload', array(
                                         'url' => Yii::app()->createUrl("account/upload"),
                                         'model' => $img_upload,
@@ -226,27 +254,124 @@
             				<th class="Text-Align-Left">Dokumen</th>
                 			<td>
                                             <?php 
-                                                        //                                 $this->widget('ext.xupload.XUpload', array(
-            //                                        'url' => Yii::app()->createUrl("account/uploadDoc"),
-            //                                        'model' => $doc_upload,
-            //                                        'htmlOptions' => array('id'=>'business-form'),
-            //                                        'attribute' => 'docs',
-            //                                        'multiple' => true,
-            //                                        'showForm'=> true,
-            //                                        'options'=>array(
-            //                                            'acceptFileTypes'=> "js:/(\.|\/)(gif|jpe?g|png|pdf|doc|docx|xls|xlsx)$/i",
-            //                                            'maxFileSize'=> 5000000,
-            //                                        ),
-            //                                        'formView' => 'application.views.account._xupload',
-            //                                    ));
+//                                            $this->widget('ext.xupload.XUpload', array(
+//                                                    'url' => Yii::app()->createUrl("account/uploadDoc"),
+//                                                    'model' => $doc_upload,
+//                                                    'htmlOptions' => array('id'=>'business-form'),
+//                                                    'attribute' => 'file2',
+//                                                    'multiple' => true,
+//                                                    'formView' => 'application.views.account._xuploadForm2',
+//                                                    'uploadView' => 'application.views.account._xuploadUpload2',
+//                                                    'downloadView' => 'application.views.account._xuploadDownload2',
+//                                                    'uploadTemplate' => '#template-upload2',
+//                                                    'downloadTemplate' => '#template-download2',
+//                                                    'options'=>array(
+//                                                        'acceptFileTypes'=> "js:/(\.|\/)(gif|jpe?g|png|pdf|doc|docx|xls|xlsx)$/i",
+//                                                        'maxFileSize'=> 5000000,
+//                                                        'uploadTemplateId' => 'template-upload2', 
+//                                                        'downloadTemplateId' => 'template-download2', 
+//                                                        'filesContainer' => '.files2', 
+//                                                        'prependFiles' => true,
+//                                                        'submit' => "js:function (e, data) {
+//                                                                    var inputs = data.context.find(':input');
+//                                                                    data.formData = inputs.serializeArray();
+//                                                                    return true;
+//                                                                }"
+//                                                    ),
+//                                                ));
 
-            //                                                    $this->widget('CMultiFileUpload', array(
-            //                                'model'=>$model,
-            //                                'attribute'=>'dokumen',
-            //                                'accept'=>'jpg|gif|png|pdf|doc|docx|xls|xlsx|txt',
-            //                                )
-            //                            );
-            //                            ?>
+//                                                                $this->widget('CMultiFileUpload', array(
+//                                            'model'=>$model,
+//                                            'attribute'=>'dokumen',
+//                                            'accept'=>'jpg|gif|png|pdf|doc|docx|xls|xlsx|txt',
+//                                            )
+//                                        );
+                                            
+                                           
+//                                            $this->widget('application.extensions.cswfupload.CSwfUpload', array(
+//                                                'jsHandlerUrl'=>  Yii::app()->request->baseUrl.'/swfupload/handler.js', //Relative path
+//                                                'postParams'=>array(),
+//                                                'config'=>array(
+//                                                    'use_query_string'=>true,
+//                                                    'upload_url'=>'', //Use $this->createUrl method or define yourself
+//                                                    'file_size_limit'=>'2 MB',
+//                                                    'file_types'=>'*.jpg;*.png;*.gif',
+//                                                    'file_types_description'=>'Image Files',
+//                                                    'file_upload_limit'=>0,
+//                                                    'file_queue_error_handler'=>'js:fileQueueError',
+//                                                    'file_dialog_complete_handler'=>'js:fileDialogComplete',
+//                                                    'upload_progress_handler'=>'js:uploadProgress',
+//                                                    'upload_error_handler'=>'js:uploadError',
+//                                                    'upload_success_handler'=>'js:uploadSuccess',
+//                                                    'upload_complete_handler'=>'js:uploadComplete',
+//                                                    'custom_settings'=>array('upload_target'=>'divFileProgressContainer'),
+//                                                    'button_placeholder_id'=>'swfupload',
+//                                                    'button_width'=>170,
+//                                                    'button_height'=>20,
+//                                                    'button_text'=>'<span class="button">'.Yii::t('messageFile', 'ButtonLabel').' (Max 2 MB)</span>',
+//                                                    'button_text_style'=>'.button { font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; font-size: 11pt; text-align: center; }',
+//                                                    'button_text_top_padding'=>0,
+//                                                    'button_text_left_padding'=>0,
+//                                                    'button_window_mode'=>'js:SWFUpload.WINDOW_MODE.TRANSPARENT',
+//                                                    'button_cursor'=>'js:SWFUpload.CURSOR.HAND',
+//                                                    ),
+//                                                )
+//                                            );
+                                            ?>
+
+
+<!--                                                    <div class="form">
+                                                        <div class="row">
+                                                        <div id="divFileProgressContainer"></div>
+                                                        <div class="swfupload"><span id="swfupload"></span></div>
+                                                        </div>
+                                                    </div>-->
+                                                  <?php 
+                                                            $this->widget('application.extensions.Plupload.PluploadWidget', array(
+                                                               'config' => array(
+                                                                   'runtimes' => 'html5,gears,silverlight,browserplus',
+                                                                   'url' => Yii::app()->createUrl('//account/uploadDocs'),
+                                                                   'filters' => array(
+                                                                                array(
+                                                                                    'title' => 'Allowed Docs',
+                                                                                    'extensions' => 'jpg,gif,jpeg,jpg,png,pdf,doc,docx,xls,xlsx'
+                                                                                ),
+                                                                   'max_file_size' => '5mb',
+                                                               ),
+                                                               'model'=>$model,
+                                                               'attribute'=>'dokumen',
+                                                               'id' => 'uploader',
+                                                                
+                                                               
+                                                            ))); 
+                                                  
+                                                  
+//                                                  $this->widget('ext.uploadify.MUploadify',array(
+//                                                    'model'=>$model,
+//                                                    'attribute'=>'dokumen',
+//                                                    'multi'=>'true',
+//                                                    'script'=>Yii::app()->createUrl('//account/uploadDocs'),
+//                                                    //'auto'=>true,
+//                                                    //'someOption'=>'someValue',
+//                                                  ));
+                                                  
+//                                                    $this->widget('application.extensions.swfupload.SWFUpload',array(
+//                                                        'callbackJS'=>'swfupload_callback',
+//                                                       )
+//                                                   );
+                                                 ?>
+                                                   <br />
+                                                   <div id="docList" style="display:none">Uploaded Documents</div>
+
+                                                   <script>
+                                                      function swfupload_callback(name,path,oldname)  
+                                                      {
+                                                              $("#docList").show().append("<p>"+ oldname +"</p>");
+                                                              $("#image_name").val(name);
+//                                                              $("#thumbnails_1").html("<img src='"+path+"/"+name+"?"+(new Date()).getTime()+"' />"); 
+                                                      } 
+                                                   </script>
+                                        
                                         </td>
             			</tr>
             			<tr>

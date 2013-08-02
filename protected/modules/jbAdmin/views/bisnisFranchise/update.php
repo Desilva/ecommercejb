@@ -64,7 +64,7 @@
         {
             var industri_id = document.getElementById('Business_id_industri').value;
             var selected_sub_industri = document.getElementById('sub_industri_temp').value
-            $('#Business_id_sub_industri').load('<?php echo Yii::app()->createUrl('//account/generateSubIndustri') ?>',{'industri':industri_id, 'selected_sub_industri':selected_sub_industri});
+            $('#Business_id_sub_industri').load('<?php echo Yii::app()->createUrl('//jbAdmin/bisnisFranchise/generateSubIndustri') ?>',{'industri':industri_id, 'selected_sub_industri':selected_sub_industri});
 
         }
        
@@ -74,7 +74,7 @@
         {
             var provinsi_id = document.getElementById('Business_id_provinsi').value;
             var selected_kota = document.getElementById('kota_temp').value
-            $('#Business_id_kota').load('<?php echo Yii::app()->createUrl('//account/generateKota') ?>',{'provinsi':provinsi_id, 'selected_kota':selected_kota});
+            $('#Business_id_kota').load('<?php echo Yii::app()->createUrl('//jbAdmin/bisnisFranchise/generateKota') ?>',{'provinsi':provinsi_id, 'selected_kota':selected_kota});
 
         }
     }

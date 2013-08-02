@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl ?>/library/ad-gallery/jquery.ad-gallery.css" />
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl ?>/library/ad-gallery/jquery.ad-gallery.js"></script>
+
 <div class="row-fluid">
 	<div class="span4">
     	<h4><?php echo $model->nama ?></h4>
@@ -50,11 +53,106 @@
 
 <div class="row-fluid">
 	<div class="span12 Text-Align-Justify">
-    	<img src="<?php echo Yii::app()->request->baseUrl ?>/images/no-image.gif" width="300" style="float:left" />   
-        <?php echo $model->deskripsi ?>
+  <?php 
+        /*
+         * Loop through available image
+         * if theres no image present in the database or the image count is just one
+         * then it will just display static image of the image in the database or 
+         * the no-image if there isn't any image data in the database
+         * 
+         * More than one image will be displayed using slideshow
+         * if thumbnails of the image didn't exist the slideshow will use the full scaled image
+         * and just resize it by specifying the width and height in <img src />
+         * 
+         */
+        $image = array_filter(explode(',',$model->image));
+        if(!empty($image)){ 
+            if(count($image) > 1) 
+            { ?>
+                            <div class="ad-gallery" style=" width: 300px; float:left">
+                            <div class="ad-image-wrapper">
+
+                            </div>
+                              <div class="ad-controls">
+                              </div>
+                              <div class="ad-nav">
+                                  <div class="ad-thumbs">
+                                      <ul class="ad-thumb-list">
+                                       <?php 
+                                            foreach($image as $imageSrc)
+                                            {
+                                                if(file_exists(Yii::app()->basePath . '/../uploads/images/' . $model->id_user . '/' . $imageSrc))
+                                                { ?>
+                                                    <li>
+                                                        <a href="<?php echo Yii::app()->request->baseUrl ?>/uploads/images/<?php echo $model->id_user ?>/<?php echo $imageSrc ?>">
+                                                            <?php if(file_exists(Yii::app()->basePath . '/../uploads/images/' . $model->id_user . '/thumbs/' . $imageSrc)) 
+                                                                   { ?>
+                                                                        <img src="<?php echo Yii::app()->request->baseUrl ?>/uploads/images/<?php echo $model->id_user ?>/thumbs/<?php echo $imageSrc ?>" width="50" height="50">
+                                                             <?php } 
+                                                                  else
+                                                                  { ?>
+                                                                      <img src="<?php echo Yii::app()->request->baseUrl ?>/uploads/images/<?php echo $model->id_user ?>/<?php echo $imageSrc ?>" width="50" height="50">
+                                                            <?php } ?>
+                                                        </a>
+                                                    </li>
+                                          <?php } 
+                                                else
+                                                { ?>
+                                                    <li>
+                                                        <a href="<?php echo Yii::app()->request->baseUrl ?>/images/no-image.gif">
+                                                            <img src="<?php echo Yii::app()->request->baseUrl ?>/images/no-image.gif" width="50">
+                                                        </a>
+                                                    </li>
+                                          <?php }
+                                            } ?>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <script>
+                                    $(document).ready(function(){
+                                        var galleries = $('.ad-gallery').adGallery({
+                                            loader_image: '<?php echo Yii::app()->request->baseUrl ?>/library/ad-gallery/loader.gif',
+                                            width:'300',
+                                            height:'200',
+                                            slideshow: {
+                                                enable: true,
+                                                autostart: true,
+                                                speed: 5000,
+                                                start_label: 'Start',
+                                                stop_label: 'Stop',
+                                                // Should the slideshow stop if the user scrolls the thumb list?
+                                                stop_on_scroll: false, 
+                                              },
+                                        });
+
+                                    });
+                                </script>
+                   
+      <?php }
+            else
+            { 
+                if(file_exists(Yii::app()->basePath . '/../uploads/images/' . $model->id_user . '/' . $image[0]))
+                    { ?>
+                        <img src="<?php echo Yii::app()->baseUrl ?>/uploads/images/<?php echo $model->id_user?>/<?php echo $image[0] ?>" width="300" height="300" style="float:left; width:300px; height:300px"/>
+              <?php } 
+                    else
+                    { ?>
+                         <img src="<?php echo Yii::app()->request->baseUrl ?>/images/no-image.gif" width="300" style="float:left" />   
+              <?php } ?>
+                     
+      <?php } 
+                   
+        }
+        else
+        { ?>
+                      <img src="<?php echo Yii::app()->request->baseUrl ?>/images/no-image.gif" width="300" style="float:left" />   
+        <?php } ?>
+    	
+        <?php if($model->deskripsi =='' || $model->deskripsi ==null) echo "Tidak ada deskripsi"; else echo $model->deskripsi ?>
         </div>
 </div>
-<div class="row-fluid">
+<div class="row-fluid" style="clear:both">
 	<div class="span12"></div>
 </div>
 <div class="row-fluid">
@@ -94,39 +192,40 @@
                 </tr>
                 <tr class="Tr-Size-Medium">
                   <td>Alasan Franchise Mau Bekerjasama:</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td rowspan='5' valign='top'>File Pendukung:
+                           <?php 
+                            $docList = array_filter(explode(',',$model->dokumen));
+                            if(!empty($docList))
+                            { 
+                                foreach($docList as $dokumen)
+                                { 
+                                    $dokumen_url = urlencode($dokumen);
+                                    ?>
+                        <p><a href="<?php echo Yii::app()->createUrl("//download?docs=1&id=$model->id_user&name=$dokumen_url") ?>" ><?php echo $dokumen; ?></a></p>
+                       <?php } } ?>
+                        
+                    </td>
+                  
                 </tr>
                 <tr class="Tr-Size-Medium">
                   <td><?php echo $model->franchise_alasan_kerjasama ?></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  
                 </tr>
                <tr class="Tr-Size-Medium">
                   <td>Persyaratan Menjadi Franchise:</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  
                 </tr>
                 <tr class="Tr-Size-Medium">
                   <td><?php echo $model->franchise_persyaratan ?></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  
                 </tr>
                 <tr class="Tr-Size-Medium">
                   <td>Dukungan Franchise:</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  
                 </tr>
                 <tr class="Tr-Size-Medium">
                   <td><?php echo $model->franchise_dukungan_franchisor ?></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                 
                 </tr>
             </table>
         </div>

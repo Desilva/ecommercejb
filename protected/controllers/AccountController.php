@@ -15,6 +15,12 @@ class AccountController extends Controller
                     'path' =>Yii::app() -> getBasePath() . "/../uploads",
                     'publicPath' => Yii::app() -> getBaseUrl() . "/uploads",
                 ),
+//                'uploadDocs'=>array(
+//                    'class'=>'ext.swfupload.SWFUploadAction',
+//                    'filepath'=>Yii::app() -> getBasePath() . '/../uploads/'.md5(Yii::app()->user->id . microtime()).microtime().'.EXT',
+//                    'onAfterUpload'=>array($this,'saveFile'),
+//                    
+//                    ),
             );
         }
         public function init()
@@ -23,6 +29,12 @@ class AccountController extends Controller
                 $this->renderPartial('_sidebar',array());
             $this->endClip();
         }
+        
+        public function saveFile()
+        {
+            
+        }
+        
         public function filters()
 	{
 		return array(
@@ -42,7 +54,7 @@ class AccountController extends Controller
 				'actions'=>array(
                                     'index','view','create','update','delete',
                                     'GenerateSubIndustri','GenerateKota',
-                                    'upload','uploadDoc','preview',
+                                    'upload','uploadDocs','preview',
                                     'GetEmailDesc','GetEmail','dataDiri',
                                     'watchlist','beli'),
 				'roles'=>array('member'),
@@ -273,6 +285,8 @@ class AccountController extends Controller
 	 */
 	public function actionCreate()
 	{
+//            Yii::app()->user->setState('docs', null);
+          //  var_dump(Yii::app()->user->getState('docs'));
 //            var_dump($_POST);
 //            var_dump($_FILES);
 //            var_dump(Yii::app()->user->getState('images'));
@@ -369,6 +383,8 @@ class AccountController extends Controller
                     }
                     if($model->validate())
                     {
+                        
+                        //upload image handler
                         if(Yii::app()->user->hasState('images'))
                         {
                             $userImages = Yii::app()->user->getState('images');
@@ -444,11 +460,74 @@ class AccountController extends Controller
                                 //Clear the user's session
                                 Yii::app()->user->setState('images', null);
                         }
+                        
+                        
+                        
+                        //upload document handler
+                        if(Yii::app()->user->hasState('docs'))
+                        {
+                            $userDocs = Yii::app()->user->getState('docs');
+                            
+                            //Resolve the final path for our images
+                            $path = Yii::app()->getBasePath() . "/../uploads/docs/".Yii::app()->user->id.'/';
+                            //Create the folder and give permissions if it doesnt exists
+                            if(!is_dir($path))
+                            {
+                                mkdir($path);
+                                chmod($path, 0777);
+                            }
+                            $docName="";
+                            $i = 0;
+                                foreach($userDocs as $docs)
+                                {
+                                    $i++;
+                                    if(is_file($docs["tempDirectory"]))
+                                    {
+                                        $date = date('ymdhis');
+                                        $original_name = $docs['originalName'];
+                                        $temp= array_filter(explode('.',$docs["tempDirectory"]));
+                                        $extension = end($temp);
+//                                        while($this->checkDocExists($path.$original_name == true))
+//                                        {
+//                                            
+//                                        }
+                                        if(rename($docs["tempDirectory"], $path .$original_name))
+                                        {
+                                            chmod( $path .$docs["originalName"], 0777);
+                                            $docName .= $docs["originalName"].',';
+                                            
+    //                                        $img = new Image( );
+    //                                        $img->size = $image["size"];
+    //                                        $img->mime = $image["mime"];
+    //                                        $img->name = $image["name"];
+    //                                        $img->source = "/images/uploads/{$this->id}/" . $image["filename"];
+    //                                        $img->somemodel_id = $this->id;
+    //                                        if(!$img->save())
+    //                                        {
+    //                                            //Its always good to log something
+    //                                            Yii::log("Could not save Image:\n" . CVarDumper::dumpAsString(
+    //                                                            $img->getErrors()), CLogger::LEVEL_ERROR);
+    //                                            //this exception will rollback the transaction
+    //                                            throw new Exception('Could not save Image');
+    //                                        }
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //You can also throw an execption here to rollback the transaction
+                                        Yii::log($docs["tempDirectory"] . " is not a file", CLogger::LEVEL_WARNING);
+                                    }
+                                }
+                                $model->dokumen = $docName;
+                                //Clear the user's session
+                                Yii::app()->user->setState('docs', null);
+                        }
                     }
                     if($model->save()) 
                         $this->redirect('index');
                }
         Yii::app()->user->setState('images', null);
+        Yii::app()->user->setState('docs', null);
         $this->render('create',array(
                         'jenis'=>$jenis,
 			'model'=>$model,
@@ -462,6 +541,18 @@ class AccountController extends Controller
                         'doc_upload'=>$doc_upload,
 		));
 	}
+        
+//        public function checkDocsExist($directory)
+//        {
+//            if(file_exists($directory))
+//            {
+//                return true;
+//            }
+//            else
+//            {
+//                return false;
+//            }
+//        }
 
 	/**
 	 * Updates a particular model.
@@ -888,126 +979,47 @@ class AccountController extends Controller
             }
         }
         
-//         public function actionUploadDoc()
-//        {
-//            Yii::import("ext.xupload.models.XUploadForm");
-//            //Here we define the paths where the files will be stored temporarily
-//            $path = realpath(Yii::app()->getBasePath() . "/../uploads/tmp/") . "/";
-//            $publicPath = Yii::app()->getBaseUrl() . "/uploads/tmp/";
+         public function actionUploadDocs()
+         {
+              $path = realpath(Yii::app()->getBasePath() . "/../uploads/tmp/") . "/".Yii::app()->user->id.'/';
+              $publicPath = Yii::app()->getBaseUrl() . "/uploads/tmp/".Yii::app()->user->id.'/';
+              $path_parts = pathinfo($_FILES["file"]["name"]);
+              $extension = $path_parts['extension'];
+              $filename = md5(Yii::app()->user->id .microtime().$_FILES['file']['name']).'.'.$extension;
+              if(!is_dir($path))
+              {
+                mkdir($path);
+                chmod($path, 0777);
+              }
+              move_uploaded_file($_FILES["file"]["tmp_name"], $path.$filename);
+              if(Yii::app()->user->hasState('docs'))
+              {
+                  $userDocs = Yii::app()->user->getState('docs');
+              }
+              else
+              {
+                  $userDocs= array();
+              }
+              $userDocs[] = array(
+                  "originalName"=>$_FILES["file"]["name"],
+                  "tempDirectory"=>$path.$filename,
+              );
+              Yii::app()->user->setState('docs',$userDocs);
+//            $model=new Business();
+//            $model->dokumen=CUploadedFile::getInstance($model,'dokumen');
+//            $model->dokumen->saveAs(Yii::app()->getBasePath().'/../uploads/a.jpg');
 //
-//            //This is for IE which doens't handle 'Content-type: application/json' correctly
-//            header('Vary: Accept');
-//            if(isset($_SERVER['HTTP_ACCEPT']) && (strpos($_SERVER['HTTP_ACCEPT'], 'application/json') !== false))
-//            {
-//                header('Content-type: application/json');
-//            }
-//            else
-//            {
-//                header('Content-type: text/plain');
-//            }
-//
-//            //Here we check if we are deleting and uploaded file
-//            if(isset($_GET["_method"]))
-//            {
-//                if($_GET["_method"] == "delete")
-//                {
-//                    if($_GET["file"][0] !== '.')
-//                    {
-//                        $file = $path . $_GET["file"];
-//                        if(is_file($file))
-//                        {
-//                            unlink($file);
-//                        }
-//                    }
-//                    echo json_encode(true);
-//                }
-//            }
-//            else
-//            {
-//                $model = new XUploadForm;
-//                $model->file = CUploadedFile::getInstance($model, 'file');
-//                //We check that the file was successfully uploaded
-//                if($model->file !== null)
-//                {
-//                    //Grab some data
-//                    $model->mime_type = $model->file->getType();
-//                    $model->size = $model->file->getSize();
-//                    $model->name = $model->file->getName();
-//                    //(optional) Generate a random name for our file
-//                    $filename = md5(Yii::app()->user->id . microtime() . $model->name);
-//                    $filename .= "." . $model->file->getExtensionName();
-//                    if($model->validate())
-//                    {
-//                        //Move our file to our temporary dir
-//                        $model->file->saveAs($path . $filename);
-//                        chmod($path . $filename, 0777);
-//                        //here you can also generate the image versions you need 
-//                        //using something like PHPThumb
-//                        //Now we need to save this path to the user's session
-//                        if(Yii::app()->user->hasState('docs'))
-//                        {
-////                            $delImages = Yii::app()->user->getState('images');
-////                            foreach($delImages as $del)
-////                            {
-////                                $file = $del["path"];
-////                                if(is_file($file))
-////                                {
-////                                    unlink($file);
-////                                }
-////                            }
-////                            Yii::app()->user->setState('images',null);
-////                            $userImages = array();
-//                            $userDocs = Yii::app()->user->getState('docs');
-//
-////                            $userImages = array();
-//                        }
-//                        else
-//                        {
-//                            $userDocs = array();
-//                        }
-//                        $userDocs[] = array(
-//                            "path" => $path . $filename,
-//                            //the same file or a thumb version that you generated
-//                            "thumb" => $path . $filename,
-//                            "filename" => $filename,
-//                            'size' => $model->size,
-//                            'mime' => $model->mime_type,
-//                            'name' => $model->name,
-//                        );
-//                        Yii::app()->user->setState('docs', $userDocs);
-//
-//                        //Now we need to tell our widget that the upload was succesfull
-//                        //We do so, using the json structure defined in
-//                        // https://github.com/blueimp/jQuery-File-Upload/wiki/Setup
-//                        echo json_encode(array(array(
-//                                "name" => $model->name,
-//                                "type" => $model->mime_type,
-//                                "size" => $model->size,
-//                                "url" => $publicPath . $filename,
-//                                "thumbnail_url" => $publicPath . "/$filename",
-//                                "delete_url" => $this->createUrl("upload", array(
-//                                    "_method" => "delete",
-//                                    "file" => $filename
-//                                )),
-//                                "delete_type" => "POST"
-//                        )));
-//                    }
-//                    else
-//                    {
-//                        //If the upload failed for some reason we log some data and let the widget know
-//                        echo json_encode(array(
-//                            array("error" => $model->getErrors('file'),
-//                        )));
-//                        Yii::log("XUploadAction: " . CVarDumper::dumpAsString($model->getErrors()), CLogger::LEVEL_ERROR, "xupload.actions.XUploadAction"
-//                        );
-//                    }
-//                }
-//                else
-//                {
-//                    throw new CHttpException(500, "Could not upload file");
-//                }
-//            }
-//        }
+//             
+//            $model=new Business();
+//          if(isset($_POST['Business'])){
+//            $model->dokumen=CUploadedFile::getInstance($model,'dokumen');
+//            $model->dokumen->saveAs(Yii::app()->getBasePath().'/../uploads/a.jpg');
+////            if(!$model->save() || !$model->myAttribute->saveAs('someFile.jpg'))
+////              throw new CHttpException(500);
+//            echo 1;
+//            Yii::app()->end();
+//          }
+         }
         
         public function actionGetEmailDesc()
         {
