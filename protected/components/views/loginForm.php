@@ -10,7 +10,7 @@
     ));
     ?> 
     <div class="control-label">
-        <a href="<?php echo Yii::app()->createUrl('//registrasi') ?>">Member Baru</a> | Lupa Password
+        <a href="<?php echo Yii::app()->createUrl('//registrasi') ?>">Member Baru</a> | <a href="<?php echo Yii::app()->createUrl('//lupaPassword') ?>">Lupa Password </a>
         <?php echo $form->textField($model, 'email', array('placeholder' => 'Email', 'class' => 'input-medium')); ?>
         <?php echo $form->passwordField($model, 'password', array('placeholder' => 'Kata Sandi', 'class' => 'input-medium')); ?>
         <button type="submit" class="btn Gradient-Style2" />Masuk</button>

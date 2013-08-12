@@ -55,9 +55,10 @@ class ArticleController extends Controller
 	{
 		$model=new Article;
                 $category = ArticleCategory::model()->findAll();
+                $category_pembaca = ArticleCategoryPembaca::model()->findAll();
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
+                
 		if(isset($_POST['Article']))
 		{
 			$model->attributes=$_POST['Article'];
@@ -68,6 +69,7 @@ class ArticleController extends Controller
 		$this->render('create',array(
 			'model'=>$model,
                         'category' => $category,
+                        'categoryPembaca'=> $category_pembaca
 		));
 	}
 
@@ -80,6 +82,7 @@ class ArticleController extends Controller
 	{
 		$model=$this->loadModel($id);
                 $category = ArticleCategory::model()->findAll();
+                $category_pembaca = ArticleCategoryPembaca::model()->findAll();
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -93,6 +96,7 @@ class ArticleController extends Controller
 		$this->render('update',array(
 			'model'=>$model,
                         'category' => $category,
+                        'categoryPembaca'=> $category_pembaca
 		));
 	}
 

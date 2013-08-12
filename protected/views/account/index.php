@@ -198,6 +198,7 @@ a.delete img{
                                     'no_telp',
                                     'alamat_email'
                                 ),
+                               'htmlOptions'=>array('hidden'=>'hidden'),
                             ));
                         ?>
                     </div>

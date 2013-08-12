@@ -41,7 +41,7 @@
                 </tr>
                 <tr>
                 	<th class="Text-Align-Left Font-Color-LightBlue"><?php echo $form->labelEx($model,'alamat_email'); ?></th>
-                    <td><?php echo $form->textField($model,'alamat_email'); ?></td>
+                    <td><?php echo $form->textField($model,'alamat_email',array('value'=>Yii::app()->user->email,'readonly'=>'readonly')); ?></td>
                 </tr>
                 <tr>
                 	<th class="Text-Align-Left Font-Color-LightBlue"><?php echo $form->labelEx($model,'deskripsi'); ?></th>

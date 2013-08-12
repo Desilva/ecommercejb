@@ -48,6 +48,11 @@
                     <td><button type="submit" class="btn Gradient-Style1">Kirim</button></td>
                 </tr>
             </table>
+                 <?php if(Yii::app()->user->hasFlash('error')): ?>
+                    <div class="flash-success">
+                        <?php echo Yii::app()->user->getFlash('error'); ?>
+                    </div>
+                <?php endif; ?> 
         </div>
             <?php $this->endWidget(); ?>
         <div class="span6 Text-Align-Right">

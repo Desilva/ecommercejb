@@ -95,10 +95,10 @@
             <tr>
             	<th class="Text-Align-Left Font-Color-LightBlue"><?php echo $form->labelEx($model,'birth_place'); ?></th>
                 <td><?php echo $form->dropDownList($model,'birth_place',$tempat_lahir,array('prompt'=>'Pilih Kota')); ?></td>
-                <th class="Text-Align-Left Font-Color-LightBlue"><?php echo $form->labelEx($model,'marital_status'); ?></th>
+               <th class="Text-Align-Left Font-Color-LightBlue"><?php echo $form->labelEx($model,'id_job'); ?></th>
                 <td>
-                    <?php echo $form->dropDownList($model,'marital_status',$status_perkawinan,array('prompt'=>'Pilih Status')); ?> </td>
-            </tr>
+                    <?php echo $form->dropDownList($model,'id_job',CHtml::listData($pekerjaan,'id','job'),array('prompt'=>'Pilih Status')); ?>
+                </td>
             <tr>
                 <th class="Text-Align-Left Font-Color-LightBlue"><?php echo $form->labelEx($model,'date_of_birth'); ?></th>
                 <td>
@@ -114,10 +114,7 @@
                                  ),
                           )); ?>
                 </td>
-            	<th class="Text-Align-Left Font-Color-LightBlue"><?php echo $form->labelEx($model,'id_job'); ?></th>
-                <td>
-                    <?php echo $form->dropDownList($model,'id_job',CHtml::listData($pekerjaan,'id','job'),array('prompt'=>'Pilih Status')); ?>
-                </td>
+            	
             </tr>
             <tr>
             	<th colspan="2" class="Font-Color-DarkBlue">Isian Khusus Pembeli</th>
@@ -212,7 +209,7 @@
             <tr>
             	<td colspan="3">
                 	<label class="checkbox inline Font-Color-LightBlue">
-                    	<?php echo $form->checkBox($model,'newsletter_status') ?>Ya, saya ingin menerima newsletter dari JualanBisnis.com yang berisi berita promosi dan penawaran
+                    	<?php echo $form->checkBox($model,'newsletter_status',array('checked'=>'checked')) ?>Ya, saya ingin menerima newsletter dari JualanBisnis.com yang berisi berita promosi dan penawaran
                     </label>
                 </td>
             </tr>

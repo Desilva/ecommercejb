@@ -20,18 +20,18 @@
                     if(file_exists(Yii::app()->basePath.'/../uploads/images/'.$data->id_user.'/'.$image[0]))
                     {
           ?>
-                        <img src="<?php echo Yii::app()->baseUrl ?>/uploads/images/<?php echo $data->id_user?>/<?php echo $image[0] ?>" width="120" height="120"/>
+                        <img src="<?php echo Yii::app()->baseUrl ?>/uploads/images/<?php echo $data->id_user?>/<?php echo $image[0] ?>" style="width: 100px; height:100px"/>
           <?php    }
                     else
                     {
           ?>
-                        <img src="<?php echo Yii::app()->baseUrl ?>/images/no-image.gif" width="120" height="120"/>
+                        <img src="<?php echo Yii::app()->baseUrl ?>/images/no-image.gif" style="width: 100px; height:100px"/>
           <?php     }
                     }
                   else
                   {
          ?>
-                    <img src="<?php echo Yii::app()->baseUrl ?>/images/no-image.gif" width="120" height="120"/>
+                    <img src="<?php echo Yii::app()->baseUrl ?>/images/no-image.gif" style="width: 100px; height:100px"/>
          <?php 
                   }
          ?>
@@ -65,6 +65,7 @@
                 </td>
                 <td>
                 	<?php echo $data->penjualan ?>
+                        <br/>
                         <?php
 				if(!Yii::app()->user->isGuest){
 			?>

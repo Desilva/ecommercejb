@@ -6,6 +6,17 @@
 <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl ?>/library/Bootstrap/assets/css/bootstrap.css" />
 <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl ?>/library/Bootstrap/assets/css/bootstrap-responsive.css" />
 <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl ?>/css/style.css" />
+
+<script type="text/javascript">
+
+    $(document).ready(function(){
+        jQuery('ul.nav li.dropdown').hover(function() {
+        jQuery(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn();
+      }, function() {
+        jQuery(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut();
+      });
+    });
+</script>
 </head>
 
 <body>
@@ -52,10 +63,21 @@
                                     ?>
                                         <li class="separator-Vertical"><a class="Font-Color-White" href="#">Jual Bisnis Franchise</a></li>
                                     <?php } ?>
-                                    <li class="separator-Vertical"><a class="Font-Color-White" href="#">Layanan Kami</a></li>
-                                    <li class="separator-Vertical"><a class="Font-Color-White" href="<?php echo Yii::app()->createUrl('//article') ?>">Artikel</a></li>
-                                    <li class="separator-Vertical"><a class="Font-Color-White" href="#">Kontak</a></li>
-                                    <li class="separator-Vertical"><a class="Font-Color-White" href="#">Faq</a></li>
+                                  <li class="separator-Vertical"><a class="Font-Color-White" href="<?php echo Yii::app()->createUrl('//layananKami') ?>">Layanan Kami</a></li>
+                                    <li class="dropdown separator-Vertical">
+                                        <a href="#" class="dropdown-toggle Font-Color-White" data-toggle="dropdown">
+                                        Artikel
+                                        <b class="caret"></b>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a tabindex="-1" href="<?php echo Yii::app()->createUrl('//article?categoryPembaca=franchisee') ?>">Franchisee</a></li>
+                                            <li><a tabindex="-1" href="<?php echo Yii::app()->createUrl('//article?categoryPembaca=franchisor') ?>">Franchisor</a></li>
+                                            <li><a tabindex="-1" href="<?php echo Yii::app()->createUrl('//article?categoryPembaca=penjualBisnis') ?>">Penjual Bisnis</a></li>
+                                            <li><a tabindex="-1" href="<?php echo Yii::app()->createUrl('//article?categoryPembaca=pembeliBisnis') ?>">Pembeli Bisnis</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="separator-Vertical"><a class="Font-Color-White" href="<?php echo Yii::app()->createUrl('//kontak') ?>">Kontak</a></li>
+                                    <li class="separator-Vertical"><a class="Font-Color-White" href="<?php echo Yii::app()->createUrl('//faq') ?>">Faq</a></li>
                                 </ul>
                             </div>
                         </div>

@@ -14,6 +14,6 @@ $this->menu=array(
 ?>
 
 <div class="span10">
-<h1>Ubah Artikel <?php echo $model->title; ?></h1>
+<h3>Ubah Artikel <?php echo $model->title; ?></h3>
 </div>
-<?php echo $this->renderPartial('_form', array('model'=>$model,'category'=>$category)); ?>
+<?php echo $this->renderPartial('_form', array('model'=>$model,'category'=>$category, 'categoryPembaca'=>$categoryPembaca)); ?>

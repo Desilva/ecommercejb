@@ -24,7 +24,7 @@ class ArticleController extends Controller
         
         if($selectedArticleCategory =="")
         {
-            $article= new CActiveDataProvider('article',array(
+            $article= new CActiveDataProvider('Article',array(
                 'sort'=>array(
                         'defaultOrder'=>'post_date DESC'),
                 'pagination'=>array(

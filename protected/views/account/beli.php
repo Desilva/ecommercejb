@@ -45,7 +45,7 @@ a.view img{
                                 'class' => 'CButtonColumn',
                                 'header' => 'Tindakan',
                                 'template' => '{view}',
-                                'viewButtonImageUrl' => Yii::app()->request->baseUrl . '/images/icon/-.png',
+                                'viewButtonImageUrl' => Yii::app()->request->baseUrl . '/images/asset/-.png',
                                 'viewButtonUrl'=> 'Yii::app()->createUrl("cariBisnisFranchise/detail/", array("id"=>$data->id_business,"kategori"=>$data->idBusiness->id_category,"return"=>"beli"))',
                             ),
                         ),

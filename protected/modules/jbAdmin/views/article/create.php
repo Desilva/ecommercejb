@@ -11,6 +11,6 @@
 ?>
 
 <div class="span10">
-<h1>Tambah Artikel</h1>
+<h3>Tambah Artikel</h3>
 </div>
-<?php echo $this->renderPartial('_form', array('model'=>$model,'category'=>$category)); ?>
+<?php echo $this->renderPartial('_form', array('model'=>$model,'category'=>$category,'categoryPembaca'=>$categoryPembaca)); ?>

@@ -117,12 +117,15 @@ class RegistrasiController extends Controller
                         
                         $m_references .= $value.',';
                     }
+                    
+                    if($references != "")
+                    {
+                        $model->references = $references;
+                    }
                 }
-                if($references != "")
-                {
-                    $model->references = $references;
-                }
+                
                 $model->save(false);
+                //verifikasi email function
                 $this->redirect(Yii::app()->createUrl('//Home'));
             }
         }

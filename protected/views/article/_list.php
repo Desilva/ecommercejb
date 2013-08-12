@@ -51,7 +51,7 @@
                                 	
                                     <th><a href="<?php echo Yii::app()->createUrl("///article/detail/$data->id") ?>"><?php echo $data->title ?></a><br>
                                      <!--    LOCALE: there is two function for setting locale, the first one using 'indonesian' is for windows, and the 2nd one the id_ID is for linux-->
-                                        Oleh <?php echo $data->created_by ?> <?php setlocale(LC_TIME, 'indonesian'); setlocale(LC_TIME, 'id_ID'); echo strftime('%d %B %Y',  strtotime($data->post_date)) ?></th>
+                                        Oleh <?php echo $data->created_by ?>, <?php setlocale(LC_TIME, 'indonesian'); setlocale(LC_TIME, 'id_ID'); echo strftime('%d %B %Y',  strtotime($data->post_date)) ?> di <?php echo $data->idArticleCategory->category ?></th>
                                     <td width="12%" class="Text-Align-Right">
                                     	Bagikan
                                             <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo Yii::app()->createAbsoluteUrl("//article/detail/$data->id") ?>" target="_blank"><img class="imageShareArtikel" src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/facebookIcon.png" height="20" width="20" /></a>

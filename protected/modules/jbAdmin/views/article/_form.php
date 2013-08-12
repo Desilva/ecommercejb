@@ -38,17 +38,22 @@
             <tr>
                 <td><?php echo $form->labelEx($model,'id_article_category'); ?></td>
                 <td><?php echo $form->dropDownList($model,'id_article_category',CHtml::listData($category,'id','category'),array('prompt'=>'Pilih Kategori')); ?>
-		<?php echo $form->error($model,'id_article_category'); ?></td>
+		</td>
+            </tr
+            <tr>
+                <td><?php echo $form->labelEx($model,'id_article_category_pembaca'); ?></td>
+                <td><?php echo $form->dropDownList($model,'id_article_category_pembaca',CHtml::listData($categoryPembaca,'id','category_pembaca'),array('prompt'=>'Pilih Kategori Pembaca')); ?>
+		</td>
             </tr>
             <tr>
                 <td><?php echo $form->labelEx($model,'post'); ?></td>
                 <td><?php echo $form->textArea($model,'post', array('id'=>'ckeditorTextArea')); ?>
-		<?php echo $form->error($model,'post'); ?></td>
+		</td>
             </tr>
             <tr>
                 <td><?php echo $form->labelEx($model,'resume'); ?></td>
                 <td><?php echo $form->textField($model,'resume',array('size'=>60,'maxlength'=>200)); ?>
-		<?php echo $form->error($model,'resume'); ?></td>
+		</td>
             </tr>
         </table>
         <script type="text/javascript">

@@ -102,34 +102,20 @@
         <div class="row-fluid">
         	<div class="span12">
             	<fieldset>
-                	<legend>Setting Newsletter</legend>
+                	<legend>Setting Email</legend>
                     <div class="row-fluid">
                     	<div class="span12">
                         	<table>
                             	<tr>
-                                	<td>Email Newsletter</td>
+                                	<td>Alamat Email:</td>
                                     <td><input type="text"></td>
                                     <td></td>
                                 </tr>
                                 <tr>
-                                	<Td>Email Password</Td>
+                                	<td>Nama:</td>
                                     <td><input type="text"></td>
                                     <td></td>
                                 </tr>
-                                <tr>
-                                	<td>SMTP Email</td>
-                                    <td><input type="text"></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                	<td>PORT</td>
-                                    <td><input type="text"></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                	<Td>Template Newsletter</Td>
-                                    <td colspan="2"><textarea rows="8" style="width:800px;"></textarea></td>
-                                </tr>	
                             </table>
                         </div>	
                     </div>

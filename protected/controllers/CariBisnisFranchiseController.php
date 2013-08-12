@@ -292,17 +292,39 @@ class CariBisnisFranchiseController extends Controller
             $businessOwner = User::model()->findByPk($business->id_user);
             if(isset($_POST['Email']))
             {
-                if($_POST['Email']['status'] == '1')
-                {
-                    //fungsi kirim email ke alamat email yg disediakan user
-                }
-                if($_POST['Email']['status'] == '0')
-                {
-                    //kirim ke alamat email asli admin???
-                }
+                
                 $model->attributes = $_POST['Email'];
                 if($model->save())
                 {
+                    
+                    if($_POST['Email']['status'] == '1')
+                    {
+                        //fungsi kirim email ke alamat email yg disediakan user
+                        
+                        if($businessOwner != null || $businessOwner != '')
+                        {
+                            YiiBase::import('ext.YiiMailer.YiiMailer');
+                            //function to send email
+                            $mail = new YiiMailer();
+                            $mail->clearLayout();//if layout is already set in config
+                            $mail->setFrom($model->alamat_email, $model->nama_pengirim);
+                            $mail->setTo('reynhart@licht-soft.com'); //CHANGE TO APPROPRIATE EMAIL WHEN DEPLOYING
+                            $mail->setSubject( $model->nama_pengirim.' '.'menghubungi bisnis/franchise Anda');
+                            $mail->setBody("Nama Bisnis: $business->nama<br /><p>Detail Pengirim</p><p>Nama: $model->nama_pengirim</p><p>Phone: $model->no_telp</p><p>Deskripsi: <br/> $model->deskripsi</p>");
+                            if ($mail->send()) {
+        //                        Yii::app()->user->setFlash('email','Email Berhasil Dikirim');
+                                $this->redirect(Yii::app()->createUrl('//home'));
+                            } else {
+                                Yii::app()->user->setFlash('error','Error while sending email: '.$mail->getError());
+                            }
+
+
+                        }
+                    }
+                    if($_POST['Email']['status'] == '0')
+                    {
+                        //kirim ke alamat email asli admin???
+                    }
                     $this->redirect(Yii::app()->createUrl("//cariBisnisFranchise/detail/$id"));
                 }
                 
