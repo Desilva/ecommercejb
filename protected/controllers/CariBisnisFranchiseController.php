@@ -324,6 +324,25 @@ class CariBisnisFranchiseController extends Controller
                     if($_POST['Email']['status'] == '0')
                     {
                         //kirim ke alamat email asli admin???
+                        if($businessOwner != null || $businessOwner != '')
+                        {
+                            YiiBase::import('ext.YiiMailer.YiiMailer');
+                            //function to send email
+                            $mail = new YiiMailer();
+                            $mail->clearLayout();//if layout is already set in config
+                            $mail->setFrom($model->alamat_email, $model->nama_pengirim);
+                            $mail->setTo('reynhart@licht-soft.com'); //CHANGE TO APPROPRIATE EMAIL WHEN DEPLOYING
+                            $mail->setSubject('Bisnis/Franchis'. $business->nama.'menerima email dari pelanggan lain');
+                            $mail->setBody("Nama Bisnis: $business->nama<br /><p>Detail Pengirim</p><p>Nama: $model->nama_pengirim</p><p>Phone: $model->no_telp</p><p>Deskripsi: <br/> $model->deskripsi</p>");
+                            if ($mail->send()) {
+        //                        Yii::app()->user->setFlash('email','Email Berhasil Dikirim');
+                                $this->redirect(Yii::app()->createUrl('//home'));
+                            } else {
+                                Yii::app()->user->setFlash('error','Error while sending email: '.$mail->getError());
+                            }
+
+
+                        }
                     }
                     $this->redirect(Yii::app()->createUrl("//cariBisnisFranchise/detail/$id"));
                 }

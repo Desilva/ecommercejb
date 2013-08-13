@@ -28,6 +28,8 @@
  * @property string $references
  * @property integer $newsletter_status
  * @property integer $access_level
+ * @property integer $status_verifikasi
+ * @property string $kode_verifikasi
  *
  * The followings are the available model relations:
  * @property Business[] $businesses

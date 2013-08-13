@@ -65,15 +65,14 @@
                                     <?php } ?>
                                   <li class="separator-Vertical"><a class="Font-Color-White" href="<?php echo Yii::app()->createUrl('//layananKami') ?>">Layanan Kami</a></li>
                                     <li class="dropdown separator-Vertical">
-                                        <a href="#" class="dropdown-toggle Font-Color-White" data-toggle="dropdown">
+                                        <a href="<?php echo Yii::app()->createUrl('//article') ?>" class="dropdown-toggle Font-Color-White" >
                                         Artikel
-                                        <b class="caret"></b>
                                         </a>
                                         <ul class="dropdown-menu">
-                                            <li><a tabindex="-1" href="<?php echo Yii::app()->createUrl('//article?categoryPembaca=franchisee') ?>">Franchisee</a></li>
-                                            <li><a tabindex="-1" href="<?php echo Yii::app()->createUrl('//article?categoryPembaca=franchisor') ?>">Franchisor</a></li>
-                                            <li><a tabindex="-1" href="<?php echo Yii::app()->createUrl('//article?categoryPembaca=penjualBisnis') ?>">Penjual Bisnis</a></li>
-                                            <li><a tabindex="-1" href="<?php echo Yii::app()->createUrl('//article?categoryPembaca=pembeliBisnis') ?>">Pembeli Bisnis</a></li>
+                                            <li><a tabindex="-1" href="<?php echo Yii::app()->createUrl('//article?kategoriPembaca=franchisee') ?>">Franchisee</a></li>
+                                            <li><a tabindex="-1" href="<?php echo Yii::app()->createUrl('//article?kategoriPembaca=franchisor') ?>">Franchisor</a></li>
+                                            <li><a tabindex="-1" href="<?php echo Yii::app()->createUrl('//article?kategoriPembaca=penjualBisnis') ?>">Penjual Bisnis</a></li>
+                                            <li><a tabindex="-1" href="<?php echo Yii::app()->createUrl('//article?kategoriPembaca=pembeliBisnis') ?>">Pembeli Bisnis</a></li>
                                         </ul>
                                     </li>
                                     <li class="separator-Vertical"><a class="Font-Color-White" href="<?php echo Yii::app()->createUrl('//kontak') ?>">Kontak</a></li>

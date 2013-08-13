@@ -123,10 +123,26 @@ class RegistrasiController extends Controller
                         $model->references = $references;
                     }
                 }
-                
+                $model->kode_verifikasi = md5(microtime().$model->email);
                 $model->save(false);
                 //verifikasi email function
-                $this->redirect(Yii::app()->createUrl('//Home'));
+                YiiBase::import('ext.YiiMailer.YiiMailer');
+                $mail = new YiiMailer();
+                $mail->clearLayout(); //if layout is already set in config
+                $mail->setFrom('donotreply@jb.com', 'JualanBisnis.com'); //CHANGE TO SETTING EMAIL ADMIN ON DEPLOYMENT
+                $mail->setTo('reynhart@licht-soft.com'); //CHANGE TO APPROPRIATE EMAIL WHEN DEPLOYING
+                $mail->setSubject('Verifikasi Email JualanBisnis.com');
+                $mail->setBody("<p>Klik link dibawah ini untuk mem-verifikasikan email anda: </p><p>".Yii::app()->createAbsoluteUrl("//registrasi/verifikasi?kode=$model->kode_verifikasi&id=$model->id")."</p>");
+                if($mail->send())
+                {
+//                  Yii::app()->user->setFlash('email','Email Berhasil Dikirim');
+                    $this->redirect(Yii::app()->createUrl('//registrasi/notifikasi',array('email'=>$model->email)));
+                }
+                else
+                {
+                    Yii::app()->user->setFlash('error', 'Error while sending email: ' . $mail->getError());
+                }
+                
             }
         }
         $this->render('index',array(
@@ -144,5 +160,83 @@ class RegistrasiController extends Controller
             'references2' => $list_references2,
 //            'references'=> $list_references,
             ));
+    }
+    
+    public function actionNotifikasi($email)
+    {
+        $user_check = User::model()->findByAttributes(array('email'=>$email));
+        if($user_check == '' || $user_check == null)
+        {
+            $this->render('notifikasi',array('status'=>'Email tidak terdaftar'));
+        }
+        else
+        {
+            if($user_check->status_verifikasi != 0)
+            {
+                $this->render('notifikasi',array('status'=>'Anda sudah melakukan verifikasi'));
+            }
+            else
+            {
+                $this->render('notifikasi',array('model'=>$user_check));
+            }
+        }
+    }
+    
+    public function actionVerifikasi()
+    {
+        
+        if(isset($_GET['id']) && isset($_GET['kode']))
+        {
+            $user_id = $_GET['id'];
+            $kode_verifikasi = $_GET['kode'];
+            $model = UserUpdate::model()->findByPk($user_id);
+            if($model->status_verifikasi == 1)
+            {
+                $this->render('verifikasi',array('status'=>'Anda sudah melakukan verifikasi'));
+            }
+            else
+            {
+                if($model->kode_verifikasi == $kode_verifikasi)
+                {
+                    $model->password_repeat = $model->password;
+                    $model->status_verifikasi = 1;
+                    $model->save();
+                    $autoLogin = new AutoLoginIdentity($model->email,'');
+                    $autoLogin->authenticate();
+                    Yii::app()->user->login($autoLogin, $duration = 0); // Do not remember Auto login user
+                    $this->render('verifikasi',array('status'=>'Anda telah berhasil memverifikasikan akun anda. Terima kasih'));
+                }
+                else
+                {
+                    $this->render('verifikasi',array('status'=>'Terdapat kesalahan pada kode verifikasi, harap hubungi kami'));
+                }
+            }
+            
+        }
+        else
+        {
+            $this->render('verifikasi',array('status'=>'Terdapat kesalahan pada kode verifikasi, harap hubungi kami'));
+        }
+    }
+    
+    public function actionResendVerifikasi()
+    {
+        $email = $_POST['email'];
+        $model = User::model()->findByAttributes(array('email'=>$email));
+        YiiBase::import('ext.YiiMailer.YiiMailer');
+        $mail = new YiiMailer();
+        $mail->clearLayout(); //if layout is already set in config
+        $mail->setFrom('donotreply@jb.com', 'JualanBisnis.com'); //CHANGE TO SETTING EMAIL ADMIN ON DEPLOYMENT
+        $mail->setTo('reynhart@licht-soft.com'); //CHANGE TO APPROPRIATE EMAIL WHEN DEPLOYING
+        $mail->setSubject('Verifikasi Email JualanBisnis.com');
+        $mail->setBody("<p>Klik link dibawah ini untuk mem-verifikasikan email anda: </p><p>".Yii::app()->createAbsoluteUrl("//registrasi/verifikasi?kode=$model->kode_verifikasi&id=$model->id")."</p>");
+        if($mail->send())
+        {
+            echo "success";
+        }
+        else
+        {
+            echo "error";
+        }
     }
 }

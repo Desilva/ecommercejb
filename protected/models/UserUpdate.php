@@ -28,6 +28,8 @@
  * @property integer $id_buyer_price
  * @property string $references
  * @property integer $newsletter_status
+ * @property integer $status_verifikasi
+ * @property string $kode_verifikasi
  * The followings are the available model relations:
  * @property Business[] $businesses
  * @property MBuyerCategory $idBuyerCategory

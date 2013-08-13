@@ -16,29 +16,51 @@ class ArticleController extends Controller
     public function actionIndex()
     {
         $selectedArticleCategory = "";
+        $selectedArticleCategoryPembaca = "";
         $articleCategory = ArticleCategory::model()->findAll();
-        if(isset($_GET['ArticleCategory']))
+        $articleCategoryPembaca = ArticleCategoryPembaca::model()->findAll();
+        
+        if(isset($_GET['kategori']) && $_GET['kategori'] != '')
         {
-            $selectedArticleCategory = $_GET['ArticleCategory'];
+            $selectedArticleCategory = $_GET['kategori'];
         }
         
-        if($selectedArticleCategory =="")
+        if(isset($_GET['kategoriPembaca']) && $_GET['kategoriPembaca'] != '')
         {
-            $article= new CActiveDataProvider('Article',array(
-                'sort'=>array(
-                        'defaultOrder'=>'post_date DESC'),
-                'pagination'=>array(
-                    'pageSize'=>10,
-                ),
-                ));
-
-            $this->render('index',array('model' => $article,'articleCategory'=>$articleCategory,'selectedArticleCategory'=>$selectedArticleCategory));
+            if(intval($_GET['kategoriPembaca']) == 0)
+            {
+                $temp = ArticleCategoryPembaca::model()->findByAttributes(array('category_pembaca'=> $_GET['kategoriPembaca']));
+                $selectedArticleCategoryPembaca = $temp->id;
+            }
+            else
+            {
+                $selectedArticleCategoryPembaca = $_GET['kategoriPembaca'];
+            }
+            
+        }
+        
+        if($selectedArticleCategory !="" && $selectedArticleCategoryPembaca != "")
+        {
+            $criteria = new CDbCriteria();
+            $criteria->condition = "id_article_category_pembaca = '$selectedArticleCategoryPembaca'";
+            $criteria->addCondition("id_article_category = $selectedArticleCategory"); 
+        }
+        else if($selectedArticleCategory != "" && $selectedArticleCategoryPembaca == "")
+        {
+            $criteria = new CDbCriteria();
+            $criteria->condition = "id_article_category = $selectedArticleCategory";
+        }
+        else if($selectedArticleCategory == "" && $selectedArticleCategoryPembaca != "")
+        {
+            $criteria = new CDbCriteria();
+            $criteria->condition = "id_article_category_pembaca = '$selectedArticleCategoryPembaca'";
         }
         else 
         {
             $criteria = new CDbCriteria();
-            $criteria->condition = "id_article_category = $selectedArticleCategory";
-            $article = new CActiveDataProvider('article', array(
+        }
+        
+        $article = new CActiveDataProvider('article', array(
                 'criteria' => $criteria,
                 'sort' => array(
                     'defaultOrder' => 'post_date DESC'),
@@ -46,9 +68,7 @@ class ArticleController extends Controller
                     'pageSize' => 10,
                 ),
             ));
-
-            $this->render('index', array('model' => $article,'articleCategory'=>$articleCategory,'selectedArticleCategory'=>$selectedArticleCategory));
-        }
+        $this->render('index', array('model' => $article,'articleCategory'=>$articleCategory,'selectedArticleCategory'=>$selectedArticleCategory,'articleCategoryPembaca'=>$articleCategoryPembaca,'selectedArticleCategoryPembaca'=>$selectedArticleCategoryPembaca));
     }
     
     public function actionDetail($id)

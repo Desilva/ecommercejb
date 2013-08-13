@@ -197,7 +197,7 @@
             </tr>
             <tr>
             	<td colspan="2" class="Font-Color-LightBlue">
-                	<button class="btn Gradient-Style1" type="submit">Menjadi Member</button><br>
+                	<input type="submit" class="btn Gradient-Style1" value="Menjadi Member" /><br>
                         Sudah menjadi member? <a href="#LoginForm_email">Klik disini untuk login</a>
                 </td>
             </tr>
