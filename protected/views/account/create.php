@@ -67,11 +67,12 @@
 
         }
         
+        //repopulate kota dropdown
         if(document.getElementById('Business_id_provinsi').value != '' || document.getElementById('Business_id_provinsi').value != null)
         {
             var provinsi_id = document.getElementById('Business_id_provinsi').value;
             var selected_kota = document.getElementById('kota_temp').value
-            $('#Business_id_kota').load('<?php echo Yii::app()->createUrl('//account/generateKota') ?>',{'provinsi':industri_id, 'selected_kota':selected_kota});
+            $('#Business_id_kota').load('<?php echo Yii::app()->createUrl('//account/generateKota') ?>',{'provinsi':provinsi_id, 'selected_kota':selected_kota});
 
         }
        

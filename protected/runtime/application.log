@@ -184,3 +184,15 @@ Stack trace:
 REQUEST_URI=/ecommerceJB/index.php
 HTTP_REFERER=http://localhost/ecommerceJB/index.php
 ---
+2013/08/13 10:12:21 [error] [php] Undefined variable: selected_sukategori (C:\xampp\htdocs\ecommercejb\protected\views\cariBisnisFranchise\_sidebar.php:83)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): CariBisnisFranchiseController->renderFile()
+#1 C:\xampp\htdocs\ecommercejb\protected\controllers\CariBisnisFranchiseController.php(85): CariBisnisFranchiseController->renderPartial()
+#2 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(281): CariBisnisFranchiseController->init()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/cariBisnisFranchise/cari?jenis=2&provinsi=1&kota=&kategori=1&keyword=tess2&subkategori=&rangeharga=1&omzet=1
+in C:\xampp\htdocs\ecommercejb\protected\views\cariBisnisFranchise\_sidebar.php (83)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\CariBisnisFranchiseController.php (85)
+in C:\xampp\htdocs\ecommercejb\index.php (13)

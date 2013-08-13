@@ -5,6 +5,14 @@ class CariBisnisFranchiseController extends Controller
     public $layout = 'main';
         public function init()
         {
+            $selected_jenis = 1;
+            $selected_provinsi = "";
+            $selected_kota = "";
+            $selected_kategori = "";
+            $selected_keyword = "";
+            $selected_subkategori = "";
+            $selected_rangeharga = "";
+            $selected_omzet = "";
             $list_provinsi = Provinsi::model()->findAll();
             $list_kategori = Industri::model()->findAll();
             $list_subkategori = SubIndustri::model()->findAll();
@@ -18,13 +26,63 @@ class CariBisnisFranchiseController extends Controller
                 '2' => '1jt - 10jt',
                 '3' => '>10 jt'
             );
+            
+            if(isset($_GET['jenis']) && $_GET['jenis'] != '')
+            {
+                $selected_jenis = $_GET['jenis'];
+            }
+            
+            if(isset($_GET['provinsi']) && $_GET['provinsi'] != '')
+            {
+                $selected_provinsi = $_GET['provinsi'];
+            }
+            
+            if(isset($_GET['kota']) && $_GET['kota'] != '')
+            {
+                $selected_kota = $_GET['kota'];
+            }
+            
+            if(isset($_GET['kategori']) && $_GET['kategori']!= '')
+            {
+                    $selected_kategori = $_GET['kategori'];
+            }
+            
+            if(isset($_GET['keyword']) && $_GET['keyword']!= '')
+            {
+                    $selected_keyword = $_GET['keyword'];
+            }
+            
+            if(isset($_GET['subkategori']) && $_GET['subkategori']!= '')
+            {
+                    $selected_subkategori = $_GET['subkategori'];
+            }
+            
+            if(isset($_GET['rangeharga']) && $_GET['rangeharga'] != '')
+            {
+                    $selected_rangeharga = $_GET['rangeharga'];
+            }
+            
+            if(isset($_GET['omzet']) && $_GET['omzet'] != '')
+            {
+                    $selected_omzet = $_GET['omzet'];
+               
+            }
             $this->beginClip('sidebar');
                 $this->renderPartial('_sidebar',array(
                     'provinsi'=>$list_provinsi,
                     'kategori'=>$list_kategori,
                     'subkategori'=>$list_subkategori,
                     'rangeharga'=>$list_rangeharga,
-                    'omzet'=>$list_omzet));
+                    'omzet'=>$list_omzet,
+                    'selected_jenis' => $selected_jenis,
+                    'selected_provinsi' => $selected_provinsi,
+                    'selected_kota' => $selected_kota,
+                    'selected_kategori'=>$selected_kategori,
+                    'selected_keyword' => $selected_keyword,
+                    'selected_subkategori' => $selected_subkategori,
+                    'selected_rangeharga' => $selected_rangeharga,
+                    'selected_omzet' => $selected_omzet,
+                    ));
             $this->endClip();
         }
 	public function actionIndex()
@@ -122,67 +180,48 @@ class CariBisnisFranchiseController extends Controller
             //$criteria->order = 't.tanggal_approval desc';
             $criteria->with = 'idKota';
             
-            if(isset($_GET['jenis']))
+            if(isset($_GET['jenis']) && $_GET['jenis'] != '')
             {
-                if($_GET['jenis'] != '')
-                {
                     $jenis = $_GET['jenis'];
                     $criteria->addCondition('t.id_category='.$jenis);
-                }
             }
             
-            if(isset($_GET['provinsi']))
+            if(isset($_GET['provinsi']) && $_GET['provinsi'] != '')
             {
-                if($_GET['provinsi'] != '')
-                {
                     $provinsi = $_GET['provinsi'];
                     $criteria->addCondition('t.id_provinsi='.$provinsi);
-                }
             }
             
-            if(isset($_GET['kota']))
+            if(isset($_GET['kota']) && $_GET['kota'] != '')
             {
-                if($_GET['kota'] != '')
-                {
                     $kota = $_GET['kota'];
                     $criteria->addCondition('t.id_kota='.$kota);
-                }
             }
             
-            if(isset($_GET['kategori']))
+            if(isset($_GET['kategori']) && $_GET['kategori']!= '')
             {
-                if($_GET['kategori']!= '')
-                {
                     $kategori = $_GET['kategori'];
                     $criteria->addCondition('t.id_industri='.$kategori);
-                }
             }
             
-            if(isset($_GET['keyword']))
+            if(isset($_GET['keyword']) && $_GET['keyword']!= '')
             {
-                if($_GET['keyword']!= '')
-                {
                     $katakunci = $_GET['keyword'];
                     $criteria->addCondition('t.nama like :katakunci OR t.deskripsi like :katakunci ');
                     $criteria->params = array(':katakunci'=>"%$katakunci%");
     //                $criteria->addSearchCondition('nama',$katakunci);
     //                $criteria->addSearchCondition('deskripsi',$katakunci,true,'OR');
-                }
             }
             
-            if(isset($_GET['subkategori']))
+            if(isset($_GET['subkategori']) && $_GET['subkategori']!= '')
             {
-                if($_GET['subkategori']!= '')
-                {
                     $subkategori = $_GET['subkategori'];
                     $criteria->addCondition('t.id_sub_industri='.$subkategori);
-                }
+
             }
             
-            if(isset($_GET['rangeharga']))
+            if(isset($_GET['rangeharga']) && $_GET['rangeharga'] != '')
             {
-                if($_GET['rangeharga'] != '')
-                {
                     $rangeharga = $_GET['rangeharga'];
                     if($rangeharga == '1')
                     {
@@ -197,15 +236,12 @@ class CariBisnisFranchiseController extends Controller
                     {
                         $criteria->addCondition('harga_max >= 10000000');
                     }
-                }
                 
             }
             
-            if(isset($_GET['omzet']))
+            if(isset($_GET['omzet']) && $_GET['omzet'] != '')
             {
-                if($_GET['omzet'] != '')
-                {
-                     $omzet = $_GET['omzet'];
+                    $omzet = $_GET['omzet'];
                     if($omzet == '1')
                     {
                         $criteria->addCondition('penjualan < 1000000');
@@ -219,7 +255,6 @@ class CariBisnisFranchiseController extends Controller
                     {
                         $criteria->addCondition('penjualan >= 10000000');
                     }
-                }
                
             }
                 $model = new CActiveDataProvider('Business',array(
@@ -353,24 +388,81 @@ class CariBisnisFranchiseController extends Controller
 
         public function actionGenerateSubIndustri()
         {
-            $list_sub_industri = SubIndustri::model()->findAllByAttributes(array('id_industri' => $_POST['kategori']));
+            $id_industri = "";
+            $selected_sub_industri = "";
+            if(isset($_POST['kategori']))
+            {
+                $id_industri = $_POST['kategori'];
+            }
+            
+            if(isset($_POST['selected_sub_kategori']))
+            {
+                $selected_sub_industri = $_POST['selected_sub_kategori'];
+            }
+            $list_sub_industri = SubIndustri::model()->findAllByAttributes(array('id_industri' => $id_industri));
             $data = CHtml::listData($list_sub_industri, 'id', 'sub_industri');
-            echo CHtml::tag('option', array('value' => ''), 'Pilih Sub Industri', true);
+            echo CHtml::tag('option', array('value' => ''), 'Pilih Sub Kategori', true);
             foreach($data as $value => $sub_industri)
             {
-                echo CHtml::tag('option', array('value' => $value), CHtml::encode($sub_industri), true);
+                if($value == $selected_sub_industri)
+                {
+                    echo CHtml::tag('option', array('value' => $value,'selected'=>'selected'), CHtml::encode($sub_industri), true);
+                }
+                else
+                {
+                    echo CHtml::tag('option', array('value' => $value), CHtml::encode($sub_industri), true);
+                }
             }
+            
+            
+//            $list_sub_industri = SubIndustri::model()->findAllByAttributes(array('id_industri' => $_POST['kategori']));
+//            $data = CHtml::listData($list_sub_industri, 'id', 'sub_industri');
+//            echo CHtml::tag('option', array('value' => ''), 'Pilih Sub Industri', true);
+//            foreach($data as $value => $sub_industri)
+//            {
+//                echo CHtml::tag('option', array('value' => $value), CHtml::encode($sub_industri), true);
+//            }
         }
         
         public function actionGenerateKota()
         {
-            $list_kota = City::model()->findAllByAttributes(array('id_provinsi' => $_POST['provinsi']));
+            $selected_kota = "";
+            $id_provinsi = "";
+            
+            if(isset($_POST['provinsi']))
+            {
+                $id_provinsi = $_POST['provinsi'];
+            }
+            
+            if(isset($_POST['selected_kota']))
+            {
+                $selected_kota = $_POST['selected_kota'];
+            }
+            $list_kota = City::model()->findAllByAttributes(array('id_provinsi' => $id_provinsi));
             $data = CHtml::listData($list_kota, 'id', 'city');
             echo CHtml::tag('option', array('value' => ''), 'Pilih Kota', true);
             foreach($data as $value => $kota)
             {
-                echo CHtml::tag('option', array('value' => $value), CHtml::encode($kota), true);
+                if($value == $selected_kota)
+                {
+                    echo CHtml::tag('option', array('value' => $value,'selected'=>'selected'), CHtml::encode($kota), true);
+                }
+                else
+                {
+                    echo CHtml::tag('option', array('value' => $value), CHtml::encode($kota), true);
+                }
+                
             }
+            
+            
+            
+//            $list_kota = City::model()->findAllByAttributes(array('id_provinsi' => $_POST['provinsi']));
+//            $data = CHtml::listData($list_kota, 'id', 'city');
+//            echo CHtml::tag('option', array('value' => ''), 'Pilih Kota', true);
+//            foreach($data as $value => $kota)
+//            {
+//                echo CHtml::tag('option', array('value' => $value), CHtml::encode($kota), true);
+//            }
         }
         
 /**
