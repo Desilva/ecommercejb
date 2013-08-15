@@ -10,8 +10,8 @@
           
           $('#banner-slide').bjqs({
             animtype      : 'slide',
-            height        : 320,
-            width         : 868,
+            height        : 300,
+            width         : 705,
             responsive    : true,
             randomstart   : true
           });
@@ -20,7 +20,7 @@
       </script>
 <!--End Slideshow------------------------------------------------------------------------------------------------------------>
 <div class="row-fluid">
-            	<div class="span9">
+            	<div class="span7">
                 	<div class="row-fluid Gradient-Style1">
                     	<h4 class="Text-Align-Center">SITUS JUAL BELI BISNIS <font class="Font-Size-Large">TERBESAR</font> DI <font class="Font-Size-Large">INDONESIA</font></h4>
                     </div>
@@ -41,7 +41,7 @@
                         </div>
                     </div>                	
                 </div>
-            	<div class="span2">
+            	<div class="span3">
                       <?php if(!empty($this->clips['sidebar'])) echo
                             $this->clips['sidebar']?>
                 </div>                

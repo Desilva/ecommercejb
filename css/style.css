@@ -33,6 +33,13 @@ body{
 .separator{
 	height:35px;	
 }
+.separator-small{
+	height:45px;	
+}
+
+.separator-medium{
+	height:50px;	
+}
 .styleBackground-SolidColor-Red{
 	background-color:#F00	
 }

@@ -66,16 +66,25 @@
                 <td>
                 	<?php echo $data->penjualan ?>
                         <br/>
+                        
+                       
                         <?php
 				if(!Yii::app()->user->isGuest){
 			?>
+            		<div class="row-fluid">
+                        	<div class="span12 separator-medium"></div><!--Separator-->
+                        </div>
 					<?php echo CHtml::button('Lihat Detail', array('submit' => array("/cariBisnisFranchise/detail/$data->id"),'class' => 'btn Gradient-Style1')); ?>
 			<?php
 				}
                                 else
                                 {
-			?>
-                                        <a href="#LoginForm_email">Login untuk melihat detail</a>
+										
+			?>							<div class="row-fluid">
+                        	<div class="span12 separator-medium"></div><!--Separator-->
+                        </div>
+            										
+                                <button onclick="Tes()">Lihat Detail</button>        
                         <?php   } ?>
                 </td>
             </tr>

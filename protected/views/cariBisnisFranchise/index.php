@@ -43,7 +43,7 @@
     	       <?php if(!empty($this->clips['sidebar'])) echo
                             $this->clips['sidebar']?>
     </div>
-    <div class="span7">
+    <div class="span7" style="margin-left:-20px;">
 <!--    	<div class="row-fluid">
         	<div class="span12">
             	<div class="span3">
