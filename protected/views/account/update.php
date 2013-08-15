@@ -59,22 +59,23 @@
                 }
         }
         
-        //repopulate sub industri dropdown
+         //repopulate sub industri dropdown
         if(document.getElementById('Business_id_industri').value != '' || document.getElementById('Business_id_industri').value != null)
         {
             var industri_id = document.getElementById('Business_id_industri').value;
-            var selected_sub_industri = document.getElementById('sub_industri_temp').value
-            $('#Business_id_sub_industri').load('<?php echo Yii::app()->createUrl('//account/generateSubIndustri') ?>',{'industri':industri_id, 'selected_sub_industri':selected_sub_industri});
+            var selected_sub_industri = document.getElementById('sub_industri_temp').value;
+            $('#loading-animation-industri').attr('style','display:visible; margin-top:-10px');
+            $('#Business_id_sub_industri').load('<?php echo Yii::app()->createUrl('//account/generateSubIndustri') ?>',{'industri':industri_id, 'selected_sub_industri':selected_sub_industri},function(){$('#loading-animation-industri').attr('style','display:none');});
 
         }
-       
-       
-       //repopulate kota dropdown
+        
+        //repopulate kota dropdown
         if(document.getElementById('Business_id_provinsi').value != '' || document.getElementById('Business_id_provinsi').value != null)
         {
             var provinsi_id = document.getElementById('Business_id_provinsi').value;
-            var selected_kota = document.getElementById('kota_temp').value
-            $('#Business_id_kota').load('<?php echo Yii::app()->createUrl('//account/generateKota') ?>',{'provinsi':provinsi_id, 'selected_kota':selected_kota});
+            var selected_kota = document.getElementById('kota_temp').value;
+            $('#loading-animation-provinsi').attr('style','display:visible; margin-top:-10px');
+            $('#Business_id_kota').load('<?php echo Yii::app()->createUrl('//account/generateKota') ?>',{'provinsi':provinsi_id, 'selected_kota':selected_kota},function(){$('#loading-animation-provinsi').attr('style','display:none');});
 
         }
     }

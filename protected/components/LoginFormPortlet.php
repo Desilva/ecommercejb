@@ -59,7 +59,6 @@ class LoginFormPortlet extends CPortlet
                     }
                     else
                     {
-                        die;
                         if($model->login())
                         {
                             $this->controller->redirect(Yii::app()->user->returnUrl);

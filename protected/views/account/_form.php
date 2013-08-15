@@ -47,8 +47,18 @@
                                                                                                     'type' => 'POST',
                                                                                                     'url' => Yii::app()->createUrl('//account/generatesubindustri'),
                                                                                                     'update' => '#'.CHtml::activeId($model,'id_sub_industri'),
+                                                                                                    'beforeSend' => "function( request )
+                                                                                                        {
+                                                                                                         $('#loading-animation-industri').attr('style','display:visible; margin-top:-10px');
+                                                                                                          // Set up any pre-sending stuff like initializing progress indicators
+                                                                                                        }",
+                                                                                                    'complete' => "function( data )
+                                                                                                        {
+                                                                                                             $('#loading-animation-industri').attr('style','display:none');                                  
+                                                                                                        }",
                                                                                             ))); ?>
-                				</td>	
+                                                        <img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/spinner.gif" id="loading-animation-industri" style="display:none"/>
+                				</td>                                       
             				</tr>
             				<tr>
                                                  <?php echo Chtml::hiddenField('sub_industri_temp', $model->id_sub_industri) ?>
@@ -78,7 +88,17 @@
                                                                 'type' => 'POST',
                                                                 'url' => Yii::app()->createUrl('//account/generatekota'),
                                                                 'update' => '#'.CHtml::activeId($model,'id_kota'),
+                                                                'beforeSend' => "function( request )
+                                                                    {
+                                                                     $('#loading-animation-provinsi').attr('style','display:visible; margin-top:-10px');
+                                                                      // Set up any pre-sending stuff like initializing progress indicators
+                                                                    }",
+                                                                'complete' => "function( data )
+                                                                    {
+                                                                         $('#loading-animation-provinsi').attr('style','display:none');                                  
+                                                                    }",
                                                         ))); ?>
+                                                        <img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/spinner.gif" id="loading-animation-provinsi" style="display:none"/>
                 				</td>	
             				</tr>
                                         <tr>
@@ -188,6 +208,115 @@
              				<tr>
             					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'image'); ?></th>
                 			<td>
+                                                    <div id="example" class="k-content">
+            <input type="file" name="files" id="upload" />
+
+            <script id="fileTemplate" type="text/x-kendo-template">
+                <span class='k-progress'></span>
+                <div class='file-wrapper'>
+                    <span class='file-icon #=addExtensionClass(files[0].extension)#'></span>
+                    <h4 class='file-heading file-name-heading'>Name: #=name#</h4>
+                    <h4 class='file-heading file-size-heading'>Size: #=size# bytes</h4>
+                    <button type='button' class='k-upload-action'></button>
+                </div>
+            </script>
+
+            <script>
+                $(document).ready(function () {
+                    $("#upload").kendoUpload({
+                        multiple: true,
+                        async: {
+                            saveUrl: "save",
+                            removeUrl: "remove",
+                            autoUpload: false
+                        },
+                        template: kendo.template($('#fileTemplate').html())
+                    });
+                });
+
+                function addExtensionClass(extension) {
+                    switch (extension) {
+                        case '.jpg':
+                        case '.img':
+                        case '.png':
+                        case '.gif':
+                            return "img-file";
+                        case '.doc':
+                        case '.docx':
+                            return "doc-file";
+                        case '.xls':
+                        case '.xlsx':
+                            return "xls-file";
+                        case '.pdf':
+                            return "pdf-file";
+                        case '.zip':
+                        case '.rar':
+                            return "zip-file";
+                        default:
+                            return "default-file";
+                    }
+                }
+            </script>
+
+            <style scoped>
+                .file-icon
+                {
+                    display: inline-block;
+                    float: left;
+                    width: 48px;
+                    height: 48px;
+                    margin-left: 10px;
+                    margin-top: 13.5px;
+                }
+
+                .img-file { background-image: url(../../content/web/upload/jpg.png) }
+                .doc-file { background-image: url(../../content/web/upload/doc.png) }
+                .pdf-file { background-image: url(../../content/web/upload/pdf.png) }
+                .xls-file { background-image: url(../../content/web/upload/xls.png) }
+                .zip-file { background-image: url(../../content/web/upload/zip.png) }
+                .default-file { background-image: url(../../content/web/upload/default.png) }
+
+                #example .file-heading
+                {
+                    font-family: Arial;
+                    font-size: 1.1em;
+                    display: inline-block;
+                    float: left;
+                    width: 450px;
+                    margin: 0 0 0 20px;
+                    height: 25px;
+                    -ms-text-overflow: ellipsis;
+                    -o-text-overflow: ellipsis;
+                    text-overflow: ellipsis;
+                    overflow:hidden;
+                    white-space:nowrap;
+                }
+
+                    #example .file-name-heading
+                    {
+                        font-weight: bold;
+                    }
+
+                     #example .file-size-heading
+                    {
+                        font-weight: normal;
+                        font-style: italic;
+                    }
+
+                li.k-file .file-wrapper .k-upload-action
+                {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                }
+
+                li.k-file div.file-wrapper
+                {
+                    position: relative;
+                    height: 75px;
+                }
+            </style>
+        </div>
                                     <?php 
 
 //                                        $this->widget('ext.xupload.XUpload', array(
@@ -218,21 +347,21 @@
 //                                       
 //                                    ));
                                         
-                                        $this->widget('ext.xupload.XUpload', array(
-                                        'url' => Yii::app()->createUrl("account/upload"),
-                                        'model' => $img_upload,
-                                        'htmlOptions' => array('id'=>'business-form'),
-                                        'id'=>'upload1',
-                                        'attribute' => 'file',
-                                        'multiple' => true,
-                                        'showForm'=> true,
-                                        'options'=>array(
-                                            'maxNumberOfFiles'=> 5,
-                                            'acceptFileTypes'=> "js:/(\.|\/)(gif|jpe?g|png)$/i",
-                                            'maxFileSize'=> 2000000,
-                                        ),
-                                        'formView' => 'application.views.account._xupload',
-                                    ));
+//                                        $this->widget('ext.xupload.XUpload', array(
+//                                        'url' => Yii::app()->createUrl("account/upload"),
+//                                        'model' => $img_upload,
+//                                        'htmlOptions' => array('id'=>'business-form'),
+//                                        'id'=>'upload1',
+//                                        'attribute' => 'file',
+//                                        'multiple' => true,
+//                                        'showForm'=> true,
+//                                        'options'=>array(
+//                                            'maxNumberOfFiles'=> 5,
+//                                            'acceptFileTypes'=> "js:/(\.|\/)(gif|jpe?g|png)$/i",
+//                                            'maxFileSize'=> 2000000,
+//                                        ),
+//                                        'formView' => 'application.views.account._xupload',
+//                                    ));
                                     
 //                                        $this->widget('ext.dropzone.EDropzone', array(
 //                                            'model' => $model,

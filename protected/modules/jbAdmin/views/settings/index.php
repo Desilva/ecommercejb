@@ -6,13 +6,14 @@
 //                                                    'action'=>Yii::app()->createUrl('//jbAdmin/settings/savesettings'),
                                                     'htmlOptions'=>array('enctype'=>'multipart/form-data')
                                                 ));
-            echo $form->errorSummary(array($slideshow1,$slideshow2,$slideshow3,$slideshow4,$slideshow5));
+            
 ?>
 <div class="span10" style="padding-left: 30px">    	
         <div class="row-fluid">
         	<div class="span12">
             	<h4>Setting Web JualanBisnis.com</h4>
             </div>
+            <?php echo $form->errorSummary(array($slideshow1,$slideshow2,$slideshow3,$slideshow4,$slideshow5,$settings)); ?>
         </div>
         
         <div class="row-fluid">
@@ -64,15 +65,15 @@
                         	<table>
                             	<tr>
                                 	<Td>Durasi Slideshow</Td>
-                                    <td><input  type="text">&nbsp;S</td>
+                                    <td><?php echo $form->textField($settings,'durasi_slideshow') ?>&nbsp;S</td>
                                 </tr>
                                 <tr>
                                 	<td>Bisnis / Franchise Rekomendasi</td>
-                                    <td><input type="text">&nbsp;Buah</td>
+                                    <td><?php echo $form->textField($settings,'jumlah_rekomendasi') ?>&nbsp;Buah</td>
                                 </tr>
                                 <tr>
                                 	<td>Bisnis / Franchise Terbaru</td>
-                                    <td><input type="text">&nbsp;Buah</td>
+                                    <td><?php echo $form->textField($settings,'jumlah_terbaru') ?>&nbsp;Buah</td>
                                 </tr>
                             </table>
                         </div>
@@ -90,7 +91,7 @@
                         	<table>
                             	<tr>
                                 	<td>Nilai min ditampilkan telepon</td>
-                                    <td><input type="text">&nbsp;IDR</td>
+                                    <td><?php echo $form->textField($settings,'nilai_min_telpon_tampil') ?>&nbsp;IDR</td>
                                 </tr>
                             </table>
                         </div>
@@ -108,12 +109,12 @@
                         	<table>
                             	<tr>
                                 	<td>Alamat Email:</td>
-                                    <td><input type="text"></td>
+                                    <td><?php echo $form->textField($settings,'alamat_email') ?></td>
                                     <td></td>
                                 </tr>
                                 <tr>
                                 	<td>Nama:</td>
-                                    <td><input type="text"></td>
+                                    <td><?php echo $form->textField($settings,'nama_email') ?></td>
                                     <td></td>
                                 </tr>
                             </table>

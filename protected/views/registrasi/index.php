@@ -137,7 +137,7 @@
             <tr>
             	<th class="Text-Align-Left Font-Color-LightBlue"><?php echo $form->labelEx($model,'id_buyer_price'); ?></th>
                 <td>
-                    <?php echo $form->dropDownList($model,'id_buyer_price',CHtml::listData($range_harga,'id','range_price'),array('prompt'=>'Pilih Range Harga','class'=>'styleSelect2')); ?>
+                    <?php echo $form->dropDownList($model,'id_buyer_price',CHtml::listData($range_harga,'id','range_price'),array('prompt'=>'Pilih Range Harga')); ?>
                 </td>
             </tr>
             <tr>

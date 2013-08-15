@@ -57,7 +57,17 @@
                                                                                                     'type' => 'POST',
                                                                                                     'url' => Yii::app()->createUrl('//account/generatesubindustri'),
                                                                                                     'update' => '#'.CHtml::activeId($model,'id_sub_industri'),
+                                                                                            'beforeSend' => "function( request )
+                                                                                                        {
+                                                                                                         $('#loading-animation-industri').attr('style','display:visible; margin-top:-10px');
+                                                                                                          // Set up any pre-sending stuff like initializing progress indicators
+                                                                                                        }",
+                                                                                                    'complete' => "function( data )
+                                                                                                        {
+                                                                                                             $('#loading-animation-industri').attr('style','display:none');                                  
+                                                                                                        }",
                                                                                             ))); ?>
+                                                        <img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/spinner.gif" id="loading-animation-industri" style="display:none"/>
                 				</td>	
             				</tr>
             				<tr>
@@ -88,7 +98,17 @@
                                                                 'type' => 'POST',
                                                                 'url' => Yii::app()->createUrl('//account/generatekota'),
                                                                 'update' => '#'.CHtml::activeId($model,'id_kota'),
+                                                                'beforeSend' => "function( request )
+                                                                    {
+                                                                     $('#loading-animation-provinsi').attr('style','display:visible; margin-top:-10px');
+                                                                      // Set up any pre-sending stuff like initializing progress indicators
+                                                                    }",
+                                                                'complete' => "function( data )
+                                                                    {
+                                                                         $('#loading-animation-provinsi').attr('style','display:none');                                  
+                                                                    }",
                                                         ))); ?>
+                                                        <img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/spinner.gif" id="loading-animation-provinsi" style="display:none"/>
                 				</td>	
             				</tr>
                                         <tr>

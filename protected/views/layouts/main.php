@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl ?>/library/Bootstrap/assets/css/bootstrap.css" />
 <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl ?>/library/Bootstrap/assets/css/bootstrap-responsive.css" />
 <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl ?>/css/style.css" />
+
 <script type="text/javascript">
 
     $(document).ready(function(){

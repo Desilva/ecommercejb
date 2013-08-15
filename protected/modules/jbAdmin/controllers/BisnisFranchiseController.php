@@ -85,7 +85,25 @@ class BisnisFranchiseController extends Controller
                     }
                     $model->status_approval = "Ditolak";
                     $model->save();
-                    $this->redirect(Yii::app()->createUrl('//jbAdmin/bisnisFranchise/index'));
+                    
+                    //function to send email
+                    YiiBase::import('ext.YiiMailer.YiiMailer');
+                    $mail = new YiiMailer();
+                    $mail->clearLayout(); //if layout is already set in config
+                    $mail->setFrom('donotreply.jb.com', 'JualanBisnis.com'); //CHANGE THIS WHEN DEPLOYING
+                    $mail->setTo('reynhart@licht-soft.com'); //CHANGE TO APPROPRIATE EMAIL WHEN DEPLOYING
+                    $mail->setSubject("Bisnis/Franchise ".$model->nama." Anda ditolak");
+                    $mail->setBody("<p>Berikut adalah keterangan lengkap: </p><p>Nama Bisnis/Franchise: $model->nama</p><p>Alasan Penolakan: ".$model->idAlasanPenolakan->alasan_penolakan." </p>");
+                    if($mail->send())
+                    {
+    //                  Yii::app()->user->setFlash('email','Email Berhasil Dikirim');
+                        $this->redirect(Yii::app()->createUrl('//jbAdmin/bisnisFranchise/index'));
+                    }
+                    else
+                    {
+                        Yii::app()->user->setFlash('error', 'Error while sending email: ' . $mail->getError());
+                    }
+                    
                 }
                 else
                 {

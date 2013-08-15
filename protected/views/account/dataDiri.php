@@ -124,8 +124,42 @@
                                     </td>
                                 </tr>
                                 <tr>
+            	<th colspan="4" class="Font-Color-DarkBlue">Isian Khusus Pembeli</th>
+            </tr>
+            <tr>
+            	<td colspan="4" class="Font-Color-DarkBlue">Isikan data dibawah ini untuk mendapatkan bisnis yang sesuai dengan anda secara cepat</td>
+            </tr>	
+            <tr>
+            	<th class="Text-Align-Left Font-Color-LightBlue"><?php echo $form->labelEx($model,'id_buyer_category'); ?></th>
+                <td>
+                    <?php echo $form->dropDownList($model,'id_buyer_category',CHtml::listData($kategori,'id','category'),array('prompt'=>'Pilih Kategori')); ?>
+                </td>
+            </tr>
+            <tr>
+            	<TH class="Text-Align-Left Font-Color-LightBlue"><?php echo $form->labelEx($model,'id_buyer_location'); ?></TH>
+                <td>
+                    <?php echo $form->dropDownList($model,'id_buyer_location',CHtml::listData($lokasi,'id','city'),array('prompt'=>'Pilih Lokasi')); ?>              
+                </td>
+            </tr>
+            <tr>
+            	<th class="Text-Align-Left Font-Color-LightBlue"><?php echo $form->labelEx($model,'id_buyer_price'); ?></th>
+                <td>
+                    <?php echo $form->dropDownList($model,'id_buyer_price',CHtml::listData($range_harga,'id','range_price'),array('prompt'=>'Pilih Range Harga')); ?>
+                </td>
+            </tr>
+            <tr>
+            	<th colspan="2" class="Font-Color-DarkBlue">Status Newsletter</th>
+            </tr>
+            <tr>
+            	<td colspan="4">
+                	<label class="checkbox inline Font-Color-LightBlue">
+                    	<?php echo $form->checkBox($model,'newsletter_status') ?>Ya, saya ingin menerima newsletter dari JualanBisnis.com yang berisi berita promosi dan penawaran
+                    </label>
+                </td>
+            </tr>
+                                <tr>
                                 	<td></td>
-                                	<th><button type="submit" class="btn Gradient-Style1">Simpan</button></th>
+                                	<th><input type="submit" class="btn Gradient-Style1" value="Simpan" /></th>
                                 </tr>	
                             </table>
                         </div>

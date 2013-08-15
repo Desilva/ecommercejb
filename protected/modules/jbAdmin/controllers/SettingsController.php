@@ -34,6 +34,7 @@ class SettingsController extends Controller
         
     public function actionIndex()
     {
+        $settings = Settings::model()->findByAttributes(array('nama_settings'=>'settings_admin'));
         for($i = 1; $i <= 5; $i++)
         {
             ${'slideshow_data' . $i} = Slideshow::model()->findByPk($i);
@@ -72,11 +73,20 @@ class SettingsController extends Controller
                 }
             }
         }
+        if(isset($_POST["Settings"]))
+        {
+            $settings->attributes = $_POST["Settings"];
+            if($settings->validate())
+            {
+                $settings->save();
+            }
+        }
         $this->render('index', array('slideshow1' => $slideshow_data1,
             'slideshow2' => $slideshow_data2,
             'slideshow3' => $slideshow_data3,
             'slideshow4' => $slideshow_data4,
             'slideshow5' => $slideshow_data5,
+            'settings'=> $settings,
         ));
     }
 
