@@ -110,7 +110,7 @@ a.delete img{
     	 <?php if(!empty($this->clips['sidebar'])) echo
                             $this->clips['sidebar']?>
     </div>
-    <div class="span10">
+    <div class="span9">
     	<h4 class="Font-Color-DarkBlue">List Bisnis / Franchise terkirim</h4>
         <div class="row-fluid">
         	<div class="span12">

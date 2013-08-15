@@ -16,7 +16,7 @@
 <p><?php echo $form->errorSummary($model); ?></p>
 <div class="row-fluid">
 	<div class="span12">
-    	<div class="span2"></div>
+    	<div class="span1"></div>
         <div class="span10 Font-Color-DarkBlue">
         	<h4>Informasi Member</h4>
         	Isi form dibawah ini untuk menjadi member JualanBisnis.com
@@ -25,12 +25,12 @@
     </div>
 </div>
 <div class="row-fluid">
-	<div class="span2"></div>
+	<div class="span1"></div>
 	<div class="span10">
     	<table>
         	<tr>
             	<th class="Text-Align-Left Font-Color-LightBlue" width="3%"><?php echo $form->labelEx($model,'email'); ?></th>
-                <td width="14%"><?php echo $form->textField($model,'email'); ?></td>
+                <td width="16%"><?php echo $form->textField($model,'email'); ?></td>
            	</tr>
            	<tr>
             	<th class="Text-Align-Left Font-Color-LightBlue"><?php echo $form->labelEx($model,'password'); ?></th>
@@ -44,7 +44,7 @@
     </div>
 </div>
 <div class="row-fluid">
-	<div class="span2"></div>
+	<div class="span1"></div>
 	<div class="span10">
     	<table>
         	<tr>

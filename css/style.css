@@ -8,7 +8,8 @@ body{
 	padding-bottom:55px;	
 }
 .header{
-	background-image:url(../images/asset/background.png)	
+	background-image:url(../images/asset/background.png);
+	
 }
 #primary{
 
@@ -134,8 +135,17 @@ body{
 }
 .Line-Size-Medium{
 	width:400px;
-}	
+}
+.padding-bottom-small{
+	padding-bottom:10px;	
+}
+.padding-left-small{
+	padding-left:60px;	
+}
 .nav{
 	margin-left:5px;
 	margin-bottom:5px;	
 }
+
+
+
