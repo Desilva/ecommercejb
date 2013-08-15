@@ -17,7 +17,7 @@
                 </div>
         </div>
              <div class="row-fluid">
-        	<div class="span12">
+        	<div class="span11">
             	<div style="height:700px">
          <?php $this->widget('zii.widgets.CListView', array(
     'dataProvider'=>$model,

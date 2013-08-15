@@ -50,7 +50,7 @@
                     	<div class="navbar">
                         	<div class="navbar-inner Gradient-Style1 Border-Radius-Style1">
                             	<ul class="nav">
-                                    <li class="separator-Vertical">
+                                    <li class="separator-Vertical Border-Radius-Style2" style="margin-left:-19px; padding-left:10px;">
                                     	<a style="padding-right:30px" class="Font-Color-White" href="<?php echo Yii::app()->createUrl('//home') ?>"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/asset/iconHome.png" width="25" />
                                         </a>
                                     </li>

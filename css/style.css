@@ -21,6 +21,11 @@ body{
 }
 .Border-Radius-Style1{
 	-webkit-border-radius:10px 10px 0px 0px;
+	-moz-border-radius:10px 10px 0px 0px;
+}
+.Border-Radius-Style2{
+	-webkit-border-radius:10px 0px 0px 0px;
+	-moz-border-radius:10px 0px 0px 0px;
 }
 .form-Right{
 	float:right;	

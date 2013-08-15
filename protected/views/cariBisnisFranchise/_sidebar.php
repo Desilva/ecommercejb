@@ -2,7 +2,7 @@
 <div class="row-fluid">
         	<div class="span12">
         	<div class="control-group">
-            	<label class="control-label Font-Color-DarkBlue" for="jenis">Jenis</label>
+            	<label class="control-label Font-Color-DarkBlue " for="jenis">Jenis</label>
                 <div class="controls">
                     <?php if($selected_jenis == 1){ ?>
                     <label class="radio">
