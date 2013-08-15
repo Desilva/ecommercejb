@@ -6,9 +6,6 @@
 <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl ?>/library/Bootstrap/assets/css/bootstrap.css" />
 <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl ?>/library/Bootstrap/assets/css/bootstrap-responsive.css" />
 <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl ?>/css/style.css" />
-<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl?>/library/Tooltip/jquery.qtip.debug-1.0.0-rc3.js"></script>
-<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl?>/library/Tooltip/jquery.qtip-1.0.0-rc3.js"></script>
-<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl?>/library/Tooltip/jquery.qtip-1.0.0-rc3.min"></script>
 <script type="text/javascript">
 
     $(document).ready(function(){
@@ -17,22 +14,23 @@
       }, function() {
         jQuery(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut();
       });
+	
+		$('.detail').click(function(){
+				$("#EmailText").focus();
+				$("#EmailText").popover('show');
+			});
+			
+		$("#EmailText").blur(function(){
+				$("#EmailText").popover('hide');
+			});
+		
     });
 	
-	$('#Tes').click(function() {
-  	alert('d');
-});
 
-function Tes(){
-	$(function() {
-    $("#TesText").qtip({
-        content: 'My Tooltip Text'
-    });
-});	
-}
+    
+
 </script>
 </head>
-
 <body>
 
 	<div id="primary" class="container">
@@ -82,7 +80,7 @@ function Tes(){
                                     <?php
                                         }else{
                                     ?>
-                                        <li class="separator-Vertical"><a class="Font-Color-White" href="#LoginForm_email">Jual Bisnis Franchise</a></li>
+                                        <li class="separator-Vertical"><a class="detail Font-Color-White" href="#LoginForm_email">Jual Bisnis Franchise</a></li>
                                     <?php } ?>
                                     <li class="separator-Vertical"><a class="Font-Color-White" href="<?php echo Yii::app()->createUrl('//layananKami') ?>">Layanan Kami</a></li>
                                     <li class="dropdown separator-Vertical">

@@ -84,7 +84,7 @@
                         	<div class="span12 separator-medium"></div><!--Separator-->
                         </div>
             										
-                                <button onclick="Tes()">Lihat Detail</button>        
+                                <button class="detail btn Gradient-Style1">Lihat Detail</button>        
                         <?php   } ?>
                 </td>
             </tr>

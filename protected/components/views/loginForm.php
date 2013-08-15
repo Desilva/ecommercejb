@@ -11,7 +11,7 @@
     ?> 
     <div class="control-label">
         <a href="<?php echo Yii::app()->createUrl('//registrasi') ?>">Member Baru</a> | <a href="<?php echo Yii::app()->createUrl('//lupaPassword') ?>">Lupa Password </a>
-        <?php echo $form->textField($model, 'email', array('placeholder' => 'Email', 'class' => 'input-medium','id'=>'TesText')); ?>
+        <?php echo $form->textField($model, 'email', array('placeholder' => 'Email', 'class' => 'input-medium','id'=>'EmailText','data-content'=>'Login Terlebih Dahulu','data-placement'=>'bottom')); ?>
         <?php echo $form->passwordField($model, 'password', array('placeholder' => 'Kata Sandi', 'class' => 'input-medium')); ?>
         <button type="submit" class="btn Gradient-Style2" />Masuk</button>
     </div>      	

@@ -27,6 +27,10 @@ body{
 	-webkit-border-radius:10px 0px 0px 0px;
 	-moz-border-radius:10px 0px 0px 0px;
 }
+.Border-Radius-Style3{
+	-webkit-border-radius:10px 10px 10px 10px;
+	-moz-border-radius:10px 10px 10px 10px;	
+}
 .form-Right{
 	float:right;	
 }
@@ -45,6 +49,9 @@ body{
 }
 .styleBackground-SolidColor-Blue{
 	background-color:#06F;	
+}
+.styleBackground-SolidColor-Grey{
+	background-color:#f0f0f0;	
 }
 .Text-Align-Left{
 	text-align:left;	
@@ -154,9 +161,15 @@ body{
 .padding-left-small{
 	padding-left:60px;	
 }
+.padding-top-small{
+	padding-top:20px;	
+}
 .nav{
 	margin-left:5px;
 	margin-bottom:5px;	
+}
+.Left-Margin{
+	margin-left: 10px;	
 }
 
 

@@ -1,4 +1,4 @@
-<form class="form-horizontal" style="margin-left:-90px" method="GET" action="<?php echo Yii::app()->createUrl('//cariBisnisFranchise/cari') ?>">
+<form class="form-horizontal" style="margin-left:-60px" method="GET" action="<?php echo Yii::app()->createUrl('//cariBisnisFranchise/cari') ?>">
 <div class="row-fluid">
         	<div class="span12">
         	<div class="control-group">
@@ -100,7 +100,7 @@
         
             </div>
         </div>
-    <div style="width: 260px; margin-left: 90px;">
+    <div class="" style="width: 285px; margin-left: 75px;">
 <?php 
 //        if($selected_subkategori != "" || $selected_rangeharga != "" || $selected_omzet != "")
 //        {
