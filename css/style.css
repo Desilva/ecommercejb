@@ -31,16 +31,39 @@ body{
 	-webkit-border-radius:10px 10px 10px 10px;
 	-moz-border-radius:10px 10px 10px 10px;	
 }
+.Left-Margin{
+	margin-left: 10px;	
+}
+.Left-Margin-Minus1{
+	margin-left:-37px;	
+}
+.Left-Margin-Minus2{
+	margin-left:-60px;	
+}
+.Top-Margin-Minus1{
+	Margin-top:-30px;	
+}
+.Top-Margin1{
+	margin-top:5px;	
+}
+.Top-Margin2{
+	margin-top:20px;	
+}
+.Top-Margin3{
+	margin-top:30px;	
+}
 .form-Right{
 	float:right;	
 }
 .separator{
 	height:35px;	
 }
+.separator-verySmall{
+	height:40px;	
+}
 .separator-small{
 	height:45px;	
 }
-
 .separator-medium{
 	height:50px;	
 }
@@ -108,6 +131,9 @@ body{
 .separator-Vertical{
 	border-right:solid 1px #CCCCCC;	
 }
+.Font-Color-Red{
+	color:#F00;	
+}
 .Font-Color-White{
 	color:#FFF;
 	text-decoration:none;	
@@ -120,6 +146,9 @@ body{
 }
 .Font-Style-Bold{
 	font-weight:bold;	
+}
+.Font-Size-Small{
+	font-size:80%;	
 }
 .Font-Size-Large{
 	font-size:26px;
@@ -168,9 +197,4 @@ body{
 	margin-left:5px;
 	margin-bottom:5px;	
 }
-.Left-Margin{
-	margin-left: 10px;	
-}
-
-
 

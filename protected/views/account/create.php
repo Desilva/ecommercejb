@@ -8,7 +8,7 @@
                             $this->clips['sidebar']?>
     </div>
     <div class="span10">
-    	<h4 class="Font-Color-DarkBlue">Tambah Bisnis</h4>
+		<div><header style="font-size:30px; font-family:Calibri;">Tambah Bisnis</header><br style="clear:both"/></div><div style="margin-top:-35px;"></div>
             <?php
                 if($model->idCategory->category == "Bisnis")
                 {

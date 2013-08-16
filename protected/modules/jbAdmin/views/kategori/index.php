@@ -94,7 +94,7 @@ a.delete img{
             }
             
         </script>
-<div class="span10">    	
+<div class="span9">    	
         <div class="row-fluid">
         	<div class="span12">
             	<h4 class="Font-Color-DarkBlue">Mengatur Kategori</h4>
@@ -103,8 +103,8 @@ a.delete img{
             	</form>
             </div>
         </div>
-        <div class="row-fluid">
-        	<div class="span12">
+        <div class="row-fluid ">
+        	<div class="span12 Top-Margin-Minus1">
                         <?php
                           $this->widget('zii.widgets.grid.CGridView', array(
                                     'id'=>'industriGrid',
@@ -141,7 +141,7 @@ a.delete img{
             </div>
         </div>
         <div class="row-fluid">
-        	<div class="span12">
+        	<div class="span12 Top-Margin-Minus1">
             	<div class="row-fluid">
                 	<div class="span12" id="subIndustriList">
                                 <?php

@@ -17,7 +17,7 @@
         </div>
         
         <div class="row-fluid">
-        	<div class="span12">
+        	<div class="span11">
         		<fieldset>
                 	<legend>Halaman Home</legend>
                     <div class="row-fluid">

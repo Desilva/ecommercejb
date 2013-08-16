@@ -7,18 +7,17 @@ a.view img{
 
 </style>
 <div class="row-fluid">
-	<div class="span2">
+	<div class="span2 padding-top-small">
     	 <?php if(!empty($this->clips['sidebar'])) echo
                             $this->clips['sidebar']?>
     </div>
     <div class="span9">
-    	<h4 class="Font-Color-DarkBlue">List Bisnis/Franchise Yang Pernah Dikontak</h4>
-        <div class="row-fluid">
+		<div><header style="font-size:30px; font-family:Calibri;">List Bisnis/Franchise Yang Pernah Dikontak</header><br style="clear:both"/></div><div style="margin-top:-35px;"></div>
+        <div class="row-fluid Top-Margin3">
         	<div class="span12">
                 <form method="get">
                     <span>Kategori: </span><?php echo CHtml::dropDownList('kategori',$selectedSortValue,CHtml::listData($sortType,'id','category'),array('class'=>'Input-Size-VerySmall','submit'=> Yii::app()->createUrl("//account/beli/")));  ?>
-                </form> 	
-             
+                </form>        
             </div>
         </div>
         <div class="row-fluid">

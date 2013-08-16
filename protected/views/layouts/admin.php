@@ -26,6 +26,9 @@
             	<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/logo.png" width="200" height="200" />
             </div>
             <div class="span10" id="rightHeader">
+				<div class="row-fluid">
+                	<div class="span12"></div>
+                </div>
             	<div class="row-fluid">
                     <?php
                         if(Yii::app()->user->isGuest)
@@ -35,8 +38,19 @@
                         else
                         {
                             ?> 
-                            <h4> Selamat Datang, <?php echo Yii::app()->user->first_name ?> (<a href="<?php echo Yii::app()->createUrl('//authentication/logout') ?>">logout</a>)</h4>
-                    <?php }
+                            
+                    
+							<div class="span12" id="loginDiv">
+									 <h4> Selamat Datang, <?php echo Yii::app()->user->first_name ?> (<a href="<?php echo Yii::app()->createUrl('//authentication/logout') ?>">logout</a>)</h4>
+								<div class="separator-verySmall"></div>
+								
+								
+								
+								
+							</div>
+					
+					
+					<?php }
                     ?>
                 </div>
                 
@@ -45,9 +59,11 @@
             	<div class="row-fluid">
                 	<div class="span12" id="menuDiv">
                     	<div class="navbar">
-                        	<div class="navbar-inner Gradient-Style1">
+                        	<div class="navbar-inner Gradient-Style1 Border-Radius-Style1">
                             	<ul class="nav">
-                                    <li class="separator-Vertical"><a style="padding-right:30px" class="Font-Color-White" href="<?php echo Yii::app()->createUrl('//home') ?>"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/asset/iconHome.png" width="25" /></a></li>
+                                    <li class="separator-Vertical Border-Radius-Style2" style="margin-left:-19px; padding-left:10px;">
+										<a style="padding-right:30px" class="Font-Color-White" href="<?php echo Yii::app()->createUrl('//home') ?>"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/asset/iconHome.png" width="25" /></a>
+									</li>
                                     <li class="separator-Vertical"><a class="Font-Color-White" href="<?php echo Yii::app()->createUrl('//cariBisnisFranchise') ?>">Cari Bisnis Franchise</a></li>
                                      <?php
                                         if(!Yii::app()->user->isGuest){
@@ -85,9 +101,9 @@
             </div>
         </div>
         <!--Content-->
-       	<div class="container content">
+       	<div class="container content padding-left-small">
         <div class="row-fluid">
-	<div class="span2">
+	<div class="span2 padding-top-small">
     	<table class="table">
         	<tr>
             	<td><a href="<?php echo Yii::app()->createUrl('//jbAdmin/kategori/') ?>">Kategori Bisnis</a></td>

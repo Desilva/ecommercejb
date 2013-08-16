@@ -25,6 +25,12 @@
                 <div class="row-fluid">
                 	<div class="span12">
                             <?php echo $form->hiddenField($model,'id_user',array('value'=>Yii::app()->user->id)) ?>
+							
+							
+							
+							
+							
+							
                     	<table>
         					<tr>
             					<th width="20%" class="Text-Align-Left"><?php echo $form->labelEx($model,'id_category'); ?></th>

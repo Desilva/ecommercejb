@@ -82,7 +82,7 @@
                 'nama'=>'Nama',
                 'penjualan'=>'Revenue'
             ),
-            'template' => '<div><header style="font-size:30px; font-family:Calibri;">Hasil Pencarian</header>{sorter}<br style="clear:both"/></div><div style="margin-top:-18px;"><hr/>{items}</div>{pager}'
+            'template' => '<div><header style="font-size:30px; font-family:Calibri;">Hasil Pencarian</header>{sorter}<br style="clear:both"/></div><div style="margin-top:-35px;"><hr/>{items}</div>{pager}'
             ));
    ?>
            </table>

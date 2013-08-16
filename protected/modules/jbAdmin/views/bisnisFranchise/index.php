@@ -34,7 +34,7 @@ a.delete img{
             </div>
         </div>
         <div class="row-fluid">
-        	<div class="span12">
+        	<div class="span11 Top-Margin-Minus1">
             	     <?php
                             $this->widget('bootstrap.widgets.TbGridView', array(
                                 'dataProvider' => $model,

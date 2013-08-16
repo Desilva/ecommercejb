@@ -1,4 +1,4 @@
-<form class="form-horizontal" style="margin-left:-60px" method="GET" action="<?php echo Yii::app()->createUrl('//cariBisnisFranchise/cari') ?>">
+<form class="form-horizontal Left-Margin-Minus2" method="GET" action="<?php echo Yii::app()->createUrl('//cariBisnisFranchise/cari') ?>">
 <div class="row-fluid">
         	<div class="span12">
         	<div class="control-group">
