@@ -1,5 +1,5 @@
 <div class="row-fluid">
-	<div class="span12">
+	<div class="span11">
     	<div class="row-fluid">
         	<div class="span6">
                     <!--    LOCALE: there is two function for setting locale, the first one using 'indonesian' is for windows, and the 2nd one the id_ID is for linux-->

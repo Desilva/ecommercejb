@@ -20,7 +20,7 @@ a.delete img{
             </div>
         </div>
         <div class="row-fluid">
-        	<div class="span12">
+        	<div class="span11 Top-Margin-Minus1">
                     <?php $this->widget('zii.widgets.grid.CGridView', array(
                             'id'=>'article-grid',
                             'itemsCssClass' => 'table table-striped',
@@ -52,7 +52,7 @@ a.delete img{
                                             'updateButtonImageUrl' => Yii::app()->request->baseUrl . '/images/asset/write.png',
                                         ),
                             ),
-                            'htmlOptions'=>array('style'=>'width:788px')
+                           
                     )); ?>
             </div>
         </div>

@@ -61,8 +61,17 @@
             else
             {
             ?> 
-                <h3> Selamat Datang, <?php echo Yii::app()->user->first_name?> (<a href="<?php echo Yii::app()->createUrl('//authentication/logout') ?>">logout</a>)</h3>
-            <?php }
+                
+					<div class="span12" id="loginDiv">
+									 <h4> Selamat Datang, <?php echo Yii::app()->user->first_name?> (<a href="<?php echo Yii::app()->createUrl('//authentication/logout') ?>">logout</a>)</h4>
+								<div class="separator-verySmall"></div>
+								
+								
+								
+								
+							</div>
+			
+			<?php }
             ?>
         </div>
         <div id="menuDiv">

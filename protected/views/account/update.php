@@ -4,7 +4,7 @@
                             $this->clips['sidebar']?>
     </div>
     <div class="span10">
-    	<h4 class="Font-Color-DarkBlue">Update <?php echo $model->nama ?></h4>
+		<div><header style="font-size:30px; font-family:Calibri;">Update <?php echo $model->nama ?></header><br style="clear:both"/></div><div style="margin-top:-35px;"></div>
             <?php
                 if($model->idCategory->category == "Bisnis")
                 {

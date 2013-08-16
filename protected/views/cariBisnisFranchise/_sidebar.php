@@ -1,8 +1,8 @@
-<form class="form-horizontal" style="margin-left:-90px" method="GET" action="<?php echo Yii::app()->createUrl('//cariBisnisFranchise/cari') ?>">
+<form class="form-horizontal Left-Margin-Minus2" method="GET" action="<?php echo Yii::app()->createUrl('//cariBisnisFranchise/cari') ?>">
 <div class="row-fluid">
         	<div class="span12">
         	<div class="control-group">
-            	<label class="control-label Font-Color-DarkBlue" for="jenis">Jenis</label>
+            	<label class="control-label Font-Color-DarkBlue " for="jenis">Jenis</label>
                 <div class="controls">
                     <?php if($selected_jenis == 1){ ?>
                     <label class="radio">
@@ -100,7 +100,7 @@
         
             </div>
         </div>
-    <div style="width: 260px; margin-left: 90px;">
+    <div class="" style="width: 285px; margin-left: 75px;">
 <?php 
 //        if($selected_subkategori != "" || $selected_rangeharga != "" || $selected_omzet != "")
 //        {

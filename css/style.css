@@ -8,7 +8,8 @@ body{
 	padding-bottom:55px;	
 }
 .header{
-	background-image:url(../images/asset/background.png)	
+	background-image:url(../images/asset/background.png);
+	
 }
 #primary{
 
@@ -20,6 +21,36 @@ body{
 }
 .Border-Radius-Style1{
 	-webkit-border-radius:10px 10px 0px 0px;
+	-moz-border-radius:10px 10px 0px 0px;
+}
+.Border-Radius-Style2{
+	-webkit-border-radius:10px 0px 0px 0px;
+	-moz-border-radius:10px 0px 0px 0px;
+}
+.Border-Radius-Style3{
+	-webkit-border-radius:10px 10px 10px 10px;
+	-moz-border-radius:10px 10px 10px 10px;	
+}
+.Left-Margin{
+	margin-left: 10px;	
+}
+.Left-Margin-Minus1{
+	margin-left:-37px;	
+}
+.Left-Margin-Minus2{
+	margin-left:-60px;	
+}
+.Top-Margin-Minus1{
+	Margin-top:-30px;	
+}
+.Top-Margin1{
+	margin-top:5px;	
+}
+.Top-Margin2{
+	margin-top:20px;	
+}
+.Top-Margin3{
+	margin-top:30px;	
 }
 .form-Right{
 	float:right;	
@@ -27,11 +58,23 @@ body{
 .separator{
 	height:35px;	
 }
+.separator-verySmall{
+	height:40px;	
+}
+.separator-small{
+	height:45px;	
+}
+.separator-medium{
+	height:50px;	
+}
 .styleBackground-SolidColor-Red{
 	background-color:#F00	
 }
 .styleBackground-SolidColor-Blue{
 	background-color:#06F;	
+}
+.styleBackground-SolidColor-Grey{
+	background-color:#f0f0f0;	
 }
 .Text-Align-Left{
 	text-align:left;	
@@ -88,6 +131,9 @@ body{
 .separator-Vertical{
 	border-right:solid 1px #CCCCCC;	
 }
+.Font-Color-Red{
+	color:#F00;	
+}
 .Font-Color-White{
 	color:#FFF;
 	text-decoration:none;	
@@ -100,6 +146,9 @@ body{
 }
 .Font-Style-Bold{
 	font-weight:bold;	
+}
+.Font-Size-Small{
+	font-size:80%;	
 }
 .Font-Size-Large{
 	font-size:26px;
@@ -134,8 +183,18 @@ body{
 }
 .Line-Size-Medium{
 	width:400px;
-}	
+}
+.padding-bottom-small{
+	padding-bottom:10px;	
+}
+.padding-left-small{
+	padding-left:60px;	
+}
+.padding-top-small{
+	padding-top:20px;	
+}
 .nav{
 	margin-left:5px;
 	margin-bottom:5px;	
 }
+

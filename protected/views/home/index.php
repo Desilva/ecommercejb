@@ -10,8 +10,8 @@
           
           $('#banner-slide').bjqs({
             animtype      : 'slide',
-            height        : 320,
-            width         : 868,
+            height        : 300,
+            width         : 705,
             responsive    : true,
             randomstart   : true
           });
@@ -20,7 +20,7 @@
       </script>
 <!--End Slideshow------------------------------------------------------------------------------------------------------------>
 <div class="row-fluid">
-            	<div class="span9">
+            	<div class="span7">
                 	<div class="row-fluid Gradient-Style1">
                     	<h4 class="Text-Align-Center">SITUS JUAL BELI BISNIS <font class="Font-Size-Large">TERBESAR</font> DI <font class="Font-Size-Large">INDONESIA</font></h4>
                     </div>
@@ -50,7 +50,7 @@
             	<div class="span12"></div>
             </div>
             <div class="row-fluid">
-            	<div class="span6 Gradient-Style4">
+            	<div class="span6 Gradient-Style4 padding-bottom-small">
                 	<div class="row-fluid">
                     	<div class="span12 Font-Size-Medium Text-Align-Center Div-Style-Header Gradient-Style3 Font-Color-White Border-Radius-Style1">BISNIS</div>
                     </div>
@@ -70,6 +70,7 @@
                     <div class="row-fluid">
                     	<div class="span2"></div>
                     	<div class="span6">
+                        	&nbsp;
                         	<?php
                                             echo CHtml::dropDownList('kategori', 'id', CHtml::listData($kategori, 'id', 'industri'), array(
                                                 'prompt' => 'Pilih Kategori',
@@ -82,8 +83,11 @@
                     <div class="row-fluid">
                     	<div class="span2"></div>
                     	<div class="span6">
-                        	
+                        		<div class="row-fluid">
+                                	<div class="span12"></div>
+                                </div>
                         		<div class="input-prepend">
+                                	
                                             <?php echo CHtml::submitButton('Cari', array('submit' => array("/cariBisnisFranchise/cari/"),'class' => 'btn')); ?>
                                             <?php echo CHtml::textField('keyword','',array('class'=>'Input-Size-Small','placeholder'=>'Kata Kunci')); ?>
                            	 	</div>
@@ -99,6 +103,7 @@
                     </div>
                     <div class="row-fluid Div-Style-Content">
                     	<div class="span11 Text-Align-Center Solid-White">
+                        
 <!--                    		<div class="tabbable">
                         		<ul class="nav nav-tabs">
                             		<li class="active">
@@ -200,7 +205,7 @@
                 	</div>
                 </div>
                 
-                <div class="span6 Gradient-Style4">
+                <div class="span6 Gradient-Style4 padding-bottom-small">
                 	<div class="row-fluid">
                     	<div class="span12 Text-Align-Center Font-Size-Medium Div-Style-Header Gradient-Style3 Font-Color-White  Border-Radius-Style1">FRANCHISE</div>
                     </div>
@@ -220,6 +225,7 @@
                     <div class="row-fluid">
                     	<div class="span2"></div>
                     	<div class="span6">
+                        		&nbsp;
                         	  	<?php
                                             echo CHtml::dropDownList('kategori', 'id', CHtml::listData($kategori, 'id', 'industri'), array(
                                                 'prompt' => 'Pilih Kategori',
@@ -231,7 +237,9 @@
                     <div class="row-fluid">
                     	<div class="span2"></div>
                     	<div class="span6">
-                        	
+                        		<div class="row-fluid">
+                                	<div class="span12"></div>
+                                </div>
                         		<div class="input-prepend">
                             		    <?php echo CHtml::submitButton('Cari', array('submit' => array("/cariBisnisFranchise/cari/"),'class' => 'btn')); ?>
                                             <?php echo CHtml::textField('keyword','',array('class'=>'Input-Size-Small','placeholder'=>'Kata Kunci')); ?>

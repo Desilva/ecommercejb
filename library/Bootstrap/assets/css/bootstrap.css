@@ -4607,6 +4607,13 @@ input[type="submit"].btn.btn-mini {
   margin-top: 8px;
 }
 
+.navbar .nav > li:hover{
+	background: #f78d1d;
+	background: -webkit-gradient(linear, left top, left bottom, from(#458bc6), to(#1a3666));
+	background: -moz-linear-gradient(top,  #1568ae,  #1a3666);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#1568ae', endColorstr='#1a3666');	
+}
+
 .navbar .nav > li > a:focus,
 .navbar .nav > li > a:hover {
   /*color: #333333;*/
