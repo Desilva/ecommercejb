@@ -65,7 +65,7 @@ return array(
 		),
 		
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=ecommerceJB',
+			'connectionString' => 'mysql:host=localhost;dbname=ecommercejb',
 			'emulatePrepare' => true,
 			'username' => 'root',
 			'password' => '',
