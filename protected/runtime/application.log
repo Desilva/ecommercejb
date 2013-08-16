@@ -330,3 +330,27 @@ Stack trace:
 REQUEST_URI=/yii/E-COM/index.php/account/create
 HTTP_REFERER=http://localhost/yii/E-COM/index.php/account/index
 ---
+2013/08/16 17:51:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.min.map".' in D:\xampp\htdocs\yii2\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\yii2\framework\web\CWebApplication.php(141): CWebApplication->runController('jquery.min.map')
+#1 D:\xampp\htdocs\yii2\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\ecommercejb.git\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommercejb.git/index.php/jquery.min.map
+---
+2013/08/16 17:52:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.min.map".' in D:\xampp\htdocs\yii2\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\yii2\framework\web\CWebApplication.php(141): CWebApplication->runController('jquery.min.map')
+#1 D:\xampp\htdocs\yii2\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\ecommercejb.git\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommercejb.git/index.php/jquery.min.map
+---
+2013/08/16 17:55:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.min.map".' in D:\xampp\htdocs\yii2\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\yii2\framework\web\CWebApplication.php(141): CWebApplication->runController('jquery.min.map')
+#1 D:\xampp\htdocs\yii2\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\ecommercejb.git\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommercejb.git/index.php/jquery.min.map
+---
