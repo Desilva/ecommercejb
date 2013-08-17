@@ -1,3 +1,7 @@
+<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl ?>/js/kendo.common.min.css" />
+<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl ?>/js/kendo.default.min.css" />
+<script src="<?php echo Yii::app()->request->baseUrl ?>/js/kendo.web.min.js"></script>
+
 <div class="row-fluid">
 	<div class="span2">
     	 <?php if(!empty($this->clips['sidebar'])) echo
@@ -8,11 +12,11 @@
             <?php
                 if($model->idCategory->category == "Bisnis")
                 {
-                    echo $this->renderPartial('_formUpdate', array('model'=>$model,'kategori'=>$kategori,'kepemilikan'=>$kepemilikan,'tahun'=>$tahun,'industri'=>$industri,'provinsi'=>$provinsi,'alasan_jual_bisnis'=>$alasan_jual_bisnis,'img_upload'=>$img_upload,'doc_upload'=>$doc_upload)); 
+                    echo $this->renderPartial('_formUpdate', array('model'=>$model,'kategori'=>$kategori,'kepemilikan'=>$kepemilikan,'tahun'=>$tahun,'industri'=>$industri,'provinsi'=>$provinsi,'alasan_jual_bisnis'=>$alasan_jual_bisnis,'initial_doc_upload'=>$initial_doc_upload,'initial_image_upload'=>$initial_image_upload)); 
                 }
                 else if($model->idCategory->category == "Franchise")
                 {
-                    echo $this->renderPartial('_formFranchiseUpdate', array('model'=>$model,'kategori'=>$kategori,'industri'=>$industri,'provinsi'=>$provinsi,'img_upload'=>$img_upload,'doc_upload'=>$doc_upload)); 
+                    echo $this->renderPartial('_formFranchiseUpdate', array('model'=>$model,'kategori'=>$kategori,'industri'=>$industri,'provinsi'=>$provinsi,'initial_doc_upload'=>$initial_doc_upload,'initial_image_upload'=>$initial_image_upload)); 
                 }
                 else
                 {

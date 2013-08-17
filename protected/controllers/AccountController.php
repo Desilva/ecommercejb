@@ -30,9 +30,140 @@ class AccountController extends Controller
             $this->endClip();
         }
         
-        public function saveFile()
+        public function actionUploadDocument()
         {
+            $path = realpath(Yii::app()->getBasePath() . "/../uploads/tmp/") . "/".Yii::app()->user->id.'/docs/';
+            if(!is_dir($path))
+            {
+                mkdir($path);
+                chmod($path, 0777);
+            }
+            //Move our file to our temporary dir
+            $files = $_FILES['files'];
+            $file = $files['tmp_name'];
+            if (is_uploaded_file($file)) {
+                move_uploaded_file($file, $path.$files['name']);
+                chmod($path . $files['name'], 0777);
+            }
             
+            if(Yii::app()->user->hasState('documents'))
+            {
+                $userDocuments = Yii::app()->user->getState('documents');
+            }
+            else
+            {
+                $userDocuments = array();
+            }
+            $userDocuments[] = array(
+                "path" => $path . $files['name'],
+                //the same file or a thumb version that you generated
+                "name" => $files['name'],
+            );
+            Yii::app()->user->setState('documents', $userDocuments);
+            
+            echo '';
+        }
+        
+        public function actionRemoveUploadedDocument()
+        {
+            $path = realpath(Yii::app()->getBasePath() . "/../uploads/tmp/") . "/".Yii::app()->user->id.'/docs/';
+            $pathUpdate = realpath(Yii::app()->getBasePath() . "/../uploads/docs/") . "/".Yii::app()->user->id.'/';
+            $file = $path . $_POST["fileNames"];
+            $fileUpdate = $pathUpdate.$_POST["fileNames"];
+            if(is_file($file))
+            {
+               unlink($file);
+            }
+            else if(is_file($fileUpdate))
+            {
+               unlink($fileUpdate);
+            }
+            
+            echo '';
+            
+        }
+        
+        
+        public function actionUploadImage()
+        {
+            $path = realpath(Yii::app()->getBasePath() . "/../uploads/tmp/") . "/".Yii::app()->user->id.'/';
+            $pathThumbnail = realpath(Yii::app()->getBasePath() . "/../uploads/tmp/") . "/".Yii::app()->user->id.'/thumbs/';
+            
+            if(!is_dir($path))
+            {
+                mkdir($path);
+                chmod($path, 0777);
+            }
+            if(!is_dir($pathThumbnail))
+            {
+                mkdir($pathThumbnail);
+                chmod($pathThumbnail, 0777);
+            }
+            //Move our file to our temporary dir
+            $files = $_FILES['files'];
+            $file = $files['tmp_name'];
+            if (is_uploaded_file($file)) {
+                move_uploaded_file($file, $path.$files['name']);
+                chmod($path . $files['name'], 0777);
+            }
+
+            //here you can also generate the image versions you need
+            //using something like PHPThumb
+            $thumb=Yii::app()->phpThumb->create($path.$files['name']);
+            $thumb->resize(100,100);
+            $thumb->save($pathThumbnail.$files['name']);
+            chmod($pathThumbnail . $files['name'], 0777);
+            
+            if(Yii::app()->user->hasState('images'))
+            {
+                $userImages = Yii::app()->user->getState('images');
+            }
+            else
+            {
+                $userImages = array();
+            }
+            $userImages[] = array(
+                "path" => $path . $files['name'],
+                //the same file or a thumb version that you generated
+                "thumb" => $pathThumbnail.$files['name'],
+                "name" => $files['name'],
+            );
+            Yii::app()->user->setState('images', $userImages);
+            echo '';
+            
+        }
+        
+        public function actionRemoveUploadedImage()
+        {
+                $path = realpath(Yii::app()->getBasePath() . "/../uploads/tmp/") . "/".Yii::app()->user->id.'/';
+                $pathThumbnail = realpath(Yii::app()->getBasePath() . "/../uploads/tmp/") . "/".Yii::app()->user->id.'/thumbs/';
+                $pathUpdate = realpath(Yii::app()->getBasePath() . "/../uploads/images/") . "/".Yii::app()->user->id.'/';
+                $pathThumbnailUpdate = realpath(Yii::app()->getBasePath() . "/../uploads/images/") . "/".Yii::app()->user->id.'/thumbs/';
+                
+                $file = $path . $_POST["fileNames"];
+                $fileThumbnail = $pathThumbnail . $_POST["fileNames"];
+                
+                $fileUpdate = $pathUpdate . $_POST["fileNames"];
+                $fileThumbnailUpdate = $pathThumbnailUpdate . $_POST["fileNames"];
+                if(is_file($file))
+                {
+                   unlink($file);
+                }
+                else if(is_file($fileUpdate))
+                {
+                    unlink($fileUpdate);
+                }
+                
+                if(is_file($fileThumbnail))
+                {
+                   unlink($fileThumbnail);
+                }
+                else if(is_file($fileThumbnailUpdate))
+                {
+                    unlink($fileThumbnailUpdate);
+                }
+                
+                echo '';
         }
         
         public function filters()
@@ -56,7 +187,8 @@ class AccountController extends Controller
                                     'GenerateSubIndustri','GenerateKota',
                                     'upload','uploadDocs','preview',
                                     'GetEmailDesc','GetEmail','dataDiri',
-                                    'watchlist','beli'),
+                                    'watchlist','beli','uploadImage','RemoveUploadedImage',
+                                    'uploadDocument','RemoveUploadedDocument'),
 				'roles'=>array('member'),
 			),
 			array('deny',  // deny all users
@@ -290,9 +422,9 @@ class AccountController extends Controller
 //            var_dump($_POST);
 //            var_dump($_FILES);
 //            var_dump(Yii::app()->user->getState('images'));
-            Yii::import("ext.xupload.models.XUploadForm");
-            $img_upload = new XUploadForm();
-            $doc_upload = new XUploadForm();
+//            Yii::import("ext.xupload.models.XUploadForm");
+//            $img_upload = new XUploadForm();
+//            $doc_upload = new XUploadForm();
 		$model=new Business;
                 $list_alasan_jual_bisnis = array(
                     "Alasan 1"=>"Alasan 1",
@@ -361,7 +493,7 @@ class AccountController extends Controller
                     {
                         $status_approval = "Verifikasi";
                     }
-                    $dokumen = CUploadedFile::getInstancesByName('dokumen');
+//                    $dokumen = CUploadedFile::getInstancesByName('dokumen');
 //                    var_dump($dokumen);
 //                    die;
                     $model->attributes = $_POST['Business'];
@@ -411,26 +543,21 @@ class AccountController extends Controller
                                     {
                                         $date = date('ymdhis');
                                         $temp= array_filter(explode('.',$image["name"]));
-                                        $extension = end($temp);
-                                        if(rename($image["path"], $path .'bf'.'_'. Yii::app()->user->id .'_'.$date.'_'.$i.'.'.$extension))
+//                                        $extension = end($temp);
+                                        $image_name = $i.'_'.$date.'_'.$image["name"];
+                                        if(rename($image["path"], $path.$image_name))
                                         {
-                                            chmod( $path .'bf'.'_'. Yii::app()->user->id .'_'.$date.'_'.$i.'.'.$extension, 0777);
-                                            $imgName .= 'bf'.'_'. Yii::app()->user->id .'_'.$date.'_'.$i.'.'.$extension.',';
-    //                                        $img = new Image( );
-    //                                        $img->size = $image["size"];
-    //                                        $img->mime = $image["mime"];
-    //                                        $img->name = $image["name"];
-    //                                        $img->source = "/images/uploads/{$this->id}/" . $image["filename"];
-    //                                        $img->somemodel_id = $this->id;
-    //                                        if(!$img->save())
-    //                                        {
-    //                                            //Its always good to log something
-    //                                            Yii::log("Could not save Image:\n" . CVarDumper::dumpAsString(
-    //                                                            $img->getErrors()), CLogger::LEVEL_ERROR);
-    //                                            //this exception will rollback the transaction
-    //                                            throw new Exception('Could not save Image');
-    //                                        }
+                                            chmod( $path .$image_name, 0777);
+                                            $imgName .= $image_name.',';
                                         }
+//                                        $date = date('ymdhis');
+//                                        $temp= array_filter(explode('.',$image["name"]));
+//                                        $extension = end($temp);
+//                                        if(rename($image["path"], $path .'bf'.'_'. Yii::app()->user->id .'_'.$date.'_'.$i.'.'.$extension))
+//                                        {
+//                                            chmod( $path .'bf'.'_'. Yii::app()->user->id .'_'.$date.'_'.$i.'.'.$extension, 0777);
+//                                            $imgName .= 'bf'.'_'. Yii::app()->user->id .'_'.$date.'_'.$i.'.'.$extension.',';
+//                                        }
                                     }
                                     else
                                     {
@@ -444,11 +571,19 @@ class AccountController extends Controller
                                     {
                                         $date = date('ymdhis');
                                         $temp= array_filter(explode('.',$image["name"]));
-                                        $extension = end($temp);
-                                        if(rename($image["thumb"], $pathThumbnail .'bf'.'_'. Yii::app()->user->id .'_'.$date.'_'.$i.'.'.$extension))
+//                                        $extension = end($temp);
+                                        $thumb_name = $i.'_'.$date.'_'.$image["name"];
+                                        if(rename($image["thumb"], $pathThumbnail .$thumb_name))
                                         {
-                                            chmod( $pathThumbnail .'bf'.'_'. Yii::app()->user->id .'_'.$date.'_'.$i.'.'.$extension, 0777);
+                                            chmod( $pathThumbnail .$thumb_name, 0777);
                                         }
+//                                        $date = date('ymdhis');
+//                                        $temp= array_filter(explode('.',$image["name"]));
+//                                        $extension = end($temp);
+//                                        if(rename($image["thumb"], $pathThumbnail .'bf'.'_'. Yii::app()->user->id .'_'.$date.'_'.$i.'.'.$extension))
+//                                        {
+//                                            chmod( $pathThumbnail .'bf'.'_'. Yii::app()->user->id .'_'.$date.'_'.$i.'.'.$extension, 0777);
+//                                        }
                                     }
                                     else
                                     {
@@ -464,13 +599,10 @@ class AccountController extends Controller
                         
                         
                         //upload document handler
-                        if(Yii::app()->user->hasState('docs'))
+                        if(Yii::app()->user->hasState('documents'))
                         {
-                            $userDocs = Yii::app()->user->getState('docs');
-                            
-                            //Resolve the final path for our images
+                            $userDocs = Yii::app()->user->getState('documents');
                             $path = Yii::app()->getBasePath() . "/../uploads/docs/".Yii::app()->user->id.'/';
-                            //Create the folder and give permissions if it doesnt exists
                             if(!is_dir($path))
                             {
                                 mkdir($path);
@@ -481,53 +613,38 @@ class AccountController extends Controller
                                 foreach($userDocs as $docs)
                                 {
                                     $i++;
-                                    if(is_file($docs["tempDirectory"]))
+                                    if(is_file($docs["path"]))
                                     {
                                         $date = date('ymdhis');
-                                        $original_name = $docs['originalName'];
-                                        $temp= array_filter(explode('.',$docs["tempDirectory"]));
+                                        $name = $i.'_'.$date.'_'.$docs['name'];
+                                        $temp= array_filter(explode('.',$docs["name"]));
                                         $extension = end($temp);
 //                                        while($this->checkDocExists($path.$original_name == true))
 //                                        {
 //                                            
 //                                        }
-                                        if(rename($docs["tempDirectory"], $path .$original_name))
+                                        if(rename($docs["path"], $path .$name))
                                         {
-                                            chmod( $path .$docs["originalName"], 0777);
-                                            $docName .= $docs["originalName"].',';
-                                            
-    //                                        $img = new Image( );
-    //                                        $img->size = $image["size"];
-    //                                        $img->mime = $image["mime"];
-    //                                        $img->name = $image["name"];
-    //                                        $img->source = "/images/uploads/{$this->id}/" . $image["filename"];
-    //                                        $img->somemodel_id = $this->id;
-    //                                        if(!$img->save())
-    //                                        {
-    //                                            //Its always good to log something
-    //                                            Yii::log("Could not save Image:\n" . CVarDumper::dumpAsString(
-    //                                                            $img->getErrors()), CLogger::LEVEL_ERROR);
-    //                                            //this exception will rollback the transaction
-    //                                            throw new Exception('Could not save Image');
-    //                                        }
+                                            chmod( $path .$name, 0777);
+                                            $docName .= $name.',';
                                         }
                                     }
                                     else
                                     {
                                         //You can also throw an execption here to rollback the transaction
-                                        Yii::log($docs["tempDirectory"] . " is not a file", CLogger::LEVEL_WARNING);
+                                        Yii::log($docs["path"] . " is not a file", CLogger::LEVEL_WARNING);
                                     }
                                 }
                                 $model->dokumen = $docName;
                                 //Clear the user's session
-                                Yii::app()->user->setState('docs', null);
+                                Yii::app()->user->setState('documents', null);
                         }
                     }
                     if($model->save()) 
                         $this->redirect('index');
                }
         Yii::app()->user->setState('images', null);
-        Yii::app()->user->setState('docs', null);
+        Yii::app()->user->setState('documents', null);
         $this->render('create',array(
                         'jenis'=>$jenis,
 			'model'=>$model,
@@ -537,8 +654,8 @@ class AccountController extends Controller
                         'industri'=>$list_industri,
                         'provinsi'=>$list_provinsi,
                         'alasan_jual_bisnis'=>$list_alasan_jual_bisnis,
-                        'img_upload'=>$img_upload,
-                        'doc_upload'=>$doc_upload,
+//                        'img_upload'=>$img_upload,
+//                        'doc_upload'=>$doc_upload,
 		));
 	}
         
@@ -585,9 +702,7 @@ class AccountController extends Controller
             {
                 $this->redirect(Yii::app()->createUrl('//account/index'));
             }
-            Yii::import("ext.xupload.models.XUploadForm");
-            $img_upload = new XUploadForm;
-            $doc_upload = new XUploadForm;
+
                 $list_alasan_jual_bisnis = array(
                     "Alasan 1"=>"Alasan 1",
                     "Alasan 2"=>"Alasan 2",
@@ -641,16 +756,23 @@ class AccountController extends Controller
                     }
                     if($model->validate())
                     {
+                         //upload image handler
                         if(Yii::app()->user->hasState('images'))
                         {
                             $userImages = Yii::app()->user->getState('images');
                             //Resolve the final path for our images
-                            $path = Yii::app()->getBasePath() . "/../uploads/";
+                            $path = Yii::app()->getBasePath() . "/../uploads/images/".Yii::app()->user->id.'/';
+                            $pathThumbnail = Yii::app()->getBasePath() . "/../uploads/images/".Yii::app()->user->id.'/thumbs/';
                             //Create the folder and give permissions if it doesnt exists
                             if(!is_dir($path))
                             {
                                 mkdir($path);
                                 chmod($path, 0777);
+                            }
+                            if(!is_dir($pathThumbnail))
+                            {
+                                mkdir($pathThumbnail);
+                                chmod($pathThumbnail, 0777);
                             }
                             $imgName="";
                             $i = 0;
@@ -661,11 +783,20 @@ class AccountController extends Controller
                                     {
                                         $date = date('ymdhis');
                                         $temp= array_filter(explode('.',$image["name"]));
-                                        $extension = end($temp);
-                                        if(rename($image["path"], $path .'bf'.'_'. Yii::app()->user->id .'_'.$date.'_'.$i.'.'.$extension))
+//                                        $extension = end($temp);
+                                        if(isset($image["isUpdate"]))
                                         {
-                                            chmod( $path .'bf'.'_'. Yii::app()->user->id .'_'.$date.'_'.$i.'.'.$extension, 0777);
-                                            $imgName .= 'bf'.'_'. Yii::app()->user->id .'_'.$date.'_'.$i.'.'.$extension.',';
+                                            $image_name = $image["name"];
+                                        }
+                                        else
+                                        {
+                                            $image_name = $i.'_'.$date.'_'.$image["name"];
+                                        }
+                                        
+                                        if(rename($image["path"], $path.$image_name))
+                                        {
+                                            chmod( $path .$image_name, 0777);
+                                            $imgName .= $image_name.',';
                                         }
                                     }
                                     else
@@ -673,17 +804,171 @@ class AccountController extends Controller
                                         //You can also throw an execption here to rollback the transaction
                                         Yii::log($image["path"] . " is not a file", CLogger::LEVEL_WARNING);
                                     }
+                                    
+                                    
+                                    
+                                    if(is_file($image["thumb"]))
+                                    {
+                                        $date = date('ymdhis');
+                                        $temp= array_filter(explode('.',$image["name"]));
+//                                        $extension = end($temp);
+                                        if(isset($image["isUpdate"]))
+                                        {
+                                            $thumb_name = $image["name"];
+                                        }
+                                        else
+                                        {
+                                            $thumb_name = $i.'_'.$date.'_'.$image["name"];
+                                        }
+                                        
+                                        if(rename($image["thumb"], $pathThumbnail .$thumb_name))
+                                        {
+                                            chmod( $pathThumbnail .$thumb_name, 0777);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //You can also throw an execption here to rollback the transaction
+                                        Yii::log($image["thumb"] . " is not a file", CLogger::LEVEL_WARNING);
+                                    }
                                 }
                                 $model->image = $imgName;
                                 //Clear the user's session
                                 Yii::app()->user->setState('images', null);
-
+                        }
+                        
+                        
+                        
+                        //upload document handler
+                        if(Yii::app()->user->hasState('documents'))
+                        {
+                            $userDocs = Yii::app()->user->getState('documents');
+                            $path = Yii::app()->getBasePath() . "/../uploads/docs/".Yii::app()->user->id.'/';
+                            if(!is_dir($path))
+                            {
+                                mkdir($path);
+                                chmod($path, 0777);
+                            }
+                            $docName="";
+                            $i = 0;
+                                foreach($userDocs as $docs)
+                                {
+                                    $i++;
+                                    if(is_file($docs["path"]))
+                                    {
+                                        $date = date('ymdhis');
+                                        if(isset($docs["isUpdate"]))
+                                        {
+                                            $name = $docs['name'];
+                                        }
+                                        else
+                                        {
+                                            $name = $date.'_'.$docs['name'];
+                                        }
+                                        $temp= array_filter(explode('.',$docs["name"]));
+                                        $extension = end($temp);
+//                                        while($this->checkDocExists($path.$original_name == true))
+//                                        {
+//                                            
+//                                        }
+                                        if(rename($docs["path"], $path .$name))
+                                        {
+                                            chmod( $path .$name, 0777);
+                                            $docName .= $name.',';
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //You can also throw an execption here to rollback the transaction
+                                        Yii::log($docs["path"] . " is not a file", CLogger::LEVEL_WARNING);
+                                    }
+                                }
+                                $model->dokumen = $docName;
+                                //Clear the user's session
+                                Yii::app()->user->setState('documents', null);
                         }
                     }
                     if($model->save())
                         $this->redirect(Yii::app()->createUrl('//account/index'));
                 }
         Yii::app()->user->setState('images', null);
+        Yii::app()->user->setState('documents', null);
+            
+            $pathImages = './uploads/images/'.$model->id_user.'/';
+            $pathThumbnail = '.uploads/images/'.$model->id_user.'/';
+            $initial_images_files = array();
+            $initial_images_array = array_filter(explode(',',$model->image));
+            if(!empty($initial_images_array))
+            {
+                foreach($initial_images_array as $images)
+                {
+                    if(file_exists($pathImages.$images))
+                    {
+                        $file["name"] = $images;
+                        $file["extension"] = '.'.pathinfo($pathImages.$images, PATHINFO_EXTENSION);
+                        $file["size"] = filesize($pathImages.$images);
+                        $initial_images_files[] = $file;
+                        
+                        if(Yii::app()->user->hasState('images'))
+                        {
+                            $userImages = Yii::app()->user->getState('images');
+                        }
+                        else
+                        {
+                            $userImages = array();
+                        }
+                        $userImages[] = array(
+                            "path" => $pathImages.$images,
+                            //the same file or a thumb version that you generated
+                            "name" => $images,
+                            "thumb" => $pathThumbnail.$images,
+                            "isUpdate" => 1,
+                        );
+                        Yii::app()->user->setState('images', $userImages);
+                    }
+                    
+                }
+            }
+            
+            $pathDocs = './uploads/docs/'.$model->id_user.'/';
+            $initial_docs_files = array();
+            $initial_docs_array = array_filter(explode(',',$model->dokumen));
+            
+            if(!empty($initial_docs_array))
+            {
+                foreach($initial_docs_array as $docs)
+                {
+                    if(file_exists($pathDocs.$docs))
+                    {
+                        $file["name"] = $docs;
+                        $file["extension"] = '.'.pathinfo($pathDocs.$docs, PATHINFO_EXTENSION);
+                        $file["size"] = filesize($pathDocs.$docs);
+                        $initial_docs_files[] = $file;
+                        
+                        if(Yii::app()->user->hasState('documents'))
+                        {
+                            $userDocuments = Yii::app()->user->getState('documents');
+                        }
+                        else
+                        {
+                            $userDocuments = array();
+                        }
+                        $userDocuments[] = array(
+                            "path" => $pathDocs.$docs,
+                            //the same file or a thumb version that you generated
+                            "name" => $docs,
+                            "isUpdate" => 1,
+                        );
+                        Yii::app()->user->setState('documents', $userDocuments);
+                    }
+                    
+                }
+            }
+//            $temp = json_encode($initial_docs_files);
+//            var_dump($temp); die;
+//            var_dump($initial_docs_files);
+//            var_dump(Yii::app()->user->getState('documents'));
+            
         $this->render('update',array(
 			'model'=>$model,
                         'kategori'=>$kategori,
@@ -692,8 +977,8 @@ class AccountController extends Controller
                         'industri'=>$list_industri,
                         'provinsi'=>$list_provinsi,
                         'alasan_jual_bisnis'=>$list_alasan_jual_bisnis,
-                        'img_upload'=>$img_upload,
-                        'doc_upload'=>$doc_upload,
+                        'initial_doc_upload'=>  json_encode($initial_docs_files),
+                        'initial_image_upload'=> json_encode($initial_images_files)
 		));
 	}
 
@@ -981,30 +1266,30 @@ class AccountController extends Controller
         
          public function actionUploadDocs()
          {
-              $path = realpath(Yii::app()->getBasePath() . "/../uploads/tmp/") . "/".Yii::app()->user->id.'/';
-              $publicPath = Yii::app()->getBaseUrl() . "/uploads/tmp/".Yii::app()->user->id.'/';
-              $path_parts = pathinfo($_FILES["file"]["name"]);
-              $extension = $path_parts['extension'];
-              $filename = md5(Yii::app()->user->id .microtime().$_FILES['file']['name']).'.'.$extension;
-              if(!is_dir($path))
-              {
-                mkdir($path);
-                chmod($path, 0777);
-              }
-              move_uploaded_file($_FILES["file"]["tmp_name"], $path.$filename);
-              if(Yii::app()->user->hasState('docs'))
-              {
-                  $userDocs = Yii::app()->user->getState('docs');
-              }
-              else
-              {
-                  $userDocs= array();
-              }
-              $userDocs[] = array(
-                  "originalName"=>$_FILES["file"]["name"],
-                  "tempDirectory"=>$path.$filename,
-              );
-              Yii::app()->user->setState('docs',$userDocs);
+//              $path = realpath(Yii::app()->getBasePath() . "/../uploads/tmp/") . "/".Yii::app()->user->id.'/';
+//              $publicPath = Yii::app()->getBaseUrl() . "/uploads/tmp/".Yii::app()->user->id.'/';
+//              $path_parts = pathinfo($_FILES["file"]["name"]);
+//              $extension = $path_parts['extension'];
+//              $filename = md5(Yii::app()->user->id .microtime().$_FILES['file']['name']).'.'.$extension;
+//              if(!is_dir($path))
+//              {
+//                mkdir($path);
+//                chmod($path, 0777);
+//              }
+//              move_uploaded_file($_FILES["file"]["tmp_name"], $path.$filename);
+//              if(Yii::app()->user->hasState('docs'))
+//              {
+//                  $userDocs = Yii::app()->user->getState('docs');
+//              }
+//              else
+//              {
+//                  $userDocs= array();
+//              }
+//              $userDocs[] = array(
+//                  "originalName"=>$_FILES["file"]["name"],
+//                  "tempDirectory"=>$path.$filename,
+//              );
+//              Yii::app()->user->setState('docs',$userDocs);
 //            $model=new Business();
 //            $model->dokumen=CUploadedFile::getInstance($model,'dokumen');
 //            $model->dokumen->saveAs(Yii::app()->getBasePath().'/../uploads/a.jpg');

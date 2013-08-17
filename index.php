@@ -1,7 +1,7 @@
 <?php
-$tes=date_default_timezone_set('Asia/Krasnoyarsk');
+
 // change the following paths if necessary
-$yii='D:\xampp\htdocs\yii2\framework\yii.php';
+$yii=dirname(__FILE__).'/framework/yii.php';
 $config=dirname(__FILE__).'/protected/config/main.php';
 
 // remove the following lines when in production mode

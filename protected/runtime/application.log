@@ -354,3 +354,132 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/ecommercejb.git/index.php/jquery.min.map
 ---
+2013/08/17 14:56:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "bisnisFranchise/generateKota".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('bisnisFranchise...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/bisnisFranchise/generateKota
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/jbAdmin/bisnisFranchise/update/id/52
+---
+2013/08/17 14:56:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "bisnisFranchise/generateSubIndustri".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('bisnisFranchise...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/bisnisFranchise/generateSubIndustri
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/jbAdmin/bisnisFranchise/update/id/52
+---
+2013/08/17 14:56:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "bisnisFranchise/generateSubIndustri".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('bisnisFranchise...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/bisnisFranchise/generateSubIndustri
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/jbAdmin/bisnisFranchise/update/id/52
+---
+2013/08/17 14:56:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "bisnisFranchise/generateKota".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('bisnisFranchise...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/bisnisFranchise/generateKota
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/jbAdmin/bisnisFranchise/update/id/52
+---
+2013/08/17 14:57:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "bisnisFranchise/generateKota".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('bisnisFranchise...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/bisnisFranchise/generateKota
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/jbAdmin/bisnisFranchise/update/id/52
+---
+2013/08/17 14:57:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "bisnisFranchise/generateSubIndustri".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('bisnisFranchise...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/bisnisFranchise/generateSubIndustri
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/jbAdmin/bisnisFranchise/update/id/52
+---
+2013/08/17 14:57:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "bisnisFranchise/generateKota".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('bisnisFranchise...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/bisnisFranchise/generateKota
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/jbAdmin/bisnisFranchise/update/id/52
+---
+2013/08/17 14:57:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "bisnisFranchise/generateSubIndustri".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('bisnisFranchise...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/bisnisFranchise/generateSubIndustri
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/jbAdmin/bisnisFranchise/update/id/52
+---
+2013/08/17 14:59:29 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (271)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/08/17 14:59:29 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (271)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/08/17 14:59:32 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (356)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/08/17 14:59:32 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (356)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/08/17 15:12:44 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (273)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/08/17 15:12:44 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (273)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/08/17 15:12:46 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (358)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/08/17 15:12:46 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (358)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/08/17 15:12:46 [warning] [application] C:\xampp\htdocs\ecommercejb\uploads\tmp/3/olecko-2006.1155510000.small_white_tiger (1).jpg is not a file
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (427)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/08/17 15:12:46 [warning] [application] C:\xampp\htdocs\ecommercejb\uploads\tmp/3/thumbs/olecko-2006.1155510000.small_white_tiger (1).jpg is not a file
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (454)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/08/17 15:15:25 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (275)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/08/17 15:15:25 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (275)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/08/17 15:15:28 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (360)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/08/17 15:15:28 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (360)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/08/17 15:18:28 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (275)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/08/17 15:18:28 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (275)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/08/17 15:18:30 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (360)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/08/17 15:18:30 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (360)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/08/17 15:18:30 [warning] [application] .uploads/images/3/1_130817031528_olecko-2006.1155510000.small_white_tiger (1).jpg is not a file
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (456)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
