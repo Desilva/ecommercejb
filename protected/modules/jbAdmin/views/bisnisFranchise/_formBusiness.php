@@ -26,172 +26,129 @@
                 	<div class="span12">
                             <?php echo $form->hiddenField($model,'id_user',array('value'=>$model->id_user)) ?>
                     	<table>
-        					<tr>
-            					<th width="20%" class="Text-Align-Left"><?php echo $form->labelEx($model,'id_category'); ?></th>
-                				<td>
-                                                            <?php echo $form->hiddenField($model,'id_category'); ?>
-                                                            <?php 
-                                                                echo $model->idCategory->category;
-                                                            ?>
-                				</td>
-            				</tr>
-            				<tr>
-            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'kepemilikan'); ?></th>
-                				<td>
-                                                        <?php echo $form->dropDownList($model,'kepemilikan',$kepemilikan,array('prompt'=>'Pilih Jumlah Kepemilikan')); ?>
-                				</td>	
-            				</tr>
-            				<tr>
-            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'id_industri'); ?></th>
-                				<td>
-                                                        <?php echo $form->dropDownList($model,'id_industri',CHtml::listData($industri,'id','industri'),array(
+                        	<tr>
+                            	<th class="Text-Align-Left Font-Color-LightBlue" width="4%"><?php echo $form->labelEx($model,'id_category'); ?></th>
+                                <td width="35%">
+									<?php echo $form->hiddenField($model,'id_category'); ?>
+                                    <?php echo $model->idCategory->category; ?>
+								</td>
+                            </tr>
+							<tr>
+								<Th class="Text-Align-Left Font-Color-LightBlue" width="4%"><?php echo $form->labelEx($model,'kepemilikan'); ?></th>
+								<td width="35%"><?php echo $form->dropDownList($model,'kepemilikan',$kepemilikan,array('prompt'=>'Pilih Jumlah Kepemilikan')); ?></td>
+							</tr>
+							<tr>
+								<Th class="Text-Align-Left Font-Color-LightBlue" width="4%"><?php echo $form->labelEx($model,'id_industri'); ?></th>
+								<td width="35%">
+									<?php echo $form->dropDownList($model,'id_industri',CHtml::listData($industri,'id','industri'),array(
                                                                                                 'prompt'=>'Pilih Industri',
                                                                                                 'ajax' => array(
                                                                                                     'type' => 'POST',
                                                                                                     'url' => Yii::app()->createUrl('//account/generatesubindustri'),
                                                                                                     'update' => '#'.CHtml::activeId($model,'id_sub_industri'),
                                                                                             ))); ?>
-                				</td>	
-            				</tr>
-            				<tr>
-                                                 <?php echo Chtml::hiddenField('sub_industri_temp', $model->id_sub_industri) ?>
-            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'id_sub_industri'); ?></th>
-                				<td>
-                                                        <?php echo $form->dropDownList($model,'id_sub_industri',array(),array('prompt'=>'Pilih Sub Industri')); ?>
-                				</td>	
-            				</tr>
-            				<tr>
-            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'nama'); ?></th>
-                				<td>
-                					<?php echo $form->textField($model,'nama'); ?>
-                				</td>	
-            				</tr>
-             				<tr>
-            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'alamat'); ?></th>
-                				<td>
-                					<?php echo $form->textArea($model,'alamat'); ?>
-                				</td>	
-            				</tr>
-             				<tr>
-            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'id_provinsi'); ?></th>
-                				<td>
-                					<?php echo $form->dropDownList($model,'id_provinsi',CHtml::listData($provinsi,'id','provinsi'),array(
+								</td>
+							</tr>
+							<tr>
+							<?php echo Chtml::hiddenField('sub_industri_temp', $model->id_sub_industri) ?>
+								<th class="Text-Align-Left Font-Color-LightBlue" width="4%"><?php echo $form->labelEx($model,'id_sub_industri'); ?></th>
+								<Td width="35%"><?php echo $form->dropDownList($model,'id_sub_industri',array(),array('prompt'=>'Pilih Sub Industri')); ?></td>
+							</tr>
+							<tr>
+								<th class="Text-Align-Left Font-Color-LightBlue" width="4%"><?php echo $form->labelEx($model,'nama'); ?></th>
+								<Td width="35%"><?php echo $form->textField($model,'nama'); ?></td>
+							</tr>
+							<tr>
+								<th class="Text-Align-Left Font-Color-LightBlue" width="4%"><?php echo $form->labelEx($model,'alamat'); ?></th>
+								<Td width="35%"><?php echo $form->textArea($model,'alamat'); ?></td>
+							</tr>
+							<tr>
+								<th class="Text-Align-Left Font-Color-LightBlue" width="4%"><?php echo $form->labelEx($model,'id_provinsi'); ?></th>
+								<td width="35%">
+									<?php echo $form->dropDownList($model,'id_provinsi',CHtml::listData($provinsi,'id','provinsi'),array(
                                                             'prompt'=>'Pilih Provinsi',
                                                             'ajax' => array(
                                                                 'type' => 'POST',
                                                                 'url' => Yii::app()->createUrl('//account/generatekota'),
                                                                 'update' => '#'.CHtml::activeId($model,'id_kota'),
                                                         ))); ?>
-                				</td>	
-            				</tr>
-                                        <tr>
-                                                <?php echo Chtml::hiddenField('kota_temp', $model->id_kota) ?>
-            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'id_kota'); ?></th>
-                				<td>
-                					<?php echo $form->dropDownList($model,'id_kota',array(),array('prompt'=>'Pilih Kota')); ?>
-                				</td>	
-            				</tr>
-            				<tr>
-            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'jumlah_karyawan'); ?></th>
-                				<td>
-                					<?php echo $form->textField($model,'jumlah_karyawan'); ?>
-                				</td>	
-            				</tr>
-             				<tr>
-            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'tahun_didirikan'); ?></th>
-                				<td>
-                					 <?php echo $form->dropDownList($model,'tahun_didirikan',$tahun,array('prompt'=>'Pilih Tahun')); ?>
-                				</td>	
-            				</tr>
-             				<tr>
-            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'harga_min'); ?></th>
-                				<td>
-                					<?php echo $form->textField($model,'harga_min',array('onkeyup'=>'calcValue()')); ?> &nbsp; <?php echo $form->checkBox($model,'tampilkanKontak',array('disabled'=>'disabled', 'class'=>'tampilkanKontak')) ?><?php echo $form->labelEx($model,'tampilkanKontak', array('style'=>'display:inline; margin-left:3px;')) ?>
-                                                </td>	
-            				</tr>
-                                        <tr>
-            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'harga_max'); ?></th>
-                				<td>
-                					<?php echo $form->textField($model,'harga_max',array('class'=>'styleText1','onkeyup'=>'calcValue()')); ?>
-                				</td>	
-            				</tr>
-             				<tr>
-            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'penjualan'); ?></th>
-                				<td>
-                					<?php echo $form->textField($model,'penjualan',array('onkeyup'=>'calcValue()')); ?>
-                				</td>	
-            				</tr>
-             				<tr>
-            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'hpp'); ?></th>
-                				<td>
-                					<?php echo $form->textField($model,'hpp'); ?>
-                				</td>	
-            				</tr>
-             				<tr>
-            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'laba_bersih_tahun'); ?></th>
-                				<td>
-                					<?php echo $form->textField($model,'laba_bersih_tahun',array('onkeyup'=>'calcValue()')); ?>
-                				</td>	
-            				</tr>
-             				<tr>
-            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'total_aset'); ?></th>
-                				<td>
-                					<?php echo $form->textField($model,'total_aset',array('onkeyup'=>'calcValue()')); ?>
-                				</td>	
-            				</tr>
-             				<tr>
-            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'marjin_laba_bersih'); ?></th>
-                				<td>
-                					<?php echo $form->textField($model,'marjin_laba_bersih',array('readonly'=>'readonly')); ?>
-                				</td>	
-            				</tr>
-             				<tr>
-            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'laba_bersih_aset'); ?></th>
-                				<td>
-                					<?php echo $form->textField($model,'laba_bersih_aset',array('readonly'=>'readonly')); ?>
-                				</td>	
-            				</tr>
-            	 			<tr>
-            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'harga_penawaran_penjualan'); ?></th>
-                				<td>
-                					<?php echo $form->textField($model,'harga_penawaran_penjualan',array('readonly'=>'readonly')); ?>
-                				</td>	
-            				</tr>
-             				<tr>
-            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'harga_penawaran_laba_bersih'); ?></th>
-                				<td>
-                					<?php echo $form->textField($model,'harga_penawaran_laba_bersih',array('readonly'=>'readonly')); ?>
-                				</td>	
-            				</tr>
-             				<tr>
-            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'harga_penawaran_aset'); ?></th>
-                				<td>
-                					<?php echo $form->textField($model,'harga_penawaran_aset',array('readonly'=>'readonly')); ?>
-                				</td>	
-            				</tr>
-             				<tr>
-            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'alasan_jual_bisnis'); ?></th>
-                				<td>
-                					<?php echo $form->dropDownList($model,'dropDownAlasanJual',$alasan_jual_bisnis,array('prompt'=>'Pilih Alasan','class'=>'alasanJualDropDown')); ?>
-                                                        <?php echo $form->checkBox($model,'alasan_jual_lainnya',array('onchange'=>'checkboxAlasanJual()','class'=>'alasanJualCheckBox')) ?><?php echo $form->labelEx($model,'alasan_jual_lainnya',array('style'=>'display:inline; margin-left:3px;')) ?>
-                				</td>	
-            				</tr>
-            				<tr>
-            					<td></td>
-                				<td>
-                					<?php echo $form->textArea($model,'textAreaAlasanJual',array('class'=>'alasanJualTextArea','disabled'=>'disabled')); ?>
-                				</td>
-            				</tr>
-             				<tr>
-            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'deskripsi'); ?></th>
-                				<td>
-                					<?php echo $form->textArea($model,'deskripsi'); ?>
-               	 				</td>	
-            				</tr>
-             				<tr>
-            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'image'); ?></th>
-                			<td>
-                                    <?php 
+								</td>
+							</tR>
+							<tr>
+							<?php echo Chtml::hiddenField('kota_temp', $model->id_kota) ?>
+								<Th class="Text-Align-Left Font-Color-LightBlue" width="4%"><?php echo $form->labelEx($model,'id_kota'); ?></th>
+								<td width="35%"><?php echo $form->dropDownList($model,'id_kota',array(),array('prompt'=>'Pilih Kota')); ?></td>
+							</tr>
+							<tr>
+								<Th class="Text-Align-Left Font-Color-LightBlue" width="4%"><?php echo $form->labelEx($model,'jumlah_karyawan'); ?></th>
+								<td width="35%"><?php echo $form->textField($model,'jumlah_karyawan'); ?></td>
+							</tR>
+							<tr>
+								<th class="Text-Align-Left Font-Color-LightBlue" width="4%"><?php echo $form->labelEx($model,'tahun_didirikan'); ?></th>
+								<td width="35%"><?php echo $form->dropDownList($model,'tahun_didirikan',$tahun,array('prompt'=>'Pilih Tahun')); ?></td>
+							</tr>
+							<Tr>
+								<th class="Text-Align-Left Font-Color-LightBlue" width="4%"><?php echo $form->labelEx($model,'harga_min'); ?></th>
+								<td width="35%"><?php echo $form->textField($model,'harga_min',array('onkeyup'=>'calcValue()')); ?> &nbsp; <?php echo $form->checkBox($model,'tampilkanKontak',array('disabled'=>'disabled', 'class'=>'tampilkanKontak')) ?><?php echo $form->labelEx($model,'tampilkanKontak', array('style'=>'display:inline; margin-left:3px;')) ?></td>
+							</tr>
+							<TR>
+								<th class="Text-Align-Left Font-Color-LightBlue" width="4%"><?php echo $form->labelEx($model,'harga_max'); ?></th>
+								<td width="35%"><?php echo $form->textField($model,'harga_max',array('class'=>'styleText1','onkeyup'=>'calcValue()')); ?></td>
+							</TR>
+							<tr>
+								<Th class="Text-Align-Left Font-Color-LightBlue" width="4%"><?php echo $form->labelEx($model,'penjualan'); ?></th>
+								<td width="35%"><?php echo $form->textField($model,'penjualan',array('onkeyup'=>'calcValue()')); ?></td>
+							</tr>
+							<tr>
+								<th class="Text-Align-Left Font-Color-LightBlue" width="4%"><?php echo $form->labelEx($model,'hpp'); ?></th>
+								<td width="35%"><?php echo $form->textField($model,'hpp'); ?></td>
+							</tr>
+							<tr>
+								<th class="Text-Align-Left Font-Color-LightBlue" width="4%"><?php echo $form->labelEx($model,'laba_bersih_tahun'); ?></th>
+								<td width="35%"><?php echo $form->textField($model,'laba_bersih_tahun',array('onkeyup'=>'calcValue()')); ?></td>
+							</tR>
+							<tr>
+								<th class="Text-Align-Left Font-Color-LightBlue" width="4%"><?php echo $form->labelEx($model,'total_aset'); ?></th>
+								<td width="35%"><?php echo $form->textField($model,'total_aset',array('onkeyup'=>'calcValue()')); ?></td>
+							</tr>
+							<tr>
+								<th class="Text-Align-Left Font-Color-LightBlue" width="4%"><?php echo $form->labelEx($model,'marjin_laba_bersih'); ?></th>
+								<td width="35%"><?php echo $form->textField($model,'marjin_laba_bersih',array('readonly'=>'readonly')); ?></td>
+							</tR>
+							<tr>
+								<th class="Text-Align-Left Font-Color-LightBlue" width="4%"><?php echo $form->labelEx($model,'laba_bersih_aset'); ?></th>
+								<td width="35%"><?php echo $form->textField($model,'laba_bersih_aset',array('readonly'=>'readonly')); ?></td>
+							</tr>
+							<tr>
+								<th class="Text-Align-Left Font-Color-LightBlue" width="4%"><?php echo $form->labelEx($model,'harga_penawaran_penjualan'); ?></th>
+								<td width="35%"><?php echo $form->textField($model,'harga_penawaran_penjualan',array('readonly'=>'readonly')); ?></td>
+							</tr>
+							<tr>
+								<Th class="Text-ALign-Left Font-Color-LightBlue" width="4%"><?php echo $form->labelEx($model,'harga_penawaran_laba_bersih'); ?></th>
+								<td width="35%"><?php echo $form->textField($model,'harga_penawaran_laba_bersih',array('readonly'=>'readonly')); ?></td>
+							</tr>
+							<tr>
+								<Th class="Text-Align-Left Font-Color-LightBlue" width="4%"><?php echo $form->labelEx($model,'harga_penawaran_aset'); ?></th>
+								<td width="35%"><?php echo $form->textField($model,'harga_penawaran_aset',array('readonly'=>'readonly')); ?></td>
+							</tr>
+							<tr>
+								<Th class="Text-Align-Left Font-Color-LightBlue" width="4%"><?php echo $form->labelEx($model,'alasan_jual_bisnis'); ?></th>
+								<td width="35%">
+									<?php echo $form->dropDownList($model,'dropDownAlasanJual',$alasan_jual_bisnis,array('prompt'=>'Pilih Alasan','class'=>'alasanJualDropDown')); ?>
+                                    <?php echo $form->checkBox($model,'alasan_jual_lainnya',array('onchange'=>'checkboxAlasanJual()','class'=>'alasanJualCheckBox')) ?><?php echo $form->labelEx($model,'alasan_jual_lainnya',array('style'=>'display:inline; margin-left:3px;')) ?>
+								</td>
+							</tr>
+							<tr>
+								<th class="Text-Align-Left Font-Color-LightBlue" width="4%"></th>
+								<td width="35%"><?php echo $form->textArea($model,'textAreaAlasanJual',array('class'=>'alasanJualTextArea','disabled'=>'disabled')); ?></td>
+							</tr>
+							<tr>
+								<th class="Text-Align-Left Font-Color-LightBlue" width="4%"><?php echo $form->labelEx($model,'deskripsi'); ?></th>
+								<Td width="35%"><?php echo $form->textArea($model,'deskripsi'); ?></td>
+							</tr>
+							<tr>
+								<th class="Text-Align-Left Font-Color-LightBlue" width="4%"><?php echo $form->labelEx($model,'image'); ?></th>
+								<td width="35%"><?php 
 
 //                                        $this->widget('ext.xupload.XUpload', array(
 //                                        'url' => Yii::app()->createUrl("account/upload"),
@@ -217,18 +174,16 @@
 //                                            'onSuccess' => 'someJsFunction();',
 //                                            'options' => array('autoProcessQueue'=>false),
 //                                        ));
-                                    ?>
-                			</td>	
-           		 		</tr>
-            			<tr>
-            				<td></td>
-                			<td>
-                			</td>
-            			</tr>
-            			<tr>
-            				<th class="Text-Align-Left">Dokumen</th>
-                			<td>
-                                            <?php 
+                                    ?></td>
+							</tr>
+							<tr>
+								<th class="Text-Align-Left Font-Color-LightBlue" width="4%"></th>
+								<td width="35%"></td>
+							</tr>
+							<tr>
+								<Th class="Text-Align-Left Font-Color-LightBlue" width="4%">Dokumen</th>
+								<td width="35%">
+									 <?php 
                                                         //                                 $this->widget('ext.xupload.XUpload', array(
             //                                        'url' => Yii::app()->createUrl("account/uploadDoc"),
             //                                        'model' => $doc_upload,
@@ -250,11 +205,11 @@
             //                                )
             //                            );
             //                            ?>
-                                        </td>
-            			</tr>
-            			<tr>
-            				<th colspan="2">
-                <?php
+								</td>
+							</tr>
+							<tr>
+								<Th class="Text-Align-Left Font-Color-LightBlue" width="4%" colspan="2">
+									<?php
                         echo CHtml::button('Batal', array('submit' => array("bisnisFranchise/index/"), 'class'=>'btn Gradient-Style1'));
 //                        echo CHtml::button('Simpan', array('submit' => array("bisnisFranchise/update/id/$model->id"), 'class'=>'btn Gradient-Style1')); 
 //                        echo CHtml::button('Terima', array('submit' => array("bisnisFranchise/update/id/$model->id/stat/Diterima"), 'class'=>'btn Gradient-Style1')); 
@@ -296,9 +251,9 @@
                                           $("#AjaxLoader").show();
                                      }'
                                     ),array('class'=>'btn Gradient-Style1')); ?>
-               				</th>
-            			</tr>
-        			</table>                        
+								<th>
+							</tr>
+						</table>
                     </div>
                 </div>
             </div>

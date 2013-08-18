@@ -1,26 +1,24 @@
 <!--Start Slideshow---------------------------------------------------------------------------------------------------------->
 <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl ?>/library/Slideshow/css/bjqs.css" />
-<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl ?>/library/Slideshow/js/jquery-1.9.1.min.js"></script>
+<!--<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl ?>/library/Slideshow/js/jquery-1.8.2.min.js"></script>-->
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl ?>/library/Slideshow/js/bjqs-1.3.min.js"></script>
 <script>
     var baseUrl = '<?php echo Yii::app()->request->baseUrl ?>';
 </script>
 <script>
         jQuery(document).ready(function($) {
-          
-          $('#banner-slide').bjqs({
-            animtype      : 'slide',
-            height        : 300,
-            width         : 705,
-            responsive    : true,
-            randomstart   : true
-          });
-          
+			$('#banner-slide').bjqs({
+				animtype      : 'slide',
+				height        : 300,
+				width         : 705,
+				responsive    : true,
+				randomstart   : true,
+			});   
         });
       </script>
 <!--End Slideshow------------------------------------------------------------------------------------------------------------>
 <div class="row-fluid">
-            	<div class="span7">
+        <div class="span7">
                 	<div class="row-fluid Gradient-Style1">
                     	<h4 class="Text-Align-Center">SITUS JUAL BELI BISNIS <font class="Font-Size-Large">TERBESAR</font> DI <font class="Font-Size-Large">INDONESIA</font></h4>
                     </div>
@@ -56,8 +54,7 @@
                     </div>
                     <form class="form-search" action="<?php echo Yii::app()->createUrl('//cariBisnisFranchise/cari/') ?>">
                     <div class="row-fluid">
-                    	<div class="span2"></div>
-                    	<div class="span6">
+                    	<div class="span6 padding-left-small">
                             <?php echo CHtml::hiddenField('jenis', '1') ?>
                             <?php
                                             echo CHtml::dropDownList('provinsi', 'id', CHtml::listData($provinsi, 'id', 'provinsi'), array(
@@ -68,8 +65,7 @@
                         </div>
                     </div>
                     <div class="row-fluid">
-                    	<div class="span2"></div>
-                    	<div class="span6">
+                    	<div class="span6 padding-left-small">
                         	&nbsp;
                         	<?php
                                             echo CHtml::dropDownList('kategori', 'id', CHtml::listData($kategori, 'id', 'industri'), array(
@@ -81,8 +77,8 @@
                         </div>
                     </div>
                     <div class="row-fluid">
-                    	<div class="span2"></div>
-                    	<div class="span6">
+                    	
+                    	<div class="span6 padding-left-small">
                         		<div class="row-fluid">
                                 	<div class="span12"></div>
                                 </div>
@@ -96,12 +92,13 @@
                     </form>
 
                     <div class="row-fluid">
-                    	<div class="span2"></div>
-                    	<div class="span6">
+                    	
+                    	<div class="span6 padding-left-small">
                         	<hr class="Line-Size-Medium" />
                         </div>
                     </div>
-                    <div class="row-fluid Div-Style-Content">
+                    <div class="row-fluid Div-Style-Content padding-left-verySmall">
+						
                     	<div class="span11 Text-Align-Center Solid-White">
                         
 <!--                    		<div class="tabbable">
@@ -211,8 +208,8 @@
                     </div>
                     <form class="form-search" action="<?php echo Yii::app()->createUrl('//cariBisnisFranchise/cari/') ?>">
                     <div class="row-fluid">
-                    	<div class="span2"></div>
-                    	<div class="span6">
+               
+                    	<div class="span6 padding-left-small">
                             <?php echo CHtml::hiddenField('jenis', '2') ?>
                         	 <?php
                                             echo CHtml::dropDownList('provinsi', 'id', CHtml::listData($provinsi, 'id', 'provinsi'), array(
@@ -223,8 +220,7 @@
                         </div>
                     </div>
                     <div class="row-fluid">
-                    	<div class="span2"></div>
-                    	<div class="span6">
+                    	<div class="span6 padding-left-small">
                         		&nbsp;
                         	  	<?php
                                             echo CHtml::dropDownList('kategori', 'id', CHtml::listData($kategori, 'id', 'industri'), array(
@@ -235,8 +231,7 @@
                         </div>
                     </div>
                     <div class="row-fluid">
-                    	<div class="span2"></div>
-                    	<div class="span6">
+                    	<div class="span6 padding-left-small">
                         		<div class="row-fluid">
                                 	<div class="span12"></div>
                                 </div>
@@ -248,12 +243,12 @@
                         </div>
                     </div>
                     <div class="row-fluid">
-                    	<div class="span2"></div>
-                    	<div class="span6">
+                    
+                    	<div class="span6 padding-left-small">
                         	<hr class="Line-Size-Medium" />
                         </div>
                     </div>
-                    <div class="row-fluid Div-Style-Content">
+                    <div class="row-fluid Div-Style-Content padding-left-verySmall">
                     	<div class="span11 Text-Align-Center Solid-White">
 <!--                    		<div class="tabbable">
                         		<ul class="nav nav-tabs" id="myTab">

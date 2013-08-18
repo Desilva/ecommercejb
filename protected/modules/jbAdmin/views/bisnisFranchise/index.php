@@ -23,24 +23,39 @@ a.delete img{
     height: 25px;
     margin-left: 2px;
 }
+
 </style>
-<div class="span10">    	
+<div class="span9">    	
         <div class="row-fluid">
         	<div class="span12">
-            	<h4 class="Font-Color-DarkBlue">Mengatur Bisnis/Franchise</h4>
-            	<form method="post">
+				<div><header style="font-size:30px; font-family:Calibri;">Bisnis / Franchise</header><br style="clear:both"/></div><div style="margin-top:-35px;"></div>
+            	<div class="row-fluid Top-Margin3">
+					<div class="span12">
+						<form method="post">
                 	 <?php echo CHtml::dropDownList('sort',$selectedSortValue,CHtml::listData($sortType,'id','category'),array('class'=>'Input-Size-VerySmall','submit'=> Yii::app()->createUrl("//jbAdmin/bisnisFranchise/index/")));  ?>
             	</form>
+					</div>
+				</div>
+				
             </div>
         </div>
         <div class="row-fluid">
-        	<div class="span11 Top-Margin-Minus1">
-            	     <?php
+        	<div class="span12">
+				<div class="widget-box">
+					<div class="widget-title">
+						<span class="icon">
+							<i class="icon-th"></i>
+						</span>
+						<h5>Static table</h5>
+					</div>
+					<div class="widget-content nopadding">
+								   <?php
                             $this->widget('bootstrap.widgets.TbGridView', array(
                                 'dataProvider' => $model,
-                                'itemsCssClass' => 'table table-striped',
+                                'itemsCssClass' => 'table table-bordered table-striped table-hover',
                                 'summaryText' => '',
                                 'ajaxUpdate' => true,
+								//'htmlOptions' => array('style' => 'width: 720px'),
                                 'columns' => array(
                                     'nama' => array('header' => 'Nama Bisnis/Franchise', 'name' => 'nama'),
                                      array(
@@ -59,7 +74,8 @@ a.delete img{
                                         'class' => 'bootstrap.widgets.TbToggleColumn',
                                         'toggleAction' => 'bisnisfranchise/toggle',
                                         'name' => 'status_rekomendasi',
-                                        'header' => 'Status Rekomendasi'
+                                        'header' => 'Status Rekomendasi',
+									
                                     ),
                                     array(
                                         'class' => 'CButtonColumn',
@@ -69,8 +85,13 @@ a.delete img{
                                         'updateButtonImageUrl' => Yii::app()->request->baseUrl . '/images/asset/write.png',
                                     ),
                                 ),
+								
                             ));
-                     ?>
+                     ?>		
+							</div>
+                            
+            </div>
+            	  
             </div>
         </div>
     </div>

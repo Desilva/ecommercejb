@@ -8,16 +8,16 @@
                                                 ));
             
 ?>
-<div class="span10" style="padding-left: 30px">    	
+<div class="span9" style="padding-left: 30px">    	
         <div class="row-fluid">
         	<div class="span12">
-            	<h4>Setting Web JualanBisnis.com</h4>
+				<div><header style="font-size:30px; font-family:Calibri;">Setting Web JualanBisnis.com</header><br style="clear:both"/></div><div style="margin-top:-35px;"></div>
             </div>
             <?php echo $form->errorSummary(array($slideshow1,$slideshow2,$slideshow3,$slideshow4,$slideshow5,$settings)); ?>
         </div>
         
         <div class="row-fluid">
-        	<div class="span11">
+        	<div class="span12">
         		<fieldset>
                 	<legend>Halaman Home</legend>
                     <div class="row-fluid">
@@ -39,7 +39,7 @@
                                                                                 <td>".$form->labelEx(${'slideshow'.$i},'deskripsi')."</td>
                                                                                 <td>".$form->textArea(${'slideshow'.$i},"[$i]deskripsi")."</td>
                                                                                 <script type=\"text/javascript\">
-                                                                                    CKEDITOR.config.width = 715;
+                                                                                    CKEDITOR.config.width = 755;
                                                                                     CKEDITOR.replace( 'Slideshow_".$i."_deskripsi' );
                                                                                 </script>
                                                                         </tr>

@@ -21,10 +21,14 @@
       ?>
 
 <div class="row-fluid">
-	<div class="span2 padding-top-small">
-    	<?php if(!empty($this->clips['sidebar'])) echo
+	<!--<div class="span2 padding-top-small">
+    	<?php //if(!empty($this->clips['sidebar'])) echo
+                //            $this->clips['sidebar']?>
+    </div>-->
+		<div class="span2 styleBackground-SolidColor-Grey padding-top-small Top-Margin2" style="margin-left:-30px;">
+		<?php if(!empty($this->clips['sidebar'])) echo
                             $this->clips['sidebar']?>
-    </div>
+	</div>
     <div class="span9">
 		<div><header style="font-size:30px; font-family:Calibri;">Form Data Diri</header><br style="clear:both"/></div><div style="margin-top:-35px;"></div>
         <div class="row-fluid Top-Margin3">

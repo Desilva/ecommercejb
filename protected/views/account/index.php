@@ -106,10 +106,14 @@ a.delete img{
         </script>
 
 <div class="row-fluid">
-	<div class="span2 padding-top-small">
-    	 <?php if(!empty($this->clips['sidebar'])) echo
+	<!--<div class="span2 padding-top-small">
+    	 <?php //if(!empty($this->clips['sidebar'])) echo
+                 //           $this->clips['sidebar']?>
+    </div>-->
+	<div class="span2 styleBackground-SolidColor-Grey padding-top-small Top-Margin2" style="margin-left:-30px;">
+		<?php if(!empty($this->clips['sidebar'])) echo
                             $this->clips['sidebar']?>
-    </div>
+	</div>
     <div class="span9">
     	<div><header style="font-size:30px; font-family:Calibri;">Hubungi JualanBisnis.com</header><br style="clear:both"/></div><div style="margin-top:-35px;"></div>
         <div class="row-fluid">
@@ -117,28 +121,38 @@ a.delete img{
             		
                 <form method="get">
                         <span>Kategori: </span><?php echo CHtml::dropDownList('kategori',$selectedSortValue,CHtml::listData($sortType,'id','category'),array('class'=>'Input-Size-VerySmall','submit'=> Yii::app()->createUrl("//account/index/")));  ?>
-                </form>   	
+                
+				</form>   	
               		
                 	<?php echo CHtml::button('Tambah Bisnis', array('submit' => array('account/create'), 'class'=>'btn Gradient-Style1')); ?>
                 </div>
         </div>
         <div class="row-fluid">
         	<div class="span12">
-                            <?php
-            $this->widget('zii.widgets.grid.CGridView', array(
-                'id' => 'businessGrid',
-                'dataProvider' => $model,
-                'itemsCssClass' => 'table table-striped',
-                'summaryText' => '',
-                'ajaxUpdate' => 'emailGrid',
-                'columns' => array(
-                    'nama' => array('header' => 'Nama Bisnis/Franchise', 'name' => 'nama'),
-                    array(
-                        'name' => 'deskripsi',
-                        'type' => 'raw', //because of using html-code <br/>
-                        //call the controller method gridProduct for each row
-                        'value' => array($this, 'gridDeskripsi'),
-                    ),
+				<div class="widget-box">
+					<div class="widget-title">
+						<span class="icon">
+							<i class="icon-th"></i>
+						</span>
+						<h5>Static table</h5>
+					</div>
+					<div class="widget-content nopadding">
+								<?php
+						$this->widget('zii.widgets.grid.CGridView', array(
+						'id' => 'businessGrid',
+						'dataProvider' => $model,
+						'itemsCssClass' => 'table table-bordered table-striped table-hover',
+						'summaryText' => '',
+						
+						'ajaxUpdate' => 'emailGrid',
+						'columns' => array(
+						'nama' => array('header' => 'Nama Bisnis/Franchise', 'name' => 'nama'),
+						array(
+							'name' => 'deskripsi',
+							'type' => 'raw', //because of using html-code <br/>
+							//call the controller method gridProduct for each row
+							'value' => array($this, 'gridDeskripsi'),
+						),
                     'jumlah_click',
                     array(
                         'name' => 'status_approval',
@@ -165,7 +179,9 @@ a.delete img{
                     ),
                 ),
             ));
-        ?>
+        ?>				
+							</div>
+                            
             </div>
         </div>
         <div class="row-fluid" id="emailList">

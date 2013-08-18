@@ -1,10 +1,9 @@
 <div class="row-fluid">
-	<div class="span2">
-    	 <?php if(!empty($this->clips['sidebar'])) echo
-                            $this->clips['sidebar']?>
-    </div>
-    <div class="span10">
-    	<h4 class="Font-Color-DarkBlue">Update <?php echo $model->nama ?></h4>
+	
+    <div class="span7" style="padding-left:35px;">
+    	<div><header style="font-size:30px; font-family:Calibri;">Tambah Bisnis</header><br style="clear:both"/></div><div style="margin-top:-35px;"></div>
+		<div class="row-fluid Top-Margin3">
+			<div class="span12">
             <?php
                 if($model->idCategory->category == "Bisnis")
                 {
@@ -20,6 +19,8 @@
 
                 }
             ?>
+			</div>
+		</div>
     </div>
 </div>
 

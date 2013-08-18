@@ -7,6 +7,14 @@
 <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl ?>/library/Bootstrap/assets/css/bootstrap-responsive.css" />
 <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl ?>/css/style.css" />
 
+<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl ?>/library/Bootstrap/assets/css/jquery-ui.css" />
+<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl ?>/library/Bootstrap/assets/css/uniform.css" />
+<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl ?>/library/Bootstrap/assets/css/select2.css" />
+
+		
+<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl ?>/library/Bootstrap/assets/css/unicorn.main.css" />
+<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl ?>/library/Bootstrap/assets/css/unicorn.grey.css" class="skin-color" />
+
 <script type="text/javascript">
 
     $(document).ready(function(){
@@ -23,7 +31,7 @@
 	<div id="primary" class="container">
     	<div class="row-fluid header">
         	<div class="span2">
-            	<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/logo.png" width="200" height="200" />
+            	<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/logo.png" width="200" height="200" style="margin-top:20px; margin-left:10px" />
             </div>
             <div class="span10" id="rightHeader">
 				<div class="row-fluid">
@@ -103,7 +111,7 @@
         <!--Content-->
        	<div class="container content padding-left-small">
         <div class="row-fluid">
-	<div class="span2 padding-top-small">
+	<div class="span2 styleBackground-SolidColor-Grey padding-top-small Top-Margin2" style="margin-left:-30px;">
     	<table class="table">
         	<tr>
             	<td><a href="<?php echo Yii::app()->createUrl('//jbAdmin/kategori/') ?>">Kategori Bisnis</a></td>

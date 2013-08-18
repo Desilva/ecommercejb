@@ -1,4 +1,4 @@
-<div class="span12" id="loginDiv">
+<div class="span12" id="loginDiv" style="margin-top:20px">
     <?php
     $form = $this->beginWidget('CActiveForm', array(
         'id' => 'login-form',

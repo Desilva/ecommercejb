@@ -3,11 +3,15 @@
 <script src="<?php echo Yii::app()->request->baseUrl ?>/js/kendo.web.min.js"></script>
 
 <div class="row-fluid">
-	<div class="span2">
-    	 <?php if(!empty($this->clips['sidebar'])) echo
+	<!--<div class="span2 padding-top-small">
+    	 <?php //if(!empty($this->clips['sidebar'])) echo
+                 //           $this->clips['sidebar']?>
+    </div>-->
+		<div class="span3 styleBackground-SolidColor-Grey padding-top-small Top-Margin2" style="margin-left:-30px;">
+		<?php if(!empty($this->clips['sidebar'])) echo
                             $this->clips['sidebar']?>
-    </div>
-    <div class="span10">
+	</div>
+    <div class="span7">
 		<div><header style="font-size:30px; font-family:Calibri;">Tambah Bisnis</header><br style="clear:both"/></div><div style="margin-top:-35px;"></div>
             <?php
                 if($model->idCategory->category == "Bisnis")

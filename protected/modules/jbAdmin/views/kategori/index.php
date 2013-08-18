@@ -97,19 +97,31 @@ a.delete img{
 <div class="span9">    	
         <div class="row-fluid">
         	<div class="span12">
-            	<h4 class="Font-Color-DarkBlue">Mengatur Kategori</h4>
-            	<form>
-                    <?php echo CHtml::button('Tambah Kategori', array('submit' => array('kategori/create'), 'class'=>'btn Gradient-Style1')); ?>
-            	</form>
+            	<div><header style="font-size:30px; font-family:Calibri;">Mengatur Kategori</header><br style="clear:both"/></div><div style="margin-top:-35px;"></div>
+            	<div class="row-fluid Top-Margin3">
+					<div class="span12 ">
+						<form>
+							<?php echo CHtml::button('Tambah Kategori', array('submit' => array('kategori/create'), 'class'=>'btn Gradient-Style1')); ?>
+						</form>
+					</div>
+				</div>
             </div>
         </div>
         <div class="row-fluid ">
-        	<div class="span12 Top-Margin-Minus1">
-                        <?php
+        	<div class="span12">
+				<div class="widget-box">
+					<div class="widget-title">
+						<span class="icon">
+							<i class="icon-th"></i>
+						</span>
+						<h5>Static table</h5>
+					</div>
+					<div class="widget-content nopadding">
+								<?php
                           $this->widget('zii.widgets.grid.CGridView', array(
                                     'id'=>'industriGrid',
                                     'dataProvider' => $model,
-                                    'itemsCssClass' => 'table table-striped',
+                                    'itemsCssClass' => 'table table-bordered table-striped table-hover',
                                     'summaryText' => '',
                                     'ajaxUpdate'=>'subIndustriGrid',
                                     'columns' => array(
@@ -137,18 +149,30 @@ a.delete img{
                                     ),
                                 ));
 
-                        ?>
+                        ?>			
+							</div>
+                            
+            </div>
+                        
             </div>
         </div>
         <div class="row-fluid">
-        	<div class="span12 Top-Margin-Minus1">
+        	<div class="span12 ">
             	<div class="row-fluid">
                 	<div class="span12" id="subIndustriList">
-                                <?php
+						<div class="widget-box">
+					<div class="widget-title">
+						<span class="icon">
+							<i class="icon-th"></i>
+						</span>
+						<h5>Static table</h5>
+					</div>
+					<div class="widget-content nopadding">
+							<?php
                                   $this->widget('zii.widgets.grid.CGridView', array(
                                             'id'=>'subIndustriGrid',
                                             'dataProvider' => $subkategori,
-                                            'itemsCssClass' => 'table table-striped',
+                                            'itemsCssClass' => 'table table-bordered table-striped table-hover',
                                             'summaryText' => '',
                                             'ajaxUpdate'=>'subIndustriGrid',
                                             'columns' => array(
@@ -165,7 +189,11 @@ a.delete img{
                                             ),
                                         ));
 
-                                ?>
+                                ?>		
+							</div>
+                            
+            </div>
+                                
                     </div>
                     </div>
                </div>             	

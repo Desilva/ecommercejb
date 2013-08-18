@@ -20,7 +20,7 @@
             'htmlOptions' => array('enctype' => 'multipart/form-data'),
     )); ?>
  <p><?php echo $form->errorSummary($model); ?></p>
- <span class="span3" style="float:right; display:inline">
+ <span class="span2" style="float:right; display:inline">
         <?php
           if(strtolower($model->status_approval) == 'terjual' || strtolower($model->status_approval)== 'tidak aktif')
           {
@@ -39,6 +39,7 @@
                             <?php echo $form->hiddenField($model,'id_user',array('value'=>Yii::app()->user->id)) ?>
                             <?php echo $form->hiddenField($model,'kepemilikan',array('value'=>'0')) ?>
                     	<table>
+						
                                         <tr>
             					<th width="20%" class="Text-Align-Left"><?php echo $form->labelEx($model,'id_category'); ?></th>
                 				<td>

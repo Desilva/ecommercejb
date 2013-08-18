@@ -3,7 +3,7 @@
 /* @var $model Industri */
 /* @var $form CActiveForm */
 ?>
-<div class="span10" style="padding-left:35px;">
+<div class="span7" style="padding-left:35px;">
     <div class="row-fluid">
             <?php
             $form = $this->beginWidget('CActiveForm', array(
