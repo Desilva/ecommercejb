@@ -191,8 +191,11 @@
                                         }
                                         $this->widget('bootstrap.widgets.TbTabs', array(
                                             'type'=>'tabs', // 'tabs' or 'pills'
+											 'htmlOptions' => array('class' => 'Gadget-Tab'),
                                             'tabs'=>array(
-                                                    array('label'=>'Terbaru', 'content'=>"$contentBusinessTerbaru", 'active'=>true),
+                                                    array('label'=>'Terbaru', 'content'=>"$contentBusinessTerbaru", 'active'=>true,
+														'class'=>'Gradient-Style3'
+													),
                                                     array('label'=>'Rekomendasi', 'content'=>"$contentBusinessRekomendasi"),
                                             ),
                                     )); 
@@ -338,6 +341,7 @@
                                         }
                                         $this->widget('bootstrap.widgets.TbTabs', array(
                                             'type'=>'tabs', // 'tabs' or 'pills'
+											'htmlOptions'=>array('class'=>'Gadget-Tab'),
                                             'tabs'=>array(
                                                     array('label'=>'Terbaru', 'content'=>"$contentFranchiseTerbaru", 'active'=>true),
                                                     array('label'=>'Rekomendasi', 'content'=>"$contentFranchiseRekomendasi"),
