@@ -330,6 +330,7 @@ Stack trace:
 REQUEST_URI=/yii/E-COM/index.php/account/create
 HTTP_REFERER=http://localhost/yii/E-COM/index.php/account/index
 ---
+<<<<<<< HEAD
 2013/08/17 11:36:01 [error] [php] include(.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (C:\xampp\htdocs\yii\E-com\framework\YiiBase.php:421)
 Stack trace:
 #0 C:\xampp\htdocs\yii\E-com\framework\YiiBase.php(196): import()
@@ -694,4 +695,514 @@ Stack trace:
 #27 {main}
 REQUEST_URI=/yii/E-COM/index.php/account/create
 HTTP_REFERER=http://localhost/yii/E-COM/index.php/account/index
+---
+=======
+2013/08/16 17:51:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.min.map".' in D:\xampp\htdocs\yii2\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\yii2\framework\web\CWebApplication.php(141): CWebApplication->runController('jquery.min.map')
+#1 D:\xampp\htdocs\yii2\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\ecommercejb.git\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommercejb.git/index.php/jquery.min.map
+---
+2013/08/16 17:52:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.min.map".' in D:\xampp\htdocs\yii2\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\yii2\framework\web\CWebApplication.php(141): CWebApplication->runController('jquery.min.map')
+#1 D:\xampp\htdocs\yii2\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\ecommercejb.git\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommercejb.git/index.php/jquery.min.map
+---
+2013/08/16 17:55:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "jquery.min.map".' in D:\xampp\htdocs\yii2\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\yii2\framework\web\CWebApplication.php(141): CWebApplication->runController('jquery.min.map')
+#1 D:\xampp\htdocs\yii2\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\ecommercejb.git\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommercejb.git/index.php/jquery.min.map
+---
+2013/08/17 14:56:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "bisnisFranchise/generateKota".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('bisnisFranchise...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/bisnisFranchise/generateKota
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/jbAdmin/bisnisFranchise/update/id/52
+---
+2013/08/17 14:56:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "bisnisFranchise/generateSubIndustri".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('bisnisFranchise...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/bisnisFranchise/generateSubIndustri
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/jbAdmin/bisnisFranchise/update/id/52
+---
+2013/08/17 14:56:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "bisnisFranchise/generateSubIndustri".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('bisnisFranchise...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/bisnisFranchise/generateSubIndustri
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/jbAdmin/bisnisFranchise/update/id/52
+---
+2013/08/17 14:56:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "bisnisFranchise/generateKota".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('bisnisFranchise...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/bisnisFranchise/generateKota
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/jbAdmin/bisnisFranchise/update/id/52
+---
+2013/08/17 14:57:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "bisnisFranchise/generateKota".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('bisnisFranchise...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/bisnisFranchise/generateKota
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/jbAdmin/bisnisFranchise/update/id/52
+---
+2013/08/17 14:57:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "bisnisFranchise/generateSubIndustri".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('bisnisFranchise...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/bisnisFranchise/generateSubIndustri
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/jbAdmin/bisnisFranchise/update/id/52
+---
+2013/08/17 14:57:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "bisnisFranchise/generateKota".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('bisnisFranchise...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/bisnisFranchise/generateKota
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/jbAdmin/bisnisFranchise/update/id/52
+---
+2013/08/17 14:57:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "bisnisFranchise/generateSubIndustri".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('bisnisFranchise...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/bisnisFranchise/generateSubIndustri
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/jbAdmin/bisnisFranchise/update/id/52
+---
+2013/08/17 14:59:29 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (271)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/08/17 14:59:29 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (271)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/08/17 14:59:32 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (356)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/08/17 14:59:32 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (356)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/08/17 15:12:44 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (273)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/08/17 15:12:44 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (273)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/08/17 15:12:46 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (358)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/08/17 15:12:46 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (358)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/08/17 15:12:46 [warning] [application] C:\xampp\htdocs\ecommercejb\uploads\tmp/3/olecko-2006.1155510000.small_white_tiger (1).jpg is not a file
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (427)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/08/17 15:12:46 [warning] [application] C:\xampp\htdocs\ecommercejb\uploads\tmp/3/thumbs/olecko-2006.1155510000.small_white_tiger (1).jpg is not a file
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (454)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/08/17 15:15:25 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (275)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/08/17 15:15:25 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (275)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/08/17 15:15:28 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (360)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/08/17 15:15:28 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (360)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/08/17 15:18:28 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (275)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/08/17 15:18:28 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (275)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/08/17 15:18:30 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (360)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/08/17 15:18:30 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (360)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/08/17 15:18:30 [warning] [application] .uploads/images/3/1_130817031528_olecko-2006.1155510000.small_white_tiger (1).jpg is not a file
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (456)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+>>>>>>> 1e068be16e1ae39194a986defb71cd3af1917e53
+2013/08/18 16:39:02 [error] [php] date() [<a href='function.date'>function.date</a>]: It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected 'Asia/Krasnoyarsk' for '7.0/no DST' instead (C:\xampp\htdocs\yii\E-com\protected\controllers\AccountController.php:441)
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilterChain.php(133): AccountController->runAction()
+#2 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 C:\xampp\htdocs\yii\E-com\framework\web\filters\CInlineFilter.php(58): AccountController->filterAccessControl()
+#5 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(265): AccountController->runActionWithFilters()
+#8 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(282): AccountController->run()
+#9 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\yii\E-com\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/E-COM/index.php/account/create
+in C:\xampp\htdocs\yii\E-com\protected\controllers\AccountController.php (441)
+in C:\xampp\htdocs\yii\E-com\index.php (13)
+2013/08/18 16:40:44 [error] [php] date() [<a href='function.date'>function.date</a>]: It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected 'Asia/Krasnoyarsk' for '7.0/no DST' instead (C:\xampp\htdocs\yii\E-com\protected\controllers\AccountController.php:441)
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilterChain.php(133): AccountController->runAction()
+#2 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 C:\xampp\htdocs\yii\E-com\framework\web\filters\CInlineFilter.php(58): AccountController->filterAccessControl()
+#5 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(265): AccountController->runActionWithFilters()
+#8 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(282): AccountController->run()
+#9 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\yii\E-com\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/E-COM/index.php/account/create
+in C:\xampp\htdocs\yii\E-com\protected\controllers\AccountController.php (441)
+in C:\xampp\htdocs\yii\E-com\index.php (13)
+2013/08/18 16:40:45 [error] [php] date() [<a href='function.date'>function.date</a>]: It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected 'Asia/Krasnoyarsk' for '7.0/no DST' instead (C:\xampp\htdocs\yii\E-com\protected\controllers\AccountController.php:441)
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilterChain.php(133): AccountController->runAction()
+#2 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 C:\xampp\htdocs\yii\E-com\framework\web\filters\CInlineFilter.php(58): AccountController->filterAccessControl()
+#5 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(265): AccountController->runActionWithFilters()
+#8 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(282): AccountController->run()
+#9 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\yii\E-com\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/E-COM/index.php/account/create
+in C:\xampp\htdocs\yii\E-com\protected\controllers\AccountController.php (441)
+in C:\xampp\htdocs\yii\E-com\index.php (13)
+2013/08/18 16:40:46 [error] [php] date() [<a href='function.date'>function.date</a>]: It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected 'Asia/Krasnoyarsk' for '7.0/no DST' instead (C:\xampp\htdocs\yii\E-com\protected\controllers\AccountController.php:441)
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilterChain.php(133): AccountController->runAction()
+#2 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 C:\xampp\htdocs\yii\E-com\framework\web\filters\CInlineFilter.php(58): AccountController->filterAccessControl()
+#5 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(265): AccountController->runActionWithFilters()
+#8 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(282): AccountController->run()
+#9 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\yii\E-com\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/E-COM/index.php/account/create
+in C:\xampp\htdocs\yii\E-com\protected\controllers\AccountController.php (441)
+in C:\xampp\htdocs\yii\E-com\index.php (13)
+2013/08/18 16:40:46 [error] [php] date() [<a href='function.date'>function.date</a>]: It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected 'Asia/Krasnoyarsk' for '7.0/no DST' instead (C:\xampp\htdocs\yii\E-com\protected\controllers\AccountController.php:441)
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilterChain.php(133): AccountController->runAction()
+#2 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 C:\xampp\htdocs\yii\E-com\framework\web\filters\CInlineFilter.php(58): AccountController->filterAccessControl()
+#5 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(265): AccountController->runActionWithFilters()
+#8 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(282): AccountController->run()
+#9 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\yii\E-com\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/E-COM/index.php/account/create
+in C:\xampp\htdocs\yii\E-com\protected\controllers\AccountController.php (441)
+in C:\xampp\htdocs\yii\E-com\index.php (13)
+2013/08/18 16:40:46 [error] [php] date() [<a href='function.date'>function.date</a>]: It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected 'Asia/Krasnoyarsk' for '7.0/no DST' instead (C:\xampp\htdocs\yii\E-com\protected\controllers\AccountController.php:441)
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilterChain.php(133): AccountController->runAction()
+#2 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 C:\xampp\htdocs\yii\E-com\framework\web\filters\CInlineFilter.php(58): AccountController->filterAccessControl()
+#5 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(265): AccountController->runActionWithFilters()
+#8 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(282): AccountController->run()
+#9 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\yii\E-com\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/E-COM/index.php/account/create
+in C:\xampp\htdocs\yii\E-com\protected\controllers\AccountController.php (441)
+in C:\xampp\htdocs\yii\E-com\index.php (13)
+2013/08/18 16:40:47 [error] [php] date() [<a href='function.date'>function.date</a>]: It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected 'Asia/Krasnoyarsk' for '7.0/no DST' instead (C:\xampp\htdocs\yii\E-com\protected\controllers\AccountController.php:441)
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilterChain.php(133): AccountController->runAction()
+#2 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 C:\xampp\htdocs\yii\E-com\framework\web\filters\CInlineFilter.php(58): AccountController->filterAccessControl()
+#5 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(265): AccountController->runActionWithFilters()
+#8 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(282): AccountController->run()
+#9 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\yii\E-com\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/E-COM/index.php/account/create
+in C:\xampp\htdocs\yii\E-com\protected\controllers\AccountController.php (441)
+in C:\xampp\htdocs\yii\E-com\index.php (13)
+2013/08/18 16:41:25 [error] [php] date() [<a href='function.date'>function.date</a>]: It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected 'Asia/Krasnoyarsk' for '7.0/no DST' instead (C:\xampp\htdocs\yii\E-com\protected\controllers\AccountController.php:441)
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilterChain.php(133): AccountController->runAction()
+#2 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 C:\xampp\htdocs\yii\E-com\framework\web\filters\CInlineFilter.php(58): AccountController->filterAccessControl()
+#5 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(265): AccountController->runActionWithFilters()
+#8 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(282): AccountController->run()
+#9 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\yii\E-com\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/E-COM/index.php/account/create
+in C:\xampp\htdocs\yii\E-com\protected\controllers\AccountController.php (441)
+in C:\xampp\htdocs\yii\E-com\index.php (13)
+2013/08/18 16:41:26 [error] [php] date() [<a href='function.date'>function.date</a>]: It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected 'Asia/Krasnoyarsk' for '7.0/no DST' instead (C:\xampp\htdocs\yii\E-com\protected\controllers\AccountController.php:441)
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilterChain.php(133): AccountController->runAction()
+#2 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 C:\xampp\htdocs\yii\E-com\framework\web\filters\CInlineFilter.php(58): AccountController->filterAccessControl()
+#5 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(265): AccountController->runActionWithFilters()
+#8 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(282): AccountController->run()
+#9 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\yii\E-com\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/E-COM/index.php/account/create
+in C:\xampp\htdocs\yii\E-com\protected\controllers\AccountController.php (441)
+in C:\xampp\htdocs\yii\E-com\index.php (13)
+2013/08/18 16:41:26 [error] [php] date() [<a href='function.date'>function.date</a>]: It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected 'Asia/Krasnoyarsk' for '7.0/no DST' instead (C:\xampp\htdocs\yii\E-com\protected\controllers\AccountController.php:441)
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilterChain.php(133): AccountController->runAction()
+#2 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 C:\xampp\htdocs\yii\E-com\framework\web\filters\CInlineFilter.php(58): AccountController->filterAccessControl()
+#5 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(265): AccountController->runActionWithFilters()
+#8 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(282): AccountController->run()
+#9 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\yii\E-com\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/E-COM/index.php/account/create
+in C:\xampp\htdocs\yii\E-com\protected\controllers\AccountController.php (441)
+in C:\xampp\htdocs\yii\E-com\index.php (13)
+2013/08/18 16:41:26 [error] [php] date() [<a href='function.date'>function.date</a>]: It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected 'Asia/Krasnoyarsk' for '7.0/no DST' instead (C:\xampp\htdocs\yii\E-com\protected\controllers\AccountController.php:441)
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilterChain.php(133): AccountController->runAction()
+#2 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 C:\xampp\htdocs\yii\E-com\framework\web\filters\CInlineFilter.php(58): AccountController->filterAccessControl()
+#5 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(265): AccountController->runActionWithFilters()
+#8 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(282): AccountController->run()
+#9 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\yii\E-com\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/E-COM/index.php/account/create
+in C:\xampp\htdocs\yii\E-com\protected\controllers\AccountController.php (441)
+in C:\xampp\htdocs\yii\E-com\index.php (13)
+2013/08/18 16:41:27 [error] [php] date() [<a href='function.date'>function.date</a>]: It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected 'Asia/Krasnoyarsk' for '7.0/no DST' instead (C:\xampp\htdocs\yii\E-com\protected\controllers\AccountController.php:441)
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilterChain.php(133): AccountController->runAction()
+#2 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 C:\xampp\htdocs\yii\E-com\framework\web\filters\CInlineFilter.php(58): AccountController->filterAccessControl()
+#5 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(265): AccountController->runActionWithFilters()
+#8 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(282): AccountController->run()
+#9 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\yii\E-com\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/E-COM/index.php/account/create
+in C:\xampp\htdocs\yii\E-com\protected\controllers\AccountController.php (441)
+in C:\xampp\htdocs\yii\E-com\index.php (13)
+2013/08/18 16:41:27 [error] [php] date() [<a href='function.date'>function.date</a>]: It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected 'Asia/Krasnoyarsk' for '7.0/no DST' instead (C:\xampp\htdocs\yii\E-com\protected\controllers\AccountController.php:441)
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilterChain.php(133): AccountController->runAction()
+#2 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 C:\xampp\htdocs\yii\E-com\framework\web\filters\CInlineFilter.php(58): AccountController->filterAccessControl()
+#5 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(265): AccountController->runActionWithFilters()
+#8 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(282): AccountController->run()
+#9 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\yii\E-com\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/E-COM/index.php/account/create
+in C:\xampp\htdocs\yii\E-com\protected\controllers\AccountController.php (441)
+in C:\xampp\htdocs\yii\E-com\index.php (13)
+2013/08/18 16:42:11 [error] [php] date() [<a href='function.date'>function.date</a>]: It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected 'Asia/Krasnoyarsk' for '7.0/no DST' instead (C:\xampp\htdocs\yii\E-com\protected\controllers\AccountController.php:441)
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilterChain.php(133): AccountController->runAction()
+#2 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 C:\xampp\htdocs\yii\E-com\framework\web\filters\CInlineFilter.php(58): AccountController->filterAccessControl()
+#5 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(265): AccountController->runActionWithFilters()
+#8 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(282): AccountController->run()
+#9 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\yii\E-com\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/E-COM/index.php/account/create
+in C:\xampp\htdocs\yii\E-com\protected\controllers\AccountController.php (441)
+in C:\xampp\htdocs\yii\E-com\index.php (13)
+2013/08/18 16:42:12 [error] [php] date() [<a href='function.date'>function.date</a>]: It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected 'Asia/Krasnoyarsk' for '7.0/no DST' instead (C:\xampp\htdocs\yii\E-com\protected\controllers\AccountController.php:441)
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilterChain.php(133): AccountController->runAction()
+#2 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 C:\xampp\htdocs\yii\E-com\framework\web\filters\CInlineFilter.php(58): AccountController->filterAccessControl()
+#5 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(265): AccountController->runActionWithFilters()
+#8 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(282): AccountController->run()
+#9 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\yii\E-com\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/E-COM/index.php/account/create
+in C:\xampp\htdocs\yii\E-com\protected\controllers\AccountController.php (441)
+in C:\xampp\htdocs\yii\E-com\index.php (13)
+2013/08/18 16:42:12 [error] [php] date() [<a href='function.date'>function.date</a>]: It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected 'Asia/Krasnoyarsk' for '7.0/no DST' instead (C:\xampp\htdocs\yii\E-com\protected\controllers\AccountController.php:441)
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilterChain.php(133): AccountController->runAction()
+#2 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 C:\xampp\htdocs\yii\E-com\framework\web\filters\CInlineFilter.php(58): AccountController->filterAccessControl()
+#5 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(265): AccountController->runActionWithFilters()
+#8 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(282): AccountController->run()
+#9 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\yii\E-com\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/E-COM/index.php/account/create
+in C:\xampp\htdocs\yii\E-com\protected\controllers\AccountController.php (441)
+in C:\xampp\htdocs\yii\E-com\index.php (13)
+2013/08/18 16:42:12 [error] [php] date() [<a href='function.date'>function.date</a>]: It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected 'Asia/Krasnoyarsk' for '7.0/no DST' instead (C:\xampp\htdocs\yii\E-com\protected\controllers\AccountController.php:441)
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilterChain.php(133): AccountController->runAction()
+#2 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 C:\xampp\htdocs\yii\E-com\framework\web\filters\CInlineFilter.php(58): AccountController->filterAccessControl()
+#5 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(265): AccountController->runActionWithFilters()
+#8 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(282): AccountController->run()
+#9 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\yii\E-com\index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/E-COM/index.php/account/create
+in C:\xampp\htdocs\yii\E-com\protected\controllers\AccountController.php (441)
+in C:\xampp\htdocs\yii\E-com\index.php (13)
+2013/08/18 22:19:27 [error] [exception.CException] exception 'CException' with message 'Property "Business.email" is not defined.' in C:\xampp\htdocs\yii\E-com\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\db\ar\CActiveRecord.php(143): CComponent->__get('email')
+#1 C:\xampp\htdocs\yii\E-com\framework\web\helpers\CHtml.php(2255): CActiveRecord->__get('email')
+#2 C:\xampp\htdocs\yii\E-com\framework\web\helpers\CHtml.php(1980): CHtml::resolveValue(Object(Business), 'email')
+#3 C:\xampp\htdocs\yii\E-com\framework\web\helpers\CHtml.php(1257): CHtml::activeInputField('text', Object(Business), 'email', Array)
+#4 C:\xampp\htdocs\yii\E-com\framework\web\widgets\CActiveForm.php(657): CHtml::activeTextField(Object(Business), 'email', Array)
+#5 C:\xampp\htdocs\yii\E-com\protected\views\account\_form.php(42): CActiveForm->textField(Object(Business), 'email')
+#6 C:\xampp\htdocs\yii\E-com\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#7 C:\xampp\htdocs\yii\E-com\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#8 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#9 C:\xampp\htdocs\yii\E-com\protected\views\account\create.php(20): CController->renderPartial('_form', Array)
+#10 C:\xampp\htdocs\yii\E-com\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#11 C:\xampp\htdocs\yii\E-com\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#13 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#14 C:\xampp\htdocs\yii\E-com\protected\controllers\AccountController.php(661): CController->render('create', Array)
+#15 C:\xampp\htdocs\yii\E-com\framework\web\actions\CInlineAction.php(49): AccountController->actionCreate()
+#16 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\yii\E-com\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(282): CController->run('create')
+#25 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('account/create')
+#26 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#27 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/yii/E-COM/index.php/account/create
+---
+2013/08/18 22:31:09 [error] [exception.CException] exception 'CException' with message 'Property "Business.email" is not defined.' in C:\xampp\htdocs\yii\E-com\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\db\ar\CActiveRecord.php(143): CComponent->__get('email')
+#1 C:\xampp\htdocs\yii\E-com\framework\web\helpers\CHtml.php(2255): CActiveRecord->__get('email')
+#2 C:\xampp\htdocs\yii\E-com\framework\web\helpers\CHtml.php(1980): CHtml::resolveValue(Object(Business), 'email')
+#3 C:\xampp\htdocs\yii\E-com\framework\web\helpers\CHtml.php(1257): CHtml::activeInputField('text', Object(Business), 'email', Array)
+#4 C:\xampp\htdocs\yii\E-com\framework\web\widgets\CActiveForm.php(657): CHtml::activeTextField(Object(Business), 'email', Array)
+#5 C:\xampp\htdocs\yii\E-com\protected\views\account\_form.php(41): CActiveForm->textField(Object(Business), 'email')
+#6 C:\xampp\htdocs\yii\E-com\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#7 C:\xampp\htdocs\yii\E-com\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#8 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#9 C:\xampp\htdocs\yii\E-com\protected\views\account\create.php(20): CController->renderPartial('_form', Array)
+#10 C:\xampp\htdocs\yii\E-com\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#11 C:\xampp\htdocs\yii\E-com\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#13 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#14 C:\xampp\htdocs\yii\E-com\protected\controllers\AccountController.php(661): CController->render('create', Array)
+#15 C:\xampp\htdocs\yii\E-com\framework\web\actions\CInlineAction.php(49): AccountController->actionCreate()
+#16 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\yii\E-com\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(282): CController->run('create')
+#25 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('account/create')
+#26 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#27 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/yii/E-COM/index.php/account/create
 ---

@@ -1,3 +1,7 @@
+<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl ?>/js/kendo.common.min.css" />
+<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl ?>/js/kendo.default.min.css" />
+<script src="<?php echo Yii::app()->request->baseUrl ?>/js/kendo.web.min.js"></script>
+
 <div class="row-fluid">
 	
     <div class="span7" style="padding-left:35px;">
@@ -7,11 +11,11 @@
             <?php
                 if($model->idCategory->category == "Bisnis")
                 {
-                    echo $this->renderPartial('_formBusiness', array('model'=>$model,'kategori'=>$kategori,'kepemilikan'=>$kepemilikan,'tahun'=>$tahun,'industri'=>$industri,'provinsi'=>$provinsi,'alasan_jual_bisnis'=>$alasan_jual_bisnis,'img_upload'=>$img_upload,'doc_upload'=>$doc_upload)); 
+                    echo $this->renderPartial('_formBusiness', array('model'=>$model,'kategori'=>$kategori,'kepemilikan'=>$kepemilikan,'tahun'=>$tahun,'industri'=>$industri,'provinsi'=>$provinsi,'alasan_jual_bisnis'=>$alasan_jual_bisnis,'initial_doc_upload'=>$initial_doc_upload,'initial_image_upload'=>$initial_image_upload)); 
                 }
                 else if($model->idCategory->category == "Franchise")
                 {
-                    echo $this->renderPartial('_formFranchise', array('model'=>$model,'kategori'=>$kategori,'industri'=>$industri,'provinsi'=>$provinsi,'img_upload'=>$img_upload,'doc_upload'=>$doc_upload)); 
+                    echo $this->renderPartial('_formFranchise', array('model'=>$model,'kategori'=>$kategori,'industri'=>$industri,'provinsi'=>$provinsi,'initial_doc_upload'=>$initial_doc_upload,'initial_image_upload'=>$initial_image_upload)); 
                 }
                 else
                 {
@@ -60,22 +64,23 @@
                 }
         }
         
-        //repopulate sub industri dropdown
+         //repopulate sub industri dropdown
         if(document.getElementById('Business_id_industri').value != '' || document.getElementById('Business_id_industri').value != null)
         {
             var industri_id = document.getElementById('Business_id_industri').value;
-            var selected_sub_industri = document.getElementById('sub_industri_temp').value
-            $('#Business_id_sub_industri').load('<?php echo Yii::app()->createUrl('//jbAdmin/bisnisFranchise/generateSubIndustri') ?>',{'industri':industri_id, 'selected_sub_industri':selected_sub_industri});
+            var selected_sub_industri = document.getElementById('sub_industri_temp').value;
+            $('#loading-animation-industri').attr('style','display:visible; margin-top:-10px');
+            $('#Business_id_sub_industri').load('<?php echo Yii::app()->createUrl('//jbAdmin/bisnisFranchise/generateSubIndustri') ?>',{'industri':industri_id, 'selected_sub_industri':selected_sub_industri},function(){$('#loading-animation-industri').attr('style','display:none');});
 
         }
-       
-       
-       //repopulate kota dropdown
+        
+        //repopulate kota dropdown
         if(document.getElementById('Business_id_provinsi').value != '' || document.getElementById('Business_id_provinsi').value != null)
         {
             var provinsi_id = document.getElementById('Business_id_provinsi').value;
-            var selected_kota = document.getElementById('kota_temp').value
-            $('#Business_id_kota').load('<?php echo Yii::app()->createUrl('//jbAdmin/bisnisFranchise/generateKota') ?>',{'provinsi':provinsi_id, 'selected_kota':selected_kota});
+            var selected_kota = document.getElementById('kota_temp').value;
+            $('#loading-animation-provinsi').attr('style','display:visible; margin-top:-10px');
+            $('#Business_id_kota').load('<?php echo Yii::app()->createUrl('//jbAdmin/bisnisFranchise/generateKota') ?>',{'provinsi':provinsi_id, 'selected_kota':selected_kota},function(){$('#loading-animation-provinsi').attr('style','display:none');});
 
         }
     }
@@ -244,7 +249,7 @@
     
     function changeCategory(category)
     {
-        window.location = '<?php echo Yii::app()->createUrl('//account/create') ?>' + '?jenis=' + category;
+        window.location = '<?php echo Yii::app()->createUrl('//bisnisFranchise/create') ?>' + '?jenis=' + category;
     }
     
     function checkboxAlasanJual()

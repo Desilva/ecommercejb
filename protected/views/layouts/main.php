@@ -1,3 +1,6 @@
+<?php
+$set=date_default_timezone_set('Asia/Krasnoyarsk');
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -60,10 +63,12 @@
                             ?> 
                             <!--<h4> Selamat Datang, <?php //echo Yii::app()->user->first_name ?> (<a href="<?php //echo Yii::app()->createUrl('//authentication/logout') ?>">logout</a>)</h4>-->
 							<div class="span12" id="loginDiv">
-									 <h4>Selamat Datang, <?php echo Yii::app()->user->first_name ?> (<a href="<?php echo Yii::app()->createUrl('//authentication/logout') ?>">logout</a>)</h4>
-								<div class="separator-verySmall"></div>
+								<div class="span12">
 								
+									 <h5 class="Text-Align-Right">Hi, <?php echo Yii::app()->user->first_name ?> |<a href="<?php echo Yii::app()->createUrl('//authentication/logout') ?>">logout</a></h5>
+									<div class="separator-verySmall"></div>
 								
+								</div>	
 								
 								
 							</div>

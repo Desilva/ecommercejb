@@ -1,22 +1,33 @@
+<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl ?>/js/kendo.common.min.css" />
+<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl ?>/js/kendo.default.min.css" />
+<script src="<?php echo Yii::app()->request->baseUrl ?>/js/kendo.web.min.js"></script>
+
 <div class="row-fluid">
-	<!--<div class="span2">
-    	 <?php //if(!empty($this->clips['sidebar'])) echo
-                 //           $this->clips['sidebar']?>
-    </div>-->
-	<div class="span2 styleBackground-SolidColor-Grey padding-top-small Top-Margin2" style="margin-left:-30px;">
-		<?php if(!empty($this->clips['sidebar'])) echo
+	<div class="span2  padding-top-small Top-Margin2" style="margin-left:-30px;">
+	<div class="widget-box">
+		<div class="widget-title">
+						<span class="icon">
+							<i class="icon-th"></i>
+						</span>
+						<h5>Jualan Bisnis</h5>
+					</div>
+					<div class="widget-content nopadding">
+    	 <?php if(!empty($this->clips['sidebar'])) echo
                             $this->clips['sidebar']?>
-	</div>
-    <div class="span9">
+							</div>
+							
+							</div>
+    </div>
+    <div class="span10">
 		<div><header style="font-size:30px; font-family:Calibri;">Update <?php echo $model->nama ?></header><br style="clear:both"/></div><div style="margin-top:-35px;"></div>
             <?php
                 if($model->idCategory->category == "Bisnis")
                 {
-                    echo $this->renderPartial('_formUpdate', array('model'=>$model,'kategori'=>$kategori,'kepemilikan'=>$kepemilikan,'tahun'=>$tahun,'industri'=>$industri,'provinsi'=>$provinsi,'alasan_jual_bisnis'=>$alasan_jual_bisnis,'img_upload'=>$img_upload,'doc_upload'=>$doc_upload)); 
+                    echo $this->renderPartial('_formUpdate', array('model'=>$model,'kategori'=>$kategori,'kepemilikan'=>$kepemilikan,'tahun'=>$tahun,'industri'=>$industri,'provinsi'=>$provinsi,'alasan_jual_bisnis'=>$alasan_jual_bisnis,'initial_doc_upload'=>$initial_doc_upload,'initial_image_upload'=>$initial_image_upload)); 
                 }
                 else if($model->idCategory->category == "Franchise")
                 {
-                    echo $this->renderPartial('_formFranchiseUpdate', array('model'=>$model,'kategori'=>$kategori,'industri'=>$industri,'provinsi'=>$provinsi,'img_upload'=>$img_upload,'doc_upload'=>$doc_upload)); 
+                    echo $this->renderPartial('_formFranchiseUpdate', array('model'=>$model,'kategori'=>$kategori,'industri'=>$industri,'provinsi'=>$provinsi,'initial_doc_upload'=>$initial_doc_upload,'initial_image_upload'=>$initial_image_upload)); 
                 }
                 else
                 {

@@ -110,9 +110,19 @@ a.delete img{
     	 <?php //if(!empty($this->clips['sidebar'])) echo
                  //           $this->clips['sidebar']?>
     </div>-->
-	<div class="span2 styleBackground-SolidColor-Grey padding-top-small Top-Margin2" style="margin-left:-30px;">
+	<div class="span2 padding-top-small Top-Margin2" style="margin-left:-30px;">
+		<div class="widget-box">
+		<div class="widget-title">
+						<span class="icon">
+							<i class="icon-th"></i>
+						</span>
+						<h5>Jualan Bisnis</h5>
+					</div>
+					<div class="widget-content nopadding">
 		<?php if(!empty($this->clips['sidebar'])) echo
                             $this->clips['sidebar']?>
+							</div>
+		</div>
 	</div>
     <div class="span9">
     	<div><header style="font-size:30px; font-family:Calibri;">Hubungi JualanBisnis.com</header><br style="clear:both"/></div><div style="margin-top:-35px;"></div>
@@ -134,7 +144,7 @@ a.delete img{
 						<span class="icon">
 							<i class="icon-th"></i>
 						</span>
-						<h5>Static table</h5>
+						<h5>Jual Bisnis/Franchise</h5>
 					</div>
 					<div class="widget-content nopadding">
 								<?php

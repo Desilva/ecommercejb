@@ -16,11 +16,13 @@
         <button type="submit" class="btn Gradient-Style2" />Masuk</button>
     </div>      	
     <div class="control-group">
-        <div class="span8"></div>
-        <?php if($model->errors) echo "Invalid email/password" ?>
+        <div class="span7 Text-Align-Right Font-Color-Red"><?php if($model->errors) echo "Invalid email/password" ?></div>
+        
+		<div class="span3">
         <label class="checkbox">
             <?php echo $form->checkBox($model, 'rememberMe', array()); ?>Simpan Kata Sandi
         </label>
+		</div>
     </div>
     <?php $this->endWidget(); ?>
 </div>
