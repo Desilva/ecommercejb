@@ -112,7 +112,15 @@
         <!--Content-->
        	<div class="container content padding-left-small">
         <div class="row-fluid">
-	<div class="span2 styleBackground-SolidColor-Grey padding-top-small Top-Margin2" style="margin-left:-30px;">
+	<div class="span2 padding-top-small Top-Margin2" style="margin-left:-30px;">
+		<div class="widget-box">
+		<div class="widget-title">
+						<span class="icon">
+							<i class="icon-th"></i>
+						</span>
+						<h5>Jualan Bisnis</h5>
+					</div>
+					<div class="widget-content nopadding">
     	<table class="table">
         	<tr>
             	<td><a href="<?php echo Yii::app()->createUrl('//jbAdmin/kategori/') ?>">Kategori Bisnis</a></td>
@@ -127,6 +135,8 @@
             	<td><a href="<?php echo Yii::app()->createUrl('//jbAdmin/settings/') ?>">Settings</a></td>
             </tr>
         </table>
+		</div>
+		</div>
     </div>
         	<?php echo $content; ?>
         </div>

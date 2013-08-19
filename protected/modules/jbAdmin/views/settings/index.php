@@ -4,7 +4,7 @@
                                                     'id'=>'settings-form',
                                                     'enableAjaxValidation'=>false,
 //                                                    'action'=>Yii::app()->createUrl('//jbAdmin/settings/savesettings'),
-                                                    'htmlOptions'=>array('enctype'=>'multipart/form-data')
+                                                    'htmlOptions'=>array('enctype'=>'multipart/form-data','class'=>'form-horizontal')
                                                 ));
             
 ?>
@@ -15,14 +15,19 @@
             </div>
             <?php echo $form->errorSummary(array($slideshow1,$slideshow2,$slideshow3,$slideshow4,$slideshow5,$settings)); ?>
         </div>
-        
-        <div class="row-fluid">
-        	<div class="span12">
-        		<fieldset>
-                	<legend>Halaman Home</legend>
-                    <div class="row-fluid">
-                    	<div class="span12">
-                        	<div class="tabbable">
+        <div class="widget-box">
+			<div class="widget-title">
+				<span class="icon">
+					<i class="icon-align-justify"></i>									
+				</span>
+				<h5>Halaman Home</h5>
+			</div>
+			<div class="widget-content nopadding">
+				
+					<div class="control-group">
+						<div class="span12">
+							<div class="span11">
+								<div class="tabbable">
                                      <?php 
                                             for($i=1; $i<=5; $i++)
                                             {
@@ -39,7 +44,7 @@
                                                                                 <td>".$form->labelEx(${'slideshow'.$i},'deskripsi')."</td>
                                                                                 <td>".$form->textArea(${'slideshow'.$i},"[$i]deskripsi")."</td>
                                                                                 <script type=\"text/javascript\">
-                                                                                    CKEDITOR.config.width = 755;
+                                                                                    CKEDITOR.config.width = 600;
                                                                                     CKEDITOR.replace( 'Slideshow_".$i."_deskripsi' );
                                                                                 </script>
                                                                         </tr>
@@ -58,75 +63,78 @@
                                 ?>
 
                                 </div>
-                        </div>
-                    </div>
-                    <div class="row-fluid">
-                    	<div class="span12">
-                        	<table>
-                            	<tr>
-                                	<Td>Durasi Slideshow</Td>
-                                    <td><?php echo $form->textField($settings,'durasi_slideshow') ?>&nbsp;S</td>
-                                </tr>
-                                <tr>
-                                	<td>Bisnis / Franchise Rekomendasi</td>
-                                    <td><?php echo $form->textField($settings,'jumlah_rekomendasi') ?>&nbsp;Buah</td>
-                                </tr>
-                                <tr>
-                                	<td>Bisnis / Franchise Terbaru</td>
-                                    <td><?php echo $form->textField($settings,'jumlah_terbaru') ?>&nbsp;Buah</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </fieldset>
-            </div>
-        </div>
-        
-        <div class="row-fluid">
-        	<div class="span12">
-            	<fieldset>
-                	<legend>Setting Bisnis</legend>
-                    <div class="row-fluid">
-                    	<div class="span12">
-                        	<table>
-                            	<tr>
-                                	<td>Nilai min ditampilkan telepon</td>
-                                    <td><?php echo $form->textField($settings,'nilai_min_telpon_tampil') ?>&nbsp;IDR</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </fieldset>
-            </div>
-        </div>
-        
-        <div class="row-fluid">
-        	<div class="span12">
-            	<fieldset>
-                	<legend>Setting Email</legend>
-                    <div class="row-fluid">
-                    	<div class="span12">
-                        	<table>
-                            	<tr>
-                                	<td>Alamat Email:</td>
-                                    <td><?php echo $form->textField($settings,'alamat_email') ?></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                	<td>Nama:</td>
-                                    <td><?php echo $form->textField($settings,'nama_email') ?></td>
-                                    <td></td>
-                                </tr>
-                            </table>
-                        </div>	
-                    </div>
-                </fieldset>
-            </div>
-        </div>
-        <div class="row-fluid">
-        	<div class="span12">
-            	<button type="submit" class="btn">Simpan</button>
-            </div>
-        </div>
-    </div>
+							</div>
+						</div>						
+					</div>
+					
+					
+					
+				
+			</div>
+		</div>
+		
+		<div class="widget-box">
+			<div class="widget-title">
+				<span class="icon">
+					<i class="icon-align-justify"></i>									
+				</span>
+				<h5>Setting Bisnis</h5>
+			</div>
+			<div class="widget-content nopadding">
+				
+					<div class="control-group">
+						<div class="span12">
+							<div class="span11">
+									<label class="control-label">Nilai min ditampilkan telepon</label>
+									<div class="controls">
+										<?php echo $form->textField($settings,'nilai_min_telpon_tampil') ?>&nbsp;IDR
+									</div>
+							</div>
+						</div>						
+					</div>
+			
+					
+				
+			</div>
+		</div>
+		
+		<div class="widget-box">
+			<div class="widget-title">
+				<span class="icon">
+					<i class="icon-align-justify"></i>									
+				</span>
+				<h5>Setting Email</h5>
+			</div>
+			<div class="widget-content nopadding">
+				
+					<div class="control-group">
+						<div class="span12">
+							<div class="span11">
+								<label class="control-label">Alamat Email:</label>
+								<div class="controls">
+									<?php echo $form->textField($settings,'alamat_email') ?>
+                                </div>
+							</div>
+						</div>						
+					</div>
+					
+					<div class="control-group">
+						<div class="span12">
+							<div class="span11">
+								<label class="control-label">Nama:</label>
+								<div class="controls">
+									<?php echo $form->textField($settings,'nama_email') ?>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="form-actions">
+						<button type="submit" class="btn btn-primary">Simpan</button>
+					</div>
+					
+				
+			</div>
+		</div>
+
 <?php $this->endWidget() ?>

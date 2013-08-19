@@ -1,5 +1,5 @@
 <?php
-
+//$tes=date_default_timezone_Set('Asia/Krasnoyarsk');
 class BisnisFranchiseController extends Controller
 {
 	/**
