@@ -25,5 +25,6 @@
                                         'class'=>'Input-Size-VerySmall')); ?>
                                 </div>
                             </div>
+							<div class="separator1"></div>
                             	<button type="submit" class="btn Gradient-Style1" style="margin-left:100px">Cari</button>
                     </div>

@@ -35,7 +35,7 @@ body{
 	margin-left: 10px;	
 }
 .Left-Margin-Minus1{
-	margin-left:-37px;	
+	margin-left:-57px;	
 }
 .Left-Margin-Minus2{
 	margin-left:-60px;	
@@ -54,6 +54,9 @@ body{
 }
 .form-Right{
 	float:right;	
+}
+.separator1{
+	height:20px;	
 }
 .separator{
 	height:35px;	

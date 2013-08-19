@@ -39,7 +39,7 @@
 </script>
 
 <div class="row-fluid">
-	<div class="span3 styleBackground-SolidColor-Grey Border-Radius-Style3 padding-top-small" style="margin-left:-30px; margin-top:20px;" >
+	<div class="span3">
     	       <?php if(!empty($this->clips['sidebar'])) echo
                             $this->clips['sidebar']?>
     </div>

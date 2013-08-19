@@ -26,29 +26,50 @@
 				
 					<div class="control-group">
 						<div class="span12">
-							<div class="span11">
+							<div class="span12">
 								<div class="tabbable">
                                      <?php 
                                             for($i=1; $i<=5; $i++)
                                             {
-                                                ${'content'.$i} = "<div>
-                                                    <table><tr>
-                                                                                <td>".$form->labelEx(${'slideshow'.$i},'title')."</td>
-                                                                                <td>".$form->textField(${'slideshow'.$i},"[$i]title")."</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                                <td>".$form->labelEx(${'slideshow'.$i},'image')."</td>
-                                                                                <td><img src=".Yii::app()->request->baseUrl."/uploads/slideshow/".${'slideshow'.$i}->attributes["image"]." width=\"60\" height=\"60\"/><br/>".$form->fileField(${'slideshow'.$i},"[$i]image")."</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                                <td>".$form->labelEx(${'slideshow'.$i},'deskripsi')."</td>
-                                                                                <td>".$form->textArea(${'slideshow'.$i},"[$i]deskripsi")."</td>
-                                                                                <script type=\"text/javascript\">
-                                                                                    CKEDITOR.config.width = 600;
+                                                ${'content'.$i} = "
+												<div class='control-group'>
+													<div class='span12'>
+														<div class='span11'>
+															<label class='control-label'>".$form->labelEx(${'slideshow'.$i},'title')."</label>
+															<div class='controls'>
+																".$form->textField(${'slideshow'.$i},"[$i]title")."
+															</div>
+														</div>
+													</div>	
+												</div>
+												
+												<div class='control-group'>
+													<div class='span12'>
+														<div class='span11'>
+															<label class='control-label'>".$form->labelEx(${'slideshow'.$i},'image')."</label>
+															<div class='controls'>
+																<img src=".Yii::app()->request->baseUrl."/uploads/slideshow/".${'slideshow'.$i}->attributes["image"]." width=\"60\" height=\"60\"/><br/>".$form->fileField(${'slideshow'.$i},"[$i]image")."
+															</div>
+														</div>
+													</div>	
+												</div>
+												
+												<div class='control-group'>
+													<div class='span12'>
+														<div class='span11'>
+															<label class='control-label'>".$form->labelEx(${'slideshow'.$i},'deskripsi')."</label>
+															<div class='controls'>
+																".$form->textArea(${'slideshow'.$i},"[$i]deskripsi")."
+															</div>
+														</div>
+													</div>
+												</div>
+												
+												<script type=\"text/javascript\">
+                                                                                    CKEDITOR.config.width = 570;
                                                                                     CKEDITOR.replace( 'Slideshow_".$i."_deskripsi' );
                                                                                 </script>
-                                                                        </tr>
-                                                                </table></div>";
+												";
                                             }
                                             $this->widget('bootstrap.widgets.TbTabs', array(
                                             'type'=>'tabs', // 'tabs' or 'pills'
@@ -87,7 +108,7 @@
 							<div class="span11">
 									<label class="control-label">Nilai min ditampilkan telepon</label>
 									<div class="controls">
-										<?php echo $form->textField($settings,'nilai_min_telpon_tampil') ?>&nbsp;IDR
+										<?php echo $form->textField($settings,'nilai_min_telpon_tampil') ?>
 									</div>
 							</div>
 						</div>						
