@@ -34,6 +34,9 @@ body{
 .Left-Margin{
 	margin-left: 10px;	
 }
+.Left-Margin2{
+	margin-left:15px;	
+}
 .Left-Margin-Minus1{
 	margin-left:-57px;	
 }
@@ -78,6 +81,9 @@ body{
 }
 .styleBackground-SolidColor-Grey{
 	background-color:#f0f0f0;	
+}
+.styleBackground-SolidColor-LightBlue{
+	background-color:#0171bd;	
 }
 .Text-Align-Left{
 	text-align:left;	
@@ -186,6 +192,9 @@ body{
 }
 .Line-Size-Medium{
 	width:400px;
+}
+.padding-all-small{
+	padding:5px;	
 }
 .padding-bottom-small{
 	padding-bottom:10px;	

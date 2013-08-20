@@ -1703,3 +1703,39 @@ REQUEST_URI=/yii/E-COM/index.php/article
 in C:\xampp\htdocs\yii\E-com\protected\views\article\_list.php (54)
 in C:\xampp\htdocs\yii\E-com\protected\views\article\index.php (58)
 in C:\xampp\htdocs\yii\E-com\protected\controllers\ArticleController.php (71)
+2013/08/20 15:28:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "privacyPolicy".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('privacyPolicy')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/privacyPolicy
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/faq
+---
+2013/08/20 16:12:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "google.com".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('google.com')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/google.com
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/registrasi
+---
+2013/08/20 16:13:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "google.com".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('google.com')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/google.com
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/registrasi
+---
+2013/08/20 16:14:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "google.com".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('google.com')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/google.com
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/registrasi
+---

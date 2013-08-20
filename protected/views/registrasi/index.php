@@ -307,7 +307,7 @@
 						<div class="span12">
 							<div class="span11">
 								<label class="checkbox inline Font-Color-LightBlue" style="margin-left:10px">
-									<?php echo $form->checkBox($model,'agree_terms') ?>Ya, saya sudah membahas dan setuju dengan JualanBisnis Terms and Service
+									<?php echo $form->checkBox($model,'agree_terms') ?><a target="_blank" href="<?php echo Yii::app()->createUrl('//registrasiDone') ?>">Ya, saya sudah membahas dan setuju dengan JualanBisnis Terms and Service</a>
 								</label>
 							</div>
 						</div>

@@ -2,7 +2,7 @@
 
 class FaqController extends Controller
 {
-     public $layout = 'main';
+    public $layout = 'main';
     public function actionIndex()
     {
         $this->render('index');

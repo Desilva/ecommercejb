@@ -142,6 +142,12 @@
         </div>
         </div>
        <!--End Content -->
+	   <div class="row-fluid">
+		<div class="span12">
+			<hr/>
+			Copyright &copy 2013 JualBisnis <a href="<?php echo Yii::app()->createUrl('//privacyPolicy')?>">Privacy Policy</a>
+		</div>
+	</div>
     </div>
 </body>
 </html>
