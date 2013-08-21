@@ -229,12 +229,15 @@ class BisnisFranchiseController extends Controller
                     $model->status_approval = "Ditolak";
                     $model->save();
                     
+                    
                     //function to send email
+                    $user = User::model()->findByPk($model->id_user);
+                    $mailSetting = Settings::model()->findByAttributes(array("nama_settings"=>"settings_admin"));
                     YiiBase::import('ext.YiiMailer.YiiMailer');
                     $mail = new YiiMailer();
                     $mail->clearLayout(); //if layout is already set in config
-                    $mail->setFrom('donotreply.jb.com', 'JualanBisnis.com'); //CHANGE THIS WHEN DEPLOYING
-                    $mail->setTo('reynhart@licht-soft.com'); //CHANGE TO APPROPRIATE EMAIL WHEN DEPLOYING
+                    $mail->setFrom($mailSetting->alamat_email, $mailSetting->nama_email); //CHANGE THIS WHEN DEPLOYING
+                    $mail->setTo($user->email); //CHANGE TO APPROPRIATE EMAIL WHEN DEPLOYING
                     $mail->setSubject("Bisnis/Franchise ".$model->nama." Anda ditolak");
                     $mail->setBody("<p>Berikut adalah keterangan lengkap: </p><p>Nama Bisnis/Franchise: $model->nama</p><p>Alasan Penolakan: ".$model->idAlasanPenolakan->alasan_penolakan." </p>");
                     if($mail->send())
@@ -512,8 +515,36 @@ class BisnisFranchiseController extends Controller
                                 Yii::app()->user->setState('documents', null);
                         }
                     }
-                    if($model->save())
+                    if($model->save()){
+                        
+                        if($model->status_approval == "Diterima")
+                        {
+                            //function to send email
+                            $user = User::model()->findByPk($model->id_user);
+                            $mailSetting = Settings::model()->findByAttributes(array("nama_settings"=>"settings_admin"));
+                            YiiBase::import('ext.YiiMailer.YiiMailer');
+                            $mail = new YiiMailer();
+                            $mail->clearLayout(); //if layout is already set in config
+                            $mail->setFrom($mailSetting->alamat_email, $mailSetting->nama_email); //CHANGE THIS WHEN DEPLOYING
+                            $mail->setTo($user->email); //CHANGE TO APPROPRIATE EMAIL WHEN DEPLOYING
+                            $mail->setSubject("Bisnis/Franchise ".$model->nama." Anda diterima");
+                            $mail->setBody("<p>Selamat Bisnis/Franchise $model->nama anda berhasil diterima. Bisnis/Franchise anda sudah dapat dicari dan diakses di situs kami. </p><p>Terima kasih telah menggunakan JualanBisnis.com</p>");
+                            if($mail->send())
+                            {
+            //                  Yii::app()->user->setFlash('email','Email Berhasil Dikirim');
+                                $this->redirect(Yii::app()->createUrl('//jbAdmin/bisnisFranchise/index'));
+                            }
+                            else
+                            {
+                                Yii::app()->user->setFlash('error', 'Error while sending email: ' . $mail->getError());
+                            }
+                        }
+                        
+                        
+                        
                         $this->redirect(Yii::app()->createUrl('//jbAdmin/bisnisFranchise/index'));
+                    }
+                        
                 }
         
         Yii::app()->user->setState('images', null);

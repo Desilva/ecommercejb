@@ -131,11 +131,12 @@ class RegistrasiController extends Controller
                 $model->kode_verifikasi = md5(microtime().$model->email);
                 $model->save(false);
                 //verifikasi email function
+                $mailSetting = Settings::model()->findByAttributes(array("nama_settings"=>"settings_admin"));
                 YiiBase::import('ext.YiiMailer.YiiMailer');
                 $mail = new YiiMailer();
                 $mail->clearLayout(); //if layout is already set in config
-                $mail->setFrom('donotreply@jb.com', 'JualanBisnis.com'); //CHANGE TO SETTING EMAIL ADMIN ON DEPLOYMENT
-                $mail->setTo('reynhart@licht-soft.com'); //CHANGE TO APPROPRIATE EMAIL WHEN DEPLOYING
+                $mail->setFrom($mailSetting->alamat_email, $mailSetting->nama_email); //CHANGE TO SETTING EMAIL ADMIN ON DEPLOYMENT
+                $mail->setTo($model->email); //CHANGE TO APPROPRIATE EMAIL WHEN DEPLOYING
                 $mail->setSubject('Verifikasi Email JualanBisnis.com');
                 $mail->setBody("<p>Klik link dibawah ini untuk mem-verifikasikan email anda: </p><p>".Yii::app()->createAbsoluteUrl("//registrasi/verifikasi?kode=$model->kode_verifikasi&id=$model->id")."</p>");
                 if($mail->send())
@@ -226,13 +227,14 @@ class RegistrasiController extends Controller
     
     public function actionResendVerifikasi()
     {
+        $mailSetting = Settings::model()->findByAttributes(array("nama_settings"=>"settings_admin"));
         $email = $_POST['email'];
         $model = User::model()->findByAttributes(array('email'=>$email));
         YiiBase::import('ext.YiiMailer.YiiMailer');
         $mail = new YiiMailer();
         $mail->clearLayout(); //if layout is already set in config
-        $mail->setFrom('donotreply@jb.com', 'JualanBisnis.com'); //CHANGE TO SETTING EMAIL ADMIN ON DEPLOYMENT
-        $mail->setTo('reynhart@licht-soft.com'); //CHANGE TO APPROPRIATE EMAIL WHEN DEPLOYING
+        $mail->setFrom($mailSetting->alamat_email, $mailSetting->nama_email); //CHANGE TO SETTING EMAIL ADMIN ON DEPLOYMENT
+        $mail->setTo($model->email); //CHANGE TO APPROPRIATE EMAIL WHEN DEPLOYING
         $mail->setSubject('Verifikasi Email JualanBisnis.com');
         $mail->setBody("<p>Klik link dibawah ini untuk mem-verifikasikan email anda: </p><p>".Yii::app()->createAbsoluteUrl("//registrasi/verifikasi?kode=$model->kode_verifikasi&id=$model->id")."</p>");
         if($mail->send())
