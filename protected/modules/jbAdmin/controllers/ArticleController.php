@@ -135,7 +135,7 @@ class ArticleController extends Controller
                     'pageSize' => 10,
                 ),
                 ));
-		$dataProvider=new CActiveDataProvider('Article');
+//		$dataProvider=new CActiveDataProvider('Article');
 		$this->render('index',array(
                         'model'=>$model,
 		));

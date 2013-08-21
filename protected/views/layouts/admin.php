@@ -134,6 +134,9 @@
             <tr>
             	<td><a href="<?php echo Yii::app()->createUrl('//jbAdmin/settings/') ?>">Settings</a></td>
             </tr>
+            <tr>
+            	<td><a href="<?php echo Yii::app()->createUrl('//jbAdmin/newsletter/') ?>">Newsletter</a></td>
+            </tr>
         </table>
 		</div>
 		</div>

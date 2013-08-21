@@ -15,17 +15,16 @@
 				<span class="icon">
 					<i class="icon-align-justify"></i>									
 				</span>
-				<h5>Article</h5>
+				<h5>Newsletter</h5>
 			</div>
 			<div class="widget-content nopadding">
-				
+				<?php echo $form->hiddenField($model,'id_pembuat',array('size'=>60,'maxlength'=>500,'value'=>  Yii::app()->user->id)); ?>
 					<div class="control-group">
 						<div class="span12">
 							<div class="span11">
-								<label class="control-label"><?php echo $form->labelEx($model,'title'); ?></label>
+								<label class="control-label"><?php echo $form->labelEx($model,'judul'); ?></label>
 								<div class="controls">
-									<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>255)); ?>
-									
+									<?php echo $form->textField($model,'judul',array('size'=>60,'maxlength'=>500)); ?>
 								</div>
 							</div>
 						</div>						
@@ -34,23 +33,11 @@
 					<div class="control-group">
 						<div class="span12">
 							<div class="span11">
-								<label class="control-label"><?php echo $form->labelEx($model,'created_by'); ?></label>
-								<div class="controls">
-									<?php echo $form->textField($model,'created_by',array('size'=>10,'maxlength'=>10)); ?>
-									
-								</div>
-							</div>
-						</div>
-					</div>
-					
-					<div class="control-group">
-						<div class="span12">
-							<div class="span11">
-							<label class="control-label"><?php echo $form->labelEx($model,'post_date'); ?></label>
+							<label class="control-label"><?php echo $form->labelEx($model,'tanggal'); ?></label>
 							<div class="controls">
 								<?php $this->widget('zii.widgets.jui.CJuiDatePicker',array(
                                                                         'model'=>$model,
-                                                                        'attribute'=>'post_date',
+                                                                        'attribute'=>'tanggal',
                                                                         'options'=>array(
                                                                         'showAnim'=>'fold',
                                                                         'dateFormat'=>'yy-mm-dd',
@@ -59,29 +46,19 @@
                                                                           'style'=>'height:20px;'
                                                                          ),
                                                                   )); ?>
+                                                                                  
 							</div>
 						</div>
 						</div>
 					</div>
-					
-					<div class="control-group">
+                                        
+                                        <div class="control-group">
 						<div class="span12">
 							<div class="span11">
-							<label class="control-label"><?php echo $form->labelEx($model,'id_article_category'); ?></label>
-							<div class="controls">
-								<?php echo $form->dropDownList($model,'id_article_category',CHtml::listData($category,'id','category'),array('prompt'=>'Pilih Kategori')); ?>
-							</div>
-							</div>
-						</div>
-					</div>
-					
-					<div class="control-group">
-						<div class="span12">
-							<div class="span11">
-							<label class="control-label"><?php echo $form->labelEx($model,'id_article_category_pembaca'); ?></label>
-							<div class="controls">
-								<?php echo $form->dropDownList($model,'id_article_category_pembaca',CHtml::listData($categoryPembaca,'id','category_pembaca'),array('prompt'=>'Pilih Kategori Pembaca')); ?>
-							</div>
+								<label class="control-label"><?php echo $form->labelEx($model,'deskripsi'); ?></label>
+								<div class="controls">
+									<?php echo $form->textArea($model,'deskripsi'); ?>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -89,27 +66,29 @@
 					<div class="control-group">
 						<div class="span12">
 						<div class="span11">
-							<label class="control-label"><?php echo $form->labelEx($model,'post'); ?></label>
+							<label class="control-label"><?php echo $form->labelEx($model,'isi'); ?></label>
 							<div class="controls">
-								<?php echo $form->textArea($model,'post', array('id'=>'ckeditorTextArea')); ?>
-							</div>
-						</div>
-						</div>
-					</div>
-					
-					<div class="conntrol-group">
-						<div class="span12">
-							<div class="span11">
-							<label class="control-label"><?php echo $form->labelEx($model,'resume'); ?></label>
-							<div class="controls">
-								<?php echo $form->textField($model,'resume'); ?>
+								<?php echo $form->textArea($model,'isi', array('id'=>'ckeditorTextArea')); ?>
 							</div>
 						</div>
 						</div>
 					</div>
 					
 					<div class="form-actions">
-						<?php echo CHtml::submitButton($model->isNewRecord ? 'Tambah' : 'Simpan', array('class'=>'btn Gradient-Style1')); ?>
+                                                
+                                            <?php 
+                                            if($model->isNewRecord)
+                                            {
+                                                echo CHtml::button('Simpan Dan Kirim', array('submit' => array("newsletter/create?action=Kirim"), 'class'=>'btn Gradient-Style1'));
+                                                echo CHtml::button('Simpan', array('submit' => array("newsletter/create"), 'class'=>'btn Gradient-Style1')); 
+                                            }
+                                            else
+                                            {
+                                                echo CHtml::button('Simpan Dan Kirim', array('submit' => array("newsletter/update/id/$model->id?action=kirim"), 'class'=>'btn Gradient-Style1'));
+                                                echo CHtml::button('Simpan', array('submit' => array("newsletter/update"), 'class'=>'btn Gradient-Style1')); 
+                                            }
+                                            ?>
+                                                 
 					</div>
 			</div>
 		</div>

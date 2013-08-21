@@ -30,6 +30,11 @@ class RegistrasiController extends Controller
 	public function accessRules()
 	{
 		return array(
+                        array('allow',
+				'actions'=>array(
+                                    'unsubscribeNewsletter'),
+				'users'=>array('*'),
+			),
 			array('deny',  // deny authenticated users
 				'users'=>array('@'),
 			),
@@ -238,5 +243,34 @@ class RegistrasiController extends Controller
         {
             echo "error";
         }
+    }
+    
+    public function actionUnsubscribeNewsletter()
+    {
+        $model = new UnsubscribeNewsletter();
+        if(isset($_POST['UnsubscribeNewsletter']))
+        {
+            if(Yii::app()->request->isAjaxRequest)
+            {
+                $model->attributes=$_POST['UnsubscribeNewsletter'];
+                $valid=$model->validate(); 
+                if($valid){
+
+                   //do anything here
+                     echo CJSON::encode(array(
+                          'status'=>'success'
+                     ));
+                    Yii::app()->end();
+                    }
+                    else{
+                        $error = CActiveForm::validate($model);
+                        if($error!='[]')
+                            echo $error;
+                        Yii::app()->end();
+                    }
+            }
+        }
+        
+        $this->render('unsubscribeNewsletter',array('model'=>$model));
     }
 }
