@@ -13,7 +13,15 @@
 				width         : 705,
 				responsive    : true,
 				randomstart   : true,
-			});   
+			});
+
+			$('#tabSlide1').bjqs({
+				animtype	  :'slide',
+				height		  : 100,
+				width		  : 450,
+				responsive	  : true,
+				randomstart	  : true,
+			});
         });
       </script>
 <!--End Slideshow------------------------------------------------------------------------------------------------------------>
@@ -188,12 +196,45 @@
                                             {
                                                 break;
                                             }
+											
+											
                                         }
+										
+										
+										$B=Yii::app()->createUrl("//home/slideshowdetail/$value->id");
+										 $D=$value->image;
+										 $C=Yii::app()->request->baseUrl ."/uploads/slideshow/". $D;
+										 
+										 
+										
+
+                                        
+											$a="
+											<li>
+												<a href=$B><img src='#' style='width:80px'/></a>
+												<a href=$B><img src='#' style='width:80px'/></a>
+												<a href=$B><img src='#' style='width:80px'/></a>
+												<a href=$B><img src='#' style='width:80px'/></a>
+												<a href=$B><img src='#' style='width:80px'/></a>
+											</li>
+											<li>
+												<a href=$B><img src='#' style='width:80px'/></a>
+												<a href=$B><img src='#' style='width:80px'/></a>
+												<a href=$B><img src='#' style='width:80px'/></a>
+												<a href=$B><img src='#' style='width:80px'/></a>
+												<a href=$B><img src='#' style='width:80px'/></a>
+												
+											</li>";
+                                     
+									 
+										
+							$contentXT="<div id='tabSlide1' style='overflow:hidden'><ul class='bjqs'>$a</ul></div>";
+							
                                         $this->widget('bootstrap.widgets.TbTabs', array(
                                             'type'=>'tabs', // 'tabs' or 'pills'
 											 'htmlOptions' => array('class' => 'Gadget-Tab'),
                                             'tabs'=>array(
-                                                    array('label'=>'Terbaru', 'content'=>"$contentBusinessTerbaru", 'active'=>true,
+                                                    array('label'=>'Terbaru', 'content'=>"$contentXT", 'active'=>true,
 														'class'=>'Gradient-Style3'
 													),
                                                     array('label'=>'Rekomendasi', 'content'=>"$contentBusinessRekomendasi"),
@@ -339,7 +380,7 @@
                                                 break;
                                             }
                                         }
-                                        $this->widget('bootstrap.widgets.TbTabs', array(
+											$this->widget('bootstrap.widgets.TbTabs', array(
                                             'type'=>'tabs', // 'tabs' or 'pills'
 											'htmlOptions'=>array('class'=>'Gadget-Tab'),
                                             'tabs'=>array(
