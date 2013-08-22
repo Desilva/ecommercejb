@@ -39,28 +39,28 @@
 									<td style="padding-left:40px">Provinsi</td>
 									<td>
 										<?php echo CHtml::dropDownList('provinsi',$selected_provinsi,CHtml::listData($provinsi,'id','provinsi'),array(
-                    'prompt'=>'Pilih Provinsi',
-                    'class'=>'Input-Size-VerySmall',
-                    'ajax' => array(
-                            'type' => 'POST',
-                            'url' => Yii::app()->createUrl('//cariBisnisFranchise/generatekota'),
-                            'update' => '#kota',
-                            'beforeSend' => "function( request )
-                                {
-                                 $('#loading-animation-provinsi').removeAttr('style');
-                                  // Set up any pre-sending stuff like initializing progress indicators
-                                }",
-                            'complete' => "function( data )
-                                {
-                                     $('#loading-animation-provinsi').attr('style','display:none');                                  
-                                }",    
-                            )))
-                ?>
-                    <img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/spinner.gif" id="loading-animation-provinsi" style="display:none"/>
+                                                                                    'prompt'=>'Pilih Provinsi',
+                                                                                    'class'=>'Input-Size-VerySmall',
+                                                                                    'ajax' => array(
+                                                                                            'type' => 'POST',
+                                                                                            'url' => Yii::app()->createUrl('//cariBisnisFranchise/generatekota'),
+                                                                                            'update' => '#kota',
+                                                                                            'beforeSend' => "function( request )
+                                                                                                {
+                                                                                                 $('#loading-animation-provinsi').removeAttr('style');
+                                                                                                  // Set up any pre-sending stuff like initializing progress indicators
+                                                                                                }",
+                                                                                            'complete' => "function( data )
+                                                                                                {
+                                                                                                     $('#loading-animation-provinsi').attr('style','display:none');                                  
+                                                                                                }",    
+                                                                                            )))
+                                                                                ?>
+                    
 									</td>
 								</tr>
 								<tr>
-									<Td style="padding-left:40px">Kota</td>
+									<Td style="padding-left:40px"> Kota</td>
 									<td>
 										<?php echo CHtml::hiddenField('kota_temp',$selected_kota); ?>
 										<?php echo CHtml::dropDownList('kota','id',array(),array(
@@ -68,6 +68,8 @@
 											'class'=>'Input-Size-VerySmall',
 											));
 										?>
+                                                                            <img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/spinner.gif" id="loading-animation-provinsi" style="display:none"/>
+                                                                           
 									</td>
 								</tr>
 								<tr>
@@ -90,7 +92,7 @@
                                      $('#loading-animation-kategori').attr('style','display:none');                                  
                                 }",    
                                 ))); ?>
-                    <img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/spinner.gif" id="loading-animation-kategori" style="display:none"/>
+                    
 									</td>
 								</tr>
 								<tr>

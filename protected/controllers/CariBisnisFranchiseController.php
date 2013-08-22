@@ -16,16 +16,8 @@ class CariBisnisFranchiseController extends Controller
             $list_provinsi = Provinsi::model()->findAll();
             $list_kategori = Industri::model()->findAll();
             $list_subkategori = SubIndustri::model()->findAll();
-            $list_rangeharga = array(
-                '1' => '<1 jt',
-                '2' => '1jt - 10jt',
-                '3' => '>10 jt'
-            );
-            $list_omzet = array(
-                '1' => '<1 jt',
-                '2' => '1jt - 10jt',
-                '3' => '>10 jt'
-            );
+            $list_rangeharga = RangePrice::model()->findAll();
+            $list_omzet = RangePrice::model()->findAll();
             
             if(isset($_GET['jenis']) && $_GET['jenis'] != '')
             {
@@ -222,39 +214,61 @@ class CariBisnisFranchiseController extends Controller
             
             if(isset($_GET['rangeharga']) && $_GET['rangeharga'] != '')
             {
-                    $rangeharga = $_GET['rangeharga'];
-                    if($rangeharga == '1')
+                    $id_rangeharga = $_GET['rangeharga'];
+                    $rangeharga = RangePrice::model()->findByPk($id_rangeharga);
+                    
+                    
+                    if($rangeharga->harga_max !='' || $rangeharga->harga_min != null) //range has upper and lower limit
                     {
-                         $criteria->addCondition('harga_max < 1000000');
+                        $criteria->addBetweenCondition("((harga_min + harga_max)/2)", $rangeharga->harga_min, $rangeharga->harga_max);
                     }
-                    else if($rangeharga == '2') 
+                    else //range has no upper limit
                     {
-                        $criteria->addCondition('harga_max >= 1000000');
-                        $criteria->addCondition('harga_max <= 10000000');
+                        $criteria->addCondition("((harga_min + harga_max)/2) >= '$rangeharga->harga_min'");
                     }
-                    else
-                    {
-                        $criteria->addCondition('harga_max >= 10000000');
-                    }
+//                    if($rangeharga == '1')
+//                    {
+//                         $criteria->addCondition('harga_max < 1000000');
+//                    }
+//                    else if($rangeharga == '2') 
+//                    {
+//                        $criteria->addCondition('harga_max >= 1000000');
+//                        $criteria->addCondition('harga_max <= 10000000');
+//                    }
+//                    else
+//                    {
+//                        $criteria->addCondition('harga_max >= 10000000');
+//                    }
                 
             }
             
             if(isset($_GET['omzet']) && $_GET['omzet'] != '')
             {
-                    $omzet = $_GET['omzet'];
-                    if($omzet == '1')
+                    $id_rangeharga = $_GET['omzet'];
+                    $rangeharga = RangePrice::model()->findByPk($id_rangeharga);
+                    
+                    
+                    if($rangeharga->harga_max !='' || $rangeharga->harga_min != null) //range has upper and lower limit
                     {
-                        $criteria->addCondition('penjualan < 1000000');
+                        $criteria->addBetweenCondition("penjualan", $rangeharga->harga_min, $rangeharga->harga_max);
                     }
-                    else if($omzet == '2') 
+                    else //range has no upper limit
                     {
-                        $criteria->addCondition('penjualan >= 1000000');
-                        $criteria->addCondition('penjualan <= 10000000');
+                        $criteria->addCondition("penjualan >= '$rangeharga->harga_min'");
                     }
-                    else
-                    {
-                        $criteria->addCondition('penjualan >= 10000000');
-                    }
+//                    if($omzet == '1')
+//                    {
+//                        $criteria->addCondition('penjualan < 1000000');
+//                    }
+//                    else if($omzet == '2') 
+//                    {
+//                        $criteria->addCondition('penjualan >= 1000000');
+//                        $criteria->addCondition('penjualan <= 10000000');
+//                    }
+//                    else
+//                    {
+//                        $criteria->addCondition('penjualan >= 10000000');
+//                    }
                
             }
                 $model = new CActiveDataProvider('Business',array(
@@ -265,7 +279,7 @@ class CariBisnisFranchiseController extends Controller
                     'pageSize'=>10,
                 ),
                 ));
-
+//                var_dump($model);
 //            $model = Business::model()->with('idKota')->findAllByAttributes($search,$criteria);
             $this->render('index',array('model'=>$model,'sortType'=>$sortType,'selectedSortValue'=>$selectedSortValue));
             

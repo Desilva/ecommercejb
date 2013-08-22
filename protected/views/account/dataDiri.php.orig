@@ -212,6 +212,7 @@
                                                          'class'=>'styleText1'
                                                      ),
                                               )); ?>
+<<<<<<< HEAD
 									</div>
 								</div>
 								<div class="span6">
@@ -233,6 +234,54 @@
 								<div  class="span12">
 									<div class="span11">
 										<label style="margin-left:10px">Isikan data dibawah ini untuk mendapatkan bisnis yang sesuai dengan anda secara cepat</label>
+=======
+							</div>
+						</div>
+						<div class="span6">
+							<label class="control-label"><?php echo $form->labelEx($model,'id_job'); ?></label>
+							<div class="controls">
+								<?php echo $form->dropDownList($model,'id_job',CHtml::listData($pekerjaan,'id','job'),array('prompt'=>'Pilih Status')); ?>
+							</div>	
+						</div>
+					</div>
+					
+					<div class="row-fluid">
+						<div class="span12"></div>
+					</div>
+					
+					<div class="control-group">
+						<div class="span11">
+							<label style="margin-left:10px">Isian Khusus Pembeli</label>
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<div  class="span12">
+							<div class="span11">
+								<label style="margin-left:10px">Isikan data dibawah ini untuk mendapatkan bisnis yang sesuai dengan anda secara cepat</label>
+							</div>
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<div class="span12">
+							<div class="span11">
+								<label class="control-label"><?php echo $form->labelEx($model,'id_buyer_category'); ?></label>
+								<div class="controls">
+									<?php echo $form->dropDownList($model,'id_buyer_category',CHtml::listData($kategori,'id','industri'),array('prompt'=>'Pilih Kategori')); ?>
+								</div>	
+							</div>
+						</div>
+					</div>
+					
+					<div class="control-group">
+						
+							<div class="span12">
+								<div class="span11">
+									<label class="control-label"><?php echo $form->labelEx($model,'id_buyer_location'); ?></label>
+									<div class="controls">
+										<?php echo $form->dropDownList($model,'id_buyer_location',CHtml::listData($lokasi,'id','provinsi'),array('prompt'=>'Pilih Lokasi')); ?>
+>>>>>>> 05fdd90fd62c4e0a67e5507c7d8c417568615982
 									</div>
 								</div>
 							</div>					
@@ -241,7 +290,7 @@
 									<div class="span11">
 										<label class="control-label"><?php echo $form->labelEx($model,'id_buyer_category'); ?></label>
 										<div class="controls">
-									<?php echo $form->dropDownList($model,'id_buyer_category',CHtml::listData($kategori,'id','industri'),array('prompt'=>'Pilih Kategori')); ?>
+											<?php echo $form->dropDownList($model,'id_buyer_category',CHtml::listData($kategori,'id','category'),array('prompt'=>'Pilih Kategori')); ?>
 										</div>	
 									</div>
 								</div>
@@ -251,7 +300,7 @@
 									<div class="span11">
 										<label class="control-label"><?php echo $form->labelEx($model,'id_buyer_location'); ?></label>
 										<div class="controls">
-										<?php echo $form->dropDownList($model,'id_buyer_location',CHtml::listData($lokasi,'id','provinsi'),array('prompt'=>'Pilih Lokasi')); ?>
+											<?php echo $form->dropDownList($model,'id_buyer_location',CHtml::listData($lokasi,'id','city'),array('prompt'=>'Pilih Lokasi')); ?>
 										</div>
 									</div>
 								</div>					

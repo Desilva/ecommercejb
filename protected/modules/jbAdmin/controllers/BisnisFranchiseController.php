@@ -270,9 +270,7 @@ class BisnisFranchiseController extends Controller
 	public function actionUpdate($id)
 	{
             $model=$this->loadModel($id);
-            Yii::import("ext.xupload.models.XUploadForm");
-            $img_upload = new XUploadForm;
-            $doc_upload = new XUploadForm;
+
             if(Yii::app()->request->isAjaxRequest)
             {
                 $model->attributes=$_POST['Business'];
@@ -520,6 +518,7 @@ class BisnisFranchiseController extends Controller
                         if($model->status_approval == "Diterima")
                         {
                             //function to send email
+                            //notify user that their business is accepted
                             $user = User::model()->findByPk($model->id_user);
                             $mailSetting = Settings::model()->findByAttributes(array("nama_settings"=>"settings_admin"));
                             YiiBase::import('ext.YiiMailer.YiiMailer');
@@ -532,12 +531,52 @@ class BisnisFranchiseController extends Controller
                             if($mail->send())
                             {
             //                  Yii::app()->user->setFlash('email','Email Berhasil Dikirim');
-                                $this->redirect(Yii::app()->createUrl('//jbAdmin/bisnisFranchise/index'));
+//                                
                             }
                             else
                             {
-                                Yii::app()->user->setFlash('error', 'Error while sending email: ' . $mail->getError());
+//                                var_dump($mail->getError());
+//                                echo ""
+//                                Yii::app()->user->setFlash('error', 'Error while sending email: ' . $mail->getError());
                             }
+                            
+                            //notify other user that has the same range_price, lokasi, and kategori(industri)
+//                            $criteria_rangeharga = new CDbCriteria();
+//                            $criteria_rangeharga->addBetweenCondition("(($model->harga_min + $model->harga_max)/2)", "harga_min", "harga_max");
+//                            $id_rangeharga = RangePrice::model()->find($criteria_rangeharga);
+                            
+//                            var_dump($criteria_rangeharga);
+                            $id_rangeharga = RangePrice::model()->findBySql("select id from m_range_price where (($model->harga_min + $model->harga_max)/2) between harga_min and harga_max");
+                            $usersToSend = User::model()->findAllByAttributes(array("id_buyer_category"=>$model->id_industri,"id_buyer_location"=>$model->id_provinsi,"id_buyer_price"=>$id_rangeharga->id));
+                            $emailRecipients = array();
+                            foreach($usersToSend as $recipient)
+                            {
+                                if($recipient->id != $model->id_user)
+                                {
+                                    $emailRecipients[] = $recipient->email;
+                                }
+                                
+                            }
+                            
+                            if(!empty($emailRecipients))
+                            {
+
+                                $mail2 = new YiiMailer();
+                                $mail2->clearLayout(); //if layout is already set in config
+                                $mail2->setFrom($mailSetting->alamat_email, $mailSetting->nama_email);
+                                $mail2->setTo($emailRecipients); //CHANGE TO APPROPRIATE EMAIL WHEN DEPLOYING
+                                $mail2->setSubject("Terdapat Bisnis/Franchise yang mungkin sesuai minat anda");
+                                $mail2->setBody("<p>Berikut adalah bisnis/franchise yang mungkin sesuai minat anda:</p><p>Nama Bisnis/Franchise: $model->nama</p><p>Lokasi Bisnis/Franchise: '".$model->idProvinsi->provinsi."' </p><p>Harga Min: $model->harga_min</p><p>Harga Max: $model->harga_max</p><p>Link Bisnis/Franchise: <a href='".Yii::app()->createAbsoluteUrl("//cariBisnisFranchise/detail/$model->id")."'>Klik disini</a></p>");
+                                if($mail2->send())
+                                {
+                                    
+                                }
+                                else
+                                {
+                                     //
+                                }
+                            }
+                            $this->redirect(Yii::app()->createUrl('//jbAdmin/bisnisFranchise/index'));
                         }
                         
                         
@@ -661,13 +700,13 @@ class BisnisFranchiseController extends Controller
                 $selectedSortValue = $_POST['sort'];
                 $criteria = new CDbCriteria();
                 $criteria->condition = "id_category=$selectedSortValue";
-                $criteria->order = 'id desc';
+                $criteria->order = 'status_approval desc, id desc';
             }
             else
             {
                 $criteria = new CDbCriteria();
                 $criteria->condition = "id_category=1";
-                $criteria->order = 'id desc';
+                $criteria->order = 'status_approval desc, id desc';
             }
             
 //             $emailCriteria = new CDbCriteria();

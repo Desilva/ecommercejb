@@ -1,3 +1,14 @@
+<?php 
+if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1))
+{ ?>
+
+<script>
+    alert("Silahkan melakukan login terlebih dahulu");
+</script>
+
+<?php }
+
+?>
 <!--Start Slideshow---------------------------------------------------------------------------------------------------------->
 <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl ?>/library/Slideshow/css/bjqs.css" />
 <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl ?>/library/Slideshow/css/bjqst.css" />

@@ -1,3 +1,7 @@
+<!--<meta property="og:title" content="<?php echo $model->title ?>" />
+<meta property="og:type" content="article" />
+<meta property="og:description" content="<?php echo substr(strip_tags(html_entity_decode($model->post)),0,250)."..." ?>" />-->
+
 <div class="row-fluid">
 	<div class="span11">
 	<div class="row-fluid">
