@@ -1,12 +1,12 @@
 <div class="row-fluid">
 	<div class="span12">
 		<div class="row-fluid">
-			<div class="span10">
+			<div class="span11">
 				<div><header style="font-size:30px; font-family:Calibri;">SYARAT DAN KETENTUAN PENGGUNAAN SITUS JUALANBISNIS.COM</header><br style="clear:both"/></div><div style="margin-top:-35px;"></div>
 			</div>
 		</div>
 		<div class="row-fluid">
-			<div class="span10" style="margin-left:15px">
+			<div class="span11" style="margin-left:15px">
 				<div class="row-fluid">
 					<div class="span12 Top-Margin2 Text-Align-Justify">
 						Syarat dan ketentuan yang tertera di halaman ini mengesahkan bahwa dengan menggunakan situs Jualanbisnis.com ("situs"), Anda sebagai pengguna ataupun pengguna terdaftar setuju untuk menerima dan mematuhi semua syarat dan ketentuan yang berlaku seperti tertera di halaman ini. Bilamana Anda tidak menyetujui syarat dan ketentuan atau sebagian dari syarat dan ketentuan, kami persilakan untuk tidak melanjutkan penggunaan Situs kami.

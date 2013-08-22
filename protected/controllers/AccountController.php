@@ -23,7 +23,7 @@ class AccountController extends Controller
 //                    'onAfterUpload'=>array($this,'saveFile'),
 //                    
 //                    ),
-            );
+            
         }
         public function init()
         {

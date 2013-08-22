@@ -3,40 +3,47 @@
 <script src="<?php echo Yii::app()->request->baseUrl ?>/js/kendo.web.min.js"></script>
 
 <div class="row-fluid">
-	<div class="span2  padding-top-small Top-Margin2" style="margin-left:-30px;">
-	<div class="widget-box">
-		<div class="widget-title">
-						<span class="icon">
-							<i class="icon-th"></i>
-						</span>
-						<h5>Jualan Bisnis</h5>
-					</div>
-					<div class="widget-content nopadding">
-    	 <?php if(!empty($this->clips['sidebar'])) echo
+	<div class="span11">
+		<div class="span2">
+			<div class="widget-box">
+				<div class="widget-title">
+					<span class="icon">
+						<i class="icon-th"></i>
+					</span>
+					<h5>Jualan Bisnis</h5>
+				</div>
+				<div class="widget-content nopadding">
+					<?php 
+						if(!empty($this->clips['sidebar'])) echo
                             $this->clips['sidebar']?>
-							</div>
-							
-							</div>
-    </div>
-    <div class="span10">
-		<div><header style="font-size:30px; font-family:Calibri;">Update <?php echo $model->nama ?></header><br style="clear:both"/></div><div style="margin-top:-35px;"></div>
-            <?php
-                if($model->idCategory->category == "Bisnis")
-                {
-                    echo $this->renderPartial('_formUpdate', array('model'=>$model,'kategori'=>$kategori,'kepemilikan'=>$kepemilikan,'tahun'=>$tahun,'industri'=>$industri,'provinsi'=>$provinsi,'alasan_jual_bisnis'=>$alasan_jual_bisnis,'initial_doc_upload'=>$initial_doc_upload,'initial_image_upload'=>$initial_image_upload)); 
-                }
-                else if($model->idCategory->category == "Franchise")
-                {
-                    echo $this->renderPartial('_formFranchiseUpdate', array('model'=>$model,'kategori'=>$kategori,'industri'=>$industri,'provinsi'=>$provinsi,'initial_doc_upload'=>$initial_doc_upload,'initial_image_upload'=>$initial_image_upload)); 
-                }
-                else
-                {
-                    echo "Error";
-
-                }
-            ?>
-    </div>
+				</div>
+			</div>
+		</div>
+		<div class="span10">
+			<div>
+				<header style="font-size:30px; font-family:Calibri;">Update <?php echo $model->nama ?></header><br style="clear:both"/>
+			</div>
+			<div style="margin-top:-35px;"></div>
+				<?php
+					if($model->idCategory->category == "Bisnis")
+					{
+						echo $this->renderPartial('_formUpdate', array('model'=>$model,'kategori'=>$kategori,'kepemilikan'=>$kepemilikan,'tahun'=>$tahun,'industri'=>$industri,'provinsi'=>$provinsi,'alasan_jual_bisnis'=>$alasan_jual_bisnis,'initial_doc_upload'=>$initial_doc_upload,'initial_image_upload'=>$initial_image_upload)); 
+					}
+					else if($model->idCategory->category == "Franchise")
+					{
+						echo $this->renderPartial('_formFranchiseUpdate', array('model'=>$model,'kategori'=>$kategori,'industri'=>$industri,'provinsi'=>$provinsi,'initial_doc_upload'=>$initial_doc_upload,'initial_image_upload'=>$initial_image_upload)); 
+					}
+					else
+					{
+						echo "Error";
+					}
+				?>
+		</div>
+	</div>
 </div>
+
+
+
 
 <script>
     $(document).ready(function(){

@@ -1,41 +1,44 @@
 <div class="row-fluid">
-	<div class="span12">
+	<div class="span11 Font-Size-Medium">
     	<div class="row-fluid">
-        	<div class="span10">
-            	<div><header style="font-size:30px; font-family:Calibri;">Layanan Kami</header><br style="clear:both"/></div><div style="margin-top:-35px;"></div>                
+        	<div class="span12">
+            	<div>
+					<header style="font-size:30px; font-family:Calibri;">Layanan Kami</header><br style="clear:both"/>
+				</div>
+				<div style="margin-top:-35px;"></div>                
             </div>
         </div>
         <div class="row-fluid">
-			<div class="span10" style="text-align:justify; margin-left:15px">
+			<div class="span12" style="text-align:justify; margin-left:15px">
 				<div class="row-fluid" style="margin-top:15px">
-					<div class="span12">
-						<b style="text-decoration:underline; font-size:15px">A.Layanan Kami</b>
+					<div class="span12" >
+						<b style="text-decoration:underline; Font-Size-Medium">A.Layanan Kami</b>
 						<p></p>
 						<b style="margin-left:15px">"Di Jualanbisnis.com, jual beli bisnis jadi mudah, murah dan aman"</b>
 						<p></p>
 						<label style="margin-left:15px;">
-							Jualanbisnis.com adalah pusat jual-beli bisnis dan franchise berbasis lokal pertama di Indonesia. Berperan sebagai media periklanan online dimana penjual bisnis dan franchise (disebut "penjual bisnis") dapat secara GRATIS memasang iklan bisnis untuk dijual; dan para pemodal (disebut "pembeli bisnis") untuk menemukan bisnis dan franchise idaman. 
+							<font class="Font-Size-Medium">Jualanbisnis.com adalah pusat jual-beli bisnis dan franchise berbasis lokal pertama di Indonesia. Berperan sebagai media periklanan online dimana penjual bisnis dan franchise (disebut "penjual bisnis") dapat secara GRATIS memasang iklan bisnis untuk dijual; dan para pemodal (disebut "pembeli bisnis") untuk menemukan bisnis dan franchise idaman.</font> 
 						</label>
 						<p></p>
 						<label style="margin-left:15px;">
-							Selayaknya proses jual beli komoditi lainnya seperti ruko, mobil bekas, atau properti, suatu bentuk badan usaha layaknya bisnis dan franchise tentunya dapat diperjualbelikan. Jual-beli usaha bersistem waralaba atau franchise lebih lazim didengar di tanah air dan biasanya dipasarkan lewat pameran, event, atau iklan di media cetak. 
-Bagaimana halnya dengan bisnis 'biasa', bisakah dijual? Apa yang dimaksud jual bisnis 'biasa'?
+							<font class="Font-Size-Medium">Selayaknya proses jual beli komoditi lainnya seperti ruko, mobil bekas, atau properti, suatu bentuk badan usaha layaknya bisnis dan franchise tentunya dapat diperjualbelikan. Jual-beli usaha bersistem waralaba atau franchise lebih lazim didengar di tanah air dan biasanya dipasarkan lewat pameran, event, atau iklan di media cetak. 
+Bagaimana halnya dengan bisnis 'biasa', bisakah dijual? Apa yang dimaksud jual bisnis 'biasa'?</font>
 
 						</label>
 						<p></p>
 						<label style="font-style:italic; margin-left:15px; text-align:center">
-							"Saya tidak ingin mem-franchise-kan bisnis restoran saya. Saya hanya ingin menjualnya saja, lepas tanggungjawab, dan dapat uang hasil penjualan."
-							"Saya ingin menjual sebagian bisnis salon saya. Bisnis saya butuh suntikan dana untuk berkembang."
+							<font class="Font-Size-Medium">"Saya tidak ingin mem-franchise-kan bisnis restoran saya. Saya hanya ingin menjualnya saja, lepas tanggungjawab, dan dapat uang hasil penjualan."
+							"Saya ingin menjual sebagian bisnis salon saya. Bisnis saya butuh suntikan dana untuk berkembang."</font>
 						</label>
 						<p></p>
 						<label style="margin-left:15px">
-							Tentu bisa. Pemilik bisnis memiliki opsi untuk menjual sebagian atau seluruh bisnisnya. 
-Sayangnya, opsi pemasaran bagi bisnis dan franchise dijual, saat ini masih dibatasi lewat sekedar mulut-ke-mulut, harga ikut serta pameran yang tidak murah, apalagi tarif pasang iklan di media cetak. 
+							<font class="Font-Size-Medium">Font-Size-MediumTentu bisa. Pemilik bisnis memiliki opsi untuk menjual sebagian atau seluruh bisnisnya. 
+Sayangnya, opsi pemasaran bagi bisnis dan franchise dijual, saat ini masih dibatasi lewat sekedar mulut-ke-mulut, harga ikut serta pameran yang tidak murah, apalagi tarif pasang iklan di media cetak.</font>
 
 						</label>
 						<p></p>
 						<label style="margin-left:15px">
-							Bagi penjual bisnis dan franchise yang ingin menjangkau lebih banyak calon pembeli tanpa membuat dompet kering, jasa periklanan online yang ditawarkan Jualanbisnis.com adalah solusi termudah, termurah dan tercepat. Dan bagi para pembeli, akses langsung peluang-peluang bisnis dan franchise se-Tanah Air di Jualanbisnis.com, situs jual beli bisnis yang mengedepankan keamanan transaksi.
+							<font class="Font-Size-Medium">Bagi penjual bisnis dan franchise yang ingin menjangkau lebih banyak calon pembeli tanpa membuat dompet kering, jasa periklanan online yang ditawarkan Jualanbisnis.com adalah solusi termudah, termurah dan tercepat. Dan bagi para pembeli, akses langsung peluang-peluang bisnis dan franchise se-Tanah Air di Jualanbisnis.com, situs jual beli bisnis yang mengedepankan keamanan transaksi.</font>
 						</label>
 						<p></p>
 					</div>

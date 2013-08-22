@@ -1,5 +1,5 @@
 <div class="row-fluid">
-	<div class="span10">
+	<div class="span11">
 	<div class="row-fluid">
         	<div class="span12">
 				<div class="row-fluid">

@@ -1,7 +1,11 @@
 <!--Start Slideshow---------------------------------------------------------------------------------------------------------->
 <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl ?>/library/Slideshow/css/bjqs.css" />
+<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl ?>/library/Slideshow/css/bjqst.css" />
+
 <!--<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl ?>/library/Slideshow/js/jquery-1.8.2.min.js"></script>-->
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl ?>/library/Slideshow/js/bjqs-1.3.min.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl ?>/library/Slideshow/js/bjqst-1.3.min.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl ?>/library/Slideshow/js/bjqss-1.3.min.js"></script>
 <script>
     var baseUrl = '<?php echo Yii::app()->request->baseUrl ?>';
 </script>
@@ -15,10 +19,26 @@
 				randomstart   : true,
 			});
 
-			$('#tabSlide1').bjqs({
+			$('#tabSlide1').bjqst({
 				animtype	  :'slide',
 				height		  : 100,
-				width		  : 450,
+				width		  : 465,
+				responsive	  : true,
+				randomstart	  : true,
+			});
+			
+			$('#tabSlideRekomendasi').bjqss({
+				animtype	  :'slide',
+				height		  : 100,
+				width		  : 465,
+				responsive	  : true,
+				randomstart	  : true,
+			});
+			
+			$('#tabSlide2').bjqst({
+				animtype	  :'slide',
+				height		  : 100,
+				width		  : 465,
 				responsive	  : true,
 				randomstart	  : true,
 			});
@@ -105,7 +125,7 @@
                         	<hr class="Line-Size-Medium" />
                         </div>
                     </div>
-                    <div class="row-fluid Div-Style-Content padding-left-verySmall">
+                    <div class="row-fluid Div-Style-Content padding-left-verySmall2">
 						
                     	<div class="span11 Text-Align-Center Solid-White">
                         
@@ -140,7 +160,7 @@
                             	</div>
                         	</div>-->
                                 <?php 
-                                        $contentBusinessTerbaru ='';
+                                   /*     $contentBusinessTerbaru ='';
                                         foreach($business_terbaru as $businessDetail)
                                         {
                                             $imageList = array_filter(explode(',',$businessDetail->image));
@@ -159,7 +179,8 @@
                                             }
                                             else
                                             {
-                                                $detailUrl = '#'; //redirect to login
+                          
+						  $detailUrl = '#'; //redirect to login
                                             }
 
                                             $contentBusinessTerbaru .= "<a href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:90px; height:90px \" /></a>";
@@ -199,45 +220,54 @@
 											
 											
                                         }
-										
-										
+										*/
+									/*Tab Slide Terbaru */	
 										$B=Yii::app()->createUrl("//home/slideshowdetail/$value->id");
-										 $D=$value->image;
-										 $C=Yii::app()->request->baseUrl ."/uploads/slideshow/". $D;
-										 
-										 
-										
-
-                                        
-											$a="
+										$D=$value->image;
+										$C=Yii::app()->request->baseUrl ."/uploads/slideshow/". $D;
+										$a="
 											<li>
-												<a href=$B><img src='#' style='width:80px'/></a>
-												<a href=$B><img src='#' style='width:80px'/></a>
-												<a href=$B><img src='#' style='width:80px'/></a>
-												<a href=$B><img src='#' style='width:80px'/></a>
-												<a href=$B><img src='#' style='width:80px'/></a>
+												<a href=$B><img src='uploads/images/5/bf_5_130722090332_1.jpg' style='width:80px; height:80px'/></a>
+												<a href=$B><img src='uploads/images/5/2.jpg' style='width:80px ;height:80px'/></a>
+												<a href=$B><img src='uploads/images/5/3.jpg' style='width:80px; height:80px'/></a>
+												<a href=$B><img src='uploads/images/5/4.jpg' style='width:80px; height:80px'/></a>
+												<a href=$B><img src='uploads/images/5/5.jpg' style='width:80px; height:80px'/></a>
 											</li>
 											<li>
-												<a href=$B><img src='#' style='width:80px'/></a>
-												<a href=$B><img src='#' style='width:80px'/></a>
-												<a href=$B><img src='#' style='width:80px'/></a>
-												<a href=$B><img src='#' style='width:80px'/></a>
-												<a href=$B><img src='#' style='width:80px'/></a>
-												
+												<a href=$B><img src='uploads/images/5/6.jpg' style='width:80px; height:80px'/></a>
+												<a href=$B><img src='uploads/images/5/7.jpg' style='width:80px; height:80px'/></a>
+												<a href=$B><img src='uploads/images/5/8.jpg' style='width:80px; height:80px'/></a>
+												<a href=$B><img src='uploads/images/5/9.jpg' style='width:80px; height:80px'/></a>
+												<a href=$B><img src='uploads/images/5/10.jpg' style='width:80px; height:80px'/></a>												
 											</li>";
-                                     
-									 
-										
-							$contentXT="<div id='tabSlide1' style='overflow:hidden'><ul class='bjqs'>$a</ul></div>";
-							
+										$contentXT="<div id='tabSlide1' style='overflow:hidden'><ul class='bjqst'>$a</ul></div>";
+									/*Tab Slide Rekomendasi */
+										$url_rekomendasi=Yii::app()->createUrl("//home/slideshowdetail/$value->id");
+										$value_rekomendasi=$value->image;
+										$url_value_rekomendasi=Yii::app()->request->baseUrl ."/uploads/slideshow/". $value_rekomendasi;
+										$list_rekomendasi="
+											<li>
+												<a href=$B><img src='../uploads/images/5/bf_5_130722090332_1.jpg' style='width:80px; height:80px'/></a>
+												<a href=$B><img src='../uploads/images/5/2.jpg' style='width:80px ;height:80px'/></a>
+												<a href=$B><img src='../uploads/images/5/3.jpg' style='width:80px; height:80px'/></a>
+												<a href=$B><img src='../uploads/images/5/4.jpg' style='width:80px; height:80px'/></a>
+												<a href=$B><img src='../uploads/images/5/5.jpg' style='width:80px; height:80px'/></a>
+											</li>
+											<li>
+												<a href=$B><img src='../uploads/images/5/6.jpg' style='width:80px; height:80px'/></a>
+												<a href=$B><img src='../uploads/images/5/7.jpg' style='width:80px; height:80px'/></a>
+												<a href=$B><img src='../uploads/images/5/8.jpg' style='width:80px; height:80px'/></a>
+												<a href=$B><img src='../uploads/images/5/9.jpg' style='width:80px; height:80px'/></a>
+												<a href=$B><img src='../uploads/images/5/10.jpg' style='width:80px; height:80px'/></a>												
+											</li>										
+										";
+										$div_rekomendasi="<div id='tabSlideRekomendasi' style='overflow:hidden'><ul class='bjqss'>$list_rekomendasi</ul></div>";
                                         $this->widget('bootstrap.widgets.TbTabs', array(
                                             'type'=>'tabs', // 'tabs' or 'pills'
 											 'htmlOptions' => array('class' => 'Gadget-Tab'),
                                             'tabs'=>array(
-                                                    array('label'=>'Terbaru', 'content'=>"$contentXT", 'active'=>true,
-														'class'=>'Gradient-Style3'
-													),
-                                                    array('label'=>'Rekomendasi', 'content'=>"$contentBusinessRekomendasi"),
+                                                    array('label'=>'Terbaru', 'content'=>"$contentXT", 'active'=>true),
+                                                    array('label'=>'Rekomendasi', 'content'=>"$div_rekomendasi"),
                                             ),
                                     )); 
 
@@ -325,7 +355,7 @@
                             	</div>
                         	</div>-->
                             <?php 
-                                        $contentFranchiseTerbaru ='';
+                                        /*$contentFranchiseTerbaru ='';
                                         foreach($franchise_terbaru as $businessDetail)
                                         {
                                             $imageList = array_filter(explode(',',$businessDetail->image));
@@ -380,11 +410,43 @@
                                                 break;
                                             }
                                         }
+										*/
+										
+										$B=Yii::app()->createUrl("//home/slideshowdetail/$value->id");
+										$D=$value->image;
+										$C=Yii::app()->request->baseUrl ."/uploads/slideshow/". $D;
+										 
+										 
+										
+
+                                        
+											$a="
+											<li>
+												<a href=$B><img src='uploads/images/5/bf_5_130722090332_1.jpg' style='width:80px; height:80px'/></a>
+												<a href=$B><img src='uploads/images/5/2.jpg' style='width:80px ;height:80px'/></a>
+												<a href=$B><img src='uploads/images/5/3.jpg' style='width:80px; height:80px'/></a>
+												<a href=$B><img src='uploads/images/5/4.jpg' style='width:80px; height:80px'/></a>
+												<a href=$B><img src='uploads/images/5/5.jpg' style='width:80px; height:80px'/></a>
+											</li>
+											<li>
+												<a href=$B><img src='uploads/images/5/6.jpg' style='width:80px; height:80px'/></a>
+												<a href=$B><img src='uploads/images/5/7.jpg' style='width:80px; height:80px'/></a>
+												<a href=$B><img src='uploads/images/5/8.jpg' style='width:80px; height:80px'/></a>
+												<a href=$B><img src='uploads/images/5/9.jpg' style='width:80px; height:80px'/></a>
+												<a href=$B><img src='uploads/images/5/10.jpg' style='width:80px; height:80px'/></a>
+												
+											</li>";
+                                     
+									 
+										
+							$contentXT="<div id='tabSlide2' style='overflow:hidden'><ul class='bjqst'>$a</ul></div>";
+										
+										
 											$this->widget('bootstrap.widgets.TbTabs', array(
                                             'type'=>'tabs', // 'tabs' or 'pills'
 											'htmlOptions'=>array('class'=>'Gadget-Tab'),
                                             'tabs'=>array(
-                                                    array('label'=>'Terbaru', 'content'=>"$contentFranchiseTerbaru", 'active'=>true),
+                                                    array('label'=>'Terbaru', 'content'=>"$contentXT",'active'=>true),
                                                     array('label'=>'Rekomendasi', 'content'=>"$contentFranchiseRekomendasi"),
                                             ),
                                     )); 
