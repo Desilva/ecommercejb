@@ -213,10 +213,12 @@
                             { 
                                 foreach($docList as $dokumen)
                                 { 
+                                    if(file_exists(Yii::app()->getBasePath()."/../uploads/docs/$model->id_user/$dokumen"))
+                                    {
                                     $dokumen_url = urlencode($dokumen);
                                     ?>
                         <p><a href="<?php echo Yii::app()->createUrl("//download?docs=1&id=$model->id_user&name=$dokumen_url") ?>" ><?php echo $dokumen; ?></a></p>
-                       <?php } } ?>
+                            <?php } } }?>
                         
                     </td>
                 </tr>

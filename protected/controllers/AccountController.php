@@ -23,7 +23,7 @@ class AccountController extends Controller
 //                    'onAfterUpload'=>array($this,'saveFile'),
 //                    
 //                    ),
-            );
+//            );
         }
         public function init()
         {
@@ -285,8 +285,8 @@ class AccountController extends Controller
                 "P" => "Perempuan"
             );
             $list_negara = Country::model()->findAll();
-            $list_kategori_buyer = BuyerCategory::model()->findAll();
-            $list_kota = City::model()->findAll();
+            $list_kategori_buyer = Industri::model()->findAll();
+            $list_provinsi = Provinsi::model()->findAll();
             $list_range_harga = RangePrice::model()->findAll();
             
             if(isset($_POST['UserUpdate']))
@@ -321,7 +321,7 @@ class AccountController extends Controller
                 'status_perkawinan' => $list_status_perkawinan,
                 'negara' => $list_negara,
                 'kategori' => $list_kategori_buyer,
-                'lokasi' => $list_kota,
+                'lokasi' => $list_provinsi,
                 'range_harga' => $list_range_harga,
                 'penghasilan' => $list_penghasilan,
                 'tempat_lahir' => $list_tempat_lahir,

@@ -42,7 +42,7 @@ return array(
                         'class'=>'WebUser',
                         'loginUrl' => array
                         (
-                            '0' => 'home/index'
+                            '0' => 'home/index?alert=1'
                         )
 		),
                 'bootstrap' => array(

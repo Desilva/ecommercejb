@@ -95,8 +95,8 @@ class RegistrasiController extends Controller
             "P" => "Perempuan"
         );
         $list_negara = Country::model()->findAll();
-        $list_kategori_buyer = BuyerCategory::model()->findAll();
-        $list_kota = City::model()->findAll();
+        $list_kategori_buyer = Industri::model()->findAll();
+        $list_provinsi = Provinsi::model()->findAll();
         $list_range_harga = RangePrice::model()->findAll();
         // uncomment the following code to enable ajax-based validation
         /*
@@ -159,7 +159,7 @@ class RegistrasiController extends Controller
             'status_perkawinan' => $list_status_perkawinan,
             'negara' => $list_negara,
             'kategori' => $list_kategori_buyer,
-            'lokasi' => $list_kota,
+            'lokasi' => $list_provinsi,
             'range_harga' => $list_range_harga,
             'tempat_lahir' => $list_tempat_lahir,
             'references1' => $list_references1,
@@ -275,4 +275,5 @@ class RegistrasiController extends Controller
         
         $this->render('unsubscribeNewsletter',array('model'=>$model));
     }
+    
 }

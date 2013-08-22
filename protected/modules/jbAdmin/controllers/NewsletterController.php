@@ -198,22 +198,25 @@ class NewsletterController extends Controller
                 $linkUnsubscribe = Yii::app()->createAbsoluteUrl("//registrasi/unsubscribeNewsletter");
                 $signature="<br/><br/><hr/><p>Anda menerima email ini dikarenakan anda telah berlangganan newsletter dari JualanBisnis.com.<a href='".$linkUnsubscribe."'>Klik disini</a> untuk berhenti berlangganan <p>";
                 
+                if(!empty($newsletterRecipients[]))
+                {
+                    YiiBase::import('ext.YiiMailer.YiiMailer');
+                    //function to send email
+                    $mail = new YiiMailer();
+                    $mail->clearLayout(); //if layout is already set in config
+                    $mail->setFrom($mailSetting->alamat_email, $mailSetting->nama_email);
+                    $mail->setTo($newsletterRecipients); //CHANGE TO APPROPRIATE EMAIL WHEN DEPLOYING
+                    $mail->setSubject($mailSetting->nama_email.': '.$newsletter->judul);
+                    $mail->setBody($newsletter->isi.$signature);
+                    if($mail->send())
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                         return $mail->getError();
+                    }
+                }
                 
-                YiiBase::import('ext.YiiMailer.YiiMailer');
-                //function to send email
-                $mail = new YiiMailer();
-                $mail->clearLayout(); //if layout is already set in config
-                $mail->setFrom($mailSetting->alamat_email, $mailSetting->nama_email);
-                $mail->setTo($newsletterRecipients); //CHANGE TO APPROPRIATE EMAIL WHEN DEPLOYING
-                $mail->setSubject($mailSetting->nama_email.': '.$newsletter->judul);
-                $mail->setBody($newsletter->isi.$signature);
-                if($mail->send())
-                {
-                    return true;
-                }
-                else
-                {
-                     return $mail->getError();
-                }
         }
 }

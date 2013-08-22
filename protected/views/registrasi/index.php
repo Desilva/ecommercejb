@@ -16,7 +16,7 @@
     ),
     ));
 ?>
-<p><?php echo $form->errorSummary($model); ?></p>
+
 <div class="row-fluid">
 	<div class="span12">
     	<div class="span1"></div>
@@ -25,6 +25,7 @@
         	<div class="row-fluid">
 				<div class="span12 Top-Margin3">
 					Isi form dibawah ini untuk menjadi member JualanBisnis.com
+                                        <p><?php echo $form->errorSummary($model); ?></p>
 				</div>
 			</div>
         	<hr>
@@ -238,7 +239,7 @@
 							<div class="span11">
 								<label class="control-label"><?php echo $form->labelEx($model,'id_buyer_category'); ?></label>
 								<div class="controls">
-									<?php echo $form->dropDownList($model,'id_buyer_category',CHtml::listData($kategori,'id','category'),array('prompt'=>'Pilih Kategori')); ?>
+									<?php echo $form->dropDownList($model,'id_buyer_category',CHtml::listData($kategori,'id','industri'),array('prompt'=>'Pilih Kategori')); ?>
 								</div>
 							</div>
 						</div>
@@ -248,7 +249,7 @@
 							<div class="span11">
 								<label class="control-label"><?php echo $form->labelEx($model,'id_buyer_location'); ?></label>
 								<div class="controls">
-									<?php echo $form->dropDownList($model,'id_buyer_location',CHtml::listData($lokasi,'id','city'),array('prompt'=>'Pilih Lokasi')); ?>
+									<?php echo $form->dropDownList($model,'id_buyer_location',CHtml::listData($lokasi,'id','provinsi'),array('prompt'=>'Pilih Lokasi')); ?>
 								</div>
 							</div>
 						</div>

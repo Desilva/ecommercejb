@@ -60,7 +60,7 @@ class ArticleController extends Controller
             $criteria = new CDbCriteria();
         }
         
-        $article = new CActiveDataProvider('article', array(
+        $article = new CActiveDataProvider('Article', array(
                 'criteria' => $criteria,
                 'sort' => array(
                     'defaultOrder' => 'post_date DESC'),
