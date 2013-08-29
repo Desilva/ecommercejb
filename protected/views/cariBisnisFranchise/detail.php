@@ -294,7 +294,7 @@
 						<div class="widget-content nopadding">
 							<form class="form-horizontal">
 								<div class="control-group">
-									<div class="span12" style="margin-left:30px">
+									<div class="span12" style="margin-left:30px; margin-top:10px">
 										<div class="span6">
 											<img src="#" width="90" height="90"/>
 										</div>
@@ -304,7 +304,7 @@
 									</div>
 								</div>
 								<div class="control-group">
-									<div class="span12" style="margin-left:30px">
+									<div class="span12" style="margin-left:30px; margin-top:10px">
 										<div class="span6">
 											<img src="#" width="90" height="90"/>
 										</div>
@@ -314,7 +314,7 @@
 									</div>
 								</div>
 								<div class="control-group">
-									<div class="span12" style="margin-left:30px">
+									<div class="span12" style="margin-left:30px; margin-top:10px">
 										<div class="span6">
 											<img src="#" width="90" height="90"/>
 										</div>
