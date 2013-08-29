@@ -112,7 +112,8 @@
         <!--Content-->
        	<div class="container content padding-left-small">
         <div class="row-fluid">
-	<div class="span2 padding-top-small Top-Margin2" style="margin-left:-30px;">
+		<div class="span11">
+	<div class="span2 Top-Margin2">
 		<div class="widget-box">
 		<div class="widget-title">
 						<span class="icon">
@@ -142,6 +143,7 @@
 		</div>
     </div>
         	<?php echo $content; ?>
+			</div>
         </div>
         </div>
        <!--End Content -->

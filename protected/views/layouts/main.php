@@ -129,9 +129,10 @@ $set=date_default_timezone_set('Asia/Krasnoyarsk');
        	<div class="container content padding-left-small">
         	<?php echo $content; ?>
         </div>
+		
        <!--End Content -->
 	   <div class="row-fluid">
-		<div class="span12">
+			<div class="span12" >
 			<hr/>
 			Copyright &copy 2013 JualBisnis <a href="<?php echo Yii::app()->createUrl('//privacyPolicy')?>">Privacy Policy</a>
 		</div>

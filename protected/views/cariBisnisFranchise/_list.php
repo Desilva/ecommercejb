@@ -41,13 +41,13 @@
                     <?php
                             if($data->deskripsi != '' || $data->deskripsi != null)
                             {
-                                if(strlen($data->deskripsi) <= 200)
+                                if(strlen($data->deskripsi) <= 100)
                                 {
                                     echo strip_tags(html_entity_decode($data->deskripsi));
                                 }
                                 else
                                 {
-                                    echo substr(strip_tags(html_entity_decode($data->deskripsi)), 0, 200) . "...";
+                                    echo substr(strip_tags(html_entity_decode($data->deskripsi)), 0, 100) . "...";
                                 }
                             }
                             else

@@ -157,7 +157,7 @@
 				}
 				else
 				{ ?>
-                      <img src="<?php echo Yii::app()->request->baseUrl ?>/images/no-image.gif" width="300" style="float:left" />   
+                      <img src="<?php echo Yii::app()->request->baseUrl ?>/images/no-image.gif" width="300" style="float:left; margin-right:5px;" />   
 				<?php } ?>
     	
 				<?php if($model->deskripsi =='' || $model->deskripsi ==null) echo "Tidak ada deskripsi"; else echo $model->deskripsi ?>
@@ -168,240 +168,168 @@
 		</div>
 		<div class="row-fluid">
 			<div class="span12">
-				<div class="row-fluid">
-					<div class="span9">
-					<?php
-					if($model->id_user != Yii::app()->user->id)
-					{
-						echo CHtml::button('Kontak', array('submit' => array("cariBisnisFranchise/kontakBisnis/$model->id"), 'class'=>'btn Gradient-Style1'));
-					}
-					?>
-					</div>
-				</div>
-				<div class="row-fluid">
-					<div class="span12">
-						<div class="widget-box">
-							<div class="widget-title">
+				<div class="span8">
+					<div class="widget-box">
+						<div class="widget-title">
 								<span class="icon">
 								<i class="icon-align-justify"></i>									
 							</span>
 							<h5>Detil Informasi Bisnis</h5>
-							</div>
-							<div class="widget-content nopadding">
-								<form class="form-horizontal">
-									<div class="control-group">
-										<div class="span12">
-											<div class="span6">
-												<label class="control-label">Kategori</label>
-												<div class="controls">
-													:Kepemilikan <?php if($model->kepemilikan ==1)echo '100%'; else if($model->kepemilikan ==2)echo '<100%'; ?>
-												</div>
-											</div>
-											<div class="span6">
-												<label class="control-label">Margin Laba Bersih</label>
-												<div class="controls">
-													:Rp.<?php echo $model->marjin_laba_bersih ?>
-												</div>
-											</div>
-										</div>						
-									</div>
-									<div class="control-group">
-										<div class="span12">
-											<div class="span6">
-												<label class="control-label">Industri</label>
-												<div class="controls">
-													:<?php echo $model->idIndustri->industri ?>
-												</div>
-											</div>
-											<div class="span6">
-												<label class="control-label">Laba Bersih / Asset</label>
-												<div class="controls">
-													:Rp.<?php echo $model->laba_bersih_aset ?>
-												</div>
-											</div>
-										</div>						
-									</div>
-									<div class="control-group">
-										<div class="span12">
-											<div class="span6">
-												<label  class="control-label">Lokasi</label>
-												<div class="controls">
-													:<?php echo $model->idKota->city ?>
-												</div>
-											</div>
-											<div class="span6">
-												<label class="control-label">Harga Penawaran / Penjualan</label>
-												<div class="controls">
-													:Rp.<?php echo $model->harga_penawaran_penjualan ?>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div  class="control-group">
-										<div class="span12">
-											<div class="span6">
-												<label class="control-label">Jumlah Karyawan</label>
-												<div class="controls">
-													:<?php if($model->jumlah_karyawan != '' || $model->jumlah_karyawan != null)echo $model->jumlah_karyawan.' Orang';else echo "Tidak ada data"; ?>
-												</div>
-											</div>
-											<div class="span6">
-												<label class="control-label">Harga Penawaran / Laba Bersih</label>
-												<div class="controls">
-													:Rp.<?php echo $model->harga_penawaran_laba_bersih ?>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="control-group">
-										<div class="span12">
-											<div class="span6">
-												<label class="control-label">Tahun Didirikan</label>
-												<div class="controls">
-													:<?php echo $model->tahun_didirikan ?>
-												</div>
-											</div>
-											<div class="span6">
-												<label class="control-label">Harga Penawaran/Asset</label>
-												<div class="controls">
-													:Rp.<?php echo $model->harga_penawaran_aset ?>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="control-group">
-										<div class="span12">
-											<div class="span6">
-												<label class="control-label">Harga</label>
-												<div class="controls">
-													:Rp.<?php echo $model->harga_min ?> - Rp.<?php echo $model->harga_max ?>
-												</div>
-											</div>
-											<div class="span6">
-												<label class="control-label">File Pendukung:
-								</label>
-												<div class="controls">
-													<?php 
-								$docList = array_filter(explode(',',$model->dokumen));
-								if(!empty($docList))
-								{ 
-									foreach($docList as $dokumen)
-									{ 
-                                    if(file_exists(Yii::app()->getBasePath()."/../uploads/docs/$model->id_user/$dokumen"))
-                                    {
-										$dokumen_url = urlencode($dokumen);
-								?>
-									<p><a href="<?php echo Yii::app()->createUrl("//download?docs=1&id=$model->id_user&name=$dokumen_url") ?>" ><?php echo $dokumen; ?></a></p>
-                            <?php } } }?>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="control-group">
-										<div class="span12">
-											<div class="span6">
-												<label class="control-label">Penjualan / Tahun</label>
-												<div class="controls">
-													:Rp.<?php echo $model->penjualan ?>
-												</div>
-											</div>
-											<div class="span6">
-											
-											</div>
-										</div>
-									</div>
-									<div class="control-group">
-										<div class="span12">
-											<div class="span6">
-												<label class="control-label">HPP / Tahun</label>
-												<div class="controls">
-													:Rp.<?php echo $model->hpp ?>
-												</div>
-											</div>
-											<div class="span6">
-												
-												
-											</div>
-										</div>
-									</div>
-									<div class="control-group">
-										<div class="span12">
-											<div class="span6">
-												<label class="control-label">Laba Bersih / Tahun</label>
-												<div class="controls">
-													:Rp.<?php echo $model->laba_bersih_tahun ?>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="control-group">
-										<div class="span12">
-											<div class="span6">
-												<label class="control-label">Total Asset</label>
-												<div class="controls">
-													:Rp.<?php echo $model->total_aset ?>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="control-group">
-										<div class="span12">
-											<div class="span6">
-												<label class="control-label"></label>
-												<div class="controls">
-													Alasan ingin menjual bisnis
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="control-group">
-										<div class="span12">
-											<label class="control-label"></label>
-											<div class="controls">
-												<?php echo $model->alasan_jual_bisnis ?>
-											</div>
-										</div>
-									</div>
-								</form>
-							</div>
+						</div>
+						<div class="widget-content nopadding">
+							<form class="form-horizontal">
+								<table class="table table-bordered table-striped table-hover">
+									<tr>
+										<td width="30%">Kategori</td>
+										<td>Kepemilikan <?php if($model->kepemilikan ==1)echo '100%'; else if($model->kepemilikan ==2)echo '<100%'; ?></td>
+									</tr>
+									<tr>
+										<td>Industri</td>
+										<td><?php echo $model->idIndustri->industri ?></td>
+									</tr>
+									<tr>
+										<td>Lokasi</td>
+										<td><?php echo $model->idKota->city ?></td>
+									</tr>
+									<tr>
+										<td>Jumlah Karyawan</td>
+										<td><?php if($model->jumlah_karyawan != '' || $model->jumlah_karyawan != null)echo $model->jumlah_karyawan.' Orang';else echo "Tidak ada data"; ?></td>
+									</tr>
+									<tr>
+										<td>Tahun didirikan</td>
+										<td><?php echo $model->tahun_didirikan ?></td>
+									</tr>
+									<tr>
+										<td>Harga</td>
+										<td>Rp.<?php echo $model->harga_min ?> - Rp.<?php echo $model->harga_max ?></td>
+									</tr>
+									<tr>
+										<td>Penjualan / Tahun</td>
+										<td>Rp.<?php echo $model->penjualan ?></td>
+									</tr>
+									<tr>
+										<td>HPP / Tahun</td>
+										<td>Rp.<?php echo $model->hpp ?></td>
+									</tr>
+									<tr>
+										<td>Laba bersih / Tahun</td>
+										<td>Rp.<?php echo $model->laba_bersih_tahun ?></td>
+									</tr>
+									<tr>
+										<td>Total Asset</td>
+										<Td>Rp.<?php echo $model->total_aset ?></td>
+									</tr>
+									<Tr>
+										<Td>Alasan Menjual Bisnis</td>
+										<td><?php echo $model->alasan_jual_bisnis ?></td>
+									</tr>
+									<tr>
+										<Td>Margin harga bersih</td>
+										<td>Rp.<?php echo $model->marjin_laba_bersih ?></td>
+									</tr>
+									<tr>
+										<td>Laba bersih / asset</td>
+										<Td>Rp.<?php echo $model->laba_bersih_aset ?></td>
+									</tr>
+									<Tr>
+										<td>Harga penawaran / penjualan</td>
+										<td>Rp.<?php echo $model->harga_penawaran_penjualan ?></td>
+									</tR>
+									<tr>
+										<Td>Harga penawaran / Laba bersih</td>
+										<td>Rp.<?php echo $model->harga_penawaran_laba_bersih ?></td>
+									</tR>
+									
+								</table>
+							</form>
 						</div>
 					</div>
 				</div>
-				<div class="row-fluid">
-					<div class="span12">
-						<hr/>
+				<div class="span3">
+					<div class="row-fluid">
+						<div class="span12">
+							<div class="widget-box">
+						<div class="widget-title">
+								<span class="icon">
+								<i class="icon-align-justify"></i>									
+							</span>
+							<h5>File Pendukung</h5>
+						</div>
+						<div class="widget-content nopadding">
+							<form class="form-horizontal">
+								<div class="control-group">
+									<div class="span12" style="margin-left:10px">
+										<a href="#">SIUP.PDF</a>
+									</div>						
+								</div>
+								<div class="control-group">
+									<div class="span12" style="margin-left:10px">
+										<a href="#">TOP.Docx</a>
+									</div>						
+								</div>
+								<div class="control-group">
+									<div class="span12" style="margin-left:10px">
+										<a href="#">Laporan Keuangan</a>
+									</div>
+								</div>
+								<div class="control-group">
+									<div class="span12" style="margin-left:10px">
+										<a href="#">Akte Perusahaan</a>
+									</div>
+								</div>	
+							</form>
+						</div>
+					</div>
+						</div>
+					</div>
+					<div class="row-fluid">
+						<div class="span12">
+							<div class="widget-box">
+						<div class="widget-title">
+								<span class="icon">
+								<i class="icon-align-justify"></i>									
+							</span>
+							<h5>Bisnis yang terkait</h5>
+						</div>
+						<div class="widget-content nopadding">
+							<form class="form-horizontal">
+								<div class="control-group">
+									<div class="span12" style="margin-left:30px">
+										<div class="span6">
+											<img src="#" width="90" height="90"/>
+										</div>
+										<div class="span6">
+											<img src="#" width="90" height="90"/>
+										</div>
+									</div>
+								</div>
+								<div class="control-group">
+									<div class="span12" style="margin-left:30px">
+										<div class="span6">
+											<img src="#" width="90" height="90"/>
+										</div>
+										<div class="span6">
+											<img src="#" width="90" height="90"/>
+										</div>
+									</div>
+								</div>
+								<div class="control-group">
+									<div class="span12" style="margin-left:30px">
+										<div class="span6">
+											<img src="#" width="90" height="90"/>
+										</div>
+										<div class="span6">
+											<img src="#" width="90" height="90"/>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+						</div>
 					</div>
 				</div>
-				<div class="row-fluid">
-					<div class="span7">
-						<?php
-						$bisnisTerkait = "";
-						foreach($bisnis_terkait as $bisnis){ 
-						?>
-							<?php 
-							$imageList = array_filter(explode(',',$bisnis->image));
-							if(!empty($imageList))
-							{
-								$imageSource = Yii::app()->baseUrl.'/uploads/images/'.$bisnis->id_user.'/thumbs/'.$imageList[0];
-							}
-							else
-							{
-								$imageSource = Yii::app()->request->baseUrl.'/images/no-image.gif';
-							}                
-							$bisnisTerkait .= "<a href=".Yii::app()->createUrl("//cariBisnisFranchise/detail/$bisnis->id")."><img src=".$imageSource." alt=".$bisnis->nama." style=\"width:90px; height:90px \"/></a>";
-						?>        
-					<?php 
-					} 
-                    $this->widget('bootstrap.widgets.TbTabs', array(
-                            'type'=>'tabs', // 'tabs' or 'pills'
-                            'tabs'=>array(
-                                    array('label'=>'Bisnis Terkait', 'content'=>"$bisnisTerkait", 'active'=>true),
-                            ),
-                    )); 
-                    ?>
-					</div>
-				</div>
-			</div>
+			</div>	
 		</div>
 	</div>
 </div>

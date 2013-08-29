@@ -17,6 +17,9 @@ $this->menu=array(
 ?>
 
 <div class="span10">
-<h1>Update Industri <?php echo $model->id; ?></h1>
+<div class="span7">
+	<div><header style="font-size:30px; font-family:Calibri;">Update Industri <?php echo $model->id; ?></header>
+</div>
+</div>	
 </div>
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

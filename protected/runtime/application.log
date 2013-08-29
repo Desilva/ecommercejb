@@ -3413,3 +3413,1478 @@ Stack trace:
 REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/9.jpg
 HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
 ---
+2013/08/22 21:49:07 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\E-com\framework\web\auth\CAccessControlFilter.php:179
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\auth\CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\E-com\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\E-com\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\E-com\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(282): CController->run('index')
+#8 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('account/index')
+#9 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii/E-COM/index.php/account/index
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/account/beli
+---
+2013/08/24 02:15:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/4.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/4.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:15:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/2.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/2.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:15:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/3.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/3.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:15:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/7.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/7.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:15:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/5.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/5.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:15:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/bf_5_130722090332_1.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/bf_5_130722090332_1.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:15:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/8.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/8.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:15:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/9.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/9.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:15:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/10.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/10.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:15:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/11.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/11.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:15:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/13.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/13.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:15:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/14.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/14.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:15:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/12.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/12.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:15:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/15.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/15.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:15:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/16.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/16.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:15:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/17.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/17.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:15:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/18.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/18.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:15:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/19.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/19.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:15:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/20.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/20.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:15:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/6.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/6.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:15:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/bf_5_130722090332_1.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/bf_5_130722090332_1.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:15:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/4.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/4.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:15:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/5.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/5.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:15:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/7.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/7.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:15:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/3.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/3.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:15:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/2.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/2.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:15:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/8.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/8.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:15:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/9.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/9.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:15:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/12.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/12.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:15:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/13.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/13.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:15:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/10.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/10.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:15:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/11.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/11.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:15:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/14.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/14.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:15:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/17.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/17.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:15:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/16.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/16.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:15:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/15.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/15.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:15:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/18.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/18.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:15:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/19.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/19.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:15:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/20.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/20.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:15:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/6.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/6.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:16:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/bf_5_130722090332_1.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/bf_5_130722090332_1.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:16:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/2.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/2.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:16:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/5.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/5.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:16:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/3.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/3.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:16:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/7.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/7.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:16:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/4.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/4.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:16:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/12.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/12.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:16:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/9.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/9.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:16:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/8.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/8.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:16:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/11.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/11.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:16:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/10.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/10.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:16:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/13.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/13.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:16:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/17.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/17.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:16:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/15.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/15.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:16:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/14.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/14.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:16:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/16.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/16.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:16:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/18.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/18.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:16:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/20.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/20.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:16:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/19.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/19.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:16:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/6.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/6.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/bf_5_130722090332_1.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/bf_5_130722090332_1.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/7.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/7.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/4.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/4.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/3.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/3.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/5.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/5.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/2.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/2.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/12.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/12.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/11.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/11.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/13.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/13.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/8.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/8.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/9.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/9.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/14.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/14.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/15.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/15.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/10.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/10.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/17.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/17.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/18.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/18.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/16.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/16.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/19.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/19.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/6.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/6.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/20.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/20.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/4.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/4.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/7.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/7.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/bf_5_130722090332_1.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/bf_5_130722090332_1.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/2.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/2.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/5.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/5.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/3.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/3.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/9.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/9.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/10.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/10.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/8.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/8.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/11.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/11.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/15.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/15.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/16.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/16.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/12.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/12.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/13.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/13.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/17.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/17.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/14.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/14.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/20.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/20.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/18.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/18.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/19.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/19.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/6.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/6.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/bf_5_130722090332_1.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/bf_5_130722090332_1.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/7.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/7.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/5.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/5.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/3.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/3.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/4.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/4.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/2.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/2.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/9.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/9.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/11.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/11.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/8.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/8.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/10.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/10.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/12.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/12.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/13.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/13.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/14.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/14.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/16.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/16.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/15.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/15.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/18.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/18.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/17.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/17.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/19.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/19.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/20.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/20.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:17:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/6.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/6.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:18:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/5.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/5.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:18:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/4.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/4.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:18:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/bf_5_130722090332_1.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/bf_5_130722090332_1.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:18:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/7.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/7.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:18:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/3.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/3.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:18:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/8.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/8.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:18:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/12.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/12.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:18:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/9.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/9.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:18:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/10.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/10.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:18:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/2.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/2.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:18:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/13.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/13.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:18:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/14.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/14.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:18:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/11.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/11.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:18:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/16.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/16.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:18:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/17.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/17.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:18:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/15.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/15.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:18:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/18.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/18.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:18:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/19.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/19.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:18:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/20.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/20.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/24 02:18:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/6.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/6.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/28 16:50:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/3.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/3.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/28 16:50:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/3.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/3.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/28 16:56:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/3.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/3.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/28 16:57:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/3.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/3.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/28 16:57:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/3.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/3.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/28 16:57:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/2.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/2.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/28 16:57:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/3.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/3.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/28 16:57:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/2.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/2.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/28 16:59:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/3.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/3.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/28 17:00:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/3.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/3.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/28 17:00:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/3.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/3.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/28 17:00:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/3.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/3.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/28 17:03:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/3.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/3.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/28 17:11:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/3.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/3.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/28 17:12:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/3.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/3.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/28 17:12:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/3.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/3.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/28 17:12:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/3.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/3.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/28 17:13:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/3.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/3.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/28 17:45:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/3.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/3.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/29 10:09:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/3.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/3.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/29 10:09:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/3.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/3.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
+2013/08/29 10:11:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/3.jpg".' in C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\E-com\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\yii\E-com\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\yii\E-com\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/E-COM/index.php/uploads/images/5/3.jpg
+HTTP_REFERER=http://localhost/yii/E-COM/index.php/home
+---
