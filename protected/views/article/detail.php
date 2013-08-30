@@ -33,7 +33,7 @@
             </div>
         </div>
         
-        <div class="span11" style="text-align:left; clear: both">
+        <div class="span11 Text-Align-Justify" style="clear: both">
                 <?php echo($model->post) ?>
         </div>	
     </div>

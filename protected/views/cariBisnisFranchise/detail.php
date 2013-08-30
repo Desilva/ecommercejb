@@ -91,11 +91,11 @@
 													<a href="<?php echo Yii::app()->request->baseUrl ?>/uploads/images/<?php echo $model->id_user ?>/<?php echo $imageSrc ?>">
 													<?php if(file_exists(Yii::app()->basePath . '/../uploads/images/' . $model->id_user . '/thumbs/' . $imageSrc)) 
 															{ ?>
-																<img src="<?php echo Yii::app()->request->baseUrl ?>/uploads/images/<?php echo $model->id_user ?>/thumbs/<?php echo $imageSrc ?>" width="50" height="50">
+																<img src="<?php echo Yii::app()->request->baseUrl ?>/uploads/images/<?php echo $model->id_user ?>/thumbs/<?php echo $imageSrc ?>" width="30" height="30">
 													<?php 	} 
 															else
 															{ ?>
-																<img src="<?php echo Yii::app()->request->baseUrl ?>/uploads/images/<?php echo $model->id_user ?>/<?php echo $imageSrc ?>" width="50" height="50">
+																<img src="<?php echo Yii::app()->request->baseUrl ?>/uploads/images/<?php echo $model->id_user ?>/<?php echo $imageSrc ?>" width="30" height="30">
                                                             <?php } ?>
 													</a>
 												</li>
@@ -106,7 +106,7 @@
 									?>
 												<li>
 													<a href="<?php echo Yii::app()->request->baseUrl ?>/images/no-image.gif">
-														<img src="<?php echo Yii::app()->request->baseUrl ?>/images/no-image.gif" width="50">
+														<img src="<?php echo Yii::app()->request->baseUrl ?>/images/no-image.gif" width="30">
 													</a>
 												</li>
                                     <?php 
@@ -157,7 +157,7 @@
 				}
 				else
 				{ ?>
-                      <img src="<?php echo Yii::app()->request->baseUrl ?>/images/no-image.gif" width="300" style="float:left; margin-right:5px;" />   
+                      <img src="<?php echo Yii::app()->request->baseUrl ?>/images/no-image.gif" width="250" style="float:left; margin-right:5px;" />   
 				<?php } ?>
     	
 				<?php if($model->deskripsi =='' || $model->deskripsi ==null) echo "Tidak ada deskripsi"; else echo $model->deskripsi ?>
