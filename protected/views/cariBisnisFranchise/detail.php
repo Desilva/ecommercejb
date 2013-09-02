@@ -157,7 +157,7 @@
 				}
 				else
 				{ ?>
-                      <img src="<?php echo Yii::app()->request->baseUrl ?>/images/no-image.gif" width="250" style="float:left; margin-right:5px;" />   
+                      <img src="<?php echo Yii::app()->request->baseUrl ?>/images/no-image.gif" width="250" style="float:left; margin-right:25px; margin-bottom:11px" />   
 				<?php } ?>
     	
 				<?php if($model->deskripsi =='' || $model->deskripsi ==null) echo "Tidak ada deskripsi"; else echo $model->deskripsi ?>
