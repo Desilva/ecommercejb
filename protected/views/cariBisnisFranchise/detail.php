@@ -75,9 +75,9 @@
 					if(count($image) > 1) 
 					{ 
 				?>
-						<div class="ad-gallery" style=" width: 300px; float:left">
+						<div class="ad-gallery" style=" width: 300px; float:left; margin-right:20px; margin-bottom:10px">
                             <div class="ad-image-wrapper"></div>
-							<div class="ad-controls"></div>
+							<!--<div class="ad-controls"></div>-->
 							<div class="ad-nav">
 								<div class="ad-thumbs">
 									<ul class="ad-thumb-list">
@@ -91,11 +91,11 @@
 													<a href="<?php echo Yii::app()->request->baseUrl ?>/uploads/images/<?php echo $model->id_user ?>/<?php echo $imageSrc ?>">
 													<?php if(file_exists(Yii::app()->basePath . '/../uploads/images/' . $model->id_user . '/thumbs/' . $imageSrc)) 
 															{ ?>
-																<img src="<?php echo Yii::app()->request->baseUrl ?>/uploads/images/<?php echo $model->id_user ?>/thumbs/<?php echo $imageSrc ?>" width="30" height="30">
+																<img src="<?php echo Yii::app()->request->baseUrl ?>/uploads/images/<?php echo $model->id_user ?>/thumbs/<?php echo $imageSrc ?>" style="width:50px; height:50px">
 													<?php 	} 
 															else
 															{ ?>
-																<img src="<?php echo Yii::app()->request->baseUrl ?>/uploads/images/<?php echo $model->id_user ?>/<?php echo $imageSrc ?>" width="30" height="30">
+																<img src="<?php echo Yii::app()->request->baseUrl ?>/uploads/images/<?php echo $model->id_user ?>/<?php echo $imageSrc ?>" style="width:50px; height:50px">
                                                             <?php } ?>
 													</a>
 												</li>
