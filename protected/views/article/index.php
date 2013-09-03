@@ -51,7 +51,7 @@
 				</div>						
 			</div>
 			<div class="span7" style="margin-left:10px;">
-				<div style="height:700px">
+				<div>
 					<?php 
 					$this->widget('zii.widgets.CListView', array(
 							'dataProvider'=>$model,

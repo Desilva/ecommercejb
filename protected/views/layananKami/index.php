@@ -1,7 +1,7 @@
 <div class="row-fluid">
 	<div class="span11 Font-Size-Medium">
     	<div class="row-fluid">
-        	<div class="span12">
+        	<div class="span12 Top-Margin2">
             	<div>
 					<header style="font-size:30px; font-family:Calibri;">Layanan Kami</header><br style="clear:both"/>
 				</div>

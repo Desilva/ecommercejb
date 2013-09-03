@@ -357,14 +357,14 @@
 									<div id="example" class="k-content">
             <input type="file" name="files" id="upload" />
             <input type='hidden' value='0' id='image_incrementor' />
-            <script id="fileTemplate" type="text/x-kendo-template">
-                
+            <script id="fileTemplate" type="text/x-kendo-template"> 
                 <span class='k-progress'></span>
                 <div class='file-wrapper'>
-                <img id='#=files[0].name##=files[0].size#' src='<?php echo Yii::app()->request->baseUrl ?>/uploads/images/<?php echo $model->id_user ?>/#=files[0].name#' class='file-icon' onerror="this.src='<?php echo Yii::app()->request->baseUrl ?>/images/asset/spinner-large.gif'" />
-                    <h4 class='file-heading file-name-heading'>Name: #=name#</h4>
-                    <h4 class='file-heading file-size-heading'>Size: #=size# bytes</h4>
-                    <button type='button' class='k-upload-action'></button>
+					<div class="span12">
+						<img  id='#=files[0].name##=files[0].size#' src='<?php echo Yii::app()->request->baseUrl ?>/uploads/images/<?php echo $model->id_user ?>/#=files[0].name#' class='file-icon' onerror="this.src='<?php echo Yii::app()->request->baseUrl ?>/images/asset/spinner-large.gif'" style="margin-right:5px"/>
+						<b>Name:</b> #=name#<br/>
+						<b>Size:</b> #=size# bytes
+					<button type='button' class='k-upload-action'></button>
                 </div>
             </script>
 

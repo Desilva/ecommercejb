@@ -4,7 +4,7 @@
 
 <div class="row-fluid">
 	<div class="span11">
-		<div class="span2">
+		<div class="span2 Top-Margin2">
 			<div class="widget-box">
 				<div class="widget-title">
 					<span class="icon">

@@ -330,10 +330,10 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
 				<div class="span11 Text-Align-Center">
 					<div class="row-fluid">
 						<div class=	"span12 " style="border-bottom:solid 1px #999;">
-							<div class="span3 Gradient-Style1 Border-Radius-Style1 active" id="tab1_terbaru" style="padding-top:5px" onClick="changeImageTerbaru()">
+							<div class="span3 Gradient-Style1 Border-Radius-Style1 active" id="tab2_terbaru" style="padding-top:5px" onClick="changeImageTerbaru_2()">
 								Terbaru
 							</div>
-							<div class="span5 Gradient-Style1 Border-Radius-Style1 nonActive" style="margin-left:1px; padding-top:5px" id="tab1_rekomendasi" onClick="changeImageRekomendasi()">
+							<div class="span5 Gradient-Style1 Border-Radius-Style1 nonActive" style="margin-left:1px; padding-top:5px" id="tab2_rekomendasi" onClick="changeImageRekomendasi_2()">
 								Rekomendasi
 							</div>	
 						</div>		

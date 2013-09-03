@@ -84,7 +84,8 @@
                         	<div class="span12 separator-medium"></div><!--Separator-->
                         </div>
             										
-                                <button class="detail btn Gradient-Style1">Lihat Detail</button>        
+                               <?php echo CHtml::button('Lihat Detail', array('class' => 'detail btn Gradient-Style1')); ?>  
+								
                         <?php   } ?>
                 </td>
             </tr>
