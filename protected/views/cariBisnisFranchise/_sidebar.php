@@ -42,21 +42,20 @@
                                                                                     'prompt'=>'Pilih Provinsi',
                                                                                     'class'=>'Input-Size-VerySmall',
                                                                                     'ajax' => array(
-                                                                                            'type' => 'POST',
-                                                                                            'url' => Yii::app()->createUrl('//cariBisnisFranchise/generatekota'),
-                                                                                            'update' => '#kota',
-                                                                                            'beforeSend' => "function( request )
+																								'type' => 'POST',
+																								'url' => Yii::app()->createUrl('//cariBisnisFranchise/generatekota'),
+																								'update' => '#kota',
+																								'beforeSend' => "function( request )
                                                                                                 {
                                                                                                  $('#loading-animation-provinsi').removeAttr('style');
                                                                                                   // Set up any pre-sending stuff like initializing progress indicators
                                                                                                 }",
-                                                                                            'complete' => "function( data )
+																								'complete' => "function( data )
                                                                                                 {
                                                                                                      $('#loading-animation-provinsi').attr('style','display:none');                                  
                                                                                                 }",    
                                                                                             )))
-                                                                                ?>
-                    
+                                        ?>                    
 									</td>
 								</tr>
 								<tr>
@@ -68,39 +67,39 @@
 											'class'=>'Input-Size-VerySmall',
 											));
 										?>
-                                                                            <img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/spinner.gif" id="loading-animation-provinsi" style="display:none"/>
-                                                                           
+                                        <img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/spinner.gif" id="loading-animation-provinsi" style="display:none"/>                                                                          
 									</td>
 								</tr>
 								<tr>
 									<td style="padding-left:40px">Kategori</td>
 									<td>
-										<?php echo CHtml::dropDownList('kategori',$selected_kategori,CHtml::listData($kategori,'id','industri'),array(
-                            'prompt'=>'Pilih Kategori',
-                            'class'=>'Input-Size-VerySmall',
-                            'ajax' => array(
-                            'type' => 'POST',
-                            'url' => Yii::app()->createUrl('//cariBisnisFranchise/generateSubIndustri'),
-                            'update' => '#subkategori',
-                            'beforeSend' => "function( request )
-                                {
-                                 $('#loading-animation-kategori').removeAttr('style');
-                                  // Set up any pre-sending stuff like initializing progress indicators
-                                }",
-                            'complete' => "function( data )
-                                {
-                                     $('#loading-animation-kategori').attr('style','display:none');                                  
-                                }",    
-                                ))); ?>
-                    
+										<?php 
+											echo CHtml::dropDownList('kategori',$selected_kategori,CHtml::listData($kategori,'id','industri'),array(
+											'prompt'=>'Pilih Kategori',
+											'class'=>'Input-Size-VerySmall',
+											'ajax' => array(
+											'type' => 'POST',
+											'url' => Yii::app()->createUrl('//cariBisnisFranchise/generateSubIndustri'),
+											'update' => '#subkategori',
+											'beforeSend' => "function( request )
+												{
+												 $('#loading-animation-kategori').removeAttr('style');
+												  // Set up any pre-sending stuff like initializing progress indicators
+												}",
+											'complete' => "function( data )
+												{
+													 $('#loading-animation-kategori').attr('style','display:none');                                  
+												}",    
+											))); 
+										?>                    
 									</td>
 								</tr>
 								<tr>
 									<td style="padding-left:40px">Kata Kunci</td>
 									<td>
 										 <?php 
-                echo CHtml::textField('keyword',$selected_keyword,array('style'=>'width:140px!important'));
-            ?>
+											echo CHtml::textField('keyword',$selected_keyword,array('style'=>'width:140px!important'));
+										?>
 									</td>
 								</tr>
 								<tr>

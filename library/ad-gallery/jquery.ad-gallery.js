@@ -474,7 +474,7 @@
       };
     },
     initNextAndPrev: function() {
-      this.next_link = $('<div class="ad-next"><div class="ad-next-image"></div></div>');
+      this.next_link = $('<div class="ad-next" style="margin-right:10px"><div class="ad-next-image"></div></div>');
       this.prev_link = $('<div class="ad-prev"><div class="ad-prev-image"></div></div>');
       this.image_wrapper.append(this.next_link);
       this.image_wrapper.append(this.prev_link);
@@ -503,8 +503,8 @@
     },
     initBackAndForward: function() {
       var context = this;
-      this.scroll_forward = $('<div class="ad-forward"></div>');
-      this.scroll_back = $('<div class="ad-back"></div>');
+      this.scroll_forward = $('<div class=""></div>');
+      this.scroll_back = $('<div class=""></div>');
       this.nav.append(this.scroll_forward);
       this.nav.prepend(this.scroll_back);
       var has_scrolled = 0;
@@ -517,7 +517,7 @@
           if(context.settings.scroll_jump > 0) {
             var width = context.settings.scroll_jump;
           };
-          if($(this).is('.ad-forward')) {
+          if($(this).is('')) {
             var left = context.thumbs_wrapper.scrollLeft() + width;
           } else {
             var left = context.thumbs_wrapper.scrollLeft() - width;
@@ -865,10 +865,10 @@
       this.settings = settings;
     },
     create: function() {
-      this.start_link = $('<span class="ad-slideshow-start">'+ this.settings.start_label +'</span>');
-      this.stop_link = $('<span class="ad-slideshow-stop">'+ this.settings.stop_label +'</span>');
-      this.countdown = $('<span class="ad-slideshow-countdown"></span>');
-      this.controls = $('<div class="ad-slideshow-controls"></div>');
+      this.start_link = $('<span class="">'+ this.settings.start_label +'</span>');
+      this.stop_link = $('<span class="">'+ this.settings.stop_label +'</span>');
+      this.countdown = $('<span class=""></span>');
+      this.controls = $('<div class=""></div>');
       this.controls.append(this.start_link).append(this.stop_link).append(this.countdown);
       this.countdown.hide();
 
@@ -917,7 +917,7 @@
       if(this.running || !this.enabled) return false;
       var context = this;
       this.running = true;
-      this.controls.addClass('ad-slideshow-running');
+      this.controls.addClass('');
       this._next();
       this.fireCallback(this.settings.onStart);
       return true;

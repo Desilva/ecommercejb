@@ -75,9 +75,9 @@
 					if(count($image) > 1) 
 					{ 
 				?>
-						<div class="ad-gallery" style=" width: 300px; float:left">
+						<div class="ad-gallery" style=" width: 300px; float:left; margin-right:20px; margin-bottom:10px">
                             <div class="ad-image-wrapper"></div>
-							<div class="ad-controls"></div>
+							
 							<div class="ad-nav">
 								<div class="ad-thumbs">
 									<ul class="ad-thumb-list">
@@ -91,7 +91,7 @@
 													<a href="<?php echo Yii::app()->request->baseUrl ?>/uploads/images/<?php echo $model->id_user ?>/<?php echo $imageSrc ?>">
 													<?php if(file_exists(Yii::app()->basePath . '/../uploads/images/' . $model->id_user . '/thumbs/' . $imageSrc)) 
 															{ ?>
-																<img src="<?php echo Yii::app()->request->baseUrl ?>/uploads/images/<?php echo $model->id_user ?>/thumbs/<?php echo $imageSrc ?>" width="30" height="30">
+																<img src="<?php echo Yii::app()->request->baseUrl ?>/uploads/images/<?php echo $model->id_user ?>/thumbs/<?php echo $imageSrc ?>" style="width:50px; height:50px">
 													<?php 	} 
 															else
 															{ ?>
@@ -143,7 +143,7 @@
 						if(file_exists(Yii::app()->basePath . '/../uploads/images/' . $model->id_user . '/' . $image[0]))
                     { 
 					?>
-                        <img src="<?php echo Yii::app()->baseUrl ?>/uploads/images/<?php echo $model->id_user?>/<?php echo $image[0] ?>" width="300" height="300" style="float:left; width:300px; height:300px"/>
+                        <img src="<?php echo Yii::app()->baseUrl ?>/uploads/images/<?php echo $model->id_user?>/<?php echo $image[0] ?>" style="float:left; width:300px; height:300px"/>
 					<?php 
 					} 
 					else
@@ -157,10 +157,13 @@
 				}
 				else
 				{ ?>
-                      <img src="<?php echo Yii::app()->request->baseUrl ?>/images/no-image.gif" width="250" style="float:left; margin-right:5px;" />   
-				<?php } ?>
-    	
-				<?php if($model->deskripsi =='' || $model->deskripsi ==null) echo "Tidak ada deskripsi"; else echo $model->deskripsi ?>
+                      <img src="<?php echo Yii::app()->request->baseUrl ?>/images/no-image.gif" width="250" style="float:left; margin-right:25px; margin-bottom:11px" />   
+				<?php 
+				} 
+				?>
+				
+					<?php if($model->deskripsi =='' || $model->deskripsi ==null) echo "Tidak ada deskripsi"; else echo $model->deskripsi ?>
+				
 			</div>
 		</div>
 		<div class="row-fluid" style="clear:both">
