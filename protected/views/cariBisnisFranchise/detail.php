@@ -75,7 +75,7 @@
 					if(count($image) > 1) 
 					{ 
 				?>
-						<div class="ad-gallery" style=" width: 300px; float:left; margin-right:20px; margin-bottom:10px">
+						<div class="ad-gallery" style="float:left; margin-right:20px; margin-bottom:10px">
                             <div class="ad-image-wrapper"></div>
 							<!--<div class="ad-controls"></div>-->
 							<div class="ad-nav">
@@ -285,47 +285,47 @@
 					<div class="row-fluid">
 						<div class="span12">
 							<div class="widget-box">
-						<div class="widget-title">
-								<span class="icon">
-								<i class="icon-align-justify"></i>									
-							</span>
-							<h5>Bisnis yang terkait</h5>
-						</div>
-						<div class="widget-content nopadding">
-							<form class="form-horizontal">
-								<div class="control-group">
-									<div class="span12" style="margin-left:30px; margin-top:10px">
-										<div class="span6">
-											<img src="#" width="90" height="90"/>
-										</div>
-										<div class="span6">
-											<img src="#" width="90" height="90"/>
-										</div>
-									</div>
+								<div class="widget-title">
+									<span class="icon">
+										<i class="icon-align-justify"></i>									
+									</span>
+									<h5>Bisnis yang terkait</h5>
 								</div>
-								<div class="control-group">
-									<div class="span12" style="margin-left:30px; margin-top:10px">
-										<div class="span6">
-											<img src="#" width="90" height="90"/>
+								<div class="widget-content nopadding">
+									<form class="form-horizontal">
+										<div class="control-group">
+											<div class="span12" style="margin-left:30px; margin-top:10px">
+												<div class="span6">
+													<img src="#" width="90" height="90"/>
+												</div>
+												<div class="span6">
+													<img src="#" width="90" height="90"/>
+												</div>
+											</div>
 										</div>
-										<div class="span6">
-											<img src="#" width="90" height="90"/>
+										<div class="control-group">
+											<div class="span12" style="margin-left:30px; margin-top:10px">
+												<div class="span6">
+													<img src="#" width="90" height="90"/>
+												</div>
+												<div class="span6">
+													<img src="#" width="90" height="90"/>
+												</div>
+											</div>
 										</div>
-									</div>
+										<div class="control-group">
+											<div class="span12" style="margin-left:30px; margin-top:10px">
+												<div class="span6">
+													<img src="#" width="90" height="90"/>
+												</div>
+												<div class="span6">
+													<img src="#" width="90" height="90"/>
+												</div>
+											</div>
+										</div>
+									</form>
 								</div>
-								<div class="control-group">
-									<div class="span12" style="margin-left:30px; margin-top:10px">
-										<div class="span6">
-											<img src="#" width="90" height="90"/>
-										</div>
-										<div class="span6">
-											<img src="#" width="90" height="90"/>
-										</div>
-									</div>
-								</div>
-							</form>
-						</div>
-					</div>
+							</div>
 						</div>
 					</div>
 				</div>

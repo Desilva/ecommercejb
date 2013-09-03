@@ -301,11 +301,17 @@
         100
       );
     },
+	
+	
+	
+	
+	
     _setThumbListWidth: function(wrapper_width) {
       wrapper_width -= 100;
       var list = this.nav.find('.ad-thumb-list');
       list.css('width', wrapper_width +'px');
       var i = 1;
+	  
       var last_height = list.height();
       while(i < 201) {
         list.css('width', (wrapper_width + i) +'px');
@@ -316,9 +322,13 @@
         i++;
       };
       if(list.width() < this.nav.width()) {
-        list.width(this.nav.width());
+        list.width(290);
       };
     },
+	
+	
+	
+	
     _initLink: function(link) {
       var context = this;
       link.click(
