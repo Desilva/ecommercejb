@@ -47,11 +47,7 @@ class HomeController extends Controller
         $list_provinsi = Provinsi::model()->findAll();
         $list_kategori = Industri::model()->findAll();
         $list_kota = City::model()->findAll();
-        $list_rangeharga = array(
-                '1' => '<1 jt',
-                '2' => '1jt - 10jt',
-                '3' => '>10 jt'
-            );
+        $list_rangeharga = RangePrice::model()->findAll();
         $list_slideshow = Slideshow::model()->findAll();
         
         $criteria_business_terbaru = new CDbCriteria();

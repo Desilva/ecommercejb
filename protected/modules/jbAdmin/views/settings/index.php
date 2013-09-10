@@ -66,9 +66,9 @@
 												</div>
 												
 												<script type=\"text/javascript\">
-                                                                                    CKEDITOR.config.width = 570;
-                                                                                    CKEDITOR.replace( 'Slideshow_".$i."_deskripsi' );
-                                                                                </script>
+                                                    //CKEDITOR.config.width = 570;
+                                                    CKEDITOR.replace( 'Slideshow_".$i."_deskripsi' );
+                                                </script>
 												";
                                             }
                                             $this->widget('bootstrap.widgets.TbTabs', array(
@@ -88,9 +88,6 @@
 						</div>						
 					</div>
 					
-					
-					
-				
 			</div>
 		</div>
 		

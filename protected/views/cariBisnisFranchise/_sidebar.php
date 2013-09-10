@@ -39,22 +39,22 @@
 									<td style="padding-left:40px">Provinsi</td>
 									<td>
 										<?php echo CHtml::dropDownList('provinsi',$selected_provinsi,CHtml::listData($provinsi,'id','provinsi'),array(
-                                                                                    'prompt'=>'Pilih Provinsi',
-                                                                                    'class'=>'Input-Size-VerySmall',
-                                                                                    'ajax' => array(
-																								'type' => 'POST',
-																								'url' => Yii::app()->createUrl('//cariBisnisFranchise/generatekota'),
-																								'update' => '#kota',
-																								'beforeSend' => "function( request )
-                                                                                                {
-                                                                                                 $('#loading-animation-provinsi').removeAttr('style');
-                                                                                                  // Set up any pre-sending stuff like initializing progress indicators
-                                                                                                }",
-																								'complete' => "function( data )
-                                                                                                {
-                                                                                                     $('#loading-animation-provinsi').attr('style','display:none');                                  
-                                                                                                }",    
-                                                                                            )))
+                                                                        'prompt'=>'Pilih Provinsi',
+                                                                        'class'=>'Input-Size-VerySmall',
+                                                                        'ajax' => array(
+																					'type' => 'POST',
+																					'url' => Yii::app()->createUrl('//cariBisnisFranchise/generatekota'),
+																					'update' => '#kota',
+																					'beforeSend' => "function( request )
+                                                                                    {
+                                                                                     $('#loading-animation-provinsi').removeAttr('style');
+                                                                                      // Set up any pre-sending stuff like initializing progress indicators
+                                                                                    }",
+																					'complete' => "function( data )
+                                                                                    {
+                                                                                         $('#loading-animation-provinsi').attr('style','display:none');                                  
+                                                                                    }",    
+                                                                                )))
                                         ?>                    
 									</td>
 								</tr>
@@ -102,26 +102,25 @@
 										?>
 									</td>
 								</tr>
-								<tr>
-									<Td></td>
-									<tD><button type="submit" class="btn Gradient-Style1">Cari</button></td>
-								</tr>
 							</table>
+							<hr />
 							<div class="" style="width: 285px; margin-left: 15px; padding-bottom:10px" >
 								<?php 
 								$this->widget('zii.widgets.jui.CJuiAccordion', array(
 								'panels' => array(
-								'Pencarian Lainnya' => $this->renderpartial('//cariBisnisFranchise/_pencarianLainnya', array('subkategori' => $subkategori, 'rangeharga' => $rangeharga, 'omzet' => $omzet, 'selected_subkategori'=>$selected_subkategori,'selected_rangeharga'=> $selected_rangeharga,'selected_omzet'=>$selected_omzet), true),
+									'Pencarian Lainnya' => $this->renderpartial('//cariBisnisFranchise/_pencarianLainnya', array('subkategori' => $subkategori, 'rangeharga' => $rangeharga, 'omzet' => $omzet, 'selected_subkategori'=>$selected_subkategori,'selected_rangeharga'=> $selected_rangeharga,'selected_omzet'=>$selected_omzet), true),
                    
 								),
 								// additional javascript options for the accordion plugin
 								'options' => array(
-									'collapsible' => 'true',
-									'active' => 'false'
-								),
+										'collapsible' => true,
+										'active' => 0
+									),
 								));
 								?>
-							</div>
+								<br />
+								<button type="submit" class="btn Gradient-Style1">Cari</button></td>
+							</div>	
 						</div>
 			</div>
 

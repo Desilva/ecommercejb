@@ -25,7 +25,7 @@
 		</div>
 		<div class="span9">
 			<div>
-				<header style="font-size:30px; font-family:Calibri;">List Bisnis/Franchise Yang Pernah Dikontak</header><br style="clear:both"/>
+				<header style="font-size:30px; font-family:Calibri;">Watchlist</header><br style="clear:both"/>
 			</div>
 			<div style="margin-top:-35px;"></div>
 			<div class="row-fluid Top-Margin3">
@@ -60,7 +60,7 @@
 											'class' => 'CButtonColumn',
 											'header' => 'Tindakan',
 											'template' => '{view}',
-											'viewButtonImageUrl' => Yii::app()->request->baseUrl . '/images/icon/-.png',
+											'viewButtonImageUrl' => Yii::app()->request->baseUrl . '/images/asset/-.png',
 											'viewButtonUrl'=> 'Yii::app()->createUrl("cariBisnisFranchise/detail/", array("id"=>$data->id_business, "kategori"=>$data->idBusiness->id_category, "return"=>"watchlist"))',
 										),
 									),
