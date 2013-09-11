@@ -192,7 +192,13 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
 					</div>
 					<div class="input-prepend">
 						<?php echo CHtml::submitButton('Cari', array('submit' => array("/cariBisnisFranchise/cari/"),'class' => 'btn')); ?>
-						<?php echo CHtml::textField('keyword','',array('class'=>'Input-Size-Small','placeholder'=>'Kata Kunci')); ?>
+						<?php
+							echo CHtml::dropDownList('rangeharga', 'id', CHtml::listData($rangeharga, 'id', 'range_price'), array(
+										'prompt' => 'Range Harga',
+										'class' => 'Input-Size-Small',
+							));
+						?>
+						<!--<?php echo CHtml::textField('keyword','',array('class'=>'Input-Size-Small','placeholder'=>'Kata Kunci')); ?>-->
 					</div>
 				</div>
 			</div>
@@ -306,7 +312,13 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
 					</div>
 					<div class="input-prepend">
 							<?php echo CHtml::submitButton('Cari', array('submit' => array("/cariBisnisFranchise/cari/"),'class' => 'btn')); ?>
-							<?php echo CHtml::textField('keyword','',array('class'=>'Input-Size-Small','placeholder'=>'Kata Kunci')); ?>
+							<?php
+								echo CHtml::dropDownList('rangeharga', 'id', CHtml::listData($rangeharga, 'id', 'range_price'), array(
+											'prompt' => 'Range Harga',
+											'class' => 'Input-Size-Small',
+								));
+							?>
+							<!--<?php echo CHtml::textField('keyword','',array('class'=>'Input-Size-Small','placeholder'=>'Kata Kunci')); ?>-->
 					</div>
 				</div>
 			</div>
