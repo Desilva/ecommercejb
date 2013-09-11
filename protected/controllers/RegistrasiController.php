@@ -73,8 +73,8 @@ class RegistrasiController extends Controller
 //            "Keluarga"=>"Keluarga",
 //            "Event"=>"Event"
 //        );
-        $list_tempat_lahir = CHtml::listData(City::model()->findAll(), "city", "city");
-        $list_tempat_lahir += array('Lainnya'=>'Lainnya');
+//        $list_tempat_lahir = CHtml::listData(City::model()->findAll(), "city", "city");
+//        $list_tempat_lahir += array('Lainnya'=>'Lainnya');
         $list_agama = array(
             "Kristen" => "Kristen",
             "Katolik" => "Katolik",
@@ -161,7 +161,7 @@ class RegistrasiController extends Controller
             'kategori' => $list_kategori_buyer,
             'lokasi' => $list_provinsi,
             'range_harga' => $list_range_harga,
-            'tempat_lahir' => $list_tempat_lahir,
+//            'tempat_lahir' => $list_tempat_lahir,
             'references1' => $list_references1,
             'references2' => $list_references2,
 //            'references'=> $list_references,

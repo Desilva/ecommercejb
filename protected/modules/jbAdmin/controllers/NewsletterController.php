@@ -198,7 +198,7 @@ class NewsletterController extends Controller
                 $linkUnsubscribe = Yii::app()->createAbsoluteUrl("//registrasi/unsubscribeNewsletter");
                 $signature="<br/><br/><hr/><p>Anda menerima email ini dikarenakan anda telah berlangganan newsletter dari JualanBisnis.com.<a href='".$linkUnsubscribe."'>Klik disini</a> untuk berhenti berlangganan <p>";
                 
-                if(!empty($newsletterRecipients[]))
+                if(!empty($newsletterRecipients))
                 {
                     YiiBase::import('ext.YiiMailer.YiiMailer');
                     //function to send email

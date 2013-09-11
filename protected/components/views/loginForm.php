@@ -16,7 +16,7 @@
         <button type="submit" class="btn Gradient-Style2" />Masuk</button>
     </div>      	
     <div class="control-group" style="margin-right:10px">
-        <div class="span7 Text-Align-Right Font-Color-Red"><?php if($model->errors) echo "Invalid email/password" ?></div>
+        <div class="span7 Text-Align-Right Font-Color-Red"><?php if($error != '') echo $error ?></div>
         
 		<div class="span3">
         <label class="checkbox">

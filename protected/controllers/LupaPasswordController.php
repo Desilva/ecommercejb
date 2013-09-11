@@ -26,6 +26,12 @@ class LupaPasswordController extends Controller
             );
     }
     
+    public function actionNotifikasi()
+    {
+                $email = $_GET['email'];
+                $this->render('notifikasi',array('email'=>$email));
+    }
+    
     public function actionIndex()
     {
         
@@ -35,8 +41,9 @@ class LupaPasswordController extends Controller
             $model->attributes = $_POST['LupaPassword'];
             if($model->validate())
             {
+                $settings = Settings::model()->findByAttributes(array('nama_settings'=>'settings_admin'));
                 $new_password = md5(microtime());
-                $user = User::model()->findByAttributes(array('email'=>$model->email));
+                $user = UserUpdate::model()->findByAttributes(array('email'=>$model->email));
                 if($user != null || $user != '')
                 {
                     YiiBase::import('ext.YiiMailer.YiiMailer');
@@ -45,13 +52,13 @@ class LupaPasswordController extends Controller
                     //function to send email
                     $mail = new YiiMailer();
                     $mail->clearLayout();//if layout is already set in config
-                    $mail->setFrom('donotreply@jb.com', 'JualanBisnis.com');
-                    $mail->setTo('reynhart@licht-soft.com'); //CHANGE TO APPROPRIATE EMAIL WHEN DEPLOYING
+                    $mail->setFrom($settings->alamat_email, $settings->nama_email);
+                    $mail->setTo($user->email); //CHANGE TO APPROPRIATE EMAIL WHEN DEPLOYING
                     $mail->setSubject('Perubahan Password');
                     $mail->setBody('Berikut adalah password baru anda untuk login:<br />'.$new_password);
                     if ($mail->send()) {
 //                        Yii::app()->user->setFlash('email','Email Berhasil Dikirim');
-                        $this->redirect(Yii::app()->createUrl('//home'));
+                        $this->redirect(Yii::app()->createUrl('//lupaPassword/notifikasi',array('email'=>$model->email)));
                     } else {
                         Yii::app()->user->setFlash('error','Error while sending email: '.$mail->getError());
                     }

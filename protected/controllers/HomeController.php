@@ -53,9 +53,11 @@ class HomeController extends Controller
                 '3' => '>10 jt'
             );
         $list_slideshow = Slideshow::model()->findAll();
+        $settings = Settings::model()->findByAttributes(array('nama_settings'=>'settings_admin'));
+        
         
         $criteria_business_terbaru = new CDbCriteria();
-        $criteria_business_terbaru->limit = 5;
+        $criteria_business_terbaru->limit = $settings->jumlah_terbaru;
         $criteria_business_terbaru->with = 'idCategory';
         $criteria_business_terbaru->order = 'tanggal_approval desc';
         $criteria_business_terbaru->addCondition("status_approval = 'diterima'");
@@ -63,7 +65,7 @@ class HomeController extends Controller
         $list_business_terbaru = Business::model()->findAll($criteria_business_terbaru);
         
         $criteria_franchise_terbaru = new CDbCriteria();
-        $criteria_franchise_terbaru->limit = 5;
+        $criteria_franchise_terbaru->limit = $settings->jumlah_terbaru;
         $criteria_franchise_terbaru->with = 'idCategory';
         $criteria_franchise_terbaru->order = 'tanggal_approval desc';
         $criteria_franchise_terbaru->addCondition("status_approval = 'diterima'");
@@ -105,7 +107,8 @@ class HomeController extends Controller
             'business_terbaru'=>$list_business_terbaru,
             'franchise_terbaru'=>$list_franchise_terbaru,
             'business_rekomendasi'=>$shuffled_business_rekomendasi,
-            'franchise_rekomendasi'=>$shuffled_franchise_rekomendasi));
+            'franchise_rekomendasi'=>$shuffled_franchise_rekomendasi,
+            'settings'=>$settings));
     }
     
     public function actionSlideshowDetail($id)

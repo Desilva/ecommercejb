@@ -69,7 +69,7 @@
                 untuk mengirim ulang kode verifikasi <img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/spinner.gif" id="loading-animation" style="display:none"/></p>
                 <p id="verifikasi-ulang" style="display:none"></p>
                 <br/>
-                <p>* Harap menunggu 1x24 jam jika email dari kami belum sampai di email anda, atau hubungi kami untuk bantuan</p>
+                <p>* Harap periksa di bagian spam/email anda dan harap menunggu 1x24 jam jika email dari kami belum sampai di email anda, atau hubungi kami untuk bantuan</p>
         </div>  	
     </div>
 </div>

@@ -3,7 +3,6 @@
 class LupaPassword extends CFormModel
 {
         public $email;
-        
 	/**
 	 * @return array validation rules for model attributes.
 	 */

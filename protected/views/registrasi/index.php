@@ -177,7 +177,8 @@
 								<div class="span6">
 									<label class="control-label"><?php echo $form->labelEx($model,'birth_place'); ?></label>
 									<div class="controls">
-										<?php echo $form->dropDownList($model,'birth_place',$tempat_lahir,array('prompt'=>'Pilih Kota')); ?>
+										<?php // echo $form->dropDownList($model,'birth_place',$tempat_lahir,array('prompt'=>'Pilih Kota')); ?>
+                                                                                <?php echo $form->textField($model,'birth_place'); ?>
 									</div>
 								</div>
 								<div class="span6">
