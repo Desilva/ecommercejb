@@ -25,7 +25,7 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
 			changeImageTerbaru_2();
         });	
 	$(function() {
-		$('#foo0').carouFredSel({
+		$('#foo_tab_1').carouFredSel({
 			prev: '#prev2',
 			next: '#next2',
 					
@@ -33,79 +33,46 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
 
 	});
 	
+	
+	
 	$(function(){
-		$('#foo1').carouFredSel({
+		$('#foo_tab_2').carouFredSel({
 			prev: '#prev2_2',
 			next: '#next2_2',
 		});
 	});
-	function changeImageRekomendasi(){
-		document.getElementById('tab1_rekomendasi').className="span5 Gradient-Style1 Border-Radius-Style1 active";
-		document.getElementById('tab1_terbaru').className="span3 Gradient-Style1 Border-Radius-Style1 nonActive";
-		document.getElementById('img1').src="uploads/images/5/2.jpg";
-		document.getElementById('img2').src="uploads/images/5/2.jpg";
-		document.getElementById('img3').src="uploads/images/5/2.jpg";
-		document.getElementById('img4').src="uploads/images/5/2.jpg";
-		document.getElementById('img5').src="uploads/images/5/2.jpg";
-		document.getElementById('img6').src="uploads/images/5/2.jpg";
-		document.getElementById('img7').src="uploads/images/5/2.jpg";
-		document.getElementById('img8').src="uploads/images/5/2.jpg";
-		document.getElementById('img9').src="uploads/images/5/2.jpg";
-		document.getElementById('img10').src="uploads/images/5/2.jpg";
-		document.getElementById('img11').src="uploads/images/5/2.jpg";
-		document.getElementById('img12').src="uploads/images/5/2.jpg";
-		document.getElementById('img13').src="uploads/images/5/2.jpg";
-	}
-	function changeImageRekomendasi_2(){
-		document.getElementById('img1_2').src="uploads/images/5/2.jpg";
-		document.getElementById('img2_2').src="uploads/images/5/2.jpg";
-		document.getElementById('img3_2').src="uploads/images/5/2.jpg";
-		document.getElementById('img4_2').src="uploads/images/5/2.jpg";
-		document.getElementById('img5_2').src="uploads/images/5/2.jpg";
-		document.getElementById('img6_2').src="uploads/images/5/2.jpg";
-		document.getElementById('img7_2').src="uploads/images/5/2.jpg";
-		document.getElementById('img8_2').src="uploads/images/5/2.jpg";
-		document.getElementById('img9_2').src="uploads/images/5/2.jpg";
-		document.getElementById('img10_2').src="uploads/images/5/2.jpg";
-		document.getElementById('img11_2').src="uploads/images/5/2.jpg";
-		document.getElementById('img12_2').src="uploads/images/5/2.jpg";
-		document.getElementById('img13_2').src="uploads/images/5/2.jpg";
-	}
 	
 	function changeImageTerbaru(){
 		document.getElementById('tab1_rekomendasi').className="span5 Gradient-Style1 Border-Radius-Style1 nonActive";
 		document.getElementById('tab1_terbaru').className="span3 Gradient-Style1 Border-Radius-Style1 active";
-		document.getElementById('img1').src="uploads/images/5/3.jpg";
-		document.getElementById('img2').src="uploads/images/5/3.jpg";
-		document.getElementById('img3').src="uploads/images/5/3.jpg";
-		document.getElementById('img4').src="uploads/images/5/3.jpg";
-		document.getElementById('img5').src="uploads/images/5/3.jpg";
-		document.getElementById('img4').src="uploads/images/5/3.jpg";
-		document.getElementById('img5').src="uploads/images/5/3.jpg";
-		document.getElementById('img6').src="uploads/images/5/3.jpg";
-		document.getElementById('img7').src="uploads/images/5/3.jpg";
-		document.getElementById('img8').src="uploads/images/5/3.jpg";
-		document.getElementById('img9').src="uploads/images/5/3.jpg";
-		document.getElementById('img10').src="uploads/images/5/3.jpg";
-		document.getElementById('img11').src="uploads/images/5/3.jpg";
-		document.getElementById('img12').src="uploads/images/5/3.jpg";
-		document.getElementById('img13').src="uploads/images/5/3.jpg";		
+		//$( ".myClass" ).css( "border", "3px solid red" );
+		$(".img_terbaru").css("display","block");
+		$(".img_rekomendasi").css("display","none");
+		
 	}
+	
+	
+	function changeImageRekomendasi(){
+		document.getElementById('tab1_rekomendasi').className="span5 Gradient-Style1 Border-Radius-Style1 active";
+		document.getElementById('tab1_terbaru').className="span3 Gradient-Style1 Border-Radius-Style1 nonActive";
+		$(".img_terbaru").css("display","none");
+		$(".img_rekomendasi").css("display","block");
+		
+		
+	}
+	
 	function changeImageTerbaru_2(){
-		document.getElementById('img1_2').src="uploads/images/5/3.jpg";
-		document.getElementById('img2_2').src="uploads/images/5/3.jpg";
-		document.getElementById('img3_2').src="uploads/images/5/3.jpg";
-		document.getElementById('img4_2').src="uploads/images/5/3.jpg";
-		document.getElementById('img5_2').src="uploads/images/5/3.jpg";
-		document.getElementById('img6_2').src="uploads/images/5/3.jpg";
-		document.getElementById('img7_2').src="uploads/images/5/3.jpg";
-		document.getElementById('img8_2').src="uploads/images/5/3.jpg";
-		document.getElementById('img9_2').src="uploads/images/5/3.jpg";
-		document.getElementById('img10_2').src="uploads/images/5/3.jpg";
-		document.getElementById('img11_2').src="uploads/images/5/3.jpg";
-		document.getElementById('img12_2').src="uploads/images/5/3.jpg";
-		document.getElementById('img13_2').src="uploads/images/5/3.jpg";
+		$(".img_terbaru_2").css("display","block");
+		$(".img_rekomendasi_2").css("display","none");
 	}
+	
+	function changeImageRekomendasi_2(){
+		$(".img_terbaru_2").css("display","none");
+		$(".img_rekomendasi_2").css("display","block");
+	}
+	
+	
+	
 </script>
 <style type="text/css" media="all">
 	.list_carousel {
@@ -155,6 +122,9 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
 	}
 	.next{
 		cursor:pointer;
+	}
+	.display-none{
+		display:none !important;
 	}
 </style>
 <!--End Slideshow------------------------------------------------------------------------------------------------------------>
@@ -253,23 +223,43 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
 						</div>
 						<div class="span10">
 							<div class='list_carousel'>
-								<ul id='foo0'>
-									<li><img id='img1' width='50' height='50'/></li>
-									<li><img id='img2' width='50' height='50'/></li>
-									<li><img id='img3' width='50' height='50'/></li>
-									<li><img id='img4' width='50' height='50'/></li>
-									<li><img id='img5' width='50' height='50'/></li>
-									<li><img id='img6' width='50' height='50'/></li>
-									<li><img id='img7' width='50' height='50'/></li>
-									<li><img id='img8' width='50' height='50'/></li>
-									<li><img id='img9' width='50' height='50'/></li>
-									<li><img id='img10' width='50' height='50'/></li>
-									<li><img id='img11' width='50' height='50'/></li>
-									<li><img id='img12' width='50' height='50'/></li>
-									<li><img id='img13' width='50' height='50'/></li>
+								<ul id='foo_tab_1'>
+									<!--List gambar terbaru------------------------------------------------------------------------->
+									<li class="img_terbaru"><img id='img1' width='50' height='50' src="uploads/images/5/2.jpg"/></li>
+									<li class="img_terbaru"><img id='img2' width='50' height='50' src="uploads/images/5/2.jpg"/></li>
+									<li class="img_terbaru"><img id='img3' width='50' height='50' src="uploads/images/5/2.jpg"/></li>
+									<li class="img_terbaru"><img id='img4' width='50' height='50' src="uploads/images/5/2.jpg"/></li>
+									<li class="img_terbaru"><img id='img5' width='50' height='50' src="uploads/images/5/2.jpg"/></li>
+									<li class="img_terbaru"><img id='img6' width='50' height='50' src="uploads/images/5/2.jpg"/></li>
+									<li class="img_terbaru"><img id='img7' width='50' height='50' src="uploads/images/5/2.jpg"/></li>
+									<li class="img_terbaru"><img id='img8' width='50' height='50' src="uploads/images/5/2.jpg"/></li>
+									<li class="img_terbaru"><img id='img9' width='50' height='50' src="uploads/images/5/2.jpg"/></li>
+									<li class="img_terbaru"><img id='img10' width='50' height='50' src="uploads/images/5/2.jpg"/></li>
+									<li class="img_terbaru"><img id='img11' width='50' height='50' src="uploads/images/5/2.jpg"/></li>
+									<li class="img_terbaru"><img id='img12' width='50' height='50' src="uploads/images/5/2.jpg"/></li>
+									<li class="img_terbaru"><img id='img13' width='50' height='50' src="uploads/images/5/2.jpg"/></li>
+									<!----------------------------------------------------------------------------------------------->
+									<!--List gambar rekomendasi---------------------------------------------------------------------->
+									<li class="img_rekomendasi"><img id='img1' width='50' height='50' src="uploads/images/5/3.jpg" /></li>
+									<li class="img_rekomendasi"><img id='img2' width='50' height='50' src="uploads/images/5/3.jpg" /></li>
+									<li class="img_rekomendasi"><img id='img3' width='50' height='50' src="uploads/images/5/3.jpg" /></li>
+									<li class="img_rekomendasi"><img id='img4' width='50' height='50' src="uploads/images/5/3.jpg" /></li>
+									<li class="img_rekomendasi"><img id='img5' width='50' height='50' src="uploads/images/5/3.jpg" /></li>
+									<li class="img_rekomendasi"><img id='img6' width='50' height='50' src="uploads/images/5/3.jpg" /></li>
+									<li class="img_rekomendasi"><img id='img7' width='50' height='50' src="uploads/images/5/3.jpg" /></li>
+									<li class="img_rekomendasi"><img id='img8' width='50' height='50' src="uploads/images/5/3.jpg" /></li>
+									<li class="img_rekomendasi"><img id='img9' width='50' height='50' src="uploads/images/5/3.jpg" /></li>
+									<li class="img_rekomendasi"><img id='img10' width='50' height='50' src="uploads/images/5/3.jpg" /></li>
+									<li class="img_rekomendasi"><img id='img11' width='50' height='50' src="uploads/images/5/3.jpg" /></li>
+									<li class="img_rekomendasi"><img id='img12' width='50' height='50' src="uploads/images/5/3.jpg" /></li>
+									<li class="img_rekomendasi"><img id='img13' width='50' height='50' src="uploads/images/5/3.jpg" /></li>
+									<!---------------------------------------------------------------------------------------------------->
 								</ul>
 								<div class='clearfix'></div>
 							</div>
+							
+							
+							
 						
 						
 						</div>
@@ -347,20 +337,37 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
 						</div>
 						<div class="span10">
 							<div class='list_carousel'>
-								<ul id='foo1'>
-									<li><img id='img1_2' width='50' height='50'/></li>
-									<li><img id='img2_2' width='50' height='50'/></li>
-									<li><img id='img3_2' width='50' height='50'/></li>
-									<li><img id='img4_2' width='50' height='50'/></li>
-									<li><img id='img5_2' width='50' height='50'/></li>
-									<li><img id='img6_2' width='50' height='50'/></li>
-									<li><img id='img7_2' width='50' height='50'/></li>
-									<li><img id='img8_2' width='50' height='50'/></li>
-									<li><img id='img9_2' width='50' height='50'/></li>
-									<li><img id='img10_2' width='50' height='50'/></li>
-									<li><img id='img11_2' width='50' height='50'/></li>
-									<li><img id='img12_2' width='50' height='50'/></li>
-									<li><img id='img13_2' width='50' height='50'/></li>
+								<ul id='foo_tab_2'>
+									<!--List gambar terbaru----------------------------------------------------------------------------->
+									<li class="img_terbaru_2"><img id='img1_2' width='50' height='50' src="uploads/images/5/2.jpg"/></li>
+									<li class="img_terbaru_2"><img id='img2_2' width='50' height='50' src="uploads/images/5/2.jpg"/></li>
+									<li class="img_terbaru_2"><img id='img3_2' width='50' height='50' src="uploads/images/5/2.jpg"/></li>
+									<li class="img_terbaru_2"><img id='img4_2' width='50' height='50' src="uploads/images/5/2.jpg"/></li>
+									<li class="img_terbaru_2"><img id='img5_2' width='50' height='50' src="uploads/images/5/2.jpg"/></li>
+									<li class="img_terbaru_2"><img id='img6_2' width='50' height='50' src="uploads/images/5/2.jpg"/></li>
+									<li class="img_terbaru_2"><img id='img7_2' width='50' height='50' src="uploads/images/5/2.jpg"/></li>
+									<li class="img_terbaru_2"><img id='img8_2' width='50' height='50' src="uploads/images/5/2.jpg"/></li>
+									<li class="img_terbaru_2"><img id='img9_2' width='50' height='50' src="uploads/images/5/2.jpg"/></li>
+									<li class="img_terbaru_2"><img id='img10_2' width='50' height='50' src="uploads/images/5/2.jpg"/></li>
+									<li class="img_terbaru_2"><img id='img11_2' width='50' height='50' src="uploads/images/5/2.jpg"/></li>
+									<li class="img_terbaru_2"><img id='img12_2' width='50' height='50' src="uploads/images/5/2.jpg"/></li>
+									<li class="img_terbaru_2"><img id='img13_2' width='50' height='50' src="uploads/images/5/2.jpg"/></li>
+									<!--------------------------------------------------------------------------------------------------->
+									<!--List gambar rekomendasi-------------------------------------------------------------------------->
+									<li class="img_rekomendasi_2"><img id='img1_2' width='50' height='50' src="uploads/images/5/3.jpg"/></li>
+									<li class="img_rekomendasi_2"><img id='img2_2' width='50' height='50' src="uploads/images/5/3.jpg"/></li>
+									<li class="img_rekomendasi_2"><img id='img3_2' width='50' height='50' src="uploads/images/5/3.jpg"/></li>
+									<li class="img_rekomendasi_2"><img id='img4_2' width='50' height='50' src="uploads/images/5/3.jpg"/></li>
+									<li class="img_rekomendasi_2"><img id='img5_2' width='50' height='50' src="uploads/images/5/3.jpg"/></li>
+									<li class="img_rekomendasi_2"><img id='img6_2' width='50' height='50' src="uploads/images/5/3.jpg"/></li>
+									<li class="img_rekomendasi_2"><img id='img7_2' width='50' height='50' src="uploads/images/5/3.jpg"/></li>
+									<li class="img_rekomendasi_2"><img id='img8_2' width='50' height='50' src="uploads/images/5/3.jpg"/></li>
+									<li class="img_rekomendasi_2"><img id='img9_2' width='50' height='50' src="uploads/images/5/3.jpg"/></li>
+									<li class="img_rekomendasi_2"><img id='img10_2' width='50' height='50' src="uploads/images/5/3.jpg"/></li>
+									<li class="img_rekomendasi_2"><img id='img11_2' width='50' height='50' src="uploads/images/5/3.jpg"/></li>
+									<li class="img_rekomendasi_2"><img id='img12_2' width='50' height='50' src="uploads/images/5/3.jpg"/></li>
+									<li class="img_rekomendasi_2"><img id='img13_2' width='50' height='50' src="uploads/images/5/3.jpg"/></li>
+									<!-------------------------------------------------------------------------------------------------------->
 								</ul>			
 							</div>
 						</div>
