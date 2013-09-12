@@ -101,7 +101,8 @@ class CariBisnisFranchiseController extends Controller
                 $model = new CActiveDataProvider('Business',array(
                 'criteria'=>$criteria,
                 'sort'=>array(
-                        'defaultOrder'=>'tanggal_approval DESC'),
+                        'defaultOrder'=>
+                        array('tanggal_approval'=>CSort::SORT_DESC)),
                 'pagination'=>array(
                     'pageSize'=>10,
                 ),
@@ -332,6 +333,7 @@ class CariBisnisFranchiseController extends Controller
         
         public function actionKontakBisnis($id)
         {
+            $settings = Settings::model()->findByAttributes(array('nama_settings'=>'settings_admin'));
             $model = new Email();
             $business = Business::model()->findByPk($id);
             if($business->id_user == Yii::app()->user->id)
@@ -397,7 +399,7 @@ class CariBisnisFranchiseController extends Controller
                 }
                 
             }
-            $this->render('kontak',array('model'=>$model,'business'=>$business,'business_owner'=>$businessOwner));
+            $this->render('kontak',array('model'=>$model,'business'=>$business,'business_owner'=>$businessOwner, 'settings'=>$settings));
         }
 
         public function actionGenerateSubIndustri()

@@ -115,6 +115,7 @@
                                             loader_image: '<?php echo Yii::app()->request->baseUrl ?>/library/ad-gallery/loader.gif',
                                             width:'300',
                                             height:'200',
+                                            update_window_hash:false,
                                             slideshow: {
                                                 enable: true,
                                                 autostart: true,

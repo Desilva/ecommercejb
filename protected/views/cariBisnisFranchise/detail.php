@@ -127,6 +127,7 @@
                                             loader_image: '<?php echo Yii::app()->request->baseUrl ?>/library/ad-gallery/loader.gif',
                                             width:'300',
                                             height:'200',
+                                            update_window_hash:false,
                                             slideshow: {
                                                 enable: true,
                                                 autostart: true,
@@ -261,6 +262,7 @@
 						</div>
 						<div class="widget-content nopadding">
 							<form class="form-horizontal">
+
 								<div class="control-group">
 									<div class="span12" style="margin-left:10px">
 										<a href="#">SIUP.PDF</a>

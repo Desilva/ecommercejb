@@ -10,15 +10,13 @@
              <?php echo $form->hiddenField($model,'id_business',array('value'=> $business->id));
                   echo $form->hiddenField($model,'tanggal',array('value'=> date('y-m-d')));
                   echo $form->hiddenField($model,'id_user',array('value'=> Yii::app()->user->id));
-                  $harga_min = (int)$business->harga_min;
-                  $harga_max = (int)$business->harga_max;
-                  $average = (int)($harga_min + $harga_max)/2;
+                  $harga = (int)$business->harga;
                   /* 
                    * CHANGE ALLOWED HARGA MAX WHEN THE SETTING IS AVAILABLE
                    * 
                    */
-                  $harga_allowed = (int) 10000000;
-                  if($average <= $harga_allowed)
+                  $harga_allowed = (int)$settings->nilai_min_telpon_tampil;
+                  if($harga <= $harga_allowed)
                   {
                       echo $form->hiddenField($model,'status',array('value'=> '1'));
                   }
@@ -54,7 +52,7 @@
             </table>
         </div>
         <?php $this->endWidget() ?>
-        <?php if($business->tampilkanKontak == 1){ ?>
+        <?php if($business->tampilkanKontak == 1 && $harga <= $harga_allowed){ ?>
             <div class="span6 Text-Align-Right">
                     <h4 class="Font-Color-DarkBlue">Kontak</h4>
                 Untuk informasi lebih lanjut, harap hubungi kami di:<br/>

@@ -107,7 +107,7 @@
              				<tr>
             					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'harga'); ?></th>
                 				<td>
-                					<?php echo $form->textField($model,'harga',array('onkeyup'=>'calcValue()')); ?> &nbsp; <?php echo $form->checkBox($model,'tampilkanKontak',array('disabled'=>'disabled', 'class'=>'tampilkanKontak')) ?><?php echo $form->labelEx($model,'tampilkanKontak', array('style'=>'display:inline; margin-left:3px;')) ?>
+                					<?php echo $form->textField($model,'harga',array('onkeyup'=>'calcValueFranchise()')); ?> &nbsp; <?php echo $form->checkBox($model,'tampilkanKontak',array('disabled'=>'disabled', 'class'=>'tampilkanKontak')) ?><?php echo $form->labelEx($model,'tampilkanKontak', array('style'=>'display:inline; margin-left:3px;')) ?>
                                                 </td>	
             				</tr>
              				<tr>

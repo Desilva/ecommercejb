@@ -740,11 +740,14 @@ class AccountController extends Controller
                     {
                         $status_approval = "Verifikasi";
                     }
-                    $dokumen = CUploadedFile::getInstancesByName('dokumen');
+//                    $dokumen = CUploadedFile::getInstancesByName('dokumen');
 //                    var_dump($dokumen);
 //                    die;
                     $model->attributes = $_POST['Business'];
                     $model->status_approval = $status_approval;
+//                    var_dump($_POST['Business']);
+//                    var_dump($model->attributes);
+//                    die;
                     if(isset($_POST['Business']['alasan_jual_lainnya']))
                     {
                          $model->alasan_jual_lainnya = $_POST['Business']['alasan_jual_lainnya'];

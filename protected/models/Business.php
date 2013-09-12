@@ -85,9 +85,9 @@ class Business extends CActiveRecord
 		return array(
 			array('id_category, id_user, id_industri, id_sub_industri, id_provinsi, id_kota, nama, kepemilikan, harga', 'required'),
 			array('id_category, id_user, id_industri, id_sub_industri, id_provinsi, id_kota, kepemilikan, tahun_didirikan, jumlah_karyawan, penjualan, hpp, laba_bersih_tahun, total_aset, marjin_laba_bersih, laba_bersih_aset, harga_penawaran_penjualan, harga_penawaran_laba_bersih, harga_penawaran_aset, harga, id_alasan_penolakan, jumlah_click, tampilkanKontak, status_rekomendasi', 'numerical', 'integerOnly'=>true),
-			array('nama, alamat, alasan_jual_bisnis, franchise_alasan_kerjasama, franchise_persyaratan, franchise_menu, franchise_dukungan_franchisor', 'length', 'max'=>500),
+//			array('nama, alamat, alasan_jual_bisnis, franchise_alasan_kerjasama, franchise_persyaratan, franchise_menu, franchise_dukungan_franchisor', 'length', 'max'=>500),
                         array('status_approval', 'length', 'max'=>50),
-			array('tanggal_approval', 'safe'),
+			array('tanggal_approval,deskripsi,alamat,alasan_jual_bisnis, franchise_alasan_kerjasama, franchise_persyaratan, franchise_menu, franchise_dukungan_franchisor, dokumen, image', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, id_category, id_user, id_industri, id_sub_industri, id_provinsi, id_kota, nama, deskripsi, kepemilikan, tahun_didirikan, alamat, jumlah_karyawan, penjualan, hpp, laba_bersih_tahun, total_aset, marjin_laba_bersih, laba_bersih_aset, harga_penawaran_penjualan, harga_penawaran_laba_bersih, harga_penawaran_aset, harga_min, harga_max, alasan_jual_bisnis, franchise_alasan_kerjasama, franchise_persyaratan, franchise_menu, franchise_dukungan_franchisor, dokumen, image, status_approval, tanggal_approval, id_alasan_penolakan, jumlah_click, tampilkanKontak, status_rekomendasi', 'safe', 'on'=>'search'),

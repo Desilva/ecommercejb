@@ -1855,3 +1855,243 @@ Stack trace:
 REQUEST_URI=/ecommerceJB/index.php/uploads/images/5/3.jpg
 HTTP_REFERER=http://localhost/ecommerceJB/index.php/
 ---
+2013/09/12 15:09:22 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (474)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:09:22 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (474)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:09:22 [warning] [application] Failed to set unsafe attribute "deskripsi" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (474)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:09:24 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (503)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:09:24 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (503)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:09:24 [warning] [application] Failed to set unsafe attribute "deskripsi" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (503)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:12:12 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (277)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:12:12 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (277)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:12:12 [warning] [application] Failed to set unsafe attribute "deskripsi" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (277)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:12:14 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (362)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:12:14 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (362)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:12:14 [warning] [application] Failed to set unsafe attribute "deskripsi" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (362)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:12:14 [warning] [application] .uploads/images/5/1_130912030924_patnbpizza.jpg is not a file
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (458)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:15:16 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (690)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:15:16 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (690)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:15:16 [warning] [application] Failed to set unsafe attribute "deskripsi" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (690)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:15:17 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (746)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:15:17 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (746)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:15:17 [warning] [application] Failed to set unsafe attribute "deskripsi" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (746)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:15:17 [warning] [application] .uploads/images/5/1_130912030924_patnbpizza.jpg is not a file
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (838)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:18:51 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (690)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:18:51 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (690)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:18:51 [warning] [application] Failed to set unsafe attribute "deskripsi" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (690)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:19:11 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (690)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:19:11 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (690)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:19:11 [warning] [application] Failed to set unsafe attribute "deskripsi" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (690)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:19:50 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (746)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:19:50 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (746)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:19:50 [warning] [application] Failed to set unsafe attribute "deskripsi" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (746)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:20:33 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (690)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:20:33 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (690)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:20:33 [warning] [application] Failed to set unsafe attribute "deskripsi" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (690)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:20:34 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (746)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:20:34 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (746)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:20:34 [warning] [application] Failed to set unsafe attribute "deskripsi" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (746)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:22:43 [warning] [application] Failed to set unsafe attribute "alamat" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (690)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:22:43 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (690)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:22:43 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (690)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:22:43 [warning] [application] Failed to set unsafe attribute "deskripsi" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (690)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:22:45 [warning] [application] Failed to set unsafe attribute "alamat" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (746)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:22:45 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (746)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:22:45 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (746)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:22:45 [warning] [application] Failed to set unsafe attribute "deskripsi" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (746)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:23:15 [warning] [application] Failed to set unsafe attribute "alamat" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (746)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:23:15 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (746)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:23:15 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (746)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:23:15 [warning] [application] Failed to set unsafe attribute "deskripsi" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (746)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:25:22 [warning] [application] Failed to set unsafe attribute "alamat" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (746)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:25:22 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (746)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:25:22 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (746)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:25:22 [warning] [application] Failed to set unsafe attribute "deskripsi" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (746)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:26:07 [warning] [application] Failed to set unsafe attribute "alamat" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (746)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:26:07 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (746)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:26:07 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (746)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:27:09 [warning] [application] Failed to set unsafe attribute "alamat" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (746)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:27:09 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (746)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:27:09 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (746)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:27:32 [warning] [application] Failed to set unsafe attribute "alamat" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (746)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:27:32 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (746)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:27:32 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (746)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:27:32 [warning] [application] .uploads/images/5/1_130912030924_patnbpizza.jpg is not a file
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (838)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:28:00 [warning] [application] Failed to set unsafe attribute "alamat" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (277)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:28:00 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (277)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:28:00 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (277)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:28:01 [warning] [application] Failed to set unsafe attribute "alamat" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (362)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:28:01 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (362)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:28:01 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (362)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:28:01 [warning] [application] .uploads/images/5/1_130912030924_patnbpizza.jpg is not a file
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (458)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:35:50 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (690)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:35:50 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (690)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:35:51 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (746)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:35:51 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (746)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:35:51 [warning] [application] .uploads/images/5/1_130912030924_patnbpizza.jpg is not a file
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (838)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:40:43 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (690)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:40:43 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (690)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:40:44 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (746)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:40:44 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (746)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:41:21 [warning] [application] Failed to set unsafe attribute "dropDownAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (746)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:41:21 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (746)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 15:41:21 [warning] [application] .uploads/images/5/1_130912030924_patnbpizza.jpg is not a file
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (841)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
