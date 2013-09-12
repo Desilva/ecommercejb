@@ -277,36 +277,74 @@ if($message_kontak != ''){
 								</div>
 								<div class="widget-content nopadding">
 									<form class="form-horizontal">
+										<?php
+                                                                                    $bisnisTerkait = "";
+                                                                                    $arrayImage = array();
+                                                                                    $arrayUrl = array();
+                                                                                    foreach($bisnis_terkait as $bisnis){ ?>
+                                                                                    <?php 
+                                                                                        $imageList = array_filter(explode(',',$bisnis->image));
+                                                                                        
+                                                                                        if(!empty($imageList))
+                                                                                        {
+                                                                                            $imageSource = Yii::app()->baseUrl.'/uploads/images/'.$bisnis->id_user.'/thumbs/'.$imageList[0];
+                                                                                            $arrayImage[] = $imageSource;
+                                                                                        }
+                                                                                        else
+                                                                                        {
+                                                                                            $imageSource = Yii::app()->request->baseUrl.'/images/no-image.gif';
+                                                                                            $arrayImage[] = $imageSource;
+                                                                                        }
+                                                                                        $arrayUrl[] = Yii::app()->createUrl("//cariBisnisFranchise/detail/$bisnis->id");
+                                                                                    ?>
+
+                                                                                <?php } ?> 
+                                                                                <?php
+                                                                                    if(isset($arrayImage[0]) || isset($arrayImage[1]))
+                                                                                    {
+                                                                                ?>
 										<div class="control-group">
 											<div class="span12" style="margin-left:30px; margin-top:10px">
 												<div class="span6">
-													<img src="#" width="90" height="90"/>
+                                                                                                    <a href="<?php echo $arrayUrl[0] ?>"><img src="<?php echo $arrayImage[0] ?>" width="90" height="90" style="width:90px; height:90px"/></a>
 												</div>
-												<div class="span6">
-													<img src="#" width="90" height="90"/>
-												</div>
+                                                                                                <?php if(isset($arrayImage[1])){ ?>
+                                                                                                    <div class="span6">
+                                                                                                       <a href="<?php echo $arrayUrl[1] ?>"><img src="<?php echo $arrayImage[1] ?>" width="90" height="90" style="width:90px; height:90px"/></a>
+                                                                                                    </div>
+                                                                                                <?php }?>
 											</div>
 										</div>
+                                                                                <?php }?>
+                                                                                <?php
+                                                                                    if(isset($arrayImage[2]) || isset($arrayImage[3]))
+                                                                                    {
+                                                                                ?>
 										<div class="control-group">
 											<div class="span12" style="margin-left:30px; margin-top:10px">
 												<div class="span6">
-													<img src="#" width="90" height="90"/>
+                                                                                                    <a href="<?php echo $arrayUrl[2] ?>"><img src="<?php echo $arrayImage[2] ?>" width="90" height="90" style="width:90px; height:90px"/></a>
 												</div>
-												<div class="span6">
-													<img src="#" width="90" height="90"/>
-												</div>
+                                                                                                <?php if(isset($arrayImage[3])){ ?>
+                                                                                                    <div class="span6">
+                                                                                                       <a href="<?php echo $arrayUrl[3] ?>"><img src="<?php echo $arrayImage[3] ?>" width="90" height="90" style="width:90px; height:90px"/></a>
+                                                                                                    </div>
+                                                                                                <?php }?>
 											</div>
 										</div>
-										<div class="control-group">
-											<div class="span12" style="margin-left:30px; margin-top:10px">
-												<div class="span6">
-													<img src="#" width="90" height="90"/>
-												</div>
-												<div class="span6">
-													<img src="#" width="90" height="90"/>
-												</div>
-											</div>
-										</div>
+                                                                                <?php }?>
+                                                                                <?php
+                                                                                    if(isset($arrayImage[4]))
+                                                                                    {
+                                                                                ?>
+                                                                                    <div class="control-group">
+                                                                                            <div class="span12" style="margin-left:30px; margin-top:10px">
+                                                                                                    <div class="span6">
+                                                                                                            <a href="<?php echo $arrayUrl[4] ?>"><img src="<?php echo $arrayImage[4] ?>" width="90" height="90" style="width:90px; height:90px"/></a>
+                                                                                                    </div>
+                                                                                            </div>
+                                                                                    </div>
+                                                                                    <?php } ?>
 									</form>
 								</div>
 							</div>
