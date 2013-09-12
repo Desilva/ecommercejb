@@ -547,7 +547,7 @@ class BisnisFranchiseController extends Controller
 //                            $id_rangeharga = RangePrice::model()->find($criteria_rangeharga);
                             
 //                            var_dump($criteria_rangeharga);
-                            $id_rangeharga = RangePrice::model()->findBySql("select id from m_range_price where (($model->harga_min + $model->harga_max)/2) between harga_min and harga_max");
+                            $id_rangeharga = RangePrice::model()->findBySql("select id from m_range_price where ($model->harga) between harga_min and harga_max");
                             $usersToSend = User::model()->findAllByAttributes(array("id_buyer_category"=>$model->id_industri,"id_buyer_location"=>$model->id_provinsi,"id_buyer_price"=>$id_rangeharga->id));
                             $emailRecipients = array();
                             foreach($usersToSend as $recipient)
@@ -567,7 +567,7 @@ class BisnisFranchiseController extends Controller
                                 $mail2->setFrom($mailSetting->alamat_email, $mailSetting->nama_email);
                                 $mail2->setTo($emailRecipients); //CHANGE TO APPROPRIATE EMAIL WHEN DEPLOYING
                                 $mail2->setSubject("Terdapat Bisnis/Franchise yang mungkin sesuai minat anda");
-                                $mail2->setBody("<p>Berikut adalah bisnis/franchise yang mungkin sesuai minat anda:</p><p>Nama Bisnis/Franchise: $model->nama</p><p>Lokasi Bisnis/Franchise: '".$model->idProvinsi->provinsi."' </p><p>Harga Min: $model->harga_min</p><p>Harga Max: $model->harga_max</p><p>Link Bisnis/Franchise: <a href='".Yii::app()->createAbsoluteUrl("//cariBisnisFranchise/detail/$model->id")."'>Klik disini</a></p>");
+                                $mail2->setBody("<p>Berikut adalah bisnis/franchise yang mungkin sesuai minat anda:</p><p>Nama Bisnis/Franchise: $model->nama</p><p>Lokasi Bisnis/Franchise: '".$model->idProvinsi->provinsi."' </p><p>Harga $model->harga</p><p>Link Bisnis/Franchise: <a href='".Yii::app()->createAbsoluteUrl("//cariBisnisFranchise/detail/$model->id")."'>Klik disini</a></p>");
                                 if($mail2->send())
                                 {
                                     

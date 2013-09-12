@@ -63,14 +63,13 @@
         }
         
         $('.tampilkanKontak').attr('disabled','disabled');
-        if(isNumber(document.getElementById('Business_harga_min').value) && isNumber(document.getElementById('Business_harga_max').value))
+        if(isNumber(document.getElementById('Business_harga').value) )
         {
-            if (parseFloat(document.getElementById('Business_harga_min').value) < parseFloat(document.getElementById('Business_harga_max').value))
-                {
-                    var avg = ((parseFloat(document.getElementById('Business_harga_min').value)) + (parseFloat(document.getElementById('Business_harga_max').value)))/2;
+            
+                    var input_harga = document.getElementById('Business_harga').value;
                     /* CHANGE THE VALUE OF HARGA WHEN ITS SETTING IS AVAILABLE */
                     var harga = parseFloat(<?php echo $settings->nilai_min_telpon_tampil ?>);
-                    if(avg < harga)
+                    if(input_harga <= harga)
                     {
                         $('.tampilkanKontak').removeAttr('disabled');
                     }
@@ -78,7 +77,7 @@
                     {
                         $('.tampilkanKontak').attr('disabled','disabled');
                     }
-                }
+                
         }
         
          //repopulate sub industri dropdown
@@ -120,8 +119,7 @@
     
     function calcValue()
     {
-        var hargaMin = document.getElementById('Business_harga_min').value;
-        var hargaMax = document.getElementById('Business_harga_max').value;
+        var form_harga = document.getElementById('Business_harga').value;
         var penjualan = document.getElementById('Business_penjualan').value;
         var labaBersih = document.getElementById('Business_laba_bersih_tahun').value;
         var aset= document.getElementById('Business_total_aset').value;
@@ -132,16 +130,14 @@
          * calculate whether tampilan kontak should be enabled
          */
 //        $('.tampilkanKontak').attr('disabled','disabled');
-        if(isNumber(hargaMin) && isNumber(hargaMax))
+        if(isNumber(form_harga))
         {
-            if (parseFloat(hargaMin) < parseFloat(hargaMax))
-            {
-                    var avg = (parseFloat(hargaMin) + parseFloat(hargaMax))/2;
+                    var input_harga = parseFloat(form_harga);
                     /* CHANGE THE VALUE OF HARGA WHEN THE SETTING IS AVAILABLE */
                     var harga = parseFloat(<?php echo $settings->nilai_min_telpon_tampil ?>);
                     
                     //tampilan kontak
-                    if(parseFloat(avg) < parseFloat(harga))
+                    if(parseFloat(input_harga) <= parseFloat(harga))
                     {
                         $('.tampilkanKontak').removeAttr('disabled');
                     }
@@ -153,7 +149,7 @@
                     //penawaran/penjualan
                     if(isNumber(penjualan))
                     {
-                        var result = parseFloat(parseFloat(avg)/parseFloat(penjualan)).toFixed(0);
+                        var result = parseFloat(parseFloat(input_harga)/parseFloat(penjualan)).toFixed(0);
                         $('#Business_harga_penawaran_penjualan').attr('value',result);
                     }
                     else
@@ -164,7 +160,7 @@
                     //penawaran/lababersih
                     if(isNumber(labaBersih))
                     {
-                        var result = parseFloat(parseFloat(avg)/parseFloat(labaBersih)).toFixed(0);
+                        var result = parseFloat(parseFloat(input_harga)/parseFloat(labaBersih)).toFixed(0);
                         $('#Business_harga_penawaran_laba_bersih').attr('value',result);
                     }
                     else
@@ -175,21 +171,14 @@
                     //penawaran/aset
                     if(isNumber(aset))
                     {
-                        var result = parseFloat(parseFloat(avg)/parseFloat(aset)).toFixed(0);
+                        var result = parseFloat(parseFloat(input_harga)/parseFloat(aset)).toFixed(0);
                         $('#Business_harga_penawaran_aset').attr('value',result);
                     }
                     else
                     {
                          $('#Business_harga_penawaran_aset').removeAttr('value');
                     }
-             }
-            else
-            {
-                $('.tampilkanKontak').attr('disabled','disabled');
-                $('#Business_harga_penawaran_penjualan').removeAttr('value');
-                $('#Business_harga_penawaran_laba_bersih').removeAttr('value');
-                $('#Business_harga_penawaran_aset').removeAttr('value');
-            }
+
         }
         else
         {
@@ -227,25 +216,18 @@
     
     function calcValueFranchise()
     {
-        var hargaMin = document.getElementById('Business_harga_min').value;
-        var hargaMax = document.getElementById('Business_harga_max').value;
+        var form_harga = document.getElementById('Business_harga').value;
        
-         /*calculate harga penawaran/penjualan => avg(hargamin + hargamax)/penjualan
-         * calculate harga penawaran/lababersih => avg(hargamin + hargamax)/lababersih
-         * calculate harga penawaran/aset => avg(hargami + hargamax)/aset
-         * calculate whether tampilan kontak should be enabled
-         */
+        
 //        $('.tampilkanKontak').attr('disabled','disabled');
-        if(isNumber(hargaMin) && isNumber(hargaMax))
+        if(isNumber(form_harga) )
         {
-            if (parseFloat(hargaMin) < parseFloat(hargaMax))
-            {
-                    var avg = (parseFloat(hargaMin) + parseFloat(hargaMax))/2;
+                    var input_harga = parseFloat(form_harga);
                     /* CHANGE THE VALUE OF HARGA WHEN THE SETTING IS AVAILABLE */
                     var harga = parseFloat(<?php echo $settings->nilai_min_telpon_tampil ?>);
                     
                     //tampilan kontak
-                    if(parseFloat(avg) < parseFloat(harga))
+                    if(parseFloat(input_harga) < parseFloat(harga))
                     {
                         $('.tampilkanKontak').removeAttr('disabled');
                     }
@@ -253,11 +235,7 @@
                     {
                         $('.tampilkanKontak').attr('disabled','disabled');
                     }
-             }
-            else
-            {
-                $('.tampilkanKontak').attr('disabled','disabled');
-            }
+             
         }
         else
         {

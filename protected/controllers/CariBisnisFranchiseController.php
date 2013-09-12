@@ -218,13 +218,13 @@ class CariBisnisFranchiseController extends Controller
                     $rangeharga = RangePrice::model()->findByPk($id_rangeharga);
                     
                     
-                    if($rangeharga->harga_max !='' || $rangeharga->harga_min != null) //range has upper and lower limit
+                    if($rangeharga->harga_max !=null && $rangeharga->harga_min != null) //range has upper and lower limit
                     {
-                        $criteria->addBetweenCondition("((harga_min + harga_max)/2)", $rangeharga->harga_min, $rangeharga->harga_max);
+                        $criteria->addBetweenCondition("harga", $rangeharga->harga_min, $rangeharga->harga_max);
                     }
                     else //range has no upper limit
                     {
-                        $criteria->addCondition("((harga_min + harga_max)/2) >= '$rangeharga->harga_min'");
+                        $criteria->addCondition("harga >= '$rangeharga->harga_min'");
                     }
 //                    if($rangeharga == '1')
 //                    {
@@ -248,7 +248,7 @@ class CariBisnisFranchiseController extends Controller
                     $rangeharga = RangePrice::model()->findByPk($id_rangeharga);
                     
                     
-                    if($rangeharga->harga_max !='' || $rangeharga->harga_min != null) //range has upper and lower limit
+                    if($rangeharga->harga_max !=null && $rangeharga->harga_min != null) //range has upper and lower limit
                     {
                         $criteria->addBetweenCondition("penjualan", $rangeharga->harga_min, $rangeharga->harga_max);
                     }

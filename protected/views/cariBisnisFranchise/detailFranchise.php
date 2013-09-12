@@ -186,7 +186,7 @@
                 </tr>
                 <tr class="Tr-Size-Medium">
                    <td>Harga</td>
-                   <td>:Rp.<?php echo $model->harga_min ?> - Rp.<?php echo $model->harga_max ?></td>
+                   <td>:Rp.<?php echo $model->harga ?></td>
                    <td></td>
                    <td></td>
                 </tr>

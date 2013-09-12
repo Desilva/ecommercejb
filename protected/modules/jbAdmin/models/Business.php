@@ -17,17 +17,16 @@
  * @property integer $tahun_didirikan
  * @property string $alamat
  * @property integer $jumlah_karyawan
- * @property integer $penjualan
- * @property integer $hpp
- * @property integer $laba_bersih_tahun
- * @property integer $total_aset
- * @property integer $marjin_laba_bersih
- * @property integer $laba_bersih_aset
- * @property integer $harga_penawaran_penjualan
- * @property integer $harga_penawaran_laba_bersih
- * @property integer $harga_penawaran_aset
- * @property integer $harga_min
- * @property integer $harga_max
+ * @property string $penjualan
+ * @property string $hpp
+ * @property string $laba_bersih_tahun
+ * @property string $total_aset
+ * @property string $marjin_laba_bersih
+ * @property string $laba_bersih_aset
+ * @property string $harga_penawaran_penjualan
+ * @property string $harga_penawaran_laba_bersih
+ * @property string $harga_penawaran_aset
+ * @property string $harga
  * @property string $alasan_jual_bisnis
  * @property string $franchise_alasan_kerjasama
  * @property string $franchise_persyaratan
@@ -55,7 +54,7 @@
  */
 class Business extends CActiveRecord
 {
-          public $alasan_jual_lainnya;
+            public $alasan_jual_lainnya;
         public $dropDownAlasanJual;
         public $textAreaAlasanJual;
 	/**
@@ -84,10 +83,9 @@ class Business extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_category, id_user, id_industri, id_sub_industri, id_provinsi, id_kota, nama, kepemilikan, harga_min, harga_max', 'required'),
-			array('id_category, id_user, id_industri, id_sub_industri, id_provinsi, id_kota, kepemilikan, tahun_didirikan, jumlah_karyawan, penjualan, hpp, laba_bersih_tahun, total_aset, marjin_laba_bersih, laba_bersih_aset, harga_penawaran_penjualan, harga_penawaran_laba_bersih, harga_penawaran_aset, harga_min, harga_max, id_alasan_penolakan, jumlah_click, tampilkanKontak, status_rekomendasi', 'numerical', 'integerOnly'=>true),
-			array('nama, deskripsi, alamat, alasan_jual_bisnis, franchise_alasan_kerjasama, franchise_persyaratan, franchise_menu, franchise_dukungan_franchisor, dokumen, image', 'length', 'max'=>500),
-			array('harga_max','compare','compareAttribute'=>'harga_min','operator'=>'>'),
+			array('id_category, id_user, id_industri, id_sub_industri, id_provinsi, id_kota, nama, kepemilikan, harga', 'required'),
+			array('id_category, id_user, id_industri, id_sub_industri, id_provinsi, id_kota, kepemilikan, tahun_didirikan, jumlah_karyawan, penjualan, hpp, laba_bersih_tahun, total_aset, marjin_laba_bersih, laba_bersih_aset, harga_penawaran_penjualan, harga_penawaran_laba_bersih, harga_penawaran_aset, harga, id_alasan_penolakan, jumlah_click, tampilkanKontak, status_rekomendasi', 'numerical', 'integerOnly'=>true),
+			array('nama, alamat, alasan_jual_bisnis, franchise_alasan_kerjasama, franchise_persyaratan, franchise_menu, franchise_dukungan_franchisor', 'length', 'max'=>500),
                         array('status_approval', 'length', 'max'=>50),
 			array('tanggal_approval', 'safe'),
 			// The following rule is used by search().
@@ -144,8 +142,7 @@ class Business extends CActiveRecord
 			'harga_penawaran_penjualan' => 'Harga Penawaran/Penjualan',
 			'harga_penawaran_laba_bersih' => 'Harga Penawaran/Laba Bersih',
 			'harga_penawaran_aset' => 'Harga Penawaran/Aset',
-			'harga_min' => 'Harga Min',
-			'harga_max' => 'Harga Max',
+			'harga' => 'Harga',
 			'alasan_jual_bisnis' => 'Alasan Jual Bisnis',
 			'franchise_alasan_kerjasama' => 'Alasan Kerjasama',
 			'franchise_persyaratan' => 'Persyaratan',

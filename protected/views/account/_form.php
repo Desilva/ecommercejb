@@ -170,19 +170,9 @@
 								<div class="control-group">
 									<div class="span12">
 										<div class="span11">
-											<label class="control-label"><?php echo $form->labelEx($model,'harga_min'); ?></label>
+											<label class="control-label"><?php echo $form->labelEx($model,'harga'); ?></label>
 											<div class="controls">
-												<?php echo $form->textField($model,'harga_min',array('onkeyup'=>'calcValue()')); ?> &nbsp; <?php echo $form->checkBox($model,'tampilkanKontak',array('disabled'=>'disabled', 'class'=>'tampilkanKontak')) ?><?php echo $form->labelEx($model,'tampilkanKontak', array('style'=>'display:inline; margin-left:3px;')) ?>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="control-group">
-									<div class="span12">
-										<div class="span11">
-											<label class="control-label"><?php echo $form->labelEx($model,'harga_max'); ?></label>
-											<div class="controls">
-												<?php echo $form->textField($model,'harga_max',array('class'=>'styleText1','onkeyup'=>'calcValue()')); ?>
+												<?php echo $form->textField($model,'harga',array('onkeyup'=>'calcValue()')); ?> &nbsp; <?php echo $form->checkBox($model,'tampilkanKontak',array('disabled'=>'disabled', 'class'=>'tampilkanKontak')) ?><?php echo $form->labelEx($model,'tampilkanKontak', array('style'=>'display:inline; margin-left:3px;')) ?>
 											</div>
 										</div>
 									</div>

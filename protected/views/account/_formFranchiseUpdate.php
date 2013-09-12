@@ -122,16 +122,10 @@
                 				</td>	
             				</tr>
              				<tr>
-            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'harga_min'); ?></th>
+            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'harga'); ?></th>
                 				<td>
-                					<?php echo $form->textField($model,'harga_min',array('onkeyup'=>'calcValue()')); ?> &nbsp; <?php echo $form->checkBox($model,'tampilkanKontak',array('disabled'=>'disabled', 'class'=>'tampilkanKontak')) ?><?php echo $form->labelEx($model,'tampilkanKontak', array('style'=>'display:inline; margin-left:3px;')) ?>
+                					<?php echo $form->textField($model,'harga',array('onkeyup'=>'calcValue()')); ?> &nbsp; <?php echo $form->checkBox($model,'tampilkanKontak',array('disabled'=>'disabled', 'class'=>'tampilkanKontak')) ?><?php echo $form->labelEx($model,'tampilkanKontak', array('style'=>'display:inline; margin-left:3px;')) ?>
                                                 </td>	
-            				</tr>
-                                        <tr>
-            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'harga_max'); ?></th>
-                				<td>
-                					<?php echo $form->textField($model,'harga_max',array('class'=>'styleText1','onkeyup'=>'calcValue()')); ?>
-                				</td>	
             				</tr>
              				<tr>
             					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'franchise_menu'); ?></th>

@@ -66,7 +66,7 @@
 									'sorterHeader' => 'Urutkan Berdasarkan:',
 									'sortableAttributes'=>array(
 										'tanggal_approval'=>'Tanggal',
-										'harga_max'=>'Harga',
+										'harga'=>'Harga',
 										'nama'=>'Nama',
 										'penjualan'=>'Revenue'
 									),

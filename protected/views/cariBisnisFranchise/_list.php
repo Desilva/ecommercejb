@@ -60,8 +60,7 @@
                 	<?php echo $data->idKota->city ?>
                 </td>
                 <td>
-                	Rp. <?php echo $data->harga_min ?> -<br>
-                    Rp. <?php echo $data->harga_max ?>
+                	Rp. <?php echo $data->harga ?>
                 </td>
                 <td>
                 	<?php echo $data->penjualan ?>
