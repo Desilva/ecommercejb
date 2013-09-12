@@ -81,7 +81,18 @@
                 	<td colspan="2">Alasan ingin menjual bisnis</td>
                 </tr>
                 <tr class="Tr-Size-Medium">
-                	<td colspan="2"><?php echo $model->alasan_jual_bisnis ?></td>
+                	<td colspan="2">
+                            <?php 
+                            if($model->id_alasan_jual_bisnis != null || $model->id_alasan_jual_bisnis != '')
+                            {
+                                echo $model->idAlasanJualBisnis->alasan;
+                            }
+                            else
+                            {
+                                echo $model->alasan_jual_bisnis_lainnya;
+                            } 
+                            ?>
+                        </td>
                 </tr>
             </table>
         </div>
