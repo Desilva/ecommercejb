@@ -25,9 +25,11 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
 			changeImageTerbaru_2();
         });	
 	$(function() {
+		var a=1;
 		$('#foo_tab_1').carouFredSel({
 			prev: '#prev2',
 			next: '#next2',
+			auto:false
 					
 		});
 
@@ -49,6 +51,7 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
 		$(".img_terbaru").css("display","block");
 		$(".img_rekomendasi").css("display","none");
 		
+		
 	}
 	
 	
@@ -57,6 +60,7 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
 		document.getElementById('tab1_terbaru').className="span3 Gradient-Style1 Border-Radius-Style1 nonActive";
 		$(".img_terbaru").css("display","none");
 		$(".img_rekomendasi").css("display","block");
+		//alert($(".img_rekomendasi").length);
 		
 		
 	}
@@ -260,7 +264,7 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
 									<li class="img_rekomendasi"><img id='img1' width='50' height='50' src="uploads/images/5/3.jpg" /></li>
 									<li class="img_rekomendasi"><img id='img2' width='50' height='50' src="uploads/images/5/3.jpg" /></li>
 									<li class="img_rekomendasi"><img id='img3' width='50' height='50' src="uploads/images/5/3.jpg" /></li>
-									<li class="img_rekomendasi"><img id='img4' width='50' height='50' src="uploads/images/5/3.jpg" /></li>
+									<!--<li class="img_rekomendasi"><img id='img4' width='50' height='50' src="uploads/images/5/3.jpg" /></li>
 									<li class="img_rekomendasi"><img id='img5' width='50' height='50' src="uploads/images/5/3.jpg" /></li>
 									<li class="img_rekomendasi"><img id='img6' width='50' height='50' src="uploads/images/5/3.jpg" /></li>
 									<li class="img_rekomendasi"><img id='img7' width='50' height='50' src="uploads/images/5/3.jpg" /></li>

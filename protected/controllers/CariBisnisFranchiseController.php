@@ -152,6 +152,7 @@ class CariBisnisFranchiseController extends Controller
                 }
             }
         }
+
         public function actionCari()
         {
             $selectedSortValue = '5';
@@ -170,7 +171,6 @@ class CariBisnisFranchiseController extends Controller
             );
             $criteria=new CDbCriteria();
             $criteria->addCondition('status_approval="diterima"');
-            //$criteria->order = 't.tanggal_approval desc';
             $criteria->with = 'idKota';
             
             if(isset($_GET['jenis']) && $_GET['jenis'] != '')
@@ -202,8 +202,6 @@ class CariBisnisFranchiseController extends Controller
                     $katakunci = $_GET['keyword'];
                     $criteria->addCondition('t.nama like :katakunci OR t.deskripsi like :katakunci ');
                     $criteria->params = array(':katakunci'=>"%$katakunci%");
-    //                $criteria->addSearchCondition('nama',$katakunci);
-    //                $criteria->addSearchCondition('deskripsi',$katakunci,true,'OR');
             }
             
             if(isset($_GET['subkategori']) && $_GET['subkategori']!= '')
@@ -227,19 +225,6 @@ class CariBisnisFranchiseController extends Controller
                     {
                         $criteria->addCondition("harga >= '$rangeharga->harga_min'");
                     }
-//                    if($rangeharga == '1')
-//                    {
-//                         $criteria->addCondition('harga_max < 1000000');
-//                    }
-//                    else if($rangeharga == '2') 
-//                    {
-//                        $criteria->addCondition('harga_max >= 1000000');
-//                        $criteria->addCondition('harga_max <= 10000000');
-//                    }
-//                    else
-//                    {
-//                        $criteria->addCondition('harga_max >= 10000000');
-//                    }
                 
             }
             
@@ -257,19 +242,6 @@ class CariBisnisFranchiseController extends Controller
                     {
                         $criteria->addCondition("penjualan >= '$rangeharga->harga_min'");
                     }
-//                    if($omzet == '1')
-//                    {
-//                        $criteria->addCondition('penjualan < 1000000');
-//                    }
-//                    else if($omzet == '2') 
-//                    {
-//                        $criteria->addCondition('penjualan >= 1000000');
-//                        $criteria->addCondition('penjualan <= 10000000');
-//                    }
-//                    else
-//                    {
-//                        $criteria->addCondition('penjualan >= 10000000');
-//                    }
                
             }
                 $model = new CActiveDataProvider('Business',array(
@@ -280,8 +252,6 @@ class CariBisnisFranchiseController extends Controller
                     'pageSize'=>10,
                 ),
                 ));
-//                var_dump($model);
-//            $model = Business::model()->with('idKota')->findAllByAttributes($search,$criteria);
             $this->render('index',array('model'=>$model,'sortType'=>$sortType,'selectedSortValue'=>$selectedSortValue));
             
         }
