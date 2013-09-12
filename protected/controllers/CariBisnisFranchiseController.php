@@ -261,7 +261,13 @@ class CariBisnisFranchiseController extends Controller
          */
         public function actionDetail()
         {
+            $message_kontak = '';
             $id = $_GET['id'];
+            $settings = Settings::model()->findByAttributes(array('nama_settings'=>'settings_admin'));
+            $email = new Email();
+            $business = Business::model()->findByPk($id);
+            $businessOwner = User::model()->findByPk($business->id_user);
+            
             $return_location = "";
             $return_kategori = "";
             if(isset($_GET['return']) && isset($_GET['kategori']))
@@ -289,33 +295,13 @@ class CariBisnisFranchiseController extends Controller
                 $watchlist_check=0;
             }
             $list_bisnis_terkait = Business::model()->findAllByAttributes(array('id_industri'=>$model->id_industri,'id_category'=>$model->id_category),$criteria_bisnis_terkait);
-            if(strtolower($model->idCategory->category) == 'bisnis')
-            {
-                 $this->render('detail',array('model'=>$model,'bisnis_terkait'=>$list_bisnis_terkait,'watchlist'=>$watchlist_check,'return_location'=>$return_location,'return_kategori'=>$return_kategori));
-            }
-            else if(strtolower($model->idCategory->category) == 'franchise')
-            {
-                $this->render('detailFranchise',array('model'=>$model,'bisnis_terkait'=>$list_bisnis_terkait,'watchlist'=>$watchlist_check,'return_location'=>$return_location, 'return_kategori'=>$return_kategori));
-            }
-           
-        }
-        
-        
-        public function actionKontakBisnis($id)
-        {
-            $settings = Settings::model()->findByAttributes(array('nama_settings'=>'settings_admin'));
-            $model = new Email();
-            $business = Business::model()->findByPk($id);
-            if($business->id_user == Yii::app()->user->id)
-            {
-                $this->redirect(Yii::app()->createUrl("//cariBisnisFranchise/detail/$id"));
-            }
-            $businessOwner = User::model()->findByPk($business->id_user);
+            
+            //KONTAK BISNIS
             if(isset($_POST['Email']))
             {
                 
-                $model->attributes = $_POST['Email'];
-                if($model->save())
+                $email->attributes = $_POST['Email'];
+                if($email->save())
                 {
                     
                     if($_POST['Email']['status'] == '1')
@@ -328,48 +314,158 @@ class CariBisnisFranchiseController extends Controller
                             //function to send email
                             $mail = new YiiMailer();
                             $mail->clearLayout();//if layout is already set in config
-                            $mail->setFrom($model->alamat_email, $model->nama_pengirim);
-                            $mail->setTo('reynhart@licht-soft.com'); //CHANGE TO APPROPRIATE EMAIL WHEN DEPLOYING
-                            $mail->setSubject( $model->nama_pengirim.' '.'menghubungi bisnis/franchise Anda');
-                            $mail->setBody("Nama Bisnis: $business->nama<br /><p>Detail Pengirim</p><p>Nama: $model->nama_pengirim</p><p>Phone: $model->no_telp</p><p>Deskripsi: <br/> $model->deskripsi</p>");
-                            if ($mail->send()) {
-        //                        Yii::app()->user->setFlash('email','Email Berhasil Dikirim');
-                                $this->redirect(Yii::app()->createUrl('//home'));
-                            } else {
-                                Yii::app()->user->setFlash('error','Error while sending email: '.$mail->getError());
-                            }
+                            $mail->setFrom($email->alamat_email, $email->nama_pengirim);
+                            $mail->setTo($businessOwner->email); //CHANGE TO APPROPRIATE EMAIL WHEN DEPLOYING
+                            $mail->setSubject( $email->nama_pengirim.' '.'menghubungi bisnis/franchise Anda');
+                            $mail->setBody("Nama Bisnis: $business->nama<br /><p>Detail Pengirim</p><p>Nama: $email->nama_pengirim</p><p>Phone: $email->no_telp</p><p>Deskripsi: <br/> $email->deskripsi</p>");
+//                            if ($mail->send()) {
+//        //                        Yii::app()->user->setFlash('email','Email Berhasil Dikirim');
+//                                $this->redirect(Yii::app()->createUrl("//cariBisnisFranchise/detail/$id"));
+//                            } else {
+//                                Yii::app()->user->setFlash('error','Error while sending email: '.$mail->getError());
+//                            }
+                            $message_kontak = "Pesan berhasil terkirim";
 
 
                         }
                     }
-                    if($_POST['Email']['status'] == '0')
+                    if($_POST['Email']['status'] == '0') //send to admin because the harga exceeded limit
                     {
                         //kirim ke alamat email asli admin???
-                        if($businessOwner != null || $businessOwner != '')
-                        {
-                            YiiBase::import('ext.YiiMailer.YiiMailer');
-                            //function to send email
-                            $mail = new YiiMailer();
-                            $mail->clearLayout();//if layout is already set in config
-                            $mail->setFrom($model->alamat_email, $model->nama_pengirim);
-                            $mail->setTo('reynhart@licht-soft.com'); //CHANGE TO APPROPRIATE EMAIL WHEN DEPLOYING
-                            $mail->setSubject('Bisnis/Franchis'. $business->nama.'menerima email dari pelanggan lain');
-                            $mail->setBody("Nama Bisnis: $business->nama<br /><p>Detail Pengirim</p><p>Nama: $model->nama_pengirim</p><p>Phone: $model->no_telp</p><p>Deskripsi: <br/> $model->deskripsi</p>");
-                            if ($mail->send()) {
-        //                        Yii::app()->user->setFlash('email','Email Berhasil Dikirim');
-                                $this->redirect(Yii::app()->createUrl('//home'));
-                            } else {
-                                Yii::app()->user->setFlash('error','Error while sending email: '.$mail->getError());
-                            }
-
-
-                        }
+//                        if($businessOwner != null || $businessOwner != '')
+//                        {
+//                            YiiBase::import('ext.YiiMailer.YiiMailer');
+//                            //function to send email
+//                            $mail = new YiiMailer();
+//                            $mail->clearLayout();//if layout is already set in config
+//                            $mail->setFrom($model->alamat_email, $model->nama_pengirim);
+//                            $mail->setTo('reynhart@licht-soft.com'); //CHANGE TO APPROPRIATE EMAIL WHEN DEPLOYING
+//                            $mail->setSubject('Bisnis/Franchis'. $business->nama.'menerima email dari pelanggan lain');
+//                            $mail->setBody("Nama Bisnis: $business->nama<br /><p>Detail Pengirim</p><p>Nama: $model->nama_pengirim</p><p>Phone: $model->no_telp</p><p>Deskripsi: <br/> $model->deskripsi</p>");
+//                            if ($mail->send()) {
+//        //                        Yii::app()->user->setFlash('email','Email Berhasil Dikirim');
+//                                $this->redirect(Yii::app()->createUrl("//cariBisnisFranchise/detail/$id?msg=Pesan berhasil dikirim"));
+//                               
+//                            } else {
+//                                Yii::app()->user->setFlash('error','Error while sending email: '.$mail->getError());
+//                            }
+//
+//
+//                        }
                     }
-                    $this->redirect(Yii::app()->createUrl("//cariBisnisFranchise/detail/$id"));
+                    
+                }
+                else
+                {
+                    $message_kontak = "Pesan gagal terkirim silahkan periksa detil kontak atau hubungi kami";
                 }
                 
             }
-            $this->render('kontak',array('model'=>$model,'business'=>$business,'business_owner'=>$businessOwner, 'settings'=>$settings));
+            
+            
+            if(strtolower($model->idCategory->category) == 'bisnis')
+            {
+                 $this->render('detail',array(
+                            'model'=>$model,
+                            'bisnis_terkait'=>$list_bisnis_terkait,
+                            'watchlist'=>$watchlist_check,
+                            'return_location'=>$return_location,
+                            'return_kategori'=>$return_kategori,
+                            'settings'=>$settings,
+                            'email'=>$email,
+                            'business'=>$business,
+                            'businessOwner'=>$businessOwner,
+                            'message_kontak'=>$message_kontak
+                            ));
+            }
+            else if(strtolower($model->idCategory->category) == 'franchise')
+            {
+                $this->render('detailFranchise',array(
+                            'model'=>$model,
+                            'bisnis_terkait'=>$list_bisnis_terkait,
+                            'watchlist'=>$watchlist_check,
+                            'return_location'=>$return_location, 
+                            'return_kategori'=>$return_kategori,
+                            'settings'=>$settings,
+                            'email'=>$email,
+                            'business'=>$business,
+                            'businessOwner'=>$businessOwner,
+                            'message_kontak'=>$message_kontak
+                            ));
+            }
+           
+        }
+        
+        
+        public function actionKontakBisnis($id)
+        {
+//            $settings = Settings::model()->findByAttributes(array('nama_settings'=>'settings_admin'));
+//            $model = new Email();
+//            $business = Business::model()->findByPk($id);
+//            if($business->id_user == Yii::app()->user->id)
+//            {
+//                $this->redirect(Yii::app()->createUrl("//cariBisnisFranchise/detail/$id"));
+//            }
+//            $businessOwner = User::model()->findByPk($business->id_user);
+//            if(isset($_POST['Email']))
+//            {
+//                
+//                $model->attributes = $_POST['Email'];
+//                if($model->save())
+//                {
+//                    
+//                    if($_POST['Email']['status'] == '1')
+//                    {
+//                        //fungsi kirim email ke alamat email yg disediakan user
+//                        
+//                        if($businessOwner != null || $businessOwner != '')
+//                        {
+//                            YiiBase::import('ext.YiiMailer.YiiMailer');
+//                            //function to send email
+//                            $mail = new YiiMailer();
+//                            $mail->clearLayout();//if layout is already set in config
+//                            $mail->setFrom($model->alamat_email, $model->nama_pengirim);
+//                            $mail->setTo('reynhart@licht-soft.com'); //CHANGE TO APPROPRIATE EMAIL WHEN DEPLOYING
+//                            $mail->setSubject( $model->nama_pengirim.' '.'menghubungi bisnis/franchise Anda');
+//                            $mail->setBody("Nama Bisnis: $business->nama<br /><p>Detail Pengirim</p><p>Nama: $model->nama_pengirim</p><p>Phone: $model->no_telp</p><p>Deskripsi: <br/> $model->deskripsi</p>");
+//                            if ($mail->send()) {
+//        //                        Yii::app()->user->setFlash('email','Email Berhasil Dikirim');
+//                                $this->redirect(Yii::app()->createUrl('//home'));
+//                            } else {
+//                                Yii::app()->user->setFlash('error','Error while sending email: '.$mail->getError());
+//                            }
+//
+//
+//                        }
+//                    }
+//                    if($_POST['Email']['status'] == '0')
+//                    {
+//                        //kirim ke alamat email asli admin???
+//                        if($businessOwner != null || $businessOwner != '')
+//                        {
+//                            YiiBase::import('ext.YiiMailer.YiiMailer');
+//                            //function to send email
+//                            $mail = new YiiMailer();
+//                            $mail->clearLayout();//if layout is already set in config
+//                            $mail->setFrom($model->alamat_email, $model->nama_pengirim);
+//                            $mail->setTo('reynhart@licht-soft.com'); //CHANGE TO APPROPRIATE EMAIL WHEN DEPLOYING
+//                            $mail->setSubject('Bisnis/Franchis'. $business->nama.'menerima email dari pelanggan lain');
+//                            $mail->setBody("Nama Bisnis: $business->nama<br /><p>Detail Pengirim</p><p>Nama: $model->nama_pengirim</p><p>Phone: $model->no_telp</p><p>Deskripsi: <br/> $model->deskripsi</p>");
+//                            if ($mail->send()) {
+//        //                        Yii::app()->user->setFlash('email','Email Berhasil Dikirim');
+//                                $this->redirect(Yii::app()->createUrl('//home'));
+//                            } else {
+//                                Yii::app()->user->setFlash('error','Error while sending email: '.$mail->getError());
+//                            }
+//
+//
+//                        }
+//                    }
+//                    $this->redirect(Yii::app()->createUrl("//cariBisnisFranchise/detail/$id"));
+//                }
+//                
+//            }
+//            $this->render('kontak',array('model'=>$model,'business'=>$business,'business_owner'=>$businessOwner, 'settings'=>$settings));
         }
 
         public function actionGenerateSubIndustri()

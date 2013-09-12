@@ -66,11 +66,6 @@
 												</div>
 												
 												<script type=\"text/javascript\">
-<<<<<<< HEAD
-                                                    //CKEDITOR.config.width = 570;
-                                                    CKEDITOR.replace( 'Slideshow_".$i."_deskripsi' );
-                                                </script>
-=======
                                                                                                     //CKEDITOR.config.width = 570;
                                                                                                     CKEDITOR.replace( 'Slideshow_".$i."_deskripsi' );
                                                                                                 </script>

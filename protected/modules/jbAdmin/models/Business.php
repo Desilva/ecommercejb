@@ -27,7 +27,8 @@
  * @property string $harga_penawaran_laba_bersih
  * @property string $harga_penawaran_aset
  * @property string $harga
- * @property string $alasan_jual_bisnis
+ * @property integer $id_alasan_jual_bisnis
+ * @property string $alasan_jual_bisnis_lainnya
  * @property string $franchise_alasan_kerjasama
  * @property string $franchise_persyaratan
  * @property string $franchise_menu
@@ -42,19 +43,20 @@
  * @property integer $status_rekomendasi
  *
  * The followings are the available model relations:
- * @property MAlasanPenolakan $idAlasanPenolakan
+ * @property MAlasanJualBisnis $idAlasanJualBisnis
  * @property MBusinessCategory $idCategory
  * @property MIndustri $idIndustri
  * @property MSubIndustri $idSubIndustri
  * @property MProvinsi $idProvinsi
  * @property MCity $idKota
  * @property User $idUser
+ * @property MAlasanPenolakan $idAlasanPenolakan
  * @property Email[] $emails
  * @property Watchlist[] $watchlists
  */
 class Business extends CActiveRecord
 {
-            public $alasan_jual_lainnya;
+        public $alasan_jual_lainnya_check;
         public $dropDownAlasanJual;
         public $textAreaAlasanJual;
 	/**
@@ -83,11 +85,11 @@ class Business extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_category, id_user, id_industri, id_sub_industri, id_provinsi, id_kota, nama, kepemilikan, harga', 'required'),
+			array('id_category, id_user, id_industri,  id_provinsi, id_kota, nama, kepemilikan, harga', 'required'),
 			array('id_category, id_user, id_industri, id_sub_industri, id_provinsi, id_kota, kepemilikan, tahun_didirikan, jumlah_karyawan, penjualan, hpp, laba_bersih_tahun, total_aset, marjin_laba_bersih, laba_bersih_aset, harga_penawaran_penjualan, harga_penawaran_laba_bersih, harga_penawaran_aset, harga, id_alasan_penolakan, jumlah_click, tampilkanKontak, status_rekomendasi', 'numerical', 'integerOnly'=>true),
 //			array('nama, alamat, alasan_jual_bisnis, franchise_alasan_kerjasama, franchise_persyaratan, franchise_menu, franchise_dukungan_franchisor', 'length', 'max'=>500),
                         array('status_approval', 'length', 'max'=>50),
-			array('tanggal_approval,deskripsi,alamat,alasan_jual_bisnis, franchise_alasan_kerjasama, franchise_persyaratan, franchise_menu, franchise_dukungan_franchisor, dokumen, image', 'safe'),
+			array('tanggal_approval,deskripsi,alamat,id_alasan_jual_bisnis, franchise_alasan_kerjasama, franchise_persyaratan, franchise_menu, franchise_dukungan_franchisor, dokumen, image, alasan_jual_bisnis_lainnya', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, id_category, id_user, id_industri, id_sub_industri, id_provinsi, id_kota, nama, deskripsi, kepemilikan, tahun_didirikan, alamat, jumlah_karyawan, penjualan, hpp, laba_bersih_tahun, total_aset, marjin_laba_bersih, laba_bersih_aset, harga_penawaran_penjualan, harga_penawaran_laba_bersih, harga_penawaran_aset, harga_min, harga_max, alasan_jual_bisnis, franchise_alasan_kerjasama, franchise_persyaratan, franchise_menu, franchise_dukungan_franchisor, dokumen, image, status_approval, tanggal_approval, id_alasan_penolakan, jumlah_click, tampilkanKontak, status_rekomendasi', 'safe', 'on'=>'search'),
@@ -102,6 +104,7 @@ class Business extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+                        'idAlasanJualBisnis' => array(self::BELONGS_TO,'AlasanJualBisnis', 'id_alasan_jual_bisnis'),
 			'idAlasanPenolakan' => array(self::BELONGS_TO, 'AlasanPenolakan', 'id_alasan_penolakan'),
 			'idCategory' => array(self::BELONGS_TO, 'BusinessCategory', 'id_category'),
 			'idIndustri' => array(self::BELONGS_TO, 'Industri', 'id_industri'),
@@ -143,7 +146,7 @@ class Business extends CActiveRecord
 			'harga_penawaran_laba_bersih' => 'Harga Penawaran/Laba Bersih',
 			'harga_penawaran_aset' => 'Harga Penawaran/Aset',
 			'harga' => 'Harga',
-			'alasan_jual_bisnis' => 'Alasan Jual Bisnis',
+			'id_alasan_jual_bisnis' => 'Alasan Jual Bisnis',
 			'franchise_alasan_kerjasama' => 'Alasan Kerjasama',
 			'franchise_persyaratan' => 'Persyaratan',
 			'franchise_menu' => 'Menu',
@@ -154,7 +157,7 @@ class Business extends CActiveRecord
                         'tanggal_approval' => 'Tanggal Approval',
                         'id_alasan_penolakan' => 'Alasan Penolakan',
 			'jumlah_click' => 'Jumlah Click',
-                        'alasan_jual_lainnya'=> 'Lainnya',
+                        'alasan_jual_lainnya_check'=> 'Lainnya',
                         'tampilkanKontak'=>'Kontak Ditampilkan',
 		);
 	}

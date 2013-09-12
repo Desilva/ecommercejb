@@ -430,11 +430,7 @@ class AccountController extends Controller
 //            $doc_upload = new XUploadForm();
                 $settings = Settings::model()->findByAttributes(array('nama_settings'=>'settings_admin'));
 		$model=new Business;
-                $list_alasan_jual_bisnis = array(
-                    "Alasan 1"=>"Alasan 1",
-                    "Alasan 2"=>"Alasan 2",
-                    "Alasan 3"=>"Alasan 3"
-                );
+                $list_alasan_jual_bisnis = AlasanJualBisnis::model()->findAll();
                 $list_industri = Industri::model()->findAll();
                 $list_provinsi = Provinsi::model()->findAll();
                 $list_kepemilikan = array(
@@ -507,16 +503,16 @@ class AccountController extends Controller
                          $model->alasan_jual_lainnya = $_POST['Business']['alasan_jual_lainnya'];
                     }
                     $model->tampilkanKontak = $_POST['Business']['tampilkanKontak'];
-                    if(isset($_POST['Business']['dropDownAlasanJual']))
-                    {
-                        $model->dropDownAlasanJual = $_POST['Business']['dropDownAlasanJual'];
-                        $model->alasan_jual_bisnis = $_POST['Business']['dropDownAlasanJual'];
-                    }
-                    if(isset($_POST['Business']['textAreaAlasanJual']))
-                    {
-                        $model->textAreaAlasanJual = $_POST['Business']['textAreaAlasanJual'];
-                        $model->alasan_jual_bisnis = $_POST['Business']['textAreaAlasanJual'];
-                    }
+//                    if(isset($_POST['Business']['dropDownAlasanJual']))
+//                    {
+//                        $model->dropDownAlasanJual = $_POST['Business']['dropDownAlasanJual'];
+//                        $model->alasan_jual_bisnis = $_POST['Business']['dropDownAlasanJual'];
+//                    }
+//                    if(isset($_POST['Business']['textAreaAlasanJual']))
+//                    {
+//                        $model->textAreaAlasanJual = $_POST['Business']['textAreaAlasanJual'];
+//                        $model->alasan_jual_bisnis = $_POST['Business']['textAreaAlasanJual'];
+//                    }
                     if($model->validate())
                     {
                         
@@ -685,6 +681,10 @@ class AccountController extends Controller
 	{
             $settings = Settings::model()->findByAttributes(array('nama_settings'=>'settings_admin'));
             $model=$this->loadModel($id);
+            if($model->alasan_jual_bisnis_lainnya != null || $model->alasan_jual_bisnis_lainnya != '')
+            {
+                $model->alasan_jual_lainnya_check = 1;
+            }
             if(Yii::app()->request->isAjaxRequest)
             {
                 $model->attributes=$_POST['Business'];
@@ -709,11 +709,7 @@ class AccountController extends Controller
                 $this->redirect(Yii::app()->createUrl('//account/index'));
             }
 
-                $list_alasan_jual_bisnis = array(
-                    "Alasan 1"=>"Alasan 1",
-                    "Alasan 2"=>"Alasan 2",
-                    "Alasan 3"=>"Alasan 3"
-                );
+                $list_alasan_jual_bisnis = AlasanJualBisnis::model()->findAll();
                 $list_industri = Industri::model()->findAll();
                 $list_provinsi = Provinsi::model()->findAll();
                 $list_kepemilikan = array(
@@ -748,20 +744,15 @@ class AccountController extends Controller
 //                    var_dump($_POST['Business']);
 //                    var_dump($model->attributes);
 //                    die;
-                    if(isset($_POST['Business']['alasan_jual_lainnya']))
-                    {
-                         $model->alasan_jual_lainnya = $_POST['Business']['alasan_jual_lainnya'];
-                    }
                     $model->tampilkanKontak = $_POST['Business']['tampilkanKontak'];
-                    if(isset($_POST['Business']['dropDownAlasanJual']))
+                    if(isset($_POST['Business']['id_alasan_jual_bisnis']))
                     {
-                        $model->dropDownAlasanJual = $_POST['Business']['dropDownAlasanJual'];
-                        $model->alasan_jual_bisnis = $_POST['Business']['dropDownAlasanJual'];
+                        $model->alasan_jual_bisnis_lainnya = null;
                     }
-                    if(isset($_POST['Business']['textAreaAlasanJual']))
+                    if(isset($_POST['Business']['alasan_jual_bisnis_lainnya']))
                     {
-                        $model->textAreaAlasanJual = $_POST['Business']['textAreaAlasanJual'];
-                        $model->alasan_jual_bisnis = $_POST['Business']['textAreaAlasanJual'];
+                        $model->id_alasan_jual_bisnis = null;
+                        $model->alasan_jual_lainnya_check = 1;
                     }
                     if($model->validate())
                     {

@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl ?>/js/kendo.common.min.css" />
 <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl ?>/js/kendo.default.min.css" />
 <script src="<?php echo Yii::app()->request->baseUrl ?>/js/kendo.web.min.js"></script>
+<script src="<?php echo Yii::app()->baseUrl.'/ckeditor/ckeditor.js'; ?>"></script>
 
 <div class="row-fluid">
 	

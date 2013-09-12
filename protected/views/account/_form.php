@@ -270,11 +270,11 @@
 								<div class="control-group">
 									<div class="span12">
 										<div class="span11">
-											<label class="control-label"><?php echo $form->labelEx($model,'alasan_jual_bisnis'); ?></label>
+											<label class="control-label"><?php echo $form->labelEx($model,'id_alasan_jual_bisnis'); ?></label>
 											<div class="controls">
-												<?php echo $form->dropDownList($model,'dropDownAlasanJual',$alasan_jual_bisnis,array('prompt'=>'Pilih Alasan','class'=>'alasanJualDropDown')); ?>
-                                                <?php echo $form->checkBox($model,'alasan_jual_lainnya',array('onchange'=>'checkboxAlasanJual()','class'=>'alasanJualCheckBox')) ?>
-												<?php echo $form->labelEx($model,'alasan_jual_lainnya',array('style'=>'display:inline; margin-left:3px;')) ?>
+												<?php echo $form->dropDownList($model,'id_alasan_jual_bisnis',Chtml::listData($alasan_jual_bisnis,'id','alasan'),array('prompt'=>'Pilih Alasan','class'=>'alasanJualDropDown')); ?>
+                                                <?php echo $form->checkBox($model,'alasan_jual_lainnya_check',array('onchange'=>'checkboxAlasanJual()','class'=>'alasanJualCheckBox')) ?>
+									<?php echo $form->labelEx($model,'alasan_jual_lainnya_check',array('style'=>'display:inline; margin-left:3px;')) ?>
 											</div>
 										</div>
 									</div>
@@ -284,7 +284,7 @@
 										<div class="span11">
 											<label class="control-label"></label>
 											<div class="controls">
-												<?php echo $form->textArea($model,'textAreaAlasanJual',array('class'=>'alasanJualTextArea','disabled'=>'disabled')); ?>
+												<?php echo $form->textArea($model,'alasan_jual_bisnis_lainnya',array('class'=>'alasanJualTextArea','disabled'=>'disabled')); ?>
 											</div>
 										</div>
 									</div>
@@ -295,6 +295,10 @@
 											<label class="control-label"><?php echo $form->labelEx($model,'deskripsi'); ?></label>
 											<div class="controls">
 												<?php echo $form->textArea($model,'deskripsi'); ?>
+                                                                                            <script>
+                                                                                                    //CKEDITOR.config.width = 570;
+                                                                                                    CKEDITOR.replace( 'Business_deskripsi' );
+                                                                                            </script>
 											</div>
 										</div>
 									</div>

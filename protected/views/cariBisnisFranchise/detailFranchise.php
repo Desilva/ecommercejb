@@ -1,3 +1,12 @@
+<?php 
+if($message_kontak != ''){ 
+?>
+	<script>
+		alert("<?php echo $message_kontak ?>");
+	</script>
+<?php 
+}
+?>
 <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl ?>/library/ad-gallery/jquery.ad-gallery.css" />
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl ?>/library/ad-gallery/jquery.ad-gallery.js"></script>
 <div class="row-fluid">
@@ -143,7 +152,7 @@
             { 
                 if(file_exists(Yii::app()->basePath . '/../uploads/images/' . $model->id_user . '/' . $image[0]))
                     { ?>
-                        <img src="<?php echo Yii::app()->baseUrl ?>/uploads/images/<?php echo $model->id_user?>/<?php echo $image[0] ?>" width="300" height="300" style="float:left; width:300px; height:300px"/>
+                        <img src="<?php echo Yii::app()->baseUrl ?>/uploads/images/<?php echo $model->id_user?>/<?php echo $image[0] ?>" style="float:left; width:250px; height:250px; margin-right:25px"/>
               <?php } 
                     else
                     { ?>
@@ -159,97 +168,34 @@
         <?php } ?>
     	
         <?php if($model->deskripsi =='' || $model->deskripsi ==null) echo "Tidak ada deskripsi"; else echo $model->deskripsi ?>
-<<<<<<< HEAD
-					
-		
-			</div>
+                      	</div>
 		</div>
 		<div class="row-fluid" style="clear:both">
 			<div class="span12"></div>
 		</div>
-		<div class="row-fluid">
-=======
-        </div>
-</div>
-<div class="row-fluid" style="clear:both">
-	<div class="span12"></div>
-</div>
-<div class="row-fluid">
-	<div class="span12">
-    	<div class="row-fluid">
-        	<div class="span3">
-            	<font class="Font-Color-DarkBlue">DETIL INFORMASI FRANCHISE</font>
-            </div>
-            <div class="span9">
             <?php
                 if($model->id_user != Yii::app()->user->id)
                 {
-                    echo CHtml::button('Kontak', array('submit' => array("cariBisnisFranchise/kontakBisnis/$model->id"), 'class'=>'btn Gradient-Style1'));
-                }
             ?>
-            </div>
-        </div>
-        <div class="row-fluid">
-        	<table>
-            	<tr class="Tr-Size-Medium">
-                	<td width="30%">Industri</td>
-                    <td width="30%">:<?php echo $model->idIndustri->industri ?></td>
-                   <td>File Pendukung</td>
-                   <td></td>
-                </tr>
-                <tr class="Tr-Size-Medium">
-                   <td>Lokasi</td>
-                   <td>:<?php echo $model->idKota->city ?></td>
-                   <td></td>
-                   <td></td>
-                </tr>
-                <tr class="Tr-Size-Medium">
-                   <td>Harga</td>
-                   <td>:Rp.<?php echo $model->harga ?></td>
-                   <td></td>
-                   <td></td>
-                </tr>
-                <tr class="Tr-Size-Medium">
-                  <td>Alasan Franchise Mau Bekerjasama:</td>
-                  <td rowspan='5' valign='top'>File Pendukung:
-                           <?php 
-                            $docList = array_filter(explode(',',$model->dokumen));
-                            if(!empty($docList))
-                            { 
-                                foreach($docList as $dokumen)
-                                { 
-                                    $dokumen_url = urlencode($dokumen);
-                                    ?>
-                        <p><a href="<?php echo Yii::app()->createUrl("//download?docs=1&id=$model->id_user&name=$dokumen_url") ?>" ><?php echo $dokumen; ?></a></p>
-                       <?php } } ?>
-                        
-                    </td>
-                  
-                </tr>
-                <tr class="Tr-Size-Medium">
-                  <td><?php echo $model->franchise_alasan_kerjasama ?></td>
-                  
-                </tr>
-               <tr class="Tr-Size-Medium">
-                  <td>Persyaratan Menjadi Franchise:</td>
-                  
-                </tr>
-                <tr class="Tr-Size-Medium">
-                  <td><?php echo $model->franchise_persyaratan ?></td>
-                  
-                </tr>
-                <tr class="Tr-Size-Medium">
-                  <td>Dukungan Franchise:</td>
-                  
-                </tr>
-                <tr class="Tr-Size-Medium">
-                  <td><?php echo $model->franchise_dukungan_franchisor ?></td>
-                 
-                </tr>
-            </table>
-        </div>
-        <div class="row-fluid">
->>>>>>> d6f58c21f4c7f38056829d3d4ed1f17ed9a58a6a
+                <div class="row-fluid">
+			<div class="span12">
+                             <?php
+                                    $this->widget('zii.widgets.jui.CJuiAccordion', array(
+                                    'panels' => array(
+                                            'Kontak' => $this->renderpartial('//cariBisnisFranchise/kontak', array('model'=>$email,'business'=>$business,'business_owner'=>$businessOwner, 'settings'=>$settings), true),
+
+                                    ),
+                                    // additional javascript options for the accordion plugin
+                                    'options' => array(
+                                                    'collapsible' => true,
+                                                    'active'=>($message_kontak != '')?0:false,
+                                            ),
+                                    ));
+                            ?>
+                        </div>
+		</div>
+                <?php }?>
+            <div class="row-fluid">
         	<div class="span12">
 				<div class="span8">
 				<div class="widget-box">
@@ -272,7 +218,7 @@
 									</tr>
 									<tr>
 										<td>Harga</td>
-										<td>Rp.<?php echo $model->harga_min ?> - Rp.<?php echo $model->harga_max ?></td>
+										<td>Rp.<?php echo $model->harga ?></td>
 									</tr>
 									<tr>
 										<td>Alasan Franchise Mau Bekerjasama</td>
@@ -299,26 +245,22 @@
 						</div>
 						<div class="widget-content nopadding">
 							<form class="form-horizontal">
-								<div class="control-group">
-									<div class="span12" style="margin-left:10px">
-										<a href="#">SIUP.PDF</a>
-									</div>						
-								</div>
-								<div class="control-group">
-									<div class="span12" style="margin-left:10px">
-										<a href="#">TOP.Docx</a>
-									</div>						
-								</div>
-								<div class="control-group">
-									<div class="span12" style="margin-left:10px">
-										<a href="#">Laporan Keuangan</a>
-									</div>
-								</div>
-								<div class="control-group">
-									<div class="span12" style="margin-left:10px">
-										<a href="#">Akte Perusahaan</a>
-									</div>
-								</div>	
+								<?php 
+                                                                    $docList = array_filter(explode(',',$model->dokumen));
+                                                                    if(!empty($docList))
+                                                                    { 
+                                                                        foreach($docList as $dokumen)
+                                                                        { 
+                                                                            $dokumen_url = urlencode($dokumen);
+                                                                            if(file_exists(Yii::app()->getBasePath() . "/../uploads/docs/".$model->id_user.'/'.$dokumen))
+                                                                            {
+                                                                            ?>
+                                                                            <div class="control-group">
+                                                                                <div class="span12" style="margin-left:10px">
+                                                                                        <a href="<?php echo Yii::app()->createUrl("//download?docs=1&id=$model->id_user&name=$dokumen_url") ?>"><?php echo $dokumen; ?></a>
+                                                                                </div>						
+                                                                            </div>
+                                                                <?php } } } ?>
 							</form>
 						</div>
 					</div>
@@ -374,7 +316,7 @@
 			</div>
         </div>   
 		
-		
+	
 	</div>
 
 	

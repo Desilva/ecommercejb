@@ -1,3 +1,12 @@
+<?php 
+if($message_kontak != ''){ 
+?>
+	<script>
+		alert("<?php echo $message_kontak ?>");
+	</script>
+<?php 
+}
+?>
 <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl ?>/library/ad-gallery/jquery.ad-gallery.css" />
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl ?>/library/ad-gallery/jquery.ad-gallery.js"></script>
 <div class="row-fluid">
@@ -171,6 +180,28 @@
 		<div class="row-fluid" style="clear:both">
 			<div class="span12"></div>
 		</div>
+            <?php
+                if($model->id_user != Yii::app()->user->id)
+                {
+            ?>
+                <div class="row-fluid">
+			<div class="span12">
+                             <?php
+                                    $this->widget('zii.widgets.jui.CJuiAccordion', array(
+                                    'panels' => array(
+                                            'Kontak' => $this->renderpartial('//cariBisnisFranchise/kontak', array('model'=>$email,'business'=>$business,'business_owner'=>$businessOwner, 'settings'=>$settings), true),
+
+                                    ),
+                                    // additional javascript options for the accordion plugin
+                                    'options' => array(
+                                                    'collapsible' => true,
+                                                    'active'=>($message_kontak != '')?0:false,
+                                            ),
+                                    ));
+                            ?>
+                        </div>
+		</div>
+                <?php }?>
 		<div class="row-fluid">
 			<div class="span12">
 				<div class="span8">
@@ -226,7 +257,16 @@
 									</tr>
 									<Tr>
 										<Td>Alasan Menjual Bisnis</td>
-										<td><?php echo $model->alasan_jual_bisnis ?></td>
+										<td><?php 
+                                                                                    if($model->id_alasan_jual_bisnis != null || $model->id_alasan_jual_bisnis != '')
+                                                                                    {
+                                                                                        echo $model->idAlasanJualBisnis->alasan;
+                                                                                    }
+                                                                                    else
+                                                                                    {
+                                                                                        echo $model->alasan_jual_bisnis_lainnya;
+                                                                                    }
+                                                                                 ?></td>
 									</tr>
 									<tr>
 										<Td>Margin harga bersih</td>
@@ -262,27 +302,23 @@
 						</div>
 						<div class="widget-content nopadding">
 							<form class="form-horizontal">
-
-								<div class="control-group">
-									<div class="span12" style="margin-left:10px">
-										<a href="#">SIUP.PDF</a>
-									</div>						
-								</div>
-								<div class="control-group">
-									<div class="span12" style="margin-left:10px">
-										<a href="#">TOP.Docx</a>
-									</div>						
-								</div>
-								<div class="control-group">
-									<div class="span12" style="margin-left:10px">
-										<a href="#">Laporan Keuangan</a>
-									</div>
-								</div>
-								<div class="control-group">
-									<div class="span12" style="margin-left:10px">
-										<a href="#">Akte Perusahaan</a>
-									</div>
-								</div>	
+                                                                <?php 
+                                                                    $docList = array_filter(explode(',',$model->dokumen));
+                                                                    if(!empty($docList))
+                                                                    { 
+                                                                        foreach($docList as $dokumen)
+                                                                        { 
+                                                                            $dokumen_url = urlencode($dokumen);
+                                                                            if(file_exists(Yii::app()->getBasePath() . "/../uploads/docs/".$model->id_user.'/'.$dokumen))
+                                                                            {
+                                                                            ?>
+                                                                            <div class="control-group">
+                                                                                <div class="span12" style="margin-left:10px">
+                                                                                        <a href="<?php echo Yii::app()->createUrl("//download?docs=1&id=$model->id_user&name=$dokumen_url") ?>"><?php echo $dokumen; ?></a>
+                                                                                </div>						
+                                                                            </div>
+                                                                <?php } } } ?>
+									
 							</form>
 						</div>
 					</div>

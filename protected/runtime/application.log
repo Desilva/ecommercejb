@@ -2095,3 +2095,720 @@ in C:\xampp\htdocs\ecommercejb\index.php (13)
 2013/09/12 15:41:21 [warning] [application] .uploads/images/5/1_130912030924_patnbpizza.jpg is not a file
 in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (841)
 in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 16:17:35 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (690)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 16:17:35 [warning] [application] Failed to set unsafe attribute "textAreaAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (690)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 16:17:35 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (701)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 16:17:35 [warning] [application] Failed to set unsafe attribute "textAreaAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (701)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 16:17:46 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (690)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 16:17:46 [warning] [application] Failed to set unsafe attribute "textAreaAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (690)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 16:17:47 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (746)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 16:17:47 [warning] [application] Failed to set unsafe attribute "textAreaAlasanJual" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (746)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 16:51:22 [error] [php] Undefined variable: list_alasan_jual (C:\xampp\htdocs\ecommercejb\protected\views\account\_form.php:275)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): AccountController->renderFile()
+#1 C:\xampp\htdocs\ecommercejb\protected\views\account\create.php(32): AccountController->renderPartial()
+#2 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(95): AccountController->renderInternal()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): AccountController->renderFile()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): AccountController->renderPartial()
+#6 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(660): AccountController->render()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): AccountController->actionCreate()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): AccountController->runAction()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): AccountController->filterAccessControl()
+#13 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): AccountController->runActionWithFilters()
+#16 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): AccountController->run()
+#17 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/account/create
+in C:\xampp\htdocs\ecommercejb\protected\views\account\_form.php (275)
+in C:\xampp\htdocs\ecommercejb\protected\views\account\create.php (32)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (660)
+2013/09/12 16:51:55 [error] [exception.CException] exception 'CException' with message 'Property "Business.alasan_jual_lainnya" is not defined.' in C:\xampp\htdocs\ecommercejb\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\db\ar\CActiveRecord.php(143): CComponent->__get('alasan_jual_lai...')
+#1 C:\xampp\htdocs\ecommercejb\framework\web\helpers\CHtml.php(2255): CActiveRecord->__get('alasan_jual_lai...')
+#2 C:\xampp\htdocs\ecommercejb\framework\web\helpers\CHtml.php(1417): CHtml::resolveValue(Object(Business), 'alasan_jual_lai...')
+#3 C:\xampp\htdocs\ecommercejb\framework\web\widgets\CActiveForm.php(702): CHtml::activeTextArea(Object(Business), 'alasan_jual_lai...', Array)
+#4 C:\xampp\htdocs\ecommercejb\protected\views\account\_form.php(287): CActiveForm->textArea(Object(Business), 'alasan_jual_lai...', Array)
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#8 C:\xampp\htdocs\ecommercejb\protected\views\account\create.php(32): CController->renderPartial('_form', Array)
+#9 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#10 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#12 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#13 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(660): CController->render('create', Array)
+#14 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): AccountController->actionCreate()
+#15 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#18 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#22 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('create')
+#24 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('account/create')
+#25 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#26 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/ecommerceJB/index.php/account/create
+---
+2013/09/12 16:54:54 [warning] [application] Failed to set unsafe attribute "id_alasan_jual_bisnis" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (470)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 16:54:54 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya_check" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (470)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 16:54:56 [warning] [application] Failed to set unsafe attribute "id_alasan_jual_bisnis" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (499)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 16:54:56 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya_check" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (499)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 16:58:00 [warning] [application] Failed to set unsafe attribute "id_alasan_jual_bisnis" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (686)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 16:58:00 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya_check" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (686)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 16:58:02 [warning] [application] Failed to set unsafe attribute "id_alasan_jual_bisnis" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (738)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 16:58:02 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya_check" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (738)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 16:59:40 [warning] [application] Failed to set unsafe attribute "id_alasan_jual_bisnis" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (686)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 16:59:40 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya_check" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (686)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 16:59:41 [warning] [application] Failed to set unsafe attribute "id_alasan_jual_bisnis" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (738)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 16:59:41 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya_check" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (738)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 16:59:41 [error] [php] Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php:741) (C:\xampp\htdocs\ecommercejb\framework\web\CHttpRequest.php:789)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(893): AccountController->redirect()
+#1 unknown(0): AccountController->actionUpdate()
+#2 C:\xampp\htdocs\ecommercejb\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): AccountController->runAction()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): AccountController->filterAccessControl()
+#9 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): AccountController->runActionWithFilters()
+#12 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): AccountController->run()
+#13 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/account/update/55
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (893)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 17:00:33 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya_check" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (738)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 17:00:33 [error] [php] Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php:741) (C:\xampp\htdocs\ecommercejb\framework\web\CHttpRequest.php:789)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(893): AccountController->redirect()
+#1 unknown(0): AccountController->actionUpdate()
+#2 C:\xampp\htdocs\ecommercejb\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): AccountController->runAction()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): AccountController->filterAccessControl()
+#9 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): AccountController->runActionWithFilters()
+#12 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): AccountController->run()
+#13 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/account/update/55
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (893)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 17:01:00 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya_check" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (738)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 17:01:17 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya_check" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (686)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 17:01:18 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya_check" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (738)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 17:01:49 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya_check" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (686)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 17:01:50 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya_check" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (738)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 17:01:50 [error] [php] Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php:741) (C:\xampp\htdocs\ecommercejb\framework\web\CHttpRequest.php:789)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(893): AccountController->redirect()
+#1 unknown(0): AccountController->actionUpdate()
+#2 C:\xampp\htdocs\ecommercejb\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): AccountController->runAction()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): AccountController->filterAccessControl()
+#9 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): AccountController->runActionWithFilters()
+#12 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): AccountController->run()
+#13 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/account/update/55
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (893)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 17:05:04 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya_check" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (738)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 17:05:22 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya_check" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (686)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 17:05:23 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya_check" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (738)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 17:07:54 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya_check" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (690)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 17:07:55 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya_check" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (742)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 17:07:55 [error] [exception.CException] exception 'CException' with message 'Property "Business.alasan_lainnya_check" is not defined.' in C:\xampp\htdocs\ecommercejb\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\db\ar\CActiveRecord.php(159): CComponent->__set('alasan_lainnya_...', 1)
+#1 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(759): CActiveRecord->__set('alasan_lainnya_...', 1)
+#2 [internal function]: AccountController->actionUpdate('55')
+#3 C:\xampp\htdocs\ecommercejb\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(AccountController), Array)
+#4 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(AccountController), Object(ReflectionMethod), Array)
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#12 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('update')
+#14 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('account/update')
+#15 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/ecommerceJB/index.php/account/update/55
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/account/update/55
+---
+2013/09/12 17:08:48 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya_check" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (690)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 17:08:50 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya_check" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (742)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 17:18:33 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya_check" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (280)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 17:18:35 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya_check" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (361)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 11:18:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/2.jpg".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/uploads/images/5/2.jpg
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/home
+---
+2013/09/12 11:18:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/3.jpg".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/uploads/images/5/3.jpg
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/home
+---
+2013/09/12 11:18:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/2.jpg".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/uploads/images/5/2.jpg
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/home
+---
+2013/09/12 11:18:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/3.jpg".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/uploads/images/5/3.jpg
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/home
+---
+2013/09/12 11:18:55 [error] [exception.CException] exception 'CException' with message 'Property "Business.alasan_jual_bisnis" is not defined.' in C:\xampp\htdocs\ecommercejb\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\db\ar\CActiveRecord.php(143): CComponent->__get('alasan_jual_bis...')
+#1 C:\xampp\htdocs\ecommercejb\protected\views\cariBisnisFranchise\detail.php(229): CActiveRecord->__get('alasan_jual_bis...')
+#2 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): CController->renderPartial('detail', Array, true)
+#6 C:\xampp\htdocs\ecommercejb\protected\controllers\CariBisnisFranchiseController.php(294): CController->render('detail', Array)
+#7 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): CariBisnisFranchiseController->actionDetail()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('detail')
+#17 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('cariBisnisFranc...')
+#18 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/ecommerceJB/index.php/cariBisnisFranchise/detail/55
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/cariBisnisFranchise
+---
+2013/09/12 17:23:02 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya_check" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (280)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 17:23:03 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya_check" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (361)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 11:23:27 [error] [php] include(MAlasanJualBisnis.php): failed to open stream: No such file or directory (C:\xampp\htdocs\ecommercejb\framework\YiiBase.php:421)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\db\ar\CActiveRecord.php(386): spl_autoload_call()
+#1 C:\xampp\htdocs\ecommercejb\framework\db\ar\CActiveFinder.php(215): model()
+#2 C:\xampp\htdocs\ecommercejb\framework\db\ar\CActiveFinder.php(48): CActiveFinder->buildJoinTree()
+#3 C:\xampp\htdocs\ecommercejb\framework\db\ar\CActiveRecord.php(271): CActiveFinder->__construct()
+#4 C:\xampp\htdocs\ecommercejb\framework\db\ar\CActiveRecord.php(141): Business->getRelated()
+#5 C:\xampp\htdocs\ecommercejb\protected\views\cariBisnisFranchise\detail.php(232): Business->__get()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(126): require()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(95): CariBisnisFranchiseController->renderInternal()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): CariBisnisFranchiseController->renderFile()
+#9 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): CariBisnisFranchiseController->renderPartial()
+#10 C:\xampp\htdocs\ecommercejb\protected\controllers\CariBisnisFranchiseController.php(294): CariBisnisFranchiseController->render()
+#11 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): CariBisnisFranchiseController->actionDetail()
+#12 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#13 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CariBisnisFranchiseController->runAction()
+#14 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#16 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CariBisnisFranchiseController->filterAccessControl()
+#17 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#18 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#19 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CariBisnisFranchiseController->runActionWithFilters()
+#20 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CariBisnisFranchiseController->run()
+#21 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#22 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#23 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/cariBisnisFranchise/detail/55
+in C:\xampp\htdocs\ecommercejb\protected\views\cariBisnisFranchise\detail.php (232)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\CariBisnisFranchiseController.php (294)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 17:29:48 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya_check" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (470)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 17:29:50 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya_check" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (499)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 17:30:03 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya_check" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (690)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 17:30:04 [warning] [application] Failed to set unsafe attribute "alasan_jual_lainnya_check" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (742)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 11:38:03 [error] [exception.CException] exception 'CException' with message 'Property "Business.harga_min" is not defined.' in C:\xampp\htdocs\ecommercejb\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\db\ar\CActiveRecord.php(143): CComponent->__get('harga_min')
+#1 C:\xampp\htdocs\ecommercejb\protected\views\cariBisnisFranchise\detailFranchise.php(275): CActiveRecord->__get('harga_min')
+#2 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): CController->renderPartial('detailFranchise', Array, true)
+#6 C:\xampp\htdocs\ecommercejb\protected\controllers\CariBisnisFranchiseController.php(298): CController->render('detailFranchise', Array)
+#7 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): CariBisnisFranchiseController->actionDetail()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('detail')
+#17 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('cariBisnisFranc...')
+#18 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/ecommerceJB/index.php/cariBisnisFranchise/detail/34
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/cariBisnisFranchise
+---
+2013/09/12 11:58:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/2.jpg".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/uploads/images/5/2.jpg
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/home
+---
+2013/09/12 11:58:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/3.jpg".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/uploads/images/5/3.jpg
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/home
+---
+2013/09/12 11:58:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/2.jpg".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/uploads/images/5/2.jpg
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/home
+---
+2013/09/12 11:58:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/3.jpg".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/uploads/images/5/3.jpg
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/home
+---
+2013/09/12 11:58:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/2.jpg".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/uploads/images/5/2.jpg
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/home
+---
+2013/09/12 11:58:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/3.jpg".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/uploads/images/5/3.jpg
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/home
+---
+2013/09/12 11:58:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/2.jpg".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/uploads/images/5/2.jpg
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/home
+---
+2013/09/12 11:58:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/3.jpg".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/uploads/images/5/3.jpg
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/home
+---
+2013/09/12 12:11:24 [error] [php] Undefined variable: email (C:\xampp\htdocs\ecommercejb\protected\views\cariBisnisFranchise\detail.php:179)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): CariBisnisFranchiseController->renderFile()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): CariBisnisFranchiseController->renderPartial()
+#2 C:\xampp\htdocs\ecommercejb\protected\controllers\CariBisnisFranchiseController.php(299): CariBisnisFranchiseController->render()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): CariBisnisFranchiseController->actionDetail()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CariBisnisFranchiseController->runAction()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CariBisnisFranchiseController->filterAccessControl()
+#9 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CariBisnisFranchiseController->runActionWithFilters()
+#12 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CariBisnisFranchiseController->run()
+#13 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/cariBisnisFranchise/detail/52
+in C:\xampp\htdocs\ecommercejb\protected\views\cariBisnisFranchise\detail.php (179)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\CariBisnisFranchiseController.php (299)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 12:13:27 [error] [php] Undefined variable: businessOwner (C:\xampp\htdocs\ecommercejb\protected\views\cariBisnisFranchise\detail.php:179)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): CariBisnisFranchiseController->renderFile()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): CariBisnisFranchiseController->renderPartial()
+#2 C:\xampp\htdocs\ecommercejb\protected\controllers\CariBisnisFranchiseController.php(309): CariBisnisFranchiseController->render()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): CariBisnisFranchiseController->actionDetail()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CariBisnisFranchiseController->runAction()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CariBisnisFranchiseController->filterAccessControl()
+#9 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CariBisnisFranchiseController->runActionWithFilters()
+#12 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CariBisnisFranchiseController->run()
+#13 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/cariBisnisFranchise/detail/52
+in C:\xampp\htdocs\ecommercejb\protected\views\cariBisnisFranchise\detail.php (179)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\CariBisnisFranchiseController.php (309)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 12:14:09 [error] [php] Undefined variable: model (C:\xampp\htdocs\ecommercejb\protected\views\cariBisnisFranchise\kontak.php:9)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): CariBisnisFranchiseController->renderFile()
+#1 C:\xampp\htdocs\ecommercejb\protected\views\cariBisnisFranchise\detail.php(179): CariBisnisFranchiseController->renderPartial()
+#2 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(95): CariBisnisFranchiseController->renderInternal()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): CariBisnisFranchiseController->renderFile()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): CariBisnisFranchiseController->renderPartial()
+#6 C:\xampp\htdocs\ecommercejb\protected\controllers\CariBisnisFranchiseController.php(309): CariBisnisFranchiseController->render()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): CariBisnisFranchiseController->actionDetail()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CariBisnisFranchiseController->runAction()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CariBisnisFranchiseController->filterAccessControl()
+#13 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CariBisnisFranchiseController->runActionWithFilters()
+#16 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CariBisnisFranchiseController->run()
+#17 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/cariBisnisFranchise/detail/52
+in C:\xampp\htdocs\ecommercejb\protected\views\cariBisnisFranchise\kontak.php (9)
+in C:\xampp\htdocs\ecommercejb\protected\views\cariBisnisFranchise\detail.php (179)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\CariBisnisFranchiseController.php (309)
+2013/09/12 12:27:30 [warning] [application] Failed to set unsafe attribute "id_business" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\CariBisnisFranchiseController.php (302)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 12:27:30 [warning] [application] Failed to set unsafe attribute "tanggal" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\CariBisnisFranchiseController.php (302)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 12:27:30 [warning] [application] Failed to set unsafe attribute "status" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\CariBisnisFranchiseController.php (302)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 12:27:30 [warning] [application] Failed to set unsafe attribute "nama_pengirim" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\CariBisnisFranchiseController.php (302)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 12:27:30 [warning] [application] Failed to set unsafe attribute "no_telp" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\CariBisnisFranchiseController.php (302)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 12:27:30 [warning] [application] Failed to set unsafe attribute "alamat_email" of "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\CariBisnisFranchiseController.php (302)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/12 12:27:30 [error] [exception.CException] exception 'CException' with message 'Property "Business.alamat_email" is not defined.' in C:\xampp\htdocs\ecommercejb\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\db\ar\CActiveRecord.php(143): CComponent->__get('alamat_email')
+#1 C:\xampp\htdocs\ecommercejb\protected\controllers\CariBisnisFranchiseController.php(316): CActiveRecord->__get('alamat_email')
+#2 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): CariBisnisFranchiseController->actionDetail()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('detail')
+#12 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('cariBisnisFranc...')
+#13 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/ecommerceJB/index.php/cariBisnisFranchise/detail/52
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/cariBisnisFranchise/detail/52
+---
+2013/09/12 12:35:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/2.jpg".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/uploads/images/5/2.jpg
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/home
+---
+2013/09/12 12:35:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/3.jpg".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/uploads/images/5/3.jpg
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/home
+---
+2013/09/12 12:35:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/2.jpg".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/uploads/images/5/2.jpg
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/home
+---
+2013/09/12 12:35:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/3.jpg".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/uploads/images/5/3.jpg
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/home
+---
+2013/09/12 12:36:33 [error] [exception.CException] exception 'CException' with message 'Property "Business.email" is not defined.' in C:\xampp\htdocs\ecommercejb\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\db\ar\CActiveRecord.php(143): CComponent->__get('email')
+#1 C:\xampp\htdocs\ecommercejb\protected\controllers\CariBisnisFranchiseController.php(317): CActiveRecord->__get('email')
+#2 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): CariBisnisFranchiseController->actionDetail()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('detail')
+#12 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('cariBisnisFranc...')
+#13 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/ecommerceJB/index.php/cariBisnisFranchise/detail/52
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/cariBisnisFranchise/detail/52
+---
+2013/09/12 12:37:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/2.jpg".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/uploads/images/5/2.jpg
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/home
+---
+2013/09/12 12:37:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/3.jpg".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/uploads/images/5/3.jpg
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/home
+---
+2013/09/12 12:37:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/2.jpg".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/uploads/images/5/2.jpg
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/home
+---
+2013/09/12 12:37:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/3.jpg".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/uploads/images/5/3.jpg
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/home
+---
+2013/09/12 12:41:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/2.jpg".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/uploads/images/5/2.jpg
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/home
+---
+2013/09/12 12:41:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/3.jpg".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/uploads/images/5/3.jpg
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/home
+---
+2013/09/12 12:41:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/2.jpg".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/uploads/images/5/2.jpg
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/home
+---
+2013/09/12 12:41:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/images/5/3.jpg".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/uploads/images/5/3.jpg
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/home
+---
+2013/09/12 13:01:35 [error] [php] Undefined variable: mesaage_kontak (C:\xampp\htdocs\ecommercejb\protected\views\cariBisnisFranchise\detail.php:5)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): CariBisnisFranchiseController->renderFile()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): CariBisnisFranchiseController->renderPartial()
+#2 C:\xampp\htdocs\ecommercejb\protected\controllers\CariBisnisFranchiseController.php(379): CariBisnisFranchiseController->render()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): CariBisnisFranchiseController->actionDetail()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CariBisnisFranchiseController->runAction()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CariBisnisFranchiseController->filterAccessControl()
+#9 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CariBisnisFranchiseController->runActionWithFilters()
+#12 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CariBisnisFranchiseController->run()
+#13 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/cariBisnisFranchise/detail/52
+in C:\xampp\htdocs\ecommercejb\protected\views\cariBisnisFranchise\detail.php (5)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\CariBisnisFranchiseController.php (379)
+in C:\xampp\htdocs\ecommercejb\index.php (13)

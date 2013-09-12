@@ -47,7 +47,7 @@ class Email extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('id_user, id_business, tanggal, no_telp, nama_pengirim', 'required'),
-			array('id_user, id_business', 'numerical', 'integerOnly'=>true),
+			array('id_user, id_business,no_telp', 'numerical'),
 			array('alamat_email, no_telp, nama_pengirim', 'length', 'max'=>100),
 			array('deskripsi', 'length', 'max'=>500),
 			array('status', 'length', 'max'=>50),
