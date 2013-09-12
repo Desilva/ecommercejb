@@ -124,7 +124,7 @@
 					<div class="widget-content nopadding">
     	<table class="table">
         	<tr>
-            	<td><a href="<?php echo Yii::app()->createUrl('//jbAdmin/kategori/') ?>">Kategori Bisnis</a></td>
+            	<td><a href="<?php echo Yii::app()->createUrl('//jbAdmin/kategori/') ?>">Kategori Bisnis/Franchise</a></td>
             </tr>
             <tr>
             	<td><a href="<?php echo Yii::app()->createUrl('//jbAdmin/bisnisFranchise/') ?>">Bisnis / Franchise</a></a></td>

@@ -8,6 +8,7 @@
  * @property string $title
  * @property string $image
  * @property string $deskripsi
+ * @property string $url_link
  */
 class Slideshow extends CActiveRecord
 {
@@ -37,11 +38,13 @@ class Slideshow extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('title, image, deskripsi', 'length', 'max'=>100),
+			array('title','length', 'max'=>100),
                         array('image_validator','file','types' =>'jpg,gif,jpeg,png,bmp','allowEmpty'=>true),
+                        array('url_link', 'length', 'max'=>255),
+			array('deskripsi,image', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, title, image, deskripsi', 'safe', 'on'=>'search'),
+			array('id, title, image, deskripsi,url_link', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -66,6 +69,7 @@ class Slideshow extends CActiveRecord
 			'title' => 'Title',
 			'image' => 'Gambar',
 			'deskripsi' => 'Deskripsi',
+                        'url_link' => 'Link',
 		);
 	}
 

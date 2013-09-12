@@ -143,7 +143,18 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
 							if($value->image != null || $value->image != "")
 							{
 						?>
-							<li><a href="<?php echo Yii::app()->createUrl("//home/slideshowdetail/$value->id") ?>"><img src="<?php echo Yii::app()->request->baseUrl; ?>/uploads/slideshow/<?php echo $value->image ?>" style="width:100%; height:100%"></a></li>
+							<li><a href="<?php 
+                                                                if($value->url_link != '' || $value->url_link != null)
+                                                                {
+                                                                    echo $value->url_link;
+                                                                }
+                                                                else
+                                                                {
+                                                                    echo Yii::app()->createUrl("//home/slideshowdetail/$value->id"); 
+                                                                }
+                                                                
+                                                                
+                                                                ?>"><img src="<?php echo Yii::app()->request->baseUrl; ?>/uploads/slideshow/<?php echo $value->image ?>" style="width:100%; height:100%"></a></li>
 						<?php } }?>
 					</ul>
 				</div>

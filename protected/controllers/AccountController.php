@@ -345,8 +345,9 @@ class AccountController extends Controller
             else
             {
                 $criteria = new CDbCriteria();
-                $criteria->condition = "id_category=1";
-                $criteria->order = 'id desc';
+                $criteria->with = 'idCategory';
+                $criteria->condition = "idCategory.category = 'Bisnis'";
+                $criteria->order = 't.id desc';
                 $criteria->addCondition("id_user = ".Yii::app()->user->id);
             }
             
@@ -427,6 +428,7 @@ class AccountController extends Controller
 //            Yii::import("ext.xupload.models.XUploadForm");
 //            $img_upload = new XUploadForm();
 //            $doc_upload = new XUploadForm();
+                $settings = Settings::model()->findByAttributes(array('nama_settings'=>'settings_admin'));
 		$model=new Business;
                 $list_alasan_jual_bisnis = array(
                     "Alasan 1"=>"Alasan 1",
@@ -656,6 +658,7 @@ class AccountController extends Controller
                         'industri'=>$list_industri,
                         'provinsi'=>$list_provinsi,
                         'alasan_jual_bisnis'=>$list_alasan_jual_bisnis,
+                        'settings'=>$settings,
 //                        'img_upload'=>$img_upload,
 //                        'doc_upload'=>$doc_upload,
 		));
@@ -680,6 +683,7 @@ class AccountController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
+            $settings = Settings::model()->findByAttributes(array('nama_settings'=>'settings_admin'));
             $model=$this->loadModel($id);
             if(Yii::app()->request->isAjaxRequest)
             {
@@ -980,7 +984,8 @@ class AccountController extends Controller
                         'provinsi'=>$list_provinsi,
                         'alasan_jual_bisnis'=>$list_alasan_jual_bisnis,
                         'initial_doc_upload'=>  json_encode($initial_docs_files),
-                        'initial_image_upload'=> json_encode($initial_images_files)
+                        'initial_image_upload'=> json_encode($initial_images_files),
+                        'settings'=>$settings,
 		));
 	}
 

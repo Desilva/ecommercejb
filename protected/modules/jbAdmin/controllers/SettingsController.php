@@ -35,6 +35,11 @@ class SettingsController extends Controller
     public function actionIndex()
     {
         $settings = Settings::model()->findByAttributes(array('nama_settings'=>'settings_admin'));
+        $url_link_list = array(
+            null => 'Tidak ada/Default',
+            Yii::app()->createUrl('//faq')=> 'FAQ' ,
+            Yii::app()->createUrl('//kontak')=>'Kontak',
+        );
         for($i = 1; $i <= 5; $i++)
         {
             ${'slideshow_data' . $i} = Slideshow::model()->findByPk($i);
@@ -53,6 +58,7 @@ class SettingsController extends Controller
                 {
                     ${'slideshow_data' . $i}->title = $value["title"];
                     ${'slideshow_data' . $i}->deskripsi = $value["deskripsi"];
+                    ${'slideshow_data' . $i}->url_link = $value["url_link"];
                     if(CUploadedFile::getInstance(${'slideshow_data' . $i}, "[$i]image") != null)
                     {
                         $imageSave = CUploadedFile::getInstance(${'slideshow_data' . $i}, "[$i]image");
@@ -87,6 +93,7 @@ class SettingsController extends Controller
             'slideshow4' => $slideshow_data4,
             'slideshow5' => $slideshow_data5,
             'settings'=> $settings,
+            'url_link_list'=>$url_link_list,
         ));
     }
 

@@ -168,7 +168,7 @@
                 <span class='k-progress'></span>
                 <div class='file-wrapper'>
                 <img id='#=files[0].name##=files[0].size#' src='<?php echo Yii::app()->request->baseUrl ?>/uploads/images/<?php echo $model->id_user ?>/#=files[0].name#' class='file-icon' onerror="this.src='<?php echo Yii::app()->request->baseUrl ?>/images/asset/spinner-large.gif'" />
-                    <h4 class='file-heading file-name-heading'>Name: #=name#</h4>
+                    <h4 class='file-heading file-name-heading'>Name: #=name#</h4><br /><br/>
                     <h4 class='file-heading file-size-heading'>Size: #=size# bytes</h4>
                     <button type='button' class='k-upload-action'></button>
                 </div>
@@ -269,64 +269,7 @@
                 
             </script>
 
-            <style scoped>
-                .file-icon
-                {
-                    display: inline-block;
-                    float: left;
-                    width: 60px;
-                    height: 60px;
-                    margin-left: 10px;
-                    margin-top: 13.5px;
-                }
-
-                .img-file { background-image: url(<?php echo Yii::app()->request->baseUrl ?>/images/jpg.png) }
-                .doc-file { background-image: url(<?php echo Yii::app()->request->baseUrl ?>/images/doc.png) }
-                .pdf-file { background-image: url(<?php echo Yii::app()->request->baseUrl ?>/images/pdf.png) }
-                .xls-file { background-image: url(<?php echo Yii::app()->request->baseUrl ?>/images/xls.png) }
-                .zip-file { background-image: url(<?php echo Yii::app()->request->baseUrl ?>/images/zip.png) }
-                .default-file { background-image: url(<?php echo Yii::app()->request->baseUrl ?>/images/default.png) }
-
-                #example .file-heading
-                {
-                    font-family: Arial;
-                    font-size: 1.1em;
-                    display: inline-block;
-                    float: left;
-                    width: 450px;
-                    margin: 0 0 0 20px;
-                    height: 25px;
-                    -ms-text-overflow: ellipsis;
-                    -o-text-overflow: ellipsis;
-                    text-overflow: ellipsis;
-                    overflow:hidden;
-                    white-space:nowrap;
-                }
-
-                    #example .file-name-heading
-                    {
-                        font-weight: bold;
-                    }
-
-                     #example .file-size-heading
-                    {
-                        font-weight: normal;
-                        font-style: italic;
-                    }
-
-                li.k-file .file-wrapper .k-upload-action
-                {
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                }
-
-                li.k-file div.file-wrapper
-                {
-                    position: relative;
-                    height: 75px;
-                }
-            </style>
+            
         </div>
                 			</td>	
            		 		</tr>
@@ -345,7 +288,7 @@
                 <span class='k-progress'></span>
                 <div class='file-wrapper'>
                     <span class='file-icon #=addExtensionClass(files[0].extension)#'></span>
-                    <h4 class='file-heading file-name-heading'>Name: #=name#</h4>
+                    <h4 class='file-heading file-name-heading'>Name: #=name#</h4><br/><br/>
                     <h4 class='file-heading file-size-heading'>Size: #=size# bytes</h4>
                     <button type='button' class='k-upload-action'></button>
                 </div>
@@ -427,64 +370,7 @@
                 }
             </script>
 
-            <style scoped>
-                .file-icon
-                {
-                    display: inline-block;
-                    float: left;
-                    width: 48px;
-                    height: 48px;
-                    margin-left: 10px;
-                    margin-top: 13.5px;
-                }
-
-                .img-file { background-image: url(<?php echo Yii::app()->request->baseUrl ?>/images/jpg.png) }
-                .doc-file { background-image: url(<?php echo Yii::app()->request->baseUrl ?>/images/doc.png) }
-                .pdf-file { background-image: url(<?php echo Yii::app()->request->baseUrl ?>/images/pdf.png) }
-                .xls-file { background-image: url(<?php echo Yii::app()->request->baseUrl ?>/images/xls.png) }
-                .zip-file { background-image: url(<?php echo Yii::app()->request->baseUrl ?>/images/zip.png) }
-                .default-file { background-image: url(<?php echo Yii::app()->request->baseUrl ?>/images/default.png) }
-
-                #example .file-heading
-                {
-                    font-family: Arial;
-                    font-size: 1.1em;
-                    display: inline-block;
-                    float: left;
-                    width: 450px;
-                    margin: 0 0 0 20px;
-                    height: 25px;
-                    -ms-text-overflow: ellipsis;
-                    -o-text-overflow: ellipsis;
-                    text-overflow: ellipsis;
-                    overflow:hidden;
-                    white-space:nowrap;
-                }
-
-                    #example .file-name-heading
-                    {
-                        font-weight: bold;
-                    }
-
-                     #example .file-size-heading
-                    {
-                        font-weight: normal;
-                        font-style: italic;
-                    }
-
-                li.k-file .file-wrapper .k-upload-action
-                {
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                }
-
-                li.k-file div.file-wrapper
-                {
-                    position: relative;
-                    height: 75px;
-                }
-            </style>
+            
         </div>
 
                                         </td>

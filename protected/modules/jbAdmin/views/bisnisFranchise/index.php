@@ -31,9 +31,9 @@ a.delete img{
 				<div><header style="font-size:30px; font-family:Calibri;">Bisnis / Franchise</header><br style="clear:both"/></div><div style="margin-top:-35px;"></div>
             	<div class="row-fluid Top-Margin3">
 					<div class="span12">
-						<form method="post">
-                	 <?php echo CHtml::dropDownList('sort',$selectedSortValue,CHtml::listData($sortType,'id','category'),array('class'=>'Input-Size-VerySmall','submit'=> Yii::app()->createUrl("//jbAdmin/bisnisFranchise/index/")));  ?>
-            	</form>
+						<form method="get">
+						<span>Kategori: </span><?php echo CHtml::dropDownList('kategori',$selectedSortValue,CHtml::listData($sortType,'id','category'),array('class'=>'Input-Size-VerySmall','submit'=> Yii::app()->createUrl("//jbAdmin/bisnisFranchise/index/")));  ?>
+					</form>   	
 					</div>
 				</div>
 				

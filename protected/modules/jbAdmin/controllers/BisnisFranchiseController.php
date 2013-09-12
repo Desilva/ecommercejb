@@ -239,7 +239,7 @@ class BisnisFranchiseController extends Controller
                     $mail->setFrom($mailSetting->alamat_email, $mailSetting->nama_email); //CHANGE THIS WHEN DEPLOYING
                     $mail->setTo($user->email); //CHANGE TO APPROPRIATE EMAIL WHEN DEPLOYING
                     $mail->setSubject("Bisnis/Franchise ".$model->nama." Anda ditolak");
-                    $mail->setBody("<p>Berikut adalah keterangan lengkap: </p><p>Nama Bisnis/Franchise: $model->nama</p><p>Alasan Penolakan: ".$model->idAlasanPenolakan->alasan_penolakan." </p>");
+                    $mail->setBody("<p>Berikut adalah keterangan lengkap: </p><p>Nama Bisnis/Franchise: $model->nama</p><p>Alasan Penolakan: ".$model->idAlasanPenolakan->alasan." </p>");
                     if($mail->send())
                     {
     //                  Yii::app()->user->setFlash('email','Email Berhasil Dikirim');
@@ -270,7 +270,8 @@ class BisnisFranchiseController extends Controller
 	public function actionUpdate($id)
 	{
             $model=$this->loadModel($id);
-
+            $settings = Settings::model()->findByAttributes(array('nama_settings'=>'settings_admin'));
+            
             if(Yii::app()->request->isAjaxRequest)
             {
                 $model->attributes=$_POST['Business'];
@@ -307,22 +308,22 @@ class BisnisFranchiseController extends Controller
                 {
                     $list_tahun[$i] = $i;
                 }
-                if(isset($_GET['jenis']))
-                {
-                    $jenis = $_GET['jenis'];
-                }
-                else
-                {
-                    $jenis = 1;
-                }
-                if($jenis == 1)
-                { 
-                    $model->id_category = 1;
-                }
-                else
-                {
-                     $model->id_category = 2;
-                }
+//                if(isset($_GET['jenis']))
+//                {
+//                    $jenis = $_GET['jenis'];
+//                }
+//                else
+//                {
+//                    $jenis = 1;
+//                }
+//                if($jenis == 1)
+//                { 
+//                    $model->id_category = 1;
+//                }
+//                else
+//                {
+//                     $model->id_category = 2;
+//                }
                 $kategori = CHtml::listData(BusinessCategory::model()->findAll(),'id','category');
 		// Uncomment the following line if AJAX validation is needed
 		//$this->performAjaxValidation($model);
@@ -661,7 +662,7 @@ class BisnisFranchiseController extends Controller
             }
         
         $this->render('update',array(
-                        'jenis'=>$jenis,
+//                        'jenis'=>$jenis,
 			'model'=>$model,
                         'kategori'=>$kategori,
                         'kepemilikan'=>$list_kepemilikan,
@@ -670,7 +671,8 @@ class BisnisFranchiseController extends Controller
                         'provinsi'=>$list_provinsi,
                         'alasan_jual_bisnis'=>$list_alasan_jual_bisnis,
                         'initial_doc_upload'=>  json_encode($initial_docs_files),
-                        'initial_image_upload'=> json_encode($initial_images_files)
+                        'initial_image_upload'=> json_encode($initial_images_files),
+                        'settings'=>$settings
 		));
 	}
 
@@ -695,18 +697,19 @@ class BisnisFranchiseController extends Controller
 	{
 		//            var_dump($_GET);
             $selectedSortValue = '1';
-            if(isset($_POST['sort']))
+            if(isset($_GET['kategori']))
             {
-                $selectedSortValue = $_POST['sort'];
+                $selectedSortValue = $_GET['kategori'];
                 $criteria = new CDbCriteria();
                 $criteria->condition = "id_category=$selectedSortValue";
-                $criteria->order = 'status_approval desc, id desc';
+                $criteria->order = 'id desc';
             }
             else
             {
                 $criteria = new CDbCriteria();
-                $criteria->condition = "id_category=1";
-                $criteria->order = 'status_approval desc, id desc';
+                $criteria->with = 'idCategory';
+                $criteria->condition = "idCategory.category = 'Bisnis'";
+                $criteria->order = 't.id desc';
             }
             
 //             $emailCriteria = new CDbCriteria();
@@ -721,7 +724,8 @@ class BisnisFranchiseController extends Controller
                 'criteria'=>$criteria
             ));
 		$this->render('index',array('model'=>$dataProvider,'sortType'=>$sortType,'selectedSortValue'=>$selectedSortValue));
-	
+            
+
 	}
 
 	/**

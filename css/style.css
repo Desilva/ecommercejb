@@ -177,7 +177,7 @@ body{
 	width:400px;	
 }
 .Input-Size-Small{
-	width:340px;	
+	width:350px;	
 }
 .Input-Size-VerySmall{
 	width:150px;	
@@ -229,4 +229,88 @@ body{
 	margin-left:10px;
 	border:solid 3px #616161;
 
+}
+
+.file-icon
+{
+    display: inline-block;
+    float: left;
+    width: 48px;
+    height: 48px;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.img-file { background-image: url('../images/jpg.png') }
+.doc-file { background-image: url('../images/doc.png') }
+.pdf-file { background-image: url('../images/pdf.png') }
+.xls-file { background-image: url('../images/xls.png') }
+.zip-file { background-image: url('../images/zip.png') }
+.default-file { background-image: url(<?php echo Yii::app()->request->baseUrl ?>/images/default.png) }
+
+#example .file-heading
+{
+    font-family: Arial;
+    font-size: 1.1em;
+    
+    float: left;
+    
+    margin: 5px 0 0 20px;
+    height: 25px;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow:hidden;
+    white-space:nowrap;
+}
+
+#example .file-name-heading
+{
+    font-weight: bold;
+}
+
+ #example .file-size-heading
+{
+    font-weight: normal;
+    font-style: italic;
+}
+
+#example2 .file-heading
+{
+    font-family: Arial;
+    font-size: 1.1em;
+    
+    float: left;
+    
+    margin: 5px 0 0 20px;
+    height: 25px;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow:hidden;
+    white-space:nowrap;
+}
+
+#example2 .file-name-heading
+{
+    font-weight: bold;
+}
+
+ #example2 .file-size-heading
+{
+    font-weight: normal;
+    font-style: italic;
+}
+
+li.k-file .file-wrapper .k-upload-action
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+li.k-file div.file-wrapper
+{
+    position: relative;
+    height: 75px;
 }

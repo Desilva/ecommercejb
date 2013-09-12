@@ -69,7 +69,7 @@
                 {
                     var avg = ((parseFloat(document.getElementById('Business_harga_min').value)) + (parseFloat(document.getElementById('Business_harga_max').value)))/2;
                     /* CHANGE THE VALUE OF HARGA WHEN ITS SETTING IS AVAILABLE */
-                    var harga = parseFloat(1000000);
+                    var harga = parseFloat(<?php echo $settings->nilai_min_telpon_tampil ?>);
                     if(avg < harga)
                     {
                         $('.tampilkanKontak').removeAttr('disabled');
@@ -138,7 +138,7 @@
             {
                     var avg = (parseFloat(hargaMin) + parseFloat(hargaMax))/2;
                     /* CHANGE THE VALUE OF HARGA WHEN THE SETTING IS AVAILABLE */
-                    var harga = parseFloat(1000000);
+                    var harga = parseFloat(<?php echo $settings->nilai_min_telpon_tampil ?>);
                     
                     //tampilan kontak
                     if(parseFloat(avg) < parseFloat(harga))
@@ -242,7 +242,7 @@
             {
                     var avg = (parseFloat(hargaMin) + parseFloat(hargaMax))/2;
                     /* CHANGE THE VALUE OF HARGA WHEN THE SETTING IS AVAILABLE */
-                    var harga = parseFloat(1000000);
+                    var harga = parseFloat(<?php echo $settings->nilai_min_telpon_tampil ?>);
                     
                     //tampilan kontak
                     if(parseFloat(avg) < parseFloat(harga))

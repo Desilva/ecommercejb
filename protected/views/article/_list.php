@@ -1,4 +1,5 @@
 <?php
+    
     /* image parser, get the first image from article post, if not found, use default image */
     $post_array = explode("<", strip_tags($data->post, '<input>'));
     $flag = 0;
@@ -17,6 +18,11 @@
                 {
                     $imgtemp = explode('"', substr($parser[0], strpos($parser[0], 'src')));
                     $imgsource = $imgtemp[1];
+                    $smileycheck = parse_url($imgsource);
+                    if(strpos($smileycheck['path'],'ckeditor/plugins/smiley') !== FALSE )
+                    {
+                        $imgsource = "";
+                    }
                     $flag = 1;
                 }
             }
@@ -38,6 +44,11 @@
                 {
                     $imgtemp = explode('"', substr($parser[0], strpos($parser[0], 'src')));
                     $imgsource = $imgtemp[1];
+                    $smileycheck = parse_url($imgsource);
+                    if(strpos($smileycheck['path'],'ckeditor/plugins/smiley') !== FALSE )
+                    {
+                        $imgsource = "";
+                    }
                     $flag = 1;
                 }
             }

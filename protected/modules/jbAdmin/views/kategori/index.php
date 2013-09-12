@@ -140,6 +140,7 @@ a.delete img{
                                             'template' => '{update}{delete}{viewSubKategori}',
                                             'deleteButtonImageUrl' => Yii::app()->request->baseUrl . '/images/asset/trash.png',
                                             'updateButtonImageUrl' => Yii::app()->request->baseUrl . '/images/asset/write.png',
+                                            'deleteConfirmation' => 'PERHATIAN: Dengan menghapus industri ini maka bisnis/franchise yang menggunakan nya harus di set ulang ke industri baru. Apakah anda yakin?',
                                             'buttons' => array(
                                                 'viewSubKategori' => array(
                                                     'label' => 'Lihat Sub-Kategori',
@@ -187,6 +188,7 @@ a.delete img{
                                                     'template' => '{update}{delete}',
                                                     'deleteButtonImageUrl' => Yii::app()->request->baseUrl . '/images/asset/trash.png',
                                                     'updateButtonImageUrl' => Yii::app()->request->baseUrl . '/images/asset/write.png',
+                                                    'deleteConfirmation' => 'PERHATIAN: Dengan menghapus sub industri ini maka bisnis/franchise yang menggunakan nya harus di set ulang ke sub industri baru. Apakah anda yakin?',
                                                 ),
                                             ),
                                         ));
