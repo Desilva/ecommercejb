@@ -137,12 +137,16 @@ class NewsletterController extends Controller
 	public function actionIndex()
 	{
                 $criteria = new CDbCriteria();
-                $criteria->order = 't.tanggal desc';
+//                $criteria->order = 't.tanggal desc';
                 $model=new CActiveDataProvider('Newsletter',array(
                     'criteria'=> $criteria,
                     'pagination' => array(
                     'pageSize' => 10,
                 ),
+                    'sort'=>array(
+                       'defaultOrder'=>
+                       array('id'=>CSort::SORT_DESC)
+                   ),
                 ));
 		$this->render('index',array(
                         'model'=>$model,

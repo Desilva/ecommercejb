@@ -38,7 +38,6 @@ a.delete img{
                             'id'=>'article-grid',
                             'itemsCssClass' => 'table table-bordered table-striped table-hover',
                             'summaryText' => '',
-							
                             'dataProvider'=>$model,
                             'columns'=>array(
                                     array(

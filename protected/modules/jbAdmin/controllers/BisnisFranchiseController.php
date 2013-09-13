@@ -572,12 +572,31 @@ class BisnisFranchiseController extends Controller
                                      //
                                 }
                             }
-                            $this->redirect(Yii::app()->createUrl('//jbAdmin/bisnisFranchise/index'));
+                            
+                            
+                            if(strtolower($model->idCategory->category) == 'franchise')
+                            {
+                                
+                                $this->redirect(Yii::app()->createUrl('//jbAdmin/bisnisFranchise/index?kategori='.$model->id_category));
+                            }
+                            else
+                            {
+                                $this->redirect(Yii::app()->createUrl('//jbAdmin/bisnisFranchise/index'));
+                            }
+                            
                         }
                         
                         
-                        
-                        $this->redirect(Yii::app()->createUrl('//jbAdmin/bisnisFranchise/index'));
+                      
+                            if(strtolower($model->idCategory->category) == 'franchise')
+                            {
+                                
+                                $this->redirect(Yii::app()->createUrl('//jbAdmin/bisnisFranchise/index?kategori='.$model->id_category));
+                            }
+                            else
+                            {
+                                $this->redirect(Yii::app()->createUrl('//jbAdmin/bisnisFranchise/index'));
+                            }
                     }
                         
                 }
@@ -697,28 +716,37 @@ class BisnisFranchiseController extends Controller
                 $selectedSortValue = $_GET['kategori'];
                 $criteria = new CDbCriteria();
                 $criteria->condition = "id_category=$selectedSortValue";
-                $criteria->order = 'id desc';
+//                $criteria->order = 'id desc';
             }
             else
             {
                 $criteria = new CDbCriteria();
                 $criteria->with = 'idCategory';
                 $criteria->condition = "idCategory.category = 'Bisnis'";
-                $criteria->order = 't.id desc';
+//                $criteria->order = 't.id desc';
             }
             
 //             $emailCriteria = new CDbCriteria();
 //             $emailCriteria->addCondition('status= 1');
             $sortType = BusinessCategory::model()->findAll();
             //$sortType = BusinessCategory::model()->findAll();
+            $business_model = new Business();
+            if(isset($_GET['Business']))
+			$business_model->attributes=$_GET['Business'];
+           
+            
             
             $dataProvider = new CActiveDataProvider('Business', array(
                 'pagination' => array(
                     'pageSize' => 10,
                 ),
+                'sort'=>array(
+                        'defaultOrder'=>
+                        array('status_approval'=>CSort::SORT_DESC,'id'=>CSort::SORT_DESC)
+                    ),
                 'criteria'=>$criteria
             ));
-		$this->render('index',array('model'=>$dataProvider,'sortType'=>$sortType,'selectedSortValue'=>$selectedSortValue));
+		$this->render('index',array('business_model'=>$business_model,'model'=>$dataProvider,'sortType'=>$sortType,'selectedSortValue'=>$selectedSortValue));
             
 
 	}

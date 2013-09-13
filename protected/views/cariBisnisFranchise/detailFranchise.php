@@ -1,4 +1,11 @@
 <?php 
+    //not finished
+    Yii::app()->clientScript->registerMetaTag('mogt', null, null, array('property' => 'og:title'));
+    Yii::app()->clientScript->registerMetaTag(Yii::app()->request->baseUrl.'/images/no-image.gif', null, null, array('property' => 'og:image'));
+    Yii::app()->clientScript->registerMetaTag('Test', null, null, array('property' => 'og:description'));
+
+?>
+<?php 
 if($message_kontak != ''){ 
 ?>
 	<script>

@@ -55,8 +55,8 @@
 										'idBusiness.nama',
 										'idBusiness.deskripsi',
 										'idBusiness.penjualan'=>array('name'=>'idBusiness.penjualan','header'=>'Revenue'),
-										'idBusiness.harga_min',
-										'idBusiness.harga_max',array(
+										'idBusiness.harga',
+                                                                                array(
 											'class' => 'CButtonColumn',
 											'header' => 'Tindakan',
 											'template' => '{view}',

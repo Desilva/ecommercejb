@@ -186,18 +186,18 @@ class Business extends CActiveRecord
 		$criteria->compare('tahun_didirikan',$this->tahun_didirikan);
 		$criteria->compare('alamat',$this->alamat,true);
 		$criteria->compare('jumlah_karyawan',$this->jumlah_karyawan);
-		$criteria->compare('penjualan',$this->penjualan);
-		$criteria->compare('hpp',$this->hpp);
-		$criteria->compare('laba_bersih_tahun',$this->laba_bersih_tahun);
-		$criteria->compare('total_aset',$this->total_aset);
-		$criteria->compare('marjin_laba_bersih',$this->marjin_laba_bersih);
-		$criteria->compare('laba_bersih_aset',$this->laba_bersih_aset);
-		$criteria->compare('harga_penawaran_penjualan',$this->harga_penawaran_penjualan);
-		$criteria->compare('harga_penawaran_laba_bersih',$this->harga_penawaran_laba_bersih);
-		$criteria->compare('harga_penawaran_aset',$this->harga_penawaran_aset);
-		$criteria->compare('harga_min',$this->harga_min);
-		$criteria->compare('harga_max',$this->harga_max);
-		$criteria->compare('alasan_jual_bisnis',$this->alasan_jual_bisnis,true);
+                $criteria->compare('penjualan',$this->penjualan,true);
+		$criteria->compare('hpp',$this->hpp,true);
+		$criteria->compare('laba_bersih_tahun',$this->laba_bersih_tahun,true);
+		$criteria->compare('total_aset',$this->total_aset,true);
+		$criteria->compare('marjin_laba_bersih',$this->marjin_laba_bersih,true);
+		$criteria->compare('laba_bersih_aset',$this->laba_bersih_aset,true);
+		$criteria->compare('harga_penawaran_penjualan',$this->harga_penawaran_penjualan,true);
+		$criteria->compare('harga_penawaran_laba_bersih',$this->harga_penawaran_laba_bersih,true);
+		$criteria->compare('harga_penawaran_aset',$this->harga_penawaran_aset,true);
+		$criteria->compare('harga',$this->harga,true);
+		$criteria->compare('id_alasan_jual_bisnis',$this->id_alasan_jual_bisnis);
+		$criteria->compare('alasan_jual_bisnis_lainnya',$this->alasan_jual_bisnis_lainnya,true);
 		$criteria->compare('franchise_alasan_kerjasama',$this->franchise_alasan_kerjasama,true);
 		$criteria->compare('franchise_persyaratan',$this->franchise_persyaratan,true);
 		$criteria->compare('franchise_menu',$this->franchise_menu,true);
@@ -212,7 +212,14 @@ class Business extends CActiveRecord
 		$criteria->compare('status_rekomendasi',$this->status_rekomendasi);
 
 		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
+                    'pagination' => array(
+                        'pageSize' => 10,
+                    ),
+                    'sort'=>array(
+                            'defaultOrder'=>
+                            array('status_approval'=>CSort::SORT_DESC,'id'=>CSort::SORT_DESC)
+                        ),
+                    'criteria'=>$criteria,
 		));
 	}
 }

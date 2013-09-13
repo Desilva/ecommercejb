@@ -51,7 +51,9 @@ a.delete img{
 					<div class="widget-content nopadding">
 								   <?php
                             $this->widget('bootstrap.widgets.TbGridView', array(
-                                'dataProvider' => $model,
+//                                'dataProvider' => $model,
+                                'dataProvider'=>$business_model->search(),
+                                'filter'=>$business_model,
                                 'itemsCssClass' => 'table table-bordered table-striped table-hover',
                                 'summaryText' => '',
                                 'ajaxUpdate' => true,

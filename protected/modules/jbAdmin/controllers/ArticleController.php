@@ -128,12 +128,16 @@ class ArticleController extends Controller
 	{
                 $criteria = new CDbCriteria();
                 $criteria->with = 'idArticleCategory';
-                $criteria->order = 't.id desc';
+//                $criteria->order = 't.id desc';
                 $model=new CActiveDataProvider('Article',array(
                     'criteria'=> $criteria,
                     'pagination' => array(
                     'pageSize' => 10,
                 ),
+                    'sort'=>array(
+                       'defaultOrder'=>
+                       array('id'=>CSort::SORT_DESC)
+                   ),
                 ));
 //		$dataProvider=new CActiveDataProvider('Article');
 		$this->render('index',array(

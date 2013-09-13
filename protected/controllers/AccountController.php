@@ -212,14 +212,18 @@ class AccountController extends Controller
             $criteria->with= 'idBusiness';
             $criteria->addCondition("t.id_user =".Yii::app()->user->id);
             $criteria->addCondition("idBusiness.id_category=$selectedSortValue");
-            $criteria->order = 't.tanggal desc';
-            $criteria->order = 't.id desc';
+//            $criteria->order = 't.tanggal desc';
+//            $criteria->order = 't.id desc';
             $model = new CActiveDataProvider('Email',
                     array(
                         'criteria'=>$criteria,
                         'pagination'=>array(
                             'pageSize'=>10,
-                        )
+                        ),
+                        'sort'=>array(
+                        'defaultOrder'=>
+                        array('id'=>CSort::SORT_DESC,'tanggal'=>CSort::SORT_DESC)
+                    ),
                     )
                     );
             $this->render('beli',array(
@@ -339,7 +343,7 @@ class AccountController extends Controller
                 $selectedSortValue = $_GET['kategori'];
                 $criteria = new CDbCriteria();
                 $criteria->condition = "id_category=$selectedSortValue";
-                $criteria->order = 'id desc';
+//                $criteria->order = 'id desc';
                 $criteria->addCondition("id_user = ".Yii::app()->user->id);
             }
             else
@@ -347,7 +351,7 @@ class AccountController extends Controller
                 $criteria = new CDbCriteria();
                 $criteria->with = 'idCategory';
                 $criteria->condition = "idCategory.category = 'Bisnis'";
-                $criteria->order = 't.id desc';
+//                $criteria->order = 't.id desc';
                 $criteria->addCondition("id_user = ".Yii::app()->user->id);
             }
             
@@ -355,6 +359,10 @@ class AccountController extends Controller
             $dataProvider = new CActiveDataProvider('Business', array(
                 'pagination' => array(
                     'pageSize' => 10,
+                ),
+                'sort'=>array(
+                        'defaultOrder'=>
+                        array('id'=>CSort::SORT_DESC)
                 ),
                 'criteria'=>$criteria
             ));
@@ -641,8 +649,19 @@ class AccountController extends Controller
                         }
                     }
                     if($model->save()) 
-                        $this->redirect('index');
-               }
+                    {
+                            if(strtolower($model->idCategory->category) == 'franchise')
+                            {
+                                
+                                $this->redirect(Yii::app()->createUrl('//account/index?kategori='.$model->id_category));
+                            }
+                            else
+                            {
+                                $this->redirect(Yii::app()->createUrl('//account/index'));
+                            }
+//                        $this->redirect('index');
+                    }
+                }
         Yii::app()->user->setState('images', null);
         Yii::app()->user->setState('documents', null);
         $this->render('create',array(
@@ -679,6 +698,7 @@ class AccountController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
+            
             $settings = Settings::model()->findByAttributes(array('nama_settings'=>'settings_admin'));
             $model=$this->loadModel($id);
             if($model->alasan_jual_bisnis_lainnya != null || $model->alasan_jual_bisnis_lainnya != '')
@@ -889,7 +909,19 @@ class AccountController extends Controller
                         }
                     }
                     if($model->save())
-                        $this->redirect(Yii::app()->createUrl('//account/index'));
+                    {
+                        if(strtolower($model->idCategory->category) == 'franchise')
+                            {
+                                
+                                $this->redirect(Yii::app()->createUrl('//account/index?kategori='.$model->id_category));
+                            }
+                            else
+                            {
+                                $this->redirect(Yii::app()->createUrl('//account/index'));
+                            }
+                            //$this->redirect(Yii::app()->createUrl('//account/index'));
+                    }
+                        
                 }
         Yii::app()->user->setState('images', null);
         Yii::app()->user->setState('documents', null);

@@ -1,4 +1,11 @@
 <?php 
+    //not finished
+    Yii::app()->clientScript->registerMetaTag('mogt', null, null, array('property' => 'og:title'));
+    Yii::app()->clientScript->registerMetaTag(Yii::app()->request->baseUrl.'/images/no-image.gif', null, null, array('property' => 'og:image'));
+    Yii::app()->clientScript->registerMetaTag('Test', null, null, array('property' => 'og:description'));
+
+?>
+<?php 
 if($message_kontak != ''){ 
 ?>
 	<script>
@@ -19,6 +26,7 @@ if($message_kontak != ''){
 					</div>
 					<div class="span6 Text-Align-Right Top-Margin3" style="float:right;">
 						<div class="span10">
+                                                    
 							Bagikan 
 							<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo Yii::app()->createAbsoluteUrl("//cariBisnisFranchise/detail/$model->id") ?>" target="_blank"><img class="imageShareArtikel" src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/facebookIcon.png" height="30" width="30" /></a>
 							<a href="https://twitter.com/share?url=<?php echo Yii::app()->createAbsoluteUrl("//cariBisnisFranchise/detail/$model->id") ?>&text=JualanBisnis.com:" target="_blank"><img class="imageShareArtikel" src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/twitterIcon.png" height="30" width="30" /></a>

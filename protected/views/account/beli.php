@@ -62,8 +62,8 @@ a.view img{
 											'value' => array($this, 'gridDeskripsiBeli'),
 										),
 										'idBusiness.penjualan' => array('header' => 'Revenue', 'name' => 'idBusiness.penjualan'),
-										'idBusiness.harga_min',
-										'idBusiness.harga_max',array(
+										'idBusiness.harga',
+                                                                                array(
 											'class' => 'CButtonColumn',
 											'header' => 'Tindakan',
 											'template' => '{view}',
