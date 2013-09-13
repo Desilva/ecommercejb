@@ -113,14 +113,14 @@ if($message_kontak != ''){
                                                         </a>
                                                     </li>
                                           <?php } 
-                                                else
-                                                { ?>
-                                                    <li>
-                                                        <a href="<?php echo Yii::app()->request->baseUrl ?>/images/no-image.gif">
-                                                            <img src="<?php echo Yii::app()->request->baseUrl ?>/images/no-image.gif" width="50">
+                                                //else
+                                                //{ ?>
+<!--                                                    <li>
+                                                        <a href="<?php // echo Yii::app()->request->baseUrl ?>/images/no-image.gif">
+                                                            <img src="<?php // echo Yii::app()->request->baseUrl ?>/images/no-image.gif" width="50">
                                                         </a>
-                                                    </li>
-                                          <?php }
+                                                    </li>-->
+                                          <?php //}
                                             } ?>
                                             </ul>
                                         </div>
@@ -273,7 +273,7 @@ if($message_kontak != ''){
 									<span class="icon">
 										<i class="icon-align-justify"></i>									
 									</span>
-									<h5>Bisnis yang terkait</h5>
+									<h5>Bisnis/Franchise yang terkait</h5>
 								</div>
 								<div class="widget-content nopadding">
 									<form class="form-horizontal">
