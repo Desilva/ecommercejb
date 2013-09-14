@@ -7,6 +7,7 @@
                 'dataProvider' => $subkategori,
                 'itemsCssClass' => 'table table-striped',
                 'summaryText' => '',
+                'enableSorting' => false,
                 'ajaxUpdate'=>'subIndustriGrid',
                 'columns' => array(
                     'sub_industri',

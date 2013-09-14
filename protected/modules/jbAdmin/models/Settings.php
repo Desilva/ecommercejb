@@ -11,6 +11,8 @@
  * @property string $nilai_min_telpon_tampil
  * @property string $alamat_email
  * @property string $nama_email
+ * @property string $incoming_mailbox
+ * @property string $fb_app_id
  */
 class Settings extends CActiveRecord
 {
@@ -40,13 +42,14 @@ class Settings extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('durasi_slideshow, jumlah_rekomendasi, jumlah_terbaru, nilai_min_telpon_tampil, alamat_email, nama_email', 'required'),
+			array('alamat_email, nama_email, incoming_mailbox, fb_app_id', 'required'),
 			array('durasi_slideshow, jumlah_rekomendasi, jumlah_terbaru', 'numerical', 'integerOnly'=>true),
 			array('nama_settings, alamat_email, nama_email', 'length', 'max'=>50),
-                        array('durasi_slideshow, jumlah_rekomendasi, jumlah_terbaru','numerical','min'=>1),
+			array('nilai_min_telpon_tampil', 'length', 'max'=>20),
+			array('incoming_mailbox, fb_app_id', 'length', 'max'=>100),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('nama_settings, durasi_slideshow, jumlah_rekomendasi, jumlah_terbaru, nilai_min_telpon_tampil, alamat_email, nama_email', 'safe', 'on'=>'search'),
+			array('nama_settings, durasi_slideshow, jumlah_rekomendasi, jumlah_terbaru, nilai_min_telpon_tampil, alamat_email, nama_email, incoming_mailbox, fb_app_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -74,6 +77,8 @@ class Settings extends CActiveRecord
 			'nilai_min_telpon_tampil' => 'Nilai Min Telpon Tampil',
 			'alamat_email' => 'Alamat Email',
 			'nama_email' => 'Nama Email',
+			'incoming_mailbox' => 'Incoming Mailbox',
+			'fb_app_id' => 'Fb App',
 		);
 	}
 
@@ -95,6 +100,8 @@ class Settings extends CActiveRecord
 		$criteria->compare('nilai_min_telpon_tampil',$this->nilai_min_telpon_tampil,true);
 		$criteria->compare('alamat_email',$this->alamat_email,true);
 		$criteria->compare('nama_email',$this->nama_email,true);
+		$criteria->compare('incoming_mailbox',$this->incoming_mailbox,true);
+		$criteria->compare('fb_app_id',$this->fb_app_id,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

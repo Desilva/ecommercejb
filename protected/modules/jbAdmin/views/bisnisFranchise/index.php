@@ -52,7 +52,7 @@ a.delete img{
 								   <?php
                             $this->widget('bootstrap.widgets.TbGridView', array(
 //                                'dataProvider' => $model,
-                                'dataProvider'=>$business_model->search(),
+                                'dataProvider'=>$business_model->search($selectedSortValue),
                                 'filter'=>$business_model,
                                 'itemsCssClass' => 'table table-bordered table-striped table-hover',
                                 'summaryText' => '',

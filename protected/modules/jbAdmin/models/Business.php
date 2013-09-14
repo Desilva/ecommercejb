@@ -166,13 +166,13 @@ class Business extends CActiveRecord
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
 	 */
-	public function search()
+	public function search($id_kategori)
 	{
 		// Warning: Please modify the following code to remove attributes that
 		// should not be searched.
 
 		$criteria=new CDbCriteria;
-
+                $criteria->condition = "id_category=$id_kategori";
 		$criteria->compare('id',$this->id);
 		$criteria->compare('id_category',$this->id_category);
 		$criteria->compare('id_user',$this->id_user);

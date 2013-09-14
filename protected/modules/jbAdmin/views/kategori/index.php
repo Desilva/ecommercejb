@@ -178,6 +178,7 @@ a.delete img{
                                             'itemsCssClass' => 'table table-bordered table-striped table-hover',
                                             'summaryText' => '',
                                             'ajaxUpdate'=>'subIndustriGrid',
+                                            'enableSorting' => false,
                                             'columns' => array(
                                                 'sub_industri',
                                                 'keterangan',

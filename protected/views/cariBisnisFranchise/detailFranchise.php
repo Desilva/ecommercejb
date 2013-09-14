@@ -1,10 +1,21 @@
-<?php 
-    //not finished
-    Yii::app()->clientScript->registerMetaTag('mogt', null, null, array('property' => 'og:title'));
-    Yii::app()->clientScript->registerMetaTag(Yii::app()->request->baseUrl.'/images/no-image.gif', null, null, array('property' => 'og:image'));
-    Yii::app()->clientScript->registerMetaTag('Test', null, null, array('property' => 'og:description'));
-
-?>
+<div id="fb-root"></div>
+<script>
+	  window.fbAsyncInit = function() {
+		FB.init({
+		  appId  : '<?php echo $settings->fb_app_id ?>',
+		  status : true, // check login status
+		  cookie : true, // enable cookies to allow the server to access the session
+		  xfbml  : true  // parse XFBML
+		});
+	  };
+	
+	  (function() {
+		var e = document.createElement('script');
+		e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+		e.async = true;
+		document.getElementById('fb-root').appendChild(e);
+	  }());
+</script>
 <?php 
 if($message_kontak != ''){ 
 ?>
@@ -27,7 +38,7 @@ if($message_kontak != ''){
 					<div class="span6 Text-Align-Right Top-Margin3" style="float:right;">
 						<div class="span10">
 							Bagikan 
-							<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo Yii::app()->createAbsoluteUrl("//cariBisnisFranchise/detail/$model->id") ?>" target="_blank"><img class="imageShareArtikel" src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/facebookIcon.png" height="30" width="30" /></a>
+							<img class="imageShareArtikel" style="cursor:pointer" src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/facebookIcon.png" height="30" width="30" id="fb-share" />
 							<a href="https://twitter.com/share?url=<?php echo Yii::app()->createAbsoluteUrl("//cariBisnisFranchise/detail/$model->id") ?>&text=JualanBisnis.com:" target="_blank"><img class="imageShareArtikel" src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/twitterIcon.png" height="30" width="30" /></a>
 							<a href="http://www.linkedin.com/shareArticle?mini=true&url=<?php echo urlencode(Yii::app()->createAbsoluteUrl("//cariBisnisFranchise/detail/$model->id")) ?>&title=<?php echo urlencode($model->nama) ?>&summary=<?php echo urlencode(substr(strip_tags(html_entity_decode($model->deskripsi)),0,250)."...") ?>&source=<?php echo urlencode(Yii::app()->name) ?>" target="_blank"><img class="imageShareArtikel" src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/inIcon.png" height="30" width="30" /></a> 
 						</div>
@@ -77,65 +88,73 @@ if($message_kontak != ''){
 		</div>
 		<div class="row-fluid">
 			<div class="span12 Text-Align-Justify">
-						<?php 
-        /*
-         * Loop through available image
-         * if theres no image present in the database or the image count is just one
-         * then it will just display static image of the image in the database or 
-         * the no-image if there isn't any image data in the database
-         * 
-         * More than one image will be displayed using slideshow
-         * if thumbnails of the image didn't exist the slideshow will use the full scaled image
-         * and just resize it by specifying the width and height in <img src />
-         * 
-         */
-        $image = array_filter(explode(',',$model->image));
-        if(!empty($image)){ 
-            if(count($image) > 1) 
-            { ?>
-                            <div class="ad-gallery" style=" width: 300px; float:left">
-                            <div class="ad-image-wrapper">
-
-                            </div>
-                              <div class="ad-controls">
-                              </div>
-                              <div class="ad-nav">
-                                  <div class="ad-thumbs">
-                                      <ul class="ad-thumb-list">
-                                       <?php 
-                                            foreach($image as $imageSrc)
-                                            {
-                                                if(file_exists(Yii::app()->basePath . '/../uploads/images/' . $model->id_user . '/' . $imageSrc))
-                                                { ?>
-                                                    <li>
-                                                        <a href="<?php echo Yii::app()->request->baseUrl ?>/uploads/images/<?php echo $model->id_user ?>/<?php echo $imageSrc ?>">
-                                                            <?php if(file_exists(Yii::app()->basePath . '/../uploads/images/' . $model->id_user . '/thumbs/' . $imageSrc)) 
-                                                                   { ?>
-                                                                        <img src="<?php echo Yii::app()->request->baseUrl ?>/uploads/images/<?php echo $model->id_user ?>/thumbs/<?php echo $imageSrc ?>" width="50" height="50">
-                                                             <?php } 
-                                                                  else
-                                                                  { ?>
-                                                                      <img src="<?php echo Yii::app()->request->baseUrl ?>/uploads/images/<?php echo $model->id_user ?>/<?php echo $imageSrc ?>" width="50" height="50">
+				<?php 
+				/*
+				* Loop through available image
+				* if theres no image present in the database or the image count is just one
+				* then it will just display static image of the image in the database or 
+				* the no-image if there isn't any image data in the database
+				* 
+				* More than one image will be displayed using slideshow
+				* if thumbnails of the image didn't exist the slideshow will use the full scaled image
+				* and just resize it by specifying the width and height in <img src />
+				* 
+				*/
+				$image = array_filter(explode(',',$model->image));
+                                $image_for_social_share = array();
+				if(!empty($image)){ 
+					if(count($image) > 1) 
+					{ 
+				?>
+						<div class="ad-gallery" style="float:left; margin-right:20px; margin-bottom:10px">
+                            <div class="ad-image-wrapper"></div>
+							<!--<div class="ad-controls"></div>-->
+							<div class="ad-nav">
+								<div class="ad-thumbs">
+									<ul class="ad-thumb-list">
+									<?php 
+										foreach($image as $imageSrc)
+										{
+											if(file_exists(Yii::app()->basePath . '/../uploads/images/' . $model->id_user . '/' . $imageSrc))
+											{ 
+									?>
+												<li>
+													<a href="<?php echo Yii::app()->request->baseUrl ?>/uploads/images/<?php echo $model->id_user ?>/<?php echo $imageSrc ?>">
+													<?php if(file_exists(Yii::app()->basePath . '/../uploads/images/' . $model->id_user . '/thumbs/' . $imageSrc)) 
+                                                                                                                {
+                                                                                                                           $image_for_social_share[]= Yii::app()->createAbsoluteUrl("/../uploads/images/$model->id_user/thumbs/$imageSrc");
+                                                                                                                        ?>
+																<img src="<?php echo Yii::app()->request->baseUrl ?>/uploads/images/<?php echo $model->id_user ?>/thumbs/<?php echo $imageSrc ?>" style="width:50px; height:50px">
+													<?php 	} 
+															else
+															{ 
+                                                                                                                            $image_for_social_share[]= Yii::app()->createAbsoluteUrl("/../uploads/images/$model->id_user/$imageSrc");
+                                                                                                                            ?>
+																<img src="<?php echo Yii::app()->request->baseUrl ?>/uploads/images/<?php echo $model->id_user ?>/<?php echo $imageSrc ?>" style="width:50px; height:50px">
                                                             <?php } ?>
-                                                        </a>
-                                                    </li>
-                                          <?php } 
-                                                //else
-                                                //{ ?>
-<!--                                                    <li>
-                                                        <a href="<?php // echo Yii::app()->request->baseUrl ?>/images/no-image.gif">
-                                                            <img src="<?php // echo Yii::app()->request->baseUrl ?>/images/no-image.gif" width="50">
-                                                        </a>
-                                                    </li>-->
-                                          <?php //}
-                                            } ?>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <script>
-                                    $(document).ready(function(){
-                                        var galleries = $('.ad-gallery').adGallery({
+													</a>
+												</li>
+									<?php 
+											} 
+                                                                                        //else
+                                                                                    //{ 
+									?>
+<!--												<li>
+													<a href="<?php // echo Yii::app()->request->baseUrl ?>/images/no-image.gif">
+														<img src="<?php // echo Yii::app()->request->baseUrl ?>/images/no-image.gif" width="30">
+													</a>
+												</li>-->
+                                    <?php 
+											//}
+                                        } 
+									?>
+                                    </ul>
+								</div>
+							</div>
+						</div>
+						<script>
+                            $(document).ready(function(){
+								var galleries = $('.ad-gallery').adGallery({
                                             loader_image: '<?php echo Yii::app()->request->baseUrl ?>/library/ad-gallery/loader.gif',
                                             width:'300',
                                             height:'200',
@@ -152,30 +171,37 @@ if($message_kontak != ''){
                                         });
 
                                     });
-                                </script>
-                   
-      <?php }
-            else
-            { 
-                if(file_exists(Yii::app()->basePath . '/../uploads/images/' . $model->id_user . '/' . $image[0]))
-                    { ?>
+						</script>
+					<?php 
+					}
+					else
+					{ 
+						if(file_exists(Yii::app()->basePath . '/../uploads/images/' . $model->id_user . '/' . $image[0]))
+                                                {
+                                                    $image_for_social_share[]= Yii::app()->createAbsoluteUrl("/../uploads/images/$model->id_user/$image[0]");
+					?>
                         <img src="<?php echo Yii::app()->baseUrl ?>/uploads/images/<?php echo $model->id_user?>/<?php echo $image[0] ?>" style="float:left; width:250px; height:250px; margin-right:25px"/>
-              <?php } 
-                    else
-                    { ?>
+					<?php 
+					} 
+					else
+                                        { 
+                                            $image_for_social_share[]= Yii::app()->createAbsoluteUrl("/../images/no-image.gif");
+					?>
                          <img src="<?php echo Yii::app()->request->baseUrl ?>/images/no-image.gif" width="300" style="float:left" />   
-              <?php } ?>
-                     
-      <?php } 
-                   
-        }
-        else
-        { ?>
-                      <img src="<?php echo Yii::app()->request->baseUrl ?>/images/no-image.gif" width="300" style="float:left" />   
-        <?php } ?>
+					<?php 
+					} 
+					?>                     
+				<?php } 
+				}
+				else
+				{ 
+                                    $image_for_social_share[]= Yii::app()->createAbsoluteUrl("/../images/no-image.gif");
+                                    ?>
+                      <img src="<?php echo Yii::app()->request->baseUrl ?>/images/no-image.gif" style="float:left; margin-right:25px; margin-bottom:11px; width:250px" />   
+				<?php } ?>
     	
-        <?php if($model->deskripsi =='' || $model->deskripsi ==null) echo "Tidak ada deskripsi"; else echo $model->deskripsi ?>
-                      	</div>
+				<?php if($model->deskripsi =='' || $model->deskripsi ==null) echo "Tidak ada deskripsi"; else echo $model->deskripsi ?>
+			</div>
 		</div>
 		<div class="row-fluid" style="clear:both">
 			<div class="span12"></div>
@@ -368,3 +394,41 @@ if($message_kontak != ''){
 	
 
 </div>
+<?php 
+    if(count($image_for_social_share)==1)
+    {
+        $fb_image = $image_for_social_share[0];
+    }
+    else
+    {
+        $random_image = rand(0,count($image_for_social_share)-1);
+        $fb_image =$image_for_social_share[$random_image]; 
+    }
+?>
+<script type="text/javascript">
+	$(document).ready(function(){
+	$('#fb-share').click(function(e){
+	e.preventDefault();
+	FB.ui(
+	{
+	method: 'feed',
+	name: '<?php echo $model->nama ?>',
+	link: '<?php echo Yii::app()->createAbsoluteUrl("//cariBisnisFranchise/detail/$model->id") ?>',
+	picture: '<?php echo $fb_image ?>',
+	caption: 'JualanBisnis.com',
+	description: '<?php 
+                            if($model->deskripsi != '')
+                            {
+                                echo substr(strip_tags(html_entity_decode($model->deskripsi)),0,250)."...";
+                            }
+                            else
+                            {
+                                echo "Tidak terdapat deskripsi";
+                            }
+                             
+                      ?>',
+	message: ''
+	});
+	});
+	});
+</script>

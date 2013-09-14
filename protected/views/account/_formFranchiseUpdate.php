@@ -422,6 +422,7 @@
         document.getElementById('business-form').action= '<?php echo Yii::app()->createUrl('//account/preview') ?>' 
         f.submit();
         document.getElementById('business-form').target= '_self';
+        document.getElementById('business-form').action= '<?php echo Yii::app()->createUrl("//account/update/$model->id") ?>'
     }
     
     function draft()
