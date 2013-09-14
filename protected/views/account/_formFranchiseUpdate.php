@@ -25,11 +25,47 @@
           if(strtolower($model->status_approval) == 'terjual' || strtolower($model->status_approval)== 'tidak aktif')
           {
                 echo '<strong>Status</strong>:'.$model->status_approval;
+                $disabled = 'disabled';
           }
           else
-          {
-                 echo $form->radioButtonList($model,'status_approval',array('Terjual' =>'Terjual', 'Tidak Aktif'=>'Non Aktifkan'),array('separator'=>'&nbsp; &nbsp;','labelOptions'=>array('style'=>'display:inline;')));
-          }
+          { 
+              $disabled = false;
+              ?>
+                  <?php  echo CHtml::ajaxSubmitButton('Terjual',CHtml::normalizeUrl(array("account/update/$model->id")),
+                 array(
+                     'dataType'=>'json',
+                     'type'=>'post',
+                     'success'=>'function(data) {  
+                        if(data.status=="success"){
+                            terjual();
+                        }
+                         else{
+                            formErrors(data,form="#business-form");
+                            document.location.href="#business-form_es_";
+                        }       
+                    }',                    
+                     'beforeSend'=>'function(){                        
+                           $("#AjaxLoader").show();
+                      }'
+                     ),array('class'=>'btn Gradient-Style1'));  ?>
+                <?php  echo CHtml::ajaxSubmitButton('Non Aktifkan',CHtml::normalizeUrl(array("account/update/$model->id")),
+                 array(
+                     'dataType'=>'json',
+                     'type'=>'post',
+                     'success'=>'function(data) {  
+                        if(data.status=="success"){
+                            nonaktif();
+                        }
+                         else{
+                            formErrors(data,form="#business-form");
+                            document.location.href="#business-form_es_";
+                        }       
+                    }',                    
+                     'beforeSend'=>'function(){                        
+                           $("#AjaxLoader").show();
+                      }'
+                     ),array('class'=>'btn Gradient-Style1'));  ?>
+         <?php }
         ?>
 </span>
 <div class="row-fluid">
@@ -174,6 +210,7 @@
                 $(document).ready(function () {
                     $("#upload").kendoUpload({
                         multiple: true,
+                        enabled:'<?php if($disabled == false) echo true; else echo false; ?>',
                         async: {
                             saveUrl: '<?php echo Yii::app()->createUrl('//account/uploadImage') ?>',
                             removeUrl: "<?php echo Yii::app()->createUrl('//account/removeUploadedImage') ?>",
@@ -291,6 +328,7 @@
                 $(document).ready(function () {
                     $("#upload2").kendoUpload({
                          multiple: true,
+                         enabled:'<?php if($disabled == false) echo true; else echo false; ?>',
                         async: {
                             saveUrl: '<?php echo Yii::app()->createUrl('//account/uploadDocument') ?>',
                             removeUrl: "<?php echo Yii::app()->createUrl('//account/removeUploadedDocument') ?>",
@@ -371,6 +409,7 @@
             				<th colspan="2">
                 			                			<?php echo CHtml::button('Batal', array('submit' => array("account/index/"), 'class'=>'btn Gradient-Style1')); ?>
                 <?php //echo CHtml::button('Simpan Draft', array('submit' => array("account/create?stat=Draft"), 'class'=>'btn Gradient-Style1')); ?>
+              
                 <?php  echo CHtml::ajaxSubmitButton('Simpan Draft',CHtml::normalizeUrl(array("account/update/$model->id")),
                  array(
                      'dataType'=>'json',
@@ -387,8 +426,8 @@
                      'beforeSend'=>'function(){                        
                            $("#AjaxLoader").show();
                       }'
-                     ),array('class'=>'btn Gradient-Style1'));  ?>
-		<?php echo CHtml::button('Lihat', array('class'=>'btn Gradient-Style1','onclick'=>"preview(this.form,'_blank')")); ?>
+                     ),array('class'=>'btn Gradient-Style1','disabled'=>$disabled));  ?>
+		<?php echo CHtml::button('Lihat', array('class'=>'btn Gradient-Style1','disabled'=>$disabled,'onclick'=>"preview(this.form,'_blank')")); ?>
 		<?php // echo CHtml::button('Kirim', array('submit' => array("account/create"), 'class'=>'btn Gradient-Style1')); ?>
                 <?php echo CHtml::ajaxSubmitButton('Kirim',CHtml::normalizeUrl(array("account/update/$model->id")),
                  array(
@@ -406,7 +445,7 @@
                      'beforeSend'=>'function(){                        
                            $("#AjaxLoader").show();
                       }'
-                     ),array('class'=>'btn Gradient-Style1')); ?>
+                     ),array('class'=>'btn Gradient-Style1','disabled'=>$disabled)); ?>
                				</th>
             			</tr>
         			</table>                        
@@ -428,6 +467,18 @@
     function draft()
     {
         $("#business-form").attr("action",'<?php echo Yii::app()->createUrl("//account/update/$model->id?stat=Draft"); ?>');
+        $("#business-form").submit();
+    }
+    
+    function terjual()
+    {
+        $("#business-form").attr("action",'<?php echo Yii::app()->createUrl("//account/update/$model->id?stat=Terjual"); ?>');
+        $("#business-form").submit();
+    }
+    
+    function nonaktif()
+    {
+        $("#business-form").attr("action",'<?php echo Yii::app()->createUrl("//account/update/$model->id?stat=Tidak Aktif"); ?>');
         $("#business-form").submit();
     }
     
