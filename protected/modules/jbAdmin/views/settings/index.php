@@ -80,7 +80,6 @@
 														</div>
 													</div>	
 												</div>
->>>>>>> d6f58c21f4c7f38056829d3d4ed1f17ed9a58a6a
 												";
                                             }
                                             $this->widget('bootstrap.widgets.TbTabs', array(
@@ -176,6 +175,17 @@
 								<div class="controls">
 									<?php echo $form->textField($settings,'alamat_email') ?>
                                 </div>
+							</div>
+						</div>						
+					</div>
+                                        
+                                        <div class="control-group">
+						<div class="span12">
+							<div class="span11">
+								<label class="control-label">Alamat Email Masuk:</label>
+								<div class="controls">
+									<?php echo $form->textField($settings,'incoming_mailbox') ?>
+                                        </div>
 							</div>
 						</div>						
 					</div>

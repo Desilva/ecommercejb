@@ -110,6 +110,16 @@
                 					<?php echo $form->textField($model,'harga',array('onkeyup'=>'calcValueFranchise()')); ?> &nbsp; <?php echo $form->checkBox($model,'tampilkanKontak',array('disabled'=>'disabled', 'class'=>'tampilkanKontak')) ?><?php echo $form->labelEx($model,'tampilkanKontak', array('style'=>'display:inline; margin-left:3px;')) ?>
                                                 </td>	
             				</tr>
+                                        <tr>
+            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'deskripsi'); ?></th>
+                				<td>
+                					<?php echo $form->textArea($model,'deskripsi'); ?>
+                                                        <script>
+                                                                //CKEDITOR.config.width = 570;
+                                                                CKEDITOR.replace( 'Business_deskripsi' );
+                                                        </script>
+                				</td>	
+            				</tr>
              				<tr>
             					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'franchise_menu'); ?></th>
                 				<td>
@@ -402,7 +412,7 @@
     
     function formErrors(data,form){
         var summary = '';
-        summary="<p>Please fix the following errors:</p><ul>";
+        summary="<br/><p>Silahkan perbaiki kesalahan input berikut:</p><ul>";
 
         $.each(data, function(key, val) {
         summary = summary + "<li>" + val.toString() + "</li>";

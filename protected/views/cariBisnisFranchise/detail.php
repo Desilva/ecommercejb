@@ -45,8 +45,16 @@ if($message_kontak != ''){
 							<a href="http://www.linkedin.com/shareArticle?mini=true&url=<?php echo urlencode(Yii::app()->createAbsoluteUrl("//cariBisnisFranchise/detail/$model->id")) ?>&title=<?php echo urlencode($model->nama) ?>&summary=<?php echo urlencode(substr(strip_tags(html_entity_decode($model->deskripsi)),0,250)."...") ?>&source=<?php echo urlencode(Yii::app()->name) ?>" target="_blank"><img class="imageShareArtikel" src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/inIcon.png" height="30" width="30" /></a> 
 						</div>
 						<div class="span2">
-							<form>
+                                                    <form>
 								<?php
+                                                                        if(Yii::app()->user->checkAccess("admin"))
+                                                                        {
+                                                                            $hide_watchlist = 'none';
+                                                                        }
+                                                                        else
+                                                                        {
+                                                                            $hide_watchlist = 'visible';
+                                                                        }
 									if($return_location != '' && $return_kategori != '')
 									{
 										if($return_location == "beli")
@@ -62,11 +70,11 @@ if($message_kontak != ''){
 										if(!isset($return_location)){
 											if($watchlist == '0')
 											{
-												echo CHtml::button('Watchlist', array('submit' => array("cariBisnisFranchise/watchlist/$model->id?kategori=$return_kategori&return=$return_location"),'class'=>'btn Gradient-Style1')); 
+												echo CHtml::button('Watchlist', array('submit' => array("cariBisnisFranchise/watchlist/$model->id?kategori=$return_kategori&return=$return_location"),'class'=>'btn Gradient-Style1','style'=>"display:$hide_watchlist")); 
 											}
 											else
 											{
-												echo CHtml::button('Unwatch', array('submit' => array("cariBisnisFranchise/watchlist/$model->id?kategori=$return_kategori&return=$return_location"), 'class'=>'btn Gradient-Style1')); 
+												echo CHtml::button('Unwatch', array('submit' => array("cariBisnisFranchise/watchlist/$model->id?kategori=$return_kategori&return=$return_location"), 'class'=>'btn Gradient-Style1','style'=>"display:$hide_watchlist")); 
 											}
 										}
 									}
@@ -74,15 +82,15 @@ if($message_kontak != ''){
 									{
 										if($watchlist == '0')
 										{
-											echo CHtml::button('Watchlist', array('submit' => array("cariBisnisFranchise/watchlist/$model->id"), 'class'=>'btn Gradient-Style1')); 
+											echo CHtml::button('Watchlist', array('submit' => array("cariBisnisFranchise/watchlist/$model->id"), 'class'=>'btn Gradient-Style1','style'=>"display:$hide_watchlist")); 
 										}
 										else
 										{
-											echo CHtml::button('Unwatch', array('submit' => array("cariBisnisFranchise/watchlist/$model->id"), 'class'=>'btn Gradient-Style1')); 
+											echo CHtml::button('Unwatch', array('submit' => array("cariBisnisFranchise/watchlist/$model->id"), 'class'=>'btn Gradient-Style1','style'=>"display:$hide_watchlist")); 
 										}
 									}                        
 								?>
-							</form>
+                                                        </form>
 						</div>
 					</div>
 				</div>
@@ -266,23 +274,23 @@ if($message_kontak != ''){
 									</tr>
 									<tr>
 										<td>Harga</td>
-										<td>Rp.<?php echo $model->harga ?></td>
+										<td>Rp.<?php echo number_format($model->harga) ?></td>
 									</tr>
 									<tr>
 										<td>Penjualan / Tahun</td>
-										<td>Rp.<?php echo $model->penjualan ?></td>
+										<td>Rp.<?php echo number_format($model->penjualan) ?></td>
 									</tr>
 									<tr>
 										<td>HPP / Tahun</td>
-										<td>Rp.<?php echo $model->hpp ?></td>
+										<td>Rp.<?php echo number_format($model->hpp) ?></td>
 									</tr>
 									<tr>
 										<td>Laba bersih / Tahun</td>
-										<td>Rp.<?php echo $model->laba_bersih_tahun ?></td>
+										<td>Rp.<?php echo number_format($model->laba_bersih_tahun) ?></td>
 									</tr>
 									<tr>
 										<td>Total Asset</td>
-										<Td>Rp.<?php echo $model->total_aset ?></td>
+										<Td>Rp.<?php echo number_format($model->total_aset) ?></td>
 									</tr>
 									<Tr>
 										<Td>Alasan Menjual Bisnis</td>
@@ -299,19 +307,19 @@ if($message_kontak != ''){
 									</tr>
 									<tr>
 										<Td>Margin harga bersih</td>
-										<td>Rp.<?php echo $model->marjin_laba_bersih ?></td>
+										<td>Rp.<?php echo number_format($model->marjin_laba_bersih) ?></td>
 									</tr>
 									<tr>
 										<td>Laba bersih / asset</td>
-										<Td>Rp.<?php echo $model->laba_bersih_aset ?></td>
+										<Td>Rp.<?php echo number_format($model->laba_bersih_aset) ?></td>
 									</tr>
 									<Tr>
 										<td>Harga penawaran / penjualan</td>
-										<td>Rp.<?php echo $model->harga_penawaran_penjualan ?></td>
+										<td>Rp.<?php echo number_format($model->harga_penawaran_penjualan) ?></td>
 									</tR>
 									<tr>
 										<Td>Harga penawaran / Laba bersih</td>
-										<td>Rp.<?php echo $model->harga_penawaran_laba_bersih ?></td>
+										<td>Rp.<?php echo number_format($model->harga_penawaran_laba_bersih) ?></td>
 									</tR>
 									
 								</table>
@@ -394,11 +402,11 @@ if($message_kontak != ''){
 										<div class="control-group">
 											<div class="span12" style="margin-left:30px; margin-top:10px">
 												<div class="span6">
-                                                                                                    <a href="<?php echo $arrayUrl[0] ?>"><img src="<?php echo $arrayImage[0] ?>" width="90" height="90" style="width:90px; height:90px"/></a>
+                                                                                                    <a target="_blank" href="<?php echo $arrayUrl[0] ?>"><img src="<?php echo $arrayImage[0] ?>" width="90" height="90" style="width:90px; height:90px"/></a>
 												</div>
                                                                                                 <?php if(isset($arrayImage[1])){ ?>
                                                                                                     <div class="span6">
-                                                                                                       <a href="<?php echo $arrayUrl[1] ?>"><img src="<?php echo $arrayImage[1] ?>" width="90" height="90" style="width:90px; height:90px"/></a>
+                                                                                                       <a target="_blank" href="<?php echo $arrayUrl[1] ?>"><img src="<?php echo $arrayImage[1] ?>" width="90" height="90" style="width:90px; height:90px"/></a>
                                                                                                     </div>
                                                                                                 <?php }?>
 											</div>
@@ -411,11 +419,11 @@ if($message_kontak != ''){
 										<div class="control-group">
 											<div class="span12" style="margin-left:30px; margin-top:10px">
 												<div class="span6">
-                                                                                                    <a href="<?php echo $arrayUrl[2] ?>"><img src="<?php echo $arrayImage[2] ?>" width="90" height="90" style="width:90px; height:90px"/></a>
+                                                                                                    <a target="_blank" href="<?php echo $arrayUrl[2] ?>"><img src="<?php echo $arrayImage[2] ?>" width="90" height="90" style="width:90px; height:90px"/></a>
 												</div>
                                                                                                 <?php if(isset($arrayImage[3])){ ?>
                                                                                                     <div class="span6">
-                                                                                                       <a href="<?php echo $arrayUrl[3] ?>"><img src="<?php echo $arrayImage[3] ?>" width="90" height="90" style="width:90px; height:90px"/></a>
+                                                                                                       <a target="_blank" href="<?php echo $arrayUrl[3] ?>"><img src="<?php echo $arrayImage[3] ?>" width="90" height="90" style="width:90px; height:90px"/></a>
                                                                                                     </div>
                                                                                                 <?php }?>
 											</div>
@@ -428,7 +436,7 @@ if($message_kontak != ''){
                                                                                     <div class="control-group">
                                                                                             <div class="span12" style="margin-left:30px; margin-top:10px">
                                                                                                     <div class="span6">
-                                                                                                            <a href="<?php echo $arrayUrl[4] ?>"><img src="<?php echo $arrayImage[4] ?>" width="90" height="90" style="width:90px; height:90px"/></a>
+                                                                                                            <a target="_blank" href="<?php echo $arrayUrl[4] ?>"><img src="<?php echo $arrayImage[4] ?>"  width="90" height="90" style="width:90px; height:90px"/></a>
                                                                                                     </div>
                                                                                             </div>
                                                                                     </div>

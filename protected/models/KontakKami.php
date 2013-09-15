@@ -19,6 +19,7 @@ class KontakKami extends CFormModel
 		// will receive user inputs.
 		return array(
 			array('nama, phone, subject, comment', 'required'),
+                        array('phone','numerical','integerOnly'=>true),
                         array('email','email'),
 		);
 	}

@@ -54,8 +54,14 @@
 									'columns' => array(
 										'idBusiness.nama',
 										'idBusiness.deskripsi',
-										'idBusiness.penjualan'=>array('name'=>'idBusiness.penjualan','header'=>'Revenue'),
-										'idBusiness.harga',
+										array('header' => 'Revenue (Rp.)', 
+                                                                                       'name' => 'idBusiness.penjualan', 
+                                                                                        'value'=>'number_format($data->idBusiness->penjualan)'),
+										array(
+                                                                                    'header'=> 'Harga (Rp.)',
+                                                                                    'name'=>'idBusiness.harga',
+                                                                                    'value'=> 'number_format($data->idBusiness->harga)'
+                                                                                ),
                                                                                 array(
 											'class' => 'CButtonColumn',
 											'header' => 'Tindakan',

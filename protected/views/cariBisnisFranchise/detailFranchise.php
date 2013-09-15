@@ -251,7 +251,7 @@ if($message_kontak != ''){
 									</tr>
 									<tr>
 										<td>Harga</td>
-										<td>Rp.<?php echo $model->harga ?></td>
+										<td>Rp.<?php echo number_format($model->harga) ?></td>
 									</tr>
 									<tr>
 										<td>Alasan Franchise Mau Bekerjasama</td>
@@ -339,11 +339,11 @@ if($message_kontak != ''){
 										<div class="control-group">
 											<div class="span12" style="margin-left:30px; margin-top:10px">
 												<div class="span6">
-                                                                                                    <a href="<?php echo $arrayUrl[0] ?>"><img src="<?php echo $arrayImage[0] ?>" width="90" height="90" style="width:90px; height:90px"/></a>
+                                                                                                    <a target="_blank" href="<?php echo $arrayUrl[0] ?>"><img src="<?php echo $arrayImage[0] ?>" width="90" height="90" style="width:90px; height:90px"/></a>
 												</div>
                                                                                                 <?php if(isset($arrayImage[1])){ ?>
                                                                                                     <div class="span6">
-                                                                                                       <a href="<?php echo $arrayUrl[1] ?>"><img src="<?php echo $arrayImage[1] ?>" width="90" height="90" style="width:90px; height:90px"/></a>
+                                                                                                       <a target="_blank" href="<?php echo $arrayUrl[1] ?>"><img src="<?php echo $arrayImage[1] ?>" width="90" height="90" style="width:90px; height:90px"/></a>
                                                                                                     </div>
                                                                                                 <?php }?>
 											</div>
@@ -356,11 +356,11 @@ if($message_kontak != ''){
 										<div class="control-group">
 											<div class="span12" style="margin-left:30px; margin-top:10px">
 												<div class="span6">
-                                                                                                    <a href="<?php echo $arrayUrl[2] ?>"><img src="<?php echo $arrayImage[2] ?>" width="90" height="90" style="width:90px; height:90px"/></a>
+                                                                                                    <a target="_blank" href="<?php echo $arrayUrl[2] ?>"><img src="<?php echo $arrayImage[2] ?>" width="90" height="90" style="width:90px; height:90px"/></a>
 												</div>
                                                                                                 <?php if(isset($arrayImage[3])){ ?>
                                                                                                     <div class="span6">
-                                                                                                       <a href="<?php echo $arrayUrl[3] ?>"><img src="<?php echo $arrayImage[3] ?>" width="90" height="90" style="width:90px; height:90px"/></a>
+                                                                                                       <a target="_blank" href="<?php echo $arrayUrl[3] ?>"><img src="<?php echo $arrayImage[3] ?>" width="90" height="90" style="width:90px; height:90px"/></a>
                                                                                                     </div>
                                                                                                 <?php }?>
 											</div>
@@ -373,7 +373,7 @@ if($message_kontak != ''){
                                                                                     <div class="control-group">
                                                                                             <div class="span12" style="margin-left:30px; margin-top:10px">
                                                                                                     <div class="span6">
-                                                                                                            <a href="<?php echo $arrayUrl[4] ?>"><img src="<?php echo $arrayImage[4] ?>" width="90" height="90" style="width:90px; height:90px"/></a>
+                                                                                                            <a target="_blank" href="<?php echo $arrayUrl[4] ?>"><img src="<?php echo $arrayImage[4] ?>" width="90" height="90" style="width:90px; height:90px"/></a>
                                                                                                     </div>
                                                                                             </div>
                                                                                     </div>

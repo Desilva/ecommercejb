@@ -183,23 +183,23 @@
 									</tr>
 									<tr>
 										<td>Harga</td>
-										<td>Rp.<?php echo $model->harga ?></td>
+										<td>Rp.<?php echo number_format($model->harga) ?></td>
 									</tr>
 									<tr>
 										<td>Penjualan / Tahun</td>
-										<td>Rp.<?php echo $model->penjualan ?></td>
+										<td>Rp.<?php echo number_format($model->penjualan) ?></td>
 									</tr>
 									<tr>
 										<td>HPP / Tahun</td>
-										<td>Rp.<?php echo $model->hpp ?></td>
+										<td>Rp.<?php echo number_format($model->hpp) ?></td>
 									</tr>
 									<tr>
 										<td>Laba bersih / Tahun</td>
-										<td>Rp.<?php echo $model->laba_bersih_tahun ?></td>
+										<td>Rp.<?php echo number_format($model->laba_bersih_tahun) ?></td>
 									</tr>
 									<tr>
 										<td>Total Asset</td>
-										<Td>Rp.<?php echo $model->total_aset ?></td>
+										<Td>Rp.<?php echo number_format($model->total_aset) ?></td>
 									</tr>
 									<Tr>
 										<Td>Alasan Menjual Bisnis</td>
@@ -216,19 +216,19 @@
 									</tr>
 									<tr>
 										<Td>Margin harga bersih</td>
-										<td>Rp.<?php echo $model->marjin_laba_bersih ?></td>
+										<td>Rp.<?php echo number_format($model->marjin_laba_bersih) ?></td>
 									</tr>
 									<tr>
 										<td>Laba bersih / asset</td>
-										<Td>Rp.<?php echo $model->laba_bersih_aset ?></td>
+										<Td>Rp.<?php echo number_format($model->laba_bersih_aset) ?></td>
 									</tr>
 									<Tr>
 										<td>Harga penawaran / penjualan</td>
-										<td>Rp.<?php echo $model->harga_penawaran_penjualan ?></td>
+										<td>Rp.<?php echo number_format($model->harga_penawaran_penjualan) ?></td>
 									</tR>
 									<tr>
 										<Td>Harga penawaran / Laba bersih</td>
-										<td>Rp.<?php echo $model->harga_penawaran_laba_bersih ?></td>
+										<td>Rp.<?php echo number_format($model->harga_penawaran_laba_bersih) ?></td>
 									</tR>
 									
 								</table>

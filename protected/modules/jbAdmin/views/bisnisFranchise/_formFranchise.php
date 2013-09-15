@@ -159,7 +159,20 @@
 							</div>
 						</div>
 					</div>
-					
+					<div class="control-group">
+									<div class="span12">
+										<div class="span11">
+											<label class="control-label"><?php echo $form->labelEx($model,'deskripsi'); ?></label>
+											<div class="controls">
+												<?php echo $form->textArea($model,'deskripsi'); ?>
+                                                                                            <script>
+                                                                                                    //CKEDITOR.config.width = 570;
+                                                                                                    CKEDITOR.replace( 'Business_deskripsi' );
+                                                                                            </script>
+											</div>
+										</div>
+									</div>
+					</div>
 					<div class="control-group">
 						<div class="span12">
 							<div class="span11">
@@ -490,7 +503,7 @@
     
     function formErrors(data,form){
         var summary = '';
-        summary="<p>Please fix the following errors:</p><ul>";
+        summary="<br/><p>Silahkan perbaiki kesalahan input berikut:</p><ul>";
 
         $.each(data, function(key, val) {
         summary = summary + "<li>" + val.toString() + "</li>";

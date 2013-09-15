@@ -47,6 +47,7 @@ class Settings extends CActiveRecord
 			array('nama_settings, alamat_email, nama_email', 'length', 'max'=>50),
 			array('nilai_min_telpon_tampil', 'length', 'max'=>20),
 			array('incoming_mailbox, fb_app_id', 'length', 'max'=>100),
+                        array('alamat_email,incoming_mailbox','email'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('nama_settings, durasi_slideshow, jumlah_rekomendasi, jumlah_terbaru, nilai_min_telpon_tampil, alamat_email, nama_email, incoming_mailbox, fb_app_id', 'safe', 'on'=>'search'),

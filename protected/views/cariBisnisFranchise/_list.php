@@ -60,10 +60,10 @@
                 	<?php echo $data->idKota->city ?>
                 </td>
                 <td>
-                	Rp. <?php echo $data->harga ?>
+                    Rp. <?php echo number_format($data->harga) ?>
                 </td>
                 <td>
-                	<?php echo $data->penjualan ?>
+                	Rp. <?php echo number_format($data->penjualan) ?>
                         <br/>
                         
                        

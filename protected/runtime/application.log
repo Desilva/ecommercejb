@@ -4016,3 +4016,307 @@ REQUEST_URI=/ecommerceJB/index.php/account/update/53
 in C:\xampp\htdocs\ecommercejb\protected\views\account\_formUpdate.php (646)
 in C:\xampp\htdocs\ecommercejb\protected\views\account\update.php (31)
 in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (1015)
+2013/09/15 11:02:48 [warning] [application] Failed to set unsafe attribute "perusahaan" of "KontakKami".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\KontakController.php (14)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/15 11:02:48 [warning] [application] Failed to set unsafe attribute "fax" of "KontakKami".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\KontakController.php (14)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/15 11:02:58 [warning] [application] Failed to set unsafe attribute "perusahaan" of "KontakKami".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\KontakController.php (14)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/15 11:02:58 [warning] [application] Failed to set unsafe attribute "fax" of "KontakKami".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\KontakController.php (14)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/15 05:04:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "asdfasf".' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('asdfasf')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/asdfasf
+---
+2013/09/15 05:13:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Tidak bisa mengurai request "asdfasf"' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('asdfasf')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/asdfasf
+---
+2013/09/15 05:13:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Tidak bisa mengurai request "uploads/images/5/2.jpg"' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/uploads/images/5/2.jpg
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/
+---
+2013/09/15 05:13:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Tidak bisa mengurai request "uploads/images/5/3.jpg"' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/uploads/images/5/3.jpg
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/
+---
+2013/09/15 05:13:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Tidak bisa mengurai request "uploads/images/5/2.jpg"' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/uploads/images/5/2.jpg
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/
+---
+2013/09/15 05:13:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Tidak bisa mengurai request "uploads/images/5/3.jpg"' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/uploads/images/5/3.jpg
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/
+---
+2013/09/15 11:14:03 [warning] [application] Gagal mengeset atribut unsafe "perusahaan" dari kelas "KontakKami".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\KontakController.php (14)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/15 11:14:03 [warning] [application] Gagal mengeset atribut unsafe "fax" dari kelas "KontakKami".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\KontakController.php (14)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/15 11:16:36 [warning] [application] Gagal mengeset atribut unsafe "alasan_jual_lainnya_check" dari kelas "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (478)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/15 11:16:36 [warning] [application] Gagal mengeset atribut unsafe "alasan_jual_lainnya_check" dari kelas "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (489)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/15 11:16:46 [warning] [application] Gagal mengeset atribut unsafe "alasan_jual_lainnya_check" dari kelas "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (415)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/15 11:16:54 [warning] [application] Gagal mengeset atribut unsafe "alasan_jual_lainnya_check" dari kelas "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (478)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/15 11:16:54 [warning] [application] Gagal mengeset atribut unsafe "alasan_jual_lainnya_check" dari kelas "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (489)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/15 11:18:03 [warning] [application] Gagal mengeset atribut unsafe "alasan_jual_lainnya_check" dari kelas "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (478)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/15 11:18:03 [warning] [application] Gagal mengeset atribut unsafe "alasan_jual_lainnya_check" dari kelas "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (489)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/15 11:51:39 [error] [php] Use of undefined constant idBusiness - assumed 'idBusiness' (C:\xampp\htdocs\ecommercejb\protected\views\account\beli.php:66)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): AccountController->renderFile()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): AccountController->renderPartial()
+#2 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(233): AccountController->render()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): AccountController->actionBeli()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): AccountController->runAction()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): AccountController->filterAccessControl()
+#9 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): AccountController->runActionWithFilters()
+#12 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): AccountController->run()
+#13 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/account/beli
+in C:\xampp\htdocs\ecommercejb\protected\views\account\beli.php (66)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (233)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/15 11:53:15 [error] [php] Undefined variable: data (C:\xampp\htdocs\ecommercejb\protected\views\account\beli.php:66)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): AccountController->renderFile()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): AccountController->renderPartial()
+#2 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(233): AccountController->render()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): AccountController->actionBeli()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): AccountController->runAction()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): AccountController->filterAccessControl()
+#9 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): AccountController->runActionWithFilters()
+#12 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): AccountController->run()
+#13 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/account/beli
+in C:\xampp\htdocs\ecommercejb\protected\views\account\beli.php (66)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (233)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/15 11:55:22 [error] [php] Undefined variable: data (C:\xampp\htdocs\ecommercejb\protected\views\account\beli.php:67)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): AccountController->renderFile()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): AccountController->renderPartial()
+#2 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(233): AccountController->render()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): AccountController->actionBeli()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): AccountController->runAction()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): AccountController->filterAccessControl()
+#9 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): AccountController->runActionWithFilters()
+#12 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): AccountController->run()
+#13 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/account/beli
+in C:\xampp\htdocs\ecommercejb\protected\views\account\beli.php (67)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (233)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/15 11:58:49 [error] [php] number_format() expects parameter 1 to be double, string given (C:\xampp\htdocs\ecommercejb\protected\views\account\beli.php:67)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(95): AccountController->renderInternal()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): AccountController->renderFile()
+#2 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): AccountController->renderPartial()
+#3 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(233): AccountController->render()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): AccountController->actionBeli()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): AccountController->runAction()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#9 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): AccountController->filterAccessControl()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#12 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): AccountController->runActionWithFilters()
+#13 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): AccountController->run()
+#14 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#15 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/account/beli
+in C:\xampp\htdocs\ecommercejb\protected\views\account\beli.php (67)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (233)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/15 11:59:14 [error] [php] Undefined variable: data (C:\xampp\htdocs\ecommercejb\protected\views\account\beli.php:67)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): AccountController->renderFile()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): AccountController->renderPartial()
+#2 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(233): AccountController->render()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): AccountController->actionBeli()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): AccountController->runAction()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): AccountController->filterAccessControl()
+#9 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): AccountController->runActionWithFilters()
+#12 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): AccountController->run()
+#13 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/account/beli
+in C:\xampp\htdocs\ecommercejb\protected\views\account\beli.php (67)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (233)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/15 12:02:54 [error] [php] Use of undefined constant Rp - assumed 'Rp' (C:\xampp\htdocs\ecommercejb\framework\base\CComponent.php(606) : eval()'d code:1)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridColumn.php(144): CDataColumn->renderDataCellContent()
+#1 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(589): CDataColumn->renderDataCell()
+#2 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(545): CGridView->renderTableRow()
+#3 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(455): CGridView->renderTableBody()
+#4 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(160): CGridView->renderItems()
+#5 unknown(0): CGridView->renderSection()
+#6 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(143): preg_replace_callback()
+#7 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(128): CGridView->renderContent()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(173): CGridView->run()
+#9 C:\xampp\htdocs\ecommercejb\protected\views\account\beli.php(77): AccountController->widget()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(126): require()
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(95): AccountController->renderInternal()
+#12 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): AccountController->renderFile()
+#13 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): AccountController->renderPartial()
+#14 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(233): AccountController->render()
+#15 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): AccountController->actionBeli()
+#16 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#17 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): AccountController->runAction()
+#18 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#20 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): AccountController->filterAccessControl()
+#21 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#22 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): AccountController->runActionWithFilters()
+#24 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): AccountController->run()
+#25 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#26 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#27 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/account/beli
+in C:\xampp\htdocs\ecommercejb\protected\views\account\beli.php (77)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (233)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/15 12:03:10 [error] [php] Use of undefined constant Rp - assumed 'Rp' (C:\xampp\htdocs\ecommercejb\framework\base\CComponent.php(606) : eval()'d code:1)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridColumn.php(144): CDataColumn->renderDataCellContent()
+#1 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(589): CDataColumn->renderDataCell()
+#2 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(545): CGridView->renderTableRow()
+#3 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(455): CGridView->renderTableBody()
+#4 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(160): CGridView->renderItems()
+#5 unknown(0): CGridView->renderSection()
+#6 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(143): preg_replace_callback()
+#7 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(128): CGridView->renderContent()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(173): CGridView->run()
+#9 C:\xampp\htdocs\ecommercejb\protected\views\account\beli.php(77): AccountController->widget()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(126): require()
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(95): AccountController->renderInternal()
+#12 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): AccountController->renderFile()
+#13 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): AccountController->renderPartial()
+#14 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(233): AccountController->render()
+#15 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): AccountController->actionBeli()
+#16 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#17 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): AccountController->runAction()
+#18 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#20 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): AccountController->filterAccessControl()
+#21 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#22 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): AccountController->runActionWithFilters()
+#24 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): AccountController->run()
+#25 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#26 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#27 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/account/beli
+in C:\xampp\htdocs\ecommercejb\protected\views\account\beli.php (77)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (233)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/09/15 12:03:35 [error] [php] Use of undefined constant Rp - assumed 'Rp' (C:\xampp\htdocs\ecommercejb\framework\base\CComponent.php(606) : eval()'d code:1)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridColumn.php(144): CDataColumn->renderDataCellContent()
+#1 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(589): CDataColumn->renderDataCell()
+#2 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(545): CGridView->renderTableRow()
+#3 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(455): CGridView->renderTableBody()
+#4 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(160): CGridView->renderItems()
+#5 unknown(0): CGridView->renderSection()
+#6 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(143): preg_replace_callback()
+#7 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\CBaseListView.php(128): CGridView->renderContent()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(173): CGridView->run()
+#9 C:\xampp\htdocs\ecommercejb\protected\views\account\beli.php(77): AccountController->widget()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(126): require()
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(95): AccountController->renderInternal()
+#12 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): AccountController->renderFile()
+#13 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): AccountController->renderPartial()
+#14 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(233): AccountController->render()
+#15 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): AccountController->actionBeli()
+#16 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#17 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): AccountController->runAction()
+#18 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#20 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): AccountController->filterAccessControl()
+#21 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#22 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): AccountController->runActionWithFilters()
+#24 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): AccountController->run()
+#25 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#26 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#27 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/account/beli
+in C:\xampp\htdocs\ecommercejb\protected\views\account\beli.php (77)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (233)
+in C:\xampp\htdocs\ecommercejb\index.php (13)

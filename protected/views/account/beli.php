@@ -61,8 +61,14 @@ a.view img{
 											'type' => 'raw',
 											'value' => array($this, 'gridDeskripsiBeli'),
 										),
-										'idBusiness.penjualan' => array('header' => 'Revenue', 'name' => 'idBusiness.penjualan'),
-										'idBusiness.harga',
+                                                                                array('header' => 'Revenue (Rp.)', 
+                                                                                       'name' => 'idBusiness.penjualan', 
+                                                                                        'value'=>'number_format($data->idBusiness->penjualan)'),
+										array(
+                                                                                    'header'=> 'Harga (Rp.)',
+                                                                                    'name'=>'idBusiness.harga',
+                                                                                    'value'=> 'number_format($data->idBusiness->harga)'
+                                                                                ),
                                                                                 array(
 											'class' => 'CButtonColumn',
 											'header' => 'Tindakan',

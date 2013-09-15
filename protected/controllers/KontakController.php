@@ -8,6 +8,7 @@ class KontakController extends Controller
     public function actionIndex()
     {
         $model = new KontakKami();
+        $settings = Settings::model()->findAllByAttributes(array('nama_settings'=>'settings_admin'));
         if(isset($_POST['KontakKami']))
         {
             $model->attributes = $_POST['KontakKami'];
@@ -22,7 +23,7 @@ class KontakController extends Controller
                 {
                     $mail->setReplyTo($model->email,$model->nama);
                 }
-                $mail->setTo('reynhart@licht-soft.com'); //CHANGE TO APPROPRIATE EMAIL WHEN DEPLOYING
+                $mail->setTo($settings->incoming_mailbox); //CHANGE TO APPROPRIATE EMAIL WHEN DEPLOYING
                 $mail->setSubject($model->subject);
                 $mail->setBody("<p>Anda mendapatkan email dari pelanggan dengan detail sebagai berikut: </p><p>Nama: $model->nama</p><p>Perusahaan: $model->perusahaan</p><p>Email: $model->email </p><p>Phone: $model->phone </p><p>Fax: $model->fax</p><p>Comment: <br/>$model->comment</p>");
                 if($mail->send())
