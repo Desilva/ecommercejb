@@ -1,6 +1,19 @@
 <form action="<?php echo Yii::app()->createUrl("//jbAdmin/kategori/createSubIndustri?id=$id_industri") ?>" method="post">
-<?php echo CHtml::submitButton('Tambah Sub Kategori',array('class'=>'btn Gradient-Style1')); ?>
+<?php echo CHtml::submitButton('Tambah Sub Kategori',array('class'=>'btn Gradient-Style1','id'=>'subIndustriGridTambahButton')); ?>
 </form>
+<div class="row-fluid">
+				<div class="span12 ">
+					<div class="row-fluid">
+						<div class="span12" id="subIndustriList">
+							<div class="widget-box">
+								<div class="widget-title">
+									<span class="icon">
+										<i class="icon-th"></i>
+									</span>
+									<h5>Static table</h5>
+								</div>
+								<div class="widget-content nopadding">
+
     <?php
       $this->widget('zii.widgets.grid.CGridView', array(
                 'id'=>'subIndustriGrid',
@@ -27,3 +40,9 @@
             ));
 
     ?>
+					</div>
+							</div>
+						</div>
+					</div>
+				</div>             	
+			</div>

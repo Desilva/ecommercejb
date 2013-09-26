@@ -57,6 +57,9 @@
                         ?>
                 </td>
                 <td width="15%">
+                	<?php setlocale(LC_TIME, 'indonesian'); setlocale(LC_TIME, 'id_ID'); echo strftime('%d %B %Y',  strtotime($data->tanggal_approval)) ?>
+                </td>
+                <td width="15%">
                 	<?php echo $data->idKota->city ?>
                 </td>
                 <td>

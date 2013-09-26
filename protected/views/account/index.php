@@ -134,7 +134,7 @@ a.delete img{
 					<form method="get">
 						<span>Kategori: </span><?php echo CHtml::dropDownList('kategori',$selectedSortValue,CHtml::listData($sortType,'id','category'),array('class'=>'Input-Size-VerySmall','submit'=> Yii::app()->createUrl("//account/index/")));  ?>
 					</form>   	
-              		<?php echo CHtml::button('Tambah Bisnis', array('submit' => array('account/create'), 'class'=>'btn Gradient-Style1')); ?>
+              		<?php echo CHtml::button('Tambah Bisnis/Franchise', array('submit' => array('account/create'), 'class'=>'btn Gradient-Style1')); ?>
                 </div>
 			</div>
 			<div class="row-fluid">

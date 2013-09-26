@@ -141,6 +141,9 @@ a.delete img{
                                             'deleteButtonImageUrl' => Yii::app()->request->baseUrl . '/images/asset/trash.png',
                                             'updateButtonImageUrl' => Yii::app()->request->baseUrl . '/images/asset/write.png',
                                             'deleteConfirmation' => 'PERHATIAN: Dengan menghapus industri ini maka bisnis/franchise yang menggunakan nya harus di set ulang ke industri baru. Apakah anda yakin?',
+                                            'afterDelete'=>'function(link,success,data){ 
+                                                                afterDeleteAction();
+                                                             }',
                                             'buttons' => array(
                                                 'viewSubKategori' => array(
                                                     'label' => 'Lihat Sub-Kategori',
@@ -202,5 +205,13 @@ a.delete img{
 				</div>             	
 			</div>
 		</div>
+
+<script>
+    function afterDeleteAction()
+    {
+        $('#subIndustriGridTambahButton').hide();
+    }
+            
+</script>
 
 

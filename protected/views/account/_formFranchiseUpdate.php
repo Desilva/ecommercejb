@@ -17,10 +17,10 @@
                     'validateOnChange'=>true,
                     'validateOnType'=>false,
             ),
-            'htmlOptions' => array('enctype' => 'multipart/form-data'),
+            'htmlOptions' => array('enctype' => 'multipart/form-data','class'=>'form-horizontal'),
     )); ?>
  <p><?php echo $form->errorSummary($model); ?></p>
- <span class="span2" style="float:right; display:inline">
+ <span class="span3" style="float:right; display:inline">
         <?php
           if(strtolower($model->status_approval) == 'terjual' || strtolower($model->status_approval)== 'tidak aktif')
           {
@@ -74,21 +74,35 @@
                 	<div class="span12">
                             <?php echo $form->hiddenField($model,'id_user',array('value'=>Yii::app()->user->id)) ?>
                             <?php echo $form->hiddenField($model,'kepemilikan',array('value'=>'0')) ?>
-                    	<table>
-						
-                                        <tr>
-            					<th width="20%" class="Text-Align-Left"><?php echo $form->labelEx($model,'id_category'); ?></th>
-                				<td>
-                                                       <?php echo $form->hiddenField($model,'id_category'); ?>
-                                                        <?php 
-                                                            echo $model->idCategory->category;
-                                                        ?>
-                				</td>
-            				</tr>
-            				<tr>
-            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'id_industri'); ?></th>
-                				<td>
-                                                        <?php echo $form->dropDownList($model,'id_industri',CHtml::listData($industri,'id','industri'),array(
+                    	<div class="widget-box">
+			<div class="widget-title">
+				<span class="icon">
+					<i class="icon-align-justify"></i>									
+				</span>
+				<h5>Update Franchise</h5>
+			</div>
+			<div class="widget-content nopadding">
+				
+					<div class="control-group">
+						<div class="span12">
+							<div class="span11">
+								<label class="control-label"><?php echo $form->labelEx($model,'id_category'); ?></label>
+								<div class="controls">
+									<?php echo $form->hiddenField($model,'id_category'); ?>
+                                    <?php 
+                                          echo $model->idCategory->category;
+                                    ?>
+								</div>
+							</div>
+						</div>						
+					</div>
+					
+					<div class="control-group">
+						<div class="span12">
+							<div class="span11">
+								<label class="control-label"><?php echo $form->labelEx($model,'id_industri'); ?></label>
+								<div class="controls">
+									 <?php echo $form->dropDownList($model,'id_industri',CHtml::listData($industri,'id','industri'),array(
                                                                                                 'prompt'=>'Pilih Industri',
                                                                                                 'ajax' => array(
                                                                                                     'type' => 'POST',
@@ -104,33 +118,51 @@
                                                                                                              $('#loading-animation-industri').attr('style','display:none');                                  
                                                                                                         }",
                                                                                             ))); ?>
-                				</td>	
-            				</tr>
-            				<tr>
-                                                 <?php echo Chtml::hiddenField('sub_industri_temp', $model->id_sub_industri) ?>
-            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'id_sub_industri'); ?></th>
-                				<td>
-                                                        <?php echo $form->dropDownList($model,'id_sub_industri',array(),array('prompt'=>'Pilih Sub Industri')); ?>
-                                                    <img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/spinner.gif" id="loading-animation-industri" style="display:none"/>
-                                                    
-                				</td>	
-            				</tr>
-            				<tr>
-            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'nama'); ?></th>
-                				<td>
-                					<?php echo $form->textField($model,'nama'); ?>
-                				</td>	
-            				</tr>
-             				<tr>
-            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'alamat'); ?></th>
-                				<td>
-                					<?php echo $form->textArea($model,'alamat'); ?>
-                				</td>	
-            				</tr>
-             				<tr>
-            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'id_provinsi'); ?></th>
-                				<td>
-                					<?php echo $form->dropDownList($model,'id_provinsi',CHtml::listData($provinsi,'id','provinsi'),array(
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<div class="span12">
+							<div class="span11">
+								<?php echo Chtml::hiddenField('sub_industri_temp', $model->id_sub_industri) ?>
+								<label class="control-label"><?php echo $form->labelEx($model,'id_sub_industri'); ?></label>
+								<div class="controls">
+									<?php echo $form->dropDownList($model,'id_sub_industri',array(),array('prompt'=>'Pilih Sub Industri')); ?>
+                                    <img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/spinner.gif" id="loading-animation-industri" style="display:none"/>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<div class="span12">
+							<div class="span11">
+								<label class="control-label"><?php echo $form->labelEx($model,'nama'); ?></label>
+								<div class="controls">
+									<?php echo $form->textField($model,'nama'); ?>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<div class="span12">
+							<div class="span11">
+								<label class="control-label"><?php echo $form->labelEx($model,'alamat'); ?></label>
+								<div class="controls">
+									<?php echo $form->textArea($model,'alamat'); ?>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<div class="span12">
+							<label class="control-label"><?php echo $form->labelEx($model,'id_provinsi'); ?></label>
+							<div class="controls">
+								<?php echo $form->dropDownList($model,'id_provinsi',CHtml::listData($provinsi,'id','provinsi'),array(
                                                             'prompt'=>'Pilih Provinsi',
                                                             'ajax' => array(
                                                                 'type' => 'POST',
@@ -146,61 +178,99 @@
                                                                          $('#loading-animation-provinsi').attr('style','display:none');                                  
                                                                     }",
                                                         ))); ?>
-                                                       
-                				</td>	
-            				</tr>
-                                        <tr>
-                                                <?php echo Chtml::hiddenField('kota_temp', $model->id_kota) ?>
-            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'id_kota'); ?></th>
-                				<td>
-                					<?php echo $form->dropDownList($model,'id_kota',array(),array('prompt'=>'Pilih Kota')); ?>
-                                                     <img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/spinner.gif" id="loading-animation-provinsi" style="display:none"/>
-                				</td>	
-            				</tr>
-             				<tr>
-            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'harga'); ?></th>
-                				<td>
-                					<?php echo $form->textField($model,'harga',array('onkeyup'=>'calcValueFranchise()')); ?> &nbsp; <?php echo $form->checkBox($model,'tampilkanKontak',array('disabled'=>'disabled', 'class'=>'tampilkanKontak')) ?><?php echo $form->labelEx($model,'tampilkanKontak', array('style'=>'display:inline; margin-left:3px;')) ?>
-                                                </td>	
-            				</tr>
-                                        <tr>
-            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'deskripsi'); ?></th>
-                				<td>
-                					<?php echo $form->textArea($model,'deskripsi'); ?>
-                                                        <script>
-                                                                //CKEDITOR.config.width = 570;
-                                                                CKEDITOR.replace( 'Business_deskripsi' );
-                                                        </script>
-                				</td>	
-            				</tr>
-             				<tr>
-            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'franchise_menu'); ?></th>
-                				<td>
-                					<?php echo $form->textArea($model,'franchise_menu'); ?>
-                				</td>	
-            				</tr>
-             				<tr>
-            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'franchise_alasan_kerjasama'); ?></th>
-                				<td>
-                					<?php echo $form->textArea($model,'franchise_alasan_kerjasama'); ?>
-                				</td>	
-            				</tr>
-             				<tr>
-            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'franchise_persyaratan'); ?></th>
-                				<td>
-                					<?php echo $form->textArea($model,'franchise_persyaratan'); ?>
-                				</td>	
-            				</tr>
-             				<tr>
-            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'franchise_dukungan_franchisor'); ?></th>
-                				<td>
-                					<?php echo $form->textArea($model,'franchise_dukungan_franchisor'); ?>
-                				</td>	
-            				</tr>
-             				<tr>
-            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'image'); ?></th>
-                			<td>
-                                   <div id="example" class="k-content">
+							</div>
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<div class="span12">
+							<div class="span11">'
+								<?php echo Chtml::hiddenField('kota_temp', $model->id_kota) ?>
+								<label class="control-label"><?php echo $form->labelEx($model,'id_kota'); ?></label>
+								<div class="controls">
+									<?php echo $form->dropDownList($model,'id_kota',array(),array('prompt'=>'Pilih Kota')); ?>
+                                    <img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/spinner.gif" id="loading-animation-provinsi" style="display:none"/>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<div class="span12">
+							<div class="span11">
+								<label class="control-label"><?php echo $form->labelEx($model,'harga'); ?></label>
+								<div class="controls">
+									<?php echo $form->textField($model,'harga',array('onkeyup'=>'calcValueFranchise()')); ?>
+									<?php echo $form->checkBox($model,'tampilkanKontak',array('disabled'=>'disabled', 'class'=>'tampilkanKontak')) ?>
+									<?php echo $form->labelEx($model,'tampilkanKontak', array('style'=>'display:inline; margin-left:3px;')) ?>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="control-group">
+									<div class="span12">
+										<div class="span11">
+											<label class="control-label"><?php echo $form->labelEx($model,'deskripsi'); ?></label>
+											<div class="controls">
+												<?php echo $form->textArea($model,'deskripsi'); ?>
+                                                                                            <script>
+                                                                                                    //CKEDITOR.config.width = 570;
+                                                                                                    CKEDITOR.replace( 'Business_deskripsi' );
+                                                                                            </script>
+											</div>
+										</div>
+									</div>
+					</div>
+					<div class="control-group">
+						<div class="span12">
+							<div class="span11">
+								<label class="control-label"><?php echo $form->labelEx($model,'franchise_menu'); ?></label>
+								<div class="controls">
+									<?php echo $form->textArea($model,'franchise_menu'); ?>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<div class="span12">
+							<div class="span11">
+								<label class="control-label"><?php echo $form->labelEx($model,'franchise_alasan_kerjasama'); ?></label>
+								<div class="controls">
+									<?php echo $form->textArea($model,'franchise_alasan_kerjasama'); ?>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<div class="span12">
+							<div class="span11">
+								<label class="control-label"><?php echo $form->labelEx($model,'franchise_persyaratan'); ?></label>
+								<div class="controls">
+									<?php echo $form->textArea($model,'franchise_persyaratan'); ?>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<div class="span12">
+							<div class="span11">
+								<label class="control-label"><?php echo $form->labelEx($model,'franchise_dukungan_franchisor'); ?></label>
+								<div class="controls">
+									<?php echo $form->textArea($model,'franchise_dukungan_franchisor'); ?>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<div class="span12">
+							<div class="span11">
+								<label class="control-label"><?php echo $form->labelEx($model,'image'); ?></label>
+								<div class="controls">
+									<div id="example" class="k-content">
             <input type="file" name="files" id="upload" />
             <input type='hidden' value='0' id='image_incrementor' />
             <script id="fileTemplate" type="text/x-kendo-template">
@@ -208,7 +278,7 @@
                 <span class='k-progress'></span>
                 <div class='file-wrapper'>
                 <img id='#=files[0].name##=files[0].size#' src='<?php echo Yii::app()->request->baseUrl ?>/uploads/images/<?php echo $model->id_user ?>/#=files[0].name#' class='file-icon' onerror="this.src='<?php echo Yii::app()->request->baseUrl ?>/images/asset/spinner-large.gif'" />
-                    <h4 class='file-heading file-name-heading'>Name: #=name#</h4><br /><br/>
+                    <h4 class='file-heading file-name-heading'>Name: #=name#</h4><br/><br/>
                     <h4 class='file-heading file-size-heading'>Size: #=size# bytes</h4>
                     <button type='button' class='k-upload-action'></button>
                 </div>
@@ -220,10 +290,9 @@
                 $(document).ready(function () {
                     $("#upload").kendoUpload({
                         multiple: true,
-                        enabled:'<?php if($disabled == false) echo true; else echo false; ?>',
                         async: {
-                            saveUrl: '<?php echo Yii::app()->createUrl('//account/uploadImage') ?>',
-                            removeUrl: "<?php echo Yii::app()->createUrl('//account/removeUploadedImage') ?>",
+                            saveUrl: '<?php echo Yii::app()->createUrl('//jbAdmin/bisnisFranchise/uploadImage',array('id'=>$model->id_user)) ?>',
+                            removeUrl: "<?php echo Yii::app()->createUrl('//jbAdmin/bisnisFranchise/removeUploadedImage',array('id'=>$model->id_user)) ?>",
                             autoUpload: true
                         },
                         template: kendo.template($('#fileTemplate').html()),
@@ -294,7 +363,7 @@
                     if (e.operation == "upload") {
                     $.each(files, function(){
                         var id = this.name+this.size;
-                        var location = '<?php echo Yii::app()->request->baseUrl ?>/uploads/tmp/<?php echo Yii::app()->user->id ?>/'+this.name;
+                        var location = '<?php echo Yii::app()->request->baseUrl ?>/uploads/tmp/<?php echo $model->id_user ?>/'+this.name;
                         $("[id='"+id+"']").attr('src',location);
 //                        $('#'+id).append('<img src="'+location+'" />');
 //                        alert('#'+id);
@@ -309,18 +378,20 @@
                 }
                 
             </script>
+
+           
         </div>
-                			</td>	
-           		 		</tr>
-            			<tr>
-            				<td></td>
-                			<td>
-                			</td>
-            			</tr>
-            			<tr>
-            				<th class="Text-Align-Left">Dokumen</th>
-                			<td>
-<div id="example2" class="k-content">
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<div class="span12">
+							<div class="span11">
+								<label class="control-label">Dokumen</label>
+								<div class="controls">
+									<div id="example2" class="k-content">
             <input type="file" name="files" id="upload2" />
 
             <script id="fileTemplate2" type="text/x-kendo-template">
@@ -338,10 +409,9 @@
                 $(document).ready(function () {
                     $("#upload2").kendoUpload({
                          multiple: true,
-                         enabled:'<?php if($disabled == false) echo true; else echo false; ?>',
                         async: {
-                            saveUrl: '<?php echo Yii::app()->createUrl('//account/uploadDocument') ?>',
-                            removeUrl: "<?php echo Yii::app()->createUrl('//account/removeUploadedDocument') ?>",
+                            saveUrl: '<?php echo Yii::app()->createUrl('//jbAdmin/bisnisFranchise/uploadDocument',array('id'=>$model->id_user)) ?>',
+                            removeUrl: "<?php echo Yii::app()->createUrl('//jbAdmin/bisnisFranchise/removeUploadedDocument',array('id'=>$model->id_user)) ?>",
                             autoUpload: true
                         },
                         template: kendo.template($('#fileTemplate2').html()),
@@ -412,12 +482,13 @@
 
             
         </div>
-
-                                        </td>
-            			</tr>
-            			<tr>
-            				<th colspan="2">
-                			                			<?php echo CHtml::button('Batal', array('submit' => array("account/index/"), 'class'=>'btn Gradient-Style1')); ?>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="form-actions">
+<?php echo CHtml::button('Batal', array('submit' => array("account/index/"), 'class'=>'btn Gradient-Style1')); ?>
                 <?php //echo CHtml::button('Simpan Draft', array('submit' => array("account/create?stat=Draft"), 'class'=>'btn Gradient-Style1')); ?>
               
                 <?php  echo CHtml::ajaxSubmitButton('Simpan Draft',CHtml::normalizeUrl(array("account/update/$model->id")),
@@ -456,9 +527,11 @@
                            $("#AjaxLoader").show();
                       }'
                      ),array('class'=>'btn Gradient-Style1','disabled'=>$disabled)); ?>
-               				</th>
-            			</tr>
-        			</table>                        
+					</div>
+					
+				
+			</div>
+		</div>                       
                     </div>
                 </div>
             </div>

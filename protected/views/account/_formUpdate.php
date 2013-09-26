@@ -69,7 +69,7 @@
         ?>
 </span>
 <div class="row-fluid">
-        	<div class="span11">
+        	<div class="span12">
                 <div class="row-fluid">
                 	<div class="span12">
                             <?php echo $form->hiddenField($model,'id_user',array('value'=>Yii::app()->user->id)) ?>
@@ -78,7 +78,7 @@
 				<span class="icon">
 					<i class="icon-align-justify"></i>									
 				</span>
-				<h5>Update Bisnis / Franchise</h5>
+				<h5>Update Bisnis</h5>
 			</div>
 			<div class="widget-content nopadding">
 				

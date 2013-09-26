@@ -5,7 +5,7 @@
 
 <div class="row-fluid">
 	
-    <div class="span7" style="padding-left:35px;">
+    <div class="span9" style="padding-left:35px;">
     	<div><header style="font-size:30px; font-family:Calibri;">Update <?php echo $model->nama ?></header><br style="clear:both"/></div><div style="margin-top:-35px;"></div>
 		<div class="row-fluid Top-Margin3">
 			<div class="span12">

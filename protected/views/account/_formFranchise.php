@@ -17,31 +17,47 @@
                     'validateOnChange'=>true,
                     'validateOnType'=>false,
             ),
-            'htmlOptions' => array('enctype' => 'multipart/form-data'),
+            'htmlOptions' => array('enctype' => 'multipart/form-data','class'=>'form-horizontal'),
     )); ?>
  <p><?php echo $form->errorSummary($model); ?></p>
-<div class="row-fluid">
-        	<div class="span12">
+ <div class="row-fluid">
+        	<div class="span12 Top-Margin2">
                 <div class="row-fluid">
                 	<div class="span12">
                             <?php echo $form->hiddenField($model,'id_user',array('value'=>Yii::app()->user->id)) ?>
                             <?php echo $form->hiddenField($model,'kepemilikan',array('value'=>'0')) ?>
-                    	<table>
-                                        <tr>
-            					<th width="20%" class="Text-Align-Left"><?php echo $form->labelEx($model,'id_category'); ?></th>
-                				<td>
-                                                       <?php echo $form->radioButtonList($model,'id_category',$kategori,array('onchange'=>'changeCategory(1)', 'labelOptions'=>array('style'=>'display:inline'))) ?>
-                				</td>
-            				</tr>
-            				<tr>
-            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'id_industri'); ?></th>
-                				<td>
-                                                        <?php echo $form->dropDownList($model,'id_industri',CHtml::listData($industri,'id','industri'),array(
+                    	<div class="widget-box">
+			<div class="widget-title">
+				<span class="icon">
+					<i class="icon-align-justify"></i>									
+				</span>
+				<h5>Franchise</h5>
+			</div>
+			<div class="widget-content nopadding">
+				
+					<div class="control-group">
+						<div class="span12">
+							<div class="span11">
+								<label class="control-label"><?php echo $form->labelEx($model,'id_category'); ?></label>
+								<div class="controls">
+									<?php echo $form->radioButtonList($model,'id_category',$kategori,array('onchange'=>'changeCategory(1)', 'labelOptions'=>array('style'=>'display:inline'))) ?>
+								</div>
+							</div>
+						</div>						
+					</div>
+					
+					<div class="control-group">
+						<div class="span12">
+							<div class="span11">
+								<label class="control-label"><?php echo $form->labelEx($model,'id_industri'); ?></label>
+								<div class="controls">
+									 <?php echo $form->dropDownList($model,'id_industri',CHtml::listData($industri,'id','industri'),array(
                                                                                                 'prompt'=>'Pilih Industri',
                                                                                                 'ajax' => array(
                                                                                                     'type' => 'POST',
                                                                                                     'url' => Yii::app()->createUrl('//account/generatesubindustri'),
-                                                                                                    'update' => '#'.CHtml::activeId($model,'id_sub_industri'),'beforeSend' => "function( request )
+                                                                                                    'update' => '#'.CHtml::activeId($model,'id_sub_industri'),
+                                                                                            'beforeSend' => "function( request )
                                                                                                         {
                                                                                                          $('#loading-animation-industri').attr('style','display:visible; margin-top:-10px');
                                                                                                           // Set up any pre-sending stuff like initializing progress indicators
@@ -51,33 +67,51 @@
                                                                                                              $('#loading-animation-industri').attr('style','display:none');                                  
                                                                                                         }",
                                                                                             ))); ?>
-                                                        
-                				</td>	
-            				</tr>
-            				<tr>
-                                                 <?php echo Chtml::hiddenField('sub_industri_temp', $model->id_sub_industri) ?>
-            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'id_sub_industri'); ?></th>
-                				<td>
-                                                        <?php echo $form->dropDownList($model,'id_sub_industri',array(),array('prompt'=>'Pilih Sub Industri')); ?>
-                                                    <img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/spinner.gif" id="loading-animation-industri" style="display:none"/>
-                				</td>	
-            				</tr>
-            				<tr>
-            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'nama'); ?></th>
-                				<td>
-                					<?php echo $form->textField($model,'nama'); ?>
-                				</td>	
-            				</tr>
-             				<tr>
-            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'alamat'); ?></th>
-                				<td>
-                					<?php echo $form->textArea($model,'alamat'); ?>
-                				</td>	
-            				</tr>
-             				<tr>
-            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'id_provinsi'); ?></th>
-                				<td>
-                					<?php echo $form->dropDownList($model,'id_provinsi',CHtml::listData($provinsi,'id','provinsi'),array(
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<div class="span12">
+							<div class="span11">
+								<?php echo Chtml::hiddenField('sub_industri_temp', $model->id_sub_industri) ?>
+								<label class="control-label"><?php echo $form->labelEx($model,'id_sub_industri'); ?></label>
+								<div class="controls">
+									<?php echo $form->dropDownList($model,'id_sub_industri',array(),array('prompt'=>'Pilih Sub Industri')); ?>
+                                    <img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/spinner.gif" id="loading-animation-industri" style="display:none"/>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<div class="span12">
+							<div class="span11">
+								<label class="control-label"><?php echo $form->labelEx($model,'nama'); ?></label>
+								<div class="controls">
+									<?php echo $form->textField($model,'nama'); ?>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<div class="span12">
+							<div class="span11">
+								<label class="control-label"><?php echo $form->labelEx($model,'alamat'); ?></label>
+								<div class="controls">
+									<?php echo $form->textArea($model,'alamat'); ?>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<div class="span12">
+							<label class="control-label"><?php echo $form->labelEx($model,'id_provinsi'); ?></label>
+							<div class="controls">
+								<?php echo $form->dropDownList($model,'id_provinsi',CHtml::listData($provinsi,'id','provinsi'),array(
                                                             'prompt'=>'Pilih Provinsi',
                                                             'ajax' => array(
                                                                 'type' => 'POST',
@@ -93,61 +127,99 @@
                                                                          $('#loading-animation-provinsi').attr('style','display:none');                                  
                                                                     }",
                                                         ))); ?>
-                                                        
-                				</td>	
-            				</tr>
-                                        <tr>
-                                                <?php echo Chtml::hiddenField('kota_temp', $model->id_kota) ?>
-            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'id_kota'); ?></th>
-                				<td>
-                					<?php echo $form->dropDownList($model,'id_kota',array(),array('prompt'=>'Pilih Kota')); ?>
-                                                    <img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/spinner.gif" id="loading-animation-provinsi" style="display:none"/>
-                				</td>	
-            				</tr>
-             				<tr>
-            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'harga'); ?></th>
-                				<td>
-                					<?php echo $form->textField($model,'harga',array('onkeyup'=>'calcValueFranchise()')); ?> &nbsp; <?php echo $form->checkBox($model,'tampilkanKontak',array('disabled'=>'disabled', 'class'=>'tampilkanKontak')) ?><?php echo $form->labelEx($model,'tampilkanKontak', array('style'=>'display:inline; margin-left:3px;')) ?>
-                                                </td>	
-            				</tr>
-                                        <tr>
-            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'deskripsi'); ?></th>
-                				<td>
-                					<?php echo $form->textArea($model,'deskripsi'); ?>
-                                                        <script>
-                                                                //CKEDITOR.config.width = 570;
-                                                                CKEDITOR.replace( 'Business_deskripsi' );
-                                                        </script>
-                				</td>	
-            				</tr>
-             				<tr>
-            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'franchise_menu'); ?></th>
-                				<td>
-                					<?php echo $form->textArea($model,'franchise_menu'); ?>
-                				</td>	
-            				</tr>
-             				<tr>
-            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'franchise_alasan_kerjasama'); ?></th>
-                				<td>
-                					<?php echo $form->textArea($model,'franchise_alasan_kerjasama'); ?>
-                				</td>	
-            				</tr>
-             				<tr>
-            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'franchise_persyaratan'); ?></th>
-                				<td>
-                					<?php echo $form->textArea($model,'franchise_persyaratan'); ?>
-                				</td>	
-            				</tr>
-             				<tr>
-            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'franchise_dukungan_franchisor'); ?></th>
-                				<td>
-                					<?php echo $form->textArea($model,'franchise_dukungan_franchisor'); ?>
-                				</td>	
-            				</tr>
-             				<tr>
-            					<th class="Text-Align-Left"><?php echo $form->labelEx($model,'image'); ?></th>
-                			<td>
-                                                                       <div id="example" class="k-content">
+							</div>
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<div class="span12">
+							<div class="span11">'
+								<?php echo Chtml::hiddenField('kota_temp', $model->id_kota) ?>
+								<label class="control-label"><?php echo $form->labelEx($model,'id_kota'); ?></label>
+								<div class="controls">
+									<?php echo $form->dropDownList($model,'id_kota',array(),array('prompt'=>'Pilih Kota')); ?>
+                                    <img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/spinner.gif" id="loading-animation-provinsi" style="display:none"/>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<div class="span12">
+							<div class="span11">
+								<label class="control-label"><?php echo $form->labelEx($model,'harga'); ?></label>
+								<div class="controls">
+									<?php echo $form->textField($model,'harga',array('onkeyup'=>'calcValueFranchise()')); ?>
+									<?php echo $form->checkBox($model,'tampilkanKontak',array('disabled'=>'disabled', 'class'=>'tampilkanKontak')) ?>
+									<?php echo $form->labelEx($model,'tampilkanKontak', array('style'=>'display:inline; margin-left:3px;')) ?>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="control-group">
+									<div class="span12">
+										<div class="span11">
+											<label class="control-label"><?php echo $form->labelEx($model,'deskripsi'); ?></label>
+											<div class="controls">
+												<?php echo $form->textArea($model,'deskripsi'); ?>
+                                                                                            <script>
+                                                                                                    //CKEDITOR.config.width = 570;
+                                                                                                    CKEDITOR.replace( 'Business_deskripsi' );
+                                                                                            </script>
+											</div>
+										</div>
+									</div>
+					</div>
+					<div class="control-group">
+						<div class="span12">
+							<div class="span11">
+								<label class="control-label"><?php echo $form->labelEx($model,'franchise_menu'); ?></label>
+								<div class="controls">
+									<?php echo $form->textArea($model,'franchise_menu'); ?>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<div class="span12">
+							<div class="span11">
+								<label class="control-label"><?php echo $form->labelEx($model,'franchise_alasan_kerjasama'); ?></label>
+								<div class="controls">
+									<?php echo $form->textArea($model,'franchise_alasan_kerjasama'); ?>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<div class="span12">
+							<div class="span11">
+								<label class="control-label"><?php echo $form->labelEx($model,'franchise_persyaratan'); ?></label>
+								<div class="controls">
+									<?php echo $form->textArea($model,'franchise_persyaratan'); ?>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<div class="span12">
+							<div class="span11">
+								<label class="control-label"><?php echo $form->labelEx($model,'franchise_dukungan_franchisor'); ?></label>
+								<div class="controls">
+									<?php echo $form->textArea($model,'franchise_dukungan_franchisor'); ?>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="control-group">
+									<div class="span12">
+										<div class="span11">
+											<label class="control-label"><?php echo $form->labelEx($model,'image'); ?></label>
+											<div class="controls">
+													<div id="example" class="k-content">
             <input type="file" name="files" id="upload" />
             <input type='hidden' value='0' id='image_incrementor' />
             <script id="fileTemplate" type="text/x-kendo-template">
@@ -220,6 +292,7 @@
                                 totalFiles += selectedFiles;
                             }
                         }
+                        
 
                     
                 }
@@ -248,18 +321,18 @@
                 
             </script>
 
-                                   </div>
-                			</td>	
-           		 		</tr>
-            			<tr>
-            				<td></td>
-                			<td>
-                			</td>
-            			</tr>
-            			<tr>
-            				<th class="Text-Align-Left">Dokumen</th>
-                			<td>
-                                           <div id="example2" class="k-content">
+            
+        </div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="control-group">
+									<div class="span12">
+										<div class="span11">
+											<label class="control-label">Dokumen</label>
+											<div class="controls">
+												<div id="example2" class="k-content">
             <input type="file" name="files" id="upload2" />
 
             <script id="fileTemplate2" type="text/x-kendo-template">
@@ -317,7 +390,7 @@
                         var flagSize = 0;
                         var allowedExtension = [".jpg",".jpeg",".png",".gif",".bmp",".pdf",".zip",".rar",".doc",".docx",".xls",".xlsx",".txt",".ppt",".pptx"];
                         
-                         $.each(e.files, function(index, value) {
+                        $.each(e.files, function(index, value) {
                             if(value.size > 5242880)
                             {
                                 flagSize = 1;
@@ -344,12 +417,14 @@
                 }
             </script>
 
+            
         </div>
-                                        </td>
-            			</tr>
-            			<tr>
-            				<th colspan="2">
-                			<?php echo CHtml::button('Batal', array('submit' => array("account/index/"), 'class'=>'btn Gradient-Style1')); ?>
+											</div>
+										</div>
+									</div>
+								</div>
+					<div class="form-actions">
+  			<?php echo CHtml::button('Batal', array('submit' => array("account/index/"), 'class'=>'btn Gradient-Style1')); ?>
                 <?php //echo CHtml::button('Simpan Draft', array('submit' => array("account/create?stat=Draft"), 'class'=>'btn Gradient-Style1')); ?>
                 <?php echo CHtml::ajaxSubmitButton('Simpan Draft',CHtml::normalizeUrl(array('account/create','render'=>true)),
                  array(
@@ -387,13 +462,16 @@
                            $("#AjaxLoader").show();
                       }'
                      ),array('class'=>'btn Gradient-Style1')); ?>
-               				</th>
-            			</tr>
-        			</table>                        
+					</div>
+					
+				
+			</div>
+		</div>                       
                     </div>
                 </div>
             </div>
         </div>
+
 <?php $this->endWidget(); ?>
 <script>
     function preview(f,newtarget)
@@ -402,6 +480,7 @@
         document.getElementById('business-form').action= '<?php echo Yii::app()->createUrl('//account/preview') ?>' 
         f.submit();
         document.getElementById('business-form').target= '_self';
+        document.getElementById('business-form').action= '<?php echo Yii::app()->createUrl("//account/create") ?>'
     }
     
     function draft()

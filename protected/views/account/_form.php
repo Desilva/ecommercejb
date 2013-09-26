@@ -30,7 +30,7 @@
 								<span class="icon">
 									<i class="icon-align-justify"></i>									
 								</span>
-								<h5>Data Diri</h5>
+								<h5>Bisnis</h5>
 							</div>
 							<div class="widget-content nopadding">				
 								<div class="control-group">
@@ -571,6 +571,7 @@
         document.getElementById('business-form').action= '<?php echo Yii::app()->createUrl('//account/preview') ?>' 
         f.submit();
         document.getElementById('business-form').target= '_self';
+        document.getElementById('business-form').action= '<?php echo Yii::app()->createUrl("//account/create") ?>'
     }
     
     function draft()

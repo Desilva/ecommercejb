@@ -138,7 +138,7 @@ class RegistrasiController extends Controller
                 $mail->setFrom($mailSetting->alamat_email, $mailSetting->nama_email); //CHANGE TO SETTING EMAIL ADMIN ON DEPLOYMENT
                 $mail->setTo($model->email); //CHANGE TO APPROPRIATE EMAIL WHEN DEPLOYING
                 $mail->setSubject('Verifikasi Email JualanBisnis.com');
-                $mail->setBody("<p>Klik link dibawah ini untuk mem-verifikasikan email anda: </p><p>".Yii::app()->createAbsoluteUrl("//registrasi/verifikasi?kode=$model->kode_verifikasi&id=$model->id")."</p>");
+                $mail->setBody("<p>Terima kasih telah melakukan registrasi pada JualanBisnis.com </p><p>Harap melakukan verifikasi akun anda dengan melakukan <a href='".Yii::app()->createAbsoluteUrl("//registrasi/verifikasi?kode=$model->kode_verifikasi&id=$model->id")."' >Klik Disini </a> </p>");
                 if($mail->send())
                 {
 //                  Yii::app()->user->setFlash('email','Email Berhasil Dikirim');
@@ -236,7 +236,7 @@ class RegistrasiController extends Controller
         $mail->setFrom($mailSetting->alamat_email, $mailSetting->nama_email); //CHANGE TO SETTING EMAIL ADMIN ON DEPLOYMENT
         $mail->setTo($model->email); //CHANGE TO APPROPRIATE EMAIL WHEN DEPLOYING
         $mail->setSubject('Verifikasi Email JualanBisnis.com');
-        $mail->setBody("<p>Klik link dibawah ini untuk mem-verifikasikan email anda: </p><p>".Yii::app()->createAbsoluteUrl("//registrasi/verifikasi?kode=$model->kode_verifikasi&id=$model->id")."</p>");
+        $mail->setBody("<p>Terima kasih telah melakukan registrasi pada JualanBisnis.com </p><p>Harap melakukan verifikasi akun anda dengan melakukan <a href='".Yii::app()->createAbsoluteUrl("//registrasi/verifikasi?kode=$model->kode_verifikasi&id=$model->id")."' >Klik Disini </a> </p>");
         if($mail->send())
         {
             echo "success";

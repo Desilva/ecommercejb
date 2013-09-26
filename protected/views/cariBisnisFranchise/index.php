@@ -46,16 +46,17 @@
                      $this->clips['sidebar']
 				?>
 			</div>
-			<div class="span7" style="margin-left:10px;">
+			<div class="span8" style="margin-left:5px;">
 				<div class="row-fluid">
 					<div class="span12">
 						<table class="table">
 							<tr>
-								<th>Gambar</td>
-								<th>Deskripsi</td>
-								<th>Lokasi</td>
-								<th>Harga</td>
-								<th>Revenue</td>
+								<th>Gambar</th>
+								<th>Deskripsi</th>
+                                                                <th>Tanggal</th>
+								<th>Lokasi</th>
+								<th>Harga</th>
+								<th>Revenue</th>
 							</tr>
 							<?php 
 							$this->widget('zii.widgets.CListView', array(

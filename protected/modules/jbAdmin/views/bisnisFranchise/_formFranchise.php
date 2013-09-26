@@ -31,7 +31,7 @@
 				<span class="icon">
 					<i class="icon-align-justify"></i>									
 				</span>
-				<h5>Text inputs</h5>
+				<h5>Franchise</h5>
 			</div>
 			<div class="widget-content nopadding">
 				

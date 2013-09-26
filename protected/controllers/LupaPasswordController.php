@@ -48,6 +48,7 @@ class LupaPasswordController extends Controller
                 {
                     YiiBase::import('ext.YiiMailer.YiiMailer');
                     $user->password = md5($new_password);
+                    $user->password_repeat = $user->password;
                     $user->save();
                     //function to send email
                     $mail = new YiiMailer();

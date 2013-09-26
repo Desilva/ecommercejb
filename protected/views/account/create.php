@@ -24,7 +24,16 @@
 		</div>
 		<div class="span9">
 			<div>
-				<header style="font-size:30px; font-family:Calibri;">Tambah Bisnis</header><br style="clear:both"/></div>
+				<header style="font-size:30px; font-family:Calibri;">Tambah 
+                                    <?php if($model->idCategory->category == "Bisnis")
+					{
+						echo "Bisnis"; 
+					}
+					else if ($model->idCategory->category == "Franchise") 
+					{
+						echo "Franchise";
+					}
+                                    ?></header><br style="clear:both"/></div>
 				<div style="margin-top:-35px;"></div>
 				<?php
 					if($model->idCategory->category == "Bisnis")

@@ -709,7 +709,7 @@ class BisnisFranchiseController extends Controller
 	 */
 	public function actionIndex()
 	{
-		//            var_dump($_GET);
+		//           var_dump($_GET);
             $selectedSortValue = '1';
             if(isset($_GET['kategori']))
             {
@@ -731,6 +731,7 @@ class BisnisFranchiseController extends Controller
             $sortType = BusinessCategory::model()->findAll();
             //$sortType = BusinessCategory::model()->findAll();
             $business_model = new Business();
+            $business_model->status_rekomendasi = '';
             if(isset($_GET['Business']))
 			$business_model->attributes=$_GET['Business'];
            

@@ -173,42 +173,11 @@ class Business extends CActiveRecord
 
 		$criteria=new CDbCriteria;
                 $criteria->condition = "id_category=$id_kategori";
-		$criteria->compare('id',$this->id);
-		$criteria->compare('id_category',$this->id_category);
-		$criteria->compare('id_user',$this->id_user);
-		$criteria->compare('id_industri',$this->id_industri);
-		$criteria->compare('id_sub_industri',$this->id_sub_industri);
-		$criteria->compare('id_provinsi',$this->id_provinsi);
-		$criteria->compare('id_kota',$this->id_kota);
 		$criteria->compare('nama',$this->nama,true);
 		$criteria->compare('deskripsi',$this->deskripsi,true);
-		$criteria->compare('kepemilikan',$this->kepemilikan);
-		$criteria->compare('tahun_didirikan',$this->tahun_didirikan);
-		$criteria->compare('alamat',$this->alamat,true);
-		$criteria->compare('jumlah_karyawan',$this->jumlah_karyawan);
                 $criteria->compare('penjualan',$this->penjualan,true);
-		$criteria->compare('hpp',$this->hpp,true);
-		$criteria->compare('laba_bersih_tahun',$this->laba_bersih_tahun,true);
-		$criteria->compare('total_aset',$this->total_aset,true);
-		$criteria->compare('marjin_laba_bersih',$this->marjin_laba_bersih,true);
-		$criteria->compare('laba_bersih_aset',$this->laba_bersih_aset,true);
-		$criteria->compare('harga_penawaran_penjualan',$this->harga_penawaran_penjualan,true);
-		$criteria->compare('harga_penawaran_laba_bersih',$this->harga_penawaran_laba_bersih,true);
-		$criteria->compare('harga_penawaran_aset',$this->harga_penawaran_aset,true);
-		$criteria->compare('harga',$this->harga,true);
-		$criteria->compare('id_alasan_jual_bisnis',$this->id_alasan_jual_bisnis);
-		$criteria->compare('alasan_jual_bisnis_lainnya',$this->alasan_jual_bisnis_lainnya,true);
-		$criteria->compare('franchise_alasan_kerjasama',$this->franchise_alasan_kerjasama,true);
-		$criteria->compare('franchise_persyaratan',$this->franchise_persyaratan,true);
-		$criteria->compare('franchise_menu',$this->franchise_menu,true);
-		$criteria->compare('franchise_dukungan_franchisor',$this->franchise_dukungan_franchisor,true);
-		$criteria->compare('dokumen',$this->dokumen,true);
-		$criteria->compare('image',$this->image,true);
 		$criteria->compare('status_approval',$this->status_approval,true);
 		$criteria->compare('tanggal_approval',$this->tanggal_approval,true);
-		$criteria->compare('id_alasan_penolakan',$this->id_alasan_penolakan);
-		$criteria->compare('jumlah_click',$this->jumlah_click);
-		$criteria->compare('tampilkanKontak',$this->tampilkanKontak);
 		$criteria->compare('status_rekomendasi',$this->status_rekomendasi);
 
 		return new CActiveDataProvider($this, array(
