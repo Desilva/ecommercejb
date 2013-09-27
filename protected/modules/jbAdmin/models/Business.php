@@ -86,7 +86,8 @@ class Business extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('id_category, id_user, id_industri,  id_provinsi, id_kota, nama, kepemilikan, harga', 'required'),
-			array('id_category, id_user, id_industri, id_sub_industri, id_provinsi, id_kota, kepemilikan, tahun_didirikan, jumlah_karyawan, penjualan, hpp, laba_bersih_tahun, total_aset, marjin_laba_bersih, laba_bersih_aset, harga_penawaran_penjualan, harga_penawaran_laba_bersih, harga_penawaran_aset, harga, id_alasan_penolakan, jumlah_click, tampilkanKontak, status_rekomendasi', 'numerical', 'integerOnly'=>true),
+ 			array('id_category, id_user, id_industri, id_sub_industri, id_provinsi, id_kota, kepemilikan, tahun_didirikan, jumlah_karyawan, penjualan, hpp, laba_bersih_tahun, total_aset, harga, id_alasan_penolakan, jumlah_click, tampilkanKontak, status_rekomendasi', 'numerical', 'integerOnly'=>true),
+                        array('marjin_laba_bersih, laba_bersih_aset, harga_penawaran_penjualan, harga_penawaran_laba_bersih, harga_penawaran_aset','numerical'),
 //			array('nama, alamat, alasan_jual_bisnis, franchise_alasan_kerjasama, franchise_persyaratan, franchise_menu, franchise_dukungan_franchisor', 'length', 'max'=>500),
                         array('status_approval', 'length', 'max'=>50),
 			array('tanggal_approval,deskripsi,alamat,id_alasan_jual_bisnis, franchise_alasan_kerjasama, franchise_persyaratan, franchise_menu, franchise_dukungan_franchisor, dokumen, image, alasan_jual_bisnis_lainnya', 'safe'),
@@ -130,7 +131,7 @@ class Business extends CActiveRecord
 			'id_sub_industri' => 'Sub Industri',
 			'id_provinsi' => 'Provinsi',
 			'id_kota' => 'Kota',
-			'nama' => 'Nama Bisnis',
+			'nama' => 'Nama Bisnis/Franchise',
 			'deskripsi' => 'Deskripsi',
 			'kepemilikan' => 'Kepemilikan',
 			'tahun_didirikan' => 'Tahun Didirikan',

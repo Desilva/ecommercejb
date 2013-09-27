@@ -133,7 +133,7 @@
 					
 					<div class="control-group">
 						<div class="span12">
-							<div class="span11">'
+							<div class="span11">
 								<?php echo Chtml::hiddenField('kota_temp', $model->id_kota) ?>
 								<label class="control-label"><?php echo $form->labelEx($model,'id_kota'); ?></label>
 								<div class="controls">

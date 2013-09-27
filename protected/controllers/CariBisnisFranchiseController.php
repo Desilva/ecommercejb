@@ -102,7 +102,7 @@ class CariBisnisFranchiseController extends Controller
                 'criteria'=>$criteria,
                 'sort'=>array(
                         'defaultOrder'=>
-                        array('tanggal_approval'=>CSort::SORT_DESC)),
+                        array('tanggal_approval'=>CSort::SORT_DESC,'id'=>CSort::SORT_DESC)),
                 'pagination'=>array(
                     'pageSize'=>10,
                 ),

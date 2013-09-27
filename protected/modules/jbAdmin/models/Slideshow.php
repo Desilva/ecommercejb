@@ -13,6 +13,7 @@
 class Slideshow extends CActiveRecord
 {
     public $image_validator;
+    public $url_custom_link;
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @return Slideshow the static model class

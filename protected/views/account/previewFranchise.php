@@ -175,7 +175,10 @@
 									</tr>
 									<tr>
 										<td>Harga</td>
-										<td>Rp.<?php echo number_format($model->harga) ?></td>
+										<td>Rp.<?php
+                                                                                        if($model->harga != '' && is_numeric($model->harga))
+                                                                                        echo number_format($model->harga) 
+                                                                                ?></td>
 									</tr>
 									<tr>
 										<td>Alasan Franchise Mau Bekerjasama</td>

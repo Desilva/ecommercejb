@@ -46,7 +46,7 @@ a.delete img{
 						<span class="icon">
 							<i class="icon-th"></i>
 						</span>
-						<h5>Static table</h5>
+						<h5>Bisnis/Franchise</h5>
 					</div>
 					<div class="widget-content nopadding">
 								   <?php

@@ -150,7 +150,7 @@
                     //penawaran/penjualan
                     if(isNumber(penjualan))
                     {
-                        var result = parseFloat(parseFloat(input_harga)/parseFloat(penjualan)).toFixed(0);
+                        var result = parseFloat(parseFloat(input_harga)/parseFloat(penjualan)).toFixed(2);
                         $('#Business_harga_penawaran_penjualan').attr('value',result);
                     }
                     else
@@ -161,7 +161,7 @@
                     //penawaran/lababersih
                     if(isNumber(labaBersih))
                     {
-                        var result = parseFloat(parseFloat(input_harga)/parseFloat(labaBersih)).toFixed(0);
+                        var result = parseFloat(parseFloat(input_harga)/parseFloat(labaBersih)).toFixed(2);
                         $('#Business_harga_penawaran_laba_bersih').attr('value',result);
                     }
                     else
@@ -172,13 +172,36 @@
                     //penawaran/aset
                     if(isNumber(aset))
                     {
-                        var result = parseFloat(parseFloat(input_harga)/parseFloat(aset)).toFixed(0);
+                        var result = parseFloat(parseFloat(input_harga)/parseFloat(aset)).toFixed(2);
                         $('#Business_harga_penawaran_aset').attr('value',result);
                     }
                     else
                     {
                          $('#Business_harga_penawaran_aset').removeAttr('value');
                     }
+                    
+                    //calculate marjin laba bersih=> labaBersih/penjualan
+                    if(isNumber(labaBersih) && isNumber(penjualan))
+                    {
+                        var result = parseFloat(parseFloat(labaBersih)/parseFloat(penjualan)).toFixed(2);
+                        $('#Business_marjin_laba_bersih').attr('value',result);
+                    }
+                    else
+                    {
+                        $('#Business_marjin_laba_bersih').removeAttr('value');
+                    }
+
+                     //calculate marjin laba bersih/aset=> labaBersih/aset
+                    if(isNumber(labaBersih) && isNumber(aset))
+                    {
+                        var result = parseFloat(parseFloat(labaBersih)/parseFloat(aset)).toFixed(2);
+                        $('#Business_laba_bersih_aset').attr('value',result);
+                    }
+                    else
+                    {
+                        $('#Business_laba_bersih_aset').removeAttr('value');
+                    }
+
 
         }
         else
@@ -191,27 +214,7 @@
         
         
         
-        //calculate marjin laba bersih=> labaBersih/penjualan
-        if(isNumber(labaBersih) && isNumber(penjualan))
-        {
-            var result = parseFloat(parseFloat(labaBersih)/parseFloat(penjualan)).toFixed(0);
-            $('#Business_marjin_laba_bersih').attr('value',result);
-        }
-        else
-        {
-            $('#Business_marjin_laba_bersih').removeAttr('value');
-        }
-        
-         //calculate marjin laba bersih/aset=> labaBersih/aset
-        if(isNumber(labaBersih) && isNumber(aset))
-        {
-            var result = parseFloat(parseFloat(labaBersih)/parseFloat(aset)).toFixed(0);
-            $('#Business_laba_bersih_aset').attr('value',result);
-        }
-        else
-        {
-            $('#Business_laba_bersih_aset').removeAttr('value');
-        }
+       
         
     }
     

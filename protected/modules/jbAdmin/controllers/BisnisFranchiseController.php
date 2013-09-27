@@ -362,7 +362,7 @@ class BisnisFranchiseController extends Controller
                     $model->status_approval = $status_approval;
                     if($status_approval == "Diterima")
                     {
-                        $model->tanggal_approval = date('Y-m-d');
+                        $model->tanggal_approval = date('Y-m-d H:i:s');
                     }
                    
                     $model->tampilkanKontak = $_POST['Business']['tampilkanKontak'];
@@ -543,6 +543,11 @@ class BisnisFranchiseController extends Controller
                             
 //                            var_dump($criteria_rangeharga);
                             $id_rangeharga = RangePrice::model()->findBySql("select id from m_range_price where ($model->harga) between harga_min and harga_max");
+                            if($id_rangeharga == null)
+                            {
+                                //jika harga lebih dari 1 M maka akan null sehingga perlu pakai cara yang dibawah ini
+                                $id_rangeharga = RangePrice::model()->findByAttributes(array('harga_min'=>1000000001));
+                            }
                             $usersToSend = User::model()->findAllByAttributes(array("id_buyer_category"=>$model->id_industri,"id_buyer_location"=>$model->id_provinsi,"id_buyer_price"=>$id_rangeharga->id));
                             $emailRecipients = array();
                             foreach($usersToSend as $recipient)

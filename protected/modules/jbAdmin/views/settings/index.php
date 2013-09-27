@@ -20,7 +20,7 @@
 				<span class="icon">
 					<i class="icon-align-justify"></i>									
 				</span>
-				<h5>Halaman Home</h5>
+				<h5>Settings</h5>
 			</div>
 			<div class="widget-content nopadding">
 				
@@ -28,6 +28,23 @@
 						<div class="span12">
 							<div class="span12">
 								<div class="tabbable">
+                                                                    <script>
+                                                                        //set saved valued
+                                                                        $(document).ready(function(){
+                                                                            for (var i=1;i<=5;i++)
+                                                                            {
+                                                                                var value = document.getElementById('Slideshow_'+ i +'_url_link').value;
+                                                                                if(value == 'custom')
+                                                                                {
+                                                                                    $('#Slideshow_'+ i +'_url_custom_link').removeAttr('disabled');
+                                                                                }
+                                                                                else
+                                                                                {
+                                                                                    $('#Slideshow_'+ i +'_url_custom_link').val("");
+                                                                                }
+                                                                            }
+                                                                        });
+                                                                        </script>
                                      <?php 
                                             for($i=1; $i<=5; $i++)
                                             {
@@ -75,8 +92,24 @@
 														<div class='span11'>
 															<label class='control-label'>".$form->labelEx(${'slideshow'.$i},'url_link')."</label>
 															<div class='controls'>
-																".$form->dropDownList(${'slideshow'.$i},"[$i]url_link",$url_link_list)."
+																".$form->dropDownList(${'slideshow'.$i},"[$i]url_link",$url_link_list,array('onchange' => "url_custom$i()"))."
+                                                                                                                                ".$form->textField(${'slideshow'.$i},"[$i]url_custom_link",array('disabled'=>'disabled'))."
 															</div>
+                                                                                                                        <script>
+                                                                                                                            function url_custom".$i."()
+                                                                                                                            {
+                                                                                                                                var value = document.getElementById('Slideshow_".$i."_url_link').value;
+                                                                                                                                if(value == 'custom')
+                                                                                                                                {
+                                                                                                                                    $('#Slideshow_".$i."_url_custom_link').removeAttr('disabled');
+                                                                                                                                }
+                                                                                                                                else
+                                                                                                                                {
+                                                                                                                                    $('#Slideshow_".$i."_url_custom_link').attr('disabled','disabled');
+                                                                                                                                }
+
+                                                                                                                            }
+                                                                                                                        </script>
 														</div>
 													</div>	
 												</div>
