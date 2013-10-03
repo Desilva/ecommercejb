@@ -172,7 +172,11 @@
 										<div class="span11">
 											<label class="control-label"><?php echo $form->labelEx($model,'harga'); ?></label>
 											<div class="controls">
-												<?php echo $form->textField($model,'harga',array('onkeyup'=>'calcValue()')); ?> &nbsp; <?php echo $form->checkBox($model,'tampilkanKontak',array('disabled'=>'disabled', 'class'=>'tampilkanKontak')) ?><?php echo $form->labelEx($model,'tampilkanKontak', array('style'=>'display:inline; margin-left:3px;')) ?>
+                                                                                            
+                                                                                                <?php  echo $form->hiddenField($model,'harga'); ?>
+												<?php  echo Chtml::textField('harga_field','',array('onkeyup'=>'valueCalcWrapper("harga_field","Business_harga")')); ?> &nbsp; 
+                                                                                                <?php  echo $form->checkBox($model,'tampilkanKontak',array('disabled'=>'disabled', 'class'=>'tampilkanKontak')) ?>
+                                                                                                <?php  echo $form->labelEx($model,'tampilkanKontak', array('style'=>'display:inline; margin-left:3px;')) ?>
 											</div>
 										</div>
 									</div>
@@ -182,7 +186,8 @@
 										<div class="span11">
 											<label class="control-label"><?php echo $form->labelEx($model,'penjualan'); ?></label>
 											<div class="controls">
-												<?php echo $form->textField($model,'penjualan',array('onkeyup'=>'calcValue()')); ?>
+												<?php echo $form->hiddenField($model,'penjualan'); ?>
+                                                                                                <?php echo Chtml::textField('penjualan_field','',array('onkeyup'=>'valueCalcWrapper("penjualan_field","Business_penjualan")')); ?>
 											</div>
 										</div>	
 									</div>
@@ -192,7 +197,8 @@
 										<div class="span11">
 											<label class="control-label"><?php echo $form->labelEx($model,'hpp'); ?></label>
 											<div class="controls">
-												<?php echo $form->textField($model,'hpp'); ?>
+												<?php echo $form->hiddenField($model,'hpp'); ?>
+                                                                                                <?php echo Chtml::textField('hpp_field','',array('onkeyup'=>'valueCalcWrapper("hpp_field","Business_hpp")')); ?>
 											</div>
 										</div>
 									</div>
@@ -202,7 +208,8 @@
 										<div class="span11">
 											<label class="control-label"><?php echo $form->labelEx($model,'laba_bersih_tahun'); ?></label>
 											<div class="controls">
-												<?php echo $form->textField($model,'laba_bersih_tahun',array('onkeyup'=>'calcValue()')); ?>
+												<?php echo $form->hiddenField($model,'laba_bersih_tahun'); ?>
+                                                                                                <?php echo Chtml::textField('laba_bersih_tahun_field','',array('onkeyup'=>'valueCalcWrapper("laba_bersih_tahun_field","Business_laba_bersih_tahun")')); ?>
 											</div>
 										</div>
 									</div>
@@ -212,7 +219,8 @@
 										<div class="span11">
 											<label class="control-label"><?php echo $form->labelEx($model,'total_aset'); ?></label>
 											<div class="controls">
-												<?php echo $form->textField($model,'total_aset',array('onkeyup'=>'calcValue()')); ?>
+												<?php echo $form->hiddenField($model,'total_aset'); ?>
+                                                                                                <?php echo Chtml::textField('total_aset_field','',array('onkeyup'=>'valueCalcWrapper("total_aset_field","Business_total_aset")')); ?>
 											</div>
 										</div>
 									</div>

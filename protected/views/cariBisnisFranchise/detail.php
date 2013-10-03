@@ -1,3 +1,19 @@
+<style>
+#lightboxContent{
+    float:right;
+    background-color: white;
+    color:black;
+    padding-right: 3px;
+    box-shadow:0 0 25px #111;
+    -webkit-box-shadow:0 0 25px #111;
+    -moz-box-shadow:0 0 25px #111;
+    display:none;
+    margin-top:5px;
+    border-radius: 3px;
+}
+
+</style>
+
 <div id="fb-root"></div>
 <script>
 	  window.fbAsyncInit = function() {
@@ -31,16 +47,17 @@ if($message_kontak != ''){
 <div class="row-fluid">
 	<div class="span11">
 		<div class="row-fluid">
-			<div class="span12">
+			<div class="span12" >
 				<div class="row-fluid">
-					<div class="span6">
+					<div class="span6" >
 						<h4><?php echo $model->nama ?></h4>
 					</div>
-					<div class="span6 Text-Align-Right Top-Margin3" style="float:right;">
-						<div class="span10">
+					<div class="span6 Text-Align-Right Top-Margin3"  style="float:right; ">
+						<div class="span10" >
                                                     
 							Bagikan 
-							<img class="imageShareArtikel" style="cursor:pointer" src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/facebookIcon.png" height="30" width="30" id="fb-share" />
+<!--							<img class="imageShareArtikel" style="cursor:pointer" src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/facebookIcon.png" height="30" width="30" id="fb-share" />-->
+                                                        <img class="imageShareArtikel lightbox_trigger" style="cursor:pointer" src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/facebookIcon.png" height="30" width="30" id="fb-share" />
 							<a href="https://twitter.com/share?url=<?php echo Yii::app()->createAbsoluteUrl("//cariBisnisFranchise/detail/$model->id") ?>&text=JualanBisnis.com:" target="_blank"><img class="imageShareArtikel" src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/twitterIcon.png" height="30" width="30" /></a>
 							<a href="http://www.linkedin.com/shareArticle?mini=true&url=<?php echo urlencode(Yii::app()->createAbsoluteUrl("//cariBisnisFranchise/detail/$model->id")) ?>&title=<?php echo urlencode($model->nama) ?>&summary=<?php echo urlencode(substr(strip_tags(html_entity_decode($model->deskripsi)),0,250)."...") ?>&source=<?php echo urlencode(Yii::app()->name) ?>" target="_blank"><img class="imageShareArtikel" src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/inIcon.png" height="30" width="30" /></a> 
 						</div>
@@ -93,8 +110,13 @@ if($message_kontak != ''){
                                                         </form>
 						</div>
 					</div>
+                                    
 				</div>
-				<hr/>
+                            <div id='lightboxContent' >
+                                        
+                                    </div>
+                            
+				<hr style='clear:both'/>
 			</div>
 		</div>
 		<div class="row-fluid">
@@ -475,26 +497,36 @@ if($message_kontak != ''){
 </div>
 
 <?php 
-    if(count($image_for_social_share)==1)
-    {
-        $fb_image = $image_for_social_share[0];
-    }
-    else
-    {
-        $random_image = rand(0,count($image_for_social_share)-1);
-        $fb_image =$image_for_social_share[$random_image]; 
-    }
+//    if(count($image_for_social_share)==1)
+//    {
+//        $fb_image = $image_for_social_share[0];
+//    }
+//    else
+//    {
+//        $random_image = rand(0,count($image_for_social_share)-1);
+//        $fb_image =$image_for_social_share[$random_image]; 
+//    }
 ?>
+
 <script type="text/javascript">
-	$(document).ready(function(){
-	$('#fb-share').click(function(e){
-	e.preventDefault();
-	FB.ui(
+//	$(document).ready(function(){
+//	$('#fb-share').click(function(e){
+//	e.preventDefault();
+//	
+//	});
+//	});
+</script>
+
+<script>
+    
+    function fb_social_share(imagelink)
+    {
+        FB.ui(
 	{
 	method: 'feed',
 	name: '<?php echo $model->nama ?>',
 	link: '<?php echo Yii::app()->createAbsoluteUrl("//cariBisnisFranchise/detail/$model->id") ?>',
-	picture: '<?php echo $fb_image ?>',
+	picture: imagelink,
 	caption: 'JualanBisnis.com',
 	description: '<?php 
                             if($model->deskripsi != '')
@@ -509,6 +541,47 @@ if($message_kontak != ''){
                       ?>',
 	message: ''
 	});
-	});
-	});
+    }
+    
+jQuery(document).ready(function($) {
+    $('.lightbox_trigger').click(function(e) {
+        e.preventDefault();
+        var clicks = $(this).data('clicks');
+        if (clicks) 
+        {
+             $('#lightbox').slideUp();   
+        } 
+        else 
+        {
+            var image_list = '';
+                <?php foreach($image_for_social_share as $img_source)
+                {?>
+                        image_list += '<img onclick=fb_social_share("<?php echo $img_source ?>")  src="<?php echo $img_source ?>" style="width:70px; height:70px; margin-left:5px; margin-bottom: 5px; cursor:pointer" />';  
+                <?php } ?>
+
+                if ($('#lightbox').length > 0) { // #lightbox exists
+                    //place href as img src value
+                    $('#contentLightbox').html(image_list);
+                    //show lightbox window - you could use .show('fast') for a transition
+                    $('#lightbox').slideDown();
+                }
+                else { //#lightbox does not exist - create and insert (runs 1st time only)
+                    //create HTML markup for lightbox window
+                    var lightbox =
+                    '<div id="lightbox">' +
+                        '<p align="center">Pilih Gambar Untuk Thumbnail Facebook</p>' +
+                        '<div id="contentLightbox">' + //insert clicked link's href into img src
+                            image_list +
+                        '</div>' +
+                    '</div>';
+                    //insert lightbox HTML into page
+                    $('#lightboxContent').append(lightbox).slideDown();
+                }
+           
+        }
+        $(this).data("clicks", !clicks);
+
+        
+    });
+});
 </script>

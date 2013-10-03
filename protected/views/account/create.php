@@ -3,6 +3,7 @@
 <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl ?>/js/kendo.default.min.css" />
 <script src="<?php echo Yii::app()->request->baseUrl ?>/js/kendo.web.min.js"></script>
 <script src="<?php echo Yii::app()->baseUrl.'/ckeditor/ckeditor.js'; ?>"></script>
+<script src="<?php  echo Yii::app()->baseUrl.'/js/autoNumeric.js'; ?>"></script>
 
 <div class="row-fluid">
 	<div class="span11">
@@ -56,7 +57,39 @@
 
 
 <script>
+    
+    function valueCalcWrapper(id,target)
+    {
+        setValue(id,target);
+        calcValue();
+    }
+    
+    function valueCalcWrapperFranchise(id,target)
+    {
+        setValue(id,target);
+        calcValueFranchise();
+    }
+    
+    
+    function setValue(id,target)
+    {
+        var valueToApply = $('#'+id).autoNumeric('get');;
+//        console.log(valueToApply);
+//        var filteredValue = valueToApply.replace('.','');
+        $('#'+target).val(valueToApply);
+        
+    }
+    
     $(document).ready(function(){
+        
+        
+        //init autonumberic
+        $('#harga_field').autoNumeric({aSep:',', aDec:'.', aPad:false ,vMax: 9223372036854775807});
+        $('#penjualan_field').autoNumeric({aSep:',', aDec:'.', aPad:false ,vMax: 9223372036854775807});
+        $('#hpp_field').autoNumeric({aSep:',', aDec:'.', aPad:false ,vMax: 9223372036854775807});
+        $('#laba_bersih_tahun_field').autoNumeric({aSep:',', aDec:'.', aPad:false ,vMax: 9223372036854775807});
+        $('#total_aset_field').autoNumeric({aSep:',', aDec:'.', aPad:false ,vMax: 9223372036854775807});
+        
         if($('.alasanJualCheckBox').is(':checked'))
         {
               $('.alasanJualDropDown').attr('disabled','disabled');
@@ -115,6 +148,9 @@
     
     
     );
+    
+
+    
     function isNumber(n) {
         if(n.indexOf('.') != -1)
         {
@@ -192,7 +228,7 @@
                     //calculate marjin laba bersih=> labaBersih/penjualan
                     if(isNumber(labaBersih) && isNumber(penjualan))
                     {
-                        var result = parseFloat(parseFloat(labaBersih)/parseFloat(penjualan)).toFixed(2);
+                        var result = parseFloat((parseFloat(labaBersih)/parseFloat(penjualan)) * 100).toFixed(2);
                         $('#Business_marjin_laba_bersih').attr('value',result);
                     }
                     else
@@ -203,7 +239,7 @@
                      //calculate marjin laba bersih/aset=> labaBersih/aset
                     if(isNumber(labaBersih) && isNumber(aset))
                     {
-                        var result = parseFloat(parseFloat(labaBersih)/parseFloat(aset)).toFixed(2);
+                        var result = parseFloat((parseFloat(labaBersih)/parseFloat(aset)) * 100).toFixed(2);
                         $('#Business_laba_bersih_aset').attr('value',result);
                     }
                     else
@@ -226,6 +262,8 @@
         
         
     }
+    
+
     
     function calcValueFranchise()
     {

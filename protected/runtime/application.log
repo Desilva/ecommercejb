@@ -5250,3 +5250,139 @@ Stack trace:
 REQUEST_URI=/ecommerceJB/index.php/uploads/images/5/3.jpg
 HTTP_REFERER=http://localhost/ecommerceJB/index.php/home
 ---
+2013/10/02 14:39:15 [error] [exception.CException] exception 'CException' with message 'Properti "Business.aluguel" tidak didefinisikan.' in C:\xampp\htdocs\ecommercejb\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\db\ar\CActiveRecord.php(143): CComponent->__get('aluguel')
+#1 C:\xampp\htdocs\ecommercejb\framework\web\helpers\CHtml.php(2255): CActiveRecord->__get('aluguel')
+#2 C:\xampp\htdocs\ecommercejb\framework\web\helpers\CHtml.php(1980): CHtml::resolveValue(Object(Business), 'aluguel')
+#3 C:\xampp\htdocs\ecommercejb\framework\web\helpers\CHtml.php(1257): CHtml::activeInputField('text', Object(Business), 'aluguel', Array)
+#4 C:\xampp\htdocs\ecommercejb\framework\web\widgets\CMaskedTextField.php(72): CHtml::activeTextField(Object(Business), 'aluguel', Array)
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(173): CMaskedTextField->run()
+#6 C:\xampp\htdocs\ecommercejb\protected\views\account\_form.php(184): CBaseController->widget('CMaskedTextFiel...', Array)
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#9 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#10 C:\xampp\htdocs\ecommercejb\protected\views\account\create.php(41): CController->renderPartial('_form', Array)
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#12 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#13 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#14 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#15 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(679): CController->render('create', Array)
+#16 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): AccountController->actionCreate()
+#17 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#18 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#20 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#24 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('create')
+#26 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('account/create')
+#27 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#28 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#29 {main}
+REQUEST_URI=/ecommerceJB/index.php/account/create
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/account/index
+---
+2013/10/02 14:41:06 [error] [exception.CException] exception 'CException' with message 'Properti CMaskedTextField.mask tidak boleh kosong.' in C:\xampp\htdocs\ecommercejb\framework\web\widgets\CMaskedTextField.php:59
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(173): CMaskedTextField->run()
+#1 C:\xampp\htdocs\ecommercejb\protected\views\account\_form.php(184): CBaseController->widget('CMaskedTextFiel...', Array)
+#2 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\ecommercejb\protected\views\account\create.php(41): CController->renderPartial('_form', Array)
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#9 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#10 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(679): CController->render('create', Array)
+#11 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): AccountController->actionCreate()
+#12 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#19 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('create')
+#21 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('account/create')
+#22 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#23 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/ecommerceJB/index.php/account/create
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/account/index
+---
+2013/10/02 09:00:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Tidak bisa mengurai request "uploads/images/5/2.jpg"' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/uploads/images/5/2.jpg
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/home
+---
+2013/10/02 09:00:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Tidak bisa mengurai request "uploads/images/5/3.jpg"' in C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/images/...')
+#1 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ecommerceJB/index.php/uploads/images/5/3.jpg
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/home
+---
+2013/10/02 15:14:11 [warning] [application] Gagal mengeset atribut unsafe "alasan_jual_lainnya_check" dari kelas "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (415)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/10/02 17:29:42 [warning] [application] Gagal mengeset atribut unsafe "alasan_jual_lainnya_check" dari kelas "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (478)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/10/02 17:29:44 [warning] [application] Gagal mengeset atribut unsafe "alasan_jual_lainnya_check" dari kelas "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (507)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/10/02 17:32:13 [warning] [application] Gagal mengeset atribut unsafe "alasan_jual_lainnya_check" dari kelas "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (710)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/10/02 17:32:14 [warning] [application] Gagal mengeset atribut unsafe "alasan_jual_lainnya_check" dari kelas "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (762)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/10/03 14:44:10 [warning] [application] Gagal mengeset atribut unsafe "alasan_jual_lainnya_check" dari kelas "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (478)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/10/03 14:44:12 [warning] [application] Gagal mengeset atribut unsafe "alasan_jual_lainnya_check" dari kelas "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (507)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/10/03 09:54:00 [error] [php] Undefined index: id (C:\xampp\htdocs\ecommercejb\protected\controllers\CariBisnisFranchiseController.php:265)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CariBisnisFranchiseController->runAction()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CariBisnisFranchiseController->filterAccessControl()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CariBisnisFranchiseController->runActionWithFilters()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CariBisnisFranchiseController->run()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/cariBisnisFranchise/detail/overlay.png
+in C:\xampp\htdocs\ecommercejb\protected\controllers\CariBisnisFranchiseController.php (265)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/10/03 09:54:57 [error] [php] Undefined index: id (C:\xampp\htdocs\ecommercejb\protected\controllers\CariBisnisFranchiseController.php:265)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CariBisnisFranchiseController->runAction()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CariBisnisFranchiseController->filterAccessControl()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CariBisnisFranchiseController->runActionWithFilters()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CariBisnisFranchiseController->run()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/cariBisnisFranchise/detail/overlay.png
+in C:\xampp\htdocs\ecommercejb\protected\controllers\CariBisnisFranchiseController.php (265)
+in C:\xampp\htdocs\ecommercejb\index.php (13)

@@ -63,7 +63,7 @@ class ArticleController extends Controller
         $article = new CActiveDataProvider('Article', array(
                 'criteria' => $criteria,
                 'sort' => array(
-                    'defaultOrder' => 'post_date DESC'),
+                    'defaultOrder' => array('post_date'=>CSort::SORT_DESC)),
                 'pagination' => array(
                     'pageSize' => 10,
                 ),
