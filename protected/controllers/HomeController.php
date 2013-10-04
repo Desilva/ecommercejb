@@ -162,5 +162,15 @@ class HomeController extends Controller
         }
         return $random;
     }
+    
+    public function actionSitemap()
+    {
+        $this->render('sitemap');
+    }
+        
+    public function actionDisclaimer()
+    {
+        $this->render('disclaimer');
+    }
 
 }

@@ -133,6 +133,11 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
 <script src="<?php echo Yii::app()->request->baseUrl ?>/library/bxslider4/jquery.bxslider.min.js"></script>
 <!-- bxSlider CSS file -->
 <link href="<?php echo Yii::app()->request->baseUrl ?>/library/bxslider4/jquery.bxslider.css" rel="stylesheet" />
+<style>
+    .greyedOut{
+        color:black;
+    }
+</style>
 <script>
     var baseUrl = '<?php echo Yii::app()->request->baseUrl ?>';
         jQuery(document).ready(function($) {
@@ -143,8 +148,7 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
 				responsive    : true,
 				randomstart   : true,
 			});	
-//			changeImageTerbaru();
-//			changeImageTerbaru_2();
+
     var imageSliderBusiness = $('#bxsliderBusiness').bxSlider({
         minSlides: 4,
         maxSlides: 5,
@@ -258,7 +262,11 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
         function changeToBusinessTerbaru(){
             var imageList = '<?php echo $contentBusinessTerbaru ?>';
             $('#bxsliderBusiness').empty();
-            $('#bxsliderBusiness').append(imageList);                                                        
+            $('#bxsliderBusiness').append(imageList);
+            $('#tab_business_rekomendasi').removeClass();
+            $('#tab_business_terbaru').removeClass();
+            $('#tab_business_rekomendasi').addClass('span5 Gradient-Style4 Border-Radius-Style1 greyedOut');
+            $('#tab_business_terbaru').addClass('span5 Gradient-Style1 Border-Radius-Style1 ');
                                                                     
         }
         
@@ -266,13 +274,21 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
                 var imageList = '<?php echo $contentBusinessRekomendasi ?>';
 		$('#bxsliderBusiness').empty();
                 $('#bxsliderBusiness').append(imageList);
+                $('#tab_business_rekomendasi').removeClass();
+                $('#tab_business_terbaru').removeClass();
+                $('#tab_business_rekomendasi').addClass('span5 Gradient-Style1 Border-Radius-Style1');
+                $('#tab_business_terbaru').addClass('span5 Gradient-Style4 Border-Radius-Style1 greyedOut');
 		
 	}
         
         function changeToFranchiseTerbaru(){
             var imageList = '<?php echo $contentFranchiseTerbaru ?>';
             $('#bxsliderFranchise').empty();
-            $('#bxsliderFranchise').append(imageList);                                                        
+            $('#bxsliderFranchise').append(imageList);
+            $('#tab_franchise_rekomendasi').removeClass();
+            $('#tab_franchise_terbaru').removeClass();
+            $('#tab_franchise_rekomendasi').addClass('span5 Gradient-Style4 Border-Radius-Style1 greyedOut');
+            $('#tab_franchise_terbaru').addClass('span5 Gradient-Style1 Border-Radius-Style1 ');
                                                                     
         }
         
@@ -280,6 +296,10 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
                 var imageList = '<?php echo $contentFranchiseRekomendasi ?>';
 		$('#bxsliderFranchise').empty();
                 $('#bxsliderFranchise').append(imageList);
+                $('#tab_franchise_rekomendasi').removeClass();
+                $('#tab_franchise_terbaru').removeClass();
+                $('#tab_franchise_rekomendasi').addClass('span5 Gradient-Style1 Border-Radius-Style1');
+                $('#tab_franchise_terbaru').addClass('span5 Gradient-Style4 Border-Radius-Style1 greyedOut');
 		
 	}
         
@@ -385,10 +405,10 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
 			<div class="span11 Text-Align-Center ">
 				<div class="row-fluid">
 					<div class=	"span12" style="border-bottom:solid 1px #999;">
-						<div class="span5 Gradient-Style1 Border-Radius-Style1 active" id="tab_business_terbaru" style="padding-top:5px">
+						<div class="span5 Gradient-Style1 Border-Radius-Style1" id="tab_business_terbaru" style="cursor:pointer; padding-top:5px">
 							Terbaru
 						</div>
-						<div class="span5 Gradient-Style1 Border-Radius-Style1 nonActive" style="margin-left:1px; padding-top:5px" id="tab_business_rekomendasi" >
+						<div class="span5 Gradient-Style4 Border-Radius-Style1 greyedOut" style="cursor:pointer; margin-left:1px; padding-top:5px" id="tab_business_rekomendasi" >
 							Rekomendasi
 						</div>	
 					</div>		
@@ -396,7 +416,7 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
 				<div class="row-fluid">
 					<div class="span12 Solid-White" style="padding-bottom:25px; padding-top:25px;">
 						<div class="span1">
-							<div id="business_prev_selector" class="prev" style="margin-left:-10px; margin-top:15px">
+							<div id="business_prev_selector" class="prev" style="margin-left:-4px; margin-top:25px">
                                                             
 							</div>
 						</div>
@@ -406,7 +426,7 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
                                                                 </ul>
 						</div>
 						<div class="span1">
-							<div id="business_next_selector" class="next" style="margin-left:5px; margin-top:15px">
+							<div id="business_next_selector" class="next" style="margin-left:5px; margin-top:25px">
                                                             <span ></span>
 							</div>
 						</div>
@@ -468,10 +488,10 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
 				<div class="span11 Text-Align-Center">
 					<div class="row-fluid">
 						<div class=	"span12 " style="border-bottom:solid 1px #999;">
-							<div class="span5 Gradient-Style1 Border-Radius-Style1 active" id="tab_franchise_terbaru" style="padding-top:5px">
+							<div class="span5 Gradient-Style1 Border-Radius-Style1" id="tab_franchise_terbaru" style=" cursor:pointer; padding-top:5px">
 								Terbaru
 							</div>
-							<div class="span5 Gradient-Style1 Border-Radius-Style1 nonActive" style="margin-left:1px; padding-top:5px" id="tab_franchise_rekomendasi">
+							<div class="span5 Gradient-Style4 Border-Radius-Style1 greyedOut" style=" cursor:pointer; margin-left:1px; padding-top:5px" id="tab_franchise_rekomendasi">
 								Rekomendasi
 							</div>	
 						</div>		
@@ -479,7 +499,7 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
 				<div class="row-fluid  Solid-White">
 					<div class="span12" style="padding-bottom:25px; padding-top:25px;">
 						<div class="span1">
-							<div id="franchise_prev_selector" class="prev" style="margin-left:-10px; margin-top:15px">
+							<div id="franchise_prev_selector" class="prev" style="margin-left:-4px; margin-top:25px">
 								
 							</div>
 						</div>
@@ -489,7 +509,7 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
                                                         </ul>
 						</div>
 						<div class="span1">
-							<div id="franchise_next_selector" class="next" style="margin-left:5px; margin-top:15px">
+							<div id="franchise_next_selector" class="next" style="margin-left:5px; margin-top:25px">
 								
 							</div>
 						</div>				
