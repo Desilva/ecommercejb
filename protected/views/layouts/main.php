@@ -25,14 +25,15 @@ $set=date_default_timezone_set('Asia/Krasnoyarsk');
         jQuery(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut();
       });
 	
-		$('.detail').click(function(){
-				$("#EmailText").focus();
+		$('.detail').click(function(e){
+                                e.preventDefault();
+				$('#EmailText').popover('destroy')
 				$("#EmailText").popover('show');
+                                $("#EmailText").focus();
 			});
 			
 		$("#EmailText").blur(function(){
-				$("#EmailText").popover('hide');
-			});
+				$("#EmailText").popover('destroy');			});
 		
     });
 	

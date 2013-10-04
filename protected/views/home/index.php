@@ -7,6 +7,14 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
 <?php 
 }
 ?>
+        <script>
+            function loginFirst(e)
+            {
+                $('#EmailText').popover('destroy')
+				$("#EmailText").popover('show');
+                                $("#EmailText").focus();
+            }
+        </script>
         
         
 <?php 
@@ -31,8 +39,16 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
             {
                 $detailUrl = '#'; //redirect to login
             }
-
-            $contentBusinessTerbaru .= "<li><a data-toggle=\"tooltip\" title=\"$businessDetail->nama\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:90px; height:90px \" /></a></li>";
+            
+            if($detailUrl == '#')
+            {
+                $contentBusinessTerbaru .= "<li><a onclick=\"loginFirst()\" data-toggle=\"tooltip\" title=\"$businessDetail->nama\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:90px; height:90px \" /></a></li>";
+            }
+            else
+            {
+                $contentBusinessTerbaru .= "<li><a data-toggle=\"tooltip\" title=\"$businessDetail->nama\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:90px; height:90px \" /></a></li>";
+            }
+            
         }
 
 
@@ -60,7 +76,16 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
                 $detailUrl = '#'; //redirect to login
             }
             $tooltipBusinessRekomendasiTitle = $businessDetail['nama'];
-            $contentBusinessRekomendasi .= "<li><a data-toggle=\"tooltip\" title=\"$tooltipBusinessRekomendasiTitle\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:90px; height:90px \" /></a></li>";
+            
+            if($detailUrl == '#')
+            {
+                 $contentBusinessRekomendasi .= "<li><a onclick=\"loginFirst()\" data-toggle=\"tooltip\" title=\"$tooltipBusinessRekomendasiTitle\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:90px; height:90px \" /></a></li>";
+            }
+            else
+            {
+                 $contentBusinessRekomendasi .= "<li><a data-toggle=\"tooltip\" title=\"$tooltipBusinessRekomendasiTitle\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:90px; height:90px \" /></a></li>";
+            }
+           
 
             if($i== 5)
             {
@@ -89,7 +114,15 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
                 {
                     $detailUrl = '#'; //redirect to login
                 }
-                    $contentFranchiseTerbaru .= "<a data-toggle=\"tooltip\" title=\"$businessDetail->nama\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:90px; height:90px \" /></a>";
+                    if($detailUrl == '#')
+                    {
+                        $contentFranchiseTerbaru .= "<a onclick=\"loginFirst()\" data-toggle=\"tooltip\" title=\"$businessDetail->nama\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:90px; height:90px \" /></a>";
+                    }
+                    else
+                    {
+                        $contentFranchiseTerbaru .= "<a data-toggle=\"tooltip\" title=\"$businessDetail->nama\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:90px; height:90px \" /></a>";
+                    }
+                    
             }
 
             $contentFranchiseRekomendasi ='';
@@ -117,7 +150,15 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
                 }
                 
                 $tooltipFranchiseRekomendasiTitle = $businessDetail['nama'];
-                $contentFranchiseRekomendasi .= "<a data-toggle=\"tooltip\" title=\"$tooltipFranchiseRekomendasiTitle\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:90px; height:90px \" /></a>";
+                if($detailUrl == '#')
+                {
+                    $contentFranchiseRekomendasi .= "<a onclick=\"loginFirst()\" data-toggle=\"tooltip\" title=\"$tooltipFranchiseRekomendasiTitle\" href=\"$detailUrl\"><img class=\"imageGadgetClient detail\" src=\"$imageSource\" style=\"width:90px; height:90px \" /></a>";
+                }
+                else
+                {
+                    $contentFranchiseRekomendasi .= "<a data-toggle=\"tooltip\" title=\"$tooltipFranchiseRekomendasiTitle\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:90px; height:90px \" /></a>";
+                }
+                
 
                 if($i== 5)
                 {

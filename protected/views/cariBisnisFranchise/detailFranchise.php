@@ -348,6 +348,7 @@ if($message_kontak != ''){
                                                                                             $arrayImage[] = $imageSource;
                                                                                         }
                                                                                         $arrayUrl[] = Yii::app()->createUrl("//cariBisnisFranchise/detail/$bisnis->id");
+                                                                                        $arrayTooltip[] = $bisnis->nama;
                                                                                     ?>
 
                                                                                 <?php } ?> 
@@ -358,11 +359,11 @@ if($message_kontak != ''){
 										<div class="control-group">
 											<div class="span12" style="margin-left:30px; margin-top:10px">
 												<div class="span6">
-                                                                                                    <a target="_blank" href="<?php echo $arrayUrl[0] ?>"><img src="<?php echo $arrayImage[0] ?>" width="90" height="90" style="width:90px; height:90px"/></a>
+                                                                                                    <a data-toggle="tooltip" title="<?php echo $arrayTooltip[0] ?>" target="_blank" href="<?php echo $arrayUrl[0] ?>"><img src="<?php echo $arrayImage[0] ?>" width="90" height="90" style="width:90px; height:90px"/></a>
 												</div>
                                                                                                 <?php if(isset($arrayImage[1])){ ?>
                                                                                                     <div class="span6">
-                                                                                                       <a target="_blank" href="<?php echo $arrayUrl[1] ?>"><img src="<?php echo $arrayImage[1] ?>" width="90" height="90" style="width:90px; height:90px"/></a>
+                                                                                                       <a data-toggle="tooltip" title="<?php echo $arrayTooltip[1] ?>" target="_blank" href="<?php echo $arrayUrl[1] ?>"><img src="<?php echo $arrayImage[1] ?>" width="90" height="90" style="width:90px; height:90px"/></a>
                                                                                                     </div>
                                                                                                 <?php }?>
 											</div>
@@ -375,11 +376,11 @@ if($message_kontak != ''){
 										<div class="control-group">
 											<div class="span12" style="margin-left:30px; margin-top:10px">
 												<div class="span6">
-                                                                                                    <a target="_blank" href="<?php echo $arrayUrl[2] ?>"><img src="<?php echo $arrayImage[2] ?>" width="90" height="90" style="width:90px; height:90px"/></a>
+                                                                                                    <a data-toggle="tooltip" title="<?php echo $arrayTooltip[2] ?>" target="_blank" href="<?php echo $arrayUrl[2] ?>"><img src="<?php echo $arrayImage[2] ?>" width="90" height="90" style="width:90px; height:90px"/></a>
 												</div>
                                                                                                 <?php if(isset($arrayImage[3])){ ?>
                                                                                                     <div class="span6">
-                                                                                                       <a target="_blank" href="<?php echo $arrayUrl[3] ?>"><img src="<?php echo $arrayImage[3] ?>" width="90" height="90" style="width:90px; height:90px"/></a>
+                                                                                                       <a data-toggle="tooltip" title="<?php echo $arrayTooltip[3] ?>" target="_blank" href="<?php echo $arrayUrl[3] ?>"><img src="<?php echo $arrayImage[3] ?>" width="90" height="90" style="width:90px; height:90px"/></a>
                                                                                                     </div>
                                                                                                 <?php }?>
 											</div>
@@ -392,7 +393,7 @@ if($message_kontak != ''){
                                                                                     <div class="control-group">
                                                                                             <div class="span12" style="margin-left:30px; margin-top:10px">
                                                                                                     <div class="span6">
-                                                                                                            <a target="_blank" href="<?php echo $arrayUrl[4] ?>"><img src="<?php echo $arrayImage[4] ?>" width="90" height="90" style="width:90px; height:90px"/></a>
+                                                                                                            <a data-toggle="tooltip" title="<?php echo $arrayTooltip[4] ?>" target="_blank" href="<?php echo $arrayUrl[4] ?>"><img src="<?php echo $arrayImage[4] ?>" width="90" height="90" style="width:90px; height:90px"/></a>
                                                                                                     </div>
                                                                                             </div>
                                                                                     </div>
