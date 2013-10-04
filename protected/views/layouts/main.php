@@ -134,7 +134,7 @@ $set=date_default_timezone_set('Asia/Krasnoyarsk');
 	   <div class="row-fluid">
 			<div class="span12" >
 			<hr/>
-			Copyright &copy 2013 JualBisnis <a href="<?php echo Yii::app()->createUrl('//privacyPolicy')?>">Privacy Policy</a>
+			Copyright &copy 2013 JualanBisnis.com <a href="<?php echo Yii::app()->createUrl('//privacyPolicy')?>">[Privacy Policy</a><a href="#">|Sitemap</a><a href="#">|Disclaimer]</a>
 		</div>
 	</div>
     </div>
