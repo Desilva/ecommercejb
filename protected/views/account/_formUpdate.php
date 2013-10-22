@@ -607,7 +607,7 @@
 					<div class="form-actions">
 						<div class="span12">
 							<div class="span11">
-								<?php echo CHtml::button('Batal', array('submit' => array("account/index/"), 'class'=>'btn Gradient-Style1')); ?>
+								<?php echo CHtml::button('Kembali', array('submit' => array("account/index/"), 'class'=>'btn Gradient-Style1')); ?>
                 <?php //echo CHtml::button('Simpan Draft', array('submit' => array("account/create?stat=Draft"), 'class'=>'btn Gradient-Style1')); ?>
                
                 <?php  echo CHtml::ajaxSubmitButton('Simpan Draft',CHtml::normalizeUrl(array("account/update/$model->id")),

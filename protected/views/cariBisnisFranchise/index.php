@@ -56,7 +56,7 @@
                                                                 <th>Tanggal</th>
 								<th>Lokasi</th>
 								<th>Harga</th>
-								<th>Revenue</th>
+								<th>Omzet</th>
 							</tr>
 							<?php 
 							$this->widget('zii.widgets.CListView', array(

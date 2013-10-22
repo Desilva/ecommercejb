@@ -266,7 +266,7 @@
 						<div class="control-group">
 							<div class="span12">
 								<div class="span11">
-									<label style="margin-left:10px">Dimana Anda mengetahui mengetahui JualanBisnis.com</label>
+									<label style="margin-left:10px">Dimana Anda mengetahui JualanBisnis.com</label>
 								</div>
 							</div>
 						</div>
@@ -315,14 +315,14 @@
 							<div class="span12">
 								<div class="span11">
 									<label class="checkbox inline Font-Color-LightBlue" style="margin-left:10px">
-									<?php echo $form->checkBox($model,'agree_terms') ?><a target="_blank" href="<?php echo Yii::app()->createUrl('//registrasiDone') ?>">Ya, saya sudah membahas dan setuju dengan JualanBisnis Terms and Service</a>
+									<?php echo $form->checkBox($model,'agree_terms') ?><a target="_blank" href="<?php echo Yii::app()->createUrl('//SyaratDanKetentuan') ?>">Ya, saya sudah membahas dan setuju dengan JualanBisnis Terms and Service</a>
 									</label>
 								</div>
 							</div>
 						</div>					
 						<div class="form-actions">
 							<button type="submit" class="btn btn-primary">Menjadi Member</button><br/>
-							Sudah menjadi member? <a href="#LoginForm_email">Klik disini untuk login</a>
+							Sudah menjadi member? <a class="klikUntukLogin" href="">Klik disini untuk login</a>
 						</div>
 						<div class="control-group">
 							<div class="span12">

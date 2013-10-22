@@ -20,14 +20,17 @@ body{
 	border:solid 1px #013064;	
 }
 .Border-Radius-Style1{
+        border-radius:10px 10px 0px 0px;
 	-webkit-border-radius:10px 10px 0px 0px;
 	-moz-border-radius:10px 10px 0px 0px;
 }
 .Border-Radius-Style2{
+         border-radius:10px 0px 0px 0px;
 	-webkit-border-radius:10px 0px 0px 0px;
 	-moz-border-radius:10px 0px 0px 0px;
 }
 .Border-Radius-Style3{
+         border-radius:10px 10px 10px 10px;
 	-webkit-border-radius:10px 10px 10px 10px;
 	-moz-border-radius:10px 10px 10px 10px;	
 }
@@ -105,7 +108,8 @@ body{
 	background: #f78d1d;
 	background: -webkit-gradient(linear, left top, left bottom, from(#1568ae), to(#1a3666));
 	background: -moz-linear-gradient(top,  #1568ae,  #1a3666);
-	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#1568ae', endColorstr='#1a3666');	
+        background: -ms-linear-gradient(top,  #1568ae,  #1a3666);
+/*	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#1568ae', endColorstr='#1a3666');	*/
 }
 .Gradient-Style2{
 	color: #fef4e9;
@@ -113,10 +117,12 @@ body{
 	background: #f78d1d;
 	background: -webkit-gradient(linear, left top, left bottom, from(#32a5dc), to(#1176be));
 	background: -moz-linear-gradient(top,  #32a5dc,  #1176be);
-	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#32a5dc', endColorstr='#1176be');	
+        background: -ms-linear-gradient(top,  #32a5dc,  #1176be);
+	/*filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#32a5dc', endColorstr='#1176be');*/	
 }
 .Gradient-Style3{
 	background: #014464;
+        background: -ms-linear-gradient(top, #0D658E, #0C577A 50%, #014D71 51%, #003E5C);
 	 background: -moz-linear-gradient(top, #0D658E, #0C577A 50%, #014D71 51%, #003E5C);
 	 background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #193968), color-stop(.5, #006ab4), color-stop(.5, #006ab4), to(#193968)); 
 }
@@ -125,11 +131,14 @@ body{
 	background: #f78d1d;
 	background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#e5e5e5));
 	background: -moz-linear-gradient(top,  #fff,  #e5e5e5);
-	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff', endColorstr='#e5e5e5');		
+        background: -ms-linear-gradient(top,  #fff,  #e5e5e5);
+	/*filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff', endColorstr='#e5e5e5');*/		
 }
 .Gradient-Style5{
 	background: -webkit-gradient(linear, left top, left bottom, from(#fafaf8), to(#d6d1cb));
-	background: -moz-linear-gradient(top,  #fafaf8,  #d6d1cb);	
+	background: -moz-linear-gradient(top,  #fafaf8,  #d6d1cb);
+        background: -ms-linear-gradient(top,  #fafaf8,  #d6d1cb);
+        
 }
 .Solid-White{
 	background:#FFF;	
@@ -222,7 +231,8 @@ body{
 	background: #f78d1d;
 	background: -webkit-gradient(linear, left top, left bottom, from(#1568ae), to(#1a3666));
 	background: -moz-linear-gradient(top,  #1568ae,  #1a3666);
-	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#1568ae', endColorstr='#1a3666');
+        background: -ms-linear-gradient(top,  #1568ae,  #1a3666);
+	/*filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#1568ae', endColorstr='#1a3666');*/
 }
 .ad-thumb-list{
 	background-color:#333;
@@ -246,7 +256,7 @@ body{
 .pdf-file { background-image: url('../images/pdf.png') }
 .xls-file { background-image: url('../images/xls.png') }
 .zip-file { background-image: url('../images/zip.png') }
-.default-file { background-image: url(<?php echo Yii::app()->request->baseUrl ?>/images/default.png) }
+.default-file { background-image: url('../images/default.png') }
 
 #example .file-heading
 {

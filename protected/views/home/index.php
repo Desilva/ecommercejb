@@ -1,3 +1,4 @@
+
 <?php 
 if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){ 
 ?>
@@ -8,6 +9,10 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
 }
 ?>
         <script>
+    $(document).on( "mouseenter", "[data-toggle='tooltip']", function(){
+        
+    } );   
+             
             function loginFirst(e)
             {
                 $('#EmailText').popover('destroy')
@@ -24,7 +29,20 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
             $imageList = array_filter(explode(',',$businessDetail->image));
             if(!empty($imageList))
             {
-                $imageSource = Yii::app()->baseUrl.'/uploads/images/'.$businessDetail->id_user.'/thumbs/'.$imageList[0];
+                $imagePathNonThumb = Yii::app()->basePath.'/../uploads/images/'.$businessDetail->id_user.'/'.$imageList[0];
+                $imagePathThumb = Yii::app()->basePath.'/../uploads/images/'.$businessDetail->id_user.'/thumbs/'.$imageList[0];
+                if(file_exists($imagePathThumb))
+                {
+                    $imageSource = Yii::app()->baseUrl.'/uploads/images/'.$businessDetail->id_user.'/thumbs/'.$imageList[0];
+                }
+                else if(file_exists($imagePathNonThumb))
+                {
+                    $imageSource = Yii::app()->baseUrl.'/uploads/images/'.$businessDetail->id_user.'/'.$imageList[0];
+                }
+                else
+                {
+                    $imageSource = Yii::app()->request->baseUrl.'/images/no-image.gif';
+                }
             }
             else
             {
@@ -42,11 +60,12 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
             
             if($detailUrl == '#')
             {
-                $contentBusinessTerbaru .= "<li><a onclick=\"loginFirst()\" data-toggle=\"tooltip\" title=\"$businessDetail->nama\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:90px; height:90px \" /></a></li>";
+                $contentBusinessTerbaru .= "<li><a class=\"tooltipCarouselBusinessTerbaru\" onclick=\"loginFirst()\" data-toggle=\"tooltip\" title=\"$businessDetail->nama\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:90px; height:90px \" /></a></li>";
             }
             else
             {
-                $contentBusinessTerbaru .= "<li><a data-toggle=\"tooltip\" title=\"$businessDetail->nama\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:90px; height:90px \" /></a></li>";
+//                     $contentBusinessTerbaru .= "<li><a title=\"$businessDetail->nama\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:90px; height:90px \" /></a></li>";
+                $contentBusinessTerbaru .= "<li><a class=\"tooltipCarouselBusinessTerbaru\" data-toggle=\"tooltip\" title=\"$businessDetail->nama\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:90px; height:90px \" /></a></li>";
             }
             
         }
@@ -60,7 +79,21 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
             $imageList = array_filter(explode(',',$businessDetail['image']));
             if(!empty($imageList))
             {
-                $imageSource = Yii::app()->baseUrl.'/uploads/images/'.$businessDetail['id_user'].'/thumbs/'.$imageList[0];
+//                $imageSource = Yii::app()->baseUrl.'/uploads/images/'.$businessDetail['id_user'].'/thumbs/'.$imageList[0];
+                $imagePathNonThumb = Yii::app()->basePath.'/../uploads/images/'.$businessDetail['id_user'].'/'.$imageList[0];
+                $imagePathThumb = Yii::app()->basePath.'/../uploads/images/'.$businessDetail['id_user'].'/thumbs/'.$imageList[0];
+                if(file_exists($imagePathThumb))
+                {
+                    $imageSource = Yii::app()->baseUrl.'/uploads/images/'.$businessDetail['id_user'].'/thumbs/'.$imageList[0];
+                }
+                else if(file_exists($imagePathNonThumb))
+                {
+                    $imageSource = Yii::app()->baseUrl.'/uploads/images/'.$businessDetail['id_user'].'/'.$imageList[0];
+                }
+                else
+                {
+                    $imageSource = Yii::app()->request->baseUrl.'/images/no-image.gif';
+                }
             }
             else
             {
@@ -79,11 +112,11 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
             
             if($detailUrl == '#')
             {
-                 $contentBusinessRekomendasi .= "<li><a onclick=\"loginFirst()\" data-toggle=\"tooltip\" title=\"$tooltipBusinessRekomendasiTitle\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:90px; height:90px \" /></a></li>";
+                 $contentBusinessRekomendasi .= "<li><a class=\"tooltipCarouselBusinessRekomendasi\" onclick=\"loginFirst()\" data-toggle=\"tooltip\" title=\"$tooltipBusinessRekomendasiTitle\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:90px; height:90px \" /></a></li>";
             }
             else
             {
-                 $contentBusinessRekomendasi .= "<li><a data-toggle=\"tooltip\" title=\"$tooltipBusinessRekomendasiTitle\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:90px; height:90px \" /></a></li>";
+                 $contentBusinessRekomendasi .= "<li><a class=\"tooltipCarouselBusinessRekomendasi\" data-toggle=\"tooltip\" title=\"$tooltipBusinessRekomendasiTitle\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:90px; height:90px \" /></a></li>";
             }
            
 
@@ -99,7 +132,21 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
                 $imageList = array_filter(explode(',',$businessDetail->image));
                 if(!empty($imageList))
                 {
-                    $imageSource = Yii::app()->baseUrl.'/uploads/images/'.$businessDetail->id_user.'/thumbs/'.$imageList[0];
+//                    $imageSource = Yii::app()->baseUrl.'/uploads/images/'.$businessDetail->id_user.'/thumbs/'.$imageList[0];
+                    $imagePathNonThumb = Yii::app()->basePath.'/../uploads/images/'.$businessDetail->id_user.'/'.$imageList[0];
+                    $imagePathThumb = Yii::app()->basePath.'/../uploads/images/'.$businessDetail->id_user.'/thumbs/'.$imageList[0];
+                    if(file_exists($imagePathThumb))
+                    {
+                        $imageSource = Yii::app()->baseUrl.'/uploads/images/'.$businessDetail->id_user.'/thumbs/'.$imageList[0];
+                    }
+                    else if(file_exists($imagePathNonThumb))
+                    {
+                        $imageSource = Yii::app()->baseUrl.'/uploads/images/'.$businessDetail->id_user.'/'.$imageList[0];
+                    }
+                    else
+                    {
+                        $imageSource = Yii::app()->request->baseUrl.'/images/no-image.gif';
+                    }
                 }
                 else
                 {
@@ -116,11 +163,11 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
                 }
                     if($detailUrl == '#')
                     {
-                        $contentFranchiseTerbaru .= "<a onclick=\"loginFirst()\" data-toggle=\"tooltip\" title=\"$businessDetail->nama\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:90px; height:90px \" /></a>";
+                        $contentFranchiseTerbaru .= "<a class=\"tooltipCarouselFranchiseTerbaru\" onclick=\"loginFirst()\" data-toggle=\"tooltip\" title=\"$businessDetail->nama\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:90px; height:90px \" /></a>";
                     }
                     else
                     {
-                        $contentFranchiseTerbaru .= "<a data-toggle=\"tooltip\" title=\"$businessDetail->nama\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:90px; height:90px \" /></a>";
+                        $contentFranchiseTerbaru .= "<a class=\"tooltipCarouselFranchiseTerbaru\"  data-tip=\"Yay tooltip!\" data-toggle=\"tooltip\" title=\"$businessDetail->nama\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:90px; height:90px \" /></a>";
                     }
                     
             }
@@ -133,7 +180,21 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
                 $imageList = array_filter(explode(',',$businessDetail['image']));
                 if(!empty($imageList))
                 {
-                     $imageSource = Yii::app()->baseUrl.'/uploads/images/'.$businessDetail['id_user'].'/thumbs/'.$imageList[0];
+//                     $imageSource = Yii::app()->baseUrl.'/uploads/images/'.$businessDetail['id_user'].'/thumbs/'.$imageList[0];
+                    $imagePathNonThumb = Yii::app()->basePath.'/../uploads/images/'.$businessDetail['id_user'].'/'.$imageList[0];
+                    $imagePathThumb = Yii::app()->basePath.'/../uploads/images/'.$businessDetail['id_user'].'/thumbs/'.$imageList[0];
+                    if(file_exists($imagePathThumb))
+                    {
+                        $imageSource = Yii::app()->baseUrl.'/uploads/images/'.$businessDetail['id_user'].'/thumbs/'.$imageList[0];
+                    }
+                    else if(file_exists($imagePathNonThumb))
+                    {
+                        $imageSource = Yii::app()->baseUrl.'/uploads/images/'.$businessDetail['id_user'].'/'.$imageList[0];
+                    }
+                    else
+                    {
+                        $imageSource = Yii::app()->request->baseUrl.'/images/no-image.gif';
+                    }
                 }
                 else
                 {
@@ -152,11 +213,11 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
                 $tooltipFranchiseRekomendasiTitle = $businessDetail['nama'];
                 if($detailUrl == '#')
                 {
-                    $contentFranchiseRekomendasi .= "<a onclick=\"loginFirst()\" data-toggle=\"tooltip\" title=\"$tooltipFranchiseRekomendasiTitle\" href=\"$detailUrl\"><img class=\"imageGadgetClient detail\" src=\"$imageSource\" style=\"width:90px; height:90px \" /></a>";
+                    $contentFranchiseRekomendasi .= "<a class=\"tooltipCarouselFranchiseRekomendasi\" onclick=\"loginFirst()\" data-toggle=\"tooltip\" title=\"$tooltipFranchiseRekomendasiTitle\" href=\"$detailUrl\"><img class=\"imageGadgetClient detail\" src=\"$imageSource\" style=\"width:90px; height:90px \" /></a>";
                 }
                 else
                 {
-                    $contentFranchiseRekomendasi .= "<a data-toggle=\"tooltip\" title=\"$tooltipFranchiseRekomendasiTitle\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:90px; height:90px \" /></a>";
+                    $contentFranchiseRekomendasi .= "<a class=\"tooltipCarouselFranchiseRekomendasi\" data-toggle=\"tooltip\" title=\"$tooltipFranchiseRekomendasiTitle\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:90px; height:90px \" /></a>";
                 }
                 
 
@@ -191,6 +252,11 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
 			});	
 
     var imageSliderBusiness = $('#bxsliderBusiness').bxSlider({
+        onSliderLoad:function(){
+                $(function(){
+                $(".tooltipCarouselBusinessTerbaru").tipTip();
+                });
+        },
         minSlides: 4,
         maxSlides: 5,
         slideWidth: 170,
@@ -209,6 +275,11 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
         e.preventDefault();
         changeToBusinessRekomendasi();
         imageSliderBusiness.reloadSlider({
+              onSliderLoad:function(){
+                $(function(){
+                $(".tooltipCarouselBusinessRekomendasi").tipTip();
+                });
+            },
               minSlides: 4,
               maxSlides: 5,
               slideWidth: 170,
@@ -228,6 +299,11 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
         e.preventDefault();
         changeToBusinessTerbaru();
         imageSliderBusiness.reloadSlider({
+            onSliderLoad:function(){
+                $(function(){
+                $(".tooltipCarouselBusinessTerbaru").tipTip();
+                });
+            },
               minSlides: 4,
               maxSlides: 5,
               slideWidth: 170,
@@ -245,6 +321,11 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
       
       
       var imageSliderFranchise = $('#bxsliderFranchise').bxSlider({
+        onSliderLoad:function(){
+                $(function(){
+                $(".tooltipCarouselFranchiseTerbaru").tipTip();
+                });
+        },
         minSlides: 4,
         maxSlides: 5,
         slideWidth: 170,
@@ -264,6 +345,11 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
         e.preventDefault();
         changeToFranchiseRekomendasi();
         imageSliderFranchise.reloadSlider({
+              onSliderLoad:function(){
+                $(function(){
+                $(".tooltipCarouselFranchiseRekomendasi").tipTip();
+                });
+        },
               minSlides: 4,
               maxSlides: 5,
               slideWidth: 170,
@@ -283,6 +369,11 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
         e.preventDefault();
         changeToFranchiseTerbaru();
         imageSliderFranchise.reloadSlider({
+              onSliderLoad:function(){
+                $(function(){
+                $(".tooltipCarouselFranchiseTerbaru").tipTip();
+                });
+        },
               minSlides: 4,
               maxSlides: 5,
               slideWidth: 170,

@@ -15,7 +15,7 @@
         $image = array_filter(explode(',',$data->image));
     ?>
             <tr>
-            	<td>
+            	<td style="min-width: 100px">
           <?php if(!empty($image)){ 
                     if(file_exists(Yii::app()->basePath.'/../uploads/images/'.$data->id_user.'/'.$image[0]))
                     {

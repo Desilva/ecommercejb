@@ -97,6 +97,7 @@ class CariBisnisFranchiseController extends Controller
             $criteria=new CDbCriteria();
             $criteria->addCondition('status_approval="diterima"');
             $criteria->with = 'idKota';
+            $criteria->addCondition('t.id_category=1'); //default index to bisnis
             
                 $model = new CActiveDataProvider('Business',array(
                 'criteria'=>$criteria,
@@ -246,8 +247,9 @@ class CariBisnisFranchiseController extends Controller
             }
                 $model = new CActiveDataProvider('Business',array(
                 'criteria'=>$criteria,
-                'sort'=>array(
-                        'defaultOrder'=>'tanggal_approval DESC'),
+                 'sort'=>array(
+                        'defaultOrder'=>
+                        array('tanggal_approval'=>CSort::SORT_DESC,'id'=>CSort::SORT_DESC)),
                 'pagination'=>array(
                     'pageSize'=>10,
                 ),
@@ -399,73 +401,73 @@ class CariBisnisFranchiseController extends Controller
         
         public function actionKontakBisnis($id)
         {
-//            $settings = Settings::model()->findByAttributes(array('nama_settings'=>'settings_admin'));
-//            $model = new Email();
-//            $business = Business::model()->findByPk($id);
-//            if($business->id_user == Yii::app()->user->id)
-//            {
-//                $this->redirect(Yii::app()->createUrl("//cariBisnisFranchise/detail/$id"));
-//            }
-//            $businessOwner = User::model()->findByPk($business->id_user);
-//            if(isset($_POST['Email']))
-//            {
-//                
-//                $model->attributes = $_POST['Email'];
-//                if($model->save())
-//                {
-//                    
-//                    if($_POST['Email']['status'] == '1')
-//                    {
-//                        //fungsi kirim email ke alamat email yg disediakan user
-//                        
-//                        if($businessOwner != null || $businessOwner != '')
-//                        {
-//                            YiiBase::import('ext.YiiMailer.YiiMailer');
-//                            //function to send email
-//                            $mail = new YiiMailer();
-//                            $mail->clearLayout();//if layout is already set in config
-//                            $mail->setFrom($model->alamat_email, $model->nama_pengirim);
-//                            $mail->setTo('reynhart@licht-soft.com'); //CHANGE TO APPROPRIATE EMAIL WHEN DEPLOYING
-//                            $mail->setSubject( $model->nama_pengirim.' '.'menghubungi bisnis/franchise Anda');
-//                            $mail->setBody("Nama Bisnis: $business->nama<br /><p>Detail Pengirim</p><p>Nama: $model->nama_pengirim</p><p>Phone: $model->no_telp</p><p>Deskripsi: <br/> $model->deskripsi</p>");
-//                            if ($mail->send()) {
-//        //                        Yii::app()->user->setFlash('email','Email Berhasil Dikirim');
-//                                $this->redirect(Yii::app()->createUrl('//home'));
-//                            } else {
-//                                Yii::app()->user->setFlash('error','Error while sending email: '.$mail->getError());
-//                            }
-//
-//
-//                        }
-//                    }
-//                    if($_POST['Email']['status'] == '0')
-//                    {
-//                        //kirim ke alamat email asli admin???
-//                        if($businessOwner != null || $businessOwner != '')
-//                        {
-//                            YiiBase::import('ext.YiiMailer.YiiMailer');
-//                            //function to send email
-//                            $mail = new YiiMailer();
-//                            $mail->clearLayout();//if layout is already set in config
-//                            $mail->setFrom($model->alamat_email, $model->nama_pengirim);
-//                            $mail->setTo('reynhart@licht-soft.com'); //CHANGE TO APPROPRIATE EMAIL WHEN DEPLOYING
-//                            $mail->setSubject('Bisnis/Franchis'. $business->nama.'menerima email dari pelanggan lain');
-//                            $mail->setBody("Nama Bisnis: $business->nama<br /><p>Detail Pengirim</p><p>Nama: $model->nama_pengirim</p><p>Phone: $model->no_telp</p><p>Deskripsi: <br/> $model->deskripsi</p>");
-//                            if ($mail->send()) {
-//        //                        Yii::app()->user->setFlash('email','Email Berhasil Dikirim');
-//                                $this->redirect(Yii::app()->createUrl('//home'));
-//                            } else {
-//                                Yii::app()->user->setFlash('error','Error while sending email: '.$mail->getError());
-//                            }
-//
-//
-//                        }
-//                    }
-//                    $this->redirect(Yii::app()->createUrl("//cariBisnisFranchise/detail/$id"));
-//                }
-//                
-//            }
-//            $this->render('kontak',array('model'=>$model,'business'=>$business,'business_owner'=>$businessOwner, 'settings'=>$settings));
+            $settings = Settings::model()->findByAttributes(array('nama_settings'=>'settings_admin'));
+            $model = new Email();
+            $business = Business::model()->findByPk($id);
+            if($business->id_user == Yii::app()->user->id)
+            {
+                $this->redirect(Yii::app()->createUrl("//cariBisnisFranchise/detail/$id"));
+            }
+            $businessOwner = User::model()->findByPk($business->id_user);
+            if(isset($_POST['Email']))
+            {
+                
+                $model->attributes = $_POST['Email'];
+                if($model->save())
+                {
+                    
+                    if($_POST['Email']['status'] == '1')
+                    {
+                        //fungsi kirim email ke alamat email yg disediakan user
+                        
+                        if($businessOwner != null || $businessOwner != '')
+                        {
+                            YiiBase::import('ext.YiiMailer.YiiMailer');
+                            //function to send email
+                            $mail = new YiiMailer();
+                            $mail->clearLayout();//if layout is already set in config
+                            $mail->setFrom($model->alamat_email, $model->nama_pengirim);
+                            $mail->setTo($businessOwner->email); //CHANGE TO APPROPRIATE EMAIL WHEN DEPLOYING
+                            $mail->setSubject( $model->nama_pengirim.' '.'menghubungi bisnis/franchise Anda');
+                            $mail->setBody("Nama Bisnis: $business->nama<br /><p>Detail Pengirim</p><p>Nama: $model->nama_pengirim</p><p>Phone: $model->no_telp</p><p>Deskripsi: <br/> $model->deskripsi</p>");
+                            if ($mail->send()) {
+        //                        Yii::app()->user->setFlash('email','Email Berhasil Dikirim');
+                                $this->redirect(Yii::app()->createUrl('//home'));
+                            } else {
+                                Yii::app()->user->setFlash('error','Error while sending email: '.$mail->getError());
+                            }
+
+
+                        }
+                    }
+                    if($_POST['Email']['status'] == '0')
+                    {
+                        //kirim ke alamat email asli admin???
+                        if($businessOwner != null || $businessOwner != '')
+                        {
+                            YiiBase::import('ext.YiiMailer.YiiMailer');
+                            //function to send email
+                            $mail = new YiiMailer();
+                            $mail->clearLayout();//if layout is already set in config
+                            $mail->setFrom($model->alamat_email, $model->nama_pengirim);
+                            $mail->setTo($settings->incoming_mailbox); //CHANGE TO APPROPRIATE EMAIL WHEN DEPLOYING
+                            $mail->setSubject('Bisnis/Franchise'. $business->nama.'menerima email dari pelanggan lain');
+                            $mail->setBody("Nama Bisnis: $business->nama<br /><p>Detail Pengirim</p><p>Nama: $model->nama_pengirim</p><p>Phone: $model->no_telp</p><p>Deskripsi: <br/> $model->deskripsi</p>");
+                            if ($mail->send()) {
+        //                        Yii::app()->user->setFlash('email','Email Berhasil Dikirim');
+                                $this->redirect(Yii::app()->createUrl('//home'));
+                            } else {
+                                Yii::app()->user->setFlash('error','Error while sending email: '.$mail->getError());
+                            }
+
+
+                        }
+                    }
+                    $this->redirect(Yii::app()->createUrl("//cariBisnisFranchise/detail/$id"));
+                }
+                
+            }
+            $this->render('kontak',array('model'=>$model,'business'=>$business,'business_owner'=>$businessOwner, 'settings'=>$settings));
         }
 
         public function actionGenerateSubIndustri()

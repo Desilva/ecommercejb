@@ -490,7 +490,7 @@
 					</div>
 					
 					<div class="form-actions">
-<?php echo CHtml::button('Batal', array('submit' => array("account/index/"), 'class'=>'btn Gradient-Style1')); ?>
+<?php echo CHtml::button('Kembali', array('submit' => array("account/index?kategori=2"), 'class'=>'btn Gradient-Style1')); ?>
                 <?php //echo CHtml::button('Simpan Draft', array('submit' => array("account/create?stat=Draft"), 'class'=>'btn Gradient-Style1')); ?>
               
                 <?php  echo CHtml::ajaxSubmitButton('Simpan Draft',CHtml::normalizeUrl(array("account/update/$model->id")),

@@ -74,7 +74,7 @@ a.delete img{
                                     'status_approval',
                                     array(
                                         'class' => 'bootstrap.widgets.TbToggleColumn',
-                                        'toggleAction' => 'bisnisfranchise/toggle',
+                                        'toggleAction' => 'bisnisFranchise/toggle',
                                         'name' => 'status_rekomendasi',
                                         'header' => 'Status Rekomendasi',
 									

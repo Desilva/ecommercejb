@@ -154,6 +154,7 @@ a.delete img{
 									'itemsCssClass' => 'table table-bordered table-striped table-hover',
 									'summaryText' => '',
 									'ajaxUpdate' => 'emailGrid',
+                                                                        
 									'columns' => array(
 										'nama' => array(
 											'header' => 'Nama Bisnis/Franchise', 'name' => 'nama'),array(
@@ -167,6 +168,7 @@ a.delete img{
 										'type' => 'raw', //because of using html-code <br/>
 											//call the controller method gridProduct for each row
 										'value' => array($this, 'gridStatusApproval'),
+                                                                                    
 										),array(
 											'class' => 'CButtonColumn',
 											'htmlOptions' => array('style' => 'width: 85px'),
@@ -174,7 +176,8 @@ a.delete img{
 											'template' => '{update}{delete}{viewEmail}',
 											'deleteButtonImageUrl' => Yii::app()->request->baseUrl . '/images/asset/trash.png',
 											'updateButtonImageUrl' => Yii::app()->request->baseUrl . '/images/asset/write.png',
-											'buttons' => array(
+                                                                                        'afterDelete'=>'function(link,success,data){afterDeleteAction();}',
+                                                                                        'buttons' => array(
 												'viewEmail' => array(
 													'label' => 'Lihat Email',
 													'imageUrl' => Yii::app()->request->baseUrl . '/images/asset/-.png',
@@ -230,6 +233,11 @@ a.delete img{
 			</div>
 		</div>
 	</div>
-</div>		
-		
+</div>	
 
+        <script>
+        function afterDeleteAction()
+        {
+            //$('#emailList').remove();
+        }
+        </script>

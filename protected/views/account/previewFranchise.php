@@ -205,19 +205,26 @@
 						</div>
 						<div class="widget-content nopadding">
 							<form class="form-horizontal">
-								<?php 
-                                                                    $docList = array_filter(explode(',',$model->dokumen));
+								 <?php 
+                                                                if(Yii::app()->user->hasState('documents'))
+                                                                {
+                                                                    $docList = Yii::app()->user->getState('documents');
+                                                                }
+                                                                else
+                                                                {
+                                                                    $docList = array();
+                                                                }
                                                                     if(!empty($docList))
                                                                     { 
                                                                         foreach($docList as $dokumen)
                                                                         { 
-                                                                            $dokumen_url = urlencode($dokumen);
-                                                                            if(file_exists(Yii::app()->getBasePath() . "/../uploads/docs/".$model->id_user.'/'.$dokumen))
+                                                                            
+                                                                            if(file_exists(Yii::app()->getBasePath() . "/../uploads/tmp/".$model->id_user.'/docs/'.$dokumen['name']))
                                                                             {
                                                                             ?>
                                                                             <div class="control-group">
                                                                                 <div class="span12" style="margin-left:10px">
-                                                                                        <a href="<?php echo Yii::app()->createUrl("//download?docs=1&id=$model->id_user&name=$dokumen_url") ?>"><?php echo $dokumen; ?></a>
+                                                                                        <?php echo $dokumen['name']; ?>
                                                                                 </div>						
                                                                             </div>
                                                                 <?php } } } ?>

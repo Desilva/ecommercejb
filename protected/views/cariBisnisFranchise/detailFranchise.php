@@ -12,6 +12,11 @@
     border-radius: 3px;
 }
 
+.ui-tooltip
+{
+    font-size:12pt;
+}
+
 </style>
 <div id="fb-root"></div>
 <script>

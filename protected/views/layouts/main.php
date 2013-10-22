@@ -11,13 +11,13 @@ $set=date_default_timezone_set('Asia/Krasnoyarsk');
 <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl ?>/css/style.css" />
 <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl ?>/library/Bootstrap/assets/css/jquery-ui.css" />
 <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl ?>/library/Bootstrap/assets/css/uniform.css" />
-<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl ?>/library/Bootstrap/assets/css/select2.css" />
-
-		
+<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl ?>/library/Bootstrap/assets/css/select2.css" />		
 <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl ?>/library/Bootstrap/assets/css/unicorn.main.css" />
 <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl ?>/library/Bootstrap/assets/css/unicorn.grey.css" class="skin-color" />
+<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl ?>/css/tipTip.css" />
+<script language="javascript" type="text/javascript" src="<?php echo Yii::app()->request->baseUrl ?>/js/jquery.tipTip.js">
+</script>
 <script type="text/javascript">
-
     $(document).ready(function(){
         jQuery('ul.nav li.dropdown').hover(function() {
         jQuery(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn();
@@ -35,7 +35,13 @@ $set=date_default_timezone_set('Asia/Krasnoyarsk');
 		$("#EmailText").blur(function(){
 				$("#EmailText").popover('destroy');			});
 		
+                $('.klikUntukLogin').click(function(e){
+                                e.preventDefault();
+                                $("#EmailText").focus();
+			});
     });
+    
+ 
 	
 
     
@@ -135,7 +141,7 @@ $set=date_default_timezone_set('Asia/Krasnoyarsk');
 	   <div class="row-fluid">
 			<div class="span12" >
 			<hr/>
-			Copyright &copy 2013 JualanBisnis.com <a href="<?php echo Yii::app()->createUrl('//privacyPolicy')?>">[Privacy Policy</a><a href="<?php echo Yii::app()->createUrl('//home/sitemap')?>">|Sitemap</a><a href="<?php echo Yii::app()->createUrl('//home/disclaimer')?>">|Disclaimer]</a>
+			Copyright &copy 2013 JualanBisnis.com <a href="<?php echo Yii::app()->createUrl('//privacyPolicy')?>">[Privacy Policy</a><a href="<?php echo Yii::app()->createUrl('//home/sitemap')?>">|Sitemap</a><a href="<?php echo Yii::app()->createUrl('//home/disclaimer')?>">|Disclaimer</a><a href="<?php echo Yii::app()->createUrl('//SyaratDanKetentuan') ?>">|Syarat dan Ketentuan</a><a href="<?php echo Yii::app()->createUrl('//faq')?>">|FAQ]</a>
 		</div>
 	</div>
     </div>

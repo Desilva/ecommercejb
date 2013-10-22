@@ -12,10 +12,17 @@
     border-radius: 3px;
 }
 
-</style>
+.ui-tooltip
+{
+    font-size:12pt;
+}
 
+
+</style>
 <div id="fb-root"></div>
 <script>
+   
+             $(function () { $("[data-toggle='tooltip']").tooltip(); });
 	  window.fbAsyncInit = function() {
 		FB.init({
 		  appId  : '<?php echo $settings->fb_app_id ?>',
@@ -60,6 +67,7 @@ if($message_kontak != ''){
                                                         <img class="imageShareArtikel lightbox_trigger" style="cursor:pointer" src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/facebookIcon.png" height="30" width="30" id="fb-share" />
 							<a href="https://twitter.com/share?url=<?php echo Yii::app()->createAbsoluteUrl("//cariBisnisFranchise/detail/$model->id") ?>&text=JualanBisnis.com:" target="_blank"><img class="imageShareArtikel" src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/twitterIcon.png" height="30" width="30" /></a>
 							<a href="http://www.linkedin.com/shareArticle?mini=true&url=<?php echo urlencode(Yii::app()->createAbsoluteUrl("//cariBisnisFranchise/detail/$model->id")) ?>&title=<?php echo urlencode($model->nama) ?>&summary=<?php echo urlencode(substr(strip_tags(html_entity_decode($model->deskripsi)),0,250)."...") ?>&source=<?php echo urlencode(Yii::app()->name) ?>" target="_blank"><img class="imageShareArtikel" src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/inIcon.png" height="30" width="30" /></a> 
+                                                        <!--<a href="<?php echo Yii::app()->createUrl('//LinkedIn/share',array('title'=>$model->nama,'description'=>substr(strip_tags(html_entity_decode($model->deskripsi)),0,250)."...",'url'=>Yii::app()->createAbsoluteUrl("//cariBisnisFranchise/detail/$model->id"),'image'=>'http://jb.infolapangan.com/images/no-image.gif')) ?>" target="_blank"><img class="imageShareArtikel" src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/inIcon.png" height="30" width="30" /></a>--> 
 						</div>
 						<div class="span2">
                                                     <form>
