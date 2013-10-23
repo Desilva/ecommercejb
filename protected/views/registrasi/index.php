@@ -9,8 +9,13 @@
 </style>
 <?php
     $form = $this->beginWidget('CActiveForm', array(
-      'id' => 'user-index-form',
-      'enableAjaxValidation' => false,
+      'id' => 'registrasi-form',
+      'enableAjaxValidation'=>true,
+            'clientOptions' => array(
+                    'validateOnSubmit'=>true,
+                    'validateOnChange'=>true,
+                    'validateOnType'=>false,
+            ),
 	  'htmlOptions'=>array(
         'class'=>'form-horizontal',
     ),
@@ -40,7 +45,7 @@
 						<span class="icon">
 							<i class="icon-align-justify"></i>									
 						</span>
-						<h5>Text inputs</h5>
+						<h5>Registrasi</h5>
 					</div>
 					<div class="widget-content nopadding">
 						<div class="control-group">
@@ -296,6 +301,12 @@
 								</div>
 							</div>
 						</div>
+                                                <div class="control-group">
+							<div class="span12">
+								<div class="span11">
+								</div>
+							</div>
+						</div>
 						<div class="control-group">
 							<div class="span12">
 								<div class="span11">
@@ -306,7 +317,9 @@
 						<div class="control-group">
 							<div class="span12">
 								<div class="span6" style="padding-left:10px">
-									<?php $this->widget('CCaptcha'); ?><br/>
+									<?php $this->widget('CCaptcha',array(
+                                                                            'buttonOptions'=>array('id'=>'refresh_captcha')
+                                                                        )); ?><br/>
 									<?php echo $form->textField($model,'captcha_code'); ?>
 								</div>
 							</div>
@@ -321,7 +334,26 @@
 							</div>
 						</div>					
 						<div class="form-actions">
-							<button type="submit" class="btn btn-primary">Menjadi Member</button><br/>
+<!--							<button type="submit" class="btn btn-primary">Menjadi Member</button>-->
+                                                        <?php echo CHtml::ajaxSubmitButton('Menjadi Member',CHtml::normalizeUrl(array('registrasi/index')),
+                                                            array(
+                                                                'dataType'=>'json',
+                                                                'type'=>'post',
+                                                                'success'=>'function(data) {  
+                                                                   if(data.status=="success"){
+                                                                    $("#registrasi-form").submit();
+                                                                   }
+                                                                    else{
+                                                                       formErrors(data,form="#registrasi-form");
+                                                                       document.location.href="#registrasi-form_es_";
+                                                                   }       
+                                                               }',                    
+                                                                'beforeSend'=>'function(){                        
+                                                                      $("#AjaxLoader").show();
+                                                                 }'
+                                                                ),array('class'=>'btn btn-primary')); ?>
+                                                                 <img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/spinner.gif" id="AjaxLoader" style="display:none"/>
+                                                        <br/>
 							Sudah menjadi member? <a class="klikUntukLogin" href="">Klik disini untuk login</a>
 						</div>
 						<div class="control-group">
@@ -341,3 +373,30 @@
 </div>
 
 <?php $this->endWidget(); ?>
+
+<script>
+    function formErrors(data,form){
+        var summary = '';
+        summary="<br/><p>Silahkan perbaiki kesalahan input berikut:</p><ul>";
+
+        $.each(data, function(key, val) {
+        summary = summary + "<li>" + val.toString() + "</li>";
+        });
+        summary += "</ul>";
+        $(form+"_es_").html(summary.toString());
+        $(form+"_es_").show();
+
+        $("[id^='update-button']").show();
+        $('#AjaxLoader').hide();//css({display:'none'});
+        $('#AjaxLoader').text('');
+        $('#refresh_captcha').click();
+        $('#User_captcha_code').val('');
+}
+
+function hideFormErrors(form){
+        //alert (form+"_es_");
+        $(form+"_es_").html('');
+        $(form+"_es_").hide();
+        $("[id$='_em_']").html('');
+}
+</script>

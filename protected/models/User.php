@@ -72,6 +72,7 @@ class User extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('id_nationality, id_job, password, email, first_name, last_name, password_repeat', 'required'),
+                        array('references','required','message'=>'Dimana anda mengetahui JualanBisnis.com harus dipilih minimal satu'),
 			array('id_nationality, id_job, id_buyer_category, id_buyer_location, id_buyer_price', 'numerical', 'integerOnly'=>true),
 			array('password, address', 'length', 'max'=>255),
 			array('email, first_name, last_name, instansi, office_address, office_phone', 'length', 'max'=>100),

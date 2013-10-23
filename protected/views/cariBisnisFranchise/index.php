@@ -1,3 +1,44 @@
+<style>
+    .list-view-loading {
+    background: url("loading.gif") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+.list-view .summary {
+    margin: 0 0 5px;
+    text-align: right;
+}
+.list-view .sorter {
+    margin: 0 0 5px;
+    text-align: right;
+}
+.list-view .pager {
+    margin: 5px 0 0;
+    text-align: right;
+}
+.list-view .sorter {
+    font-size: 15px;
+}
+.list-view .sorter ul {
+    display: inline;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+.list-view .sorter li {
+    display: inline;
+    margin: 0 0 0 5px;
+    padding: 0;
+}
+.list-view .sorter a.asc {
+    background: url("<?php echo Yii::app()->baseUrl ?>/images/upArrow.png") no-repeat scroll right center rgba(0, 0, 0, 0);
+    background-size: 18px 18px;
+    padding-right: 17px;
+}
+.list-view .sorter a.desc {
+    background: url("<?php echo Yii::app()->baseUrl ?>/images/downArrow.png") no-repeat scroll right center rgba(0, 0, 0, 0);
+    background-size: 18px 18px;
+    padding-right: 17px;
+}
+</style>
 <!--<div>
     <div>
 		<header style="font-size:30px; font-family:Calibri;">Hasil Pencarian</header>

@@ -43,6 +43,8 @@ class RegistrasiController extends Controller
     
     public function actionIndex()
     {
+//        var_dump($_POST);
+//        die;
         if(isset($_POST))
         {
 //            var_dump($_POST["references"]);
@@ -110,24 +112,54 @@ class RegistrasiController extends Controller
         if(isset($_POST['User']))
         {
             $model->attributes=$_POST['User'];
+            $m_references = "";
+            
+            if(isset($_POST['references']))
+            {
+                foreach($_POST['references'] as $value)
+                {
+
+                    $m_references .= $value.',';
+                }
+
+                if($m_references != '')
+                {
+                    $model->references = $m_references;
+                }
+            }
+            if(Yii::app()->request->isAjaxRequest)
+            {
+//                $one_reference_checked = false;
+//                if(isset($_POST['references']))
+//                {
+//                    if(!empty($references))
+//                    {
+//                        $one_reference_checked = true;
+//                    }
+//                }
+                $valid=$model->validate();            
+                if($valid){
+
+                   //do anything here
+                     echo CJSON::encode(array(
+                          'status'=>'success'
+                     ));
+                    Yii::app()->end();
+                    }
+                    else{
+                        $error = CActiveForm::validate($model);
+                        if($error!='[]')
+                            echo $error;
+                        Yii::app()->end();
+                    }
+            }
+            
             if($model->validate())
             {
                 $pass_temp = $model->password;
                 $model->password = md5($pass_temp);
-                $m_references = "";
-                if(isset($_POST['references']))
-                {
-                    foreach($_POST['references'] as $value)
-                    {
-                        
-                        $m_references .= $value.',';
-                    }
-                    
-                    if($references != "")
-                    {
-                        $model->references = $references;
-                    }
-                }
+                
+                
                 $model->kode_verifikasi = md5(microtime().$model->email);
                 $model->save(false);
                 //verifikasi email function
