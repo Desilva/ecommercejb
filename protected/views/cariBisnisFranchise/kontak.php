@@ -3,10 +3,16 @@
             <?php
             $form = $this->beginWidget('CActiveForm', array(
                 'id' => 'business-contact-form',
-                'enableAjaxValidation' => false,
+                'enableAjaxValidation'=>true,
+                'clientOptions' => array(
+                        'validateOnSubmit'=>true,
+                        'validateOnChange'=>true,
+                        'validateOnType'=>false,
+                ),
+                'action'=> Yii::app()->createUrl("//cariBisnisFranchise/kontakBisnis/id/$business->id")
             ));
         ?>
-            <p><?php echo $form->errorSummary($model); ?></p>
+            
              <?php echo $form->hiddenField($model,'id_business',array('value'=> $business->id));
                   echo $form->hiddenField($model,'tanggal',array('value'=> date('y-m-d')));
                   echo $form->hiddenField($model,'id_user',array('value'=> Yii::app()->user->id));
@@ -29,6 +35,7 @@
         	<div class="span6 separator-Vertical">
         	<h4 class="Font-Color-DarkBlue">Kontak <?php echo $business->nama ?></h4>
         	<table>
+                    <tr><p><?php echo $form->errorSummary($model); ?></p></tr>
             	<tr>
                 	<th class="Text-Align-Left Font-Color-LightBlue"><?php echo $form->labelEx($model,'nama_pengirim'); ?></th>
                     <td><?php echo $form->textField($model,'nama_pengirim', array('value'=>Yii::app()->user->first_name.' '.Yii::app()->user->last_name)); ?></td>
@@ -47,7 +54,27 @@
                 </tr>
                 <tr>
                     <td></td>
-                    <td><button type="submit" class="btn Gradient-Style1">Kirim</button></td>
+                    <td>
+                        <?php echo CHtml::ajaxSubmitButton('Kirim',CHtml::normalizeUrl(array("cariBisnisFranchise/kontakBisnis/id/$business->id")),
+                                array(
+                                    'dataType'=>'json',
+                                    'type'=>'post',
+                                    'success'=>'function(data) {  
+                                       if(data.status=="success"){
+                                        $("#business-contact-form").submit();
+                                       }
+                                        else{
+                                           formErrors(data,form="#business-contact-form");
+                                           document.location.href="#business-contact-form_es_";
+                                       }       
+                                   }',                    
+                                    'beforeSend'=>'function(){                        
+                                          $("#AjaxLoader").show();
+                                     }'
+                                    ),array('class'=>'btn Gradient-Style1')); ?>
+                                     <img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/spinner.gif" id="AjaxLoader" style="display:none"/>
+                    
+                    </td>
                 </tr>
             </table>
         </div>
@@ -93,4 +120,28 @@
         </div>
     </div>
 </div>
+<script>
+        function formErrors(data,form){
+        var summary = '';
+        summary="<br/><p>Silahkan perbaiki kesalahan input berikut:</p><ul>";
+
+        $.each(data, function(key, val) {
+        summary = summary + "<li>" + val.toString() + "</li>";
+        });
+        summary += "</ul>";
+        $(form+"_es_").html(summary.toString());
+        $(form+"_es_").show();
+
+        $("[id^='update-button']").show();
+        $('#AjaxLoader').hide();//css({display:'none'});
+        $('#AjaxLoader').text('');
+}
+
+function hideFormErrors(form){
+        //alert (form+"_es_");
+        $(form+"_es_").html('');
+        $(form+"_es_").hide();
+        $("[id$='_em_']").html('');
+}
+</script>
 

@@ -529,6 +529,7 @@
                            $("#AjaxLoader").show();
                       }'
                      ),array('class'=>'btn Gradient-Style1','disabled'=>$disabled)); ?>
+                                            <img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/spinner.gif" id="AjaxLoader" style="display:none"/>
 					</div>
 					
 				
@@ -579,8 +580,8 @@
         $(form+"_es_").show();
 
         $("[id^='update-button']").show();
-        $('#ajax-status').hide();//css({display:'none'});
-        $('#ajax-status').text('');
+        $('#AjaxLoader').hide();//css({display:'none'});
+        $('#AjaxLoader').text('');
 }
 
 function hideFormErrors(form){

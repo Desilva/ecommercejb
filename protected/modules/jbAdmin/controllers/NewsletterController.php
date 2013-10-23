@@ -47,7 +47,7 @@ class NewsletterController extends Controller
             }
             else
             {
-                
+                var_dump($send);
             }
             
         }
@@ -219,6 +219,7 @@ class NewsletterController extends Controller
                     else
                     {
                          return $mail->getError();
+                         var_dump($mail->getError());
                     }
                 }
                 

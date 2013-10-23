@@ -52,7 +52,7 @@ a.sendNewsletter img{
                                 }
                                 else
                                 {
-                                    alert("Newsletter gagal dikirim. Harap hubungi teknisi");
+                                    alert("Newsletter gagal dikirim. Harap hubungi teknisi. Error Detail: "+response);
                                 }
                                 
                         }

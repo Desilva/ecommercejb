@@ -9143,3 +9143,9 @@ Stack trace:
 REQUEST_URI=/ecommerceJB/index.php/cariBisnisFranchise/index?Business_sort=tanggal_approval.desc
 HTTP_REFERER=http://localhost/ecommerceJB/index.php/cariBisnisFranchise/index?Business_sort=tanggal_approval
 ---
+2013/10/23 12:51:41 [warning] [application] Gagal mengeset atribut unsafe "alasan_jual_lainnya_check" dari kelas "Business".
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (303)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/10/23 12:51:43 [warning] [application] Gagal mengeset atribut unsafe "alasan_jual_lainnya_check" dari kelas "Business".
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (384)
+in C:\xampp\htdocs\ecommercejb\index.php (13)

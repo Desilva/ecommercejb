@@ -41,10 +41,10 @@
 </script>
 
 <?php 
-if($message_kontak != ''){ 
+if(isset($_GET['msg'])){ 
 ?>
 	<script>
-		alert("<?php echo $message_kontak ?>");
+		alert("<?php echo $_GET['msg'] ?>");
 	</script>
 <?php 
 }
@@ -262,7 +262,7 @@ if($message_kontak != ''){
                                     // additional javascript options for the accordion plugin
                                     'options' => array(
                                                     'collapsible' => true,
-                                                    'active'=>($message_kontak != '')?0:false,
+                                                    'active'=>(isset($_GET['msg']))?0:false,
                                             ),
                                     ));
                             ?>

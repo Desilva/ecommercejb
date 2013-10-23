@@ -18,7 +18,7 @@ class KontakController extends Controller
                 //function to send email
                 $mail = new YiiMailer();
                 $mail->clearLayout(); //if layout is already set in config
-                $mail->setFrom('kontak_kami@jb.com', 'Kontak Dari Pelanggan');
+                $mail->setFrom($settings->alamat_email, 'Kontak Dari Pelanggan');
                 if($model->email != null || $model->email != '')
                 {
                     $mail->setReplyTo($model->email,$model->nama);
@@ -29,11 +29,12 @@ class KontakController extends Controller
                 if($mail->send())
                 {
 //                        Yii::app()->user->setFlash('email','Email Berhasil Dikirim');
-                    $this->redirect(Yii::app()->createUrl('//home'));
+                    $this->redirect(Yii::app()->createUrl('//kontak'));
                 }
                 else
                 {
-                    Yii::app()->user->setFlash('error', 'Error while sending email: ' . $mail->getError());
+                    var_dump($mail->getError());
+                    die;
                 }
             }
         }

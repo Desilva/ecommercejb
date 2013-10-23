@@ -247,7 +247,8 @@ class BisnisFranchiseController extends Controller
                     }
                     else
                     {
-                        Yii::app()->user->setFlash('error', 'Error while sending email: ' . $mail->getError());
+                        var_dump($mail->getError());
+                        die;
                     }
                     
                 }
@@ -256,6 +257,28 @@ class BisnisFranchiseController extends Controller
                     $model->status_approval = "Ditolak";
                     $model->id_alasan_penolakan = $alasan;
                     $model->save();
+                    
+                     //function to send email
+                    $user = User::model()->findByPk($model->id_user);
+                    $mailSetting = Settings::model()->findByAttributes(array("nama_settings"=>"settings_admin"));
+                    YiiBase::import('ext.YiiMailer.YiiMailer');
+                    $mail = new YiiMailer();
+                    $mail->clearLayout(); //if layout is already set in config
+                    $mail->setFrom($mailSetting->alamat_email, $mailSetting->nama_email); //CHANGE THIS WHEN DEPLOYING
+                    $mail->setTo($user->email); //CHANGE TO APPROPRIATE EMAIL WHEN DEPLOYING
+                    $mail->setSubject("Bisnis/Franchise ".$model->nama." Anda ditolak");
+                    $mail->setBody("<p>Berikut adalah keterangan lengkap: </p><p>Nama Bisnis/Franchise: $model->nama</p><p>Alasan Penolakan: ".$model->idAlasanPenolakan->alasan." </p>");
+                    if($mail->send())
+                    {
+    //                  Yii::app()->user->setFlash('email','Email Berhasil Dikirim');
+                        $this->redirect(Yii::app()->createUrl('//jbAdmin/bisnisFranchise/index'));
+                    }
+                    else
+                    {
+                        var_dump($mail->getError());
+                        die;
+                    }
+                    
                     $this->redirect(Yii::app()->createUrl('//jbAdmin/bisnisFranchise/index'));
                 }
             }
@@ -531,8 +554,8 @@ class BisnisFranchiseController extends Controller
                             }
                             else
                             {
-//                                var_dump($mail->getError());
-//                                echo ""
+                                var_dump($mail->getError());
+                                die;
 //                                Yii::app()->user->setFlash('error', 'Error while sending email: ' . $mail->getError());
                             }
                             
@@ -574,7 +597,8 @@ class BisnisFranchiseController extends Controller
                                 }
                                 else
                                 {
-                                     //
+                                     var_dump($mail->getError());
+                                    die;
                                 }
                             }
                             
@@ -737,6 +761,7 @@ class BisnisFranchiseController extends Controller
             //$sortType = BusinessCategory::model()->findAll();
             $business_model = new Business();
             $business_model->status_rekomendasi = '';
+            $business_model->penjualan = '';
             if(isset($_GET['Business']))
 			$business_model->attributes=$_GET['Business'];
            
