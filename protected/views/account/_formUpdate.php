@@ -629,7 +629,16 @@
                      ),array('class'=>'btn Gradient-Style1','disabled'=>$disabled));  ?>
 		<?php echo CHtml::button('Lihat', array('class'=>'btn Gradient-Style1','disabled'=>$disabled,'onclick'=>"preview(this.form,'_blank')")); ?>
 		<?php // echo CHtml::button('Kirim', array('submit' => array("account/create"), 'class'=>'btn Gradient-Style1')); ?>
-                <?php echo CHtml::ajaxSubmitButton('Kirim',CHtml::normalizeUrl(array("account/update/$model->id")),
+                <?php 
+                    if ($disabled == true) 
+                    {
+                        $buttonName = 'Kirim Ulang';
+                    }
+                    else
+                    {
+                        $buttonName = 'Kirim';
+                    }
+                    echo CHtml::ajaxSubmitButton($buttonName,CHtml::normalizeUrl(array("account/update/$model->id")),
                  array(
                      'dataType'=>'json',
                      'type'=>'post',
@@ -645,7 +654,7 @@
                      'beforeSend'=>'function(){                        
                            $("#AjaxLoader").show();
                       }'
-                     ),array('class'=>'btn Gradient-Style1','disabled'=>$disabled)); ?>
+                     ),array('class'=>'btn Gradient-Style1')); ?>
                                                             <img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/spinner.gif" id="AjaxLoader" style="display:none"/>
 							</div>
 						</div>

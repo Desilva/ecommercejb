@@ -245,7 +245,7 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
         jQuery(document).ready(function($) {
 			$('#banner-slide').bjqs({
 				animtype      : 'slide',
-				height        : 300,
+				height        : 340,
 				width         : 705,
 				responsive    : true,
 				randomstart   : true,
@@ -451,7 +451,8 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
 			<div class="span12">
 				 <div id="banner-slide">
 					<ul class="bjqs">
-						<?php foreach($slideshow as $value)
+						<?php 
+                                                foreach($slideshow as $value)
 						{
 
 							if($value->image != null || $value->image != "")
@@ -467,14 +468,19 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
                                                                     echo Yii::app()->createUrl("//home/slideshowdetail/$value->id"); 
                                                                 }
                                                                 
-                                                                
-                                                                ?>"><img src="<?php echo Yii::app()->request->baseUrl; ?>/uploads/slideshow/<?php echo $value->image ?>" style="width:100%; height:100%"></a></li>
-						<?php } }?>
+                                                                ?>"><img src="<?php echo Yii::app()->request->baseUrl; ?>/uploads/slideshow/<?php echo $value->image ?>" style="width:100%; height:100%">
+
+                                                            </a></li>
+						<?php 
+                                                
+                                                                } }
+                                                ?>
 					</ul>
 				</div>
 			</div>
 		</div>                	
 	</div>
+    
 	<div class="span3" style="margin-top:15px">
 		  <?php if(!empty($this->clips['sidebar'])) echo
 				$this->clips['sidebar']?>

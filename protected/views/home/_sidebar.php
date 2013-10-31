@@ -60,7 +60,8 @@
                                 }
                          ?>
                         <tr>
-                            <td><a href="<?php echo Yii::app()->createUrl("//article/detail/$artikel->id") ?>"><img style="width:68px; height:68px; float:left; padding-right: 5px" src="<?php echo $imgsource ?>" /><label class="Font-Style-Bold Font-Color-DarkBlue"><?php echo $artikel->title ?></label></a><p style="margin-top:-10px; font-size:12px; color:grey"> Kategori Pembaca: <?php echo $artikel->idArticleCategoryPembaca->category_pembaca ?> </p> <?php 
+                            <td><a href="<?php echo Yii::app()->createUrl("//article/detail/$artikel->id") ?>"><img style="width:55px; height:55px; float:left; padding-right: 5px" src="<?php echo $imgsource ?>" /><label class="Font-Style-Bold Font-Color-DarkBlue"><?php echo $artikel->title ?></label></a><p style="margin-top:-10px; font-size:12px; color:grey"> Kategori Pembaca: <?php echo $artikel->idArticleCategoryPembaca->category_pembaca ?> </p> 
+                              <span style="margin-top:-13px; float: left"><?php 
                                 if(strlen(strip_tags(html_entity_decode($artikel->post))) > 40)
                                 {
                                     echo substr(strip_tags(html_entity_decode($artikel->post)), 0, 40) . "..." ;
@@ -69,7 +70,7 @@
                                 {
                                     echo strip_tags(html_entity_decode($artikel->post));
                                 }
-                            ?></td>
+                            ?></span></td>
                         </tr>
                         <?php }?>
 </table>
