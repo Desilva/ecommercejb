@@ -9,12 +9,12 @@ body{
 }
 .header{
 	background-image:url(../images/asset/background.png);
+	background-position-y: -26px;
 	
 }
 #primary{
 
-	z-index:1;
-	padding-top:3px;	
+	z-index:1;	
 }
 .Border-Color-DarkBlue{
 	border:solid 1px #013064;	
@@ -65,7 +65,7 @@ body{
 	height:20px;	
 }
 .separator{
-	height:35px;	
+	height:44px;	
 }
 .separator-verySmall{
 	height:40px;	
@@ -323,4 +323,180 @@ li.k-file div.file-wrapper
 {
     position: relative;
     height: 75px;
+}
+
+/* new style */
+.Transparent-Navbar
+{
+	background: none;
+	padding-left: 0;
+}
+
+.Noborder-Navbar
+{
+	border: 0;
+	border-radius: 0;
+	box-shadow: 0 0 0;
+}
+
+@font-face
+{
+	font-family: eurostile;
+	src: url('eurosti.ttf'),
+	     url('Sansation_Light.eot'); /* IE9 */
+}
+
+.Font-Color-Navbar
+{
+	color: #1467AD;
+	font-family: eurostile;
+	font-size: 16px;
+}
+
+.Border-Bottom-Navbar {
+	width: auto;
+	height: 5px;
+	background: white;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.nav > li:hover, .nav > li:focus {
+	background: none !important;
+}
+
+.nav > li:hover > .Border-Bottom-Navbar, .nav > li:focus > .Border-Bottom-Navbar {
+	background: url('../images/asset/navbar-hover.png') no-repeat #1467AD;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.nav > li:hover > a, .nav > li:focus > a {
+	font-family: eurostile;
+	font-size: 16px;
+	color: #2691BC;
+
+}
+
+.nav > li > a {
+	padding-bottom: 7px !important;
+}
+
+.nav > li.home-button > a {
+	padding-bottom: 2px !important;
+}
+
+#menuDiv {
+	height: 51px;
+}
+
+#rightHeader {
+	width: 78%;
+	margin-left: 1%;
+}
+
+#leftHeader {
+	width:	21%;
+}
+
+#login-button {
+	width: 95px;
+	height: 45px;
+	border: 0;
+	border-radius: 0;
+	background: #1467AD;
+	padding-right: 10px;
+	color: white;
+	font-family: eurostile;
+	font-size: 16px;
+	border-left: solid 3px #fff;
+	margin-left: 21px;
+}
+
+#login-button:hover, #login-button:focus {
+	background: #2691BC;
+}
+
+#login-forms {
+	width: 472.5px;
+	background: linear-gradient(to right, transparent 136px, rgba(20,103,173,1) 136px), url('../images/asset/login-form.png') no-repeat;
+	background-position-y: -1px;  
+}
+
+#login-email {
+	margin-left: 68.676px;
+	border: 0;
+	border-left: solid 1.5px #E6E7E8;
+	border-top: solid 1.5px #E6E7E8;
+	width: 140px;
+	height: 10.75px;
+	border-radius: 0;
+	box-shadow: 0 0 0;
+	-webkit-box-shadow: 0 0 0;
+	-moz-box-shadow: 0 0 0;
+	font-family: eurostile;
+	font-size: 13px;
+}
+
+#login-email::-webkit-input-placeholder { text-align: center; }
+#login-email::-moz-placeholder { text-align: center; } /* firefox 19+ */
+#login-email:-ms-input-placeholder { text-align: center; } /* ie */
+
+#login-password {
+	margin-left: 10px;
+	border: 0;
+	border-left: solid 1.5px #E6E7E8;
+	border-top: solid 1.5px #E6E7E8;
+	width: 113.667px;
+	height: 10.75px;
+	border-radius: 0;
+	box-shadow: 0 0 0;
+	-webkit-box-shadow: 0 0 0;
+	-moz-box-shadow: 0 0 0;
+	font-family: eurostile;
+	font-size: 13px;
+}
+
+#login-password::-webkit-input-placeholder { text-align: center; }
+#login-password::-moz-placeholder { text-align: center; } /* firefox 19+ */
+#login-password:-ms-input-placeholder { text-align: center; } /* ie */
+
+#member-baru {
+	margin-left: 68.676px;
+	display: inline-block;
+	width: 150px;
+	font-family: eurostile;
+	font-size: 13px;
+	color: #1467AD;
+}
+
+#member-baru:hover, #member-baru:focus {
+	color: #2691BC;
+}
+
+#remember-me {
+	margin-left: 10px;
+	display: inline-block;
+	width: 122px;
+	font-family: eurostile;
+	font-size: 13px;
+	color: #1467AD;
+}
+
+#login-form-below {
+	width: 472.5px;
+	vertical-align: center;
+}
+
+#forget-password {
+	margin-left: 24px;
+	display: inline-block;
+	width: 87px;
+	font-family: eurostile;
+	font-size: 13px;
+	color: #1467AD;
+}
+
+#forget-password:hover, #forget-password:focus {
+	color: #2691BC;
 }

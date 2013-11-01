@@ -52,13 +52,10 @@ $set=date_default_timezone_set('Asia/Krasnoyarsk');
 
 	<div id="primary" class="container">
     	<div class="row-fluid header">
-        	<div class="span2">
-            	<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/logo.png" width="200" height="200" style="margin-top:20px; margin-left:10px" />
+        	<div class="span2" id="leftHeader">
+            	<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/logo.png" width="146" height="146" style="margin-top:20px; margin-left:100px" />
             </div>
-            <div class="span10" id="rightHeader">
-            	<div class="row-fluid">
-                	<div class="span12"></div>
-                </div>
+            <div class="span9" id="rightHeader">
             	<div class="row-fluid">
                     <?php
                         if(Yii::app()->user->isGuest)
@@ -84,37 +81,55 @@ $set=date_default_timezone_set('Asia/Krasnoyarsk');
                     ?>
                 </div>
                 
-                <div class="row-fluid separator"></div>
-                
             	<div class="row-fluid">
                 	<div class="span12" id="menuDiv">
                     	<div class="navbar">
-                        	<div class="navbar-inner Gradient-Style1 Border-Radius-Style1">
+                        	<div class="navbar-inner Transparent-Navbar Noborder-Navbar">
                             	<ul class="nav">
-                                    <li class="separator-Vertical Border-Radius-Style2" style="margin-left:-19px; padding-left:10px;">
-                                    	<a style="padding-right:30px" class="Font-Color-White" href="<?php echo Yii::app()->createUrl('//home') ?>"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/asset/iconHome.png" width="25" />
+                                    <li style="margin-left:-19px; padding-left:10px;" class="home-button">
+                                    	<a style="padding-right:30px" class="Font-Color-Navbar" href="<?php echo Yii::app()->createUrl('//home') ?>"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/asset/iconHome.png" width="25" />
                                         </a>
+                                        <div class="Border-Bottom-Navbar"></div>
                                     </li>
-                                    <li class="separator-Vertical"><a class="Font-Color-White" href="<?php echo Yii::app()->createUrl('//cariBisnisFranchise') ?>">Cari Bisnis Franchise</a></li>
+                                    <li>
+                                        <a class="Font-Color-Navbar" href="<?php echo Yii::app()->createUrl('//cariBisnisFranchise') ?>">Cari Bisnis Franchise</a>
+                                        <div class="Border-Bottom-Navbar"></div>
+                                    </li>
                                      <?php
                                         if(!Yii::app()->user->isGuest){
                                      ?>
                                     <?php if(Yii::app()->user->checkAccess("member")){ ?>
-                                        <li class="separator-Vertical"><a class="Font-Color-White" href="<?php echo Yii::app()->createUrl('//account/index') ?>">Jual Bisnis Franchise</a></li>
-                                        <li class="separator-Vertical"><a class="Font-Color-White" href="<?php echo Yii::app()->createUrl('//account/beli') ?>">Akun Saya</a></li>
+                                        <li>
+                                            <a class="Font-Color-Navbar" href="<?php echo Yii::app()->createUrl('//account/index') ?>">Jual Bisnis Franchise</a>
+                                            <div class="Border-Bottom-Navbar"></div>
+                                        </li>
+                                        <li>
+                                            <a class="Font-Color-Navbar" href="<?php echo Yii::app()->createUrl('//account/beli') ?>">Akun Saya</a>
+                                            <div class="Border-Bottom-Navbar"></div>
+                                        </li>
                                     <?php } else if(Yii::app()->user->checkAccess("admin")){ ?>
-                                        <li class="separator-Vertical"><a class="Font-Color-White" href="<?php echo Yii::app()->createUrl('//jbAdmin/') ?>">Setting Admin</a></li>
+                                        <li>
+                                            <a class="Font-Color-Navbar" href="<?php echo Yii::app()->createUrl('//jbAdmin/') ?>">Setting Admin</a>
+                                            <div class="Border-Bottom-Navbar"></div>
+                                        </li>
                                     <?php } ?>
                                     <?php
                                         }else{
                                     ?>
-                                        <li class=" separator-Vertical"><a class="detail Font-Color-White" href="#LoginForm_email">Jual Bisnis Franchise</a></li>
+                                    <li>
+                                        <a class="detail Font-Color-Navbar" href="#LoginForm_email">Jual Bisnis Franchise</a>
+                                        <div class="Border-Bottom-Navbar"></div>
+                                    </li>
                                     <?php } ?>
-                                    <li class="separator-Vertical"><a class="Font-Color-White" href="<?php echo Yii::app()->createUrl('//layananKami') ?>">Layanan Kami</a></li>
-                                    <li class="dropdown separator-Vertical">
-                                        <a href="<?php echo Yii::app()->createUrl('//article') ?>" class="dropdown-toggle Font-Color-White" >
+                                    <li>
+                                        <a class="Font-Color-Navbar" href="<?php echo Yii::app()->createUrl('//layananKami') ?>">Layanan Kami</a>
+                                        <div class="Border-Bottom-Navbar"></div>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="<?php echo Yii::app()->createUrl('//article') ?>" class="dropdown-toggle Font-Color-Navbar" >
                                         Artikel
                                         </a>
+                                        <div class="Border-Bottom-Navbar"></div>
                                         <ul class="dropdown-menu">
                                             <li><a tabindex="-1" href="<?php echo Yii::app()->createUrl('//article?kategoriPembaca=franchisee') ?>">Franchisee</a></li>
                                             <li><a tabindex="-1" href="<?php echo Yii::app()->createUrl('//article?kategoriPembaca=franchisor') ?>">Franchisor</a></li>
@@ -122,8 +137,14 @@ $set=date_default_timezone_set('Asia/Krasnoyarsk');
                                             <li><a tabindex="-1" href="<?php echo Yii::app()->createUrl('//article?kategoriPembaca=pembeli bisnis') ?>">Pembeli Bisnis</a></li>
                                         </ul>
                                     </li>
-                                    <li class="separator-Vertical"><a class="Font-Color-White" href="<?php echo Yii::app()->createUrl('//kontak') ?>">Kontak</a></li>
-                                    <li class="separator-Vertical"><a class="Font-Color-White" href="<?php echo Yii::app()->createUrl('//faq') ?>">Faq</a></li>
+                                    <li>
+                                        <a class="Font-Color-Navbar" href="<?php echo Yii::app()->createUrl('//kontak') ?>">Kontak</a>
+                                        <div class="Border-Bottom-Navbar"></div>
+                                    </li>
+                                    <li>
+                                        <a class="Font-Color-Navbar" href="<?php echo Yii::app()->createUrl('//faq') ?>">Faq</a>
+                                        <div class="Border-Bottom-Navbar"></div>
+                                    </li>
 
                                 </ul>
                             </div>

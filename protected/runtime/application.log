@@ -9359,3 +9359,19 @@ in C:\xampp\htdocs\ecommercejb\index.php (13)
 2013/10/31 12:58:56 [warning] [application] Gagal mengeset atribut unsafe "alasan_jual_lainnya_check" dari kelas "Business".
 in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (762)
 in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/11/01 13:00:13 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "C:\xampp\htdocs\ecommercejb\assets" tidak valid. Pastikan direktori tersebut sudah ada dan dapat ditulis oleh proses server Web.' in C:\xampp\htdocs\ecommercejb\framework\web\CAssetManager.php:138
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CAssetManager.php(123): CAssetManager->setBasePath('C:\xampp\htdocs...')
+#1 C:\xampp\htdocs\ecommercejb\framework\web\CAssetManager.php(217): CAssetManager->getBasePath()
+#2 C:\xampp\htdocs\ecommercejb\protected\extensions\bootstrap\components\Bootstrap.php(641): CAssetManager->publish('C:\xampp\htdocs...', false, -1, false)
+#3 C:\xampp\htdocs\ecommercejb\protected\extensions\bootstrap\components\packages.php(12): Bootstrap->getAssetsUrl()
+#4 C:\xampp\htdocs\ecommercejb\protected\extensions\bootstrap\components\Bootstrap.php(156): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\ecommercejb\framework\base\CModule.php(387): Bootstrap->init()
+#6 C:\xampp\htdocs\ecommercejb\framework\base\CModule.php(523): CModule->getComponent('bootstrap')
+#7 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(152): CModule->preloadComponents()
+#8 C:\xampp\htdocs\ecommercejb\framework\YiiBase.php(125): CApplication->__construct('C:\xampp\htdocs...')
+#9 C:\xampp\htdocs\ecommercejb\framework\YiiBase.php(98): YiiBase::createApplication('CWebApplication', 'C:\xampp\htdocs...')
+#10 C:\xampp\htdocs\ecommercejb\index.php(13): YiiBase::createWebApplication('C:\xampp\htdocs...')
+#11 {main}
+REQUEST_URI=/ecommercejb/
+---
