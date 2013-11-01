@@ -66,7 +66,7 @@ $set=date_default_timezone_set('Asia/Krasnoyarsk');
                         {
                             ?> 
                             <!--<h4> Selamat Datang, <?php //echo Yii::app()->user->first_name ?> (<a href="<?php //echo Yii::app()->createUrl('//authentication/logout') ?>">logout</a>)</h4>-->
-							<div class="span12" id="loginDiv">
+							<div class="span12" id="loginDiv-logon">
 								<div class="span12">
 								
 									 <h5 class="Text-Align-Right" style="margin-right:40px; margin-right:40px">Hi, <?php echo Yii::app()->user->first_name ?> |<a href="<?php echo Yii::app()->createUrl('//authentication/logout') ?>">logout</a></h5>

@@ -500,3 +500,7 @@ li.k-file div.file-wrapper
 #forget-password:hover, #forget-password:focus {
 	color: #2691BC;
 }
+
+#loginDiv-logon {
+	height: 126px;
+}
