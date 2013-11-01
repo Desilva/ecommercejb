@@ -71,7 +71,7 @@ class SettingsController extends Controller
                     {
                         ${'slideshow_data' . $i}->url_link = $value["url_custom_link"];
                     }
-                    var_dump(${'slideshow_data' . $i}->url_link);
+//                    var_dump(${'slideshow_data' . $i}->url_link);
                     
                     if(CUploadedFile::getInstance(${'slideshow_data' . $i}, "[$i]image") != null)
                     {

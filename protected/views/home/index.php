@@ -1,4 +1,3 @@
-
 <?php 
 if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){ 
 ?>
@@ -235,6 +234,11 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
 <script src="<?php echo Yii::app()->request->baseUrl ?>/library/bxslider4/jquery.bxslider.min.js"></script>
 <!-- bxSlider CSS file -->
 <link href="<?php echo Yii::app()->request->baseUrl ?>/library/bxslider4/jquery.bxslider.css" rel="stylesheet" />
+<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl ?>/library/AnythingSlider/css/anythingslider.css">
+<script src="<?php echo Yii::app()->request->baseUrl ?>/library/AnythingSlider/js/jquery.anythingslider.js"></script>
+<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl ?>/library/AnythingSlider/css/theme-mini-light-modified.css">
+<script src="<?php echo Yii::app()->request->baseUrl ?>/library/AnythingSlider/js/jquery.anythingslider.fx.js"></script>
+<script src="<?php echo Yii::app()->request->baseUrl ?>/library/AnythingSlider/js/jquery.anythingslider.video.js"></script>
 <style>
     .greyedOut{
         color:black;
@@ -242,14 +246,28 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
 </style>
 <script>
     var baseUrl = '<?php echo Yii::app()->request->baseUrl ?>';
-        jQuery(document).ready(function($) {
-			$('#banner-slide').bjqs({
-				animtype      : 'slide',
-				height        : 340,
-				width         : 705,
-				responsive    : true,
-				randomstart   : true,
-			});	
+        $(document).ready(function($) {
+//			$('#banner-slide').bjqs({
+//				animtype      : 'slide',
+//				height        : 340,
+//				width         : 705,
+//				responsive    : true,
+//				randomstart   : true,
+//			});
+    $('#mainSlider').anythingSlider({
+        expand: true,
+        resizeContents: true,
+        hashTags : false,
+        autoPlay : true,     
+        autoPlayLocked : true,
+        resumeDelay : 3000,
+        resumeOnVisible  : false, 
+        theme: 'mini-light',
+        appendNavigationTo: '#mainSliderPages',
+        navigationFormatter : function(index, panel){
+           return "" + index; 
+        }// This would have each tab with the text 'Panel #X' where X = index
+    }).anythingSliderVideo();
 
     var imageSliderBusiness = $('#bxsliderBusiness').bxSlider({
         onSliderLoad:function(){
@@ -447,18 +465,83 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
 		<div class="row-fluid Gradient-Style1">
 			<h4 class="Text-Align-Center">SITUS JUAL BELI BISNIS <font class="Font-Size-Large">TERBESAR</font> DI <font class="Font-Size-Large">INDONESIA</font></h4>
 		</div>
-		<div class="row-fluid">
-			<div class="span12">
-				 <div id="banner-slide">
-					<ul class="bjqs">
+		<div class="row-fluid" style="height:340px; position:relative">
+                    <style>
+                        .thumbNav{
+                            list-style-type: none;
+                            font-size : 20px;
+                            position:absolute; 
+                            z-index:500; 
+                           width: 100%;
+                           text-align: center;
+                           margin-left: 0px;
+                        }
+                        .thumbNav li{
+                            display: inline;
+                            padding-left: 5px;
+                            left:0;
+                            right:0;
+                            
+                            
+                        }
+                        #mainSliderPages
+                        {
+                            position:absolute;
+                            top:290px; 
+                            left:0px;
+                            right:0px;
+                            width:100%;
+                            
+                            
+                        }
+                        .thumbNav li a{
+                            -moz-border-bottom-colors: none;
+                            -moz-border-left-colors: none;
+                            -moz-border-right-colors: none;
+                            -moz-border-top-colors: none;
+                            background-color: #F5F5F5;
+                            background-image: linear-gradient(to bottom, #FFFFFF, #E6E6E6);
+                            background-repeat: repeat-x;
+                            border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) #B3B3B3;
+                            border-image: none;
+                            border-radius: 4px 4px 4px 4px;
+                            border-style: solid;
+                            border-width: 1px;
+                            box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+                            color: #333333;
+                            cursor: pointer;
+                            display: inline-block;
+                            font-size: 14px;
+                            line-height: 20px;
+                            margin-bottom: 0;
+                            padding: 4px 12px;
+                            text-align: center;
+                            text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+                            vertical-align: middle;
+                            
+                        }
+                    </style>
+                    <div id="mainSliderPages"></div>
+					<div id="mainSlider">
 						<?php 
                                                 foreach($slideshow as $value)
 						{
 
 							if($value->image != null || $value->image != "")
 							{
+                                                            if(substr($value->image,-3) == "mp4" || substr($value->image,-3)== "ogg")
+                                                            { ?>
+                                                                <div><video controls>
+                                                                     <source src="<?php echo Yii::app()->request->baseUrl; ?>/uploads/slideshow/<?php echo $value->image ?>" >
+                                                                             Browser Anda Tidak Bisa Menampilkan Video Ini.</video>
+                                                                </div>
+                                                      <?php }
+                                                            else
+                                                            {
+                                                                
+                                                            
 						?>
-							<li><a href="<?php 
+							<div><a href="<?php 
                                                                 if($value->url_link != '' || $value->url_link != null)
                                                                 {
                                                                     echo $value->url_link;
@@ -470,14 +553,14 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
                                                                 
                                                                 ?>"><img src="<?php echo Yii::app()->request->baseUrl; ?>/uploads/slideshow/<?php echo $value->image ?>" style="width:100%; height:100%">
 
-                                                            </a></li>
+                                                            </a></div>
 						<?php 
                                                 
-                                                                } }
+                                                } } }
                                                 ?>
-					</ul>
-				</div>
-			</div>
+                                        </div>
+                            
+			
 		</div>                	
 	</div>
     

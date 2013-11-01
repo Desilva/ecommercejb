@@ -40,7 +40,7 @@ class Slideshow extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('title','length', 'max'=>100),
-                        array('image_validator','file','types' =>'jpg,gif,jpeg,png,bmp','allowEmpty'=>true),
+                        array('image_validator','file','types' =>'jpg,gif,jpeg,png,bmp,mp4,ogg','maxSize'=>52428800,'allowEmpty'=>true),
                         array('url_link', 'length', 'max'=>255),
 			array('deskripsi,image', 'safe'),
 			// The following rule is used by search().
@@ -68,7 +68,7 @@ class Slideshow extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'title' => 'Title',
-			'image' => 'Gambar',
+			'image' => 'Gambar/Video',
 			'deskripsi' => 'Deskripsi',
                         'url_link' => 'Link',
 		);

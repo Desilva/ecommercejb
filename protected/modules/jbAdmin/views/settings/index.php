@@ -48,6 +48,14 @@
                                      <?php 
                                             for($i=1; $i<=5; $i++)
                                             {
+                                                if(substr(${'slideshow'.$i}->attributes["image"],-3) == 'mp4' || substr(${'slideshow'.$i}->attributes["image"],-3) == 'ogg')
+                                                {
+                                                    $mediaContent = "<video controls width='320' height='180'><source src=".Yii::app()->request->baseUrl."/uploads/slideshow/".${'slideshow'.$i}->attributes["image"]." >Browser Anda Tidak Bisa Menampilkan Video Ini.</video>";
+                                                }
+                                                else
+                                                {
+                                                    $mediaContent = "<img src=".Yii::app()->request->baseUrl."/uploads/slideshow/".${'slideshow'.$i}->attributes["image"]." width=\"300\" height=\"300\"/>";
+                                                }
                                                 ${'content'.$i} = "
 												<div class='control-group'>
 													<div class='span12'>
@@ -64,8 +72,8 @@
 													<div class='span12'>
 														<div class='span11'>
 															<label class='control-label'>".$form->labelEx(${'slideshow'.$i},'image')."</label>
-															<div class='controls'>
-																<img src=".Yii::app()->request->baseUrl."/uploads/slideshow/".${'slideshow'.$i}->attributes["image"]." width=\"60\" height=\"60\"/><br/>".$form->fileField(${'slideshow'.$i},"[$i]image")."
+                                                                                                                        <div class='controls'>
+																".$mediaContent."<br/>".$form->fileField(${'slideshow'.$i},"[$i]image")."
 															</div>
 														</div>
 													</div>	
