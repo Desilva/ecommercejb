@@ -222,6 +222,22 @@
 			});
 			// apply the calculated width after the float is applied to prevent scrollbar interference
 			slider.children.css('width', getSlideWidth());
+			console.log(slider.children);
+			var i = true;
+			var addValue = 40;
+			var  j = 0;
+			slider.children.each(function(){
+				if (i) {
+					$(this).css('padding-left',20);
+					if (j == slider.children.length - 1) {
+						$(this).css('padding-right',221.758);
+					}
+				} else {
+					$(this).css('padding-right',20);
+				}
+				j++;
+				i = !i;
+			});
 			// if slideMargin is supplied, add the css
 			if(slider.settings.mode == 'horizontal' && slider.settings.slideMargin > 0) slider.children.css('marginRight', slider.settings.slideMargin);
 			if(slider.settings.mode == 'vertical' && slider.settings.slideMargin > 0) slider.children.css('marginBottom', slider.settings.slideMargin);
@@ -537,6 +553,7 @@
 					});
 				}else if(type == 'reset'){
 					el.css(slider.animProp, propValue);
+					
 				}else if(type == 'ticker'){
 					// make the transition use 'linear'
 					el.css('-' + slider.cssPrefix + '-transition-timing-function', 'linear');
@@ -560,13 +577,15 @@
 						updateAfterSlideTransition();
 					});
 				}else if(type == 'reset'){
-					el.css(slider.animProp, value)
+					el.css(slider.animProp, value - 25);
+					console.log(value);
 				}else if(type == 'ticker'){
 					el.animate(animateObj, speed, 'linear', function(){
 						setPositionProperty(params['resetValue'], 'reset', 0);
 						// run the recursive loop after animation
 						tickerLoop();
 					});
+
 				}
 			}
 		}
@@ -1179,6 +1198,7 @@
 				 */
 				if ("undefined" !== typeof(position)) {
 					var value = slider.settings.mode == 'horizontal' ? -(position.left - moveBy) : -position.top;
+					value -= 25;
 					// plugin values to be animated
 					setPositionProperty(value, 'slide', slider.settings.speed);
 				}

@@ -1,6 +1,6 @@
 <table class="table">
 	<tr>
-    	<th class="latest-news-header">LATEST NEWS</th>
+    	<th class="latest-news-header">BERITA TERBARU</th>
     </tr>
  <?php foreach($artikelTerbaru as $artikel)
  {

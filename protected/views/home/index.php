@@ -61,13 +61,13 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
             
             if($detailUrl == '#')
             {
-                $contentBusinessTerbaru .= "<li><a class=\"tooltipCarouselBusinessTerbaru\" onclick=\"loginFirst()\" data-toggle=\"tooltip\" title=\"$businessDetail->nama\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:221.758px; height:130px;"."padding-left:".($addValue * floor(((($i-1<0)?0:$i-1) / 2)))."px"." \" /></a></li>";
+                $contentBusinessTerbaru .= "<li><a class=\"tooltipCarouselBusinessTerbaru\" onclick=\"loginFirst()\" data-toggle=\"tooltip\" title=\"$businessDetail->nama\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:221.758px; height:130px; \" /></a></li>";
                 $i++;
             }
             else
             {
 //                     $contentBusinessTerbaru .= "<li><a title=\"$businessDetail->nama\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:90px; height:90px \" /></a></li>";
-                $contentBusinessTerbaru .= "<li><a class=\"tooltipCarouselBusinessTerbaru\" data-toggle=\"tooltip\" title=\"$businessDetail->nama\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:221.758px; height:130px;"."padding-left:".($addValue * ($i-1<0?0:$i / 2))."px"." \" /></a></li>";
+                $contentBusinessTerbaru .= "<li><a class=\"tooltipCarouselBusinessTerbaru\" data-toggle=\"tooltip\" title=\"$businessDetail->nama\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:221.758px; height:130px; \" /></a></li>";
                 $i++;
             }
             
@@ -166,11 +166,11 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
                 }
                     if($detailUrl == '#')
                     {
-                        $contentFranchiseTerbaru .= "<a class=\"tooltipCarouselFranchiseTerbaru\" onclick=\"loginFirst()\" data-toggle=\"tooltip\" title=\"$businessDetail->nama\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:90px; height:90px \" /></a>";
+                        $contentFranchiseTerbaru .= "<li><a class=\"tooltipCarouselFranchiseTerbaru\" onclick=\"loginFirst()\" data-toggle=\"tooltip\" title=\"$businessDetail->nama\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:90px; height:90px \" /></a></li>";
                     }
                     else
                     {
-                        $contentFranchiseTerbaru .= "<a class=\"tooltipCarouselFranchiseTerbaru\"  data-tip=\"Yay tooltip!\" data-toggle=\"tooltip\" title=\"$businessDetail->nama\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:90px; height:90px \" /></a>";
+                        $contentFranchiseTerbaru .= "<li><a class=\"tooltipCarouselFranchiseTerbaru\"  data-tip=\"Yay tooltip!\" data-toggle=\"tooltip\" title=\"$businessDetail->nama\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:90px; height:90px \" /></a></li>";
                     }
                     
             }
@@ -216,11 +216,11 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
                 $tooltipFranchiseRekomendasiTitle = $businessDetail['nama'];
                 if($detailUrl == '#')
                 {
-                    $contentFranchiseRekomendasi .= "<a class=\"tooltipCarouselFranchiseRekomendasi\" onclick=\"loginFirst()\" data-toggle=\"tooltip\" title=\"$tooltipFranchiseRekomendasiTitle\" href=\"$detailUrl\"><img class=\"imageGadgetClient detail\" src=\"$imageSource\" style=\"width:90px; height:90px \" /></a>";
+                    $contentFranchiseRekomendasi .= "<li><a class=\"tooltipCarouselFranchiseRekomendasi\" onclick=\"loginFirst()\" data-toggle=\"tooltip\" title=\"$tooltipFranchiseRekomendasiTitle\" href=\"$detailUrl\"><img class=\"imageGadgetClient detail\" src=\"$imageSource\" style=\"width:90px; height:90px \" /></a></li>";
                 }
                 else
                 {
-                    $contentFranchiseRekomendasi .= "<a class=\"tooltipCarouselFranchiseRekomendasi\" data-toggle=\"tooltip\" title=\"$tooltipFranchiseRekomendasiTitle\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:90px; height:90px \" /></a>";
+                    $contentFranchiseRekomendasi .= "<li><a class=\"tooltipCarouselFranchiseRekomendasi\" data-toggle=\"tooltip\" title=\"$tooltipFranchiseRekomendasiTitle\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:90px; height:90px \" /></a></li>";
                 }
                 
 
@@ -235,7 +235,7 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl ?>/library/Slideshow/js/bjqs-1.3.min.js"></script>
 <!--<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl ?>/js/jquery.carouFredSel-6.2.1-packed.js"></script>-->
 <!-- bxSlider Javascript file -->
-<script src="<?php echo Yii::app()->request->baseUrl ?>/library/bxslider4/jquery.bxslider.min.js"></script>
+<script src="<?php echo Yii::app()->request->baseUrl ?>/library/bxslider4/jquery.bxslider.js"></script>
 <!-- bxSlider CSS file -->
 <link href="<?php echo Yii::app()->request->baseUrl ?>/library/bxslider4/jquery.bxslider.css" rel="stylesheet" />
 <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl ?>/library/AnythingSlider/css/anythingslider.css">
@@ -279,7 +279,7 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
                     $(".tooltipCarouselBusinessTerbaru").tipTip();
                     });
             },
-            minSlides: 1,
+            minSlides: 2,
             maxSlides: 2,
             slideWidth: 170,
             slideMargin: 0,
@@ -289,8 +289,8 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
             pager:false,
             nextSelector:'#business_next_selector',
             prevSelector:'#business_prev_selector',
-            prevText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/navGadgetLeft.png" width="20" height="20"/>',
-            nextText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/navGadgetRight.png" width="20" height="20"/>',
+            prevText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/arrow-left.png" width="20" height="20"/>',
+            nextText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/arrow-right.png" width="20" height="20"/>',
             useCSS:false,
           });
       
@@ -303,18 +303,18 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
                     $(".tooltipCarouselBusinessRekomendasi").tipTip();
                     });
                 },
-                  minSlides: 4,
-                  maxSlides: 5,
+                  minSlides: 2,
+                  maxSlides: 2,
                   slideWidth: 170,
                   sliderHeight: 130,
-                  slideMargin: 10,
+                  slideMargin: 0,
                   auto:true,
                   autoHover: true,
                   pager:false,
                   nextSelector:'#business_next_selector',
                   prevSelector:'#business_prev_selector',
-                  prevText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/navGadgetLeft.png" width="20" height="20"/>',
-                  nextText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/navGadgetRight.png" width="20" height="20"/>',
+                  prevText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/arrow-left.png" width="20" height="20"/>',
+                  nextText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/arrow-right.png" width="20" height="20"/>',
                   useCSS:false,
             });
           });	
@@ -328,17 +328,17 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
                     $(".tooltipCarouselBusinessTerbaru").tipTip();
                     });
                 },
-                  minSlides: 4,
-                  maxSlides: 5,
+                  minSlides: 2,
+                  maxSlides: 2,
                   slideWidth: 170,
-                  slideMargin: 10,
+                  slideMargin: 0,
                   auto:true,
                   autoHover: true,
                   pager:false,
                   nextSelector:'#business_next_selector',
                   prevSelector:'#business_prev_selector',
-                  prevText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/navGadgetLeft.png" width="20" height="20"/>',
-                  nextText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/navGadgetRight.png" width="20" height="20"/>',
+                  prevText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/arrow-left.png" width="20" height="20"/>',
+                  nextText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/arrow-right.png" width="20" height="20"/>',
                   useCSS:false,
             });
           });
@@ -350,17 +350,17 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
                     $(".tooltipCarouselFranchiseTerbaru").tipTip();
                     });
             },
-            minSlides: 4,
-            maxSlides: 5,
+            minSlides: 2,
+            maxSlides: 2,
             slideWidth: 170,
-            slideMargin: 10,
+            slideMargin: 0,
             auto:true,
             autoHover: true,
             pager:false,
             nextSelector:'#franchise_next_selector',
             prevSelector:'#franchise_prev_selector',
-            prevText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/navGadgetLeft.png" width="20" height="20"/>',
-            nextText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/navGadgetRight.png" width="20" height="20"/>',
+            prevText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/arrow-left.png" width="20" height="20"/>',
+            nextText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/arrow-right.png" width="20" height="20"/>',
             useCSS:false,
             
           });
@@ -374,17 +374,17 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
                     $(".tooltipCarouselFranchiseRekomendasi").tipTip();
                     });
             },
-                  minSlides: 4,
-                  maxSlides: 5,
+                  minSlides: 2,
+                  maxSlides: 2,
                   slideWidth: 170,
-                  slideMargin: 10,
+                  slideMargin: 0,
                   auto:true,
                   autoHover: true,
                   pager:false,
                   nextSelector:'#franchise_next_selector',
                   prevSelector:'#franchise_prev_selector',
-                  prevText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/navGadgetLeft.png" width="20" height="20"/>',
-                  nextText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/navGadgetRight.png" width="20" height="20"/>',
+                  prevText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/arrow-left.png" width="20" height="20"/>',
+                  nextText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/arrow-right.png" width="20" height="20"/>',
                   useCSS:false,
             });
           });
@@ -398,17 +398,17 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
                     $(".tooltipCarouselFranchiseTerbaru").tipTip();
                     });
             },
-                  minSlides: 4,
-                  maxSlides: 5,
+                  minSlides: 2,
+                  maxSlides: 2,
                   slideWidth: 170,
-                  slideMargin: 10,
+                  slideMargin: 0,
                   auto:true,
                   autoHover: true,
                   pager:false,
                   nextSelector:'#franchise_next_selector',
                   prevSelector:'#franchise_prev_selector',
-                  prevText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/navGadgetLeft.png" width="20" height="20"/>',
-                  nextText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/navGadgetRight.png" width="20" height="20"/>',
+                  prevText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/arrow-left.png" width="20" height="20"/>',
+                  nextText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/arrow-right.png" width="20" height="20"/>',
                   useCSS:false,
             });
           });
@@ -575,7 +575,7 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
 		</div>
         <div class="row-fluid div-content">
     		<form class="form-search" action="<?php echo Yii::app()->createUrl('//cariBisnisFranchise/cari/') ?>">
-    			<div class="row-fluid">
+    			<div class="row-fluid div-row-input">
 					<?php echo CHtml::hiddenField('jenis', '1') ?>
 					<?php
 						echo CHtml::dropDownList('provinsi', 'id', CHtml::listData($provinsi, 'id', 'provinsi'), array(
@@ -584,7 +584,7 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
 						));
 					?>
     			</div>
-    			<div class="row-fluid">
+    			<div class="row-fluid div-row-input">
 					<?php
 						echo CHtml::dropDownList('kategori', 'id', CHtml::listData($kategori, 'id', 'industri'), array(
 									'prompt' => 'Pilih Kategori',
@@ -593,12 +593,14 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
 					?>
     			</div>
     			<div class="row-fluid">
+                    <div class="div-row-input-harga">
 					<?php
 						echo CHtml::dropDownList('rangeharga', 'id', CHtml::listData($rangeharga, 'id', 'range_price'), array(
 									'prompt' => 'Range Harga',
 									'class' => 'div-input-harga',
 						));
 					?>
+                    </div>
 					<!--<?php echo CHtml::textField('keyword','',array('class'=>'Input-Size-Small','placeholder'=>'Kata Kunci')); ?>-->
 
                     <?php echo CHtml::submitButton('Cari', array('submit' => array("/cariBisnisFranchise/cari/"),'class' => 'div-input-button')); ?>
@@ -609,10 +611,14 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
     		<div class="row-fluid">
 				<div class="row-fluid div-slider-header">
 					<div class="div-slider-header-left div-slider-header-choose" id="tab_business_terbaru">
-						Terbaru
+                        <div class="text-center font-white">
+						  Terbaru
+                        </div>
 					</div>
 					<div class="div-slider-header-right" id="tab_business_rekomendasi" >
-						Rekomendasi
+						<div class="text-center font-white">
+                          Rekomendasi
+                        </div>
 					</div>
 				</div>		
 				<div class="row-fluid div-slider-content">
@@ -635,7 +641,7 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
 		</div>
         <div class="row-fluid div-content">
     		<form class="form-search" action="<?php echo Yii::app()->createUrl('//cariBisnisFranchise/cari/') ?>">
-    			<div class="row-fluid">
+    			<div class="row-fluid div-row-input">
 					<?php echo CHtml::hiddenField('jenis', '2') ?>
 					<?php
 						echo CHtml::dropDownList('provinsi', 'id', CHtml::listData($provinsi, 'id', 'provinsi'), array(
@@ -644,7 +650,7 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
 						));
 					?>
     			</div>
-    			<div class="row-fluid">
+    			<div class="row-fluid div-row-input">
 					<?php
     					echo CHtml::dropDownList('kategori', 'id', CHtml::listData($kategori, 'id', 'industri'), array(
     						'prompt' => 'Pilih Kategori',
@@ -653,13 +659,14 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
 					?>
     			</div>
     			<div class="row-fluid">
-					
-					<?php
-						echo CHtml::dropDownList('rangeharga', 'id', CHtml::listData($rangeharga, 'id', 'range_price'), array(
-									'prompt' => 'Range Harga',
-									'class' => 'div-input-harga',
-						));
-					?>
+					<div class="div-row-input-harga">
+    					<?php
+    						echo CHtml::dropDownList('rangeharga', 'id', CHtml::listData($rangeharga, 'id', 'range_price'), array(
+    									'prompt' => 'Range Harga',
+    									'class' => 'div-input-harga',
+    						));
+    					?>
+                    </div>
 					<!--<?php echo CHtml::textField('keyword','',array('class'=>'Input-Size-Small','placeholder'=>'Kata Kunci')); ?>-->
                     <?php echo CHtml::submitButton('Cari', array('submit' => array("/cariBisnisFranchise/cari/"),'class' => 'div-input-button')); ?>
     			</div>
@@ -669,10 +676,14 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
             <div class="row-fluid">
                 <div class="row-fluid div-slider-header">
                     <div class="div-slider-header-left div-slider-header-choose" id="tab_franchise_terbaru">
-						Terbaru
+						<div class="text-center font-white">
+                          Terbaru
+                        </div>
 					</div>
 					<div class="div-slider-header-right" id="tab_franchise_rekomendasi">
-						Rekomendasi
+						<div class="text-center font-white">
+                          Rekomendasi
+                        </div>
 					</div>	
 				</div>
 				<div class="row-fluid div-slider-content">
