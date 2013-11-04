@@ -525,7 +525,8 @@ li.k-file div.file-wrapper
 	font-family: eurostile;
 	font-size: 24px;
 	color: white;
-	background: #1467AD;
+	background: url('../images/asset/tab-header-right.png') right no-repeat #1467AD;
+	background-position-y: 0;
 	height: 60px;
 	text-align: center;
 }
@@ -697,7 +698,7 @@ li.k-file div.file-wrapper
 	display: table;
 	float: left;
 	margin-left: 0;
-	background: #2691BC;
+	background: #1467AD;
 }
 
 .div-slider-header-right {
@@ -706,11 +707,12 @@ li.k-file div.file-wrapper
 	cursor:pointer;
 	display: table;
 	margin-left: 0;
-	background: #2691BC;
+	background: url('../images/asset/tab-header-right.png') right no-repeat #1467AD;
+	background-size: auto 100%;
 }
 
 .div-slider-header-choose {
-	background: #1467AD;
+	background: #185996;
 }
 
 .div-slider-prev {
