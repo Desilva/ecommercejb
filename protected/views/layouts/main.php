@@ -92,7 +92,7 @@ $set=date_default_timezone_set('Asia/Krasnoyarsk');
                                         <div class="Border-Bottom-Navbar"></div>
                                     </li>
                                     <li>
-                                        <a class="Font-Color-Navbar" href="<?php echo Yii::app()->createUrl('//cariBisnisFranchise') ?>">Cari Bisnis Franchise</a>
+                                        <a class="Font-Color-Navbar" href="<?php echo Yii::app()->createUrl('//cariBisnisFranchise') ?>">Cari Bisnis / Franchise</a>
                                         <div class="Border-Bottom-Navbar"></div>
                                     </li>
                                      <?php
@@ -100,7 +100,7 @@ $set=date_default_timezone_set('Asia/Krasnoyarsk');
                                      ?>
                                     <?php if(Yii::app()->user->checkAccess("member")){ ?>
                                         <li>
-                                            <a class="Font-Color-Navbar" href="<?php echo Yii::app()->createUrl('//account/index') ?>">Jual Bisnis Franchise</a>
+                                            <a class="Font-Color-Navbar" href="<?php echo Yii::app()->createUrl('//account/index') ?>">Jual Bisnis / Franchise</a>
                                             <div class="Border-Bottom-Navbar"></div>
                                         </li>
                                         <li>
@@ -142,7 +142,7 @@ $set=date_default_timezone_set('Asia/Krasnoyarsk');
                                         <div class="Border-Bottom-Navbar"></div>
                                     </li>
                                     <li>
-                                        <a class="Font-Color-Navbar" href="<?php echo Yii::app()->createUrl('//faq') ?>">Faq</a>
+                                        <a class="Font-Color-Navbar" href="<?php echo Yii::app()->createUrl('//faq') ?>">FAQ</a>
                                         <div class="Border-Bottom-Navbar"></div>
                                     </li>
 

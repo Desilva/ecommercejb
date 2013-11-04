@@ -23,6 +23,8 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
         
 <?php 
         $contentBusinessTerbaru ='';
+        $i = 0;
+        $addValue = 40;
         foreach($business_terbaru as $businessDetail)
         {
             $imageList = array_filter(explode(',',$businessDetail->image));
@@ -59,12 +61,14 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
             
             if($detailUrl == '#')
             {
-                $contentBusinessTerbaru .= "<li><a class=\"tooltipCarouselBusinessTerbaru\" onclick=\"loginFirst()\" data-toggle=\"tooltip\" title=\"$businessDetail->nama\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:90px; height:90px \" /></a></li>";
+                $contentBusinessTerbaru .= "<li><a class=\"tooltipCarouselBusinessTerbaru\" onclick=\"loginFirst()\" data-toggle=\"tooltip\" title=\"$businessDetail->nama\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:221.758px; height:130px;"."padding-left:".($addValue * floor(((($i-1<0)?0:$i-1) / 2)))."px"." \" /></a></li>";
+                $i++;
             }
             else
             {
 //                     $contentBusinessTerbaru .= "<li><a title=\"$businessDetail->nama\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:90px; height:90px \" /></a></li>";
-                $contentBusinessTerbaru .= "<li><a class=\"tooltipCarouselBusinessTerbaru\" data-toggle=\"tooltip\" title=\"$businessDetail->nama\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:90px; height:90px \" /></a></li>";
+                $contentBusinessTerbaru .= "<li><a class=\"tooltipCarouselBusinessTerbaru\" data-toggle=\"tooltip\" title=\"$businessDetail->nama\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:221.758px; height:130px;"."padding-left:".($addValue * ($i-1<0?0:$i / 2))."px"." \" /></a></li>";
+                $i++;
             }
             
         }
@@ -246,7 +250,7 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
 </style>
 <script>
     var baseUrl = '<?php echo Yii::app()->request->baseUrl ?>';
-        $(document).ready(function($) {
+    $(document).ready(function($) {
 //			$('#banner-slide').bjqs({
 //				animtype      : 'slide',
 //				height        : 340,
@@ -254,203 +258,195 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
 //				responsive    : true,
 //				randomstart   : true,
 //			});
-    $('#mainSlider').anythingSlider({
-        expand: true,
-        resizeContents: true,
-        hashTags : false,
-        autoPlay : true,     
-        autoPlayLocked : true,
-        resumeDelay : 3000,
-        resumeOnVisible  : false, 
-        theme: 'mini-light',
-        appendNavigationTo: '#mainSliderPages',
-        navigationFormatter : function(index, panel){
-           return "" + index; 
-        }// This would have each tab with the text 'Panel #X' where X = index
-    }).anythingSliderVideo();
+        $('#mainSlider').anythingSlider({
+            expand: true,
+            resizeContents: true,
+            hashTags : false,
+            autoPlay : true,     
+            autoPlayLocked : true,
+            resumeDelay : 3000,
+            resumeOnVisible  : false, 
+            theme: 'mini-light',
+            appendNavigationTo: '#mainSliderPages',
+            navigationFormatter : function(index, panel){
+               return "" + index; 
+            }// This would have each tab with the text 'Panel #X' where X = index
+        }).anythingSliderVideo();
 
-    var imageSliderBusiness = $('#bxsliderBusiness').bxSlider({
-        onSliderLoad:function(){
-                $(function(){
-                $(".tooltipCarouselBusinessTerbaru").tipTip();
-                });
-        },
-        minSlides: 4,
-        maxSlides: 5,
-        slideWidth: 170,
-        slideMargin: 10,
-        auto:true,
-        autoHover: true,
-        pager:false,
-        nextSelector:'#business_next_selector',
-        prevSelector:'#business_prev_selector',
-        prevText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/navGadgetLeft.png" width="20" height="20"/>',
-        nextText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/navGadgetRight.png" width="20" height="20"/>',
-        useCSS:false,
-      });
-      
-      $('#tab_business_rekomendasi').click(function(e){
-        e.preventDefault();
-        changeToBusinessRekomendasi();
-        imageSliderBusiness.reloadSlider({
-              onSliderLoad:function(){
-                $(function(){
-                $(".tooltipCarouselBusinessRekomendasi").tipTip();
-                });
-            },
-              minSlides: 4,
-              maxSlides: 5,
-              slideWidth: 170,
-              slideMargin: 10,
-              auto:true,
-              autoHover: true,
-              pager:false,
-              nextSelector:'#business_next_selector',
-              prevSelector:'#business_prev_selector',
-              prevText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/navGadgetLeft.png" width="20" height="20"/>',
-              nextText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/navGadgetRight.png" width="20" height="20"/>',
-              useCSS:false,
-        });
-      });	
-      
-       $('#tab_business_terbaru').click(function(e){
-        e.preventDefault();
-        changeToBusinessTerbaru();
-        imageSliderBusiness.reloadSlider({
+        var imageSliderBusiness = $('#bxsliderBusiness').bxSlider({
             onSliderLoad:function(){
-                $(function(){
-                $(".tooltipCarouselBusinessTerbaru").tipTip();
-                });
+                    $(function(){
+                    $(".tooltipCarouselBusinessTerbaru").tipTip();
+                    });
             },
-              minSlides: 4,
-              maxSlides: 5,
-              slideWidth: 170,
-              slideMargin: 10,
-              auto:true,
-              autoHover: true,
-              pager:false,
-              nextSelector:'#business_next_selector',
-              prevSelector:'#business_prev_selector',
-              prevText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/navGadgetLeft.png" width="20" height="20"/>',
-              nextText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/navGadgetRight.png" width="20" height="20"/>',
-              useCSS:false,
-        });
-      });
+            minSlides: 1,
+            maxSlides: 2,
+            slideWidth: 170,
+            slideMargin: 0,
+            slideHeight: 130,
+            auto:true,
+            autoHover: true,
+            pager:false,
+            nextSelector:'#business_next_selector',
+            prevSelector:'#business_prev_selector',
+            prevText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/navGadgetLeft.png" width="20" height="20"/>',
+            nextText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/navGadgetRight.png" width="20" height="20"/>',
+            useCSS:false,
+          });
+      
+          $('#tab_business_rekomendasi').click(function(e){
+            e.preventDefault();
+            changeToBusinessRekomendasi();
+            imageSliderBusiness.reloadSlider({
+                  onSliderLoad:function(){
+                    $(function(){
+                    $(".tooltipCarouselBusinessRekomendasi").tipTip();
+                    });
+                },
+                  minSlides: 4,
+                  maxSlides: 5,
+                  slideWidth: 170,
+                  sliderHeight: 130,
+                  slideMargin: 10,
+                  auto:true,
+                  autoHover: true,
+                  pager:false,
+                  nextSelector:'#business_next_selector',
+                  prevSelector:'#business_prev_selector',
+                  prevText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/navGadgetLeft.png" width="20" height="20"/>',
+                  nextText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/navGadgetRight.png" width="20" height="20"/>',
+                  useCSS:false,
+            });
+          });	
+      
+           $('#tab_business_terbaru').click(function(e){
+            e.preventDefault();
+            changeToBusinessTerbaru();
+            imageSliderBusiness.reloadSlider({
+                onSliderLoad:function(){
+                    $(function(){
+                    $(".tooltipCarouselBusinessTerbaru").tipTip();
+                    });
+                },
+                  minSlides: 4,
+                  maxSlides: 5,
+                  slideWidth: 170,
+                  slideMargin: 10,
+                  auto:true,
+                  autoHover: true,
+                  pager:false,
+                  nextSelector:'#business_next_selector',
+                  prevSelector:'#business_prev_selector',
+                  prevText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/navGadgetLeft.png" width="20" height="20"/>',
+                  nextText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/navGadgetRight.png" width="20" height="20"/>',
+                  useCSS:false,
+            });
+          });
       
       
-      var imageSliderFranchise = $('#bxsliderFranchise').bxSlider({
-        onSliderLoad:function(){
-                $(function(){
-                $(".tooltipCarouselFranchiseTerbaru").tipTip();
-                });
-        },
-        minSlides: 4,
-        maxSlides: 5,
-        slideWidth: 170,
-        slideMargin: 10,
-        auto:true,
-        autoHover: true,
-        pager:false,
-        nextSelector:'#franchise_next_selector',
-        prevSelector:'#franchise_prev_selector',
-        prevText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/navGadgetLeft.png" width="20" height="20"/>',
-        nextText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/navGadgetRight.png" width="20" height="20"/>',
-        useCSS:false,
+          var imageSliderFranchise = $('#bxsliderFranchise').bxSlider({
+            onSliderLoad:function(){
+                    $(function(){
+                    $(".tooltipCarouselFranchiseTerbaru").tipTip();
+                    });
+            },
+            minSlides: 4,
+            maxSlides: 5,
+            slideWidth: 170,
+            slideMargin: 10,
+            auto:true,
+            autoHover: true,
+            pager:false,
+            nextSelector:'#franchise_next_selector',
+            prevSelector:'#franchise_prev_selector',
+            prevText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/navGadgetLeft.png" width="20" height="20"/>',
+            nextText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/navGadgetRight.png" width="20" height="20"/>',
+            useCSS:false,
+            
+          });
+      
+          $('#tab_franchise_rekomendasi').click(function(e){
+            e.preventDefault();
+            changeToFranchiseRekomendasi();
+            imageSliderFranchise.reloadSlider({
+                  onSliderLoad:function(){
+                    $(function(){
+                    $(".tooltipCarouselFranchiseRekomendasi").tipTip();
+                    });
+            },
+                  minSlides: 4,
+                  maxSlides: 5,
+                  slideWidth: 170,
+                  slideMargin: 10,
+                  auto:true,
+                  autoHover: true,
+                  pager:false,
+                  nextSelector:'#franchise_next_selector',
+                  prevSelector:'#franchise_prev_selector',
+                  prevText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/navGadgetLeft.png" width="20" height="20"/>',
+                  nextText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/navGadgetRight.png" width="20" height="20"/>',
+                  useCSS:false,
+            });
+          });
+      
+           $('#tab_franchise_terbaru').click(function(e){
+            e.preventDefault();
+            changeToFranchiseTerbaru();
+            imageSliderFranchise.reloadSlider({
+                  onSliderLoad:function(){
+                    $(function(){
+                    $(".tooltipCarouselFranchiseTerbaru").tipTip();
+                    });
+            },
+                  minSlides: 4,
+                  maxSlides: 5,
+                  slideWidth: 170,
+                  slideMargin: 10,
+                  auto:true,
+                  autoHover: true,
+                  pager:false,
+                  nextSelector:'#franchise_next_selector',
+                  prevSelector:'#franchise_prev_selector',
+                  prevText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/navGadgetLeft.png" width="20" height="20"/>',
+                  nextText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/navGadgetRight.png" width="20" height="20"/>',
+                  useCSS:false,
+            });
+          });
+      
+    });
         
-      });
-      
-      $('#tab_franchise_rekomendasi').click(function(e){
-        e.preventDefault();
-        changeToFranchiseRekomendasi();
-        imageSliderFranchise.reloadSlider({
-              onSliderLoad:function(){
-                $(function(){
-                $(".tooltipCarouselFranchiseRekomendasi").tipTip();
-                });
-        },
-              minSlides: 4,
-              maxSlides: 5,
-              slideWidth: 170,
-              slideMargin: 10,
-              auto:true,
-              autoHover: true,
-              pager:false,
-              nextSelector:'#franchise_next_selector',
-              prevSelector:'#franchise_prev_selector',
-              prevText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/navGadgetLeft.png" width="20" height="20"/>',
-              nextText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/navGadgetRight.png" width="20" height="20"/>',
-              useCSS:false,
-        });
-      });	
-      
-       $('#tab_franchise_terbaru').click(function(e){
-        e.preventDefault();
-        changeToFranchiseTerbaru();
-        imageSliderFranchise.reloadSlider({
-              onSliderLoad:function(){
-                $(function(){
-                $(".tooltipCarouselFranchiseTerbaru").tipTip();
-                });
-        },
-              minSlides: 4,
-              maxSlides: 5,
-              slideWidth: 170,
-              slideMargin: 10,
-              auto:true,
-              autoHover: true,
-              pager:false,
-              nextSelector:'#franchise_next_selector',
-              prevSelector:'#franchise_prev_selector',
-              prevText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/navGadgetLeft.png" width="20" height="20"/>',
-              nextText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/navGadgetRight.png" width="20" height="20"/>',
-              useCSS:false,
-        });
-      });
-      
- });
-        
-        function changeToBusinessTerbaru(){
-            var imageList = '<?php echo $contentBusinessTerbaru ?>';
-            $('#bxsliderBusiness').empty();
-            $('#bxsliderBusiness').append(imageList);
-            $('#tab_business_rekomendasi').removeClass();
-            $('#tab_business_terbaru').removeClass();
-            $('#tab_business_rekomendasi').addClass('span5 Gradient-Style4 Border-Radius-Style1 greyedOut');
-            $('#tab_business_terbaru').addClass('span5 Gradient-Style1 Border-Radius-Style1 ');
-                                                                    
-        }
+    function changeToBusinessTerbaru(){
+        var imageList = '<?php echo $contentBusinessTerbaru ?>';
+        $('#bxsliderBusiness').empty();
+        $('#bxsliderBusiness').append(imageList);
+        $('#tab_business_rekomendasi').removeClass('div-slider-header-choose');
+        $('#tab_business_terbaru').addClass('div-slider-header-choose');
+                                                                
+    }
         
 	function changeToBusinessRekomendasi(){
-                var imageList = '<?php echo $contentBusinessRekomendasi ?>';
+        var imageList = '<?php echo $contentBusinessRekomendasi ?>';
 		$('#bxsliderBusiness').empty();
-                $('#bxsliderBusiness').append(imageList);
-                $('#tab_business_rekomendasi').removeClass();
-                $('#tab_business_terbaru').removeClass();
-                $('#tab_business_rekomendasi').addClass('span5 Gradient-Style1 Border-Radius-Style1');
-                $('#tab_business_terbaru').addClass('span5 Gradient-Style4 Border-Radius-Style1 greyedOut');
+        $('#bxsliderBusiness').append(imageList);
+        $('#tab_business_terbaru').removeClass('div-slider-header-choose');
+        $('#tab_business_rekomendasi').addClass('div-slider-header-choose');
 		
 	}
         
-        function changeToFranchiseTerbaru(){
-            var imageList = '<?php echo $contentFranchiseTerbaru ?>';
-            $('#bxsliderFranchise').empty();
-            $('#bxsliderFranchise').append(imageList);
-            $('#tab_franchise_rekomendasi').removeClass();
-            $('#tab_franchise_terbaru').removeClass();
-            $('#tab_franchise_rekomendasi').addClass('span5 Gradient-Style4 Border-Radius-Style1 greyedOut');
-            $('#tab_franchise_terbaru').addClass('span5 Gradient-Style1 Border-Radius-Style1 ');
-                                                                    
-        }
+    function changeToFranchiseTerbaru(){
+        var imageList = '<?php echo $contentFranchiseTerbaru ?>';
+        $('#bxsliderFranchise').empty();
+        $('#bxsliderFranchise').append(imageList);
+        $('#tab_franchise_rekomendasi').removeClass('div-slider-header-choose');
+        $('#tab_franchise_terbaru').addClass('div-slider-header-choose');
+    }
         
 	function changeToFranchiseRekomendasi(){
-                var imageList = '<?php echo $contentFranchiseRekomendasi ?>';
+        var imageList = '<?php echo $contentFranchiseRekomendasi ?>';
 		$('#bxsliderFranchise').empty();
-                $('#bxsliderFranchise').append(imageList);
-                $('#tab_franchise_rekomendasi').removeClass();
-                $('#tab_franchise_terbaru').removeClass();
-                $('#tab_franchise_rekomendasi').addClass('span5 Gradient-Style1 Border-Radius-Style1');
-                $('#tab_franchise_terbaru').addClass('span5 Gradient-Style4 Border-Radius-Style1 greyedOut');
-		
+        $('#bxsliderFranchise').append(imageList);
+        $('#tab_franchise_terbaru').removeClass('div-slider-header-choose');
+        $('#tab_franchise_rekomendasi').addClass('div-slider-header-choose');
 	}
         
         
@@ -462,8 +458,8 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
 <!--End Slideshow------------------------------------------------------------------------------------------------------------>
 <div class="row-fluid">
 	<div class="span7" style="margin-top:15px">
-		<div class="row-fluid Gradient-Style1">
-			<h4 class="Text-Align-Center">SITUS JUAL BELI BISNIS <font class="Font-Size-Large">TERBESAR</font> DI <font class="Font-Size-Large">INDONESIA</font></h4>
+		<div class="row-fluid tagline">
+			<div class="tagline-text">Situs Jual Beli Bisnis Terbesar Di Indonesia</div>
 		</div>
 		<div class="row-fluid" style="height:340px; position:relative">
                     <style>
@@ -573,171 +569,123 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
 	<div class="span12"></div>
 </div>
 <div class="row-fluid">
-	<div class="span6 Gradient-Style4 padding-bottom-small">
+	<div class="span6 padding-bottom-small">
 		<div class="row-fluid">
-			<div class="span12 Font-Size-Medium Text-Align-Center Div-Style-Header Gradient-Style3 Font-Color-White Border-Radius-Style1">BISNIS</div>
+			<div class="span12 div-header">BISNIS</div>
 		</div>
-		<form class="form-search" action="<?php echo Yii::app()->createUrl('//cariBisnisFranchise/cari/') ?>">
-			<div class="row-fluid">
-				<div class="span6 padding-left-small">
+        <div class="row-fluid div-content">
+    		<form class="form-search" action="<?php echo Yii::app()->createUrl('//cariBisnisFranchise/cari/') ?>">
+    			<div class="row-fluid">
 					<?php echo CHtml::hiddenField('jenis', '1') ?>
 					<?php
 						echo CHtml::dropDownList('provinsi', 'id', CHtml::listData($provinsi, 'id', 'provinsi'), array(
 									'prompt' => 'Pilih Provinsi',
-									'class' => 'Input-Size-Medium Gradient-Style5',
+									'class' => 'div-input',
 						));
 					?>
-				</div>
-			</div>
-			<div class="row-fluid">
-				<div class="span6 padding-left-small">&nbsp;
+    			</div>
+    			<div class="row-fluid">
 					<?php
 						echo CHtml::dropDownList('kategori', 'id', CHtml::listData($kategori, 'id', 'industri'), array(
 									'prompt' => 'Pilih Kategori',
-									'class' => 'Input-Size-Medium Gradient-Style5',
+									'class' => 'div-input',
 						));
 					?>
-				</div>
-			</div>
-			<div class="row-fluid">
-				<div class="span6 padding-left-small">
-					<div class="row-fluid">
-						<div class="span12"></div>
+    			</div>
+    			<div class="row-fluid">
+					<?php
+						echo CHtml::dropDownList('rangeharga', 'id', CHtml::listData($rangeharga, 'id', 'range_price'), array(
+									'prompt' => 'Range Harga',
+									'class' => 'div-input-harga',
+						));
+					?>
+					<!--<?php echo CHtml::textField('keyword','',array('class'=>'Input-Size-Small','placeholder'=>'Kata Kunci')); ?>-->
+
+                    <?php echo CHtml::submitButton('Cari', array('submit' => array("/cariBisnisFranchise/cari/"),'class' => 'div-input-button')); ?>
+    			</div>
+    		</form>
+    		<div class="row-fluid div-line">
+    		</div>
+    		<div class="row-fluid">
+				<div class="row-fluid div-slider-header">
+					<div class="div-slider-header-left div-slider-header-choose" id="tab_business_terbaru">
+						Terbaru
 					</div>
-					<div class="input-prepend">
-						<?php echo CHtml::submitButton('Cari', array('submit' => array("/cariBisnisFranchise/cari/"),'class' => 'btn')); ?>
-						<?php
-							echo CHtml::dropDownList('rangeharga', 'id', CHtml::listData($rangeharga, 'id', 'range_price'), array(
-										'prompt' => 'Range Harga',
-										'class' => 'Input-Size-Small',
-							));
-						?>
-						<!--<?php echo CHtml::textField('keyword','',array('class'=>'Input-Size-Small','placeholder'=>'Kata Kunci')); ?>-->
+					<div class="div-slider-header-right" id="tab_business_rekomendasi" >
+						Rekomendasi
 					</div>
-				</div>
-			</div>
-		</form>
-		<div class="row-fluid">
-			<div class="span6 padding-left-small">
-				<hr class="Line-Size-Medium" />
-			</div>
-		</div>
-		<div class="row-fluid Div-Style-Content padding-left-verySmall2">
-			<div class="span11 Text-Align-Center ">
-				<div class="row-fluid">
-					<div class=	"span12" style="border-bottom:solid 1px #999;">
-						<div class="span5 Gradient-Style1 Border-Radius-Style1" id="tab_business_terbaru" style="cursor:pointer; padding-top:5px">
-							Terbaru
-						</div>
-						<div class="span5 Gradient-Style4 Border-Radius-Style1 greyedOut" style="cursor:pointer; margin-left:1px; padding-top:5px" id="tab_business_rekomendasi" >
-							Rekomendasi
-						</div>	
-					</div>		
 				</div>		
-				<div class="row-fluid">
-					<div class="span12 Solid-White" style="padding-bottom:25px; padding-top:25px;">
-						<div class="span1">
-							<div id="business_prev_selector" class="prev" style="margin-left:-4px; margin-top:25px">
-                                                            
-							</div>
-						</div>
-						<div class="span10">
-								<ul id="bxsliderBusiness">
-                                                                    <?php echo $contentBusinessTerbaru ?>
-                                                                </ul>
-						</div>
-						<div class="span1">
-							<div id="business_next_selector" class="next" style="margin-left:5px; margin-top:25px">
-                                                            <span ></span>
-							</div>
-						</div>
+				<div class="row-fluid div-slider-content">
+					<div id="business_prev_selector" class="prev div-slider-prev"></div>
+					<div class="div-slider-image">
+						<ul id="bxsliderBusiness">
+                            <?php echo $contentBusinessTerbaru ?>
+                        </ul>
+					</div>
+					<div id="business_next_selector" class="next  div-slider-next">
 					</div>
 				</div>
-			</div>	
-		</div>
+    		</div>
+        </div>
 	</div>
-	<div class="span6 Gradient-Style4 padding-bottom-small">
+
+	<div class="span6 padding-bottom-small">
 		<div class="row-fluid">
-			<div class="span12 Text-Align-Center Font-Size-Medium Div-Style-Header Gradient-Style3 Font-Color-White  Border-Radius-Style1">FRANCHISE</div>
+            <div class="span12 div-header">FRANCHISE</div>
 		</div>
-		<form class="form-search" action="<?php echo Yii::app()->createUrl('//cariBisnisFranchise/cari/') ?>">
-			<div class="row-fluid"> 
-				<div class="span6 padding-left-small">
+        <div class="row-fluid div-content">
+    		<form class="form-search" action="<?php echo Yii::app()->createUrl('//cariBisnisFranchise/cari/') ?>">
+    			<div class="row-fluid">
 					<?php echo CHtml::hiddenField('jenis', '2') ?>
 					<?php
-							echo CHtml::dropDownList('provinsi', 'id', CHtml::listData($provinsi, 'id', 'provinsi'), array(
-									'prompt' => 'Pilih Provinsi',
-									'class' => 'Input-Size-Medium Gradient-Style5',
-									));
+						echo CHtml::dropDownList('provinsi', 'id', CHtml::listData($provinsi, 'id', 'provinsi'), array(
+								'prompt' => 'Pilih Provinsi',
+								'class' => 'div-input',
+						));
 					?>
-				</div>
-			</div>
-			<div class="row-fluid">
-				<div class="span6 padding-left-small">&nbsp;
+    			</div>
+    			<div class="row-fluid">
 					<?php
-								echo CHtml::dropDownList('kategori', 'id', CHtml::listData($kategori, 'id', 'industri'), array(
-									'prompt' => 'Pilih Kategori',
-									'class' => 'Input-Size-Medium Gradient-Style5',
-								));
-								?>
+    					echo CHtml::dropDownList('kategori', 'id', CHtml::listData($kategori, 'id', 'industri'), array(
+    						'prompt' => 'Pilih Kategori',
+    						'class' => 'div-input',
+    					));
+					?>
+    			</div>
+    			<div class="row-fluid">
+					
+					<?php
+						echo CHtml::dropDownList('rangeharga', 'id', CHtml::listData($rangeharga, 'id', 'range_price'), array(
+									'prompt' => 'Range Harga',
+									'class' => 'div-input-harga',
+						));
+					?>
+					<!--<?php echo CHtml::textField('keyword','',array('class'=>'Input-Size-Small','placeholder'=>'Kata Kunci')); ?>-->
+                    <?php echo CHtml::submitButton('Cari', array('submit' => array("/cariBisnisFranchise/cari/"),'class' => 'div-input-button')); ?>
+    			</div>
+    		</form>
+    		<div class="row-fluid div-line">
+            </div>
+            <div class="row-fluid">
+                <div class="row-fluid div-slider-header">
+                    <div class="div-slider-header-left div-slider-header-choose" id="tab_franchise_terbaru">
+						Terbaru
+					</div>
+					<div class="div-slider-header-right" id="tab_franchise_rekomendasi">
+						Rekomendasi
+					</div>	
 				</div>
-			</div>
-			<div class="row-fluid">
-				<div class="span6 padding-left-small">
-					<div class="row-fluid">
-						<div class="span12"></div>
+				<div class="row-fluid div-slider-content">
+					<div id="franchise_prev_selector" class="prev div-slider-prev"></div>
+					<div class="div-slider-image">
+						<ul id="bxsliderFranchise">
+                            <?php echo $contentFranchiseTerbaru ?>
+                        </ul>
 					</div>
-					<div class="input-prepend">
-							<?php echo CHtml::submitButton('Cari', array('submit' => array("/cariBisnisFranchise/cari/"),'class' => 'btn')); ?>
-							<?php
-								echo CHtml::dropDownList('rangeharga', 'id', CHtml::listData($rangeharga, 'id', 'range_price'), array(
-											'prompt' => 'Range Harga',
-											'class' => 'Input-Size-Small',
-								));
-							?>
-							<!--<?php echo CHtml::textField('keyword','',array('class'=>'Input-Size-Small','placeholder'=>'Kata Kunci')); ?>-->
-					</div>
-				</div>
-			</div>
-		</form>
-		<div class="row-fluid">
-			<div class="span6 padding-left-small">
-				<hr class="Line-Size-Medium" />
-			</div>
-		</div>
-		<div class="row-fluid Div-Style-Content padding-left-verySmall2">
-				<div class="span11 Text-Align-Center">
-					<div class="row-fluid">
-						<div class=	"span12 " style="border-bottom:solid 1px #999;">
-							<div class="span5 Gradient-Style1 Border-Radius-Style1" id="tab_franchise_terbaru" style=" cursor:pointer; padding-top:5px">
-								Terbaru
-							</div>
-							<div class="span5 Gradient-Style4 Border-Radius-Style1 greyedOut" style=" cursor:pointer; margin-left:1px; padding-top:5px" id="tab_franchise_rekomendasi">
-								Rekomendasi
-							</div>	
-						</div>		
-					</div>
-				<div class="row-fluid  Solid-White">
-					<div class="span12" style="padding-bottom:25px; padding-top:25px;">
-						<div class="span1">
-							<div id="franchise_prev_selector" class="prev" style="margin-left:-4px; margin-top:25px">
-								
-							</div>
-						</div>
-						<div class="span10">
-							<ul id="bxsliderFranchise">
-                                                                    <?php echo $contentFranchiseTerbaru ?>
-                                                        </ul>
-						</div>
-						<div class="span1">
-							<div id="franchise_next_selector" class="next" style="margin-left:5px; margin-top:25px">
-								
-							</div>
-						</div>				
-					</div>
+					<div id="franchise_next_selector" class="next  div-slider-next"></div>
 				</div>
 			</div>	
 		</div>
 	</div>
-		</div>
+</div>
 	
