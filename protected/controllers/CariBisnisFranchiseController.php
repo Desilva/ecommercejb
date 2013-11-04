@@ -526,11 +526,11 @@ class CariBisnisFranchiseController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','GenerateSubIndustri','GenerateKota','Cari'),
+				'actions'=>array('index','GenerateSubIndustri','GenerateKota','Cari','detail'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('detail','kontakBisnis','watchlist'),
+				'actions'=>array('kontakBisnis','watchlist'),
 				'users'=>array('@'),
 			),
 			array('deny',  // deny all users
