@@ -61,13 +61,13 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
             
             if($detailUrl == '#')
             {
-                $contentBusinessTerbaru .= "<li><a class=\"tooltipCarouselBusinessTerbaru\" onclick=\"loginFirst()\" data-toggle=\"tooltip\" title=\"$businessDetail->nama\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:221.758px; height:130px; \" /></a></li>";
+                $contentBusinessTerbaru .= "<li><a class=\"tooltipCarouselBusinessTerbaru\" onclick=\"loginFirst()\" data-toggle=\"tooltip\" title=\"$businessDetail->nama\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:209.3595px; height:130px; \" /></a></li>";
                 $i++;
             }
             else
             {
 //                     $contentBusinessTerbaru .= "<li><a title=\"$businessDetail->nama\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:90px; height:90px \" /></a></li>";
-                $contentBusinessTerbaru .= "<li><a class=\"tooltipCarouselBusinessTerbaru\" data-toggle=\"tooltip\" title=\"$businessDetail->nama\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:221.758px; height:130px; \" /></a></li>";
+                $contentBusinessTerbaru .= "<li><a class=\"tooltipCarouselBusinessTerbaru\" data-toggle=\"tooltip\" title=\"$businessDetail->nama\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:209.3595px; height:130px; \" /></a></li>";
                 $i++;
             }
             

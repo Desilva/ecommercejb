@@ -59,57 +59,54 @@
 	<div class="span12">
 		<div class="row-fluid">
 			<div class="span3">
-				<div class="widget-box">
-					<div class="widget-title">
-						<span class="icon">
-							<i class="icon-align-justify"></i>									
-						</span>
-						<h5>Kategori</h5>
+				<div class="row-fluid widget-title-box">
+				  <div class="widget-title-text text-center">
+				  	Pilih Artikel
 					</div>
-					<div class="widget-content nopadding">
-						<form method="get">
-							<table class="table">
-								<tr>
-									<td>Kategori Pembaca</td>
-									<td>
-										<?php echo CHtml::dropDownList('kategoriPembaca',$selectedArticleCategoryPembaca, CHtml::listData($articleCategoryPembaca,'id','category_pembaca'), array('prompt'=>'Semua','class'=>'Input-Size-VerySmall')) ?>
-									</td>
-								</tr>
-								<tr>
-									<td>Kategori Artikel</td>
-									<td>
-										<?php echo CHtml::dropDownList('kategori',$selectedArticleCategory, CHtml::listData($articleCategory,'id','category'), array('prompt'=>'Semua','class'=>'Input-Size-VerySmall')) ?>
-									</td>
-								</tr>
-								<tr>
-									<td></td>
-									<td><input type="submit" class="btn Gradient-Style1" value="Cari" /></td>
-								</tr>
-							</table>
-						</form>
+				</div>
+				<form method="get">
+					<div class="search-body">
+						<div class="row-fluid">
+							<div class="search-input">
+								<?php echo CHtml::dropDownList('kategoriPembaca',$selectedArticleCategoryPembaca, CHtml::listData($articleCategoryPembaca,'id','category_pembaca'), array('prompt'=>'Kategori Pembaca - Semua','class'=>'div-input','placeholder' => '')) ?>
+							</div>
+						</div>
+						<div class="row-fluid">
+							<div class="search-input">
+								<?php echo CHtml::dropDownList('kategori',$selectedArticleCategory, CHtml::listData($articleCategory,'id','category'), array('prompt'=>'Kategori Artikel - Semua','class'=>'div-input')) ?>
+							</div>
+						</div>
+						<div class="row-fluid">
+							<div class="search-row-button">
+								<button type="submit" class="btn search-button">Cari</button></td>
+							</div>
+						</div>
 					</div>
-				</div>						
+				</form>
 			</div>
-			<div class="span7" style="margin-left:10px;">
-				<div>
-					<?php 
-					$this->widget('zii.widgets.CListView', array(
-							'dataProvider'=>$model,
-							'itemView'=>'_list',
-							'summaryText'=>'',
-							'ajaxUpdate' => true,
-							'sorterHeader' => 'Urutkan Berdasarkan:',
-							'sortableAttributes'=>array(
-								'post_date'=>'Tanggal',
-							),
-							'template' => '	<div>
-												<header style="font-size:30px; font-family:Calibri;">Artikel-artikel jualanbisnis.com</header>{sorter}<br style="clear:both"/>
-											</div>
-											<div style="margin-top:-35px;"><hr/>{items}</div>{pager}'
-					));
-					?>
+			<div class="span7">
+				<div class="row-fluid hasil-pencarian">
+					<div class="hasil-pencarian-content">
+						<?php 
+						$this->widget('zii.widgets.CListView', array(
+								'dataProvider'=>$model,
+								'itemView'=>'_list',
+								'summaryText'=>'',
+								'ajaxUpdate' => true,
+								'sorterHeader' => 'Urutkan Berdasarkan:',
+								'sortableAttributes'=>array(
+									'post_date'=>'Tanggal',
+								),
+								'template' => '	<div>
+													<header class="hasil-pencarian-header">Daftar Artikel</header>{sorter}<br style="clear:both"/>
+												</div>
+												{pager}
+												<div>{items}</div>{pager}'
+						));
+						?>
+					</div>
 				</div>        
 			</div>
 		</div>
-    </div>
+  </div>
 </div>

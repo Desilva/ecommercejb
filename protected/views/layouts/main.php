@@ -17,6 +17,8 @@ $set=date_default_timezone_set('Asia/Krasnoyarsk');
 <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl ?>/css/tipTip.css" />
 <script language="javascript" type="text/javascript" src="<?php echo Yii::app()->request->baseUrl ?>/js/jquery.tipTip.js">
 </script>
+<script language="javascript" type="text/javascript" src="<?php echo Yii::app()->request->baseUrl ?>/js/bootstrap.js">
+</script>
 <script type="text/javascript">
     $(document).ready(function(){
         jQuery('ul.nav li.dropdown').hover(function() {
@@ -27,17 +29,17 @@ $set=date_default_timezone_set('Asia/Krasnoyarsk');
 	
 		$('.detail').click(function(e){
                                 e.preventDefault();
-				$('#EmailText').popover('destroy')
-				$("#EmailText").popover('show');
-                                $("#EmailText").focus();
+				$('#login-email').popover('destroy')
+				$("#login-email").popover('show');
+                                $("#login-email").focus();
 			});
 			
-		$("#EmailText").blur(function(){
-				$("#EmailText").popover('destroy');			});
+		$("#login-email").blur(function(){
+				$("#login-email").popover('destroy');			});
 		
                 $('.klikUntukLogin').click(function(e){
                                 e.preventDefault();
-                                $("#EmailText").focus();
+                                $("#login-email").focus();
 			});
     });
     
@@ -117,7 +119,7 @@ $set=date_default_timezone_set('Asia/Krasnoyarsk');
                                         }else{
                                     ?>
                                     <li>
-                                        <a class="detail Font-Color-Navbar" href="#LoginForm_email">Jual Bisnis Franchise</a>
+                                        <a class="detail Font-Color-Navbar" href="#LoginForm_email">Jual Bisnis / Franchise</a>
                                         <div class="Border-Bottom-Navbar"></div>
                                     </li>
                                     <?php } ?>

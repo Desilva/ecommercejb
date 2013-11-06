@@ -79,45 +79,48 @@
     }
 </script>
 <div class="row-fluid">
-	<div class="span12">
-		<div class="row-fluid">
-			<div class="span3">
-				<?php 
-					if(!empty($this->clips['sidebar'])) echo
-                     $this->clips['sidebar']
-				?>
-			</div>
-			<div class="span8" style="margin-left:5px;">
-				<div class="row-fluid">
-					<div class="span12">
-						<table class="table">
-							<tr>
-								<th>Gambar</th>
-								<th>Deskripsi</th>
-                                                                <th>Tanggal</th>
-								<th>Lokasi</th>
-								<th>Harga</th>
-								<th>Omzet</th>
-							</tr>
-							<?php 
-							$this->widget('zii.widgets.CListView', array(
-									'dataProvider'=>$model,
-									'itemView'=>'_list',
-									'summaryText'=>'',
-									'ajaxUpdate' => false,
-									'sorterHeader' => 'Urutkan Berdasarkan:',
-									'sortableAttributes'=>array(
-										'tanggal_approval'=>'Tanggal',
-										'harga'=>'Harga',
-										'nama'=>'Nama',
-										'penjualan'=>'Revenue'
-									),
-									'template' => '<div><header style="font-size:30px; font-family:Calibri;">Hasil Pencarian</header>{sorter}<br style="clear:both"/></div><div style="margin-top:-35px;"><hr/>{items}</div>{pager}'
-							));
-							?>
-						</table>
-					</div>
-				</div>
+	<div class="span3">
+		<?php 
+			if(!empty($this->clips['sidebar'])) echo
+                 $this->clips['sidebar']
+		?>
+	</div>
+	<div class="span7">
+		<div class="row-fluid hasil-pencarian">
+			<div class="hasil-pencarian-content">
+				
+					<?php 
+					$this->widget('zii.widgets.CListView', array(
+							'dataProvider'=>$model,
+							'itemView'=>'_list',
+							'summaryText'=>'',
+							'ajaxUpdate' => false,
+							'sorterHeader' => 'Urutkan Berdasarkan:',
+							'sortableAttributes'=>array(
+								'tanggal_approval'=>'Tanggal',
+								'harga'=>'Harga',
+								'nama'=>'Nama',
+								'penjualan'=>'Revenue'
+							),
+							'pager'=>array(
+				        'header'         => '',
+				        'firstPageLabel' => '&lt;&lt;',
+				        'lastPageLabel'  => '&gt;&gt;',
+				        'nextPageLabel'  => 'Berikutnya &gt;&gt;',
+				        'prevPageLabel' => '&lt;&lt; Sebelumnya',
+					    ),
+							'template' => '<div><header class="hasil-pencarian-header">HASIL PENCARIAN</header>{sorter}<br style="clear:both"/></div>{pager}<div><table class="table hasil-pencarian-table">
+								<tr>
+									<th>Gambar</th>
+									<th>Deskripsi</th>
+			            <th>Tanggal</th>
+									<th>Lokasi</th>
+									<th>Harga</th>
+									<th>Omzet</th>
+								</tr>{items}</table></div>{pager}'
+					));
+					?>
+				
 			</div>
 		</div>
 	</div>

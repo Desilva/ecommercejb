@@ -1,63 +1,52 @@
-<!--<div>
-    <div>
-		<header style="font-size:30px; font-family:Calibri;">Hasil Pencarian</header>
-		  <form method="post">
-                    <?php
-                       // echo CHtml::dropDownList('sort',$selectedSortValue,$sortType,array('class'=>'styleSelect3','style'=>'float:left','id'=>'shortBisnisFranchise','submit'=> Yii::app()->createUrl("//CariBisnisFranchise/index/"))); 
-                    ?>
-                </form>
-		<br style="clear:both"/>
-		
-	</div>-->
-<!--	<div style="margin-top:-18px;">
-    <hr/>-->
     <?php
         $image = array_filter(explode(',',$data->image));
     ?>
             <tr>
-            	<td style="min-width: 100px">
+            	<td style="min-width: 116px">
           <?php if(!empty($image)){ 
                     if(file_exists(Yii::app()->basePath.'/../uploads/images/'.$data->id_user.'/'.$image[0]))
                     {
           ?>
-                        <img src="<?php echo Yii::app()->baseUrl ?>/uploads/images/<?php echo $data->id_user?>/<?php echo $image[0] ?>" style="width: 100px; height:100px"/>
+                        <img src="<?php echo Yii::app()->baseUrl ?>/uploads/images/<?php echo $data->id_user?>/<?php echo $image[0] ?>" style="width: 110px; height:82.5px"/>
           <?php    }
                     else
                     {
           ?>
-                        <img src="<?php echo Yii::app()->baseUrl ?>/images/no-image.gif" style="width: 100px; height:100px"/>
+                        <img src="<?php echo Yii::app()->baseUrl ?>/images/no-image.gif" style="width: 110px; height:82.5px"/>
           <?php     }
                     }
                   else
                   {
          ?>
-                    <img src="<?php echo Yii::app()->baseUrl ?>/images/no-image.gif" style="width: 100px; height:100px"/>
+                    <img src="<?php echo Yii::app()->baseUrl ?>/images/no-image.gif" style="width: 110px; height:82.5px"/>
          <?php 
                   }
          ?>
                 </td>
                 <td width="39%" style="text-align:justify">
-                	<h5><?php echo $data->nama ?></h5>
+                	<div class="hasil-title"><?php echo $data->nama ?></div>
+                    <div class="hasil-deskripsi">
                     <?php
-                            if($data->deskripsi != '' || $data->deskripsi != null)
+                        if($data->deskripsi != '' || $data->deskripsi != null)
+                        {
+                            if(strlen($data->deskripsi) <= 100)
                             {
-                                if(strlen($data->deskripsi) <= 100)
-                                {
-                                    echo strip_tags(html_entity_decode($data->deskripsi));
-                                }
-                                else
-                                {
-                                    echo substr(strip_tags(html_entity_decode($data->deskripsi)), 0, 100) . "...";
-                                }
+                                echo strip_tags(html_entity_decode($data->deskripsi));
                             }
                             else
                             {
-                                echo "Tidak ada deskripsi";
+                                echo substr(strip_tags(html_entity_decode($data->deskripsi)), 0, 100) . "...";
                             }
-                        ?>
+                        }
+                        else
+                        {
+                            echo "Tidak ada deskripsi";
+                        }
+                    ?>
+                    </div>
                 </td>
                 <td width="15%">
-                	<?php setlocale(LC_TIME, 'indonesian'); setlocale(LC_TIME, 'id_ID'); echo strftime('%d %B %Y',  strtotime($data->tanggal_approval)) ?>
+                	<?php setlocale(LC_TIME, 'indonesian'); setlocale(LC_TIME, 'id_ID'); echo strftime('%d %b %Y',  strtotime($data->tanggal_approval)) ?>
                 </td>
                 <td width="15%">
                 	<?php echo $data->idKota->city ?>
@@ -65,29 +54,27 @@
                 <td>
                     Rp. <?php echo number_format($data->harga) ?>
                 </td>
-                <td>
+                <td class="omzet-field">
+                    <div class="hasil-pencarian-omzet">
                 	Rp. <?php echo number_format($data->penjualan) ?>
                         <br/>
                         
                        
-                        <?php
-				if(!Yii::app()->user->isGuest){
-			?>
-            		<div class="row-fluid">
-                        	<div class="span12 separator-medium"></div><!--Separator-->
-                        </div>
-					<?php echo CHtml::button('Lihat Detail', array('submit' => array("/cariBisnisFranchise/detail/$data->id"),'class' => 'btn Gradient-Style1')); ?>
-			<?php
-				}
-                                else
-                                {
+<?php
+	if(!Yii::app()->user->isGuest){
+?>
+                    <div class="button-detail-area">
+                        <?php echo CHtml::button('Lihat Detail', array('submit' => array("/cariBisnisFranchise/detail/$data->id"),'class' => 'button-detail')); ?>
+                    </div>
+<?php
+	} else {
 										
-			?>							<div class="row-fluid">
-                        	<div class="span12 separator-medium"></div><!--Separator-->
-                        </div>
-            										
-                               <?php echo CHtml::button('Lihat Detail', array('class' => 'detail btn Gradient-Style1')); ?>  
+?>
+                    <div class="button-detail-area">
+                        <?php echo CHtml::button('Lihat Detail', array('class' => 'detail button-detail')); ?>
+                    </div>
 								
-                        <?php   } ?>
+<?php   } ?>
+                    </div>
                 </td>
             </tr>
