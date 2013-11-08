@@ -55,7 +55,7 @@ $set=date_default_timezone_set('Asia/Krasnoyarsk');
 	<div id="primary" class="container">
     	<div class="row-fluid header">
         	<div class="span2" id="leftHeader">
-            	<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/logo.png" width="146" height="146" style="margin-top:20px; margin-left:100px" />
+            	<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/logo.png" width="146" height="146" style="margin-top:20px; margin-left:100px; width: 146px; height: 146px" />
             </div>
             <div class="span9" id="rightHeader">
             	<div class="row-fluid">
@@ -69,14 +69,12 @@ $set=date_default_timezone_set('Asia/Krasnoyarsk');
                             ?> 
                             <!--<h4> Selamat Datang, <?php //echo Yii::app()->user->first_name ?> (<a href="<?php //echo Yii::app()->createUrl('//authentication/logout') ?>">logout</a>)</h4>-->
 							<div class="span12" id="loginDiv-logon">
-								<div class="span12">
-								
-									 <h5 class="Text-Align-Right" style="margin-right:40px; margin-right:40px">Hi, <?php echo Yii::app()->user->first_name ?> |<a href="<?php echo Yii::app()->createUrl('//authentication/logout') ?>">logout</a></h5>
-									<div class="separator-verySmall"></div>
-								
-								</div>	
-								
-								
+                                <div class="control-label" id="login-forms">
+                                    <div class="name-logon">
+                                        Hi, <?php echo Yii::app()->user->first_name ?>
+                                    </div>
+                                    <a id="logout-button" href="<?php echo Yii::app()->createUrl('//authentication/logout') ?>">Logout</a>
+                                </div>								
 							</div>
 					
 					<?php }
@@ -89,7 +87,7 @@ $set=date_default_timezone_set('Asia/Krasnoyarsk');
                         	<div class="navbar-inner Transparent-Navbar Noborder-Navbar">
                             	<ul class="nav">
                                     <li style="margin-left:-19px; padding-left:10px;" class="home-button">
-                                    	<a style="padding-right:30px" class="Font-Color-Navbar" href="<?php echo Yii::app()->createUrl('//home') ?>"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/asset/iconHome.png" width="25" />
+                                    	<a style="padding-right:30px" class="Font-Color-Navbar" href="<?php echo Yii::app()->createUrl('//home') ?>"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/asset/iconHome.png" width="25" style="width:25px;height:25px" />
                                         </a>
                                         <div class="Border-Bottom-Navbar"></div>
                                     </li>

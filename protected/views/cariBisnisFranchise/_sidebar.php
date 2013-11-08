@@ -120,18 +120,18 @@
 $(document).ready(function(){
         $('.radio-button').each(function() {
         	if ($(this).is(':checked')) {
-        		$(this).parent().css('background-position-y',0);
+        		$(this).parent().css('background-position','0 0');
         	} else {
-        		$(this).parent().css('background-position-y',-17.5);
+        		$(this).parent().css('background-position','0 -17px');
         	}
         });
 
         $('.radio-button').click(function() {
         	$('.radio-button').each(function() {
 	        	if ($(this).is(':checked')) {
-	        		$(this).parent().css('background-position-y',0);
+	        		$(this).parent().css('background-position','0 0');
 	        	} else {
-	        		$(this).parent().css('background-position-y',-17.5);
+	        		$(this).parent().css('background-position','0 -17px');
 	        	}
 	        });
         });

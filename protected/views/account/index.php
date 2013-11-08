@@ -105,95 +105,91 @@ a.delete img{
             
         </script>
 
-		
-<div class="row-fluid">
-	<div class="span11">
-		<div class="span2 Top-Margin2" >
-			<div class="widget-box">
-				<div class="widget-title">
-					<span class="icon">
-						<i class="icon-th"></i>
-					</span>
-					<h5>Jualan Bisnis</h5>
-				</div>
-				<div class="widget-content nopadding">
-					<?php 
-						if(!empty($this->clips['sidebar'])) echo
-                            $this->clips['sidebar']
-					?>
-				</div>
-			</div>
+<div class="row-fluid account-body">
+	<div class="account-sidebar">
+		<div class="account-sidebar-header">
+			Akun Saya
 		</div>
-		<div class="span10">
-			<div>
-				<header style="font-size:30px; font-family:Calibri;">List Bisnis/Franchise</header><br style="clear:both"/>
-			</div>
-			<div style="margin-top:-35px;"></div>
-			<div class="row-fluid">
-				<div class="span12 Top-Margin3">	
-					<form method="get">
-						<span>Kategori: </span><?php echo CHtml::dropDownList('kategori',$selectedSortValue,CHtml::listData($sortType,'id','category'),array('class'=>'Input-Size-VerySmall','submit'=> Yii::app()->createUrl("//account/index/")));  ?>
-					</form>   	
-              		<?php echo CHtml::button('Tambah Bisnis/Franchise', array('submit' => array('account/create'), 'class'=>'btn Gradient-Style1')); ?>
-                </div>
-			</div>
-			<div class="row-fluid">
-				<div class="span12">
-					<div class="widget-box">
-						<div class="widget-title">
-							<span class="icon">
-								<i class="icon-th"></i>
-							</span>
-							<h5>Jual Bisnis/Franchise</h5>
-						</div>
-						<div class="widget-content nopadding">
-								<?php
-								$this->widget('zii.widgets.grid.CGridView', array(
-									'id' => 'businessGrid',
-									'dataProvider' => $model,
-									'itemsCssClass' => 'table table-bordered table-striped table-hover',
-									'summaryText' => '',
-									'ajaxUpdate' => 'emailGrid',
-                                                                        
-									'columns' => array(
-										'nama' => array(
-											'header' => 'Nama Bisnis/Franchise', 'name' => 'nama'),array(
-											'name' => 'deskripsi',
-											'type' => 'raw', //because of using html-code <br/>
-												//call the controller method gridProduct for each row
-											'value' => array($this, 'gridDeskripsi'),
-											),
-										'jumlah_click',array(
-										'name' => 'status_approval',
-										'type' => 'raw', //because of using html-code <br/>
-											//call the controller method gridProduct for each row
-										'value' => array($this, 'gridStatusApproval'),
-                                                                                    
-										),array(
-											'class' => 'CButtonColumn',
-											'htmlOptions' => array('style' => 'width: 85px'),
-											'header' => 'Tindakan',
-											'template' => '{update}{delete}{viewEmail}',
-											'deleteButtonImageUrl' => Yii::app()->request->baseUrl . '/images/asset/trash.png',
-											'updateButtonImageUrl' => Yii::app()->request->baseUrl . '/images/asset/write.png',
-                                                                                        'afterDelete'=>'function(link,success,data){afterDeleteAction();}',
-                                                                                        'buttons' => array(
-												'viewEmail' => array(
-													'label' => 'Lihat Email',
-													'imageUrl' => Yii::app()->request->baseUrl . '/images/asset/-.png',
-													'options' => array('class' => 'viewEmail'),
-													'url' => '$data->id',
-													'click' => "function(e){ e.preventDefault(); getEmail($(this).attr('href'))}"
-												)
-											),
-										),
-									),
-								));
-							?>				
-						</div>
-                    </div>
+		<?php 
+			if(!empty($this->clips['sidebar'])) echo $this->clips['sidebar'];
+		?>
+	</div>
+	<div class="account-content">
+		<div class="account-header">
+			LIST BISNIS/FRANCHISE
+		</div>
+		<div class="account-jual-category">
+			<form method="get">
+				<div class="account-beli-select-div">
+					<?php echo CHtml::dropDownList('kategori',$selectedSortValue,CHtml::listData($sortType,'id','category'),array('class'=>'account-beli-select','submit'=> Yii::app()->createUrl("//account/index/")));  ?>
 				</div>
-				<div class="row-fluid" id="emailList">
+			</form>
+  		<?php echo CHtml::button('Tambah Bisnis/Franchise', array('submit' => array('account/create'), 'class'=>'account-jual-add')); ?>
+		</div>
+		<div class="account-beli-table">
+			<?php
+				$this->widget('zii.widgets.grid.CGridView', array(
+					'id' => 'businessGrid',
+					'dataProvider' => $model,
+					'itemsCssClass' => 'table table-bordered table-striped table-hover',
+					'summaryText' => '',
+					'ajaxUpdate' => 'emailGrid',
+          'pager'=>array(
+				        'header'         => '',
+				        'firstPageLabel' => '&lt;&lt;',
+				        'lastPageLabel'  => '&gt;&gt;',
+				        'nextPageLabel'  => 'Berikutnya &gt;&gt;',
+				        'prevPageLabel' => '&lt;&lt; Sebelumnya',
+					    ),                                      
+					'columns' => array(
+						'nama' => array(
+							'header' => 'Nama Bisnis/Franchise', 'name' => 'nama', 'htmlOptions' => array('style' => 'width: 140px')),
+						array(
+							'name' => 'deskripsi',
+							'type' => 'raw', //because of using html-code <br/>
+								//call the controller method gridProduct for each row
+							'value' => array($this, 'gridDeskripsi'),
+						),
+						'jumlah_click' => array(
+							'name' => 'jumlah_click',
+							'htmlOptions' => array('style' => 'width: 85px'),
+						),
+						array(
+							'name' => 'status_approval',
+							'type' => 'raw', //because of using html-code <br/>
+							//call the controller method gridProduct for each row
+							'htmlOptions' => array('style' => 'width: 100px'),
+							'value' => array($this, 'gridStatusApproval'),
+                                                                            
+						),
+						array(
+							'class' => 'CButtonColumn',
+							'htmlOptions' => array('style' => 'width: 85px'),
+							'header' => 'Tindakan',
+							'template' => '{update}{delete}{viewEmail}',
+							'deleteButtonImageUrl' => Yii::app()->request->baseUrl . '/images/asset/trash.png',
+							'updateButtonImageUrl' => Yii::app()->request->baseUrl . '/images/asset/write.png',
+              'afterDelete'=>'function(link,success,data){afterDeleteAction();}',
+                'buttons' => array(
+									'viewEmail' => array(
+										'label' => 'Lihat Email',
+										'imageUrl' => Yii::app()->request->baseUrl . '/images/asset/-.png',
+										'options' => array('class' => 'viewEmail'),
+										'url' => '$data->id',
+										'click' => "function(e){ e.preventDefault(); getEmail($(this).attr('href'))}"
+									)
+								),
+							),
+					),
+				));
+			?>				
+		</div>
+		<div class="account-beli-table" id="emailList">
+
+		</div>
+	</div>
+</div>
+				<!-- <div class="row-fluid" id="emailList">
 					<div class="span12">
 						<div class="row-fluid">
 							<div class="span12">
@@ -233,7 +229,7 @@ a.delete img{
 			</div>
 		</div>
 	</div>
-</div>	
+</div>	 -->
 
         <script>
         function afterDeleteAction()

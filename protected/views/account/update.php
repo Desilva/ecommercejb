@@ -4,43 +4,30 @@
 <script src="<?php echo Yii::app()->baseUrl.'/ckeditor/ckeditor.js'; ?>"></script>
 <script src="<?php  echo Yii::app()->baseUrl.'/js/autoNumeric.js'; ?>"></script>
 
-<div class="row-fluid">
-	<div class="span11">
-		<div class="span2 Top-Margin2">
-			<div class="widget-box">
-				<div class="widget-title">
-					<span class="icon">
-						<i class="icon-th"></i>
-					</span>
-					<h5>Jualan Bisnis</h5>
-				</div>
-				<div class="widget-content nopadding">
-					<?php 
-						if(!empty($this->clips['sidebar'])) echo
-                            $this->clips['sidebar']?>
-				</div>
-			</div>
-		</div>
-		<div class="span10">
-			<div>
-				<header style="font-size:30px; font-family:Calibri;">Update <?php echo $model->nama ?></header><br style="clear:both"/>
-			</div>
-			<div style="margin-top:-35px;"></div>
-				<?php
-					if($model->idCategory->category == "Bisnis")
-					{
-						echo $this->renderPartial('_formUpdate', array('model'=>$model,'kategori'=>$kategori,'kepemilikan'=>$kepemilikan,'tahun'=>$tahun,'industri'=>$industri,'provinsi'=>$provinsi,'alasan_jual_bisnis'=>$alasan_jual_bisnis,'initial_doc_upload'=>$initial_doc_upload,'initial_image_upload'=>$initial_image_upload)); 
-					}
-					else if($model->idCategory->category == "Franchise")
-					{
-						echo $this->renderPartial('_formFranchiseUpdate', array('model'=>$model,'kategori'=>$kategori,'industri'=>$industri,'provinsi'=>$provinsi,'initial_doc_upload'=>$initial_doc_upload,'initial_image_upload'=>$initial_image_upload)); 
-					}
-					else
-					{
-						echo "Error";
-					}
-				?>
-		</div>
+<div class="row-fluid account-body">
+  <div class="account-sidebar">
+    <div class="account-sidebar-header">
+      Akun Saya
+    </div>
+<?php 
+  if(!empty($this->clips['sidebar'])) echo $this->clips['sidebar'];
+?>
+  </div>
+  <div class="account-content">
+    <?php
+      if($model->idCategory->category == "Bisnis")
+      {
+        echo $this->renderPartial('_formUpdate', array('model'=>$model,'kategori'=>$kategori,'kepemilikan'=>$kepemilikan,'tahun'=>$tahun,'industri'=>$industri,'provinsi'=>$provinsi,'alasan_jual_bisnis'=>$alasan_jual_bisnis,'initial_doc_upload'=>$initial_doc_upload,'initial_image_upload'=>$initial_image_upload)); 
+      }
+      else if($model->idCategory->category == "Franchise")
+      {
+        echo $this->renderPartial('_formFranchiseUpdate', array('model'=>$model,'kategori'=>$kategori,'industri'=>$industri,'provinsi'=>$provinsi,'initial_doc_upload'=>$initial_doc_upload,'initial_image_upload'=>$initial_image_upload)); 
+      }
+      else
+      {
+        echo "Error";
+      }
+    ?>
 	</div>
 </div>
 
