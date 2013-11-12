@@ -4,11 +4,15 @@
             <tr>
             	<td style="min-width: 116px">
           <?php if(!empty($image)){ 
-                    if(file_exists(Yii::app()->basePath.'/../uploads/images/'.$data->id_user.'/'.$image[0]))
+                    if(file_exists(Yii::app()->basePath.'/../uploads/images/'.$data->id_user.'/thumbs/'.$image[0]))
                     {
           ?>
+                        <img src="<?php echo Yii::app()->baseUrl ?>/uploads/images/<?php echo $data->id_user?>/thumbs/<?php echo $image[0] ?>" style="width: 110px; height:82.5px"/>
+          <?php     }
+                    else if(file_exists(Yii::app()->basePath.'/../uploads/images/'.$data->id_user.'/'.$image[0]))
+                    { ?>
                         <img src="<?php echo Yii::app()->baseUrl ?>/uploads/images/<?php echo $data->id_user?>/<?php echo $image[0] ?>" style="width: 110px; height:82.5px"/>
-          <?php    }
+          <?php     }
                     else
                     {
           ?>
@@ -27,7 +31,7 @@
                 	<div class="hasil-title"><?php echo $data->nama ?></div>
                     <div class="hasil-deskripsi">
                     <?php
-                        if($data->deskripsi != '' || $data->deskripsi != null)
+                        if($data->deskripsi != '' && $data->deskripsi != null)
                         {
                             if(strlen($data->deskripsi) <= 100)
                             {
@@ -79,7 +83,7 @@
 	} else {
 										
 ?>
-                    <div class="button-detail-area" style="padding: 5px 5px 5px 5px">
+                    <div class="button-detail-area">
                         <?php echo CHtml::link('Lihat Detail','#', array('class' => 'detail button-detail','style'=>'padding: 5px 5px 5px 5px')); ?>
                     </div>
 								

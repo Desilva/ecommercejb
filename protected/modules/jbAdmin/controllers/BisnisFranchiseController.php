@@ -133,7 +133,7 @@ class BisnisFranchiseController extends Controller
             //here you can also generate the image versions you need
             //using something like PHPThumb
             $thumb=Yii::app()->phpThumb->create($path.$files['name']);
-            $thumb->resize(100,100);
+            $thumb->adaptiveResize(121,91);
             $thumb->save($pathThumbnail.$files['name']);
             chmod($pathThumbnail . $files['name'], 0777);
             

@@ -214,13 +214,12 @@
     <input type='hidden' value='0' id='image_incrementor' />
     <script id="fileTemplate" type="text/x-kendo-template"> 
       <span class='k-progress'></span>
-      <div class='file-wrapper'>
-				<div class="span12">
-					<span><img  id='#=files[0].name##=files[0].size#' src='<?php echo Yii::app()->request->baseUrl ?>/uploads/images/<?php echo $model->id_user ?>/#=files[0].name#' class='file-icon' onerror="this.src='<?php echo Yii::app()->request->baseUrl ?>/images/asset/spinner-large.gif'" style="margin-right:5px"/></span>
-					<div class='file-heading file-name-heading account-file-heading'>Name: #=name#</div>
-        	<div class='file-heading file-size-heading account-file-size'>Size: #=size# bytes</div>
-				<button type='button' class='k-upload-action'></button>
-      </div>
+	    <div class='file-wrapper'>
+	    	<span><img id='#=files[0].name##=files[0].size#' src='<?php echo Yii::app()->request->baseUrl ?>/images/asset/spinner-large.gif' class='file-icon' /></span>
+				<div class='file-heading file-name-heading account-file-heading'>Name: #=name#</div>
+      	<div class='file-heading file-size-heading account-file-size'>Size: #=size# bytes</div>
+	      <button type='button' class='k-upload-action'></button>
+	  	</div>
     </script>
 
     <script>
@@ -230,8 +229,8 @@
           $("#upload").kendoUpload({
               multiple: true,
               async: {
-                  saveUrl: '<?php echo Yii::app()->createUrl('//account/uploadImage') ?>',
-                  removeUrl: "<?php echo Yii::app()->createUrl('//account/removeUploadedImage') ?>",
+                  saveUrl: '<?php echo Yii::app()->createUrl('//jbAdmin/bisnisFranchise/uploadImage',array('id'=>$model->id_user)) ?>',
+                  removeUrl: "<?php echo Yii::app()->createUrl('/jbAdmin/bisnisFranchise/removeUploadedImage',array('id'=>$model->id_user)) ?>",
                   autoUpload: true
               },
               template: kendo.template($('#fileTemplate').html()),
@@ -299,7 +298,7 @@
         if (e.operation == "upload") {
         	$.each(files, function(){
             var id = this.name+this.size;
-            var location = '<?php echo Yii::app()->request->baseUrl ?>/uploads/tmp/<?php echo Yii::app()->user->id ?>/'+this.name;
+            var location = '<?php echo Yii::app()->request->baseUrl ?>/uploads/tmp/<?php echo $model->id_user ?>/'+this.name;
             $("[id='"+id+"']").attr('src',location);
 //                        $('#'+id).append('<img src="'+location+'" />');
 //                        alert('#'+id);
@@ -340,8 +339,8 @@
         $("#upload2").kendoUpload({
              multiple: true,
             async: {
-                saveUrl: '<?php echo Yii::app()->createUrl('//account/uploadDocument') ?>',
-                removeUrl: "<?php echo Yii::app()->createUrl('//account/removeUploadedDocument') ?>",
+                saveUrl: '<?php echo Yii::app()->createUrl('//jbAdmin/bisnisFranchise/uploadDocument',array('id'=>$model->id_user)) ?>',
+                removeUrl: "<?php echo Yii::app()->createUrl('//jbAdmin/bisnisFranchise/removeUploadedDocument',array('id'=>$model->id_user)) ?>",
                 autoUpload: true
             },
             template: kendo.template($('#fileTemplate2').html()),
