@@ -41,6 +41,10 @@
                                                                         'options'=>array(
                                                                         'showAnim'=>'fold',
                                                                         'dateFormat'=>'yy-mm-dd',
+                                                                        'changeMonth'=>true,
+                                                                        'changeYear'=>true,
+                                                                        'yearRange'=>'1900:2050',
+                                                                        'maxDate' => date('Y-m-d'),
                                                                          ),
                                                                         'htmlOptions'=>array(
                                                                           'style'=>'height:20px;'
@@ -79,7 +83,7 @@
                                             <?php 
                                             if($model->isNewRecord)
                                             {
-                                                echo CHtml::button('Simpan Dan Kirim', array('submit' => array("newsletter/create?action=Kirim"), 'class'=>'btn Gradient-Style1'));
+                                                echo CHtml::button('Simpan Dan Kirim', array('submit' => array("newsletter/create?action=kirim"), 'class'=>'btn Gradient-Style1'));
                                                 echo CHtml::button('Simpan', array('submit' => array("newsletter/create"), 'class'=>'btn Gradient-Style1')); 
                                             }
                                             else

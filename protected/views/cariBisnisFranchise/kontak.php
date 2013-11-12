@@ -42,7 +42,7 @@
                 </tr>
                 <tr>
                 	<th class="Text-Align-Left Font-Color-LightBlue"><?php echo $form->labelEx($model,'no_telp'); ?></th>
-                    <td><?php echo $form->textField($model,'no_telp'); ?></td>
+                    <td><?php echo $form->textField($model,'no_telp',array('value'=>Yii::app()->user->handphone)); ?></td>
                 </tr>
                 <tr>
                 	<th class="Text-Align-Left Font-Color-LightBlue"><?php echo $form->labelEx($model,'alamat_email'); ?></th>

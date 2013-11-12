@@ -54,6 +54,10 @@
                                                                         'options'=>array(
                                                                         'showAnim'=>'fold',
                                                                         'dateFormat'=>'yy-mm-dd',
+                                                                        'changeMonth'=>true,
+                                                                        'changeYear'=>true,
+                                                                        'yearRange'=>'1900:2050',
+                                                                        'maxDate' => date('Y-m-d'), 
                                                                          ),
                                                                         'htmlOptions'=>array(
                                                                           'style'=>'height:20px;'

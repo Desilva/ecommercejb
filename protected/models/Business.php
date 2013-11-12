@@ -85,8 +85,9 @@ class Business extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_category, id_user, id_industri,  id_provinsi, id_kota, nama, kepemilikan, harga', 'required'),
-			array('id_category, id_user, id_industri, id_sub_industri, id_provinsi, id_kota, kepemilikan, tahun_didirikan, jumlah_karyawan, penjualan, hpp, laba_bersih_tahun, total_aset, harga, id_alasan_penolakan, jumlah_click, tampilkanKontak, status_rekomendasi', 'numerical', 'integerOnly'=>true),
+			array('id_category, id_user, id_industri,  id_provinsi, id_kota, nama, kepemilikan, harga, alamat', 'required'),
+			array('id_category, id_user, id_industri, id_sub_industri, id_provinsi, id_kota, kepemilikan, tahun_didirikan, jumlah_karyawan, penjualan, hpp, laba_bersih_tahun, total_aset, id_alasan_penolakan, jumlah_click, tampilkanKontak, status_rekomendasi', 'numerical'),
+                        array('harga','numerical','min'=>1),
                         array('marjin_laba_bersih, laba_bersih_aset, harga_penawaran_penjualan, harga_penawaran_laba_bersih, harga_penawaran_aset','numerical'),
 //                      array('nama, alamat, alasan_jual_bisnis, franchise_alasan_kerjasama, franchise_persyaratan, franchise_menu, franchise_dukungan_franchisor', 'length', 'max'=>500),
                         array('status_approval', 'length', 'max'=>50),

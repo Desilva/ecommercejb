@@ -136,8 +136,8 @@
 			<div class="account-data-diri-column">
 				<div class="account-data-diri-column-left">
 					<div class="account-data-diri-row-input">
-						<label><?php echo $form->labelEx($model,'handphone'); ?></label>
-						<?php echo $form->textField($model,'handphone',array('class'=>'account-data-diri-input')); ?>
+						<label><?php echo $form->labelEx($model,'phone'); ?></label>
+						<?php echo $form->textField($model,'phone',array('class'=>'account-data-diri-input')); ?>
 					</div>
 				</div>
 				<div class="account-data-diri-column-right">
@@ -152,8 +152,8 @@
 			<div class="account-data-diri-column">
 				<div class="account-data-diri-column-left">
 					<div class="account-data-diri-row-input">
-						<label><?php echo $form->labelEx($model,'birth_place'); ?></label>
-						<?php echo $form->textField($model,'birth_place',array('class'=>'account-data-diri-input')); ?>
+						<label><?php echo $form->labelEx($model,'handphone'); ?></label>
+						<?php echo $form->textField($model,'handphone',array('class'=>'account-data-diri-input')); ?>
 					</div>
 				</div>
 				<div class="account-data-diri-column-right">
@@ -168,6 +168,17 @@
 			<div class="account-data-diri-column">
 				<div class="account-data-diri-column-left">
 					<div class="account-data-diri-row-input">
+						<label><?php echo $form->labelEx($model,'birth_place'); ?></label>
+						<?php echo $form->textField($model,'birth_place',array('class'=>'account-data-diri-input')); ?>
+					</div>
+				</div>
+				<div class="account-data-diri-column-right">
+					&nbsp;
+				</div>
+			</div>
+                    <div class="account-data-diri-column">
+				<div class="account-data-diri-column-left">
+					<div class="account-data-diri-row-input">
 						<label><?php echo $form->labelEx($model,'date_of_birth'); ?></label>
 						<?php 
 							$this->widget('zii.widgets.jui.CJuiDatePicker',array(
@@ -176,6 +187,10 @@
 								'options'=>array(
 									'showAnim'=>'fold',
 									'dateFormat'=>'yy-mm-dd',
+                                                                        'changeMonth'=>true,
+                                                                        'changeYear'=>true,
+                                                                        'yearRange'=>'1900:2050',
+                                                                        'maxDate' => date('Y-m-d'), 
 								),
 								'htmlOptions'=>array(
 									'class'=>'account-data-diri-input'
