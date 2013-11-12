@@ -128,8 +128,8 @@
 			<div class="signup-column">
 				<div class="signup-column-left">
 					<div class="signup-row-input">
-						<label><?php echo $form->labelEx($model,'handphone'); ?></label>
-						<?php echo $form->textField($model,'handphone',array('class'=>'signup-input')); ?>
+						<label><?php echo $form->labelEx($model,'phone'); ?></label>
+						<?php echo $form->textField($model,'phone',array('class'=>'signup-input')); ?>
 					</div>
 				</div>
 				<div class="signup-column-right">
@@ -144,8 +144,8 @@
 			<div class="signup-column">
 				<div class="signup-column-left">
 					<div class="signup-row-input">
-						<label><?php echo $form->labelEx($model,'birth_place'); ?></label>
-						<?php echo $form->textField($model,'birth_place',array('class'=>'signup-input')); ?>
+						<label><?php echo $form->labelEx($model,'handphone'); ?></label>
+						<?php echo $form->textField($model,'handphone',array('class'=>'signup-input')); ?>
 					</div>
 				</div>
 				<div class="signup-column-right">
@@ -160,6 +160,17 @@
 			<div class="signup-column">
 				<div class="signup-column-left">
 					<div class="signup-row-input">
+						<label><?php echo $form->labelEx($model,'birth_place'); ?></label>
+						<?php echo $form->textField($model,'birth_place',array('class'=>'signup-input')); ?>
+					</div>
+				</div>
+				<div class="signup-column-right">
+					&nbsp;
+				</div>
+			</div>
+                        <div class="signup-column">
+				<div class="signup-column-left">
+					<div class="signup-row-input">
 						<label><?php echo $form->labelEx($model,'date_of_birth'); ?></label>
 						<?php 
 							$this->widget('zii.widgets.jui.CJuiDatePicker',array(
@@ -168,6 +179,10 @@
 								'options'=>array(
 									'showAnim'=>'fold',
 									'dateFormat'=>'yy-mm-dd',
+                                                                        'changeMonth'=>true,
+                                                                        'changeYear'=>true,
+                                                                        'yearRange'=>'1900:2050',
+                                                                        'maxDate' => date('Y-m-d'), 
 								),
 								'htmlOptions'=>array(
 									'class'=>'signup-input'

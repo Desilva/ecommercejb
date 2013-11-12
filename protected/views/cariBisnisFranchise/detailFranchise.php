@@ -240,31 +240,6 @@ if(isset($_GET['msg'])){
 	</div>
 </div>
 <div class="row-fluid">
-	<div class="detail-bisnis-kontak">
-<?php
-  if($model->id_user != Yii::app()->user->id) {
-?>
-    <div class="row-fluid">
-			<div class="span12">
-<?php
-    $this->widget('zii.widgets.jui.CJuiAccordion', array(
-      'panels' => array(
-    	'Kontak' => $this->renderpartial('//cariBisnisFranchise/kontak', array('model'=>$email,'business'=>$business,'business_owner'=>$businessOwner, 'settings'=>$settings), true),),
-                                    // additional javascript options for the accordion plugin
-      'options' => array(
-        'collapsible' => true,
-        'active'=>(isset($_GET['msg']))?0:false,
-    	),
-    ));
-?>
-  		</div>
-		</div>
-<?php 
-		}
-?>
-	</div>
-</div>
-<div class="row-fluid">
 	<div class="span7">
 		<div class="detail-bisnis-informasi-header">
 			Detail Informasi Franchise
@@ -281,7 +256,7 @@ if(isset($_GET['msg'])){
 				</tr>
 				<tr>
 					<td>Harga</td>
-					<td>Rp.<?php echo number_format($model->harga) ?></td>
+					<td><?php if($model->harga > 0 && is_numeric($model->harga)) echo "Rp.".number_format($model->harga); else echo "-" ?></td>
 				</tr>
 				<tr>
 					<td>Alasan Franchise Mau Bekerjasama</td>
@@ -366,6 +341,32 @@ if(isset($_GET['msg'])){
 ?>
 			</div>
 		</div>
+	</div>
+</div>
+<br />
+<div class="row-fluid">
+	<div class="detail-bisnis-kontak">
+<?php
+  if($model->id_user != Yii::app()->user->id) {
+?>
+    <div class="row-fluid">
+			<div class="span12">
+<?php
+    $this->widget('zii.widgets.jui.CJuiAccordion', array(
+      'panels' => array(
+    	'Kontak' => $this->renderpartial('//cariBisnisFranchise/kontak', array('model'=>$email,'business'=>$business,'business_owner'=>$businessOwner, 'settings'=>$settings), true),),
+                                    // additional javascript options for the accordion plugin
+      'options' => array(
+        'collapsible' => true,
+        'active'=>0,
+    	),
+    ));
+?>
+  		</div>
+		</div>
+<?php 
+		}
+?>
 	</div>
 </div>
 <?php } else { ?>

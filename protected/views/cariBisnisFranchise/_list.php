@@ -56,22 +56,31 @@
                 </td>
                 <td class="omzet-field">
                     <div class="hasil-pencarian-omzet">
-                	Rp. <?php echo number_format($data->penjualan) ?>
+                	 <?php
+                                if($data->penjualan > 0)
+                                {
+                                    echo "Rp.".number_format($data->penjualan);
+                                }
+                                else
+                                {
+                                    echo "-";
+                                }
+                                 ?>
                         <br/>
                         
                        
 <?php
 	if(!Yii::app()->user->isGuest){
 ?>
-                    <div class="button-detail-area">
-                        <?php echo CHtml::button('Lihat Detail', array('submit' => array("/cariBisnisFranchise/detail/$data->id"),'class' => 'button-detail')); ?>
+                    <div class="button-detail-area" >
+                        <?php echo CHtml::link('Lihat Detail',  Yii::app()->createUrl("//cariBisnisFranchise/detail/$data->id"), array('class' => 'button-detail', 'style'=>'padding: 5px 5px 5px 5px')); ?>
                     </div>
 <?php
 	} else {
 										
 ?>
-                    <div class="button-detail-area">
-                        <?php echo CHtml::button('Lihat Detail', array('class' => 'detail button-detail')); ?>
+                    <div class="button-detail-area" style="padding: 5px 5px 5px 5px">
+                        <?php echo CHtml::link('Lihat Detail','#', array('class' => 'detail button-detail','style'=>'padding: 5px 5px 5px 5px')); ?>
                     </div>
 								
 <?php   } ?>

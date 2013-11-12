@@ -70,7 +70,7 @@ class NewsletterController extends Controller
                         
 			if($model->save())
                         {
-                            if(isset($_GET['action']) && $_GET['action'] == "kirim")
+                            if(isset($_GET['action']) && strtolower($_GET['action']) == "kirim")
                             {
                                 //kirim email
                                 $this->sendNewsletter($model->id);
@@ -102,7 +102,7 @@ class NewsletterController extends Controller
                         
 			if($model->save())
                         {
-                            if(isset($_GET['action']) && $_GET['action'] == "kirim")
+                            if(isset($_GET['action']) && strtolower($_GET['action']) == "kirim")
                             {
                                 //kirim email
                                 $this->sendNewsletter($model->id);

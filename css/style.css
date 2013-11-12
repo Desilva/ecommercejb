@@ -2403,6 +2403,10 @@ input[type="radio"].radio-button-signup:checked + label {
 	margin-top: 20px;
 }
 
+.account-jual-add:hover {
+	background: #2691BC;
+}
+
 .account-beli-table th a {
 	color: white !important;
 	font-weight: normal;
@@ -2967,4 +2971,408 @@ input[type="radio"].radio-button-account-create:checked+label {
 	font-size: 16px !important;
 	display: block;
 	width: 600px;
+}
+
+.admin-sidebar {
+	width: 20.914714547419837226480690489794%;
+	display: inline-block;
+	padding-top: 48px;
+	float: left;
+}
+
+.admin-sidebar-header {
+	font-family: eurostile;
+	font-size: 16px;
+	color: white;
+	padding-left: 14px;
+	width: 93.636363636363636363636363636364%;
+	background: url('../images/asset/tab-header-right.png') right no-repeat #1467AD;
+	background-size: auto 100%;
+	background-position: 100% 0;
+	height: 31px;
+	padding-top: 12px;
+}
+
+.admin-sidebar-menu {
+	width: 100%;
+	border-bottom: solid 2px white;
+	background: rgba(230,231,232,0.5);
+	height: 35px;
+}
+
+.admin-sidebar-menu a {
+	color: #58595B;
+	text-decoration: none;
+	display: inline-block;
+	vertical-align: middle;
+	width: 84.545454545454545454545454545455%;
+	float: left;
+	font-family: eurostile;
+	font-size: 16px;
+	padding-top: 7px;
+	padding-left: 14px;
+}
+
+.admin-sidebar-menu a:hover {
+	color: #1467AD;
+}
+
+.admin-sidebar-panah {
+	width: 20px;
+	color: #1467AD;
+	display: inline-block;
+	font-family: eurostile;
+	font-size: 16px;
+	padding-top: 7px;
+}
+
+.admin-content {
+	width: 76.233278923386548606271942625234%;
+	margin-left: 27px;
+	display: inline-block;
+}
+
+.admin-form {
+	padding: 43px;
+	background: rgba(230,231,232,0.5);
+
+}
+
+.error-field, .error-field p {
+	font-family: eurostile;
+	font-size: 13px;
+}
+
+.admin-row {
+	margin-bottom: 15px;
+	font-family: eurostile;
+	font-size: 16px;
+	vertical-align: middle;
+}
+
+.admin-row label {
+	font-size: 16px;
+	font-family: eurostile;
+	width: 180px;
+	display: inline-block;
+	color: black;
+	margin-bottom: 0;
+	vertical-align: top;
+	padding-top: 4px;
+}
+
+.admin-input {
+	width: 72.300902511695216171176897041589% !important;
+	border: 0 !important;
+	border-radius: 0 !important;
+	border-left: solid 4px #E6E7E8 !important;
+	border-top: solid 3px #E6E7E8 !important;
+	font-family: eurostile !important;
+	font-size: 13px !important;
+	color: black !important;
+	height: 17px !important;
+	padding: 6px 0px 6px 8px !important;
+	line-height: 13px !important;
+	margin-bottom: 0 !important;
+}
+
+.admin-input:focus {
+	box-shadow: 0 0 0 !important;
+	-webkit-box-shadow: 0 0 0 !important;
+	-moz-box-shadow: 0 0 0 !important;
+}
+
+.admin-input-2 {
+	width: 97.735383314681698688975657257813%% !important;
+	border: 0 !important;
+	border-radius: 0 !important;
+	border-left: solid 4px #E6E7E8 !important;
+	border-top: solid 3px #E6E7E8 !important;
+	font-family: eurostile !important;
+	font-size: 13px !important;
+	color: black !important;
+	height: 17px !important;
+	padding: 6px 0px 6px 8px !important;
+	line-height: 13px !important;
+	margin-bottom: 0 !important;
+}
+
+.admin-input-2:focus {
+	box-shadow: 0 0 0 !important;
+	-webkit-box-shadow: 0 0 0 !important;
+	-moz-box-shadow: 0 0 0 !important;
+}
+
+input[type="radio"].radio-button-admin {
+	display:none;
+}
+
+input[type="radio"].radio-button-admin + label {
+	background: url('../images/asset/radio-button.png') no-repeat transparent;
+	background-position: 0 -17px;
+	height: 18px !important;
+	padding-top: 0 !important;
+	padding-left: 20.5px;
+	font-family: eurostile;
+	font-size: 13px;
+	width: auto;
+	margin-right: 20px;
+	display: inline-block !important;
+	vertical-align: bottom !important;
+}
+
+input[type="radio"].radio-button-admin:checked+label {
+	background-position: 0 0 !important;
+}
+
+.admin-textarea {
+	width: 72.300902511695216171176897041589% !important;
+	border: 0 !important;
+	border-radius: 0 !important;
+	border-left: solid 4px #E6E7E8 !important;
+	border-top: solid 3px #E6E7E8 !important;
+	font-family: eurostile !important;
+	font-size: 13px !important;
+	color: black !important;
+	padding: 6px 0px 6px 8px !important;
+	line-height: 13px !important;
+	margin-bottom: 0 !important;
+}
+
+.admin-textarea:focus {
+	box-shadow: 0 0 0 !important;
+	-webkit-box-shadow: 0 0 0 !important;
+	-moz-box-shadow: 0 0 0 !important;
+}
+
+.admin-select {
+	width: 100% !important;
+	border: 0 !important;
+	border-radius: 0 !important;
+	border-left: solid 4px #E6E7E8 !important;
+	border-top: solid 3px #E6E7E8 !important;
+	font-family: eurostile !important;
+	font-size: 13px !important;
+	color: black !important;
+	height: 32px !important;
+	padding: 6px 0px 6px 8px !important;
+	line-height: 13px !important;
+	margin-bottom: 0 !important;
+	background: transparent;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	text-indent: 0.01px;
+  text-overflow: '';
+}
+
+.admin-row-select {
+	background: url('../images/asset/select-button.png') right no-repeat #fff;
+	width: 50% !important;
+	height: 32px;
+	display: inline-block;
+}
+
+.admin-row-select-2 {
+	background: url('../images/asset/select-button.png') right no-repeat #fff;
+	width: 74.15650748507803562274145086333% !important;
+	height: 32px;
+	display: inline-block;
+}
+
+.admin-divide-line {
+	min-height: 0px;
+	height: 7.5px;
+	border-bottom: solid 1px #1467AD;
+	width: 100%;
+	margin-bottom: 21.5px;
+}
+
+.admin-button {
+	height: 45px;
+	width: auto;
+	padding: 6px 12px;
+	margin-right: 12px;
+	background: #1467AD;
+	border: 0;
+	border-radius: 0;
+	font-family: eurostile;
+	font-size: 16px;
+	color: white;
+}
+
+.admin-button:hover {
+	background: #2691BC;
+}
+
+.admin-jenis {
+	display: inline-block;
+	padding-top: 4px;
+	font-family: eurostile;
+	font-size: 16px;
+	color: black;
+}
+
+
+.admin-loading-animation-industri {
+	position: relative;
+	top: -14px;
+	left: 40%;
+}
+
+.admin-loading-animation-provinsi {
+	position: relative;
+	top: -14px;
+	left: 50%;
+}
+
+.admin-row .additional {
+	margin-left: 180px;
+	margin-top: 6px;
+}
+
+.admin-lainnya {
+	margin-left: 20px;
+}
+
+.admin-row-subtitle, .admin-row-subtitle label {
+	font-size: 16px;
+	font-family: eurostile;
+	color: #414042;
+	margin-bottom: 6px;
+}
+
+.admin-textarea-lainnya {
+	width: 98.473070693009590388488988931035% !important;
+}
+
+.admin-header-button {
+	height: 32px;
+	width: auto;
+	padding: 6px 12px;
+	margin-left: 12px;
+	background: #1467AD;
+	border: 0;
+	border-radius: 0;
+	font-family: eurostile;
+	font-size: 16px;
+	color: white;
+	display: inline-block;
+}
+
+.admin-header-button:hover {
+	background: #2691BC;
+}
+
+.admin-header-button:focus {
+	box-shadow: 0 0 0;
+	-webkit-box-shadow: 0 0 0;
+	-moz-box-shadow: 0 0 0;
+}
+
+.account-beli-table .pagination:nth-of-type(2) {
+	border-top: solid 1px #1467AD !important;
+	padding-top: 5px;
+}
+
+.account-beli-table .pagination {
+	text-align: center !important;
+}
+
+.account-beli-table .yiiPager {
+	box-shadow: 0 0 0;
+	-moz-box-shadow: 0 0 0;
+	-webkit-box-shadow: 0 0 0;
+	display: inline;
+}
+
+.account-beli-table .yiiPager li {
+	display: inline;
+}
+
+.account-beli-table li > a {
+	border: 0 !important;
+	background: none !important;
+	border-radius: 0 !important;
+	font-size: 13px;
+	font-family: eurostile;
+	color: black !important;
+	padding: 0px 3px !important;
+	display: inline-block;
+	float: none !important;
+}
+
+.account-beli-table .yiiPager .previous > a {
+	float: left !important;
+}
+
+.account-beli-table .yiiPager .next > a {
+	float: right !important;
+}
+
+
+
+.account-beli-table li.disabled > a {
+	display: none;
+}
+
+.account-beli-table li > a:hover {
+	color: #2691BC !important;
+}
+
+.account-beli-table .active > a {
+	color: #1467AD !important;
+	font-weight: normal !important;
+}
+
+.account-beli-table span.caret {
+	display: none;
+}
+
+.admin-setting-subheader {
+	margin-top: 33px;
+}
+
+.admin-nav .nav-tabs {
+	margin: 0;
+	border-bottom: 0;
+}
+
+.admin-nav .nav-tabs li {
+	width: 20%;
+	margin: 0;
+	height: 45px;
+}
+
+.admin-nav .nav-tabs li > a {
+	background: #E6E7E8;
+	font-family: eurostile;
+	font-size: 16px;
+	color: black;
+	height: 23px;
+	border-radius: 0;
+	padding-top: 13px;
+	margin-right: 0;
+	text-align: center;
+	border-bottom: solid 3px #A1A2A3;
+}
+
+.admin-nav .nav-tabs li > a:hover {
+	background: #E6E7E8;
+	font-family: eurostile;
+	font-size: 16px;
+	color: #2691BC;
+	height: 23px;
+	padding-top: 14px; 
+	border-radius: 0;
+	border-top: 0;
+	
+	border-left: solid 2px white;
+	border-right: solid 2px white;
+	margin-right: 0;
+}
+
+.admin-nav .nav-tabs li.active > a {
+	border: solid 2px #A1A2A3;
+	border-bottom: 0;
+	background: rgba(230,231,232,0.5);
 }

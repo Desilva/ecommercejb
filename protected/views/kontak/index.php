@@ -32,7 +32,16 @@
 			</div>
 			<div class="contact-row-input">
 				<label><?php echo $form->labelEx($model,'phone') ?></label>
-				<?php echo $form->textField($model,'phone',array('class'=>'contact-input')); ?>
+				<?php 
+                                if(Yii::app()->user->isGuest)
+                                {
+                                    echo $form->textField($model,'phone',array('class'=>'contact-input'));
+                                }
+                                else
+                                {
+                                    echo $form->textField($model,'phone',array('class'=>'contact-input','value'=>Yii::app()->user->handphone));
+                                }
+                                     ?>
 			</div>
 			<div class="contact-row-input">
 				<label><?php echo $form->labelEx($model,'fax') ?></label>

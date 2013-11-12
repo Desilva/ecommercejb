@@ -523,7 +523,7 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
                                                 foreach($slideshow as $value)
 						{
 
-							if($value->image != null || $value->image != "")
+							if($value->image != null && $value->image != "")
 							{
                                                             if(substr($value->image,-3) == "mp4" || substr($value->image,-3)== "ogg")
                                                             { ?>
@@ -538,7 +538,7 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
                                                             
 						?>
 							<div><a href="<?php 
-                                                                if($value->url_link != '' || $value->url_link != null)
+                                                                if($value->url_link != '' && $value->url_link != null)
                                                                 {
                                                                     echo $value->url_link;
                                                                 }

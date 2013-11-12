@@ -62,6 +62,8 @@ a.delete img{
                                 /*update the view with the data received
                                  from the server*/
                                 document.getElementById('emailList').innerHTML = response;
+                                window.location.hash = '#emailList';
+                                
                             }
                             else {
                                 throw new Error('Invalid Javascript in Response - possible hacking!');
