@@ -70,7 +70,8 @@ class ArticleController extends Controller
 		$this->render('create',array(
 			'model'=>$model,
                         'category' => $category,
-                        'categoryPembaca'=> $category_pembaca
+                        'categoryPembaca'=> $category_pembaca,
+                        'menu'=>3,
 		));
 	}
 
@@ -97,7 +98,8 @@ class ArticleController extends Controller
 		$this->render('update',array(
 			'model'=>$model,
                         'category' => $category,
-                        'categoryPembaca'=> $category_pembaca
+                        'categoryPembaca'=> $category_pembaca,
+                        'menu'=>3
 		));
 	}
 
@@ -142,6 +144,8 @@ class ArticleController extends Controller
 //		$dataProvider=new CActiveDataProvider('Article');
 		$this->render('index',array(
                         'model'=>$model,
+                        'menu'=>3
+                    
 		));
 	}
 

@@ -71,6 +71,7 @@ class KategoriController extends Controller
 
 		$this->render('create',array(
 			'model'=>$model,
+                        'menu'=>1,
 		));
 	}
 
@@ -95,6 +96,7 @@ class KategoriController extends Controller
 
 		$this->render('update',array(
 			'model'=>$model,
+                        'menu'=>1
 		));
 	}
 
@@ -141,7 +143,10 @@ class KategoriController extends Controller
                 'criteria'=>$criteria,
                 ));
                 
-		$this->render('index',array('model'=>$model,'subkategori'=>$subkategori));
+		$this->render('index',array(
+                    'model'=>$model,
+                    'subkategori'=>$subkategori,
+                    'menu'=>1));
 	}
 
 	/**

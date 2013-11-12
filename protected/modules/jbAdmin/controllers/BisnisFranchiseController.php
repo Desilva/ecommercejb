@@ -283,7 +283,11 @@ class BisnisFranchiseController extends Controller
                 }
             }
             $alasan_penolakan = AlasanPenolakan::model()->findAll();
-            $this->render('tolak',array('model'=>$model,'alasan_penolakan'=>$alasan_penolakan,'error'=>$error));
+            $this->render('tolak',array(
+                'model'=>$model,
+                'alasan_penolakan'=>$alasan_penolakan,
+                'error'=>$error,
+                'menu'=>2));
         }
 	/**
 	 * Updates a particular model.
@@ -715,7 +719,8 @@ class BisnisFranchiseController extends Controller
                         'alasan_jual_bisnis'=>$list_alasan_jual_bisnis,
                         'initial_doc_upload'=>  json_encode($initial_docs_files),
                         'initial_image_upload'=> json_encode($initial_images_files),
-                        'settings'=>$settings
+                        'settings'=>$settings,
+                        'menu'=>2
 		));
 	}
 
@@ -777,7 +782,12 @@ class BisnisFranchiseController extends Controller
                     ),
                 'criteria'=>$criteria
             ));
-		$this->render('index',array('business_model'=>$business_model,'model'=>$dataProvider,'sortType'=>$sortType,'selectedSortValue'=>$selectedSortValue));
+		$this->render('index',array(
+                    'business_model'=>$business_model,
+                    'model'=>$dataProvider,
+                    'sortType'=>$sortType,
+                    'selectedSortValue'=>$selectedSortValue,
+                    'menu'=>2));
             
 
 	}

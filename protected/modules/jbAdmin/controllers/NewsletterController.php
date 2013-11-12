@@ -81,6 +81,7 @@ class NewsletterController extends Controller
 
 		$this->render('create',array(
 			'model'=>$model,
+                        'menu'=>5
 		));
 	}
 
@@ -114,6 +115,7 @@ class NewsletterController extends Controller
 
 		$this->render('update',array(
 			'model'=>$model,
+                        'menu'=>5
 		));
 	}
 
@@ -150,6 +152,7 @@ class NewsletterController extends Controller
                 ));
 		$this->render('index',array(
                         'model'=>$model,
+                        'menu'=>5
 		));
                 
 	}

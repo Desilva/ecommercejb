@@ -108,6 +108,7 @@ class SettingsController extends Controller
             'slideshow5' => $slideshow_data5,
             'settings'=> $settings,
             'url_link_list'=>$url_link_list,
+            'menu'=>4
         ));
     }
 

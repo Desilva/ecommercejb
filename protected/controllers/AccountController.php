@@ -229,7 +229,8 @@ class AccountController extends Controller
             $this->render('beli',array(
                 'model'=>$model,
                 'sortType'=>$sortType,
-                'selectedSortValue'=>$selectedSortValue
+                'selectedSortValue'=>$selectedSortValue,
+                'menu'=>1
                 ));
         }
         public function actionWatchlist()
@@ -255,7 +256,10 @@ class AccountController extends Controller
                 ),
                 'criteria'=>$criteria
             ));
-            $this->render('watchlist',array('model'=>$model,'sortType'=>$sortType,'selectedSortValue'=>$selectedSortValue));
+            $this->render('watchlist',array('model'=>$model,
+                'sortType'=>$sortType,
+                'selectedSortValue'=>$selectedSortValue,
+                'menu'=>3));
         }
         
         public function actionDataDiri()
@@ -329,6 +333,7 @@ class AccountController extends Controller
                 'range_harga' => $list_range_harga,
                 'penghasilan' => $list_penghasilan,
                 'tempat_lahir' => $list_tempat_lahir,
+                'menu' => 4,
                 ));
         }
         
@@ -388,7 +393,12 @@ class AccountController extends Controller
                 ),
                 'criteria'=>$emailCriteria
             ));
-		$this->render('index',array('model'=>$dataProvider,'sortType'=>$sortType,'selectedSortValue'=>$selectedSortValue,'email'=>$emailDataProvider));
+		$this->render('index',array(
+                    'model'=>$dataProvider,
+                    'sortType'=>$sortType,
+                    'selectedSortValue'=>$selectedSortValue,
+                    'email'=>$emailDataProvider,
+                    'menu'=> 2));
 	}
         
        
@@ -674,6 +684,7 @@ class AccountController extends Controller
                         'provinsi'=>$list_provinsi,
                         'alasan_jual_bisnis'=>$list_alasan_jual_bisnis,
                         'settings'=>$settings,
+                        'menu'=> 2,
 //                        'img_upload'=>$img_upload,
 //                        'doc_upload'=>$doc_upload,
 		));
@@ -1012,6 +1023,7 @@ class AccountController extends Controller
                         'initial_doc_upload'=>  json_encode($initial_docs_files),
                         'initial_image_upload'=> json_encode($initial_images_files),
                         'settings'=>$settings,
+                        'menu'=> 2,
 		));
 	}
 
