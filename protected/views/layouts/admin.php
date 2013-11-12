@@ -150,7 +150,7 @@
 	   <div class="row-fluid">
 		<div class="span12">
 			<hr/>
-			Copyright &copy 2013 JualanBisnis.com <a href="<?php echo Yii::app()->createUrl('//privacyPolicy')?>">[Privacy Policy</a><a href="<?php echo Yii::app()->createUrl('//home/sitemap')?>">|Sitemap</a><a href="<?php echo Yii::app()->createUrl('//home/disclaimer')?>">|Disclaimer</a><a href="<?php echo Yii::app()->createUrl('//SyaratDanKetentuan') ?>">|Syarat dan Ketentuan</a><a href="<?php echo Yii::app()->createUrl('//faq')?>">|FAQ]</a>
+			Copyright &copy 2013<?php if(date('Y') != "2013") echo "-".date('Y') ?> JualanBisnis.com <a href="<?php echo Yii::app()->createUrl('//privacyPolicy')?>">[Privacy Policy</a><a href="<?php echo Yii::app()->createUrl('//home/sitemap')?>">|Sitemap</a><a href="<?php echo Yii::app()->createUrl('//home/disclaimer')?>">|Disclaimer</a><a href="<?php echo Yii::app()->createUrl('//SyaratDanKetentuan') ?>">|Syarat dan Ketentuan</a><a href="<?php echo Yii::app()->createUrl('//faq')?>">|FAQ]</a>
 		</div>
 	</div>
     </div>
