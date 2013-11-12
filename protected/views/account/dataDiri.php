@@ -25,9 +25,7 @@
 		<div class="account-sidebar-header">
 			Akun Saya
 		</div>
-		<?php 
-			if(!empty($this->clips['sidebar'])) echo $this->clips['sidebar'];
-		?>
+		<?php echo $this->renderPartial('_sidebar', array('menu'=>$menu)); ?>
 	</div>
 	<div class="account-content">
 		<div class="account-header">

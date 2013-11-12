@@ -1,3 +1,6 @@
+<?php
+  $this->menu = $menu;
+?>
 <style>
 a.viewSubKategori img{
     width: 25px;

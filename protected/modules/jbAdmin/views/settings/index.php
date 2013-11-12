@@ -1,3 +1,6 @@
+<?php
+  $this->menu = $menu;
+?>
 <script src="<?php echo Yii::app()->baseUrl.'/ckeditor/ckeditor.js'; ?>"></script>
  <?php 
             $form=$this->beginWidget('CActiveForm', array(

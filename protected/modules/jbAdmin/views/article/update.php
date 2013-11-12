@@ -1,4 +1,7 @@
 <?php
+  $this->menu = $menu;
+?>
+<?php
 $this->breadcrumbs=array(
 	'Articles'=>array('index'),
 	$model->title=>array('view','id'=>$model->id),

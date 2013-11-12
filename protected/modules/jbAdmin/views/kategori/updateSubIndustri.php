@@ -1,4 +1,7 @@
 <?php
+  $this->menu = $menu;
+?>
+<?php
 /* @var $this KategoriController */
 /* @var $model Industri */
 

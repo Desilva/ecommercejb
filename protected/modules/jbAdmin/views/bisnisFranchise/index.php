@@ -1,3 +1,6 @@
+<?php
+  $this->menu = $menu;
+?>
 <style>
     input[type="button"].buttonGrid {
     background: -moz-linear-gradient(center top , #1568AE, #1568AE) repeat scroll 0 0 transparent;

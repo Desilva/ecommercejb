@@ -1,3 +1,6 @@
+<?php
+  $this->menu = $menu;
+?>
 <script>
 function displayTextArea()
 {

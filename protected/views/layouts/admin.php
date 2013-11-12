@@ -160,31 +160,31 @@ $set=date_default_timezone_set('Asia/Krasnoyarsk');
               <div class="admin-sidebar-header">
                 Jualan Bisnis
               </div>
-              <div class="admin-sidebar-menu">
+              <div class="admin-sidebar-menu <?=isset($this->menu)&&$this->menu==1?'sidebar-menu-active':''?>">
                 <a href="<?php echo Yii::app()->createUrl('//jbAdmin/kategori/') ?>">Kategori Bisnis / Franchise</a>
                 <div class="admin-sidebar-panah">
                     &gt;
                 </div>
               </div>
-              <div class="admin-sidebar-menu">
+              <div class="admin-sidebar-menu <?=isset($this->menu)&&$this->menu==2?'sidebar-menu-active':''?>">
                 <a href="<?php echo Yii::app()->createUrl('//jbAdmin/bisnisFranchise/') ?>">Bisnis / Franchise</a>
                 <div class="admin-sidebar-panah">
                     &gt;
                 </div>
               </div>
-              <div class="admin-sidebar-menu">
+              <div class="admin-sidebar-menu <?=isset($this->menu)&&$this->menu==3?'sidebar-menu-active':''?>">
                 <a href="<?php echo Yii::app()->createUrl('//jbAdmin/article/') ?>">Artikel</a>
                 <div class="admin-sidebar-panah">
                     &gt;
                 </div>
               </div>
-              <div class="admin-sidebar-menu">
+              <div class="admin-sidebar-menu <?=isset($this->menu)&&$this->menu==4?'sidebar-menu-active':''?>">
                 <a href="<?php echo Yii::app()->createUrl('//jbAdmin/settings/') ?>">Settings</a>
                 <div class="admin-sidebar-panah">
                     &gt;
                 </div>
               </div>
-              <div class="admin-sidebar-menu">
+              <div class="admin-sidebar-menu <?=isset($this->menu)&&$this->menu==5?'sidebar-menu-active':''?>">
                 <a href="<?php echo Yii::app()->createUrl('//jbAdmin/newsletter/') ?>">Newsletter</a>
                 <div class="admin-sidebar-panah">
                     &gt;
