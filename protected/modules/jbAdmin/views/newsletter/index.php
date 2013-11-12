@@ -93,74 +93,53 @@ a.sendNewsletter img{
             }
             
 </script>
-        
-    <div class="span9">    	
-        <div class="row-fluid">
-        	<div class="span12">
-				<div><header style="font-size:30px; font-family:Calibri;">Mengatur Newsletter</header><br style="clear:both"/></div><div style="margin-top:-35px;"></div>
-            	<div class="row-fluid Top-Margin3">
-					<div class="span12">
-						<form>
-							<?php echo CHtml::button('Tambah Newsletter', array('submit' => array('newsletter/create'), 'class'=>'btn Gradient-Style1')); ?>
-						</form>
-					</div>
-				</div>				
-            </div>
-        </div>
-        <div class="row-fluid">
-        	<div class="span12">
-			
-				<div class="widget-box">
-					<div class="widget-title">
-						<span class="icon">
-							<i class="icon-th"></i>
-						</span>
-						<h5>Static table</h5>
-					</div>
-					<div class="widget-content nopadding">
-                    <?php $this->widget('zii.widgets.grid.CGridView', array(
-                            'id'=>'newsletter-grid',
-                            'itemsCssClass' => 'table table-bordered table-striped table-hover',
-                            'summaryText' => '',
-							
-                            'dataProvider'=>$model,
-                            'columns'=>array(
-                                    'judul',
-                                    'deskripsi',
-                                    array(
-                                            'name' => 'isi',
-                                            'type' => 'raw', //because of using html-code <br/>
-                                            //call the controller method gridProduct for each row
-                                            'value' => array($this, 'gridIsi'),
-                                        ),
-                                     array(
-                                                'name'=> 'tanggal',
-                                                'value'=> 'Yii::app()->dateFormatter->format("y-MM-dd", strtotime($data->tanggal))'
-                                            ),
-                                     array(
-                                            'class' => 'CButtonColumn',
-                                            'header' => 'Tindakan',
-                                            'template' => '{update}{delete}{sendNewsletter}',
-                                            'deleteButtonImageUrl' => Yii::app()->request->baseUrl . '/images/asset/trash.png',
-                                            'updateButtonImageUrl' => Yii::app()->request->baseUrl . '/images/asset/write.png',
-                                            'buttons' => array(
-                                                    'sendNewsletter' => array(
-                                                        'label' => 'Kirim Newsletter',
-                                                        'imageUrl' => Yii::app()->request->baseUrl . '/images/asset/-.png',
-                                                        'options' => array('class' => 'sendNewsletter'),
-                                                        'url' => '$data->id', 
-                                                        'click'=> "function(e){ e.preventDefault(); sendEmail($(this).attr('href'))}"
+<div class="account-header">
+  MENGATUR NEWSLETTER
+</div>
+<div class="account-jual-category">
+  <form>
+    <?php echo CHtml::button('Tambah Newsletter', array('submit' => array('newsletter/create'), 'class'=>'account-jual-add')); ?>
+  </form>
+</div>
+<div class="account-beli-table">
+  <?php $this->widget('zii.widgets.grid.CGridView', array(
+    'id'=>'newsletter-grid',
+    'itemsCssClass' => 'table table-bordered table-striped table-hover',
+    'summaryText' => '',
 
-                                                    )
-                                                ),
-                                        ),
-                            ),
-                           
-                    )); ?>
-							</div>
-                            
-            </div>
-                    
-            </div>
-        </div>
-    </div>
+    'dataProvider'=>$model,
+    'columns'=>array(
+            'judul',
+            'deskripsi',
+            array(
+                    'name' => 'isi',
+                    'type' => 'raw', //because of using html-code <br/>
+                    //call the controller method gridProduct for each row
+                    'value' => array($this, 'gridIsi'),
+                ),
+             array(
+                        'name'=> 'tanggal',
+                        'value'=> 'Yii::app()->dateFormatter->format("y-MM-dd", strtotime($data->tanggal))',
+                        'htmlOptions' => array('style'=>'width:85px;'),
+                    ),
+             array(
+                    'class' => 'CButtonColumn',
+                    'header' => 'Tindakan',
+                    'htmlOptions' => array('style'=>'width:85px;'),
+                    'template' => '{update}{delete}{sendNewsletter}',
+                    'deleteButtonImageUrl' => Yii::app()->request->baseUrl . '/images/asset/trash.png',
+                    'updateButtonImageUrl' => Yii::app()->request->baseUrl . '/images/asset/write.png',
+                    'buttons' => array(
+                            'sendNewsletter' => array(
+                                'label' => 'Kirim Newsletter',
+                                'imageUrl' => Yii::app()->request->baseUrl . '/images/asset/-.png',
+                                'options' => array('class' => 'sendNewsletter'),
+                                'url' => '$data->id', 
+                                'click'=> "function(e){ e.preventDefault(); sendEmail($(this).attr('href'))}"
+
+                            )
+                        ),
+                ),
+    ),
+  )); ?>
+</div>

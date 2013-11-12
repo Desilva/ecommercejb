@@ -12,8 +12,9 @@ $this->menu=array(
 	array('label'=>'Manage Article', 'url'=>array('admin')),
 );
 ?>
-
-<div class="span10">
-<h3>Ubah Artikel <?php echo $model->title; ?></h3>
+<div class="account-header">
+  UBAH ARTIKEL <?php echo strtoupper($model->title); ?>
 </div>
-<?php echo $this->renderPartial('_form', array('model'=>$model,'category'=>$category, 'categoryPembaca'=>$categoryPembaca)); ?>
+<div class="admin-form">
+	<?php echo $this->renderPartial('_form', array('model'=>$model,'category'=>$category, 'categoryPembaca'=>$categoryPembaca)); ?>
+</div>

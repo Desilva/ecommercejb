@@ -12,8 +12,10 @@
 //	array('label'=>'Manage Industri', 'url'=>array('admin')),
 //);
 ?>
-<div class="span10">
-<h2><?php echo $model->idIndustri->industri ?></h2>
-<h2>Update Sub Kategori</h2>
+<div class="account-header">
+  <?php echo strtoupper($model->idIndustri->industri) ?><br/>
+  UPDATE SUB KATEGORI: <?php echo strtoupper($model->sub_industri) ?>
 </div>
-<?php echo $this->renderPartial('_formSubIndustri', array('model'=>$model)); ?>
+<div class="admin-form">
+	<?php echo $this->renderPartial('_formSubIndustri', array('model'=>$model)); ?>
+</div>

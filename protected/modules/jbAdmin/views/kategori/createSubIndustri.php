@@ -12,9 +12,10 @@
 //	array('label'=>'Manage Industri', 'url'=>array('admin')),
 //);
 ?>
-
-<div class="span10">
-<h2><?php echo $industri->industri ?></h2>
-<h2>Tambah Sub Kategori</h2>
+<div class="account-header">
+  <?php echo strtoupper($industri->industri) ?><br/>
+  TAMBAH SUB KATEGORI
 </div>
-<?php echo $this->renderPartial('_formSubIndustri', array('model'=>$model,'industri'=>$industri)); ?>
+<div class="admin-form">
+	<?php echo $this->renderPartial('_formSubIndustri', array('model'=>$model,'industri'=>$industri)); ?>
+</div>

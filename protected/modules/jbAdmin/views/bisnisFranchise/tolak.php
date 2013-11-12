@@ -18,10 +18,11 @@ function hideTextArea()
 }
 
 </script>
-
-<div class="span10">
-    <div class="row-fluid">
-    <h4>Alasan Penolakan: <?php echo $model->nama ?></h4>
+<div class="account-header">
+  ALASAN PENOLAKAN: <?php echo strtoupper($model->nama); ?>
+</div>
+<div class="admin-form">
+  <div class="admin-row">
     <?php if($error != ""){ ?>
         <p style="color:red"><?php echo $error ?></p>
     <?php } ?>
@@ -30,18 +31,21 @@ function hideTextArea()
             'enableAjaxValidation'=>false,
     )); ?>
         <?php echo $form->errorSummary($model); ?>
-	
-		<br style="clear:both"/>
-                <span><?php echo CHtml::dropDownList('alasan',0,CHtml::listData($alasan_penolakan,'id','alasan'),array('prompt'=>'Pilih Alasan')); ?></span>
-                <span id="tambah_alasan"><?php echo CHtml::button('Tambah Alasan Baru', array('class'=>'btn Gradient-Style1', 'onclick'=>'displayTextArea()', 'style'=>'width:155px')) ?></span>
-                <span id="batal_tambah" style="display:none"><?php echo CHtml::button('Batal', array('class'=>'btn Gradient-Style1', 'onclick'=>'hideTextArea()')) ?></span>
-                <p>
-                    <?php echo CHtml::textArea('alasan_tambahan','', array('class'=>'styleTextarea1','style'=>'display:none')) ?>
-                </p>
-		<hr/>
-                <?php
-                        echo CHtml::button('Simpan', array('submit' => array("bisnisFranchise/tolak/id/$model->id"), 'class'=>'btn Gradient-Style1')); 
-                ?>
-                </div>
+  </div>
+  <div class="admin-row">
+    <div class="admin-row-select">
+    <?php echo CHtml::dropDownList('alasan',0,CHtml::listData($alasan_penolakan,'id','alasan'),array('prompt'=>'Pilih Alasan','class'=>'admin-select')); ?>
+    </div>
+    <?php echo CHtml::button('Tambah Alasan Baru', array('class'=>'admin-header-button', 'id' => 'tambah_alasan', 'onclick'=>'displayTextArea()')) ?>
+    <?php echo CHtml::button('Batal', array('class'=>'admin-header-button','id' => 'batal_tambah', 'onclick'=>'hideTextArea()', 'style' => 'display:none')) ?>
+  </div>
+  <div class="admin-row">
+    <?php echo CHtml::textArea('alasan_tambahan','', array('class'=>'admin-textarea admin-textarea-lainnya','style'=>'display:none')) ?>
+  </div>
+  <div class="admin-row">
+    <?php
+      echo CHtml::button('Simpan', array('submit' => array("bisnisFranchise/tolak/id/$model->id"), 'class'=>'admin-button')); 
+    ?>
+  </div>
 </div>
 <?php $this->endWidget(); ?>

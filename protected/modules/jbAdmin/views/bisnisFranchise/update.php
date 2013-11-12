@@ -3,33 +3,26 @@
 <script src="<?php echo Yii::app()->request->baseUrl ?>/js/kendo.web.min.js"></script>
 <script src="<?php echo Yii::app()->baseUrl.'/ckeditor/ckeditor.js'; ?>"></script>
 <script src="<?php  echo Yii::app()->baseUrl.'/js/autoNumeric.js'; ?>"></script>
-
-<div class="row-fluid">
-	
-    <div class="span9" style="padding-left:35px;">
-    	<div><header style="font-size:30px; font-family:Calibri;">Update <?php echo $model->nama ?></header><br style="clear:both"/></div><div style="margin-top:-35px;"></div>
-		<div class="row-fluid Top-Margin3">
-			<div class="span12">
-            <?php
-                if($model->idCategory->category == "Bisnis")
-                {
-                    echo $this->renderPartial('_formBusiness', array('model'=>$model,'kategori'=>$kategori,'kepemilikan'=>$kepemilikan,'tahun'=>$tahun,'industri'=>$industri,'provinsi'=>$provinsi,'alasan_jual_bisnis'=>$alasan_jual_bisnis,'initial_doc_upload'=>$initial_doc_upload,'initial_image_upload'=>$initial_image_upload)); 
-                }
-                else if($model->idCategory->category == "Franchise")
-                {
-                    echo $this->renderPartial('_formFranchise', array('model'=>$model,'kategori'=>$kategori,'industri'=>$industri,'provinsi'=>$provinsi,'initial_doc_upload'=>$initial_doc_upload,'initial_image_upload'=>$initial_image_upload)); 
-                }
-                else
-                {
-                    echo "Error";
-
-                }
-            ?>
-			</div>
-		</div>
-    </div>
+<div class="account-header">
+  UPDATE <?php echo strtoupper($model->nama); ?>
 </div>
+<div class="admin-form">
+<?php
+    if($model->idCategory->category == "Bisnis")
+    {
+        echo $this->renderPartial('_formBusiness', array('model'=>$model,'kategori'=>$kategori,'kepemilikan'=>$kepemilikan,'tahun'=>$tahun,'industri'=>$industri,'provinsi'=>$provinsi,'alasan_jual_bisnis'=>$alasan_jual_bisnis,'initial_doc_upload'=>$initial_doc_upload,'initial_image_upload'=>$initial_image_upload)); 
+    }
+    else if($model->idCategory->category == "Franchise")
+    {
+        echo $this->renderPartial('_formFranchise', array('model'=>$model,'kategori'=>$kategori,'industri'=>$industri,'provinsi'=>$provinsi,'initial_doc_upload'=>$initial_doc_upload,'initial_image_upload'=>$initial_image_upload)); 
+    }
+    else
+    {
+        echo "Error";
 
+    }
+?>
+</div>
 <script>
    function valueCalcWrapper(id,target)
     {

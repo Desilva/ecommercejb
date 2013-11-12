@@ -12,7 +12,9 @@ $this->menu=array(
 	array('label'=>'Manage Newsletter', 'url'=>array('admin')),
 );
 ?>
-
-<h3>Tambah Newsletter</h3>
-
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<div class="account-header">
+  TAMBAH NEWSLETTER
+</div>
+<div class="admin-form">
+	<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+</div>

@@ -15,7 +15,9 @@ $this->menu=array(
 	array('label'=>'Manage Newsletter', 'url'=>array('admin')),
 );
 ?>
-
-<h3>Edit <?php echo $model->judul; ?></h3>
-
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<div class="account-header">
+ EDIT <?php echo strtoupper($model->judul); ?>
+</div>
+<div class="admin-form">
+	<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+</div>

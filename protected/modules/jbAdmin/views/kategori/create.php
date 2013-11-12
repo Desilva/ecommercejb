@@ -12,7 +12,9 @@ $this->menu=array(
 	array('label'=>'Manage Industri', 'url'=>array('admin')),
 );
 ?>
-<div class="span7">
-	<div><header style="font-size:30px; font-family:Calibri;">Tambah Bisnis</header><br style="clear:both"/></div><div style="margin-top:-35px;"></div>
+<div class="account-header">
+  TAMBAH KATEGORI INDUSTRI
 </div>
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<div class="admin-form">
+	<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+</div>

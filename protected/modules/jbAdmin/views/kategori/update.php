@@ -16,10 +16,9 @@ $this->menu=array(
 );
 ?>
 
-<div class="span10">
-<div class="span7">
-	<div><header style="font-size:30px; font-family:Calibri;">Update Industri <?php echo $model->id; ?></header>
+<div class="account-header">
+  UPDATE <?php echo strtoupper($model->industri); ?>
 </div>
-</div>	
+<div class="admin-form">
+	<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
 </div>
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

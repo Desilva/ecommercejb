@@ -10,7 +10,9 @@
 //);
 ?>
 
-<div class="span10">
-<h3>Tambah Artikel</h3>
+<div class="account-header">
+  TAMBAH ARTIKEL
 </div>
-<?php echo $this->renderPartial('_form', array('model'=>$model,'category'=>$category,'categoryPembaca'=>$categoryPembaca)); ?>
+<div class="admin-form">
+	<?php echo $this->renderPartial('_form', array('model'=>$model,'category'=>$category,'categoryPembaca'=>$categoryPembaca)); ?>
+</div>
