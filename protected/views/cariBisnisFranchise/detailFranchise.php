@@ -256,7 +256,7 @@ if(isset($_GET['msg'])){
 				</tr>
 				<tr>
 					<td>Harga</td>
-					<td>Rp.<?php echo number_format($model->harga) ?></td>
+					<td><?php if($model->harga > 0 && is_numeric($model->harga)) echo "Rp.".number_format($model->harga); else echo "-" ?></td>
 				</tr>
 				<tr>
 					<td>Alasan Franchise Mau Bekerjasama</td>

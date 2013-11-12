@@ -139,15 +139,21 @@
 			<table class="table table-bordered table-striped table-hover">
 				<tr>
 					<td width="30%">Industri</td>
-					<td><?php echo $model->idIndustri->industri ?></td>
+					<td><?php  if($model->id_industri != '' && $model->id_industri != null)
+                                                    {
+                                                        echo $model->idIndustri->industri;
+                                                    } ?></td>
 				</tr>
 				<tr>
 					<td>Lokasi</td>
-					<td><?php echo $model->idKota->city ?></td>
+					<td><?php if($model->id_kota != '' && $model->id_kota != null)
+                                                    {
+                                                        echo $model->idKota->city;
+                                                    } ?></td>
 				</tr>
 				<tr>
 					<td>Harga</td>
-					<td>Rp.<?php echo number_format($model->harga) ?></td>
+					<td><?php if($model->harga > 0 && is_numeric($model->harga)) echo "Rp.".number_format($model->harga); else echo "-" ?></td>
 				</tr>
 				<tr>
 					<td>Alasan Franchise Mau Bekerjasama</td>

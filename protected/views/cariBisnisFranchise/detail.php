@@ -279,7 +279,7 @@ echo $model->idKota->city;
 				</tr>
 				<tr>
 					<td>Harga</td>
-					<td>Rp.<?php if($model->harga != '' && is_numeric($model->harga)) echo number_format($model->harga); ?></td>
+					<td><?php if($model->harga > 0 && is_numeric($model->harga)) echo "Rp.".number_format($model->harga); else echo "-" ?></td>
 				</tr>
 				<tr>
 					<td>Penjualan / Tahun</td>
@@ -300,7 +300,7 @@ echo $model->idKota->city;
 				<Tr>
 					<Td>Alasan Menjual Bisnis</td>
 					<td><?php 
-                if($model->id_alasan_jual_bisnis != null || $model->id_alasan_jual_bisnis != '')
+                if($model->id_alasan_jual_bisnis != null && $model->id_alasan_jual_bisnis != '')
                 {
                     echo $model->idAlasanJualBisnis->alasan;
                 }
