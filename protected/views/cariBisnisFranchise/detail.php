@@ -344,6 +344,10 @@ echo $model->idKota->city;
                                                             $('#marjin_laba_bersih_row').attr('style','color:red;');
                                                         </script>
                                               <?php }
+                                                    else if ($model->marjin_laba_bersih == 0)
+                                                    {
+                                                        echo "-";
+                                                    }
                                                     else
                                                     {
                                                         echo number_format($model->marjin_laba_bersih,2,'.','')."%";
@@ -364,6 +368,10 @@ echo $model->idKota->city;
                                                             $('#laba_bersih_asset_row').attr('style','color:red;');
                                                         </script>
                                               <?php } 
+                                                    else if ($model->laba_bersih_aset == 0)
+                                                    {
+                                                        echo "-";
+                                                    }
                                                     else
                                                     {
                                                        echo number_format($model->laba_bersih_aset,2,'.','')."%"; 
@@ -373,7 +381,7 @@ echo $model->idKota->city;
 				</tr>
 				<Tr>
 					<td>Harga penawaran / Penjualan</td>
-					<td><?php if(is_numeric($model->harga_penawaran_penjualan)) echo number_format($model->harga_penawaran_penjualan,2,'.',''); else echo "-" ?></td>
+					<td><?php if(is_numeric($model->harga_penawaran_penjualan) && $model->harga_penawaran_penjualan != 0) echo number_format($model->harga_penawaran_penjualan,2,'.',''); else echo "-" ?></td>
 				</tR>
 				<tr>
 					<Td>Harga penawaran / Laba bersih</td>
@@ -387,6 +395,10 @@ echo $model->idKota->city;
                                                             $('#harga_penawaran_laba_bersih_row').attr('style','color:red;');
                                                         </script>
                                               <?php }
+                                                    else if ($model->harga_penawaran_laba_bersih == 0)
+                                                    {
+                                                        echo "-";
+                                                    }
                                                     else
                                                     {
                                                         echo number_format($model->harga_penawaran_laba_bersih,2,'.','');
