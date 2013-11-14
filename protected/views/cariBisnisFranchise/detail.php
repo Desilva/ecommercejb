@@ -291,7 +291,7 @@ echo $model->idKota->city;
 				</tr>
 				<tr>
 					<td>Laba bersih / Tahun</td>
-					<td id="labaBersihRow"><?php if(is_numeric($model->laba_bersih_tahun))
+					<td id="laba_bersih_row"><?php if(is_numeric($model->laba_bersih_tahun))
                                                   {
                                                     if($model->laba_bersih_tahun > 0)
                                                     {
@@ -306,7 +306,7 @@ echo $model->idKota->city;
                                                         echo "<span style='margin-left:-5px'>-</span>Rp.".number_format(abs($model->laba_bersih_tahun)); 
                                                      ?>
                                                         <script>
-                                                            $('#labaBersihRow').attr('style','color:red;');
+                                                            $('#laba_bersih_row').attr('style','color:red;');
                                                         </script>
                                                     <?php }
                                                     
@@ -334,12 +334,16 @@ echo $model->idKota->city;
 				</tr>
 				<tr>
 					<Td>Marjin laba bersih</td>
-					<td><?php if(is_numeric($model->marjin_laba_bersih)) 
+					<td id="marjin_laba_bersih_row"><?php if(is_numeric($model->marjin_laba_bersih)) 
                                                   {
                                                     if($model->marjin_laba_bersih < 0)
                                                     {
                                                         echo "<span style='margin-left:-5px'>-</span>".number_format(abs($model->marjin_laba_bersih),2,'.','')."%";
-                                                    }
+                                                    ?>
+                                                        <script>
+                                                            $('#marjin_laba_bersih_row').attr('style','color:red;');
+                                                        </script>
+                                              <?php }
                                                     else
                                                     {
                                                         echo number_format($model->marjin_laba_bersih,2,'.','')."%";
@@ -350,12 +354,16 @@ echo $model->idKota->city;
 				</tr>
 				<tr>
 					<td>Laba bersih / Asset</td>
-					<Td><?php if(is_numeric($model->laba_bersih_aset))
+					<td id="laba_bersih_asset_row"><?php if(is_numeric($model->laba_bersih_aset))
                                                 {
                                                     if($model->laba_bersih_aset <0)
                                                     {
                                                         echo "<span style='margin-left:-5px'>-</span>".number_format(abs($model->laba_bersih_aset),2,'.','')."%"; 
-                                                    }
+                                                    ?>
+                                                        <script>
+                                                            $('#laba_bersih_asset_row').attr('style','color:red;');
+                                                        </script>
+                                              <?php } 
                                                     else
                                                     {
                                                        echo number_format($model->laba_bersih_aset,2,'.','')."%"; 
@@ -369,12 +377,16 @@ echo $model->idKota->city;
 				</tR>
 				<tr>
 					<Td>Harga penawaran / Laba bersih</td>
-					<td><?php if(is_numeric($model->harga_penawaran_laba_bersih))
+					<td id="harga_penawaran_laba_bersih_row"><?php if(is_numeric($model->harga_penawaran_laba_bersih))
                                                 {
                                                     if($model->harga_penawaran_laba_bersih < 0 )
                                                     {
                                                         echo "<span style='margin-left:-5px'>-</span>".number_format(abs($model->harga_penawaran_laba_bersih),2,'.','');
-                                                    }
+                                                    ?>
+                                                         <script>
+                                                            $('#harga_penawaran_laba_bersih_row').attr('style','color:red;');
+                                                        </script>
+                                              <?php }
                                                     else
                                                     {
                                                         echo number_format($model->harga_penawaran_laba_bersih,2,'.','');
