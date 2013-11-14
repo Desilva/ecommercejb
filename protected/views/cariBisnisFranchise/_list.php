@@ -7,22 +7,22 @@
                     if(file_exists(Yii::app()->basePath.'/../uploads/images/'.$data->id_user.'/thumbs/'.$image[0]))
                     {
           ?>
-                        <img src="<?php echo Yii::app()->baseUrl ?>/uploads/images/<?php echo $data->id_user?>/thumbs/<?php echo $image[0] ?>" style="width: 110px; height:82.5px"/>
+                        <img src="<?php echo Yii::app()->baseUrl ?>/uploads/images/<?php echo $data->id_user?>/thumbs/<?php echo $image[0] ?>" style="width: 125px; height:83px"/>
           <?php     }
                     else if(file_exists(Yii::app()->basePath.'/../uploads/images/'.$data->id_user.'/'.$image[0]))
                     { ?>
-                        <img src="<?php echo Yii::app()->baseUrl ?>/uploads/images/<?php echo $data->id_user?>/<?php echo $image[0] ?>" style="width: 110px; height:82.5px"/>
+                        <img src="<?php echo Yii::app()->baseUrl ?>/uploads/images/<?php echo $data->id_user?>/<?php echo $image[0] ?>" style="width: 125px; height:83px"/>
           <?php     }
                     else
                     {
           ?>
-                        <img src="<?php echo Yii::app()->baseUrl ?>/images/no-image.gif" style="width: 110px; height:82.5px"/>
+                        <img src="<?php echo Yii::app()->baseUrl ?>/images/no-image.gif" style="width: 125px; height:83px"/>
           <?php     }
                     }
                   else
                   {
          ?>
-                    <img src="<?php echo Yii::app()->baseUrl ?>/images/no-image.gif" style="width: 110px; height:82.5px"/>
+                    <img src="<?php echo Yii::app()->baseUrl ?>/images/no-image.gif" style="width: 125px; height:83px"/>
          <?php 
                   }
          ?>

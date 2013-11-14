@@ -73,8 +73,10 @@ a.delete img{
               'class' => 'CButtonColumn',
               'header' => 'Tindakan',
               'template' => '{update}{delete}',
-              'deleteButtonImageUrl' => Yii::app()->request->baseUrl . '/images/asset/trash.png',
-              'updateButtonImageUrl' => Yii::app()->request->baseUrl . '/images/asset/write.png',
+              'deleteButtonLabel'=>'Hapus',
+              'updateButtonLabel'=>'Ubah',
+              'deleteButtonImageUrl' => Yii::app()->request->baseUrl . '/images/asset/icon-delete.png',
+              'updateButtonImageUrl' => Yii::app()->request->baseUrl . '/images/asset/icon-edit.png',
           ),
       ),
     ));

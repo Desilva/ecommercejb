@@ -17,6 +17,8 @@ a.sendNewsletter img{
     width: 25px;
     height: 25px;
     margin-left: 2px;
+    position:absolute;
+    padding-top:2px;
 }
 </style>
 <script>
@@ -130,12 +132,14 @@ a.sendNewsletter img{
                     'header' => 'Tindakan',
                     'htmlOptions' => array('style'=>'width:85px;'),
                     'template' => '{update}{delete}{sendNewsletter}',
-                    'deleteButtonImageUrl' => Yii::app()->request->baseUrl . '/images/asset/trash.png',
-                    'updateButtonImageUrl' => Yii::app()->request->baseUrl . '/images/asset/write.png',
+                    'deleteButtonLabel'=>'Hapus',
+                    'updateButtonLabel'=>'Ubah',
+                    'deleteButtonImageUrl' => Yii::app()->request->baseUrl . '/images/asset/icon-delete.png',
+                    'updateButtonImageUrl' => Yii::app()->request->baseUrl . '/images/asset/icon-edit.png',
                     'buttons' => array(
                             'sendNewsletter' => array(
                                 'label' => 'Kirim Newsletter',
-                                'imageUrl' => Yii::app()->request->baseUrl . '/images/asset/-.png',
+                                'imageUrl' => Yii::app()->request->baseUrl . '/images/asset/icon-newsletter.png',
                                 'options' => array('class' => 'sendNewsletter'),
                                 'url' => '$data->id', 
                                 'click'=> "function(e){ e.preventDefault(); sendEmail($(this).attr('href'))}"

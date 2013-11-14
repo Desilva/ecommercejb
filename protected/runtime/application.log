@@ -9840,3 +9840,68 @@ REQUEST_URI=/ecommercejb/index.php/jbAdmin/article
 in C:\xampp\htdocs\ecommercejb\protected\views\layouts\admin.php (157)
 in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\ArticleController.php (149)
 in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/11/14 16:04:24 [error] [exception.CException] exception 'CException' with message 'Properti "CButtonColumn.viewButtonText" tidak didefinisikan.' in C:\xampp\htdocs\ecommercejb\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\YiiBase.php(220): CComponent->__set('viewButtonText', 'Lihat')
+#1 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(363): YiiBase::createComponent(Array, Object(CGridView))
+#2 C:\xampp\htdocs\ecommercejb\framework\zii\widgets\grid\CGridView.php(334): CGridView->initColumns()
+#3 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(147): CGridView->init()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#5 C:\xampp\htdocs\ecommercejb\protected\views\account\beli.php(58): CBaseController->widget('zii.widgets.gri...', Array)
+#6 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#7 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#9 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): CController->renderPartial('beli', Array, true)
+#10 C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php(234): CController->render('beli', Array)
+#11 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): AccountController->actionBeli()
+#12 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#19 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CController->run('beli')
+#21 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController('account/beli')
+#22 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#23 C:\xampp\htdocs\ecommercejb\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/ecommerceJB/index.php/account/beli
+HTTP_REFERER=http://localhost/ecommerceJB/index.php/account/index
+---
+2013/11/14 17:05:21 [warning] [application] Gagal mengeset atribut unsafe "alasan_jual_lainnya_check" dari kelas "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (488)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/11/14 17:05:22 [warning] [application] Gagal mengeset atribut unsafe "alasan_jual_lainnya_check" dari kelas "Business".
+in C:\xampp\htdocs\ecommercejb\protected\controllers\AccountController.php (517)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/11/14 17:05:54 [warning] [application] Gagal mengeset atribut unsafe "alasan_jual_lainnya_check" dari kelas "Business".
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (307)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/11/14 17:05:56 [warning] [application] Gagal mengeset atribut unsafe "alasan_jual_lainnya_check" dari kelas "Business".
+in C:\xampp\htdocs\ecommercejb\protected\modules\jbAdmin\controllers\BisnisFranchiseController.php (388)
+in C:\xampp\htdocs\ecommercejb\index.php (13)
+2013/11/14 10:13:43 [error] [php] A non well formed numeric value encountered (C:\xampp\htdocs\ecommercejb\protected\views\cariBisnisFranchise\detail.php:302)
+Stack trace:
+#0 C:\xampp\htdocs\ecommercejb\framework\web\CBaseController.php(95): CariBisnisFranchiseController->renderInternal()
+#1 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(869): CariBisnisFranchiseController->renderFile()
+#2 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(782): CariBisnisFranchiseController->renderPartial()
+#3 C:\xampp\htdocs\ecommercejb\protected\controllers\CariBisnisFranchiseController.php(317): CariBisnisFranchiseController->render()
+#4 C:\xampp\htdocs\ecommercejb\framework\web\actions\CInlineAction.php(49): CariBisnisFranchiseController->actionDetail()
+#5 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(133): CariBisnisFranchiseController->runAction()
+#7 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#8 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#9 C:\xampp\htdocs\ecommercejb\framework\web\filters\CInlineFilter.php(58): CariBisnisFranchiseController->filterAccessControl()
+#10 C:\xampp\htdocs\ecommercejb\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#11 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(291): CFilterChain->run()
+#12 C:\xampp\htdocs\ecommercejb\framework\web\CController.php(265): CariBisnisFranchiseController->runActionWithFilters()
+#13 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(282): CariBisnisFranchiseController->run()
+#14 C:\xampp\htdocs\ecommercejb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#15 C:\xampp\htdocs\ecommercejb\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\ecommercejb\index.php(13): CWebApplication->run()
+REQUEST_URI=/ecommerceJB/index.php/cariBisnisFranchise/detail/66
+in C:\xampp\htdocs\ecommercejb\protected\views\cariBisnisFranchise\detail.php (302)
+in C:\xampp\htdocs\ecommercejb\protected\controllers\CariBisnisFranchiseController.php (317)
+in C:\xampp\htdocs\ecommercejb\index.php (13)

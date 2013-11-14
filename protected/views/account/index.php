@@ -167,13 +167,15 @@ a.delete img{
 							'htmlOptions' => array('style' => 'width: 85px'),
 							'header' => 'Tindakan',
 							'template' => '{update}{delete}{viewEmail}',
-							'deleteButtonImageUrl' => Yii::app()->request->baseUrl . '/images/asset/trash.png',
-							'updateButtonImageUrl' => Yii::app()->request->baseUrl . '/images/asset/write.png',
+                                                        'deleteButtonLabel'=>'Hapus',
+                                                        'updateButtonLabel'=>'Ubah',
+							'deleteButtonImageUrl' => Yii::app()->request->baseUrl . '/images/asset/icon-delete.png',
+							'updateButtonImageUrl' => Yii::app()->request->baseUrl . '/images/asset/icon-edit.png',
               'afterDelete'=>'function(link,success,data){afterDeleteAction();}',
                 'buttons' => array(
 									'viewEmail' => array(
 										'label' => 'Lihat Email',
-										'imageUrl' => Yii::app()->request->baseUrl . '/images/asset/-.png',
+										'imageUrl' => Yii::app()->request->baseUrl . '/images/asset/icon-mail.png',
 										'options' => array('class' => 'viewEmail'),
 										'url' => '$data->id',
 										'click' => "function(e){ e.preventDefault(); getEmail($(this).attr('href'))}"

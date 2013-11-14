@@ -3,9 +3,11 @@
 ?>
 <style>
 a.viewSubKategori img{
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
     margin-left: 2px;
+    position:absolute;
+    margin-top: -1px;
 }
 a.update img{
     width: 25px;
@@ -122,8 +124,10 @@ a.delete img{
               'htmlOptions' => array('style' => 'width: 85px'),
               'header' => 'Tindakan',
               'template' => '{update}{delete}{viewSubKategori}',
-              'deleteButtonImageUrl' => Yii::app()->request->baseUrl . '/images/asset/trash.png',
-              'updateButtonImageUrl' => Yii::app()->request->baseUrl . '/images/asset/write.png',
+              'deleteButtonLabel'=>'Hapus',
+              'updateButtonLabel'=>'Ubah',
+              'deleteButtonImageUrl' => Yii::app()->request->baseUrl . '/images/asset/icon-delete.png',
+              'updateButtonImageUrl' => Yii::app()->request->baseUrl . '/images/asset/icon-edit.png',
               'deleteConfirmation' => 'PERHATIAN: Dengan menghapus industri ini maka bisnis/franchise yang menggunakan nya harus di set ulang ke industri baru. Apakah anda yakin?',
               'afterDelete'=>'function(link,success,data){ 
                                   afterDeleteAction();
@@ -131,7 +135,7 @@ a.delete img{
               'buttons' => array(
                   'viewSubKategori' => array(
                       'label' => 'Lihat Sub-Kategori',
-                      'imageUrl' => Yii::app()->request->baseUrl . '/images/asset/folder.png',
+                      'imageUrl' => Yii::app()->request->baseUrl . '/images/asset/icon-subfolder.png',
                       'options' => array('class' => 'viewSubKategori'),
                       'url' => '$data->id', 
                       'click'=> "function(e){ e.preventDefault(); getSubIndustri($(this).attr('href'))}"
@@ -160,8 +164,10 @@ a.delete img{
               'id'=>'subIndustriGridColumn',
               'header' => 'Tindakan',
               'template' => '{update}{delete}',
-              'deleteButtonImageUrl' => Yii::app()->request->baseUrl . '/images/asset/trash.png',
-              'updateButtonImageUrl' => Yii::app()->request->baseUrl . '/images/asset/write.png',
+              'deleteButtonLabel'=>'Hapus',
+              'updateButtonLabel'=>'Ubah',
+              'deleteButtonImageUrl' => Yii::app()->request->baseUrl . '/images/asset/icon-delete.png',
+              'updateButtonImageUrl' => Yii::app()->request->baseUrl . '/images/asset/icon-edit.png',
               'deleteConfirmation' => 'PERHATIAN: Dengan menghapus sub industri ini maka bisnis/franchise yang menggunakan nya harus di set ulang ke sub industri baru. Apakah anda yakin?',
           ),
       ),

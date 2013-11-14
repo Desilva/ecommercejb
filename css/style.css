@@ -739,7 +739,7 @@ select::-ms-expand {
 	padding-top: 10px;
 	margin-left: 14px;
 	background: #939598;
-	height: 140px;
+	height: 90px;
 }
 
 .div-slider-header-left {
@@ -793,30 +793,30 @@ select::-ms-expand {
 	z-index: 5000;
 }
 
-.bx-wrapper {
+/*.bx-wrapper {
 	max-width: 100% !important;
-}
+}*/
 
 .bx-viewport {
 	border: 0 !important;
-	height: 130px !important;
+	height: 82.5px !important;
 	box-shadow: 0 0 0 !important;
 	-webkit-box-shadow : 0 0 0 !important;
 	-moz-box-shadow : 0 0 0 !important;
 	width: 100%;
-	left: 0 !important;
+/*	left: 0 !important;*/
 	background: none !important;
 }
 
-.bx-viewport img {
+/*.bx-viewport img {
 	max-width: 200% !important;
-	height: 130px !important;
+	height: 82.5px !important;
 	width: 100% !important;
-}
+}*/
 
-.bx-viewport li {
-	width: 221.758px !important;
-}
+/*.bx-viewport li {
+	width: 110.879px !important;
+}*/
 
 .anythingSlider .back a {
 	background: url('../images/asset/arrow-left.png') !important;
@@ -3083,7 +3083,7 @@ input[type="radio"].radio-button-account-create:checked+label {
 }
 
 .admin-input-2 {
-	width: 97.735383314681698688975657257813%% !important;
+	width: 97.735383314681698688975657257813% !important;
 	border: 0 !important;
 	border-radius: 0 !important;
 	border-left: solid 4px #E6E7E8 !important;

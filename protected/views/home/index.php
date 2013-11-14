@@ -14,9 +14,10 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
              
             function loginFirst(e)
             {
-                $('#EmailText').popover('destroy')
-				$("#EmailText").popover('show');
-                                $("#EmailText").focus();
+//                e.preventDefault();
+                $('#login-email').popover('destroy')
+				$("#login-email").popover('show');
+                                $("#login-email").focus();
             }
         </script>
         
@@ -56,18 +57,18 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
             }
             else
             {
-                $detailUrl = '#'; //redirect to login
+                $detailUrl = 'javascript:void(0)'; //redirect to login
             }
             
-            if($detailUrl == '#')
+            if($detailUrl == 'javascript:void(0)')
             {
-                $contentBusinessTerbaru .= "<li><a class=\"tooltipCarouselBusinessTerbaru\" onclick=\"loginFirst()\" data-toggle=\"tooltip\" title=\"$businessDetail->nama\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:209.3595px; height:130px; \" /></a></li>";
+                $contentBusinessTerbaru .= "<li><a class=\"tooltipCarouselBusinessTerbaru\" onclick=\"loginFirst()\" data-toggle=\"tooltip\" title=\"$businessDetail->nama\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:125px; height:83px;  \" /></a></li>";
                 $i++;
             }
             else
             {
 //                     $contentBusinessTerbaru .= "<li><a title=\"$businessDetail->nama\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:90px; height:90px \" /></a></li>";
-                $contentBusinessTerbaru .= "<li><a class=\"tooltipCarouselBusinessTerbaru\" data-toggle=\"tooltip\" title=\"$businessDetail->nama\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:209.3595px; height:130px; \" /></a></li>";
+                $contentBusinessTerbaru .= "<li><a class=\"tooltipCarouselBusinessTerbaru\" data-toggle=\"tooltip\" title=\"$businessDetail->nama\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:125px; height:83px;  \" /></a></li>";
                 $i++;
             }
             
@@ -109,17 +110,17 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
             }
             else
             {
-                $detailUrl = '#'; //redirect to login
+                $detailUrl = 'javascript:void(0)'; //redirect to login
             }
             $tooltipBusinessRekomendasiTitle = $businessDetail['nama'];
             
-            if($detailUrl == '#')
+            if($detailUrl == 'javascript:void(0)')
             {
-                 $contentBusinessRekomendasi .= "<li><a class=\"tooltipCarouselBusinessRekomendasi\" onclick=\"loginFirst()\" data-toggle=\"tooltip\" title=\"$tooltipBusinessRekomendasiTitle\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:90px; height:90px \" /></a></li>";
+                 $contentBusinessRekomendasi .= "<li><a class=\"tooltipCarouselBusinessRekomendasi\" onclick=\"loginFirst()\" data-toggle=\"tooltip\" title=\"$tooltipBusinessRekomendasiTitle\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:125px; height:83px;  \" /></a></li>";
             }
             else
             {
-                 $contentBusinessRekomendasi .= "<li><a class=\"tooltipCarouselBusinessRekomendasi\" data-toggle=\"tooltip\" title=\"$tooltipBusinessRekomendasiTitle\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:90px; height:90px \" /></a></li>";
+                 $contentBusinessRekomendasi .= "<li><a class=\"tooltipCarouselBusinessRekomendasi\" data-toggle=\"tooltip\" title=\"$tooltipBusinessRekomendasiTitle\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:125px; height:83px;  \" /></a></li>";
             }
            
 
@@ -162,15 +163,15 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
                 }
                 else
                 {
-                    $detailUrl = '#'; //redirect to login
+                    $detailUrl = 'javascript:void(0)'; //redirect to login
                 }
-                    if($detailUrl == '#')
+                    if($detailUrl == 'javascript:void(0)')
                     {
-                        $contentFranchiseTerbaru .= "<li><a class=\"tooltipCarouselFranchiseTerbaru\" onclick=\"loginFirst()\" data-toggle=\"tooltip\" title=\"$businessDetail->nama\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:90px; height:90px \" /></a></li>";
+                        $contentFranchiseTerbaru .= "<li><a class=\"tooltipCarouselFranchiseTerbaru\" onclick=\"loginFirst()\" data-toggle=\"tooltip\" title=\"$businessDetail->nama\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:125px; height:83px;  \" /></a></li>";
                     }
                     else
                     {
-                        $contentFranchiseTerbaru .= "<li><a class=\"tooltipCarouselFranchiseTerbaru\"  data-tip=\"Yay tooltip!\" data-toggle=\"tooltip\" title=\"$businessDetail->nama\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:90px; height:90px \" /></a></li>";
+                        $contentFranchiseTerbaru .= "<li><a class=\"tooltipCarouselFranchiseTerbaru\"  data-tip=\"Yay tooltip!\" data-toggle=\"tooltip\" title=\"$businessDetail->nama\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:125px; height:83px;  \" /></a></li>";
                     }
                     
             }
@@ -210,17 +211,17 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
                 }
                 else
                 {
-                    $detailUrl = '#'; //redirect to login
+                    $detailUrl = 'javascript:void(0)'; //redirect to login
                 }
                 
                 $tooltipFranchiseRekomendasiTitle = $businessDetail['nama'];
-                if($detailUrl == '#')
+                if($detailUrl == 'javascript:void(0)')
                 {
-                    $contentFranchiseRekomendasi .= "<li><a class=\"tooltipCarouselFranchiseRekomendasi\" onclick=\"loginFirst()\" data-toggle=\"tooltip\" title=\"$tooltipFranchiseRekomendasiTitle\" href=\"$detailUrl\"><img class=\"imageGadgetClient detail\" src=\"$imageSource\" style=\"width:90px; height:90px \" /></a></li>";
+                    $contentFranchiseRekomendasi .= "<li><a class=\"tooltipCarouselFranchiseRekomendasi\" onclick=\"loginFirst()\" data-toggle=\"tooltip\" title=\"$tooltipFranchiseRekomendasiTitle\" href=\"$detailUrl\"><img class=\"imageGadgetClient detail\" src=\"$imageSource\" style=\"width:125px; height:83px;  \" /></a></li>";
                 }
                 else
                 {
-                    $contentFranchiseRekomendasi .= "<li><a class=\"tooltipCarouselFranchiseRekomendasi\" data-toggle=\"tooltip\" title=\"$tooltipFranchiseRekomendasiTitle\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:90px; height:90px \" /></a></li>";
+                    $contentFranchiseRekomendasi .= "<li><a class=\"tooltipCarouselFranchiseRekomendasi\" data-toggle=\"tooltip\" title=\"$tooltipFranchiseRekomendasiTitle\" href=\"$detailUrl\"><img class=\"imageGadgetClient\" src=\"$imageSource\" style=\"width:125px; height:83px; \" /></a></li>";
                 }
                 
 
@@ -279,18 +280,17 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
                     $(".tooltipCarouselBusinessTerbaru").tipTip();
                     });
             },
-            minSlides: 2,
-            maxSlides: 2,
-            slideWidth: 170,
+            minSlides: 1,
+            maxSlides: 4,
+            slideWidth: 159,
             slideMargin: 0,
-            slideHeight: 130,
             auto:true,
             autoHover: true,
             pager:false,
-            nextSelector:'#business_next_selector',
-            prevSelector:'#business_prev_selector',
-            prevText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/arrow-left.png" width="20" height="20"/>',
-            nextText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/arrow-right.png" width="20" height="20"/>',
+//            nextSelector:'#business_next_selector',
+//            prevSelector:'#business_prev_selector',
+//            prevText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/arrow-left.png" width="20" height="20"/>',
+//            nextText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/arrow-right.png" width="20" height="20"/>',
             useCSS:false,
           });
       
@@ -303,18 +303,17 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
                     $(".tooltipCarouselBusinessRekomendasi").tipTip();
                     });
                 },
-                  minSlides: 2,
-                  maxSlides: 2,
-                  slideWidth: 170,
-                  sliderHeight: 130,
+                  minSlides: 1,
+                  maxSlides: 5,
+                  slideWidth: 159,
                   slideMargin: 0,
                   auto:true,
                   autoHover: true,
                   pager:false,
-                  nextSelector:'#business_next_selector',
-                  prevSelector:'#business_prev_selector',
-                  prevText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/arrow-left.png" width="20" height="20"/>',
-                  nextText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/arrow-right.png" width="20" height="20"/>',
+//                  nextSelector:'#business_next_selector',
+//                  prevSelector:'#business_prev_selector',
+//                  prevText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/arrow-left.png" width="20" height="20"/>',
+//                  nextText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/arrow-right.png" width="20" height="20"/>',
                   useCSS:false,
             });
           });	
@@ -328,17 +327,17 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
                     $(".tooltipCarouselBusinessTerbaru").tipTip();
                     });
                 },
-                  minSlides: 2,
-                  maxSlides: 2,
-                  slideWidth: 170,
+                  minSlides: 1,
+                  maxSlides: 5,
+                  slideWidth: 159,
                   slideMargin: 0,
                   auto:true,
                   autoHover: true,
                   pager:false,
-                  nextSelector:'#business_next_selector',
-                  prevSelector:'#business_prev_selector',
-                  prevText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/arrow-left.png" width="20" height="20"/>',
-                  nextText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/arrow-right.png" width="20" height="20"/>',
+//                  nextSelector:'#business_next_selector',
+//                  prevSelector:'#business_prev_selector',
+//                  prevText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/arrow-left.png" width="20" height="20"/>',
+//                  nextText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/arrow-right.png" width="20" height="20"/>',
                   useCSS:false,
             });
           });
@@ -350,17 +349,17 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
                     $(".tooltipCarouselFranchiseTerbaru").tipTip();
                     });
             },
-            minSlides: 2,
-            maxSlides: 2,
-            slideWidth: 170,
+            minSlides: 1,
+            maxSlides: 5,
+            slideWidth: 159,
             slideMargin: 0,
             auto:true,
             autoHover: true,
             pager:false,
-            nextSelector:'#franchise_next_selector',
-            prevSelector:'#franchise_prev_selector',
-            prevText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/arrow-left.png" width="20" height="20"/>',
-            nextText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/arrow-right.png" width="20" height="20"/>',
+//            nextSelector:'#franchise_next_selector',
+//            prevSelector:'#franchise_prev_selector',
+//            prevText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/arrow-left.png" width="20" height="20"/>',
+//            nextText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/arrow-right.png" width="20" height="20"/>',
             useCSS:false,
             
           });
@@ -374,17 +373,17 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
                     $(".tooltipCarouselFranchiseRekomendasi").tipTip();
                     });
             },
-                  minSlides: 2,
-                  maxSlides: 2,
-                  slideWidth: 170,
+                  minSlides: 1,
+                  maxSlides: 5,
+                  slideWidth: 159,
                   slideMargin: 0,
                   auto:true,
                   autoHover: true,
                   pager:false,
-                  nextSelector:'#franchise_next_selector',
-                  prevSelector:'#franchise_prev_selector',
-                  prevText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/arrow-left.png" width="20" height="20"/>',
-                  nextText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/arrow-right.png" width="20" height="20"/>',
+//                  nextSelector:'#franchise_next_selector',
+//                  prevSelector:'#franchise_prev_selector',
+//                  prevText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/arrow-left.png" width="20" height="20"/>',
+//                  nextText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/arrow-right.png" width="20" height="20"/>',
                   useCSS:false,
             });
           });
@@ -398,17 +397,17 @@ if(Yii::app()->user->isGuest && (isset($_GET['alert']) && $_GET['alert']==1)){
                     $(".tooltipCarouselFranchiseTerbaru").tipTip();
                     });
             },
-                  minSlides: 2,
-                  maxSlides: 2,
-                  slideWidth: 170,
+                  minSlides: 1,
+                  maxSlides: 5,
+                  slideWidth: 159,
                   slideMargin: 0,
                   auto:true,
                   autoHover: true,
                   pager:false,
-                  nextSelector:'#franchise_next_selector',
-                  prevSelector:'#franchise_prev_selector',
-                  prevText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/arrow-left.png" width="20" height="20"/>',
-                  nextText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/arrow-right.png" width="20" height="20"/>',
+//                  nextSelector:'#franchise_next_selector',
+//                  prevSelector:'#franchise_prev_selector',
+//                  prevText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/arrow-left.png" width="20" height="20"/>',
+//                  nextText:'<img src="<?php echo Yii::app()->request->baseUrl ?>/images/asset/arrow-right.png" width="20" height="20"/>',
                   useCSS:false,
             });
           });

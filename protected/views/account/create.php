@@ -68,7 +68,7 @@
         $('#harga_field').autoNumeric({aSep:',', aDec:'.', aPad:false ,vMax: 9223372036854775807});
         $('#penjualan_field').autoNumeric({aSep:',', aDec:'.', aPad:false ,vMax: 9223372036854775807});
         $('#hpp_field').autoNumeric({aSep:',', aDec:'.', aPad:false ,vMax: 9223372036854775807});
-        $('#laba_bersih_tahun_field').autoNumeric({aSep:',', aDec:'.', aPad:false ,vMax: 9223372036854775807});
+        $('#laba_bersih_tahun_field').autoNumeric({aSep:',', aDec:'.', aPad:false ,vMax: 9223372036854775807, vMin: -9223372036854775807 });
         $('#total_aset_field').autoNumeric({aSep:',', aDec:'.', aPad:false ,vMax: 9223372036854775807});
         
         if($('.alasanJualCheckBox').is(':checked'))
@@ -177,7 +177,7 @@
                     if(isNumber(penjualan))
                     {
                         var result = parseFloat(parseFloat(input_harga)/parseFloat(penjualan)).toFixed(2);
-                        if(result != 'Infinity' && result != 'NaN')
+                        if((result != 'Infinity' && result != '-Infinity') && result != 'NaN')
                         {
                             $('#Business_harga_penawaran_penjualan').attr('value',result);
                         }
@@ -192,7 +192,7 @@
                     if(isNumber(labaBersih))
                     {
                         var result = parseFloat(parseFloat(input_harga)/parseFloat(labaBersih)).toFixed(2);
-                        if(result != 'Infinity' && result != 'NaN')
+                        if((result != 'Infinity' && result != '-Infinity') && result != 'NaN')
                         {
                             $('#Business_harga_penawaran_laba_bersih').attr('value',result);
                         }
@@ -206,7 +206,7 @@
                     if(isNumber(aset))
                     {
                         var result = parseFloat(parseFloat(input_harga)/parseFloat(aset)).toFixed(2);
-                        if(result != 'Infinity' && result != 'NaN')
+                        if((result != 'Infinity' && result != '-Infinity') && result != 'NaN')
                         {
                             $('#Business_harga_penawaran_aset').attr('value',result);
                         }
@@ -220,7 +220,7 @@
                     if(isNumber(labaBersih) && isNumber(penjualan))
                     {
                         var result = parseFloat((parseFloat(labaBersih)/parseFloat(penjualan)) * 100).toFixed(2);
-                        if(result != 'Infinity' && result != 'NaN')
+                        if((result != 'Infinity' && result != '-Infinity') && result != 'NaN')
                         {
                             $('#Business_marjin_laba_bersih').attr('value',result);
                         }
@@ -234,7 +234,7 @@
                     if(isNumber(labaBersih) && isNumber(aset))
                     {
                         var result = parseFloat((parseFloat(labaBersih)/parseFloat(aset)) * 100).toFixed(2);
-                        if(result != 'Infinity' && result != 'NaN')
+                        if((result != 'Infinity' && result != '-Infinity') && result != 'NaN')
                         {
                             $('#Business_laba_bersih_aset').attr('value',result);
                         }

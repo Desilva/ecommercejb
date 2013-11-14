@@ -291,7 +291,28 @@ echo $model->idKota->city;
 				</tr>
 				<tr>
 					<td>Laba bersih / Tahun</td>
-					<td><?php if($model->laba_bersih_tahun >0 && is_numeric($model->laba_bersih_tahun)) echo "Rp.".number_format($model->laba_bersih_tahun); else echo "-" ?></td>
+					<td id="labaBersihRow"><?php if(is_numeric($model->laba_bersih_tahun))
+                                                  {
+                                                    if($model->laba_bersih_tahun > 0)
+                                                    {
+                                                        echo "Rp.".number_format($model->laba_bersih_tahun); 
+                                                    }
+                                                    else if($model->laba_bersih_tahun == 0)
+                                                    {
+                                                        echo "-";
+                                                    }
+                                                    else
+                                                    {
+                                                        echo "<span style='margin-left:-5px'>-</span>Rp.".number_format(abs($model->laba_bersih_tahun)); 
+                                                     ?>
+                                                        <script>
+                                                            $('#labaBersihRow').attr('style','color:red;');
+                                                        </script>
+                                                    <?php }
+                                                    
+                                                  }
+                                                  else echo "-" ?>
+                                        </td>
 				</tr>
 				<tr>
 					<td>Total Asset</td>
@@ -313,19 +334,55 @@ echo $model->idKota->city;
 				</tr>
 				<tr>
 					<Td>Marjin laba bersih</td>
-					<td><?php if($model->marjin_laba_bersih >0 && is_numeric($model->marjin_laba_bersih)) echo number_format($model->marjin_laba_bersih,2,'.','')."%"; else echo "-"?>  </td>
+					<td><?php if(is_numeric($model->marjin_laba_bersih)) 
+                                                  {
+                                                    if($model->marjin_laba_bersih < 0)
+                                                    {
+                                                        echo "<span style='margin-left:-5px'>-</span>".number_format(abs($model->marjin_laba_bersih),2,'.','')."%";
+                                                    }
+                                                    else
+                                                    {
+                                                        echo number_format($model->marjin_laba_bersih,2,'.','')."%";
+                                                    }
+                                                     
+                                                  }
+                                                    else echo "-"?>  </td>
 				</tr>
 				<tr>
 					<td>Laba bersih / Asset</td>
-					<Td><?php if($model->laba_bersih_aset >0 && is_numeric($model->laba_bersih_aset)) echo number_format($model->laba_bersih_aset,2,'.','')."%"; else echo "-" ?> </td>
+					<Td><?php if(is_numeric($model->laba_bersih_aset))
+                                                {
+                                                    if($model->laba_bersih_aset <0)
+                                                    {
+                                                        echo "<span style='margin-left:-5px'>-</span>".number_format(abs($model->laba_bersih_aset),2,'.','')."%"; 
+                                                    }
+                                                    else
+                                                    {
+                                                       echo number_format($model->laba_bersih_aset,2,'.','')."%"; 
+                                                    }
+                                                    
+                                                } else echo "-" ?> </td>
 				</tr>
 				<Tr>
 					<td>Harga penawaran / Penjualan</td>
-					<td><?php if($model->harga_penawaran_penjualan > 0 && is_numeric($model->harga_penawaran_penjualan)) echo number_format($model->harga_penawaran_penjualan,2,'.',''); else echo "-" ?></td>
+					<td><?php if(is_numeric($model->harga_penawaran_penjualan)) echo number_format($model->harga_penawaran_penjualan,2,'.',''); else echo "-" ?></td>
 				</tR>
 				<tr>
 					<Td>Harga penawaran / Laba bersih</td>
-					<td><?php if($model->harga_penawaran_laba_bersih >0 && is_numeric($model->harga_penawaran_laba_bersih)) echo number_format($model->harga_penawaran_laba_bersih,2,'.',''); else echo "-" ?></td>
+					<td><?php if(is_numeric($model->harga_penawaran_laba_bersih))
+                                                {
+                                                    if($model->harga_penawaran_laba_bersih < 0 )
+                                                    {
+                                                        echo "<span style='margin-left:-5px'>-</span>".number_format(abs($model->harga_penawaran_laba_bersih),2,'.','');
+                                                    }
+                                                    else
+                                                    {
+                                                        echo number_format($model->harga_penawaran_laba_bersih,2,'.','');
+                                                    }
+                                                    
+                                                
+                                                } else echo "-" ?>
+                                        </td>
 				</tR>
 				
 			</table>
