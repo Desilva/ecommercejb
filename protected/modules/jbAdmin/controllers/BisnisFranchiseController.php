@@ -592,17 +592,23 @@ class BisnisFranchiseController extends Controller
                                 $mail2 = new YiiMailer();
                                 $mail2->clearLayout(); //if layout is already set in config
                                 $mail2->setFrom($mailSetting->alamat_email, $mailSetting->nama_email);
-                                $mail2->setTo($emailRecipients); //CHANGE TO APPROPRIATE EMAIL WHEN DEPLOYING
+//                                $mail2->setTo($emailRecipients); //CHANGE TO APPROPRIATE EMAIL WHEN DEPLOYING
                                 $mail2->setSubject("Terdapat Bisnis/Franchise yang mungkin sesuai minat anda");
                                 $mail2->setBody("<p>Berikut adalah bisnis/franchise yang mungkin sesuai minat anda:</p><p>Nama Bisnis/Franchise: $model->nama</p><p>Lokasi Bisnis/Franchise: ".$model->idProvinsi->provinsi." </p><p>Harga: Rp.".number_format($model->harga)."</p><p>Link Bisnis/Franchise: <a href='".Yii::app()->createAbsoluteUrl("//cariBisnisFranchise/detail/$model->id")."'>Klik disini</a></p>");
-                                if($mail2->send())
+                                foreach($emailRecipients as $usermail)
                                 {
-                                    
-                                }
-                                else
-                                {
-                                     var_dump($mail->getError());
-                                    die;
+                                    $mail3= clone $mail2;
+                                    $mail3->AddAddress($usermail);
+                                    if($mail3->send())
+                                    {
+
+                                    }
+                                    else
+                                    {
+                                         var_dump($mail3->getError());
+                                         die;
+                                    }
+
                                 }
                             }
                             

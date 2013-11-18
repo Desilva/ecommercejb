@@ -209,21 +209,35 @@ class NewsletterController extends Controller
                 {
                     YiiBase::import('ext.YiiMailer.YiiMailer');
                     //function to send email
-                    $mail = new YiiMailer();
-                    $mail->clearLayout(); //if layout is already set in config
-                    $mail->setFrom($mailSetting->alamat_email, $mailSetting->nama_email);
-                    $mail->setTo($newsletterRecipients); //CHANGE TO APPROPRIATE EMAIL WHEN DEPLOYING
-                    $mail->setSubject($mailSetting->nama_email.': '.$newsletter->judul);
-                    $mail->setBody($newsletter->isi.$signature);
-                    if($mail->send())
-                    {
+                    
+                        $mail = new YiiMailer();
+                        $mail->clearLayout(); //if layout is already set in config
+                        $mail->setFrom($mailSetting->alamat_email, $mailSetting->nama_email);
+                        $mail->setSubject($mailSetting->nama_email.': '.$newsletter->judul);
+                        $mail->setBody($newsletter->isi.$signature);
+//                        $mail->setTo($mailSetting); //CHANGE TO APPROPRIATE EMAIL WHEN DEPLOYING
+//                        $mail->setBcc($newsletterRecipients);
+                        foreach($newsletterRecipients as $usermail)
+                        {
+                            $mail2= clone $mail;
+                            $mail2->AddAddress($usermail);
+                            if($mail2->send())
+                            {
+                                
+                            }
+                            else
+                            {
+                                 return $mail2->getError();
+                                 var_dump($mail2->getError());
+                                 die;
+                            }
+                            
+                        }
+                        
                         return true;
-                    }
-                    else
-                    {
-                         return $mail->getError();
-                         var_dump($mail->getError());
-                    }
+                        
+                        
+                    
                 }
                 
         }
