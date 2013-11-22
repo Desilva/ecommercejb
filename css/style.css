@@ -882,7 +882,7 @@ select::-ms-expand {
 .footer-cr {
 	width: 100%;
 	text-align: center;
-	margin-top:55px;
+	margin-top:0px;
 	font-family: eurostile;
 	font-size: 13px;
 }
