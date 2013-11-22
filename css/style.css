@@ -350,9 +350,16 @@ body {
 /* new style */
 .Transparent-Navbar
 {
-	background: none;
-	padding-left: 0;
+        background: linear-gradient(to right, transparent 136px, rgba(20,103,173,1) 136px), url('../images/asset/login-form.png') no-repeat;
+	background: -webkit-gradient(linear, to right, transparent 136px, rgba(20,103,173,1) 136px), url('../images/asset/login-form.png') no-repeat;
+	background: -moz-linear-gradient(to right, transparent 136px, rgba(20,103,173,1) 136px), url('../images/asset/login-form.png') no-repeat;
+	background: -ms-linear-gradient(to right, transparent 136px, rgba(20,103,173,1) 136px), url('../images/asset/login-form.png') no-repeat;
+/*	background-position-y: -1px;*/
+background-position: 0px -1px;
+/*	background: none;*/
+	padding-right: 0;
 }
+
 
 .Noborder-Navbar
 {
@@ -370,33 +377,41 @@ body {
 
 .Font-Color-Navbar
 {
-	color: #1467AD;
+	color: #FFFFFF;
 	font-family: eurostile;
-	font-size: 16px;
+	font-size: 15px;
 }
 
 .Border-Bottom-Navbar {
 	width: auto;
 	height: 5px;
-	background: white;
+/*	background: white;*/
 	padding-left: 15px;
 	padding-right: 15px;
 }
 
+.navbar .nav
+{
+    /*float:right !important;*/
+    left:45px;
+    /*right:0;*/
+}
+
 .nav > li:hover {
-	background: none !important;
+/*	background: none !important;*/
+        background: #2691BC !important;
 }
 
 .nav > li:hover > .Border-Bottom-Navbar {
-	background: url('../images/asset/navbar-hover.png') no-repeat #1467AD;
+	/*background: url('../images/asset/navbar-hover.png') no-repeat #1467AD;*/
 	padding-left: 15px;
 	padding-right: 15px;
 }
 
 .nav > li:hover > a {
 	font-family: eurostile;
-	font-size: 16px;
-	color: #2691BC;
+	font-size: 15px;
+	color: #FFFFFF;
 
 }
 
@@ -475,7 +490,7 @@ body {
 	background: -webkit-gradient(linear, to right, transparent 136px, rgba(20,103,173,1) 136px), url('../images/asset/login-form.png') no-repeat;
 	background: -moz-linear-gradient(to right, transparent 136px, rgba(20,103,173,1) 136px), url('../images/asset/login-form.png') no-repeat;
 	background: -ms-linear-gradient(to right, transparent 136px, rgba(20,103,173,1) 136px), url('../images/asset/login-form.png') no-repeat;
-	background-position-y: -1px;
+	background-position: 0px -1px;
 	float: right;
 	text-align: right;
 	vertical-align: middle;
@@ -629,16 +644,27 @@ body {
 	color: #A7A9AC;
 }
 
+
 .div-header {
 	font-family: eurostile;
 	font-size: 16px;
-	color: #414042;
-	width: 58.6% !important;
+	color: #FFF;
+	width: 100% !important;
 	padding-left: 14px;
 	min-height: 16px !important;
-	margin-bottom: 21px !important;
-	padding-bottom: 4px;
-	border-bottom: solid 1px #1467AD;
+	margin-bottom: 8px !important;
+	padding-bottom: 9px;
+	padding-top: 9px;
+            background: rgb(24,89,150); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(24,89,150,1) 0%, rgba(60,141,201,1) 50%, rgba(30,88,154,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(24,89,150,1)), color-stop(50%,rgba(60,141,201,1)), color-stop(100%,rgba(30,88,154,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(24,89,150,1) 0%,rgba(60,141,201,1) 50%,rgba(30,88,154,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(24,89,150,1) 0%,rgba(60,141,201,1) 50%,rgba(30,88,154,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(24,89,150,1) 0%,rgba(60,141,201,1) 50%,rgba(30,88,154,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom, rgba(24,89,150,1) 0%,rgba(60,141,201,1) 50%,rgba(30,88,154,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#185996', endColorstr='#1e589a',GradientType=0 ); /* IE6-9 */
+
+/*	border-bottom: solid 1px #1467AD;*/
 }
 
 .div-content {
