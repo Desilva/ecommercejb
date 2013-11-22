@@ -87,7 +87,7 @@ $set=date_default_timezone_set('Asia/Krasnoyarsk');
                             <div class="navbar-inner Transparent-Navbar Noborder-Navbar">
                                 <ul class="nav">
                                     <li style="margin-left:-19px; padding-left:10px;" class="home-button">
-                                        <a style="padding-right:30px" class="Font-Color-Navbar" href="<?php echo Yii::app()->createUrl('//home') ?>"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/asset/iconHome.png" width="25" style="width:25px;height:25px" />
+                                        <a style="padding-right:30px" class="Font-Color-Navbar" href="<?php echo Yii::app()->createUrl('//home') ?>"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/asset/iconHomeWhite.png" width="25" style="width:25px;height:25px" />
                                         </a>
                                         <div class="Border-Bottom-Navbar"></div>
                                     </li>
